@@ -1,5 +1,5 @@
 # 依赖与构建产物
-node_modules/
+node_modules
 */dist/
 framework/app/dist/
 # Python 环境（PyMuPDF/Pillow）
@@ -17,3 +17,4 @@ __pycache__/
 # 原书内容（版权）：文字层与原书插图只保留在本地，不进仓库
 */text/
 */public/figures/
+framework/app/.pages/
