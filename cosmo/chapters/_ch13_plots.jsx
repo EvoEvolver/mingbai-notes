@@ -207,11 +207,10 @@ export function CkkPlot() {
       { id: "sz", label: R`\sigma_z`, min: 0, max: 0.5, step: 0.05, value: 0.2 },
       { id: "Om", label: R`\Omega_{\rm m}`, min: 0.2, max: 0.45, step: 0.01, value: 0.31 },
       { id: "s8", label: R`\sigma_8`, min: 0.6, max: 1.0, step: 0.01, value: 0.81 },
-      { id: "fac", label: R`\text{纵轴乘数（原书图疑为 4）}`, min: 1, max: 4, step: 3, value: 1 },
     ]}
     series={p => {
       const C = cosmoOf(p.Om, p.s8), g = ckkOf(C, p.zs, p.sz, true), gl = ckkOf(C, p.zs, p.sz, false), cm = ckkOf(C, 1089, 0, true), cml = ckkOf(C, 1089, 0, false);
-      const D = (T, l) => p.fac * l * (l + 1) / (2 * Math.PI) * T.at(l);
+      const D = (T, l) => l * (l + 1) / (2 * Math.PI) * T.at(l);
       return [
         { label: R`\text{星系 }z_S=${f2(p.zs)}\text{（Halofit）}`, f: l => D(g, l), color: "#1f1b16", width: 2.4 },
         { label: R`\text{星系（线性 }P\text{）}`, f: l => D(gl, l), color: "#1f1b16", dash: "dash", width: 1.2 },

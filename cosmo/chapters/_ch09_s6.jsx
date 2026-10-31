@@ -32,7 +32,7 @@ $$l(l+1)C(l)^{\rm SW}=\frac{\pi^2}{50}\cdot\frac4\pi\,\mathcal A_s=\frac{2\pi}{2
 
 **与数据比较。**\figref{9.11} 给出 Planck 对大角度各向异性的测量，以及基准平直 $\Lambda$CDM 模型的 Boltzmann 解。偏离常数是由于 ISW 效应和在较高 $l$ 处变得不可忽略的偶极贡献（\eqref{9.79} 忽略了它）。尽管如此，\eqref{9.80} 仍是一个合理的近似。由于纵轴给出给定尺度 $l$ 贡献的方差，可以读出大角度涨落的振幅：粗略地 $\langle(\Delta T/T_0)^2\rangle\sim10^{-10}$，所以均方根涨落是其平方根，量级为 $10^{-5}T_0=27\,\mu\mathrm K$。`}</Tx>
         <Figure n="9.11" interactive={<SWPlot />}
-          caption={R`Planck 测得的大角度 CMB 功率谱（Planck Collaboration 2018b）与基准 $\Lambda$CDM 预言（实线）。点线为 \eqref{9.80} 预言的尺度不变 Sachs–Wolfe 高原。**交互版**（无数据点）：黑线为 \eqref{9.78} 用精确球 Bessel 函数数值积分的 SW 谱；红线再加上晚期 ISW（$\Lambda$ 使物质期之后的势按 $D_+/a$ 衰减，计入 \eqref{9.59} 的积分项）；绿虚线为 \eqref{9.79}；蓝点线 $\mathcal A_s/25$ 即改正后的 \eqref{9.80}，紫点划线为原书误印的系数 $8/25$（原书图中的点线按此画出，见上方勘误框）。$\mathcal A_s=2.1\times10^{-9}$。把 $\Omega_\Lambda$ 调到 0 可见晚期 ISW 的上翘消失；调 $n_s$ 可见 SW 谱按 $l^{n_s-1}$ 倾斜。`} />
+          caption={R`Planck 测得的大角度 CMB 功率谱（Planck Collaboration 2018b）与基准 $\Lambda$CDM 预言（实线）。点线为 \eqref{9.80} 预言的尺度不变 Sachs–Wolfe 高原。**交互版**（无数据点）：黑线为 \eqref{9.78} 用精确球 Bessel 函数数值积分的 SW 谱；红线再加上晚期 ISW（$\Lambda$ 使物质期之后的势按 $D_+/a$ 衰减，计入 \eqref{9.59} 的积分项）；绿虚线为 \eqref{9.79}；蓝点线 $\mathcal A_s/25$ 即改正后的 \eqref{9.80}。$\mathcal A_s=2.1\times10^{-9}$。把 $\Omega_\Lambda$ 调到 0 可见晚期 ISW 的上翘消失；调 $n_s$ 可见 SW 谱按 $l^{n_s-1}$ 倾斜。`} />
         <Tx>{R`**超越尺度不变。**按我们的解析结果，乘以 $l(l+1)$ 的功率谱应按 $(l/l_{\rm p})^{n_s-1}$ 标度，$l_{\rm p}$ 是大致对应于枢轴尺度 $k_{\rm p}$ 的角波数。这一标度可以从 \eqref{9.79} 看出，或更直接地从 \eqref{9.78} 的积分看出：被积函数在 $x\sim l$ 处取峰，所以粗略地说，那里每个 $x$ 都可以换成 $l$；被积函数从 $x^{-1}$ 推广到 $x^{n_s-2}$，于是谱的变化按 $l^{n_s-1}$ 标度。但由于 $n_s-1$ 很小，这一标度被上面提到的其他贡献掩盖了。要同时约束谱指数和振幅，数据必须覆盖更大的 $l$ 范围，也就是要包括更小尺度上的各向异性。`}</Tx>
       </Sub>
 
