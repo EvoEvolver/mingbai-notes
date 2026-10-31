@@ -5,6 +5,7 @@ export default {
   kind: "textbook",
   title: "量子力学（卷 I）", title_en: "Quantum Mechanics, Volume I (2nd ed.)", author: "C. Cohen-Tannoudji, B. Diu, F. Laloë", subtitle: "Wiley-VCH, 2020",
   intro: String.raw`经典的量子力学教科书：从波粒二象性与波包出发，建立 Hilbert 空间与 Dirac 记号的数学工具，再陈述量子力学的基本假设及其物理诠释。本站为前三章及其补充材料的中文学习版：用自己的话讲清概念与推导，保留原书公式编号，配交互图。`,
+  footer: "本页为原书的中文学习版：公式与编号依原书，讲解、推导组织与插图均为本站自写/自绘。",
   parts: [{ no: 1, label: "第 I 章 波与粒子" }, { no: 2, label: "第 II 章 数学工具" }, { no: 3, label: "第 III 章 基本假设" }],
   katexMacros: {
     "\\R": "\\mathbb{R}", "\\C": "\\mathbb{C}", "\\dd": "\\mathrm{d}", "\\Tr": "\\operatorname{Tr}",
