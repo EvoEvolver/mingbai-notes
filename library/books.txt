@@ -1,0 +1,8 @@
+# 书库排列顺序（每行一个书目录名）
+oot
+grammatology
+mirror
+antioedipus
+libidinal
+cosmo
+eth
