@@ -1,5 +1,5 @@
 // 习题 1.1–1.5 —— 式 (1.11)–(1.13)。解答：1.1、1.2、1.4 依据原书附录 A（式 A.1–A.9）；1.3、1.5 为编者给出（数值已用 node 核对）。
-import { Sec, Tx, Eq, Exercise, Derivation } from "@kit";
+import { Sec, Tx, Eq, Exercise, Derivation, Box } from "@kit";
 import { AgePlot } from "./_ch01_plots.jsx";
 
 const R = String.raw;
@@ -39,9 +39,9 @@ $$H_0t_0=\frac{1}{3\sqrt{\Omega_\Lambda}}\int_0^\infty\frac{d\sym{ch01-xint}{x}}
 其中用了 $\sqrt{1+\alpha}=1/\sqrt{\Omega_\Lambda}$ 与 $\coth^{-1}y=\tanh^{-1}(1/y)$。$\Omega_\Lambda\to0$ 时 $\tanh^{-1}\sqrt{\Omega_\Lambda}/\sqrt{\Omega_\Lambda}\to1$，回到 (a) 的 $2/3$。代入 $\Omega_\Lambda=0.7$：
 $$\int_0^1\frac{da}{a}\left[0.7+\frac{0.3}{a^3}\right]^{-1/2}\simeq0.96.$$
 
-**(c)** 所以对固定的哈勃常数，含 $\Lambda$ 的宇宙比物质主导的宇宙老，倍数为 $0.96/0.67=1.43$（精确值 $0.964/0.667=1.45$）。原因是含 $\Lambda$ 的宇宙今天在加速，过去膨胀得比物质主导宇宙慢——要达到同样的今天膨胀率，需要更长的时间。取 $h=0.7$，宇宙学常数宇宙的年龄为 $0.964\times9.78/0.7\,\mathrm{Gyr}=13.5\,\mathrm{Gyr}$（附录 A 写作"13.8 billion years"，见下方勘误说明），与恒星、球状星团等独立年龄指标相符。`}</Tx>
+**(c)** 所以对固定的哈勃常数，含 $\Lambda$ 的宇宙比物质主导的宇宙老，倍数为 $0.96/0.67=1.43$（精确值 $0.964/0.667=1.45$）。原因是含 $\Lambda$ 的宇宙今天在加速，过去膨胀得比物质主导宇宙慢——要达到同样的今天膨胀率，需要更长的时间。取 $h=0.7$，宇宙学常数宇宙的年龄为 $0.964\times9.78/0.7\,\mathrm{Gyr}=13.5\,\mathrm{Gyr}$（见下方勘误），与恒星、球状星团等独立年龄指标相符。`}</Tx>
           <AgePlot />
-          <Tx>{R`**勘误说明。**按 \eqref{1.11} 取 $\Omega_\Lambda=0.7$、$h=0.7$ 实际得到 $t_0=13.47\,\mathrm{Gyr}$，而非附录 A 所写的 13.8 Gyr；13.78 Gyr 是附录 B.3 基准宇宙学（$h=0.677$，$\Omega_\Lambda=0.689$，并计入辐射）的值——上图把 $h$ 调到 0.677、$\Omega_\Lambda$ 调到 0.69 即可复现。`}</Tx>
+          <Box kind="warning" title={R`勘误：附录 A 中的宇宙年龄 13.8 Gyr`}>{R`原书附录 A 印作"For $h=0.7$, a cosmological constant universe has an age of 13.8 billion years"。按 \eqref{1.11} 取 $\Omega_\Lambda=0.7$、$h=0.7$ 实际得到 $t_0=0.964\times H_0^{-1}=0.964\times9.778\,\mathrm{Gyr}/0.7=13.47\,\mathrm{Gyr}$（上面 (b) 的闭式解 $\frac{2}{3\sqrt{0.7}}\tanh^{-1}\sqrt{0.7}=0.964$，数值积分同），所以上文写作 13.5 Gyr。13.8 Gyr（精确为 13.78）是附录 B.3 基准宇宙学（$h=0.677$，$\Omega_\Lambda=0.689$，并计入辐射）的值——上图把 $h$ 调到 0.677、$\Omega_\Lambda$ 调到 0.69 即可复现。`}</Box>
         </>}>
         <Tx>{R`假设今天的宇宙是欧氏的，同时含有物质和宇宙学常数，后者的能量密度不随时间变化。积分 \eqref{1.2} 求宇宙今天的年龄（由于辐射只在宇宙年龄中很小的一部分时间里主导，只计入物质与宇宙学常数是很好的近似）。即假设 $\rho(t_0)=\rho_{\rm cr}$，用 \eqref{1.3} 写出`}</Tx>
         <Eq n="1.11" say={R`把 Friedmann 方程倒过来：每一小段标度因子的增长 $da/a$ 所花的时间，等于哈勃时间乘以当时膨胀率倒数的相对值；物质项 $\propto a^{-3}$，$\Lambda$ 项不变。`}>{R`dt = H_0^{-1}\frac{da}{a}\left[\Omega_\Lambda + \frac{1-\Omega_\Lambda}{a^3}\right]^{-1/2}`}</Eq>

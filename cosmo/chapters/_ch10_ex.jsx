@@ -1,5 +1,5 @@
 // 习题 10.1–10.6 —— 式 (10.51)。解答：10.1、10.6 依据原书附录 A（A.128–A.137）；其余为编者给出（10.5 的数值已用 node 核对）。
-import { Sec, Tx, Eq, Exercise } from "@kit";
+import { Sec, Tx, Eq, Exercise, Box } from "@kit";
 
 const R = String.raw;
 
@@ -79,22 +79,23 @@ $$U=5A\Theta_2\cdot\frac32\sin^2\theta_k\cdot\frac{16}{15}\cdot\frac\pi2\sin2\ph
 
       <Exercise n="10.5" title={R`紧耦合极限下的 $\Pi$`} level="★★"
         hint={R`$\frac34(1-\mu^2)=\frac12[\mathcal P_0(\mu)-\mathcal P_2(\mu)]$；按 \eqref{5.66}，$\Theta_{P,l}=\frac{1}{(-i)^l}\int\frac{d\mu}{2}\mathcal P_l\Theta_P$，并用 $\int_{-1}^1\frac{d\mu}{2}\mathcal P_l\mathcal P_{l'}=\frac{\delta_{ll'}}{2l+1}$。`}
-        solution={R`**(a)** $|\tau'|\to\infty$ 时 \eqref{10.31} 右边方括号必须为零（原书题干写"\eqref{10.32} 的右边"，应为 \eqref{10.31}）：
+        solution={R`**(a)** $|\tau'|\to\infty$ 时 \eqref{10.31} 右边方括号必须为零：
 $$\Theta_P(\mu)=\frac34(1-\mu^2)\left[\Theta_2+\Theta_{P2}+\Theta_{P0}\right].$$
 **(b)** 只保留单极与四极：$\Theta_P(\mu)=\Theta_{P0}\mathcal P_0-5\Theta_{P2}\mathcal P_2(\mu)$（由 $\Theta_P=\sum_l(-i)^l(2l+1)\Theta_{P,l}\mathcal P_l$）。右边 $\frac34(1-\mu^2)=\frac12\mathcal P_0-\frac12\mathcal P_2$。比较 $\mathcal P_0$、$\mathcal P_2$ 的系数：
 $$\Theta_{P0}=\frac12\Pi,\qquad -5\Theta_{P2}=-\frac12\Pi\ \Rightarrow\ \Theta_{P2}=\frac1{10}\Pi,\qquad \Pi=\Theta_2+\Theta_{P2}+\Theta_{P0}.$$
 **(c)** 两个方程 $\Theta_{P0}=\frac12(\Theta_2+\Theta_{P2}+\Theta_{P0})$、$\Theta_{P2}=\frac1{10}(\Theta_2+\Theta_{P2}+\Theta_{P0})$ 含三个未知数；用 $\Theta_2$ 表示两个偏振矩：第一式给 $\Theta_{P0}=\Theta_2+\Theta_{P2}$，代入第二式 $10\Theta_{P2}=2\Theta_2+2\Theta_{P2}$，得
 $$\Theta_{P2}=\frac{\Theta_2}{4},\qquad \Theta_{P0}=\frac{5\Theta_2}{4}.$$
 **(d)** $\Pi=\Theta_2+\frac14\Theta_2+\frac54\Theta_2=\frac52\Theta_2$。代入 \eqref{10.40} 即得 \eqref{10.41} 的系数 $\frac34\cdot\frac52=\frac{15}8$。（数值核对：对 $\Theta_P=\frac34(1-\mu^2)\Pi$ 直接数值积分，$\Theta_{P0}/\Pi=0.5000$，$\Theta_{P2}/\Pi=0.1000$，$\Pi/\Theta_2=2.500$。）`}>
-        {R`求紧耦合极限下 $\Pi\equiv\Theta_2+\Theta_{P2}+\Theta_{P0}$ 的表达式。
+        <Tx>{R`求紧耦合极限下 $\Pi\equiv\Theta_2+\Theta_{P2}+\Theta_{P0}$ 的表达式。
 
-(a) 当 $\tau'$ 非常大时，\eqref{10.32}（应为 \eqref{10.31}）右边乘以它的各项必须相消。写出 $\Theta_P(\mu)$ 用矩 $\Theta_2$、$\Theta_{P2}$、$\Theta_{P0}$ 表示的这一等式。
+(a) 当 $\tau'$ 非常大时，\eqref{10.31} 右边乘以它的各项必须相消。写出 $\Theta_P(\mu)$ 用矩 $\Theta_2$、$\Theta_{P2}$、$\Theta_{P0}$ 表示的这一等式。
 
 (b) 把 $\Theta_P(\mu)$ 按 Legendre 多项式展开，只保留单极与四极。然后令 $\mathcal P_0$ 与 $\mathcal P_2$ 的系数相等。
 
 (c) 这得到含三个未知数的两个方程。证明用温度四极解出两个偏振矩，得 $\Theta_{P0}=5\Theta_2/4$、$\Theta_{P2}=\Theta_2/4$。
 
-(d) 用 (c) 的结果求 $\Pi$ 用 $\Theta_2$ 的表示。`}
+(d) 用 (c) 的结果求 $\Pi$ 用 $\Theta_2$ 的表示。`}</Tx>
+        <Box kind="warning" title="勘误：题 (a) 引用的方程编号">{R`原书题干印作"the right-hand side of Eq. (10.32)"；正确为 \eqref{10.31}（上文已改）。依据：\eqref{10.32} 只是 $\Pi$ 的定义，没有乘以 $\tau'$ 的项；含 $\tau'$ 的是偏振 Boltzmann 方程 \eqref{10.31} 的右边（$-\tau'[\cdots]$），本题的解答也正是令该方括号为零。`}</Box>
       </Exercise>
 
       <Exercise n="10.6" title={R`$h_+$ 分量是否产生 B 模？`} level="★★" fromBook

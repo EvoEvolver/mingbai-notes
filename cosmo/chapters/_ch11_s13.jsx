@@ -35,10 +35,12 @@ export function Sub113() {
       <Tx>{R`同样，由于星系位于窄红移片中，在平均红移 $\bar z$ 处计算 $\alpha_\perp$、$\alpha_\parallel$ 就足够了。
 
 **能学到什么。**马上会看到，测量观测功率谱就能约束 $\alpha_\perp$ 与 $\alpha_\parallel$。先看这样的测量能告诉我们什么。给定 $\alpha_\perp$ 的测量值，\eqref{11.31} 第二行的第一部分可以把 $\chi(\bar z)$ 用已知量表示：`}</Tx>
-      <Eq n="11.32" keyEq title={R`由 $\alpha_\perp$ 得距离`} say={R`测得 $\alpha_\perp$，就把基准距离修正为真实的共动距离 $\chi(\bar z)$。`}>{R`\chi(\bar z)=\chi_{\rm fid}(\bar z)\left[1+\alpha_\perp\right]`}</Eq>
+      <Eq n="11.32" keyEq title={R`由 $\alpha_\perp$ 得距离`} say={R`测得 $\alpha_\perp$，就把基准距离修正为真实的共动距离 $\chi(\bar z)$。`}>{R`\chi(\bar z)=\chi_{\rm fid}(\bar z)\left[1-\alpha_\perp\right]`}</Eq>
       <Tx>{R`类似地，由 $\alpha_\parallel$ 得`}</Tx>
       <Eq n="11.33" keyEq title={R`由 $\alpha_\parallel$ 得哈勃率`} say={R`测得 $\alpha_\parallel$，就把基准哈勃率修正为真实的 $H(\bar z)$。`}>{R`H(\bar z)=H_{\rm fid}(\bar z)\left[1+\alpha_\parallel\right].`}</Eq>
-      <Box kind="warning" title={R`疑似勘误：\eqref{11.32} 的符号`}>{R`由 \eqref{11.2} $\chi=\chi_{\rm fid}-\sym{ch11-dchi}{\delta\chi}$ 与 \eqref{11.31} $\alpha_\perp=\sym{ch11-dchi}{\delta\chi}/\chi_{\rm fid}$，严格地应有 $\chi(\bar z)=\chi_{\rm fid}(\bar z)[1-\alpha_\perp]$；而 \eqref{11.33} 与 $\sym{ch11-dH}{\delta H}=H-H_{\rm fid}$ 一致，符号正确。原书 \eqref{11.32} 的 "$+$" 与它自己的定义不一致。本页的交互图按 \eqref{11.2}、\eqref{11.31} 的定义计算：$\alpha_\perp=(\chi_{\rm fid}-\chi)/\chi_{\rm fid}$。物理结论不变——测到 $\alpha_\perp$ 就测到了距离。`}</Box>
+      <Box kind="warning" title={R`勘误：\eqref{11.32} 的符号`}>{R`**原书印作** $\chi(\bar z)=\chi_{\rm fid}(\bar z)[1+\alpha_\perp]$。**正确为** $\chi(\bar z)=\chi_{\rm fid}(\bar z)[1-\alpha_\perp]$（上式已改）。
+
+**依据。**由 \eqref{11.2}，$\chi=\chi_{\rm fid}-\sym{ch11-dchi}{\delta\chi}$；由 \eqref{11.31}，$\alpha_\perp=\sym{ch11-dchi}{\delta\chi}/\chi_{\rm fid}$，故 $\chi=\chi_{\rm fid}(1-\alpha_\perp)$，与 \eqref{11.27} 的横向缩放 $(x^1,x^2)=[1-\alpha_\perp](x^1_{\rm obs},x^2_{\rm obs})$ 也一致（距离高估时 $\alpha_\perp>0$，真实距离更小）。而 \eqref{11.33} 与 $\sym{ch11-dH}{\delta H}=H-H_{\rm fid}$ 一致，无需改动。本页交互图本来就按 \eqref{11.2}、\eqref{11.31} 的定义计算：$\alpha_\perp=(\chi_{\rm fid}-\chi)/\chi_{\rm fid}$。`}</Box>
       <Tx>{R`也就是说，测量这两个畸变参数能推出给定红移 $\bar z$ 处的距离 $\chi(\bar z)$ 与哈勃率 $H(\bar z)$。
 
 **从功率谱中提取。**现在说明怎样从星系功率谱中提取 $\alpha_\perp$、$\alpha_\parallel$。这与 \eqref{11.20} 类似。上一小节已算出红移空间畸变的贡献，现在只需加入坐标缩放 \eqref{11.31} 的效应。这时必须跟踪它对 $\delta_{\rm g}$ **宗量**的影响：缩放在空间上是均匀的，因而是**零阶**效应（不同于 RSD，那里本动速度造成的位移是一阶的）。最后还要把 \eqref{11.15} 之后丢掉的 Jacobian 因子 $\bar J$ 加回来，它保证归一化正确。得`}</Tx>
@@ -49,7 +51,7 @@ export function Sub113() {
         { tex: R`x^{1,2}_{\rm obs}=(1+\alpha_\perp)x^{1,2},\qquad x^3_{\rm obs}=(1+\alpha_\parallel)x^3`, why: R`反解 \eqref{11.31}（线性阶）。` },
         { tex: R`d^3x_{\rm obs}=(1+\alpha_\perp)^2(1+\alpha_\parallel)\,d^3x`, why: R`体积元的缩放。` },
         { tex: R`\boldsymbol k_{\rm obs}\cdot\boldsymbol x_{\rm obs}=(1+\alpha_\perp)(k^1_{\rm obs}x^1+k^2_{\rm obs}x^2)+(1+\alpha_\parallel)k^3_{\rm obs}x^3=\boldsymbol k[\boldsymbol k_{\rm obs}]\cdot\boldsymbol x`, why: R`于是相因子只依赖缩放后的波矢 \eqref{11.35}。` },
-        { tex: R`\bar J(1+\alpha_\perp)^2(1+\alpha_\parallel)=1`, why: R`$\bar J=|d^3x/d^3x_{\rm obs}|=(1-\alpha_\perp)^2(1-\alpha_\parallel)$ 正是这个体积因子的倒数（见 \eqref{11.13} 下方的勘误说明）。` },
+        { tex: R`\bar J(1+\alpha_\perp)^2(1+\alpha_\parallel)=1`, why: R`$\bar J=|d^3x/d^3x_{\rm obs}|=(1-\alpha_\perp)^2(1-\alpha_\parallel)$ 正是这个体积因子的倒数（见 \eqref{11.13} 下方的勘误：按原书 \eqref{11.14} 的符号则不能相消）。` },
       ]} />
       <Tx>{R`\eqref{11.34} 中的前置因子借助 \eqref{11.14} 简单地化为 1。这不是奇迹，而是因为给定体积中的星系数与我们用来描述它们的坐标无关：$N_{\rm g}=n_{\rm g}\Delta x^3=n_{\rm g,obs}\Delta x^3_{\rm obs}$。对 $d^3x$ 的积分给出 $\delta_{\rm g,RSD}$，即在 $\boldsymbol k[\boldsymbol k_{\rm obs}]$ 处取值的 \eqref{11.22}。也就是说，基准宇宙学与真实宇宙学之差在 Fourier 空间星系密度中表现为波矢的一个简单缩放：`}</Tx>
       <Eq n="11.36" say={R`观测坐标中的星系 Fourier 模式 = Kaiser 公式在缩放后的真实波矢处取值。`}>{R`\delta_{\rm g,obs}(\boldsymbol k_{\rm obs})=[b_1+f\mu_k^2]\delta_{\rm m}(\boldsymbol k)\Big|_{\boldsymbol k=\left([1+\alpha_\perp]k^1_{\rm obs},\ [1+\alpha_\perp]k^2_{\rm obs},\ [1+\alpha_\parallel]k^3_{\rm obs}\right)}.`}</Eq>

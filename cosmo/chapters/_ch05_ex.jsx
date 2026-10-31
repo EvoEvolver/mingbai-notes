@@ -1,5 +1,5 @@
 // 习题 5.1–5.6 —— 式 (5.75)–(5.77)。解答：5.3、5.4 依据原书附录 A；其余为编者给出。
-import { Sec, Tx, Eq, Exercise } from "@kit";
+import { Sec, Tx, Eq, Box, Exercise } from "@kit";
 
 const R = String.raw;
 
@@ -31,8 +31,9 @@ $$\tilde h_{ij}\hat p^i\hat p^j=-2\tilde{\rm n}(1-\mu^2)+(\tilde h+4\tilde{\rm n
         hint={R`对 \eqref{5.5} 乘以 $d^3p/(2\pi)^3$ 积分；第二项用 \eqref{5.40} 同样的分部积分。`}
         solution={R`对 \eqref{5.5} 积分：$\frac{\partial}{\partial t}\int\frac{d^3p}{(2\pi)^3}f^{(0)}-H\int\frac{d^3p}{(2\pi)^3}p\frac{\partial f^{(0)}}{\partial p}=0$。第一项是 $\partial n/\partial t$。第二项分部积分：$\int_0^\infty dp\,p^3\partial_pf^{(0)}=-3\int_0^\infty dp\,p^2f^{(0)}$（边界项在 $p=0$ 与 $p\to\infty$ 处为零），所以它等于 $-3n$。于是
 $$\frac{\partial n}{\partial t}+3Hn=0\ \Leftrightarrow\ \frac{d(na^3)}{dt}=0\ \Rightarrow\ n\propto a^{-3}.$$
-这个结论与 $f^{(0)}$ 的具体形式无关（只要它是各向同性的）。原书题面写"falls off as $a^3$"，意思是按 $a^{-3}$ 下降。`}>
-        {R`从零阶未积分的 Boltzmann 方程 \eqref{5.5} 出发。对所有动量积分，证明数密度按 $a^{-3}$ 下降。`}
+这个结论与 $f^{(0)}$ 的具体形式无关（只要它是各向同性的）。`}>
+        <Tx>{R`从零阶未积分的 Boltzmann 方程 \eqref{5.5} 出发。对所有动量积分，证明数密度按 $a^{-3}$ 下降。`}</Tx>
+        <Box kind="warning" title={R`勘误：题面中的 $a^3$ 应为 $a^{-3}$`}>{R`原书题面印作"the number density falls off as $a^3$"。正确为按 $a^{-3}$ 下降：粒子数守恒、共动体积 $\propto a^3$，故 $n\propto a^{-3}$；由解答中的 $\partial_tn+3Hn=0$ 亦直接得出。`}</Box>
       </Exercise>
 
       <Exercise n="5.3" title="Pauli 阻塞可以忽略" level="★★" fromBook
@@ -47,15 +48,18 @@ $$f_e^{\rm MAX}=10^{-21}\,\Omega_{\rm b}h^2\,a^{-3/2}.$$
 
       <Exercise n="5.4" title="Compton 散射的角依赖" level="★★★" fromBook
         hint={R`精确振幅与角平均振幅之差为 $24\pi\sigma_{\rm T}m_e^2[(\hat{\boldsymbol p}\cdot\hat{\boldsymbol p}')^2-1/3]$；方括号是 $\frac23\mathcal P_2(\hat{\boldsymbol p}\cdot\hat{\boldsymbol p}')$。用球谐函数加法定理分离 $\hat{\boldsymbol p}$ 与 $\hat{\boldsymbol p}'$。`}
-        solution={R`本节推导中使用的振幅平方与题中给出的更精确表达式之差为 $24\pi\sigma_{\rm T}m_e^2[(\hat{\boldsymbol p}\cdot\hat{\boldsymbol p}')^2-1/3]$。方括号中的组合是 $\frac23$ 乘以二阶 Legendre 多项式。用球谐函数的加法定理改写，差值变为
+        solution={<>
+          <Tx>{R`本节推导中使用的振幅平方与题中给出的更精确表达式之差为 $24\pi\sigma_{\rm T}m_e^2[(\hat{\boldsymbol p}\cdot\hat{\boldsymbol p}')^2-1/3]$。方括号中的组合是 $\frac23$ 乘以二阶 Legendre 多项式。用球谐函数的加法定理改写，差值变为
 $$\Delta|\mathcal M|^2=16\pi\sigma_{\rm T}m_e^2\,\frac{4\pi}{5}\sum_{m=-2}^{2}Y_{2m}(\hat{\boldsymbol p})Y^*_{2m}(\hat{\boldsymbol p}').$$
-这就是要代入 \eqref{5.16} 多重积分、替代 $|\mathcal M|^2$ 的量。代入后只有 $m=0$ 项有贡献，因为其余 $Y_{2m}(\hat{\boldsymbol p}')$ 都有方位角依赖，积分为零。利用 $Y_{20}=\sqrt5\,\mathcal P_2/\sqrt{4\pi}$（以 $\hat{\boldsymbol k}$ 为极轴；原书附录写作 $-\sqrt5\mathcal P_2/\sqrt{4\pi}$，按标准约定应为正号，但 $Y_{20}Y_{20}^*$ 与符号无关，不影响结果），由各向异性 Compton 散射带来的新碰撞项为
+这就是要代入 \eqref{5.16} 多重积分、替代 $|\mathcal M|^2$ 的量。代入后只有 $m=0$ 项有贡献，因为其余 $Y_{2m}(\hat{\boldsymbol p}')$ 都有方位角依赖，积分为零。利用 $Y_{20}=\sqrt5\,\mathcal P_2/\sqrt{4\pi}$（以 $\hat{\boldsymbol k}$ 为极轴；见下方勘误），由各向异性 Compton 散射带来的新碰撞项为
 $$\Delta C[f(\boldsymbol p)]=\frac{\pi^2n_e\sigma_{\rm T}}{p}\mathcal P_2(\mu)\int\frac{d^3p'}{(2\pi)^3p'}\mathcal P_2(\hat{\boldsymbol p}'\cdot\hat{\boldsymbol k})\left\{\delta_{\rm D}^{(1)}(p-p')+(\boldsymbol p-\boldsymbol p')\cdot\boldsymbol u_{\rm b}\frac{\partial\delta_{\rm D}^{(1)}(p-p')}{\partial p'}\right\}\{f(\boldsymbol p')-f(\boldsymbol p)\}.$$
 现在做对 $d\Omega'$ 的角向积分。线性阶上唯一存活的是正比于 $\delta_{\rm D}^{(1)}(p-p')f(\boldsymbol p')$ 的项（$f(\boldsymbol p)$ 与 $f^{(0)}(p')$ 不依赖 $\hat{\boldsymbol p}'$，乘 $\mathcal P_2$ 积分为零；速度项乘扰动是二阶），剩下
 $$\Delta C[f(\boldsymbol p)]=-\frac{n_e\sigma_{\rm T}}{2p}\mathcal P_2(\mu)\int_0^\infty p'dp'\,\delta_{\rm D}^{(1)}(p-p')\,p'\frac{\partial f^{(0)}}{\partial p'}\times\int_{-1}^1\frac{d\mu'}{2}\mathcal P_2(\mu')\Theta(\mu').$$
 角向积分给出 $-\Theta_2$（由 \eqref{5.66}，$\int\frac{d\mu}2\mathcal P_2\Theta=(-i)^2\Theta_2=-\Theta_2$）。再对 Dirac $\delta_{\rm D}^{(1)}$ 函数积分，得
 $$\Delta C[f(\boldsymbol p)]=p\frac{\partial f^{(0)}}{\partial p}n_e\sigma_{\rm T}\frac12\mathcal P_2(\mu)\Theta_2.$$
-这相当于在 \eqref{5.22} 的方括号中添加一项 $-\mathcal P_2\Theta_2/2$，从而解释了 \eqref{5.67} 中对应的项。`}>
+这相当于在 \eqref{5.22} 的方括号中添加一项 $-\mathcal P_2\Theta_2/2$，从而解释了 \eqref{5.67} 中对应的项。`}</Tx>
+          <Box kind="warning" title={R`勘误：原书附录中 $Y_{20}$ 的符号`}>{R`原书附录 A 习题 5.4 解答在 (A.82) 后印作 $Y_{20}=-\sqrt5\,\mathcal P_2/\sqrt{4\pi}$。正确为 $Y_{20}=+\sqrt{5/4\pi}\,\mathcal P_2$：依据 $Y_{20}(\theta)=\sqrt{5/16\pi}\,(3\cos^2\theta-1)$，在 $\theta=0$ 处为正（Condon–Shortley 相位只影响 $m$ 为奇数的分量）。由于只出现 $Y_{20}Y_{20}^*$，此符号不影响最终结果。`}</Box>
+        </>}>
         {R`计入 Compton 散射的角依赖。从 \eqref{5.16} 出发，但不用角平均的振幅平方 \eqref{5.18}，而用正确的偏振平均表达式 \eqref{5.17}。证明计入角依赖后会引入 \eqref{5.67} 中的因子 $(1/2)\mathcal P_2(\mu)\Theta_2$。`}
       </Exercise>
 

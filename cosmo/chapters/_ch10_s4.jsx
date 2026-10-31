@@ -33,7 +33,8 @@ export function Sec104() {
       </Sub>
 
       <Sub n="10.4.2" title="Line-of-sight solution" zh="视线积分解">
-        <Tx>{R`**形式解。**现在求解偏振的 Boltzmann 方程。仿照 \eqref{9.49}，\eqref{10.31} 的形式解为（原书此处写作"\eqref{10.32} 的形式解"，应为 \eqref{10.31}）`}</Tx>
+        <Tx>{R`**形式解。**现在求解偏振的 Boltzmann 方程。仿照 \eqref{9.49}，\eqref{10.31} 的形式解为`}</Tx>
+        <Box kind="warning" title="勘误：引用的方程编号">{R`原书此处印作"the formal solution to Eq. (10.32)"；正确为 \eqref{10.31}（上文已改）。依据：\eqref{10.32} 只是源 $\Pi$ 的定义，不是微分方程；被求解的是偏振 Boltzmann 方程 \eqref{10.31}，下面的 \eqref{10.34} 也正是 \eqref{10.31} 右边的产生项。`}</Box>
         <Eq n="10.33" title="形式解" say={R`今天的偏振 = 过去每一时刻产生的偏振，乘以自由流相位 $e^{ik\mu(\eta-\eta_0)}$ 与此后未被再散射的概率 $e^{-\tau}$，再对时间积分。`}>{R`\Theta_P(k,\mu) = \int_0^{\eta_0}d\eta\,e^{ik\mu(\eta-\eta_0)-\tau(\eta)}S_P(k,\mu,\eta),`}</Eq>
         <Tx>{R`其中源项为`}</Tx>
         <Eq n="10.34" title="源函数" say={R`源函数就是 \eqref{10.31} 右边的产生项；损失项 $\tau'\Theta_P$ 已被因子 $e^{-\tau}$ 吸收。`}>{R`S_P(k,\mu,\eta) = -\frac34\tau'(1-\mu^2)\Pi.`}</Eq>
@@ -106,8 +107,8 @@ export function Sec105() {
 - 偶极受光子扩散的影响较小，所以偏振功率谱在小尺度上的**阻尼较弱**，这也能从图中看出。
 
 **温度–偏振互相关。**\figref{10.9} 还画出了温度与偏振的互相关，它由温度与 E 模结果组合而得：`}</Tx>
-      <Eq n="10.46" keyEq title="温度–E 模互功率谱" say={R`TE 互谱 = 温度转移函数与 E 模转移函数之积对原初功率谱加权积分；两者相位相差约 $90^\circ$，所以 $C_{TE}$ 随 $l$ 正负交替。`}>{R`C_{TE}(l) = \frac2\pi\int_0^\infty dk\,k^2\left|\mathcal T_l^*(k)\sym{TE}{\mathcal T}^E_l(k)\right|P_{\mathcal R}(k).`}</Eq>
-      <Box kind="warning" title="疑似勘误：(10.46) 中的绝对值">{R`原书 \eqref{10.46} 在 $\mathcal T_l^*\sym{TE}{\mathcal T}^E_l$ 外加了绝对值号（此处按原书转写）。若真取绝对值，$C_{TE}$ 将恒为正，与紧接着讨论的"$l\lesssim200$ 处 $C_{TE}<0$"矛盾。正确的式子应为 $C_{TE}(l)=\frac2\pi\int_0^\infty dk\,k^2\,{\rm Re}\left[\mathcal T_l^*(k)\sym{TE}{\mathcal T}^E_l(k)\right]P_{\mathcal R}(k)$（对实的转移函数即直接相乘），保留符号。另外原书在 \eqref{10.46} 之后写的"$\Theta^E_l(k)$"应即 $\sym{TE}{\mathcal T}^E_l(k)$。`}</Box>
+      <Eq n="10.46" keyEq title="温度–E 模互功率谱" say={R`TE 互谱 = 温度转移函数与 E 模转移函数之积对原初功率谱加权积分；两者相位相差约 $90^\circ$，所以 $C_{TE}$ 随 $l$ 正负交替。`}>{R`C_{TE}(l) = \frac2\pi\int_0^\infty dk\,k^2\,\mathcal T_l^*(k)\sym{TE}{\mathcal T}^E_l(k)\,P_{\mathcal R}(k).`}</Eq>
+      <Box kind="warning" title={R`勘误：\eqref{10.46} 中的绝对值号`}>{R`原书印作 $C_{TE}(l)=\frac2\pi\int_0^\infty dk\,k^2\left|\mathcal T_l^*(k)\sym{TE}{\mathcal T}^E_l(k)\right|P_{\mathcal R}(k)$；正确为不带绝对值的 $\frac2\pi\int_0^\infty dk\,k^2\,\mathcal T_l^*(k)\sym{TE}{\mathcal T}^E_l(k)\,P_{\mathcal R}(k)$（上式已改；乘积按实部理解，对实的转移函数即直接相乘）。依据：互谱必须保留符号——取绝对值将使 $C_{TE}$ 恒为正，与原书 \figref{10.9} 中正负交替的 TE 曲线以及紧接着讨论的"$l\lesssim200$ 处 $C_{TE}<0$"直接矛盾；与 \eqref{10.44} 的 $|\sym{TE}{\mathcal T}^E_l|^2$ 不同，交叉谱是两个不同量的乘积而非模方。另外，原书在 \eqref{10.46} 之后写"$\Theta^E_l(k)$ 的计算"，应为 $\sym{TE}{\mathcal T}^E_l(k)$（下文已改）。`}</Box>
       <Tx>{R`注意 \eqref{10.44} 与 \eqref{10.46} 在平直天空近似之外依然成立，只是 $\sym{TE}{\mathcal T}^E_l(k)$ 的计算会复杂一些。
 
 **TE 反相关：暴胀的又一证据。**在 $l\lesssim200$ 处看到的 $T$ 与 $E$ 的反相关（$C_{TE}(l)<0$）意义重大：它直接源于初条件是在**视界之外**设定的，因而只激发了声学振荡的余弦模（\eqref{9.26}、\eqref{9.28}）。若正弦模与余弦模都被激发，温度谱或偏振谱中都不会出现一系列相干的峰谷（Dodelson 2003）。当然，声学振荡在温度谱中早已被观测到。但第一个声学峰在 $\ell\sim200$，对应复合时已在视界内的物理尺度。人们也许能构造一个在复合前后产生扰动的可行模型，并小心地让它只产生余弦模。然而 TE 谱中的下凹从 $\ell\sim30$ 就开始了，对应复合时**仍在视界外**的尺度。因此，任何在视界内产生扰动的模型都根本无法解释这些尺度上非零的 $C_{TE}(\ell)$。观测到这一特征，构成了初始扰动起源要早得多的有力证据，而暴胀为此提供了自然的解释。\figref{10.10} 表明，这一信号如今已被测得非常精确。`}</Tx>

@@ -100,7 +100,7 @@ export const NOTATION = [
   { sym: R`\bar n_{\rm g}`, name: "星系平均数密度", def: R`三维（$h^3{\rm Mpc}^{-3}$）或角数密度（\exref{14.7}，每单位立体角）；Poisson 散粒噪声 $P_N=1/\bar n_{\rm g}$`, unit: R`$h^3$Mpc$^{-3}$` },
   { sym: R`\boldsymbol x`, name: "共动位置", def: R`$\boldsymbol x_i$：第 $i$ 个网格点；$\boldsymbol x_\alpha$：第 $\alpha$ 个子体积（\exref{14.8}）`, unit: R`$h^{-1}$Mpc` },
   { sym: R`V`, name: "巡天体积", def: R`$V=L^3$；模式数 $\propto V$（\eqref{14.53}），所以样本方差误差 $\propto V^{-1/2}$`, unit: R`$h^{-3}$Mpc$^3$`, eq: "14.53" },
-  { sym: R`m_{k,\alpha}`, name: "区间 α 中的模式数", def: R`$m_{k,\alpha}=\frac{1}{4\pi^2}Vk_\alpha^2\Delta k$（\eqref{14.53}）；因 $\delta_{\rm g}$ 为实场只计一半的模式`, unit: "无量纲", eq: "14.53" },
+  { sym: R`m_{k,\alpha}`, name: "区间 α 中的模式数", def: R`$m_{k,\alpha}=\frac{1}{2\pi^2}Vk_\alpha^2\Delta k$（\eqref{14.53}，已按勘误去掉原书的 $\frac12$）：壳层内全部离散波矢数，即实自由度数`, unit: "无量纲", eq: "14.53" },
   { sym: R`m_{k,\beta}`, name: "区间 β 中的模式数", def: R`同 $m_{k,\alpha}$`, unit: "无量纲" },
   { sym: R`P_{\rm g}`, name: "星系功率谱", def: R`$P_{\rm g}(k)$：星系过密度的（真实）功率谱；离散归一化下 $\langle\delta_{\rm g}(\boldsymbol k)\delta_{\rm g}(\boldsymbol k')\rangle=\delta_{\boldsymbol k,-\boldsymbol k'}[P_{\rm g}+P_N]$（\eqref{14.57}）`, unit: R`$h^{-3}$Mpc$^3$`, eq: "14.57" },
   { sym: R`\hat P_{\rm g}`, name: "星系功率谱估计量", def: R`区间内 $|\delta_{\rm g}(\boldsymbol k)|^2$ 的平均减去噪声（\eqref{14.54}）`, unit: R`$h^{-3}$Mpc$^3$`, eq: "14.54" },

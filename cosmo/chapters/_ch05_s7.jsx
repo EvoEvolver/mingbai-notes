@@ -41,7 +41,7 @@ $l=0$ 时 \eqref{5.66} 就是 \eqref{5.20}（$\mathcal P_0=1$，Fourier 空间�
       <Eq n="5.70" keyEq title="CDM Euler 方程" say="暗物质速度：哈勃摩擦使其衰减，引力势梯度驱动它。">{R`{u_{\rm c}}' + \frac{a'}{a}u_{\rm c} = -ik\Psi,`}</Eq>
       <Eq n="5.71" say="重子连续性方程：与暗物质相同。">{R`\delta_{\rm b}' + iku_{\rm b} = -3\Phi',`}</Eq>
       <Eq n="5.72" title="重子 Euler 方程" say={R`重子速度：与暗物质相同的哈勃摩擦与引力，加上 Compton 拖曳——强度为 $\tau'/R$，把 $u_{\rm b}$ 拉向光子速度 $-3i\Theta_1$。`}>{R`{u_{\rm b}}' + \frac{a'}{a}u_{\rm b} = -ik\Psi + \frac{\tau'}{R}\left[u_{\rm b}+3i\Theta_1\right],`}</Eq>
-      <Eq n="5.73" say={R`中微子温度扰动：无碰撞的“光子方程”，带有质量带来的 $p/E_\nu$ 因子和 $p$ 依赖。`}>{R`\mathcal N' + ik\mu\frac{p}{E_\nu(p)}\mathcal N - Hp\frac{\partial}{\partial p}\mathcal N = -\Phi' - ik\mu\frac{E_\nu(p)}{p}\Psi.`}</Eq>
+      <Eq n="5.73" say={R`中微子温度扰动：无碰撞的“光子方程”，带有质量带来的 $p/E_\nu$ 因子和 $p$ 依赖。`}>{R`\mathcal N' + ik\mu\frac{p}{E_\nu(p)}\mathcal N - aHp\frac{\partial}{\partial p}\mathcal N = -\Phi' - ik\mu\frac{E_\nu(p)}{p}\Psi.`}</Eq>
       <Tx>{R`在重子速度方程 \eqref{5.72} 中，光子与重子密度之比被替换为 $R$，定义为`}</Tx>
       <Eq n="5.74" keyEq title="重子–光子比 R" say={R`$R$ 的倒数 = $4\rho_\gamma/3\rho_{\rm b}$：光子与重子“惯性”（动量密度）之比；$R\propto a$，复合时约 0.6。`}>{R`\frac{1}{R(\eta)} \equiv \frac{4\rho_\gamma(\eta)}{3\rho_{\rm b}(\eta)}.`}</Eq>
       <Box kind="warning" title="R 不是重子–光子数密度比">{R`不要把 $R$ 与光子–重子**数**密度之比 $\eta_{\rm b}$ 混淆：$\eta_{\rm b}\approx6\times10^{-10}$ 不随时间变化，而且小得多！$R=3\rho_{\rm b}/4\rho_\gamma$ 是**能量**密度之比，$\propto a$。（\eqref{5.72} 中 $\frac{\tau'}{R}$ 与 \eqref{5.61} 中 $\tau'\frac{4\rho_\gamma}{3\rho_{\rm b}}$ 相同。）`}</Box>

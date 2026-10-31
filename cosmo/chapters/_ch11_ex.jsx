@@ -125,7 +125,7 @@ $$J_0(l'\theta)\xrightarrow{l'\gg1}\mathcal P_{l'}(\cos\theta).\tag{A.144}$$
         hint={R`用 \eqref{5.18} 的 $\sum|\mathcal M|^2=32\pi\sigma_{\rm T}m_e^2$；只保留 \eqref{11.52} 的二阶项；$z$ 轴取沿电子动量，$[(\boldsymbol p-\boldsymbol p')\cdot\boldsymbol q]^2=q^2(p_z-p'_z)^2$；对 $p'$ 分部积分两次；最后对 $\mu'$ 积分、对 $\mu=p_z/p$ 平均。`}
         solution={R`完整推导见 \eqref{11.54} 下方的折叠推导框。要点：(1) 前置因子 $\frac{\pi}{2m_ep}\cdot\frac{1}{2m_e}\cdot\frac{1}{2p'}\cdot32\pi\sigma_{\rm T}m_e^2=\frac{4\pi^2\sigma_{\rm T}}{pp'}$；(2) 二阶项的 $\frac12$ 与之合成 $\frac{2\pi^2\sigma_{\rm T}}{m_e^2p}q^2$；(3) 分部积分两次把 $\partial^2_{p'}$ 移到 $p'(p_z-p'_z)^2[f(p')-f(p)]$ 上；(4) 因 $f(p')-f(p)$ 在 $p'=p$ 处为零，只剩 $2g'f'+gf''$，$g=p'(p\mu-p'\mu')^2$；(5) 角积分与平均给出 $\frac{8\pi}3p^2(4f'+pf'')$；(6) 电子动能 $\int\frac{d^3q}{(2\pi)^3}f_eq^2=\frac32m_en_eT_e$。合起来
 $$C[f]\big|_{\rm SZ}=\frac{2\pi^2\sigma_{\rm T}}{m_e^2p}\cdot\frac32m_en_eT_e\cdot\frac{1}{(2\pi)^3}\cdot\frac{8\pi}{3}p^2\big(4f'+pf''\big)=\frac{n_eT_e\sigma_{\rm T}}{m_e}\big(4pf'+p^2f''\big).$$
-注意：要得到 \eqref{11.54}，\eqref{11.53} 应理解为前置因子带 $1/p$、末因子为 $f(p')-f(p)$（见正文中的勘误说明）。`}>
+注意：正文 \eqref{11.53} 已按勘误改为前置因子带 $1/p$、末因子为 $f(p')-f(p)$；照原书印刷形式（无 $1/p$、末因子 $f(p)-f(p')$）得不到 \eqref{11.54}。`}>
         {R`推导从 \eqref{11.51} 到 \eqref{11.54} 的步骤。`}
       </Exercise>
 

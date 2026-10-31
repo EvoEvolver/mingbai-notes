@@ -112,9 +112,9 @@ export function Sec93() {
         <Tx>{R`既然 $c_s$ 是声速，声视界就是声波到 $\eta$ 时刻为止走过的共动距离。（基准宇宙学中 $r_s(\eta_*)\approx144\,\mathrm{Mpc}$，而 $\eta_*/\sqrt3\approx162\,\mathrm{Mpc}$：重子使声波走得更慢。）
 
 **完整解。**紧耦合下的光子温度解可以由 \eqref{9.23} 的齐次解构造：`}</Tx>
-        <Eq n="9.25" say={R`Green 函数解：两个齐次解的组合，加上外力 $\frac{k^2}3(\Phi-\Psi)$ 对 Green 函数（分子为两解的交叉差、分母为 Wronski 行列式）的积分。`}>{R`\begin{aligned}\Theta_0(\boldsymbol k,\eta)+\Phi(\boldsymbol k,\eta) &= C_1(\boldsymbol k)S_1(\eta) + C_2(\boldsymbol k)S_2(\eta)\\ &\quad+ \frac{k^2}{3}\int_0^\eta d\tilde\eta\,[\Phi(\boldsymbol k,\tilde\eta) - \Psi(\boldsymbol k,\tilde\eta)]\,\frac{S_1(\tilde\eta)S_2(\eta) - S_1(\eta)S_2(\tilde\eta)}{S_1(\tilde\eta)S_2'(\tilde\eta) - S_1'(\tilde\eta)S_2(\eta)}.\end{aligned}`}</Eq>
-        <Box kind="warning" title="疑似勘误：(9.25) 的分母">
-          <Tx>{R`原书分母最后一个因子印作 $S_2(\eta)$。Green 函数的分母是在积分变量处取值的 Wronski 行列式 $W(\tilde\eta)=S_1(\tilde\eta)S_2'(\tilde\eta)-S_1'(\tilde\eta)S_2(\tilde\eta)$，应为 $S_2(\tilde\eta)$；正文随后说"分母化为 $-kc_s(\tilde\eta)$"也只有这样才成立（$W=-kc_s[\sin^2+\cos^2]$）。上式按原书转写。`}</Tx>
+        <Eq n="9.25" say={R`Green 函数解：两个齐次解的组合，加上外力 $\frac{k^2}3(\Phi-\Psi)$ 对 Green 函数（分子为两解的交叉差、分母为 Wronski 行列式）的积分。`}>{R`\begin{aligned}\Theta_0(\boldsymbol k,\eta)+\Phi(\boldsymbol k,\eta) &= C_1(\boldsymbol k)S_1(\eta) + C_2(\boldsymbol k)S_2(\eta)\\ &\quad+ \frac{k^2}{3}\int_0^\eta d\tilde\eta\,[\Phi(\boldsymbol k,\tilde\eta) - \Psi(\boldsymbol k,\tilde\eta)]\,\frac{S_1(\tilde\eta)S_2(\eta) - S_1(\eta)S_2(\tilde\eta)}{S_1(\tilde\eta)S_2'(\tilde\eta) - S_1'(\tilde\eta)S_2(\tilde\eta)}.\end{aligned}`}</Eq>
+        <Box kind="warning" title={R`勘误：\eqref{9.25} 的分母`}>
+          <Tx>{R`原书分母印作 $S_1(\tilde\eta)S_2'(\tilde\eta)-S_1'(\tilde\eta)S_2(\eta)$（最后一个因子在 $\eta$ 处取值）；正确为 $S_1(\tilde\eta)S_2'(\tilde\eta)-S_1'(\tilde\eta)S_2(\tilde\eta)$，即上式。依据：Green 函数的分母是在积分变量处取值的 Wronski 行列式 $W(\tilde\eta)$；代入 \eqref{9.23} 得 $W=-kc_s(\tilde\eta)[\sin^2+\cos^2]=-kc_s(\tilde\eta)$，正是正文随后所说的"分母化为 $-kc_s(\tilde\eta)$"，并由此给出 \eqref{9.26} 中的 $+\frac{k}{\sqrt3}\sin[k(r_s-r_s')]$。原书的混合形式不是常数，无法得到 \eqref{9.26}。`}</Tx>
         </Box>
         <Tx>{R`这里我们又一次丢掉了 $R$ 的所有出现，只保留快速变化的正弦和余弦宗量中的 $R$。也就是说，例如 $S_1$ 的宗量仍取为含非零 $R$ 的 $kr_s$。（右边的外力也因此由 $\frac{k^2}3[\frac\Phi{1+R}-\Psi]$ 近似为 $\frac{k^2}3[\Phi-\Psi]$。）
 

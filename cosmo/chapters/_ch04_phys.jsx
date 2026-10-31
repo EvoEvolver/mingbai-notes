@@ -110,7 +110,7 @@ export function solveXe(c, { peebles = true, z0 = 1800, z1 = 20, n = 4000 } = {}
 }
 // 式 (4.43)：n_e σ_T / H
 export const scatOverH = (z, Xe, obh2 = 0.022, omh2 = 0.14) =>
-  123 * Xe * (obh2 / 0.022) * Math.sqrt(0.14 / omh2) * Math.pow((1 + z) / 1000, 1.5) / Math.sqrt(1 + (1 + z) / 3360 * 0.14 / omh2);
+  129 * Xe * (obh2 / 0.022) * Math.sqrt(0.14 / omh2) * Math.pow((1 + z) / 1000, 1.5) / Math.sqrt(1 + (1 + z) / 3360 * 0.14 / omh2);
 // 直接由定义 (4.40)–(4.42) 计算 n_e σ_T / H（σ_T = 0.6652e-24 cm²）
 export function scatOverHexact(z, Xe, c) {
   return Xe * c.nb(z) * 0.6652e-24 * C_CM_S / c.H(z);

@@ -1,5 +1,5 @@
 // 习题 3.1–3.13 —— 式 (3.87)–(3.95)。解答：3.2、3.6、3.7、3.8、3.12 依据原书附录 A；其余为编者给出。
-import { Sec, Tx, Eq, Exercise } from "@kit";
+import { Sec, Tx, Eq, Exercise, Box } from "@kit";
 import { NeutrinoFPlot } from "./_ch03_plots.jsx";
 
 const R = String.raw;
@@ -38,9 +38,8 @@ $$R_{\theta\theta}=-\frac{\partial\Gamma^\phi{}_{\theta\phi}}{\partial\theta}-\G
 $$R_{\phi\phi}=\frac{\partial\Gamma^\theta{}_{\phi\phi}}{\partial\theta}-\Gamma^\theta{}_{\phi\phi}\Gamma^\phi{}_{\phi\theta}=-(\cos^2\theta-\sin^2\theta)+\sin\theta\cos\theta\frac{\cos\theta}{\sin\theta}=\sin^2\theta.$$
 （$R_{\phi\phi}$ 的展开中 $\Gamma^\phi{}_{\theta\phi}\Gamma^\theta{}_{\phi\phi}$ 与 $-\Gamma^\phi{}_{\theta\phi}\Gamma^\theta{}_{\phi\phi}$ 两项相消。）最后
 $$R=g^{\mu\nu}R_{\mu\nu}=-R_{00}+\frac{1}{r^2}R_{\theta\theta}+\frac{1}{r^2\sin^2\theta}R_{\phi\phi}=\frac1{r^2}+\frac1{r^2}=\frac{2}{r^2},$$
-即 \eqref{3.88}。Ricci 标量因而度量了空间的弯曲：半径越小，弯得越厉害。
-
-*勘误提示：原书附录 A 的式 (A.52) 印作 $R=1/(2r^2)$，与 (A.51) 代入 $R_{\theta\theta}=1$、$R_{\phi\phi}=\sin^2\theta$ 的结果及题目 (3.88) 矛盾；正确值是 $2/r^2$。*`}</Tx>
+即 \eqref{3.88}。Ricci 标量因而度量了空间的弯曲：半径越小，弯得越厉害。`}</Tx>
+          <Box kind="warning" title={R`勘误：附录 A 式 (A.52) 的 Ricci 标量`}>{R`原书附录 A 的式 (A.52) 印作 $R=\dfrac{1}{2r^2}$。正确为 $R=\dfrac{2}{r^2}$（上式）。依据：把 (A.49)–(A.50) 的 $R_{\theta\theta}=1$、$R_{\phi\phi}=\sin^2\theta$ 代入 (A.51) $R=-R_{00}+r^{-2}R_{\theta\theta}+(r^2\sin^2\theta)^{-1}R_{\phi\phi}$，得 $1/r^2+1/r^2=2/r^2$；这也正是题目 \eqref{3.88} 要求证明的结果（半径 $r$ 的二维球面 Gauss 曲率为 $1/r^2$，$R=2K$）。另：同一附录 (A.35) 的前因子印作 $\frac{1}{2r^2\sin^{\theta}}$（排版错位），应为 $\frac{1}{2r^2\sin^2\theta}=\frac{g^{\phi\phi}}2$，上面已按正确形式书写。`}</Box>
         </>}>
         <Tx>{R`对由半径为 $r$ 的球面构成的 $2+1$ 维时空，求度规、Christoffel 符号、测地线方程和 Ricci 标量。
 

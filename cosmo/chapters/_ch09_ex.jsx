@@ -88,7 +88,7 @@ $$k_D^{-2}=\frac{4}{27}\,\frac{1}{2.3\times10^{-5}\,\Omega_{\rm b}h^2(1-Y_P/2)}\
 $$\int_0^a=\frac25a^{5/2}\cdot\frac52\Big[\frac{16}{15}s^{5/2}-\frac83s^{3/2}+2s^{1/2}-\frac{16}{15}y^{-5/2}\Big]=\frac25a^{5/2}f_D(y),$$
 展开 $\frac52[\cdots]=5\sqrt s-\frac{20}{3}s^{3/2}+\frac83(s^{5/2}-y^{-5/2})$，正是 \eqref{9.89}；$y\to\infty$ 时 $f_D\to5-\frac{20}3+\frac83=1$。代入 $H_0\sqrt{\Omega_{\rm m}}=3.33\times10^{-4}\sqrt{\Omega_{\rm m}h^2}\,\mathrm{Mpc^{-1}}$：
 $$k_D^{-2}=\frac{(4/27)(2/5)}{2.3\times10^{-5}\times3.33\times10^{-4}}\,a^{5/2}f_D\,(\Omega_{\rm b}h^2)^{-1}(1-Y_P/2)^{-1}(\Omega_{\rm m}h^2)^{-1/2}\,\mathrm{Mpc^2},$$
-系数为 $7.7\times10^6\,\mathrm{Mpc^2}$——形式与 \eqref{9.44} 相同，但数值是原书 $3.1\times10^6$ 的 $5/2$ 倍（见 \secref{9.4} 的勘误框；原书 \figref{9.8} 的虚线与 $7.7\times10^6$ 一致）。`}>
+系数为 $7.7\times10^6\,\mathrm{Mpc^2}$，即 \eqref{9.44}。（原书 \eqref{9.44} 误印为 $3.1\times10^6$，见 \secref{9.4} 的勘误框；原书 \figref{9.8} 的虚线与 $7.7\times10^6$ 一致。）`}>
         <Tx>{R`假设所有与氢相关的电子保持电离，并令 $R=0$。计算 \eqref{9.42} 定义的阻尼尺度 $k_D$。证明在此极限下阻尼尺度由 \eqref{9.44} 给出，其中`}</Tx>
         <Eq n="9.89" say={R`相等之前（辐射期）积分增长较慢的修正因子；物质主导深处（$y\to\infty$）趋于 1。`}>{R`f_D(y) = 5\sqrt{1+1/y} - \frac{20}{3}(1+1/y)^{3/2} + \frac83\left[(1+1/y)^{5/2} - 1/y^{5/2}\right].`}</Eq>
       </Exercise>
@@ -195,11 +195,13 @@ $$\Theta^{\rm T}_{l,t}(k,\eta_0)=-\frac12\int_{\eta_*}^{\eta_0}d\eta\,j_l[k(\eta
 代入 \eqref{9.94}，并用 $P_h(k)=P_{\rm T}(k)/4$ 作为视界外张量模（即 $\eta=0$ 时）的功率谱的定义，得
 $$C^{\rm T}(l)=\frac12\,\frac{9(l-1)l(l+1)(l+2)}{4\pi}\int_0^\infty dk\,k^2P_{\rm T}(k)\left\{\int_0^{\eta_0}d(k\eta)\frac{j_2(k\eta)}{k\eta}\left[\frac{j_{l-2}(k[\eta_0-\eta])}{(2l-1)(2l+1)}+2\frac{j_l(k[\eta_0-\eta])}{(2l-1)(2l+3)}+\frac{j_{l+2}(k[\eta_0-\eta])}{(2l+1)(2l+3)}\right]\right\}^2,\tag{A.125}$$
 这里因 $\eta_*\ll\eta_0$ 把时间积分下限设为零，并用了恒等式 $(j_1/x)'=-j_2/x$。前面的 $1/2$ 来自对 $+$、$\times$ 分量求和并换算到 $P_{\rm T}$。对 $P_{\rm T}$ 用 \eqref{7.102}（取 $n_{\rm T}=0$），定义新积分变量 $y\equiv k\eta_0$、$x\equiv k\eta$，得到
-$$C^{\rm T}(l)=\frac{9\pi}{2}(l-1)l(l+1)(l+2)\mathcal A_{\rm T}\int_0^\infty\frac{dy}{y}\left\{\int_0^ydx\frac{j_2(x)}{x}\left[\frac{j_{l-2}(y-x)}{(2l-1)(2l+1)}+2\frac{j_l(y-x)}{(2l-1)(2l+3)}+\frac{j_{l+2}(y-x)}{(2l+1)(2l+3)}\right]\right\}^2.\tag{A.126}$$
-(b) 对 $l=2$，(A.126) 中的二重积分等于 $2.14\times10^{-4}$，所以 $C^{\rm T}(l=2)=0.036\mathcal A_{\rm T}$。在 Sachs–Wolfe 极限下标量 $C(l=2)=4\mathcal A_s/75$。由此
-$$r_2\equiv\frac{C^{\rm T}(l=2)}{C(l=2)}=0.68\frac{\mathcal A_{\rm T}}{\mathcal A_s}=0.68r.\tag{A.127}$$
+$$C^{\rm T}(l)=\frac{9\pi}{4}(l-1)l(l+1)(l+2)\mathcal A_{\rm T}\int_0^\infty\frac{dy}{y}\left\{\int_0^ydx\frac{j_2(x)}{x}\left[\frac{j_{l-2}(y-x)}{(2l-1)(2l+1)}+2\frac{j_l(y-x)}{(2l-1)(2l+3)}+\frac{j_{l+2}(y-x)}{(2l+1)(2l+3)}\right]\right\}^2.\tag{A.126}$$
+(b) 对 $l=2$，(A.126) 中的二重积分等于 $2.14\times10^{-4}$，所以 $C^{\rm T}(l=2)=54\pi\times2.14\times10^{-4}\mathcal A_{\rm T}=0.036\mathcal A_{\rm T}$。在 Sachs–Wolfe 极限下，由 \eqref{9.80}，标量 $C(l=2)=\frac{2\pi}{25\cdot6}\mathcal A_s=\frac{\pi}{75}\mathcal A_s=0.0419\mathcal A_s$。由此
+$$r_2\equiv\frac{C^{\rm T}(l=2)}{C(l=2)}\approx0.87\frac{\mathcal A_{\rm T}}{\mathcal A_s}=0.87r.\tag{A.127}$$
 
-**编者核对。**本页数值计算二重积分得 $2.139\times10^{-4}$，与原书一致。但 (A.125) 化到 (A.126) 时前因子应为 $\frac12\cdot\frac{9\cdot24}{4\pi}\cdot2\pi^2=54\pi=\frac{9\pi}{4}\cdot24$，即 (A.126) 的 $\frac{9\pi}{2}$ 应为 $\frac{9\pi}{4}$；$0.036\mathcal A_{\rm T}$ 是按正确前因子 $54\pi\times2.14\times10^{-4}=0.0363$ 得到的（若按印出的 $9\pi/2$ 则为 0.073）。另一方面，标量 $C(2)=4\mathcal A_s/75$ 来自 \eqref{9.80} 的 $8/25$；按更正后的 $l(l+1)C(l)=\frac{2\pi}{25}\mathcal A_s$，$C(2)=\frac{\pi}{75}\mathcal A_s=0.0419\mathcal A_s$，于是 $r_2\approx0.036/0.0419\,r\approx0.87\,r$。无论哪种，$r_2$ 与常规的 $r$（\secref{7.6}，在枢轴尺度上定义的原初功率之比）是同一量级但不相等：张量模在进入视界后衰减，对四极矩的贡献相对标量 SW 效应要打折扣。`}>
+**勘误（附录 A）。**本页数值计算二重积分得 $2.139\times10^{-4}$，与原书一致；以下两处已在上文改正。(1) 原书 (A.126) 前因子印作 $\frac{9\pi}{2}$；正确为 $\frac{9\pi}{4}$。依据：由 (A.125) 代入 $P_{\rm T}=2\pi^2\mathcal A_{\rm T}k^{-3}$（\eqref{7.102}，$n_{\rm T}=0$），前因子为 $\frac12\cdot\frac{9}{4\pi}\cdot2\pi^2=\frac{9\pi}{4}$；原书自己的 $0.036\mathcal A_{\rm T}$ 正是 $\frac{9\pi}{4}\cdot24\times2.14\times10^{-4}=0.0363$（按 $\frac{9\pi}{2}$ 则为 0.073）。(2) 原书标量 $C(l=2)=4\mathcal A_s/75$、$r_2=0.68r$ 继承了 \eqref{9.80} 误印的 $8/25$；按改正后的 $\frac{2\pi}{25}$，$C(2)=\pi\mathcal A_s/75$，$r_2=0.0363/0.0419\,r\approx0.87r$。
+
+**与常规 $r$ 的关系。**$r_2$ 与常规的 $r$（\secref{7.6}，在枢轴尺度上定义的原初功率之比）是同一量级但不相等：张量模在进入视界后衰减，对四极矩的贡献相对标量 SW 效应要打折扣。`}>
         <Tx>{R`确定暴胀期间产生的引力波造成的温度各向异性谱。
 
 (a) 结合前两题的结果、你对 \exref{6.12} 的解答，以及 \eqref{7.102} 中引力波的原初振幅，求原初引力波造成的大角度角功率谱 $C^{\rm T}(l)$。

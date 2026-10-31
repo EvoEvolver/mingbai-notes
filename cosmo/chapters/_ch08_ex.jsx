@@ -1,5 +1,5 @@
 // 习题 8.1–8.13 —— 式 (8.87)–(8.91)。解答：8.4、8.8、8.13 依据原书附录 A；其余为编者给出（数值由本章 _ch08_phys.jsx 计算）。
-import { Sec, Tx, Eq, Exercise, Table, Figure } from "@kit";
+import { Sec, Tx, Eq, Box, Exercise, Table, Figure } from "@kit";
 
 const R = String.raw;
 
@@ -132,12 +132,11 @@ $$D_+(a)\propto H(a)\int^a\frac{da'}{(a'H(a'))^3},\tag{A.109}$$
         hint={R`Fermi–Dirac 分布的平均动量 $\langle p\rangle\approx3.15\,T_\nu$。速度 $v=p/\sqrt{p^2+m_\nu^2}$；时间 $\Delta t=1/H$ 内走过的共动距离 $x_{\rm fs}=v\Delta t/a$。`}
         solution={R`取典型动量 $p=3.15\,T_{\nu,0}/a$（Fermi–Dirac 的平均动量；有的书取 $3T$）。速度 $v=p/E=p/\sqrt{p^2+m_\nu^2}$。在 $\Delta t=1/H$ 内走过的物理距离 $v/H$，共动距离 $x_{\rm fs}=v/(aH)$，所以
 $$k_{\rm fs}=\frac{aH}{v}=aH\frac{\sqrt{p^2+m_\nu^2}}{p}=a^2H\sqrt{a^{-2}+\frac{m_\nu^2}{(3.15\,T_{\nu,0})^2}}.$$
-晚期 $m_\nu/T_{\nu,0}\gg a^{-1}$：$k_{\rm fs}\simeq\frac{m_\nu}{3.15\,T_{\nu,0}}a^2H$。数值：$T_{\nu,0}=1.946\,\mathrm K=1.677\times10^{-4}\,\mathrm{eV}$，$m_\nu=0.1\,\mathrm{eV}$ 时 $m_\nu/(3.15T_{\nu,0})=189$；$H_0=3.336\times10^{-4}h\,\mathrm{Mpc^{-1}}$，所以 $k_{\rm fs}\simeq0.063\,h\,\mathrm{Mpc^{-1}}\frac{m_\nu}{0.1\,\mathrm{eV}}\frac{a^2H}{H_0}$，即 \eqref{8.83}。
-
-**关于题面第一个等式。**按上面的推导，数值因子 3.2（$\approx3.15$）应当除在 $m_\nu/T_{\nu,0}$ 上，即 $k_{\rm fs}\simeq\sqrt{a^{-2}+m_\nu^2/(3.2T_{\nu,0})^2}\,a^2H$；若照题面写成 $3.2\sqrt{a^{-2}+m_\nu^2/T_{\nu,0}^2}\,a^2H$，晚期会得到 $0.64\,h\,\mathrm{Mpc^{-1}}$，比第二个等式大 $3.2^2\approx10$ 倍。我们判断这是原书的笔误。`}>
-        {R`计算中微子自由流尺度 $k_{\rm fs}$。先确定温度为 $T_{\nu,0}/a=1.946\,\mathrm K/a$ 的中微子的典型动量；然后计算具有该动量、质量为 $m_\nu$ 的中微子在时间间隔 $\Delta t=1/H$ 内走过的典型距离 $x_{\rm fs}$。自由流尺度为 $k_{\rm fs}=1/x_{\rm fs}$。证明它可以写成
-$$\begin{aligned}k_{\rm fs}(a) &\simeq 3.2\sqrt{a^{-2}+m_\nu^2/T_{\nu,0}^2}\,a^2H(a)\\ &\simeq 0.063\,h\,\mathrm{Mpc^{-1}}\frac{m_\nu}{0.1\,\mathrm{eV}}\frac{a^2H(a)}{H_0},\end{aligned}$$
-其中最后一个等式用了 $m_\nu/T_{\nu,0}\gg a^{-1}$，在所关心的晚期成立。`}
+晚期 $m_\nu/T_{\nu,0}\gg a^{-1}$：$k_{\rm fs}\simeq\frac{m_\nu}{3.15\,T_{\nu,0}}a^2H$。数值：$T_{\nu,0}=1.946\,\mathrm K=1.677\times10^{-4}\,\mathrm{eV}$，$m_\nu=0.1\,\mathrm{eV}$ 时 $m_\nu/(3.15T_{\nu,0})=189$；$H_0=3.336\times10^{-4}h\,\mathrm{Mpc^{-1}}$，所以 $k_{\rm fs}\simeq0.063\,h\,\mathrm{Mpc^{-1}}\frac{m_\nu}{0.1\,\mathrm{eV}}\frac{a^2H}{H_0}$，即 \eqref{8.83}。`}>
+        <Tx>{R`计算中微子自由流尺度 $k_{\rm fs}$。先确定温度为 $T_{\nu,0}/a=1.946\,\mathrm K/a$ 的中微子的典型动量；然后计算具有该动量、质量为 $m_\nu$ 的中微子在时间间隔 $\Delta t=1/H$ 内走过的典型距离 $x_{\rm fs}$。自由流尺度为 $k_{\rm fs}=1/x_{\rm fs}$。证明它可以写成
+$$\begin{aligned}k_{\rm fs}(a) &\simeq \sqrt{a^{-2}+m_\nu^2/(3.2\,T_{\nu,0})^2}\,a^2H(a)\\ &\simeq 0.063\,h\,\mathrm{Mpc^{-1}}\frac{m_\nu}{0.1\,\mathrm{eV}}\frac{a^2H(a)}{H_0},\end{aligned}$$
+其中最后一个等式用了 $m_\nu/T_{\nu,0}\gg a^{-1}$，在所关心的晚期成立。`}</Tx>
+        <Box kind="warning" title={R`勘误：题面第一个等式中因子 3.2 的位置`}>{R`原书题面印作 $k_{\rm fs}(a)\simeq3.2\sqrt{a^{-2}+m_\nu^2/T_{\nu,0}^2}\,a^2H(a)$。正确为 $\sqrt{a^{-2}+m_\nu^2/(3.2\,T_{\nu,0})^2}\,a^2H(a)$（上式已改）。依据：取典型动量 $p\simeq3.15\,T_{\nu,0}/a$，$k_{\rm fs}=aH\sqrt{p^2+m_\nu^2}/p=a^2H\sqrt{a^{-2}+m_\nu^2/(3.15T_{\nu,0})^2}$；晚期它给出 $\frac{m_\nu}{3.15T_{\nu,0}}a^2H=0.063\,h\,\mathrm{Mpc^{-1}}\frac{m_\nu}{0.1\,\mathrm{eV}}\frac{a^2H}{H_0}$，正是题面第二个等式（即 \eqref{8.83}）。按原书印法，晚期会得到 $0.64\,h\,\mathrm{Mpc^{-1}}$，比第二个等式大 $3.2^2\approx10$ 倍。`}</Box>
       </Exercise>
 
       <Exercise n="8.12" title={R`$k_{\rm NL}$ 随红移`} level="★★"

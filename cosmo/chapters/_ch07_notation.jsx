@@ -14,7 +14,7 @@ const CORE = [
   // ---------- 时间、坐标、视界 ----------
   { sym: R`t`, name: "宇宙时", en: "cosmic time", def: R`共动观测者的固有时；带点的量 $\dot X\equiv\partial X/\partial t$。谐振子一节中 $t$ 是振子的时间`, unit: "时间" },
   { sym: R`\eta`, name: "共形时间 / 共动视界", en: "conformal time", def: R`$d\eta=dt/a$。\secref{7.1} 中 $\eta(a)$ 是从 $t=0$ 起算的共动视界 \eqref{7.3}；此后按 \eqref{7.5} 重新定义，使 $\eta=0$ 对应暴胀结束，暴胀期间 $\eta<0$ 且 $\eta\simeq-1/(aH)$ \eqref{7.16}。撇号 $X'\equiv\partial X/\partial\eta$`, unit: R`共动长度（$c=1$）`, eq: "7.5" },
-  { sym: R`\eta_*`, name: "复合时的共动视界", def: R`$\eta_*=\eta(a_*)\approx281\,\mathrm{Mpc}$（只含物质与辐射、一直追溯到 $t=0$ 时；原书写作 $h^{-1}\,\mathrm{Mpc}$，按 $h\approx0.68$ 的基准宇宙数值核对应为 Mpc）`, unit: "共动长度", eq: "7.2" },
+  { sym: R`\eta_*`, name: "复合时的共动视界", def: R`$\eta_*=\eta(a_*)\approx281\,\mathrm{Mpc}$（只含物质与辐射、一直追溯到 $t=0$ 时；原书误印为 $h^{-1}\,\mathrm{Mpc}$，见 §7.1 勘误）`, unit: "共动长度", eq: "7.2" },
   { sym: R`\eta_0`, name: "今天的共动视界", def: R`$\eta_0\approx14200\,\mathrm{Mpc}$，约为 $\eta_*$ 的 50 倍`, unit: "共动长度", eq: "7.2" },
   { sym: R`\eta_i`, name: "初始时刻", def: R`设定初始条件的某个很早的共形时间（$k\eta_i\ll1$）`, unit: "共动长度", eq: "7.90" },
   { sym: R`a`, name: "标度因子", en: "scale factor", def: R`今天 $a_0=1$；物理距离 $=a\times$ 共动距离`, unit: "无量纲" },

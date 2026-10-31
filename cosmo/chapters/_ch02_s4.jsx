@@ -142,7 +142,7 @@ export function Sec24() {
         <Tx>{R`用红移表示：`}</Tx>
         <Eq n="2.87" say="物质–辐射相等的红移正比于今天的物理物质密度 $\Omega_{\rm m}h^2$，标准值约 3400。">{R`1+z_{\rm eq} = 2.38\times10^4\,\Omega_{\rm m}h^2.`}</Eq>
         <Tx>{R`**解读。**今天物质 $\Omega_{\rm m}h^2$ 越多，相等的红移越高——物质更早追上按 $a^{-4}$ 衰减的辐射。以 Planck 的 $\Omega_{\rm m}h^2=0.143$ 为例：$a_{\rm eq}\approx2.9\times10^{-4}$，$z_{\rm eq}\approx3400$，当时温度 $T=T_0/a_{\rm eq}\approx0.8\,\mathrm{eV}$。此前宇宙由辐射主导，此后由物质主导。`}</Tx>
-        <Box kind="warning" title={R`关于系数 $2.38\times10^4$`}>{R`严格由 \eqref{2.86} 取倒数得 $1/(4.15\times10^{-5})=2.41\times10^4$，与 \eqref{2.87} 的 $2.38\times10^4$ 相差约 1%。后者对应于 $\Omega_{\rm r}h^2\approx4.2\times10^{-5}$，相当于把有效中微子数取为 $N_{\rm eff}=3.046$（计入中微子在 $e^\pm$ 湮灭时获得的少量能量）而非 3。对本书的精度这一差别无关紧要，但做精确数值时应前后一致。`}</Box>
+        <Box kind="warning" title={R`存疑：\eqref{2.87} 的系数 $2.38\times10^4$`}>{R`原书照此印作 $2.38\times10^4$，此处保留原式。严格由 \eqref{2.86} 取倒数得 $1/(4.15\times10^{-5})=2.41\times10^4$，与 \eqref{2.87} 的 $2.38\times10^4$ 相差约 1%。后者对应于 $\Omega_{\rm r}h^2\approx4.2\times10^{-5}$，相当于把有效中微子数取为 $N_{\rm eff}=3.046$（计入中微子在 $e^\pm$ 湮灭时获得的少量能量）而非 3。对本书的精度这一差别无关紧要，但做精确数值时应前后一致。由于无法确定原书是笔误（应为 $2.41\times10^4$）还是有意采用了另一套辐射密度，这里不改，只标为存疑；交互图中的 $a_{\rm eq}$ 按 \eqref{2.86} 计算。`}</Box>
         <Box kind="aside" title="交互图：各成分能量密度的演化（第 1 章图 1.3 的推广）">
           <DensityPlot />
           <Tx>{R`$\rho_s(a)/\rho_{\rm cr}$ 随标度因子的演化。光子按 $a^{-4}$；三代中微子中两代取无质量、一代质量 $m_{\nu_3}$ 可调——注意它在 $T_\nu\sim m_\nu$ 之后从 $a^{-4}$ 转为 $a^{-3}$（与图 2.5 同一积分）；重子取 $\Omega_{\rm b}h^2=0.0224$，冷暗物质为 $\Omega_{\rm m}-\Omega_{\rm b}$；暗能量取平直宇宙所需的 $\Omega_{\rm DE}$ 与可调的 $w$。竖线为由 \eqref{2.86} 算出的 $a_{\rm eq}$ 与物质–暗能量相等时刻 $a_{\rm m\Lambda}=(\Omega_{\rm m}/\Omega_{\rm DE})^{-1/(3w)}$（\exref{2.14}）。`}</Tx>

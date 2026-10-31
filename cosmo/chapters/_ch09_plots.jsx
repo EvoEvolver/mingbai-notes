@@ -145,8 +145,8 @@ export function DampingPlot() {
       return [
         { label: R`\text{(9.42)，含复合（tanh 型 }x_e\text{）}`, data: pick(rec.KD2), color: "#1f1b16", width: 2.4 },
         { label: R`\text{(9.42)，全电离、含 }R`, data: pick(rec.KD2ion), color: "#c0392b", dash: "dash", width: 2 },
-        { label: R`\text{(9.44)，系数 }7.7\times10^6`, f: a => h / P.kD944(a, c, P.KD_COEF_DERIVED), color: "#2c6e49", dash: "dashdot", width: 1.6 },
-        { label: R`\text{(9.44)，原书系数 }3.1\times10^6`, f: a => h / P.kD944(a, c, 3.1e6), color: "#7d3c98", dash: "dot", width: 1.6 },
+        { label: R`\text{(9.44)，系数 }7.7\times10^6`, f: a => h / P.kD944(a, c), color: "#2c6e49", dash: "dashdot", width: 1.6 },
+        { label: R`\text{原书误印系数 }3.1\times10^6`, f: a => h / P.kD944(a, c, 3.1e6), color: "#7d3c98", dash: "dot", width: 1.6 },
         { label: R`k_D(\eta_*)=${f3(1 / kdS)}\,\mathrm{Mpc^{-1}},\ k_D\eta_0=${f0(c.eta0 / kdS)}`, f: () => NaN },
       ];
     }}
@@ -218,8 +218,8 @@ export function SWPlot() {
         { label: R`\text{SW，精确 Bessel 积分 (9.78)}`, data: pts(r0.Csw), color: "#1f1b16", width: 2.2 },
         { label: R`\text{SW + 晚期 ISW}`, data: pts(r1.Cl), color: "#c0392b", width: 2.2 },
         { label: R`\text{(9.79) 解析式}`, data: Array.from({ length: 29 }, (_, i) => { const l = i + 2; return [l, l * (l + 1) * P.clSW979(l, { ns: p.ns, As, eta0: r0.chiStar }) / (2 * Math.PI) * 1e10]; }), color: "#2c6e49", dash: "dash", width: 1.6 },
-        { label: R`\tfrac{2\pi}{25}\mathcal A_s\ (n_s=1)`, f: () => As / 25 * 1e10, color: "#2c4a6e", dash: "dot", width: 1.6 },
-        { label: R`\text{原书 (9.80)：}\tfrac{8}{25}\mathcal A_s`, f: () => 8 / 25 * As / (2 * Math.PI) * 1e10, color: "#7d3c98", dash: "dashdot", width: 1.2 },
+        { label: R`\text{(9.80)：}\tfrac{2\pi}{25}\mathcal A_s\ (n_s=1)`, f: () => As / 25 * 1e10, color: "#2c4a6e", dash: "dot", width: 1.6 },
+        { label: R`\text{原书误印：}\tfrac{8}{25}\mathcal A_s`, f: () => 8 / 25 * As / (2 * Math.PI) * 1e10, color: "#7d3c98", dash: "dashdot", width: 1.2 },
       ];
     }}
     samples={60} height={380} />;

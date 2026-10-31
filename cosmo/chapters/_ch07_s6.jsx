@@ -70,7 +70,8 @@ $\bullet$ 取 $n_s=0.965$，从 $k=10^{-4}\,\mathrm{Mpc}^{-1}$ 到 $1\,\mathrm{M
 
       <Tx>{R`原则上由于标量与张量的谱指数不同，$r$ 依赖 $k$；但在实际应用中这种依赖小到可以忽略（$d\ln r/d\ln k=n_{\rm T}-n_s+1=2\epsilon_{\rm sr}+2\delta_{\rm sr}$ 是慢滚参数量级的小量，而 $r$ 本身目前只有上限）。
 
-**谱指数与慢滚参数。**下面把原初谱指数 $n_s$、$n_{\rm T}$ 与慢滚参数 $\epsilon_{\rm sr}$、$\delta_{\rm sr}$ 联系起来。先看张量谱。由 \eqref{7.102} 的定义（原书此处写作"\eqref{7.99} 的定义"，应为 \eqref{7.102}），`}</Tx>
+**谱指数与慢滚参数。**下面把原初谱指数 $n_s$、$n_{\rm T}$ 与慢滚参数 $\epsilon_{\rm sr}$、$\delta_{\rm sr}$ 联系起来。先看张量谱。由 \eqref{7.102} 的定义，`}</Tx>
+      <Box kind="warning" title={R`勘误：引用应为 \eqref{7.102} 而非 \eqref{7.99}`}>{R`原书印作"By virtue of the definition in Eq. (7.99)"。正确为 \eqref{7.102}：随后取对数导数的是张量谱 $P_{\rm T}\propto k^{-3}H^2$，其定义在 \eqref{7.102}；\eqref{7.99} 是标量谱 $P_{\mathcal R}$。`}</Box>
 
       <Eq n="7.105" say={R`张量谱的对数斜率：减去平凡的 $k^{-3}$ 部分后剩下的就是 $n_{\rm T}$。`}>{R`\frac{d\ln P_{\rm T}(k)}{d\ln k} = n_{\rm T}-3.`}</Eq>
 
@@ -90,7 +91,8 @@ $\bullet$ 取 $n_s=0.965$，从 $k=10^{-4}\,\mathrm{Mpc}^{-1}$ 到 $1\,\mathrm{M
 
       <Eq n="7.109" say={R`标量谱的倾斜来自两处：视界穿出时 $H^2$ 的变化，以及慢滚参数 $\epsilon_{\rm sr}$ 本身的变化。`}>{R`n_s-1 = \frac{d}{d\ln k}\left[\ln(H^2)-\ln(\epsilon_{\rm sr})\right].`}</Eq>
 
-      <Tx>{R`其中 $H$ 的导数同样给出 $-2\epsilon_{\rm sr}$；而 $\epsilon_{\rm sr}$ 的对数导数为 $d\ln\epsilon_{\rm sr}/d\ln k=+2(\epsilon_{\rm sr}+\delta_{\rm sr})$（\exref{7.7}，\eqref{7.116}），所以 $-\ln\epsilon_{\rm sr}$ 一项贡献 $-2(\epsilon_{\rm sr}+\delta_{\rm sr})$。（原书正文此处把"$\epsilon_{\rm sr}$ 的对数导数"写成了 $-2(\epsilon_{\rm sr}+\delta_{\rm sr})$，符号应以 \exref{7.7} 为准；最终结果不受影响。）于是`}</Tx>
+      <Tx>{R`其中 $H$ 的导数同样给出 $-2\epsilon_{\rm sr}$；而 $\epsilon_{\rm sr}$ 的对数导数为 $d\ln\epsilon_{\rm sr}/d\ln k=+2(\epsilon_{\rm sr}+\delta_{\rm sr})$（\exref{7.7}，\eqref{7.116}），所以 $-\ln\epsilon_{\rm sr}$ 一项贡献 $-2(\epsilon_{\rm sr}+\delta_{\rm sr})$。于是`}</Tx>
+      <Box kind="warning" title={R`勘误：$\epsilon_{\rm sr}$ 的对数导数的符号`}>{R`原书正文印作"the logarithmic derivative of $\epsilon_{\rm sr}$ is $-2(\epsilon_{\rm sr}+\delta_{\rm sr})$"。正确为 $d\ln\epsilon_{\rm sr}/d\ln k=+2(\epsilon_{\rm sr}+\delta_{\rm sr})$。依据：原书习题 7.7 的 \eqref{7.115}–\eqref{7.116} 本身给出正号；且只有取正号，代入 \eqref{7.109} 的 $-\ln\epsilon_{\rm sr}$ 项才得到 $-2(\epsilon_{\rm sr}+\delta_{\rm sr})$，从而得到原书的 \eqref{7.110}（若取负号会得出 $n_s=1+2\delta_{\rm sr}$）。`}</Box>
 
       <Eq n="7.110" keyEq title="标量谱指数" say={R`标量谱指数由两个慢滚参数共同决定；只要 $\epsilon_{\rm sr}$、$\delta_{\rm sr}$ 为正的小量，$n_s$ 就略小于 1——红倾斜是慢滚暴胀的普遍预言。`}>{R`n_s = 1-4\epsilon_{\rm sr}-2\delta_{\rm sr}.`}</Eq>
 

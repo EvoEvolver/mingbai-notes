@@ -46,7 +46,7 @@ $$\Delta(\hat{\boldsymbol n})=\int d\Omega'\sum_{l''m''}Y_{l''m''}a_{l''m''}\sum
 **各向同性波束。**若 $B(\hat{\boldsymbol n},\hat{\boldsymbol n}')=B(\hat{\boldsymbol n}\cdot\hat{\boldsymbol n}')$，即只依赖两方向夹角，可以做 Legendre 展开并用 \eqref{C.12}：
 $$B(\hat{\boldsymbol n}\cdot\hat{\boldsymbol n}')=\sum_l(2l+1)\tilde B_l\mathcal P_l(\hat{\boldsymbol n}\cdot\hat{\boldsymbol n}')=4\pi\sum_{lm}\tilde B_lY_{lm}(\hat{\boldsymbol n})Y^*_{lm}(\hat{\boldsymbol n}'),\qquad\text{(A.175)}$$
 所以 $B_{lm,l'm'}=B_l\,\delta_{ll'}\delta_{mm'}$（A.176），其中 $B_l\equiv4\pi\tilde B_l$。代入 \eqref{14.37} 立即得到 \eqref{14.38}。`}>
-        <Tx>{R`推导一般的（随位置变化、各向异性的）波束对全天 $a_{lm}^{\rm obs}$ 的效应。从像 \eqref{14.36} 那样写出观测温度开始；忽略噪声，它与本计算无关。把所有量分解为多极矩，使 $B(\hat{\boldsymbol n},\hat{\boldsymbol n}')$ 换成 $B_{lm,l'm'}$。证明观测温度的多极矩（原书误作 "monopoles"）为`}</Tx>
+        <Tx>{R`推导一般的（随位置变化、各向异性的）波束对全天 $a_{lm}^{\rm obs}$ 的效应。从像 \eqref{14.36} 那样写出观测温度开始；忽略噪声，它与本计算无关。把所有量分解为多极矩，使 $B(\hat{\boldsymbol n},\hat{\boldsymbol n}')$ 换成 $B_{lm,l'm'}$。证明观测温度的多极矩（勘误：原书印作 "monopoles"，此处显然指多极矩 $a_{lm}^{\rm obs}$）为`}</Tx>
         <Eq n="14.78" say={R`一般波束把真实多极矩线性混合成观测多极矩。`}>{R`a_{lm}^{\rm obs}=\sum_{l'm'}B_{lm,l'm'}a_{l'm'}.`}</Eq>
         <Tx>{R`再专门考虑 \secref{14.4.1} 中处处相同且各向同性的波束 $B(\hat{\boldsymbol n},\hat{\boldsymbol n}')=B(\hat{\boldsymbol n}\cdot\hat{\boldsymbol n}')$，证明此时 \eqref{14.38} 成立。`}</Tx>
       </Exercise>
@@ -67,8 +67,8 @@ Gauss 积分给出 $\sqrt{2\pi NC/(B^2C+N)}$，与前因子合并为 $1/\sqrt{2\
         hint={R`$\eta_{lm}=\sum_p\Delta\Omega\,Y^*_{lm}(\hat{\boldsymbol n}_p)\eta_p$，$\langle\eta_p\eta_{p'}\rangle=\sigma_\eta^2\delta_{pp'}$。`}
         solution={R`把 \eqref{14.35} 离散化为对像素 $p$ 求和：$\eta_{lm}=\sum_p\Delta\Omega\,Y^*_{lm}(\hat{\boldsymbol n}_p)\eta_p$。均匀、不相关噪声：$\langle\eta_p\eta_{p'}\rangle=\sigma_\eta^2\delta_{pp'}$。于是
 $$\left\langle\eta_{lm}\eta^*_{l'm'}\right\rangle=\sigma_\eta^2(\Delta\Omega)^2\sum_pY^*_{lm}(\hat{\boldsymbol n}_p)Y_{l'm'}(\hat{\boldsymbol n}_p)\simeq\sigma_\eta^2\Delta\Omega\int d\Omega\,Y^*_{lm}Y_{l'm'}=\sigma_\eta^2\Delta\Omega\,\delta_{ll'}\delta_{mm'}.$$
-所以噪声协方差是对角的，$N(l)=\sigma_\eta^2\Delta\Omega$，与 $l$ 无关（白噪声）。像素面积减半 $\Delta\Omega\to\Delta\Omega/2$ 时，每个像素观测时间减半，$\sigma_\eta\to\sqrt2\sigma_\eta$，$\sigma_\eta^2\to2\sigma_\eta^2$；乘积 $\sigma_\eta^2\Delta\Omega$ 不变。物理上：噪声功率谱只取决于单位天区上积累的总观测时间，与怎样划分像素无关。（单位说明：通常把这个不变量写成 $N=(\Delta_T/T_0)^2$，其中"噪声水平" $\Delta_T$ 以 $\mu{\rm K}\cdot{\rm arcmin}$ 计，即像素噪声乘以像素边长；原题"$\mu{\rm K/arcmin^2}$、乘以像素面积"的说法应理解为 $\sigma_\eta^2\Delta\Omega$ 这个组合。本页 \secref{14.4.1} 的交互图即按 $N=(\Delta_T\cdot1')^2$ 计算。）`}>
-        <Tx>{R`考虑一个全天 CMB 实验，空间像素面积为 $\nosym{\Delta}\Omega$。设实验在每个像素中测量温度，高斯噪声为 $\sigma_\eta$。噪声幅度常以 $\mu{\rm K/arcmin^2}$ 为单位给出，于是温度扰动 $\Theta$ 上的噪声 $\sigma_\eta$ 由这个数乘以像素面积 $\nosym{\Delta}\Omega$、再除以 $T_0=2.726\,$K 得到。噪声因此被假设为均匀的（全天处处相同）且不相关的（像素之间）。求 $a_{lm}^{\rm obs}$ 的噪声协方差矩阵。若（同一实验）像素面积减半，每个像素得到的观测时间少一半，于是每个像素的噪声升高 $\sqrt2$ 倍。证明这两个变化（像素更小；每个像素噪声更大）使噪声协方差不变。`}</Tx>
+所以噪声协方差是对角的，$N(l)=\sigma_\eta^2\Delta\Omega$，与 $l$ 无关（白噪声）。像素面积减半 $\Delta\Omega\to\Delta\Omega/2$ 时，每个像素观测时间减半，$\sigma_\eta\to\sqrt2\sigma_\eta$，$\sigma_\eta^2\to2\sigma_\eta^2$；乘积 $\sigma_\eta^2\Delta\Omega$ 不变。物理上：噪声功率谱只取决于单位天区上积累的总观测时间，与怎样划分像素无关。（单位说明：通常把这个不变量写成 $N=(\Delta_T/T_0)^2$，其中"噪声水平" $\Delta_T$ 以 $\mu{\rm K}\cdot{\rm arcmin}$ 计，即像素噪声乘以像素边长；原书题面"$\mu{\rm K/arcmin^2}$、乘以像素面积"的说法有误，题中已按勘误改写。本页 \secref{14.4.1} 的交互图即按 $N=(\Delta_T\cdot1')^2$ 计算。）`}>
+        <Tx>{R`考虑一个全天 CMB 实验，空间像素面积为 $\nosym{\Delta}\Omega$。设实验在每个像素中测量温度，高斯噪声为 $\sigma_\eta$。噪声幅度常以 $\mu{\rm K}\cdot{\rm arcmin}$ 为单位给出（噪声水平 $\Delta_T$），于是温度扰动 $\Theta$ 上的噪声 $\sigma_\eta$ 由这个数除以像素边长 $\sqrt{\nosym{\Delta}\Omega}$、再除以 $T_0=2.726\,$K 得到。（勘误：原书印作单位 $\mu{\rm K/arcmin^2}$、"乘以像素面积"。那样 $\sigma_\eta\propto\nosym{\Delta}\Omega$，与本题下文"像素面积减半、每个像素噪声升高 $\sqrt2$ 倍"即 $\sigma_\eta\propto\nosym{\Delta}\Omega^{-1/2}$ 相矛盾；正确的组合是 $\sigma_\eta^2\nosym{\Delta}\Omega=(\Delta_T/T_0)^2$ 与像素无关。）噪声因此被假设为均匀的（全天处处相同）且不相关的（像素之间）。求 $a_{lm}^{\rm obs}$ 的噪声协方差矩阵。若（同一实验）像素面积减半，每个像素得到的观测时间少一半，于是每个像素的噪声升高 $\sqrt2$ 倍。证明这两个变化（像素更小；每个像素噪声更大）使噪声协方差不变。`}</Tx>
       </Exercise>
 
       <Exercise n="14.7" title="弱透镜的形状噪声" level="★★"
@@ -87,11 +87,11 @@ $$N_{EE}(l)=N_{BB}(l)=\frac{\sigma_\epsilon^2}{4\bar n_{\rm g}}.$$
 
 **(b)** 无内禀成团时不同子体积独立：$\alpha\neq\beta$ 时 $\langle m_\alpha m_\beta\rangle=\langle m\rangle^2$；$\alpha=\beta$ 时 $=\langle m\rangle^2+\langle m\rangle$。所以
 $$\frac{\langle m(\boldsymbol x_\alpha)m(\boldsymbol x_\beta)\rangle}{\langle m\rangle^2}=1+\frac{\delta_{\alpha\beta}}{\bar n_{\rm g}v}.$$
-相关函数是**超出 1 的部分**：$\xi_{\rm g}=\delta_{\alpha\beta}/(\bar n_{\rm g}v)$。（原书 \eqref{14.80} 的右边应再减 1。）连续极限下 $\delta_{\alpha\beta}/v\to\delta_{\rm D}^{(3)}(\boldsymbol x_\alpha-\boldsymbol x_\beta)$，即 $\xi_{\rm g}(r)=\delta_{\rm D}^{(3)}(\boldsymbol r)/\bar n_{\rm g}$。
+相关函数是**超出 1 的部分**：$\xi_{\rm g}=\delta_{\alpha\beta}/(\bar n_{\rm g}v)$。（勘误：原书 \eqref{14.80} 印作 $\xi_{\rm g}=\langle mm\rangle/\langle m\rangle^2$，漏了 $-1$；按 $1+\xi_{\rm g}=\langle n n\rangle/\bar n_{\rm g}^2$ 的定义，无关联时 $\xi_{\rm g}$ 应为 0 而不是 1。题中已改。）连续极限下 $\delta_{\alpha\beta}/v\to\delta_{\rm D}^{(3)}(\boldsymbol x_\alpha-\boldsymbol x_\beta)$，即 $\xi_{\rm g}(r)=\delta_{\rm D}^{(3)}(\boldsymbol r)/\bar n_{\rm g}$。
 
-**(c)** Fourier 变换：$P_N=\int d^3r\,\xi_{\rm g}(r)e^{-i\boldsymbol k\cdot\boldsymbol r}=1/\bar n_{\rm g}$，与 $k$ 无关（白噪声）。直接计算：令 $\delta_\alpha=(n_\alpha-\bar n_{\rm g})/\bar n_{\rm g}$，$n_\alpha=m_\alpha/v$，则 $\langle\delta_\alpha\delta_\beta\rangle=\delta_{\alpha\beta}/(\bar n_{\rm g}v)$。用与 \eqref{14.57} 自洽的归一化 $\Delta(\boldsymbol k_i)=\frac{v}{L^{3/2}}\sum_\alpha e^{i\boldsymbol k_i\cdot\boldsymbol x_\alpha}\delta_\alpha$：
+**(c)** Fourier 变换：$P_N=\int d^3r\,\xi_{\rm g}(r)e^{-i\boldsymbol k\cdot\boldsymbol r}=1/\bar n_{\rm g}$，与 $k$ 无关（白噪声）。直接计算：令 $\delta_\alpha=(n_\alpha-\bar n_{\rm g})/\bar n_{\rm g}$，$n_\alpha=m_\alpha/v$，则 $\langle\delta_\alpha\delta_\beta\rangle=\delta_{\alpha\beta}/(\bar n_{\rm g}v)$。用 \eqref{14.81} 的归一化 $\Delta(\boldsymbol k_i)=\frac{v}{L^{3/2}}\sum_\alpha e^{i\boldsymbol k_i\cdot\boldsymbol x_\alpha}\delta_\alpha$：
 $$\left\langle\Delta(\boldsymbol k_i)\Delta(\boldsymbol k_j)\right\rangle=\frac{v^2}{L^3}\sum_\alpha e^{i(\boldsymbol k_i+\boldsymbol k_j)\cdot\boldsymbol x_\alpha}\frac{1}{\bar n_{\rm g}v}=\frac{v}{L^3}\cdot\frac{L^3}{v}\delta_{\boldsymbol k_i,-\boldsymbol k_j}\cdot\frac{1}{\bar n_{\rm g}}=\frac{\delta_{\boldsymbol k_i,-\boldsymbol k_j}}{\bar n_{\rm g}},$$
-（$\sum_\alpha e^{i\boldsymbol q\cdot\boldsymbol x_\alpha}=(L^3/v)\delta_{\boldsymbol q,0}$）。这正是 \eqref{14.57} 中的噪声项，$P_N=1/\bar n_{\rm g}$，且对角。（若照原书 \eqref{14.81} 只用 $L^{3/2}$ 作前因子，结果会多出 $(L^3/v)^2$——见 \secref{14.4.2} 的勘误说明。）`}>
+（$\sum_\alpha e^{i\boldsymbol q\cdot\boldsymbol x_\alpha}=(L^3/v)\delta_{\boldsymbol q,0}$）。这正是 \eqref{14.57} 中的噪声项，$P_N=1/\bar n_{\rm g}$，且对角。（勘误：原书 \eqref{14.81} 印作前因子 $L^{3/2}$，那样结果会多出 $(L^3/v)^2$，与 \eqref{14.57} 不符；题中已改为 $v/L^{3/2}$，见 \secref{14.4.2} 的勘误。）`}>
         <Tx>{R`在 \secref{14.4.2} 中我们假设星系协方差中的噪声贡献是对角的、幅度为 $P_N$。假设星系计数中的噪声是 Poisson 过程，证明确实如此，并求 $P_N$ 的值：
 
 (a) 把巡天区域分成小的子体积。假设给定子体积中的星系数服从均值为 $\bar m_{\rm g}$ 的 Poisson 分布（简单起见设所有子体积的 $\bar m_{\rm g}$ 相同），`}</Tx>
@@ -99,11 +99,11 @@ $$\left\langle\Delta(\boldsymbol k_i)\Delta(\boldsymbol k_j)\right\rangle=\frac{
         <Tx>{R`用平均密度 $\bar n_{\rm g}$ 与子体积的体积 $v$ 表示这个分布的期望值 $\langle m\rangle$ 与 $\langle m^2\rangle$。
 
 (b) 在 Poisson 模型 \eqref{14.79} 下计算星系的相关函数，即`}</Tx>
-        <Eq n="14.80" say={R`子体积星系数的两点乘积，按平均数平方归一（真正的相关函数是它减去 1）。`}>{R`\xi_{\rm g}(|\boldsymbol x_\alpha-\boldsymbol x_\beta|)=\frac{\left\langle \sym{ch14-mcount}{m}(\boldsymbol x_\alpha)\sym{ch14-mcount}{m}(\boldsymbol x_\beta)\right\rangle}{\langle \sym{ch14-mcount}{m}\rangle^2},`}</Eq>
+        <Eq n="14.80" say={R`子体积星系数的两点乘积按平均数平方归一后减去 1：相关函数是超出无关联期望的那部分。`}>{R`\xi_{\rm g}(|\boldsymbol x_\alpha-\boldsymbol x_\beta|)=\frac{\left\langle \sym{ch14-mcount}{m}(\boldsymbol x_\alpha)\sym{ch14-mcount}{m}(\boldsymbol x_\beta)\right\rangle}{\langle \sym{ch14-mcount}{m}\rangle^2}-1,`}</Eq>
         <Tx>{R`其中 $\boldsymbol x_\alpha$ 表示子体积 $\alpha$ 的位置。假设没有内禀成团，所以每个子体积中的 $\langle m\rangle$ 相同。
 
 (c) 计算星系功率谱。可以对上一步的结果做 Fourier 变换，也可以按下面的方法直接计算。把 \eqref{14.49} 改写为`}</Tx>
-        <Eq n="14.81" say={R`以子体积为单元写出的离散 Fourier 变换（前因子见正文勘误）。`}>{R`\Delta(\boldsymbol k_i)=L^{3/2}\sum_\alpha e^{i\boldsymbol k_i\cdot\boldsymbol x_\alpha}\left[\frac{n(\boldsymbol x_\alpha)-\bar n_{\rm g}}{\bar n_{\rm g}}\right]`}</Eq>
+        <Eq n="14.81" say={R`以子体积为单元写出的离散 Fourier 变换：前因子为子体积 $v$ 除以 $L^{3/2}$（按勘误后的 \eqref{14.49}）。`}>{R`\Delta(\boldsymbol k_i)=\frac{v}{L^{3/2}}\sum_\alpha e^{i\boldsymbol k_i\cdot\boldsymbol x_\alpha}\left[\frac{n(\boldsymbol x_\alpha)-\bar n_{\rm g}}{\bar n_{\rm g}}\right]`}</Eq>
         <Tx>{R`其中求和遍历大小为 $v$ 的子体积。利用 (a) 的结果，并再次假设没有内禀成团，求 $\langle\Delta(\boldsymbol k_i)\Delta(\boldsymbol k_j)\rangle$。无论用哪种方法，证明你得到 \eqref{14.57} 中的噪声贡献，且 $P_N=1/\bar n_{\rm g}$。`}</Tx>
       </Exercise>
 
@@ -146,9 +146,9 @@ $$\lambda_\alpha=\bar\lambda_\alpha+\sum_\beta(F^{-1})_{\alpha\beta}B_\beta.\qqu
 
       <Exercise n="14.11" title="Euclid 对增长率 f 的预期约束" level="★★★"
         hint={R`$P_{\rm g}(k,\mu)=(b_1+f\mu^2)^2P_{\rm L}(k,z)+P_N$（\eqref{11.23}）。对每个 $(k,\mu)$ 单元，用 \eqref{14.60} 的方差构造 $F_{ab}=\sum\frac{\partial P_{\rm g}}{\partial a}\frac{\partial P_{\rm g}}{\partial b}\big/\mathrm{Var}[\hat P_{\rm g}]$，参数 $(b_1,f)$，再取 $\sqrt{(F^{-1})_{ff}}$。`}
-        solution={R`**Fisher 矩阵。**把 \eqref{14.68} 的 $l$ 求和换成对 $k$ 区间与 $\mu$ 区间的求和，$\mathrm{Var}[\hat C(l)]$ 换成 \eqref{14.60} 的方差。对独立模式计数取连续极限（按标准的 FKP 计数，见 \secref{14.4.2} 的勘误），
+        solution={R`**Fisher 矩阵。**把 \eqref{14.68} 的 $l$ 求和换成对 $k$ 区间与 $\mu$ 区间的求和，$\mathrm{Var}[\hat C(l)]$ 换成 \eqref{14.60} 的方差。对模式计数取连续极限（按改正后的 \eqref{14.53}，即标准的 FKP 计数，见 \secref{14.4.2} 的勘误），
 $$F_{ab}=\frac{V}{8\pi^2}\int_{k_F}^{k_{\rm max}}k^2dk\int_{-1}^{1}d\mu\,\frac{\partial_aP_{\rm g}\,\partial_bP_{\rm g}}{\left[P_{\rm g}(k,\mu)+1/\bar n_{\rm g}\right]^2},\qquad\partial_{b_1}P_{\rm g}=2(b_1+f\mu^2)P_{\rm L},\ \ \partial_fP_{\rm g}=2\mu^2(b_1+f\mu^2)P_{\rm L}.$$
-（若严格照搬原书 \eqref{14.53}+\eqref{14.59}，前因子变为 $V/16\pi^2$，下表误差都乘 $\sqrt2$。）
+（若照搬原书印刷的 \eqref{14.53}（带 $\frac12$）+\eqref{14.59}，前因子变为 $V/16\pi^2$，下表误差都乘 $\sqrt2$。）
 
 **数值。**基准 ΛCDM（$\Omega_{\rm m}=0.31$，$h=0.677$，$\sigma_8=0.83$）在 $z=1.4$：$D_+(z)/D_+(0)=0.516$，$f=0.919$，$P_{\rm L}(0.1\,h\,{\rm Mpc^{-1}})=1570\,h^{-3}{\rm Mpc}^3$，$\bar n_{\rm g}P_{\rm g}(0.1)\approx1.8$（散粒噪声不可忽略但不主导）。$V=63\times10^9\,h^{-3}{\rm Mpc}^3$，$k_F=1.6\times10^{-3}\,h\,{\rm Mpc}^{-1}$。线性振幅 $\sigma_8$ 视为已知，对 $b_1$ 边缘化：`}>
         <Tx>{R`推导星系功率谱的 Fisher 矩阵。用它连同 \eqref{14.60} 与 \eqref{11.23}，估计 Euclid 巡天由星系功率谱测量增长率 $f$ 的预期误差，采用以下非常粗略的规格：`}</Tx>
@@ -176,7 +176,7 @@ $k_{\rm max}=0.15$：$\delta f=+0.004$，$\sigma(f)=0.0034$，比值 1.3；
 
 $k_{\rm max}=0.20$：$\delta f=+0.014$，$\sigma(f)=0.0025$，比值 5.7。
 
-所以系统偏移在 $k_{\rm max}\approx0.14\,h\,{\rm Mpc}^{-1}$ 处等于 $1\sigma$ 统计误差（按原书 $\sqrt2$ 倍大的方差，交点略移到 $\approx0.15$）。偏移中相当一部分被 $b_1$ 吸收（$\delta b_1$ 与 $\delta f$ 同量级），这正是 \exref{14.10}(c) 所说的"通过简并参数传递的偏差"。结论：对 Euclid 这样的巡天，统计误差小到线性理论在 $k\gtrsim0.1\,h\,{\rm Mpc}^{-1}$ 就不够用了，必须使用包含非线性与偏袒展开的理论模型（第 12 章）。`}>
+所以系统偏移在 $k_{\rm max}\approx0.14\,h\,{\rm Mpc}^{-1}$ 处等于 $1\sigma$ 统计误差（若按原书带 $\frac12$ 的模式计数，方差大 2 倍，交点略移到 $\approx0.15$）。偏移中相当一部分被 $b_1$ 吸收（$\delta b_1$ 与 $\delta f$ 同量级），这正是 \exref{14.10}(c) 所说的"通过简并参数传递的偏差"。结论：对 Euclid 这样的巡天，统计误差小到线性理论在 $k\gtrsim0.1\,h\,{\rm Mpc}^{-1}$ 就不够用了，必须使用包含非线性与偏袒展开的理论模型（第 12 章）。`}>
         <Tx>{R`把 \exref{14.10} 推导的 Fisher 参数偏差形式从 $C(l)$ 的情形改写到三维星系功率谱的情形。用它估计：若忽略物质功率谱的一圈修正（\eqref{12.48}），增长率 $f$ 会产生多大的偏差，作为 $k_{\rm max}$ 的函数。在什么 $k_{\rm max}$ 处系统偏移等于 $f$ 的 $1\sigma$ 统计误差？`}</Tx>
       </Exercise>
     </Sec>);

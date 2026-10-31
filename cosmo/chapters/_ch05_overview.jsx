@@ -243,7 +243,7 @@ export const QUIZ = [
   {
     q: "与光子方程相比，有质量中微子方程的一个本质新特点是什么？",
     options: ["多了 Compton 碰撞项", R`扰动 $\mathcal N$ 依赖动量大小 $p$，且出现 $p/E_\nu$ 因子`, R`不受 $\Psi$ 影响`, "零阶分布是玻色–爱因斯坦分布"],
-    answer: 1, why: R`不同动量的中微子速度不同（$p/E_\nu$），自由流与引力作用都依赖 $p$，所以 $\mathcal N=\mathcal N(k,p,\mu,\eta)$ 并多出 $-\mathcal Hp\,\partial\mathcal N/\partial p$ 项。`,
+    answer: 1, why: R`不同动量的中微子速度不同（$p/E_\nu$），自由流与引力作用都依赖 $p$，所以 $\mathcal N=\mathcal N(k,p,\mu,\eta)$ 并多出 $-aHp\,\partial\mathcal N/\partial p$ 项。`,
   },
 ];
 

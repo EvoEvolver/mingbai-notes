@@ -53,7 +53,7 @@ export const EQMAP_B = [
   { from: "13.51", to: "13.58", label: "" },
   { from: "13.59", to: "13.61", label: "交叉 Limber + Poisson" },
   { from: "13.49", to: "13.61", label: "" },
-  { from: "13.61", to: "13.62", label: R`$\cos2\phi_l$ → $-J_2$` },
+  { from: "13.61", to: "13.62", label: R`$\gamma_t=-\gamma_1$：$-\cos2\phi_l$ → $+J_2$` },
 ];
 export const EQMAP_LABELS = {
   "13.3": "面亮度守恒", "13.7": R`$\theta_S$ 的积分`, "13.9": R`测地线：$-2\Phi_{,i}$`, "13.10": R`$\hat p_\perp(\chi'')$`, "13.13": "双重积分", "13.14": "偏折角",
@@ -213,7 +213,7 @@ export const TAKEAWAYS = [
   <TxI>{R`**形状**：$A=\mathbb 1+\psi$ 分解为会聚 $\kappa$ 与剪切 $\gamma_{1,2}$；$\mu=|A|^{-1}$；形状张量 $q\to A^{-1}qA^{-1}$，弱透镜下 $\epsilon_i=\epsilon_i^{\rm true}+2\gamma_i$；内禀椭率 $\sim0.3$ 是主要噪声。`}</TxI>,
   <TxI>{R`**CMB 透镜**：方均根偏折约 $2.4'$（本页数值），抹平声学峰、给阻尼尾加功率；非对角相关 \eqref{13.23} 让二次估计量重建 $\phi_{\rm L}$。`}</TxI>,
   <TxI>{R`**剪切谱**：标量透镜只有 E 模，$E=\kappa$；$C_{EE}=(\frac32\Omega_{\rm m}H_0^2)^2\int d\chi\,a^{-2}g_{\rm L}^2P(l/\chi)$ 直接探测非线性物质功率谱，同时依赖距离–红移关系。`}</TxI>,
-  <TxI>{R`**实空间与交叉**：$\xi_\pm=\int\frac{ldl}{2\pi}J_{0,4}C_{EE}$；星系–星系透镜 $\xi_{{\rm g},t}=\int\frac{ldl}{2\pi}J_2C_{{\rm g}E}\propto b_1$（按切向剪切的定义取正号，见 \eqref{13.62} 后的说明），与 $C_{\rm g}\propto b_1^2$ 合用可破除偏袒简并；B 模与 $\xi_{{\rm g},\times}$ 是系统误差检验。`}</TxI>,
+  <TxI>{R`**实空间与交叉**：$\xi_\pm=\int\frac{ldl}{2\pi}J_{0,4}C_{EE}$；星系–星系透镜 $\xi_{{\rm g},t}=\int\frac{ldl}{2\pi}J_2C_{{\rm g}E}\propto b_1$（按切向剪切的定义取正号，见 \eqref{13.62} 后的勘误），与 $C_{\rm g}\propto b_1^2$ 合用可破除偏袒简并；B 模与 $\xi_{{\rm g},\times}$ 是系统误差检验。`}</TxI>,
 ];
 
 export const QUIZ = [

@@ -90,9 +90,9 @@ export function recHistory(c) {
 }
 // (9.44)：k_D^{-2} = C a^{5/2} f_D(a/a_eq) (Ω_b h²)^{-1} (1−Y_P/2)^{-1} (Ω_m h²)^{-1/2}
 export const fD = y => { const u = 1 + 1 / y; return 5 * Math.sqrt(u) - (20 / 3) * u ** 1.5 + (8 / 3) * (u ** 2.5 - y ** -2.5); };
-// 由 (9.42)、(9.43) 直接推得的系数：(4/27)(2/5)/(2.304e-5 × 3.336e-4) ≈ 7.7e6 Mpc²；原书印作 3.1e6
+// 由 (9.42)、(9.43) 直接推得的系数：(4/27)(2/5)/(2.304e-5 × 3.336e-4) ≈ 7.7e6 Mpc²（正文 (9.44) 已改正；原书误印 3.1e6）
 export const KD_COEF_DERIVED = (4 / 27) * (2 / 5) / (2.304e-5 * H100);
-export const kD944 = (a, c, coef = 3.1e6) => { const omh2 = c.Om * c.h * c.h; return 1 / Math.sqrt(coef * a ** 2.5 * fD(a / c.aeq) / (c.obh2 * (1 - c.YP / 2) * Math.sqrt(omh2))); };
+export const kD944 = (a, c, coef = KD_COEF_DERIVED) => { const omh2 = c.Om * c.h * c.h; return 1 / Math.sqrt(coef * a ** 2.5 * fD(a / c.aeq) / (c.obh2 * (1 - c.YP / 2) * Math.sqrt(omh2))); };
 
 // ---------- 自适应 RK45（Dormand–Prince）----------
 const DP = {

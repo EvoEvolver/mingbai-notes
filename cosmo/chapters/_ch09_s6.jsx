@@ -22,17 +22,17 @@ export function Sec96() {
         <Tx>{R`球 Bessel 函数的积分可以用 $\Gamma$ 函数解析表示（\eqref{C.18}），于是`}</Tx>
         <Eq n="9.79" say={R`SW 谱的闭式解：$l$ 依赖全在第一个 $\Gamma$ 函数比值里，大 $l$ 时 $\approx l^{n_s-3}$，即 $l(l+1)C(l)\propto l^{n_s-1}$。`}>{R`C(l)^{\rm SW} \simeq 2^{n_s-2}\frac{\pi^2}{25}\mathcal A_s(\eta_0k_{\rm p})^{1-n_s}\frac{\Gamma\left(l+\frac{n_s}{2}-\frac12\right)}{\Gamma\left(l+\frac52-\frac{n_s}{2}\right)}\frac{\Gamma(3-n_s)}{\Gamma^2\left(2-\frac{n_s}{2}\right)}.`}</Eq>
         <Tx>{R`**尺度不变情形。**若谱是尺度不变的，$n_s=1$，则第一个 $\Gamma$ 函数比值 $\Gamma(l)/\Gamma(l+2)$ 由 \eqref{C.27} 等于 $[l(l+1)]^{-1}$。剩下的比值由 \eqref{C.28} 为 $\Gamma(2)/\Gamma^2(3/2)=4/\pi$，所以`}</Tx>
-        <Eq n="9.80" keyEq title="Sachs–Wolfe 高原" say={R`尺度不变谱下 $l(l+1)C(l)$ 在大角度上是常数——SW 高原，其高度直接量出原初振幅 $\mathcal A_s$（正确系数见下方勘误框）。`}>{R`l(l+1)C(l)^{\rm SW} = \frac{8}{25}\mathcal A_s`}</Eq>
-        <Box kind="warning" title={R`疑似勘误：(9.80) 的系数应为 $2\pi/25$`}>
-          <Tx>{R`按正文的两步：$n_s=1$ 时 \eqref{9.79} 的前因子为 $2^{-1}\pi^2/25$，乘以 $[l(l+1)]^{-1}$ 与 $\Gamma(2)/\Gamma^2(3/2)=4/\pi$，得
+        <Eq n="9.80" keyEq title="Sachs–Wolfe 高原" say={R`尺度不变谱下 $l(l+1)C(l)$ 在大角度上是常数——SW 高原，其高度直接量出原初振幅 $\mathcal A_s$：$\frac{l(l+1)}{2\pi}C(l)=\mathcal A_s/25$。`}>{R`l(l+1)C(l)^{\rm SW} = \frac{2\pi}{25}\mathcal A_s`}</Eq>
+        <Box kind="warning" title={R`勘误：\eqref{9.80} 的系数`}>
+          <Tx>{R`原书印作 $l(l+1)C(l)^{\rm SW}=\frac{8}{25}\mathcal A_s$；正确为 $\frac{2\pi}{25}\mathcal A_s$（上式已改）。依据——按正文的两步：$n_s=1$ 时 \eqref{9.79} 的前因子为 $2^{-1}\pi^2/25$，乘以 $[l(l+1)]^{-1}$ 与 $\Gamma(2)/\Gamma^2(3/2)=4/\pi$，得
 $$l(l+1)C(l)^{\rm SW}=\frac{\pi^2}{50}\cdot\frac4\pi\,\mathcal A_s=\frac{2\pi}{25}\mathcal A_s\approx0.251\,\mathcal A_s ,$$
-即 $\frac{l(l+1)}{2\pi}C(l)=\mathcal A_s/25$。直接由 \eqref{9.78} 与标准积分 $\int_0^\infty dx\,j_l^2(x)/x=\frac{1}{2l(l+1)}$ 也得到同样结果。原书的 $8/25=0.32$ 恰好是把 $\Gamma^2(3/2)$ 错算成 $\pi^2/16$ 的结果（比值变为 $16/\pi^2$），偏大 $4/\pi\approx1.27$ 倍。原书 \figref{9.11} 中的点线（约 $1.07\times10^{-10}$）按 $8/25$ 画出；按 $2\pi/25$ 应为 $\mathcal A_s/25\approx0.84\times10^{-10}$。附录 A 中习题 9.17 的 $C(l=2)=4\mathcal A_s/75$ 与 $r_2=0.68r$ 也继承了这一系数（见 \exref{9.17}）。交互图同时画出两者。`}</Tx>
+即 $\frac{l(l+1)}{2\pi}C(l)=\mathcal A_s/25$。直接由 \eqref{9.78} 与标准积分 $\int_0^\infty dx\,j_l^2(x)/x=\frac{1}{2l(l+1)}$ 也得到同样结果。原书的 $8/25=0.32$ 恰好是把 $\Gamma^2(3/2)$ 错算成 $\pi^2/16$ 的结果（比值变为 $16/\pi^2$），偏大 $4/\pi\approx1.27$ 倍。原书 \figref{9.11} 中的点线（约 $1.07\times10^{-10}$）按 $8/25$ 画出；按 $2\pi/25$ 应为 $\mathcal A_s/25\approx0.84\times10^{-10}$。附录 A 中习题 9.17 的 $C(l=2)=4\mathcal A_s/75$ 与 $r_2=0.68r$ 也继承了这一系数，已在 \exref{9.17} 的解答中改正为 $\pi\mathcal A_s/75$ 与 $r_2\approx0.87r$。交互图同时画出两者以作对比。`}</Tx>
         </Box>
         <Tx>{R`是常数。事实上，$l(l+1)C(l)$ 是温度各向异性**每个对数 $l$ 区间的方差**，类似于三维功率谱的 $k^3P_{\mathcal R}(k)$。后者在 $n_s=1$ 时是常数，所以 $l(l+1)C(l)$ 在此情形下也成为常数并不意外。习惯上把 $l(l+1)C(l)$ 对 $l$ 画在对数坐标上，于是它在低 $l$ 处近似为常数。
 
 **与数据比较。**\figref{9.11} 给出 Planck 对大角度各向异性的测量，以及基准平直 $\Lambda$CDM 模型的 Boltzmann 解。偏离常数是由于 ISW 效应和在较高 $l$ 处变得不可忽略的偶极贡献（\eqref{9.79} 忽略了它）。尽管如此，\eqref{9.80} 仍是一个合理的近似。由于纵轴给出给定尺度 $l$ 贡献的方差，可以读出大角度涨落的振幅：粗略地 $\langle(\Delta T/T_0)^2\rangle\sim10^{-10}$，所以均方根涨落是其平方根，量级为 $10^{-5}T_0=27\,\mu\mathrm K$。`}</Tx>
         <Figure n="9.11" interactive={<SWPlot />}
-          caption={R`Planck 测得的大角度 CMB 功率谱（Planck Collaboration 2018b）与基准 $\Lambda$CDM 预言（实线）。点线为 \eqref{9.80} 预言的尺度不变 Sachs–Wolfe 高原。**交互版**（无数据点）：黑线为 \eqref{9.78} 用精确球 Bessel 函数数值积分的 SW 谱；红线再加上晚期 ISW（$\Lambda$ 使物质期之后的势按 $D_+/a$ 衰减，计入 \eqref{9.59} 的积分项）；绿虚线为 \eqref{9.79}；蓝点线 $\mathcal A_s/25$ 是 \eqref{9.80} 的正确系数，紫点划线为原书系数 $8/25$。$\mathcal A_s=2.1\times10^{-9}$。把 $\Omega_\Lambda$ 调到 0 可见晚期 ISW 的上翘消失；调 $n_s$ 可见 SW 谱按 $l^{n_s-1}$ 倾斜。`} />
+          caption={R`Planck 测得的大角度 CMB 功率谱（Planck Collaboration 2018b）与基准 $\Lambda$CDM 预言（实线）。点线为 \eqref{9.80} 预言的尺度不变 Sachs–Wolfe 高原。**交互版**（无数据点）：黑线为 \eqref{9.78} 用精确球 Bessel 函数数值积分的 SW 谱；红线再加上晚期 ISW（$\Lambda$ 使物质期之后的势按 $D_+/a$ 衰减，计入 \eqref{9.59} 的积分项）；绿虚线为 \eqref{9.79}；蓝点线 $\mathcal A_s/25$ 即改正后的 \eqref{9.80}，紫点划线为原书误印的系数 $8/25$（原书图中的点线按此画出，见上方勘误框）。$\mathcal A_s=2.1\times10^{-9}$。把 $\Omega_\Lambda$ 调到 0 可见晚期 ISW 的上翘消失；调 $n_s$ 可见 SW 谱按 $l^{n_s-1}$ 倾斜。`} />
         <Tx>{R`**超越尺度不变。**按我们的解析结果，乘以 $l(l+1)$ 的功率谱应按 $(l/l_{\rm p})^{n_s-1}$ 标度，$l_{\rm p}$ 是大致对应于枢轴尺度 $k_{\rm p}$ 的角波数。这一标度可以从 \eqref{9.79} 看出，或更直接地从 \eqref{9.78} 的积分看出：被积函数在 $x\sim l$ 处取峰，所以粗略地说，那里每个 $x$ 都可以换成 $l$；被积函数从 $x^{-1}$ 推广到 $x^{n_s-2}$，于是谱的变化按 $l^{n_s-1}$ 标度。但由于 $n_s-1$ 很小，这一标度被上面提到的其他贡献掩盖了。要同时约束谱指数和振幅，数据必须覆盖更大的 $l$ 范围，也就是要包括更小尺度上的各向异性。`}</Tx>
       </Sub>
 

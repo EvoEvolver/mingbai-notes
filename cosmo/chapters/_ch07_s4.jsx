@@ -110,7 +110,7 @@ export function Sec74() {
           { tex: R`2H\dot H=\frac{8\pi G}{3}\dot\rho=-8\pi GH(\rho+\mathcal P)\ \Rightarrow\ \dot H=-4\pi G(\rho+\mathcal P)`, why: R`对 Friedmann 方程求导。` },
           { tex: R`\epsilon_{\rm sr}=\frac{d}{dt}\frac1H=-\frac{\dot H}{H^2}=\frac{4\pi G(\rho+\mathcal P)}{H^2}=\frac32\,\frac{\rho+\mathcal P}{\rho}`, why: R`慢滚参数的定义 \eqref{7.17}，再用 $H^2=8\pi G\rho/3$。这个关系其实是精确的；对标量场 $\rho+\mathcal P=\dot{\bar\phi}^2$。` },
         ]} />
-        <Box kind="warning" title="原书此处的引用笔误">{R`原书在这段论证末尾写"\eqref{7.11} 的最后一项被压低"。\eqref{7.11} 是一般的协变守恒式 $\nabla_\mu T^\mu{}_\nu=0$，其最后一项是 Christoffel 项，并不是这里讨论的对象；从上下文看，所指应为 \eqref{7.56} 的最后一项 $3(\rho+\mathcal P)\dot\Psi$。`}</Box>
+        <Box kind="warning" title={R`勘误：引用应为 \eqref{7.56} 而非 \eqref{7.11}`}>{R`原书在这段论证末尾印作"the last term in Eq. (7.11) is suppressed"。正确为 \eqref{7.56}（上文已改）。依据：\eqref{7.11} 是一般的协变守恒式 $\nabla_\mu T^\mu{}_\nu=0$，其最后一项是 Christoffel 项；这段论证讨论的是含度规扰动的能量守恒 \eqref{7.56} 中带 $\rho+\mathcal P$ 因子的最后一项 $3(\rho+\mathcal P)\dot\Psi$。`}</Box>
         <Tx>{R`**但这个论证只在暴胀期间成立。**接下来必须跟踪扰动穿出视界、再在视界外一路演化到暴胀结束之后。在暴胀结束前的某个时刻，$|\rho+\mathcal P|\ll\rho$ 必然失效。更物理地说，我们迟早要把暴胀子场中的扰动转换成引力势中的扰动——暴胀子很可能经过一长串复杂反应衰变为标准模型粒子（再加热）。对绝热扰动，我们已经预期**最终只有引力势是要紧的**。
 
 **曲率扰动 $\mathcal R$。**处理度规扰动与能量密度扰动之间耦合的一种办法，是定义**曲率扰动**（curvature perturbation）$\mathcal R$（名字的由来稍后在 \secref{7.4.3} 说明）：`}</Tx>
@@ -203,7 +203,7 @@ Bardeen 变量中有一个特别有用，我们记作 $\mathcal V$，定义为`}
           { tex: R`-\frac{\delta\phi}{a\dot{\bar\phi}}\ \to\ -\frac{\delta\phi}{a\dot{\bar\phi}}+\frac{\zeta}{a},\qquad B\to B-\frac{\zeta}{a}+\xi'`, why: R`在 $E=0$ 的规范之间（$\xi=0$），$\mathcal V=B-\delta\phi/(a\dot{\bar\phi})$ 中的 $\zeta$ 相消，故 $\mathcal V$ 不变。这里用了 $\bar\phi'/[(\rho+\mathcal P)a^2]=a\dot{\bar\phi}/(a^2\dot{\bar\phi}^2)=1/(a\dot{\bar\phi})$。` },
           { tex: R`\mathcal R=-aHB+aH\left(B-\frac{\bar\phi'\delta\phi}{(\rho+\mathcal P)a^2}\right)=-\frac{aH\bar\phi'\delta\phi}{(\bar\phi'/a)^2a^2}=-\frac{aH}{\bar\phi'}\delta\phi`, why: R`空间平直切片中 $\mathcal H=aHB$，代入 \eqref{7.74}，并用 $\rho+\mathcal P=(\bar\phi'/a)^2$。` },
         ]} />
-        <Box kind="warning" title={R`\eqref{7.73} 中的 $\delta T^i{}_0$ 该怎么理解`}>{R`若 $B\neq0$，逆度规有 $g^{0i}=-B_{,i}/a$，于是精确的 $\delta T^i{}_0=g^{ij}\phi_{,j}\phi_{,0}+g^{i0}(\phi_{,0})^2$ 会多出一项 $-B_{,i}\dot{\bar\phi}^2/a$。原书在 \eqref{7.74} 中用的是无扰动度规下的 \eqref{7.47}，即把 $\delta T^i{}_0$ 理解为不含这一度规项的动量密度（等价于用 $-\delta T^0{}_i/a^2$ 来定义）。只有这样理解，$\mathcal V$ 才在时间切片变换下不变、并给出正确的 \eqref{7.76}。另外，一般规范中 $\mathcal V$ 还应把 $B$ 换成 $B-E'$；本书只在 $E=0$ 的两个规范（牛顿规范、空间平直切片）之间转换，所以不受影响。`}</Box>
+        <Box kind="warning" title={R`存疑：\eqref{7.73} 中 $\delta T^i{}_0$ 的含义`}>{R`若 $B\neq0$，逆度规有 $g^{0i}=-B_{,i}/a$，于是精确的 $\delta T^i{}_0=g^{ij}\phi_{,j}\phi_{,0}+g^{i0}(\phi_{,0})^2$ 会多出一项 $-B_{,i}\dot{\bar\phi}^2/a$。原书在 \eqref{7.74} 中用的是无扰动度规下的 \eqref{7.47}，即把 $\delta T^i{}_0$ 理解为不含这一度规项的动量密度（等价于用 $-\delta T^0{}_i/a^2$ 来定义）。只有这样理解，$\mathcal V$ 才在时间切片变换下不变、并给出正确的 \eqref{7.76}。这属于定义上的含糊而非确定的印刷错误，故保留原式。另外，一般规范中 $\mathcal V$ 还应把 $B$ 换成 $B-E'$；本书只在 $E=0$ 的两个规范（牛顿规范、空间平直切片）之间转换，所以不受影响。`}</Box>
         <Tx>{R`这与 \eqref{7.58} 完全一样——只是现在它是精确的，而 \eqref{7.58} 依赖"暴胀期间 $\Psi$ 可忽略"。于是可以立刻把 $\mathcal R$ 的功率与 $\delta\phi$ 的功率联系起来：`}</Tx>
         <Eq n="7.77" say={R`曲率扰动谱 $=$ 换算因子 $(aH/\bar\phi')^2$（即 $H^2/\dot{\bar\phi}^2$）$\times$ 暴胀子涨落谱。`}>{R`P_{\mathcal R}(k)=\left(\frac{aH}{\bar\phi'}\right)^2P_{\delta\phi}(k).`}</Eq>
         <Tx>{R`$P_{\delta\phi}$ 由 \eqref{7.55} 给出，前置因子是 $4\pi G/\epsilon_{\rm sr}$，所以`}</Tx>

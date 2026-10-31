@@ -6,7 +6,7 @@ const R = String.raw;
 export function Sec56() {
   return (
     <Sec n="5.6" title="The Boltzmann equation for neutrinos" zh="中微子的 Boltzmann 方程"
-      gist={R`中微子仿照光子用温度扰动 $\mathcal N$ 描述，但没有碰撞；有质量时自由流与引力项分别带 $p/E_\nu$、$E_\nu/p$ 因子，且 $\mathcal N$ 依赖动量大小 $p$，多出 $-\mathcal Hp\,\partial_p\mathcal N$ 项。`}
+      gist={R`中微子仿照光子用温度扰动 $\mathcal N$ 描述，但没有碰撞；有质量时自由流与引力项分别带 $p/E_\nu$、$E_\nu/p$ 因子，且 $\mathcal N$ 依赖动量大小 $p$，多出 $-aHp\,\partial_p\mathcal N$ 项。`}
       why={R`中微子约占早期辐射能量的 40%，它们的扰动通过引力影响光子与物质；晚期中微子质量又会压制小尺度结构——两者都需要它们的 Boltzmann 方程。`}
       gives={["5.62", "5.63", "5.64", "5.65"]}>
       <p className="muted">本节概念：<C id="neutrino" /> · <C id="free_stream" /></p>
@@ -23,9 +23,9 @@ export function Sec56() {
         { tex: R`-\nosym{g}\left[\partial_t\mathcal N+\frac{p}{E_\nu}\frac{\hat p^i}{a}\partial_i\mathcal N-Hp\,\partial_p\mathcal N+\dot\Phi+\frac{E_\nu}{ap}\hat p^i\Psi_{,i}\right]=0`, why: R`加上自由流项（作用于一阶的 $\delta f$）与引力项（作用于 $f^{(0)}_\nu$），提出公因子 $-\nosym{g}$。光子的 $\Theta$ 与 $p$ 无关，所以那里 $\partial_p\Theta=0$，这一项不出现。` },
       ]} result={R`即 \eqref{5.64}。`} />
       <Tx>{R`转换为共形时间导数并转到 Fourier 空间，得到`}</Tx>
-      <Eq n="5.65" keyEq title="中微子 Boltzmann 方程" say={R`每个 Fourier 模式、每个动量 $p$ 与方向 $\mu$ 的中微子温度扰动演化：慢中微子自由流得慢（$p/E_\nu$），在势阱中停留更久因而受 $\Psi$ 影响更大（$E_\nu/p$）；没有碰撞项。`}>{R`\mathcal N'(\boldsymbol k,p,\mu,\eta) + ik\mu\frac{p}{E_\nu(p)}\mathcal N - Hp\frac{\partial}{\partial p}\mathcal N = -\Phi' - ik\mu\frac{E_\nu(p)}{p}\Psi,`}</Eq>
+      <Eq n="5.65" keyEq title="中微子 Boltzmann 方程" say={R`每个 Fourier 模式、每个动量 $p$ 与方向 $\mu$ 的中微子温度扰动演化：慢中微子自由流得慢（$p/E_\nu$），在势阱中停留更久因而受 $\Psi$ 影响更大（$E_\nu/p$）；没有碰撞项。`}>{R`\mathcal N'(\boldsymbol k,p,\mu,\eta) + ik\mu\frac{p}{E_\nu(p)}\mathcal N - aHp\frac{\partial}{\partial p}\mathcal N = -\Phi' - ik\mu\frac{E_\nu(p)}{p}\Psi,`}</Eq>
       <Tx>{R`这就是我们想要的中微子一阶 Boltzmann 方程。除了没有碰撞项之外，它与光子方程的区别在于 $p/E_\nu(p)$ 因子——当中微子是相对论性时它们化为 1。在晚期，温度降到 $m_\nu$ 以下后，左边第一个 $p/E$ 因子反映了**迟缓的有质量中微子使自由流变慢**；最后一项中的 $E/p$ 因子则反映了**慢中微子在势阱中停留更久**，因而其运动受势阱的影响更大。`}</Tx>
-      <Box kind="warning" title={R`疑似勘误：(5.65) 与 (5.73) 中的 $H$ 应为 $aH=a'/a$`}>{R`从 \eqref{5.64}（对 $t$）换到 \eqref{5.65}（对 $\eta$）时整个方程要乘以 $a$，于是 $-Hp\,\partial_p\mathcal N$ 应变为 $-aHp\,\partial_p\mathcal N=-\frac{a'}{a}p\,\partial_p\mathcal N=-\mathcal H p\,\partial_p\mathcal N$。原书 \eqref{5.65} 与 \eqref{5.73} 中仍写作 $H$（与 \eqref{5.64} 的字形相同），按共形时间的约定应理解为共形哈勃率 $\mathcal H=a'/a$——比较 \eqref{5.52} 中 $H\to a'/a$ 的同样转换。本页按原书照录。`}</Box>
+      <Box kind="warning" title={R`勘误：\eqref{5.65} 与 \eqref{5.73} 中的 $H$ 应为 $aH$`}>{R`原书 \eqref{5.65}、\eqref{5.73} 印作 $\cdots-Hp\frac{\partial}{\partial p}\mathcal N\cdots$（斜体 $H$，与 \eqref{5.64} 中对宇宙时的哈勃率同一字形）。正确为 $-aHp\,\partial_p\mathcal N=-\frac{a'}{a}p\,\partial_p\mathcal N$。依据：从 \eqref{5.64}（对 $t$）换到对 $\eta$ 求导时，$\partial_t=a^{-1}\partial_\eta$，整个方程须乘以 $a$——自由流项 $\frac{\hat p^i}{a}\partial_i\to ik\mu$、$\dot\Phi\to\Phi'$、$\frac{E_\nu}{ap}\hat p^i\Psi_{,i}\to ik\mu\frac{E_\nu}{p}\Psi$ 都已按此转换，唯独 $H$ 项未乘 $a$；量纲上 $\mathcal N'$ 为 [共形时间]$^{-1}$，$H$ 为 [宇宙时]$^{-1}$，二者不能直接相加。比较 \eqref{5.52} 中同样的 $H\to a'/a$ 转换。上式已改正。`}</Box>
       <Tx>{R`**$\mathcal N$ 必须依赖 $p$。**需要注意的一个要点是，我们不能再假设 $\mathcal N$ 与 $p$ 无关、只依赖 $\hat{\boldsymbol p}$、$\boldsymbol x$、$\eta$；因此 \eqref{5.65} 中多出了第三项，这在 $\Theta$ 的方程中并不出现。原因是：一旦中微子不再是极端相对论性的，分布中不同部分的中微子运动方式不同。例如，分布低能尾部的中微子与高能尾部的中微子，$p/E_\nu(p)$ 可能差别很大。出于同样的原因，不同的中微子**质量本征态**需要各自的分布函数。
 
 **复合之前的简化。**幸运的是，如果只关心直到复合时期的中微子行为，就可以在 \eqref{5.65} 中令 $p/E_\nu(p)=1$，并忽略 $\mathcal N$ 对 $p$ 的依赖，使它化为光子 Boltzmann 方程的无碰撞版本：

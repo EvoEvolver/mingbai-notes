@@ -193,7 +193,7 @@ export function PointLens() {
         <p style={{ margin: "0.2em 0" }}><TxI>{ok ? R`$\theta_E=\sqrt{\dfrac{4GM}{c^2}\dfrac{D_{LS}}{D_LD_S}}=${f3(thE / P.ARCSEC)}''$（$\chi_L=${Math.round(cl)}$、$\chi_S=${Math.round(cs)}\,\mathrm{Mpc}$）。两个像：$\theta_\pm=${f3(tp)}\,\theta_E$ 与 $${f3(tm)}\,\theta_E$，即 $${f2(tp * thE / P.ARCSEC)}''$、$${f2(tm * thE / P.ARCSEC)}''$；放大率 $\mu_+=${f2(mup)}$、$\mu_-=${f2(mum)}$（负号＝像翻转），总放大 $${f2(mut)}$。` : R`源必须在透镜之后（$z_S>z_L$）才有透镜效应。`}</TxI></p>
         <p style={{ margin: "0.2em 0" }}><TxI>{R`$\beta\gg\theta_E$ 时进入弱透镜区：像只被轻微切向拉伸，$\gamma_t=\theta_E^2/(2\theta^2)$、$\kappa=0$（点质量外）——这正是 \figref{13.2} 右图的弧变成"微微拉长的椭圆"。`}</TxI></p>
       </div>
-      <div className="plot-cap"><TxI>{R`点质量透镜方程 $\boldsymbol\theta_S=\boldsymbol\theta-\theta_E^2\boldsymbol\theta/|\boldsymbol\theta|^2$（由 \eqref{13.67} 取 $\Sigma\propto\delta_{\rm D}^{(2)}$，并按 $\phi_{\rm L}$ 的约定修正整体符号，见 \exref{13.4}）。左图对每个像素反向追踪光线：若落在源盘内就着色——源靠近透镜正后方时拉成两段切向弧，$\beta=0$ 时成为完整的 Einstein 环。右图是侧视示意（角度极度夸张，同 \figref{13.4}）：实线为真实光路，在透镜面折转；虚线是观测者"以为"的直线方向，指向比真实源更远离透镜的视位置。`}</TxI></div>
+      <div className="plot-cap"><TxI>{R`点质量透镜方程 $\boldsymbol\theta_S=\boldsymbol\theta-\theta_E^2\boldsymbol\theta/|\boldsymbol\theta|^2$（由 \eqref{13.67} 取 $\Sigma\propto\delta_{\rm D}^{(2)}$；\eqref{13.67} 的整体负号见 \exref{13.4} 解答中的勘误）。左图对每个像素反向追踪光线：若落在源盘内就着色——源靠近透镜正后方时拉成两段切向弧，$\beta=0$ 时成为完整的 Einstein 环。右图是侧视示意（角度极度夸张，同 \figref{13.4}）：实线为真实光路，在透镜面折转；虚线是观测者"以为"的直线方向，指向比真实源更远离透镜的视位置。`}</TxI></div>
     </div>);
 }
 

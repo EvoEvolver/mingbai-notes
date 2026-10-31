@@ -52,7 +52,8 @@ export function Sec73() {
         <Box kind="warning" title={R`$\langle\hat X\rangle$ 的两种含义：真空期望值 vs. 系综平均`}>{R`这里 $\langle\hat X\rangle$ 表示算符 $\hat X$ 的**真空期望值**（vacuum expectation value）。后面各章会用**同一个记号**表示可观测量的**系综平均**（ensemble average）——即在无穷大体积上测量该量所得的值。**这两者不是一回事**：前者是量子态的性质，后者是对经典随机场的空间平均。
 
 为什么可以把它们等同起来？如果我们的可观测宇宙只是一大片经历过暴胀的时空中的**一小块**，那么"许多独立的 Fourier 模式 / 许多独立的区域"就充当了系综的各个样本：量子力学给出每个模式振幅的概率分布，而我们的天空是从这个分布中抽出的**一次**实现（视界外模式冻结后，不同模式的相位关系丢失，它们实际上表现为经典随机变量）。这个微妙的认同是**整个现代宇宙学的基础**。它的代价是：在最大尺度上可用的独立样本很少，无法把系综平均测得任意精确——这就是以后会遇到的宇宙方差（cosmic variance）。`}</Box>
-        <Tx>{R`**逐项化简。**因为 $\hat a|0\rangle=0$，第二个括号中的第一项 $v\hat a|0\rangle$ 为零。同理 $\langle0|\hat a^\dagger=(\hat a|0\rangle)^\dagger=0$，于是第一个括号中的 $v^*\hat a^\dagger$ 项也贡献为零（原书此处两次漏写了 $a$ 上的帽子）。只剩交叉项：`}</Tx>
+        <Tx>{R`**逐项化简。**因为 $\hat a|0\rangle=0$，第二个括号中的第一项 $v\hat a|0\rangle$ 为零。同理 $\langle0|\hat a^\dagger=(\hat a|0\rangle)^\dagger=0$，于是第一个括号中的 $v^*\hat a^\dagger$ 项也贡献为零。只剩交叉项：`}</Tx>
+        <Box kind="warning" title={R`勘误：算符 $\hat a$ 上漏印的帽子`}>{R`原书本页两处印作不带帽子的 $a$：\eqref{7.21} 后"Since $a^\dagger$ acting on the vacuum state…"，以及此处的 $\langle0|\hat a^\dagger=(a|0\rangle)^\dagger=0$。正确为 $\hat a^\dagger$ 与 $(\hat a|0\rangle)^\dagger$：这里作用在态上的是湮灭/产生**算符**，而 $a$ 在本书中是标度因子。本页已按正确形式书写。`}</Box>
         <Eq n="7.25" say={R`四项中只有"先产生、再湮灭"的一项存活；把 $\hat a\hat a^\dagger$ 用对易子改写，便于看出它在真空中等于 1。`}>{R`\begin{aligned}\left\langle|\hat x|^2\right\rangle&=|v(\omega,t)|^2\langle0|\hat a\hat a^\dagger|0\rangle\\&=|v(\omega,t)|^2\langle0|[\hat a,\hat a^\dagger]+\hat a^\dagger\hat a|0\rangle.\end{aligned}`}</Eq>
         <Tx>{R`第二项再次为零（$\hat a$ 湮灭真空），第一项等于 1，所以 $\hat x$ 的方差是`}</Tx>
         <Eq n="7.26" keyEq title="真空涨落的方差" say={R`真空中位置涨落的方差就是模函数的模平方：只要解出经典的模函数，量子涨落就算好了（谐振子为 $1/2\omega$）。`}>{R`\left\langle|\hat x|^2\right\rangle=|v(\omega,t)|^2,`}</Eq>
@@ -150,8 +151,8 @@ $$P_h(k,\eta)=\frac{16\pi GH^2\eta^2}{2k}\left(1+\frac{1}{k^2\eta^2}\right)=\fra
 
 **两点说明。**（1）推导中假设了 $H$ 是常数。实际上暴胀期间 $H$ 缓慢变化，但只要把 $H$ 取在**所关心的模式离开视界的时刻** $k|\eta|=1$，结果依然准确（模式出视界后就冻结，它"记住"的是那一刻的 $H$；这将在 \secref{7.6} 给出张量谱指数）。
 
-（2）如本节开头所说，\eqref{7.42} 是 $h_+$ 与 $h_\times$ **各自**的功率谱；两者互不相关，所以总张量功率谱要大一个因子——我们在 \secref{7.6} 再回到这一点。`}</Tx>
-        <Box kind="warning" title={R`"大 2 倍"还是"大 4 倍"？`}>{R`原书此处说总张量谱"大一个因子 2"，这只计入了**两个偏振相加**。但 \secref{7.6} 的 \eqref{7.102} 按惯例把总张量谱定义为 $\langle h^{\rm TT}_{ij}h^{{\rm TT}*}_{ij}\rangle$，而由 \eqref{6.49}，$h^{\rm TT}_{ij}h^{{\rm TT}*}_{ij}=2|h_+|^2+2|h_\times|^2$（每个偏振在矩阵中出现两次），于是 $P_{\rm T}=4P_h$。阅读时请以 \eqref{7.102} 的约定为准：因子 2 来自两个偏振，另一个因子 2 来自张量指标求和。`}</Box>
+（2）如本节开头所说，\eqref{7.42} 是 $h_+$ 与 $h_\times$ **各自**的功率谱；两者互不相关，所以按 \secref{7.6} 中 \eqref{7.101} 的定义，总张量功率谱要大一个因子 4——我们在 \secref{7.6} 再回到这一点。`}</Tx>
+        <Box kind="warning" title={R`勘误：总张量谱大 4 倍而非 2 倍`}>{R`原书印作"the total tensor power spectrum is larger by a factor of 2"。正确为因子 4，与原书自己的 \eqref{7.102} $P_{\rm T}=4P_h$ 一致。依据：\eqref{7.101} 把总张量谱定义为 $\langle h^{\rm TT}_{ij}h^{{\rm TT}*}_{ij}\rangle$（对 $i,j$ 求和），由 \eqref{6.49}，$h^{\rm TT}_{ij}h^{{\rm TT}*}_{ij}=2|h_+|^2+2|h_\times|^2$——两个互不相关的偏振贡献一个因子 2，每个偏振在矩阵中出现两次又贡献一个因子 2。原书的"因子 2"只计入了偏振相加。`}</Box>
         <Tx>{R`**一个了不起的测量。**探测到这些引力波并测出 $P_h(k)$，就等于测出了**暴胀期间的哈勃率**。由于暴胀模型中势能通常远大于动能，测得 $H$ 几乎就等于测得势 $V$（$H^2\simeq8\pi GV/3$）——考虑到暴胀可能由 $10^{15}\,\mathrm{GeV}$ 以上能标的物理产生，比当今加速器的能力高出 11 个数量级，这同样非同寻常。
 
 但**并不保证**暴胀产生的引力波一定可探测。由于 $H^2\propto\rho/m_{\rm Pl}^2$（$m_{\rm Pl}^2=1/G$），功率谱 $\propto GH^2\propto\rho/m_{\rm Pl}^4$，即以 Planck 质量为单位的暴胀时能量密度。如果暴胀发生的能标比 Planck 能标低得足够多，原初引力波就探测不到。本书后面将发展必要的工具来回答：引力波振幅可以小到多少而仍能被探测？`}</Tx>

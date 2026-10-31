@@ -43,11 +43,9 @@ export function Sec72() {
 均匀场的压强为 $\mathcal P=T^i{}_i$（对空间指标 $i$ **不求和**；$i=1,2,3$ 结果都一样），所以`}</Tx>
       <Eq n="7.9" say={R`标量场的压强 = 动能 减去 势能：势能主导时压强为负。`}>{R`\mathcal P=\frac12\dot\phi^2-V(\phi).`}</Eq>
       <Tx>{R`于是，**势能多于动能**的场位形就具有负压。等价地，可以用物态方程表述：`}</Tx>
-      <Eq n="7.10" say={R`标量场的物态方程参数：势能主导（$\dot\phi^2\ll V$）时 $w\to-1$，像宇宙学常数；动能主导时 $w\to+1$。`}>{R`w=\frac{\mathcal P}{\rho}=\frac{\dot\phi^2-V(\phi)}{\dot\phi^2+V(\phi)}`}</Eq>
+      <Eq n="7.10" say={R`标量场的物态方程参数：势能主导（$\dot\phi^2\ll V$）时 $w\to-1$，像宇宙学常数；动能主导时 $w\to+1$。`}>{R`w=\frac{\mathcal P}{\rho}=\frac{\frac12\dot\phi^2-V(\phi)}{\frac12\dot\phi^2+V(\phi)}`}</Eq>
       <Tx>{R`它接近 $-1$。`}</Tx>
-      <Box kind="warning" title={R`疑似勘误：\eqref{7.10} 中少了因子 $1/2$`}>{R`直接用 \eqref{7.8}、\eqref{7.9} 相除得到的是
-$$w=\frac{\frac12\dot\phi^2-V(\phi)}{\frac12\dot\phi^2+V(\phi)},$$
-原书 \eqref{7.10} 的分子分母中动能项都漏掉了 $\frac12$。这不影响定性结论（$\dot\phi^2\ll V$ 时 $w\simeq-1$），但定量使用时请以上式为准。例如 $w<-1/3$（加速）对应 $\dot\phi^2<V$，而不是按原式得出的 $\dot\phi^2<V/2$。`}</Box>
+      <Box kind="warning" title={R`勘误：\eqref{7.10} 中的因子 $\frac12$`}>{R`原书印作 $w=\dfrac{\dot\phi^2-V(\phi)}{\dot\phi^2+V(\phi)}$，分子分母的动能项都漏了 $\frac12$。正确为上式：直接用 \eqref{7.8} 的 $\rho=\frac12\dot\phi^2+V$ 与 \eqref{7.9} 的 $\mathcal P=\frac12\dot\phi^2-V$ 相除即得。定性结论不变（$\dot\phi^2\ll V$ 时 $w\simeq-1$，动能主导时 $w\to+1$），但定量上 $w<-1/3$（加速）对应 $\dot\phi^2<V$，而按原书印法会得出 $\dot\phi^2<V/2$。`}</Box>
       <Tx>{R`**慢滚图像。**最流行的暴胀方案假设标量场正**缓慢地滚向**它真正的基态（Linde 1982；Albrecht & Steinhardt 1982）。只要势不太陡，这样的场的势能非常接近常数，很快就压倒动能（以及其他所有粒子的能量）而占据主导。图 7.5 是一个例子：当场到达势的极小值时暴胀结束，场将在那里振荡，并衰变为更轻的粒子（最终变成标准模型的粒子）。
 
 文献中提出过各种各样形式的势，Martin 等（2014）给出了一份详尽的清单。不知是幸还是不幸，许多不同的模型都可以被调得与观测相符。因此这里不详细讨论具体的方案。`}</Tx>

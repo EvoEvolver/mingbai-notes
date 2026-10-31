@@ -55,7 +55,7 @@ const D0 = Dun(1);
 export const growthD = z => Dun(1 / (1 + z)) / D0;
 export const PLh = (k, z = 0) => AMP * P0raw(k) * growthD(z) ** 2;                 // [h^-3 Mpc^3]，k [h Mpc^-1]
 export const fGrowth = z => { const a = 1 / (1 + z); return (OM / a ** 3 / Ez(a) ** 2) ** 0.55; };
-export const modesBook = (k, dk, V) => V * k * k * dk / (4 * Math.PI ** 2);       // (14.53)
+export const modesBook = (k, dk, V) => V * k * k * dk / (2 * Math.PI ** 2);       // (14.53)，已按勘误去掉原书的 1/2（FKP 计数）
 export const pkErrFrac = (k, dk, V, nbar, b, z) => { const P = b * b * PLh(k, z); return Math.sqrt(2 / modesBook(k, dk, V)) * (1 + 1 / (nbar * P)); };   // (14.60)/P
 
 // ---------- §14.5 Fisher 矩阵（2$\times$2）----------

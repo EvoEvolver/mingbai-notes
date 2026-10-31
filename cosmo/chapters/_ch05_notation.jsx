@@ -27,7 +27,7 @@ export const NOTATION = [
   { sym: R`a`, name: "标度因子", en: "scale factor", def: R`今天 $a=1$；物理距离 $=a\times$ 共动距离`, unit: "无量纲" },
   { sym: R`\dot a`, name: "标度因子对 t 的导数", def: R`$\dot a=aH$`, unit: R`时间$^{-1}$` },
   { sym: R`a'`, name: R`标度因子对 $\eta$ 的导数`, def: R`$a'=da/d\eta=a\dot a=a^2H$；$a'/a=aH\equiv\mathcal H$ 是共形哈勃率`, unit: R`长度$^{-1}$` },
-  { sym: R`H`, name: "哈勃率", en: "Hubble rate", def: R`$H=\dot a/a$（对宇宙时）。注意 \eqref{5.65}、\eqref{5.73} 改用共形时间后，此处的 $H$ 应理解为 $aH=a'/a$（见 §5.6 的易错点）`, unit: R`时间$^{-1}$` },
+  { sym: R`H`, name: "哈勃率", en: "Hubble rate", def: R`$H=\dot a/a$（对宇宙时）。共形时间方程 \eqref{5.65}、\eqref{5.73} 中出现的是 $aH=a'/a$（原书印作 $H$，见 §5.6 的勘误）`, unit: R`时间$^{-1}$` },
   { sym: R`\mathcal H`, name: "共形哈勃率", en: "conformal Hubble rate", def: R`$\mathcal H\equiv a'/a=aH$`, unit: R`长度$^{-1}$` },
   { sym: R`T`, name: "光子（零阶）温度", en: "temperature", def: R`只依赖时间的背景温度 $T(t)\propto1/a$（\eqref{5.6}）；$k_{\rm B}=1$，以能量为单位`, unit: "能量", eq: "5.6" },
   { sym: R`T_\nu`, name: "中微子温度", def: R`中微子零阶分布的温度，$T_\nu=(4/11)^{1/3}T$`, unit: "能量", eq: "5.62" },

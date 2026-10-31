@@ -159,7 +159,7 @@ export function ScatterWidget({ mode0 = "scal" }) {
         <Note>{mode === "beam" ? R`来自 $x$ 轴的光束（$\beta=0$）给出 $Q=-1$：出射光完全沿 $y$ 偏振——沿出射方向 $z$ 的那一分量传不出去。`
           : mode === "iso" || mode === "dip" ? R`单极与偶极只含 $l=0,1$ 的球谐函数，与 $\sin^2\theta'\cos2\phi'$、$\sin^2\theta'\sin2\phi'$（$\propto Y_{2,\pm2}$）正交，所以无论怎样调，$Q=U=0$。`
           : mode === "scal" ? R`标量模：$\phi_k$ 只让偏振方向转 $\phi_k$（$Q,U$ 按 $2\phi_k$ 混合），偏振始终平行或垂直于 $\hat{\boldsymbol k}$ 在天空上的投影——**纯 E 模**。$\theta_k=0$（波矢沿视线）时偏振消失。`
-          : mode === "hx" ? R`张量 $h_\times$，$\hat{\boldsymbol k}$ 的天空投影沿 $x$ 轴：只产生 $U$——由 \eqref{10.12}，这就是 **B 模**。$|U|=\frac{16\pi}{15}\cos\alpha=${f2(16 * Math.PI / 15 * Math.cos(prm.alpha))}$；原书 \eqref{10.50} 第二行写作 $\frac{16}{15}\cdot\frac\pi2$，$\phi'$ 积分 $\int_0^{2\pi}\sin^2 2\phi'\,d\phi'$ 实为 $\pi$（只影响比例常数）。$\alpha=90^\circ$（$\hat{\boldsymbol k}$ 躺在天空平面内）时 B 模消失。`
+          : mode === "hx" ? R`张量 $h_\times$，$\hat{\boldsymbol k}$ 的天空投影沿 $x$ 轴：只产生 $U$——由 \eqref{10.12}，这就是 **B 模**。$|U|=\frac{16\pi}{15}\cos\alpha=${f2(16 * Math.PI / 15 * Math.cos(prm.alpha))}$，与改正后的 \eqref{10.50} 一致（原书第二行误印为 $\frac{16}{15}\cdot\frac\pi2$，见勘误框）。$\alpha=90^\circ$（$\hat{\boldsymbol k}$ 躺在天空平面内）时 B 模消失。`
           : R`张量 $h_+$，同一配置：只产生 $Q$，$U\equiv0$——这一配置下 $h_+$ 只贡献 E 模（\exref{10.6}）。`}</Note>
       </div>
     </div>);

@@ -1,8 +1,8 @@
 // 习题 7.1–7.18 —— 式 (7.111)–(7.124)。
 // 解答：7.2、7.12、7.13 依据原书附录 A（fromBook）；其余 15 题为编者给出（editor-provided），
 // 数值（7.1、7.2、7.3、7.15、7.18）均用 python 复核：基准宇宙学取附录 B 的 h=0.677、Ω_m=0.3106、n_s=0.9682、ln(10^10 A_s)=3.048。
-// 注意：原书 (7.113) 缺少因子 −2；习题 7.15 中 f_ν 的定义式应为 ρ_ν/ρ_r（见各题解答中的说明）。
-import { Sec, Tx, Eq, Exercise } from "@kit";
+// 勘误：原书 (7.113) 缺少因子 −2；习题 7.15 中 f_ν 的定义式应为 ρ_ν/ρ_r（正文已改正，见各题勘误框）。
+import { Sec, Tx, Eq, Box, Exercise } from "@kit";
 
 const R = String.raw;
 
@@ -68,12 +68,12 @@ $$\frac{a_0H_0}{a_eH_e}\approx\frac{2.3\times10^{-27}}{9.5\times10^{-3}}\approx2
 
       {/* ---------------- 7.4 ---------------- */}
       <Exercise n="7.4" title="正则标量场的能动张量" level="★★"
-        hint={R`$V$ 不含度规，所以只有动能项对 $g^{\mu\nu}$ 求导有贡献。要得到 \eqref{7.6} 的正确符号与系数，变分公式中 $\delta\mathcal L_\phi/\delta g^{\mu\nu}$ 前应有因子 $-2$（来自 $\sqrt{-g}$ 的变分与能动张量的标准归一化）。`}
+        hint={R`$V$ 不含度规，所以只有动能项对 $g^{\mu\nu}$ 求导有贡献。注意 \eqref{7.113} 中 $\delta\mathcal L_\phi/\delta g^{\mu\nu}$ 前的因子 $-2$（来自 $\sqrt{-g}$ 的变分与能动张量的标准归一化）。`}
         solution={R`**变分。**作用量为 $S=\int d^4x\sqrt{-g}\,\mathcal L_\phi$。利用 $\delta\sqrt{-g}=-\frac12\sqrt{-g}\,g_{\mu\nu}\delta g^{\mu\nu}$，
 $$\delta S=\int d^4x\sqrt{-g}\left[\frac{\partial\mathcal L_\phi}{\partial g^{\mu\nu}}-\frac12g_{\mu\nu}\mathcal L_\phi\right]\delta g^{\mu\nu}.$$
 能动张量的标准定义 $T_{\mu\nu}\equiv-\frac{2}{\sqrt{-g}}\frac{\delta S}{\delta g^{\mu\nu}}$ 给出
 $$T_{\mu\nu}=-2\frac{\partial\mathcal L_\phi}{\partial g^{\mu\nu}}+g_{\mu\nu}\mathcal L_\phi.$$
-（**勘误提示：**原书 \eqref{7.113} 印成 $\delta\mathcal L_\phi/\delta g^{\mu\nu}+g_{\mu\nu}\mathcal L_\phi$，漏了因子 $-2$。若按字面计算，会得到 $T^0{}_0=\dot\phi^2-V$，即 $\rho=V-\dot\phi^2$，动能符号错误。）
+这就是题面 \eqref{7.113}（已按勘误改正）。
 
 **代入。**由 \eqref{7.112}，势不含度规，$\frac{\partial\mathcal L_\phi}{\partial g^{\mu\nu}}=-\frac12\frac{\partial\phi}{\partial x^\mu}\frac{\partial\phi}{\partial x^\nu}$，所以
 $$T_{\mu\nu}=\frac{\partial\phi}{\partial x^\mu}\frac{\partial\phi}{\partial x^\nu}-g_{\mu\nu}\left[\frac12g^{\rho\sigma}\frac{\partial\phi}{\partial x^\rho}\frac{\partial\phi}{\partial x^\sigma}+V(\phi)\right].$$
@@ -85,7 +85,8 @@ $$T^\alpha{}_\beta=g^{\alpha\nu}\frac{\partial\phi}{\partial x^\nu}\frac{\partia
         <Tx>{R`推导正则标量场的能动张量。其拉氏量为`}</Tx>
         <Eq n="7.112" say={R`标量场的拉氏量是动能减势能；由于 $g^{00}<0$，动能项前要加负号，才能使时间导数项以正号出现。`}>{R`\mathcal L_\phi=-\frac12g^{\mu\nu}\frac{\partial\phi}{\partial x^\mu}\frac{\partial\phi}{\partial x^\nu}-V(\phi).`}</Eq>
         <Tx>{R`回忆：拉氏量是动能与势能之差；又因 $g^{00}<0$，动能项需要一个负号。能动张量由作用量对度规变分得到：`}</Tx>
-        <Eq n="7.113" say={R`能动张量是物质作用量对度规的响应：度规变化时拉氏量怎样变，就决定了这种物质的能量、动量与应力（原书此式漏了因子 $-2$，见解答）。`}>{R`T_{\mu\nu}=\frac{\delta\mathcal L_\phi}{\delta g^{\mu\nu}}+g_{\mu\nu}\mathcal L_\phi.`}</Eq>
+        <Eq n="7.113" say={R`能动张量是物质作用量对度规的响应：度规变化时拉氏量怎样变，就决定了这种物质的能量、动量与应力。`}>{R`T_{\mu\nu}=-2\frac{\delta\mathcal L_\phi}{\delta g^{\mu\nu}}+g_{\mu\nu}\mathcal L_\phi.`}</Eq>
+        <Box kind="warning" title={R`勘误：\eqref{7.113} 漏了因子 $-2$`}>{R`原书印作 $T_{\mu\nu}=\frac{\delta\mathcal L_\phi}{\delta g^{\mu\nu}}+g_{\mu\nu}\mathcal L_\phi$。正确为 $T_{\mu\nu}=-2\frac{\delta\mathcal L_\phi}{\delta g^{\mu\nu}}+g_{\mu\nu}\mathcal L_\phi$。依据：能动张量的标准定义是作用量对 $g^{\mu\nu}$ 的变分乘以 $-2/\sqrt{-g}$（见解答），配合 $\delta\sqrt{-g}=-\frac12\sqrt{-g}\,g_{\mu\nu}\delta g^{\mu\nu}$ 即得上式；它对 \eqref{7.112} 给出 \eqref{7.6}、$\rho=\frac12\dot\phi^2+V$。若按原书字面计算，会得到 $T^0{}_0=\dot\phi^2-V$，即 $\rho=V-\dot\phi^2$，动能符号与系数都错。`}</Box>
         <Tx>{R`用它推导 \eqref{7.6}。`}</Tx>
       </Exercise>
 
@@ -247,9 +248,10 @@ $$\delta T^1{}_1-\delta T^2{}_2,$$
       {/* ---------------- 7.12 ---------------- */}
       <Exercise n="7.12" title={R`de Sitter 模函数 \eqref{7.40} 的推导`} level="★★" fromBook
         hint={R`$v=\eta\tilde v$ 给出 $v''=\eta\tilde v''+2\tilde v'$。令 $\sym{ch07-xke}{x}\equiv k\eta$，得到一阶球 Bessel 方程（式 (C.13)），解为 $j_1$ 与 $y_1$。在 $k\eta\to-\infty$ 时只保留 $e^{-ik\eta}$。`}
-        solution={R`**(a)** 由 $v=\eta\tilde v$，$v'=\tilde v+\eta\tilde v'$，$v''=2\tilde v'+\eta\tilde v''$。代入 \eqref{7.39} 并除以 $\eta$，方程变为
+        solution={<>
+          <Tx>{R`**(a)** 由 $v=\eta\tilde v$，$v'=\tilde v+\eta\tilde v'$，$v''=2\tilde v'+\eta\tilde v''$。代入 \eqref{7.39} 并除以 $\eta$，方程变为
 $$\frac{d^2\tilde v}{d\eta^2}+\frac2\eta\frac{d\tilde v}{d\eta}+\left(k^2-\frac{2}{\eta^2}\right)\tilde v=0.$$
-（附录 A 式 (A.94) 漏印了"$=0$"。）定义 $\sym{ch07-xke}{x}\equiv k\eta$，可见 $\tilde v$ 满足一阶球 Bessel 方程（式 (C.13)）。
+（原书附录此式漏印"$=0$"，见下方勘误。）定义 $\sym{ch07-xke}{x}\equiv k\eta$，可见 $\tilde v$ 满足一阶球 Bessel 方程（式 (C.13)）。
 
 **(b)** 式 (C.13) 的两个解是 $j_1(\sym{ch07-xke}{x})$ 与 $y_1(\sym{ch07-xke}{x})$，所以通解为 $\sym{ch07-cA}{A}j_1+\sym{ch07-cB}{B}y_1$。把它们显式写出：
 $$\begin{aligned}v=\eta\tilde v&=\eta\left(\sym{ch07-cA}{A}\frac{\sin\sym{ch07-xke}{x}-\sym{ch07-xke}{x}\cos\sym{ch07-xke}{x}}{\sym{ch07-xke}{x}^2}-\sym{ch07-cB}{B}\frac{\cos\sym{ch07-xke}{x}+\sym{ch07-xke}{x}\sin\sym{ch07-xke}{x}}{\sym{ch07-xke}{x}^2}\right)\\&=\frac{1}{2k^2\eta}\Big(e^{ik\eta}[-i\sym{ch07-cA}{A}-\sym{ch07-cA}{A}k\eta-\sym{ch07-cB}{B}+i\sym{ch07-cB}{B}k\eta]\\&\qquad\qquad+e^{-ik\eta}[i\sym{ch07-cA}{A}-\sym{ch07-cA}{A}k\eta-\sym{ch07-cB}{B}-i\sym{ch07-cB}{B}k\eta]\Big).\end{aligned}$$
@@ -258,7 +260,9 @@ $$\begin{aligned}v=\eta\tilde v&=\eta\left(\sym{ch07-cA}{A}\frac{\sin\sym{ch07-x
 $$\frac{1}{2k^2\eta}\left[-2\sym{ch07-cA}{A}k\eta\right]=-\frac{\sym{ch07-cA}{A}}{k}.$$
 它必须等于 $(2k)^{-1/2}$，所以 $\sym{ch07-cA}{A}=-(k/2)^{1/2}$。于是正确的解为
 $$v=\frac{e^{-ik\eta}}{\sqrt{2k}}\left[1-\frac{i}{k\eta}\right],$$
-与 \eqref{7.40} 一致。（编者补充：代回完整的 $e^{-ik\eta}$ 系数 $\frac{1}{2k^2\eta}[2i\sym{ch07-cA}{A}-2\sym{ch07-cA}{A}k\eta]=-\frac{\sym{ch07-cA}{A}}{k}\left(1-\frac{i}{k\eta}\right)$，可直接看出方括号的来历。）`}>
+与 \eqref{7.40} 一致。（编者补充：代回完整的 $e^{-ik\eta}$ 系数 $\frac{1}{2k^2\eta}[2i\sym{ch07-cA}{A}-2\sym{ch07-cA}{A}k\eta]=-\frac{\sym{ch07-cA}{A}}{k}\left(1-\frac{i}{k\eta}\right)$，可直接看出方括号的来历。）`}</Tx>
+          <Box kind="warning" title={R`勘误：附录 A 式 (A.94) 漏印"$=0$"`}>{R`原书附录 A 习题 7.12 解答中的 (A.94) 印作 $\frac{d^2\tilde v}{d\eta^2}+\frac2\eta\frac{d\tilde v}{d\eta}+\left(k^2-\frac{2}{\eta^2}\right)\tilde v$，没有等号右边。正确为 $\cdots=0$：它是由 \eqref{7.39} 代入 $v=\eta\tilde v$ 后除以 $\eta$ 得到的齐次方程，也正是一阶球 Bessel 方程 (C.13) 的形式。`}</Box>
+        </>}>
         <Tx>{R`证明 \eqref{7.40} 是 \eqref{7.39} 的恰当解。
 
 (a) 定义 $\tilde v=v/\eta$，把 \eqref{7.39} 改写成关于 $\tilde v$ 的方程。
@@ -300,10 +304,9 @@ $$\frac{\rho_\nu}{\rho_\gamma}=3\times\frac78\left(\frac{4}{11}\right)^{4/3}=\fr
 
 **中微子在辐射中的占比。**习题 7.16 中真正出现的量是中微子占*全部辐射*的比例（见 \eqref{7.122} 的推导：由 Friedmann 方程 $32\pi Ga^2\rho_{\rm r}=12/\eta^2$，出现的是 $\rho_\nu/\rho_{\rm r}$）：
 $$f_\nu=\frac{\rho_\nu}{\rho_\gamma+\rho_\nu}=\frac{0.681}{1.681}\approx0.405.$$
-若取标准的 $N_{\rm eff}=3.046$（计入中微子退耦时的部分加热），$\rho_\nu/\rho_\gamma\approx0.692$，$f_\nu\approx0.409$。两个比值从 $e^\pm$ 湮灭之后一直保持不变（两者都 $\propto a^{-4}$），直到中微子质量变得重要（$T_\nu\sim m_\nu$，远在复合之后）。
-
-**关于定义的说明。**题目文字说的是"中微子与辐射的能量密度之比"，但原书写成 $f_\nu\equiv\rho_\nu/\rho_\gamma$。与 \eqref{7.122}、\eqref{7.123} 自洽的定义是 $f_\nu=\rho_\nu/\rho_{\rm r}\approx0.41$——这也是文献中常用的 $R_\nu$；原书的定义式应为笔误。`}>
-        {R`计算中微子与辐射能量密度之比 $f_\nu\equiv\rho_\nu/\rho_\gamma$，时间取在正负电子湮灭之后（见 §2.4.4）、但在中微子质量变得重要之前。`}
+若取标准的 $N_{\rm eff}=3.046$（计入中微子退耦时的部分加热），$\rho_\nu/\rho_\gamma\approx0.692$，$f_\nu\approx0.409$。两个比值从 $e^\pm$ 湮灭之后一直保持不变（两者都 $\propto a^{-4}$），直到中微子质量变得重要（$T_\nu\sim m_\nu$，远在复合之后）。`}>
+        <Tx>{R`计算中微子与辐射能量密度之比 $f_\nu\equiv\rho_\nu/\rho_{\rm r}=\rho_\nu/(\rho_\gamma+\rho_\nu)$，时间取在正负电子湮灭之后（见 §2.4.4）、但在中微子质量变得重要之前。`}</Tx>
+        <Box kind="warning" title={R`勘误：$f_\nu$ 的定义应为 $\rho_\nu/\rho_{\rm r}$`}>{R`原书题面印作 $f_\nu\equiv\rho_\nu/\rho_\gamma$。正确为 $f_\nu\equiv\rho_\nu/\rho_{\rm r}\approx0.41$（文献中的 $R_\nu$）。依据：题面文字本身说的是"中微子与**辐射**的能量密度之比"；而习题 7.16 中 $f_\nu$ 出现的方式（\eqref{7.122} 由 $32\pi Ga^2\rho_{\rm r}=12/\eta^2$ 引入 $\rho_\nu/\rho_{\rm r}$）只与这一定义自洽。若按 $\rho_\nu/\rho_\gamma\approx0.68$ 代入 \eqref{7.123}，修正会被高估约 1.7 倍。`}</Box>
       </Exercise>
 
       {/* ---------------- 7.16 ---------------- */}
@@ -327,7 +330,7 @@ $$\mathcal N_2''=\frac25k\mathcal N_1'=\frac25k\cdot\frac k3\left(\Psi+\mathcal 
 
 **(c)** 忽略光子四极矩，\eqref{6.48} 为 $k^2(\Phi+\Psi)=-32\pi Ga^2\rho_\nu\mathcal N_2$。辐射主导时 $\frac{8\pi G\rho_{\rm r}a^2}{3}=\left(\frac{a'}{a}\right)^2=\frac1{\eta^2}$，所以 $32\pi Ga^2=\frac{12}{\eta^2\rho_{\rm r}}$：
 $$k^2(\Phi+\Psi)=-\frac{12}{\eta^2}\frac{\rho_\nu}{\rho_{\rm r}}\mathcal N_2\ \Rightarrow\ \mathcal N_2=-(k\eta)^2\frac{\Phi+\Psi}{12f_\nu},$$
-其中 $f_\nu=\rho_\nu/\rho_{\rm r}$（见 \exref{7.15} 的说明）。
+其中 $f_\nu=\rho_\nu/\rho_{\rm r}$（\exref{7.15}）。
 
 **(d)** 对常数模（$p=0$），$\Phi$、$\Psi$ 与 $f_\nu$ 都不随时间变化，所以
 $$\mathcal N_2''=-\frac{2k^2(\Phi+\Psi)}{12f_\nu}=-\frac{k^2(\Phi+\Psi)}{6f_\nu}.$$

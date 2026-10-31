@@ -164,7 +164,7 @@ $Y_P$ 只对数依赖 $\eta_{\rm b}$（通过 $T_{\rm nuc}$），因而是检验
   {
     id: "decoupling", name_zh: "光子退耦与再电离", name_en: "Photon decoupling & reionization", icon: "📸", section_id: "4.3", group: "rec",
     plain: R`当汤姆孙散射率 $n_e\sigma_{\rm T}$ 掉到 $H$ 以下，光子自由飞行——CMB 就是那一刻的快照。`,
-    explain: R`$n_e\sigma_{\rm T}/H\approx123X_e(\Omega_{\rm b}h^2/0.022)(0.14/\Omega_{\rm m}h^2)^{1/2}((1+z)/1000)^{3/2}[\cdots]^{-1/2}$。$z\gg10^3$ 时 $X_e=1$，散射率远大于膨胀率；复合使 $X_e$ 骤降，当 $X_e\lesssim10^{-2}$ 时比值降到 1 以下——退耦发生在复合期间。
+    explain: R`$n_e\sigma_{\rm T}/H\approx129X_e(\Omega_{\rm b}h^2/0.022)(0.14/\Omega_{\rm m}h^2)^{1/2}((1+z)/1000)^{3/2}[\cdots]^{-1/2}$。$z\gg10^3$ 时 $X_e=1$，散射率远大于膨胀率；复合使 $X_e$ 骤降，当 $X_e\lesssim10^{-2}$ 时比值降到 1 以下——退耦发生在复合期间。
 
 即使没有复合（$X_e$ 始终为 1），稀释也会让光子在 $1+z\approx39$ 时退耦。今天弥散气体又是电离的：再电离发生在 $6<z<10$，再散射在 CMB 上留下印记（第 9、10 章）。`,
     analogy: "雾中的灯塔：雾（自由电子）浓时光被反复散射，看不到灯；雾一下子散去（复合），光直线传到远方，我们今天看到的就是雾散那一刻灯塔的模样。",

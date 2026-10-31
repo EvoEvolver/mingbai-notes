@@ -57,19 +57,19 @@ $$\epsilon_i=\frac{e_i+2\gamma_i+2\kappa e_i}{1+2\kappa+2(e_1\gamma_1+e_2\gamma_
       <Exercise n="13.4" title="单个透镜的透镜势" level="★★" fromBook
         hint={R`用柱坐标与 Poisson 方程的积分解。$1-\chi'/\chi$、$1/\chi'$、$a^2$ 等慢变因子都在 $\chi'=\chi_L$ 处取值。`}
         solution={R`孤立质量的 Poisson 方程 \eqref{12.5} 的解为
-$$\Phi(\boldsymbol x)=-Ga^2\int\frac{d^3\tilde x}{|\boldsymbol x-\tilde{\boldsymbol x}|}\rho(\tilde{\boldsymbol x}).\qquad\text{(A.171)}$$
+$$\Phi(\boldsymbol x)=Ga^2\int\frac{d^3\tilde x}{|\boldsymbol x-\tilde{\boldsymbol x}|}\rho(\tilde{\boldsymbol x}).\qquad\text{(A.171)}$$
 代入 \eqref{13.16} 又得到一个对 $\chi'$ 的积分。两个积分都在柱坐标中做，$\tilde{\boldsymbol x}=(\tilde{\boldsymbol R},\tilde\chi)$，$\tilde{\boldsymbol R}$ 为横向坐标：
-$$\phi_{\rm L}(\boldsymbol\theta;\chi_L)=-\frac{2G}{(1+z_L)^2}\frac{\chi-\chi_L}{\chi\chi_L}\int d^2\tilde R\int d\tilde\chi\,\rho(\tilde{\boldsymbol R},\tilde\chi)\int_0^\chi\frac{d\chi'}{\sqrt{(\tilde{\boldsymbol R}-\chi_L\boldsymbol\theta)^2+(\chi'-\tilde\chi)^2}},\qquad\text{(A.172)}$$
-这里在 \eqref{13.16} 的慢变因子中令 $\chi=\chi_L$（原书此处应理解为 $\chi'=\chi_L$），$a^2$ 也在透镜红移处取值。只要透镜沿视线的延展远小于到源的距离 $\chi$（对单个星系团当然成立），这就是精确的。
+$$\phi_{\rm L}(\boldsymbol\theta;\chi_L)=\frac{2G}{(1+z_L)^2}\frac{\chi-\chi_L}{\chi\chi_L}\int d^2\tilde R\int d\tilde\chi\,\rho(\tilde{\boldsymbol R},\tilde\chi)\int_0^\chi\frac{d\chi'}{\sqrt{(\tilde{\boldsymbol R}-\chi_L\boldsymbol\theta)^2+(\chi'-\tilde\chi)^2}},\qquad\text{(A.172)}$$
+这里在 \eqref{13.16} 的慢变因子中令 $\chi'=\chi_L$（原书附录误写为 $\chi=\chi_L$；$\chi$ 是源距离，不能取为透镜距离），$a^2$ 也在透镜红移处取值。只要透镜沿视线的延展远小于到源的距离 $\chi$（对单个星系团当然成立），这就是精确的。
 
 对 $d\chi'$ 的积分可以解析完成，等于
 $$2\ln\left|x+\sqrt{(\tilde{\boldsymbol R}-\chi_L\boldsymbol\theta)^2+x^2}\right|\Bigg|_{x=0}^{\infty}$$
 （上限取到无穷，因为大 $x$ 对投影势中相关的部分没有贡献）。事实上唯一依赖 $\boldsymbol\theta$ 的部分——求透镜势的导数时唯一相关的部分——来自下限：$-2\ln|\tilde{\boldsymbol R}-\chi_L\boldsymbol\theta|$。同样的理由可以从对数中提出因子 $\chi_L$，因为附加项 $\ln\chi_L$ 不依赖 $\boldsymbol\theta$。于是 $\rho\,d\tilde\chi$ 的积分变为面密度 $\Sigma(\boldsymbol\theta')$，其中 $\boldsymbol\theta'=\tilde{\boldsymbol R}/\chi_L$。利用 $d^2\tilde R=\chi_L^2d^2\theta'$，剩下 \eqref{13.67}。
 
-**编者注（疑似符号问题）。**(A.171) 是**牛顿势**的形式（质量处为负），按本书约定它是 $\Psi$；而本书的 $\Phi=-\Psi$ 在过密区为正（\eqref{8.5}、\eqref{12.5}，以及 \eqref{13.13} 后的讨论）。若用 $\Phi=+Ga^2\int\rho/|\boldsymbol x-\tilde{\boldsymbol x}|$，\eqref{13.67} 整体应带负号：$\phi_{\rm L}=-\frac{4G}{(1+z_L)^2}(\chi-\chi_L)\frac{\chi_L}{\chi}\int d^2\theta'\Sigma(\boldsymbol\theta')\ln|\boldsymbol\theta'-\boldsymbol\theta|$。检查：由 $\nabla_\theta^2\ln|\boldsymbol\theta|=2\pi\delta_{\rm D}^{(2)}$ 与 $\kappa=-\frac12\nabla_\theta^2\phi_{\rm L}$，负号版本给出 $\kappa=4\pi Ga^2\frac{(\chi-\chi_L)\chi_L}{\chi}\Sigma>0$——这正是标准的 $\Sigma_{\rm phys}/\Sigma_{\rm cr}$，$\Sigma_{\rm cr}=\frac{c^2}{4\pi G}\frac{D_S}{D_LD_{LS}}$（$D_L=a_L\chi_L$，$D_S=a_S\chi$，$D_{LS}=a_S(\chi-\chi_L)$，$\Sigma_{\rm phys}=a_L\Sigma$）。对点质量 $\Sigma\propto M\delta_{\rm D}^{(2)}$，即得 \secref{13.1} 交互图所用的透镜方程 $\boldsymbol\theta_S=\boldsymbol\theta-\theta_E^2\boldsymbol\theta/|\boldsymbol\theta|^2$，$\theta_E^2=\frac{4GM(\chi-\chi_L)}{a_L\chi\chi_L}$。`}>
+**勘误：(A.171)、(A.172) 与 \eqref{13.67} 的整体符号。**原书印作 $\Phi=-Ga^2\int\rho/|\boldsymbol x-\tilde{\boldsymbol x}|$（牛顿势形式），相应地 (A.172) 带负号、\eqref{13.67} 不带负号。按本书约定（\eqref{8.5}、\eqref{12.5}：$k^2\Phi=4\pi Ga^2\rho_{\rm m}\delta_{\rm m}$，即 $-\nabla^2\Phi=4\pi Ga^2\delta\rho$），$\Phi$ 在过密区为正，积分解是 $\Phi=+Ga^2\int\rho/|\boldsymbol x-\tilde{\boldsymbol x}|$（牛顿势形式对应的是 $\Psi=-\Phi$）。于是上面三式的符号都已改正，\eqref{13.67} 为 $\phi_{\rm L}=-\frac{4G}{(1+z_L)^2}(\chi-\chi_L)\frac{\chi_L}{\chi}\int d^2\theta'\Sigma\ln|\boldsymbol\theta'-\boldsymbol\theta|$。检查：由 $\nabla_\theta^2\ln|\boldsymbol\theta|=2\pi\delta_{\rm D}^{(2)}$ 与 $\kappa=-\frac12\nabla_\theta^2\phi_{\rm L}$（\eqref{13.30}），改正后的式子给出 $\kappa=4\pi Ga^2\frac{(\chi-\chi_L)\chi_L}{\chi}\Sigma>0$——这正是标准的 $\Sigma_{\rm phys}/\Sigma_{\rm cr}$，$\Sigma_{\rm cr}=\frac{c^2}{4\pi G}\frac{D_S}{D_LD_{LS}}$（$D_L=a_L\chi_L$，$D_S=a_S\chi$，$D_{LS}=a_S(\chi-\chi_L)$，$\Sigma_{\rm phys}=a_L\Sigma$）；照原书符号则 $\kappa<0$，质量会使光束发散。对点质量 $\Sigma\propto M\delta_{\rm D}^{(2)}$，即得 \secref{13.1} 交互图所用的透镜方程 $\boldsymbol\theta_S=\boldsymbol\theta-\theta_E^2\boldsymbol\theta/|\boldsymbol\theta|^2$，$\theta_E^2=\frac{4GM(\chi-\chi_L)}{a_L\chi\chi_L}$。`}>
         <Tx>{R`考虑位于固定共动距离 $\chi_L$、红移 $z_L$ 的一个透镜（即单个星系或星系团，而不是一般的大尺度结构；参见 \figref{13.4}）。再假设它沿视线方向的延展远小于 $\chi_L$。证明 \eqref{13.16} 中的透镜势可以写成`}</Tx>
-        <Eq n="13.67" say={R`薄透镜的透镜势：投影面密度与二维对数 Green 函数的卷积，前因子是距离组合 $(\chi-\chi_L)\chi_L/\chi$。`}>{R`\phi_{\rm L}(\boldsymbol\theta;\chi_L) = \frac{4G}{(1+z_L)^2}(\chi-\chi_L)\frac{\chi_L}\chi\int d^2\theta'\,\Sigma(\boldsymbol\theta')\ln\left|\boldsymbol\theta'-\boldsymbol\theta\right|.`}</Eq>
-        <Tx>{R`这里 $\chi$ 是到源的共动距离，$\Sigma(\boldsymbol\theta)$ 是透镜在垂直于视线的平面内的投影面密度：`}</Tx>
+        <Eq n="13.67" say={R`薄透镜的透镜势：投影面密度与二维对数 Green 函数的卷积，前因子是距离组合 $(\chi-\chi_L)\chi_L/\chi$。`}>{R`\phi_{\rm L}(\boldsymbol\theta;\chi_L) = -\frac{4G}{(1+z_L)^2}(\chi-\chi_L)\frac{\chi_L}\chi\int d^2\theta'\,\Sigma(\boldsymbol\theta')\ln\left|\boldsymbol\theta'-\boldsymbol\theta\right|.`}</Eq>
+        <Tx>{R`（勘误：原书 \eqref{13.67} 右边没有负号；按本书 $\Phi$ 在过密区为正的约定应有负号，否则 $\kappa<0$，详见解答。）这里 $\chi$ 是到源的共动距离，$\Sigma(\boldsymbol\theta)$ 是透镜在垂直于视线的平面内的投影面密度：`}</Tx>
         <Eq n="13.68" say={R`投影面密度：质量密度沿视线积分。`}>{R`\Sigma(\boldsymbol\theta) = \int_0^\infty d\chi'\,\rho(\boldsymbol x(\boldsymbol\theta,\chi')).`}</Eq>
         <Tx>{R`提示：用柱坐标与 Poisson 方程的积分解。`}</Tx>
       </Exercise>
@@ -178,7 +178,7 @@ $$\Delta_{\rm g}^\mu(\boldsymbol\theta)=(5s-2)\,\frac32\Omega_{\rm m}H_0^2\int_0
 
 **(c)** 与源剪切的交叉谱多出一项（与 \eqref{13.51} 同构）：
 $$C_{{\rm g}E}^\mu(l)=(5s-2)\left(\tfrac32\Omega_{\rm m}H_0^2\right)^2\int d\chi\,a^{-2}g_{\rm g}(\chi)g_{\rm L}(\chi)P\left(\frac l\chi\right),$$
-相关函数照 \eqref{13.62}：$\xi_{{\rm g},t}^\mu=\pm\int\frac{ldl}{2\pi}J_2(l\theta)C_{{\rm g}E}^\mu$（符号约定见 \eqref{13.62} 后的说明）。它探测的是透镜星系**背后**的物质对二者共同的透镜效应，不含偏袒 $b_1$。
+相关函数照 \eqref{13.62}：$\xi_{{\rm g},t}^\mu=\int\frac{ldl}{2\pi}J_2(l\theta)C_{{\rm g}E}^\mu$（符号见 \eqref{13.62} 后的勘误）。它探测的是透镜星系**背后**的物质对二者共同的透镜效应，不含偏袒 $b_1$。
 
 **(d)** 两个星系样本 1、2 的计数交叉谱：
 $$C_{12}=\int\frac{d\chi}{\chi^2}W_1W_2P_{\rm g}+(5s_2-2)\tfrac32\Omega_{\rm m}H_0^2\!\int\!\frac{d\chi}\chi W_1a^{-1}g_2P_{\rm gm}+(5s_1-2)\tfrac32\Omega_{\rm m}H_0^2\!\int\!\frac{d\chi}\chi W_2a^{-1}g_1P_{\rm gm}+(5s_1-2)(5s_2-2)C_{\kappa_1\kappa_2}.$$
