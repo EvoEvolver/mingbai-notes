@@ -12,11 +12,11 @@ export default {
   },
   chapters: [
     { id: "ch01", no: 1, title_zh: "波与粒子：量子力学基本概念", title_en: "Waves and Particles. Introduction to the Basic Ideas of Quantum Mechanics", part: 1, pdf: [25, 56], text: "ch01.txt" },
-    { id: "ch01c", no: 0, title_zh: "第 I 章补充材料", title_en: "Complements of Chapter I", part: 1, pdf: [57, 110], text: "ch01c.txt" },
+    { id: "ch01c", no: 0, label: "第 I 章补充", title_zh: "第 I 章补充材料", title_en: "Complements of Chapter I", part: 1, pdf: [57, 110], text: "ch01c.txt" },
     { id: "ch02", no: 2, title_zh: "量子力学的数学工具", title_en: "The Mathematical Tools of Quantum Mechanics", part: 2, pdf: [111, 182], text: "ch02.txt" },
-    { id: "ch02c", no: 0, title_zh: "第 II 章补充材料", title_en: "Complements of Chapter II", part: 2, pdf: [183, 236], text: "ch02c.txt" },
+    { id: "ch02c", no: 0, label: "第 II 章补充", title_zh: "第 II 章补充材料", title_en: "Complements of Chapter II", part: 2, pdf: [183, 236], text: "ch02c.txt" },
     { id: "ch03", no: 3, title_zh: "量子力学的基本假设", title_en: "The Postulates of Quantum Mechanics", part: 3, pdf: [237, 290], text: "ch03.txt" },
-    { id: "ch03c", no: 0, title_zh: "第 III 章补充材料（A–H）", title_en: "Complements of Chapter III (A–H)", part: 3, pdf: [291, 359], text: "ch03c.txt" },
-    { id: "ch03d", no: 0, title_zh: "第 III 章补充材料（J–N）", title_en: "Complements of Chapter III (J–N)", part: 3, pdf: [360, 416], text: "ch03d.txt" },
+    { id: "ch03c", no: 0, label: "第 III 章补充（上）", title_zh: "第 III 章补充材料（A–H）", title_en: "Complements of Chapter III (A–H)", part: 3, pdf: [291, 359], text: "ch03c.txt" },
+    { id: "ch03d", no: 0, label: "第 III 章补充（下）", title_zh: "第 III 章补充材料（J–N）", title_en: "Complements of Chapter III (J–N)", part: 3, pdf: [360, 416], text: "ch03d.txt" },
   ],
 };
