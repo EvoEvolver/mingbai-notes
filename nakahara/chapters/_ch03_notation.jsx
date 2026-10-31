@@ -1,0 +1,86 @@
+// 第 3 章符号词典（决定公式中符号的可点击性）。纯数据。
+// 规则：sym 只写符号本身；「基底+下标」先精确匹配，否则回退到只有基底的通用条目。
+// 多义字母：H（子群 / 同调群）按下标区分；ℝP² 用 \sym{RP}{…}；边界算子 ∂ 用 \sym{bd}{\partial}（∂ 不是字母，默认不标注）。
+const R = String.raw;
+
+export const NOTATION = [
+  // ---------- 数系与标准群 ----------
+  { sym: R`\Z`, name: "整数加群", en: "integers", def: R`$\mathbb{Z}=\{0,\pm1,\pm2,\ldots\}$，以加法为运算的无限循环群，是秩 1 的自由 Abel 群（例 3.3）。同调群默认取整数系数 $H_r(K;\mathbb{Z})$` },
+  { sym: R`\Z_2`, name: R`二元循环群 $\mathbb{Z}_2$`, en: "cyclic group of order 2", def: R`$\mathbb{Z}_2=\{0,1\}$，$1+1=0$；同构于 $\mathbb{Z}/2\mathbb{Z}$（\eqref{3.4}）。射影平面的 $H_1$（\eqref{3.48}）`, eq: "3.4" },
+  { sym: R`\Z_k`, name: R`$k$ 阶循环群`, en: "cyclic group of order k", def: R`$\mathbb{Z}_k\cong\mathbb{Z}/k\mathbb{Z}$（\eqref{3.5}）：整数模 $k$ 的加群`, eq: "3.5" },
+  { sym: R`\Z_N`, name: R`$N$ 阶循环群`, def: R`由 $x$ 生成、$Nx=0$ 的有限循环群同构于 $\mathbb{Z}_N$（\eqref{3.9}）`, eq: "3.9" },
+  { sym: R`\Z_{k_1}`, name: "挠因子（有限循环直和项）", en: "torsion factors", def: R`$\mathbb{Z}_{k_1},\ldots,\mathbb{Z}_{k_p}$：有限生成 Abel 群（\eqref{3.10}）或同调群（\eqref{3.54}）中的有限循环部分，合起来称为挠子群`, eq: "3.10" },
+  { sym: R`\Z_{k_p}`, name: "挠因子（有限循环直和项）", def: R`见 $\mathbb{Z}_{k_1}$`, eq: "3.10" },
+  { sym: R`\R`, name: "实数", en: "real numbers", def: R`$\mathbb{R}^m$ 为 $m$ 维欧氏空间（单形所在的环境空间）；$H_r(K;\mathbb{R})$ 为实系数同调群（一个实向量空间）` },
+  { sym: R`\N`, name: "自然数", en: "natural numbers", def: R`$\mathbb{N}=\{1,2,3,\ldots\}$` },
+
+  // ---------- §3.1 群论 ----------
+  { sym: R`G`, name: "Abel 群", en: "Abelian group", def: R`本章所有群都是交换群，运算记作 $+$，单位元记作 $0$；$G_1,G_2$ 为同态的定义域与值域` },
+  { sym: R`G_1`, name: "同态的定义域", def: R`同态 $f:G_1\to G_2$ 的出发群`, eq: "3.1" },
+  { sym: R`G_2`, name: "同态的值域", def: R`同态 $f:G_1\to G_2$ 的到达群`, eq: "3.1" },
+  { sym: R`H`, name: "子群", en: "subgroup", def: R`§3.1 中 $H\subset G$ 为子群，用来定义商群 $G/H$（\eqref{3.2}–\eqref{3.3}）。注意：带下标的 $H_r(K)$ 是同调群，另见词条`, eq: "3.2" },
+  { sym: R`f`, name: "映射 / 同态 / 三角剖分映射", def: R`§3.1：同态 $f:G_1\to G_2$，满足 $f(x+y)=f(x)+f(y)$（\eqref{3.1}）；§3.3 例中 $f$ 是"系数求和"同态；三角剖分 $(K,f)$ 中 $f:|K|\to X$ 是同胚`, eq: "3.1" },
+  { sym: R`g`, name: "群元 / 三角剖分映射 / 亏格", def: R`商群论证中 $g\in H$ 为子群元素；三角剖分 $(L,g)$ 中 $g:|L|\to Y$ 为同胚；$\Sigma_g$ 中 $g$ 为亏格（环柄数）` },
+  { sym: R`h`, name: "子群元素 / 环柄数", def: R`商群论证中 $h\in H$；同态基本定理证明中 $h\in\ker f$；章末题 3.1 中 $h$ 为环柄（handle）个数` },
+  { sym: R`x`, name: "群元 / 空间中的点", def: R`§3.1：群的元素，或生成元 $x_1,\ldots,x_r$（\eqref{3.7}）；§3.2：$\mathbb{R}^m$ 中的点，重心坐标 $x=\sum c_ip_i$（\eqref{3.11}）` },
+  { sym: R`y`, name: "群元", def: R`与 $x$ 同为群的元素；$y=f(x)\in\operatorname{im}f$` },
+  { sym: R`\varphi`, name: "构造出的同构", def: R`例 3.1 中 $\varphi:\mathbb{Z}/2\mathbb{Z}\to\mathbb{Z}_2$；定理 3.1 证明中 $\varphi([x])=f(x)$`, eq: "3.6" },
+  { sym: R`n`, name: "整数 / 复形维数", def: R`§3.1：整数倍 $nx$、系数 $n_i$（\eqref{3.7}）；§3.3 起 $n=\dim K$；例中也作链的整数系数` },
+  { sym: R`m`, name: "整数 / 环境维数 / 生成元个数", def: R`$\mathbb{R}^m$ 的维数；定理 3.2 中 $G$ 的生成元个数 $m$；例中作整数系数（如 $z=m(p_0p_1p_2)$）` },
+  { sym: R`k`, name: "正整数 / 整数系数", def: R`$k\mathbb{Z}$ 中的 $k\in\mathbb{N}$；$k_1,\ldots,k_p$ 为挠因子的阶；例 3.8 等中为链的整数系数` },
+  { sym: R`N`, name: "循环群的阶 / 连通分支数", def: R`§3.1.3：使 $Nx=0$ 的最小正整数（\eqref{3.8}）；§3.4.1：$K$ 的连通分支个数（\eqref{3.53}）`, eq: "3.8" },
+  { sym: R`r`, name: "秩 / 维数指标", def: R`§3.1：自由 Abel 群的秩、有限生成 Abel 群自由部分的秩（\eqref{3.10}）；§3.2 起：单形维数与同调群的阶数 $H_r$` },
+  { sym: R`p`, name: "顶点 / 挠因子个数", def: R`$p_0,p_1,\ldots$：单形的顶点（0 单形）；定理 3.2 中 $p$ 为有限循环因子的个数（\eqref{3.10}）` },
+
+  // ---------- §3.2 单形与复形 ----------
+  { sym: R`\sigma`, name: "单形", en: "simplex", def: R`$\sigma_r=\langle p_0\ldots p_r\rangle$（无定向）或 $(p_0\ldots p_r)$（定向）；$\sigma_q\le\sigma_r$ 表示面；$\sigma_{r,i}$ 为第 $i$ 个 $r$ 单形；$\sigma_\alpha$ 为复形中的一般单形`, eq: "3.11" },
+  { sym: R`\sigma_r`, name: R`$r$ 单形`, en: "r-simplex", def: R`$r+1$ 个几何独立点的凸包（\eqref{3.11}），有界闭集，故紧致`, eq: "3.11" },
+  { sym: R`c`, name: "重心坐标 / 链 / 系数", def: R`\eqref{3.11} 中 $(c_0,\ldots,c_r)$ 为重心坐标；§3.3 中 $c\in C_r(K)$ 为 $r$ 链，$c_i\in\mathbb{Z}$ 为其系数（\eqref{3.15}）`, eq: "3.15" },
+  { sym: R`q`, name: "面的维数 / 洞数", def: R`$q$ 面 $\sigma_q\le\sigma_r$，$0\le q\le r$；章末题中 $q$ 为洞或交叉帽的个数` },
+  { sym: R`K`, name: "单纯复形", en: "simplicial complex", def: R`有限个单形的集合，满足：面属于 $K$；两单形之交为空集或公共面。$|K|$ 为其多面体；$K_1,\ldots,K_N$ 为连通分支` },
+  { sym: R`L`, name: "另一个单纯复形", def: R`定理 3.4 中 $Y$ 的三角剖分 $(L,g)$；§3.4.1 中 $L=\{p_0,p_1\}$` },
+  { sym: R`X`, name: "拓扑空间", def: R`被三角剖分的空间；$H_r(X)\equiv H_r(K)$（\eqref{3.32}）`, eq: "3.32" },
+  { sym: R`Y`, name: "拓扑空间", def: R`与 $X$ 同胚的空间（定理 3.4）`, eq: "3.30" },
+  { sym: R`S`, name: "球面", en: "sphere", def: R`$S^1$ 圆周、$S^2$ 二维球面` },
+  { sym: R`D`, name: "圆盘", en: "disc", def: R`$D^2$：闭圆盘，边界为 $S^1$` },
+  { sym: R`T`, name: "环面", en: "torus", def: R`$T^2=S^1\times S^1$：亏格 1 的可定向闭曲面` },
+  { sym: R`\Sigma_g`, name: R`亏格 $g$ 的闭曲面`, en: "genus-g surface", def: R`有 $g$ 个环柄的可定向闭曲面；$H_1(\Sigma_g)\cong\mathbb{Z}^{2g}$（\eqref{3.49}）`, eq: "3.49" },
+  { sym: R`\Sigma_{h,q}`, name: R`带 $h$ 个环柄、$q$ 个洞的可定向曲面`, def: R`章末题 3.1：$\chi=2-2h-q$；$q\ge1$ 时 $H_1\cong\mathbb{Z}^{2h+q-1}$、$H_2=0$` },
+  { sym: R`N_q`, name: R`带 $q$ 个交叉帽的球面`, def: R`章末题 3.2：$H_1\cong\mathbb{Z}^{q-1}\oplus\mathbb{Z}_2$，$H_2=0$，$\chi=2-q$；$N_1=\mathbb{R}\mathrm{P}^2$，$N_2$ 为 Klein 瓶` },
+  { id: "RP", sym: R`\mathbb{R}P^2`, name: "实射影平面", en: "real projective plane", def: R`$S^2$ 把对径点粘合；或圆盘 $D^2$ 把边界上的对径点粘合。$H_1\cong\mathbb{Z}_2$（\eqref{3.48}）`, eq: "3.48" },
+
+  // ---------- §3.3 定向、链、边界 ----------
+  { sym: R`P`, name: "置换", en: "permutation", def: R`把 $0,1,\ldots,r$ 映到 $i_0,i_1,\ldots,i_r$ 的置换；$\operatorname{sgn}(P)=+1$（偶置换）或 $-1$（奇置换）`, eq: "3.14" },
+  { sym: R`i`, name: "下标 / 整数系数 / 包含映射", def: R`单形、顶点的编号；例中链的整数系数（$i(p_0p_1)+\cdots$）；\eqref{3.23} 中 $i:0\to C_n(K)$ 为包含映射`, eq: "3.23" },
+  { sym: R`j`, name: "下标 / 整数系数", def: R`顶点编号或链的整数系数` },
+  { sym: R`l`, name: "整数系数 / 下标", def: R`例 3.8、3.10 中链的整数系数；置换 $P$ 的第四个像` },
+  { sym: R`I`, name: "单形个数", def: R`$I_r$：$K$ 中 $r$ 单形的个数，$C_r(K)\cong\mathbb{Z}^{I_r}$（\eqref{3.17}）；$I_0$ 为顶点数，$I_1$ 为棱数`, eq: "3.17" },
+  { sym: R`C`, name: "链群", en: "chain group", def: R`$C_r(K)$：由定向 $r$ 单形生成的自由 Abel 群（定义 3.2）；$r>\dim K$ 或 $r<0$ 时为 $0$；$C(K)$ 记链复形（\eqref{3.23}）`, eq: "3.15" },
+  { id: "bd", sym: R`\partial`, name: "边界算子", en: "boundary operator", def: R`$\partial_r:C_r(K)\to C_{r-1}(K)$，$\partial_r(p_0\ldots p_r)=\sum_i(-1)^i(p_0\ldots\hat p_i\ldots p_r)$（\eqref{3.20}），线性延拓（\eqref{3.21}）。满足 $\partial_r\circ\partial_{r+1}=0$（\eqref{3.26}）`, eq: "3.20" },
+  { sym: R`\hat p`, name: "被删去的顶点", def: R`记号 $\hat p_i$ 表示该顶点从序列中**删去**`, eq: "3.20" },
+  { sym: R`Z`, name: "闭链群", en: "cycle group", def: R`$Z_r(K)=\ker\partial_r$：满足 $\partial_rc=0$ 的 $r$ 链（定义 3.3）。注意与整数 $\mathbb{Z}$ 区分`, eq: "3.24" },
+  { sym: R`B`, name: "边缘群", en: "boundary group", def: R`$B_r(K)=\operatorname{im}\partial_{r+1}$：形如 $\partial_{r+1}d$ 的 $r$ 链（定义 3.4）；$B_n(K)=0$`, eq: "3.25" },
+  { sym: R`d`, name: R`高一维的链`, def: R`$d\in C_{r+1}(K)$，其边界 $c=\partial_{r+1}d$ 为 $r$ 维边缘（\eqref{3.25}）`, eq: "3.25" },
+  { sym: R`z`, name: "闭链", en: "cycle", def: R`$z\in Z_r(K)$；$[z]$ 为其同调类；$z\sim z'$ 表示 $z-z'\in B_r(K)$（同调）`, eq: "3.29" },
+  { sym: R`b`, name: "边缘 / 环面上的闭路", def: R`$b\in B_r(K)$ 为边缘（同调于 0）；例 3.12–3.13 中 $b$（及 $b_i$）为环面、Klein 瓶上的一条生成闭路。注意 $b_r(K)$（带维数下标）是 Betti 数` },
+  { sym: R`a`, name: "环面上的闭路", def: R`例 3.12–3.13 中的生成闭路 $a$（$a'$ 与 $a$ 同调）；$\Sigma_g$ 上的 $a_i,b_i$ 为典范曲线组（\eqref{3.49}）；Klein 瓶中 $a=(p_0p_1)+(p_1p_2)+(p_2p_0)$`, eq: "3.49" },
+  { sym: R`H_r`, name: R`第 $r$ 同调群`, en: "r-th homology group", def: R`$H_r(K)\equiv Z_r(K)/B_r(K)$（\eqref{3.28}）：闭链模去边缘。$H_r(K;\mathbb{R})$、$H_r(K;\mathbb{Z}_2)$ 为其他系数的同调群`, eq: "3.28" },
+  { sym: R`H_0`, name: "零维同调群", def: R`$H_0(K)\cong\mathbb{Z}^N$，$N$ 为连通分支数（定理 3.5、推论 3.1）`, eq: "3.43" },
+  { sym: R`H_1`, name: "一维同调群", def: R`由不是边界的闭路生成：$S^1$ 为 $\mathbb{Z}$，$T^2$ 为 $\mathbb{Z}\oplus\mathbb{Z}$，$\sym{RP}{\mathbb{R}P^2}$ 为 $\mathbb{Z}_2$`, eq: "3.28" },
+  { sym: R`H_2`, name: "二维同调群", def: R`可定向闭曲面为 $\mathbb{Z}$（由曲面本身生成），不可定向闭曲面为 $\{0\}$`, eq: "3.28" },
+  { sym: R`b_r`, name: R`第 $r$ 个 Betti 数`, en: "Betti number", def: R`$b_r(K)\equiv\dim H_r(K;\mathbb{R})$ = $H_r(K;\mathbb{Z})$ 自由部分的秩（\eqref{3.56}）`, eq: "3.56" },
+  { sym: R`b_0`, name: "第 0 个 Betti 数", def: R`连通分支的个数`, eq: "3.56" },
+  { sym: R`b_1`, name: "第 1 个 Betti 数", def: R`独立"环洞"的个数；环面为 2`, eq: "3.56" },
+  { sym: R`b_2`, name: "第 2 个 Betti 数", def: R`被包围的"空腔"个数；$S^2$、$T^2$ 为 1`, eq: "3.56" },
+  { sym: R`\chi`, name: "Euler 示性数", en: "Euler characteristic", def: R`$\chi(K)=\sum_r(-1)^rI_r=\sum_r(-1)^rb_r(K)$（\eqref{3.57}）；拓扑不变量`, eq: "3.57" },
+  { sym: R`\alpha`, name: "单形的标号", def: R`$K=\{\sigma_\alpha\}$ 中的一般指标` },
+
+  // ---------- 交互图中的 Smith 标准形 ----------
+  { sym: R`U`, name: "行变换矩阵（幺模）", def: R`Smith 标准形 $U\,\partial\,V=\Delta$ 中作用在 $C_{r-1}$ 一侧的可逆整数矩阵（行列式 $\pm1$）` },
+  { sym: R`V`, name: "列变换矩阵（幺模）", def: R`Smith 标准形 $U\,\partial\,V=\Delta$ 中作用在 $C_r$ 一侧的可逆整数矩阵` },
+  { sym: R`s`, name: "边界矩阵的秩", def: R`Smith 标准形中非零对角元的个数 $s=\operatorname{rank}\partial_{r+1}=\operatorname{rank}B_r$` },
+  { sym: R`u`, name: "适配基", def: R`$U^{-1}$ 的列给出的 $C_r$ 新基 $u_1,u_2,\ldots$；$B_r$ 由 $k_1u_1,\ldots,k_su_s$ 生成` },
+  { sym: R`\theta`, name: "截线计数同态", def: R`例 3.10 补充证明中的 $\theta:C_1(K)\to\mathbb{Z}$：在截线穿过的棱上取 1，在所有边缘上为零` },
+  { sym: R`\omega`, name: "微分形式（预告）", def: R`第 5–6 章的微分形式；Stokes 定理 $\int_c\dd\omega=\int_{\partial c}\omega$ 把边界算子 $\partial$ 与外微分 $\dd$ 配对` },
+  { sym: R`\Delta`, name: "Smith 标准形", en: "Smith normal form", def: R`$\Delta=\mathrm{diag}(k_1,\ldots,k_s,0,\ldots)$，$k_1\mid k_2\mid\cdots$；$k_i>1$ 的项给出挠因子 $\mathbb{Z}_{k_i}$，$s$ 为边界矩阵的秩` },
+];
