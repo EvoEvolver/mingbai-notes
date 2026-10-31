@@ -1,0 +1,86 @@
+[
+ {
+  "id": "ch01",
+  "title_en": "Quantum Physics",
+  "pdf_from": 21,
+  "pdf_to": 86
+ },
+ {
+  "id": "ch02",
+  "title_en": "Mathematical Preliminaries",
+  "pdf_from": 87,
+  "pdf_to": 112
+ },
+ {
+  "id": "ch03",
+  "title_en": "Homology Groups",
+  "pdf_from": 113,
+  "pdf_to": 140
+ },
+ {
+  "id": "ch04",
+  "title_en": "Homotopy Groups",
+  "pdf_from": 141,
+  "pdf_to": 188
+ },
+ {
+  "id": "ch05",
+  "title_en": "Manifolds",
+  "pdf_from": 189,
+  "pdf_to": 245
+ },
+ {
+  "id": "ch06",
+  "title_en": "de Rham Cohomology Groups",
+  "pdf_from": 246,
+  "pdf_to": 263
+ },
+ {
+  "id": "ch07",
+  "title_en": "Riemannian Geometry",
+  "pdf_from": 264,
+  "pdf_to": 327
+ },
+ {
+  "id": "ch08",
+  "title_en": "Complex Manifolds",
+  "pdf_from": 328,
+  "pdf_to": 367
+ },
+ {
+  "id": "ch09",
+  "title_en": "Fibre Bundles",
+  "pdf_from": 368,
+  "pdf_to": 393
+ },
+ {
+  "id": "ch10",
+  "title_en": "Connections on Fibre Bundles",
+  "pdf_from": 394,
+  "pdf_to": 438
+ },
+ {
+  "id": "ch11",
+  "title_en": "Characteristic Classes",
+  "pdf_from": 439,
+  "pdf_to": 472
+ },
+ {
+  "id": "ch12",
+  "title_en": "Index Theorems",
+  "pdf_from": 473,
+  "pdf_to": 520
+ },
+ {
+  "id": "ch13",
+  "title_en": "Anomalies in Gauge Field Theories",
+  "pdf_from": 521,
+  "pdf_to": 547
+ },
+ {
+  "id": "ch14",
+  "title_en": "Bosonic String Theory",
+  "pdf_from": 548,
+  "pdf_to": 579
+ }
+]

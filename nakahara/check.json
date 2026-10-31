@@ -1,0 +1,7 @@
+{
+  "problems_heading": "Problems",
+  "problem_prefix": "P",
+  "inline_exercise": "Exercise",
+  "statements": {"Definition": "D", "Theorem": "T", "Lemma": "L", "Proposition": "P", "Corollary": "C"},
+  "examples": "Example"
+}
