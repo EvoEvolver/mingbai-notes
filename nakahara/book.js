@@ -23,7 +23,7 @@ export default {
   statements: { ...S01, ...S02, ...S03, ...S04, ...S05, ...S06, ...S07, ...S08, ...S09, ...S10, ...S11, ...S12, ...S13, ...S14 },
   katexMacros: {
     "\\R": "\\mathbb{R}", "\\C": "\\mathbb{C}", "\\Z": "\\mathbb{Z}", "\\Q": "\\mathbb{Q}", "\\N": "\\mathbb{N}",
-    "\\dd": "\\mathrm{d}", "\\Tr": "\\operatorname{tr}", "\\ind": "\\operatorname{ind}",
+    "\\dd": "\\mathrm{d}", "\\RP": "\\mathbb{R}\\mathrm{P}", "\\CP": "\\mathbb{C}\\mathrm{P}", "\\Tr": "\\operatorname{tr}", "\\ind": "\\operatorname{ind}",
   },
   chapters: [
     { id: "ch01", no: 1, title_zh: "量子物理", title_en: "Quantum Physics", part: 1, pdf: [21, 86], text: "ch01.txt" },
