@@ -17,6 +17,6 @@ export default {
     { id: "ch02c", no: 0, label: "第 II 章补充", title_zh: "第 II 章补充材料", title_en: "Complements of Chapter II", part: 2, pdf: [183, 236], text: "ch02c.txt" },
     { id: "ch03", no: 3, title_zh: "量子力学的基本假设", title_en: "The Postulates of Quantum Mechanics", part: 3, pdf: [237, 290], text: "ch03.txt" },
     { id: "ch03c", no: 0, label: "第 III 章补充（上）", title_zh: "第 III 章补充材料（A–H）", title_en: "Complements of Chapter III (A–H)", part: 3, pdf: [291, 359], text: "ch03c.txt" },
-    { id: "ch03d", no: 0, label: "第 III 章补充（下）", title_zh: "第 III 章补充材料（J–N）", title_en: "Complements of Chapter III (J–N)", part: 3, pdf: [360, 416], text: "ch03d.txt" },
+    { id: "ch03d", no: 0, label: "第 III 章补充（下）", title_zh: "第 III 章补充材料（J–O）", title_en: "Complements of Chapter III (J–O)", part: 3, pdf: [359, 415], text: "ch03d.txt" },
   ],
 };
