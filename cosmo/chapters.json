@@ -1,0 +1,104 @@
+[
+ {
+  "id": "ch01",
+  "title_en": "The concordance model of cosmology",
+  "pdf_from": 17,
+  "pdf_to": 35
+ },
+ {
+  "id": "ch02",
+  "title_en": "The expanding universe",
+  "pdf_from": 36,
+  "pdf_to": 70
+ },
+ {
+  "id": "ch03",
+  "title_en": "The fundamental equations of cosmology",
+  "pdf_from": 71,
+  "pdf_to": 97
+ },
+ {
+  "id": "ch04",
+  "title_en": "The origin of species",
+  "pdf_from": 98,
+  "pdf_to": 122
+ },
+ {
+  "id": "ch05",
+  "title_en": "The inhomogeneous universe: matter & radiation",
+  "pdf_from": 123,
+  "pdf_to": 145
+ },
+ {
+  "id": "ch06",
+  "title_en": "The inhomogeneous universe: gravity",
+  "pdf_from": 146,
+  "pdf_to": 167
+ },
+ {
+  "id": "ch07",
+  "title_en": "Initial conditions",
+  "pdf_from": 168,
+  "pdf_to": 205
+ },
+ {
+  "id": "ch08",
+  "title_en": "Growth of structure: linear theory",
+  "pdf_from": 206,
+  "pdf_to": 240
+ },
+ {
+  "id": "ch09",
+  "title_en": "The cosmic microwave background",
+  "pdf_from": 241,
+  "pdf_to": 279
+ },
+ {
+  "id": "ch10",
+  "title_en": "The polarized CMB",
+  "pdf_from": 280,
+  "pdf_to": 302
+ },
+ {
+  "id": "ch11",
+  "title_en": "Probes of structure: tracers",
+  "pdf_from": 303,
+  "pdf_to": 331
+ },
+ {
+  "id": "ch12",
+  "title_en": "Growth of structure: beyond linear theory",
+  "pdf_from": 332,
+  "pdf_to": 379
+ },
+ {
+  "id": "ch13",
+  "title_en": "Probes of structure: lensing",
+  "pdf_from": 380,
+  "pdf_to": 406
+ },
+ {
+  "id": "ch14",
+  "title_en": "Analysis and inference",
+  "pdf_from": 407,
+  "pdf_to": 437
+ },
+ {
+  "id": "appA",
+  "title_en": "Solutions to selected exercises",
+  "pdf_from": 438,
+  "pdf_to": 469
+ },
+ {
+  "id": "appB",
+  "title_en": "Numbers",
+  "pdf_from": 470,
+  "pdf_to": 471
+ },
+ {
+  "id": "appC",
+  "title_en": "Special functions",
+  "pdf_from": 472,
+  "pdf_to": 480
+ }
+]

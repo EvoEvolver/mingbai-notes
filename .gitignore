@@ -1,0 +1,19 @@
+# 依赖与构建产物
+node_modules/
+*/dist/
+framework/app/dist/
+# Python 环境（PyMuPDF/Pillow）
+tools/
+# 原书解包 / 渲染的页面图（可由脚本重新生成，体积大）
+*/src/
+# 原书文件（软链接或副本）
+*.pdf
+*.epub
+# 旧数据、临时与本地配置
+oot/_legacy_json/
+.claude/
+__pycache__/
+*.log
+# 原书内容（版权）：文字层与原书插图只保留在本地，不进仓库
+*/text/
+*/public/figures/
