@@ -32,7 +32,7 @@ export function Sec134() {
         <Eq n="13.62" title="FP 鬼场" say={R`鬼场 = 沿规范参数方向的 Maurer–Cartan 形式：它是"无穷小规范变换参数"的一形式化身，是 Grassmann 奇的。`}>{R`\omega\equiv g^{-1}${S}g.`}</Eq>
         <Tx>{R`$\mathcal{S}$ 在 $\boldsymbol A$ 与 $\omega$ 上的作用为`}</Tx>
         <Eq n="13.63a" keyEq title="BRS 变换" say={R`BRS 变换就是以鬼场为参数的无穷小规范变换：$\mathcal{S}\boldsymbol A=-\mathcal{D}_{\boldsymbol A}\omega$，与 $\delta_v\mathcal{A}=-\mathcal{D}v$ 同形。`}>{R`\begin{aligned}${S}${BA}&=${S}[g^{-1}(\mathcal{A}+\dd)g]=-g^{-1}${S}g${BA}-g^{-1}\mathcal{A}${S}g+g^{-1}${S}(\dd g)\\&=-\omega${BA}-(${BA}-g^{-1}\dd g)\omega-g^{-1}\dd(${S}g)\\&=-\omega${BA}-${BA}\omega-\dd\omega\equiv-\mathcal{D}_{${BA}}\omega\end{aligned}`}</Eq>
-        <Eq n="13.63b" keyEq say={R`鬼场的 BRS 变换是它自身的"平方"：这是规范群李代数结构（$[v_1,v_2]$）的编码，也就是 Maurer–Cartan 方程。`}>{R`${S}\omega=-g^{-1}${S}gg^{-1}${S}g=-\omega^2.`}</Eq>
+        <Eq n="13.63b" say={R`鬼场的 BRS 变换是它自身的"平方"：这是规范群李代数结构（$[v_1,v_2]$）的编码，也就是 Maurer–Cartan 方程。`}>{R`${S}\omega=-g^{-1}${S}gg^{-1}${S}g=-\omega^2.`}</Eq>
         <Derivation title={R`\eqref{13.63a}–\eqref{13.63b} 的分级符号`} collapsed steps={[
           { tex: R`\mathcal{S}(XY)=(\mathcal{S}X)Y+(-1)^{|X|}X\,\mathcal{S}Y`, why: R`$\mathcal{S}$ 是反导子；$|X|$ 为总次数 = 形式次数 + 鬼场数。$g$ 次数 0，$\mathcal{A},\boldsymbol A,\omega$ 次数 1，$\mathcal{S}\mathcal{A}=0$。` },
           { tex: R`\mathcal{S}g^{-1}=-g^{-1}(\mathcal{S}g)g^{-1}`, why: R`对 $g^{-1}g=1$ 作用。` },
@@ -119,7 +119,7 @@ $$-(\mathcal{S}\boldsymbol A)\omega=\boldsymbol A\omega^2+\omega\boldsymbol A\om
         <Tx>{R`其中 $Q^s_r$ 是 $\omega$ 的 $s$ 次项，$r+s=2l+1$。
 
 现在注意到 $\mathrm{ch}_{l+1}(\mathbb{F})=\mathrm{ch}_{l+1}(\boldsymbol F)$，因为 $\mathbb{F}=\boldsymbol F=g^{-1}\mathcal{F}g$。用陈–Simons 形式表示，这就是`}</Tx>
-        <Eq n="13.78" keyEq title="下降方程的母式" say={R`同一个陈特征的两种陈–Simons 写法：用总微分 $\Delta$ 作用在扩展联络的 $Q$ 上，等于用 $\dd$ 作用在普通联络的 $Q$ 上。`}>{R`\Delta Q_{2l+1}(\mathbb{A},\mathbb{F})=\dd Q_{2l+1}(${BA},${BF}).`}</Eq>
+        <Eq n="13.78" title="下降方程的母式" say={R`同一个陈特征的两种陈–Simons 写法：用总微分 $\Delta$ 作用在扩展联络的 $Q$ 上，等于用 $\dd$ 作用在普通联络的 $Q$ 上。`}>{R`\Delta Q_{2l+1}(\mathbb{A},\mathbb{F})=\dd Q_{2l+1}(${BA},${BF}).`}</Eq>
         <Tx>{R`把 \eqref{13.77} 代入 \eqref{13.78}，得`}</Tx>
         <Eq n="13.79" say={R`展开后两边按鬼场数比较。`}>{R`\begin{aligned}(\dd+${S})[&Q^0_{2l+1}(${BA},${BF})+Q^1_{2l}(\omega,${BA},${BF})\\&+\cdots+Q^{2l+1}_0(\omega,${BA},${BF})]=\dd Q^0_{2l+1}(${BA},${BF}).\end{aligned}`}</Eq>
         <Tx>{R`收集 $\omega$ 同阶的项（注意 $\mathcal{S}$ 使 $\omega$ 的次数加一，见 \eqref{13.63a}–\eqref{13.63b}；$\dd$ 保持鬼场数），就得到**下降方程**（descent equations）：`}</Tx>
@@ -138,7 +138,7 @@ $$\mathcal{S}G[\omega,\boldsymbol A,\boldsymbol F]=\int_M\mathcal{S}Q^1_{2l}(\om
         <Stmt id="F:descent13" />
         <Stmt id="F:wz13" />
         <Stmt id="P13.1">
-          <Eq n="13.82" keyEq title={R`$Q^1_{2l}$ 的显式公式`} say={R`非阿贝尔反常的通用公式：鬼场 $\omega$ 乘以 $\dd(\mathcal{A}\mathcal{F}_t^{l-1})$ 的对称化迹，再对插值参数以权重 $(1-t)$ 积分。权重 $(1-t)$ 正是 $\frac12$（而非 $\frac23$）的来源。`}>{R`Q^1_{2l}(\omega,\mathcal{A},\mathcal{F})=\Big(\frac{\mathrm{i}}{2\pi}\Big)^{l+1}\frac{1}{(l-1)!}\int_0^1\delta t\,(1-t)\,${STR}[\omega\dd(\mathcal{A}\mathcal{F}_t^{l-1})].`}</Eq>
+          <Eq n="13.82" title={R`$Q^1_{2l}$ 的显式公式`} say={R`非阿贝尔反常的通用公式：鬼场 $\omega$ 乘以 $\dd(\mathcal{A}\mathcal{F}_t^{l-1})$ 的对称化迹，再对插值参数以权重 $(1-t)$ 积分。权重 $(1-t)$ 正是 $\frac12$（而非 $\frac23$）的来源。`}>{R`Q^1_{2l}(\omega,\mathcal{A},\mathcal{F})=\Big(\frac{\mathrm{i}}{2\pi}\Big)^{l+1}\frac{1}{(l-1)!}\int_0^1\delta t\,(1-t)\,${STR}[\omega\dd(\mathcal{A}\mathcal{F}_t^{l-1})].`}</Eq>
           <Tx>{R`［注：证明中暂时略去归一化因子 $(\mathrm{i}/2\pi)^{l+1}$ 以简化表达式，最后再恢复。积分元写作 $\delta t$ 只是为了与外微分 $\dd$ 区分，它就是普通的 $\dd t$。由于 $\mathbb F=\boldsymbol F$ 中不含 $\omega$，下面的 $\mathcal{A},\mathcal{F}$ 可理解为 $\boldsymbol A,\boldsymbol F$。］`}</Tx>
           <Proof title="命题 13.1 的证明（原书略写处已补全）" steps={[
             { claim: R`从陈–Simons 形式的插值公式（式 (11.105)，此处 $j=l+1$）出发，并略去归一化：`, tex: R`Q_{2l+1}(\mathcal{A}+\omega,\mathcal{F})=\frac1{l!}\int_0^1\delta t\,\Tr[(\mathcal{A}+\omega)\hat{\mathcal{F}}^l_t]`, why: R`式 (11.105) 对联络 $\mathcal{A}+\omega$ 写出；由于 $\Delta$ 作用下的曲率是 $\mathbb F=\mathcal F$，插值曲率为 $t\mathcal{F}+(t^2-t)(\mathcal{A}+\omega)^2$（与 (11.104) 同形：$t\,\mathbb F+(t^2-t)\mathbb A^2$）。`, uses: ["11.105"] },

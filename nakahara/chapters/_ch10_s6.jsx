@@ -48,7 +48,7 @@ $$\mathrm{i}\frac{\dd}{\dd t}|\psi\rangle=E_n|\psi\rangle+e^{-\mathrm{i}\theta}\
 $$\mathrm{i}\frac{\dd}{\dd t}|\psi(t)\rangle=\Big[-\frac{\dd\eta_n(t)}{\dd t}+E_n(${bR}(t))\Big]|\psi(t)\rangle+\exp\Big[\mathrm{i}\eta_n(t)-\mathrm{i}\int E_n(${bR}(s))\dd s\Big]\mathrm{i}\frac{\dd}{\dd t}|n,${bR}(t)\rangle.$$
 
 令二者相等（并用 $\langle n,${bR}(t)|$ 投影——绝热近似下其他分量被略去），得 $\eta_n(t)$ 满足`}</Tx>
-      <Eq n="10.134" keyEq title="Berry 相位的演化方程" say={R`额外相位的变化率由瞬时本征态"自己与自己的导数"的重叠决定：它只依赖于本征态在参数空间里怎样转动。`}>{R`\frac{\dd\eta_n(t)}{\dd t}=\mathrm{i}\langle n,${bR}(t)|\frac{\dd}{\dd t}|n,${bR}(t)\rangle.`}</Eq>
+      <Eq n="10.134" title="Berry 相位的演化方程" say={R`额外相位的变化率由瞬时本征态"自己与自己的导数"的重叠决定：它只依赖于本征态在参数空间里怎样转动。`}>{R`\frac{\dd\eta_n(t)}{\dd t}=\mathrm{i}\langle n,${bR}(t)|\frac{\dd}{\dd t}|n,${bR}(t)\rangle.`}</Eq>
       <Tx>{R`积分 \eqref{10.134} 得`}</Tx>
       <Eq n="10.135" say={R`Berry 相位写成参数空间中的线积分：被积函数只依赖于路径，不依赖于走得多快——这就是"几何"相位。`}>{R`\eta_n(t)=\mathrm{i}\int_0^t\langle n,${bR}(s)|\frac{\dd}{\dd s}|n,${bR}(s)\rangle\dd s=\mathrm{i}\int_{${bR}(0)}^{${bR}(t)}\langle n,${bR}|\nabla_{${bR}}|n,${bR}\rangle\dd${bR}`}</Eq>
       <Tx>{R`其中 $\nabla_{${bR}}$ 表示 $${bR}$ 空间中的梯度。注意 $\eta_n(t)$ 是实数，因为
@@ -56,7 +56,7 @@ $$\mathrm{i}\frac{\dd}{\dd t}|\psi(t)\rangle=\Big[-\frac{\dd\eta_n(t)}{\dd t}+E_
 $$2\,\mathrm{Re}\langle n,${bR}(s)|\frac{\dd}{\dd s}|n,${bR}(s)\rangle=\langle n,${bR}(s)|\frac{\dd}{\dd s}|n,${bR}(s)\rangle+\Big(\frac{\dd}{\dd s}\langle n,${bR}(s)|\Big)|n,${bR}(s)\rangle=\frac{\dd}{\dd s}\langle n,${bR}(s)|n,${bR}(s)\rangle=0.$$
 
 设体系在 $${bR}$ 空间中走一个闭路：对某个 $T>0$，$${bR}(0)=${bR}(T)$。于是`}</Tx>
-      <Eq n="10.136" keyEq title="Berry 相位（闭路）" say={R`沿闭路的 Berry 相位：看起来是一个闭合线积分，似乎应为零——但被积函数一般不是全微分。`}>{R`\eta_n(T)=\mathrm{i}\int_0^T\langle n,${bR}(s)|\frac{\dd}{\dd s}|n,${bR}(s)\rangle\dd s=\mathrm{i}\int_{${bR}(0)}^{${bR}(T)}\langle n,${bR}|\nabla_{${bR}}|n,${bR}\rangle\dd${bR}.`}</Eq>
+      <Eq n="10.136" title="Berry 相位（闭路）" say={R`沿闭路的 Berry 相位：看起来是一个闭合线积分，似乎应为零——但被积函数一般不是全微分。`}>{R`\eta_n(T)=\mathrm{i}\int_0^T\langle n,${bR}(s)|\frac{\dd}{\dd s}|n,${bR}(s)\rangle\dd s=\mathrm{i}\int_{${bR}(0)}^{${bR}(T)}\langle n,${bR}|\nabla_{${bR}}|n,${bR}\rangle\dd${bR}.`}</Eq>
       <Tx>{R`由于 $${bR}(T)=${bR}(0)$，最后一个表达式看起来应为零。然而被积函数不一定是全微分，$\eta_n(T)$ 可以不为零。相位 $\eta_n(T)$ 称为 **Berry 相位**（Berry's phase，Berry 1984）。
 
 首先认识到 Berry 相位深刻几何意义的是 Simon（1983）：Berry 相位的来源是参数空间中的**和乐**。下面沿 Berry（1984）、Simon（1983）、Aitchison（1987）与 Zumino（1987）的思路展开这一观点。`}</Tx>
@@ -85,7 +85,7 @@ $$0=\dd(\langle${bR}|${bR}\rangle)=(\dd\langle${bR}|)|${bR}\rangle+\langle${bR}|
       <Tx>{R`（$\,{}_j\langle\boldsymbol R|=\bar t_{ij}\,{}_i\langle\boldsymbol R|=t_{ij}^{-1}{}_i\langle\boldsymbol R|$，因为 $|t_{ij}|=1$。）满足 \eqref{10.141} 的一族一形式 $\{\mathcal{A}_i\}$ 在 $P(M,\mathrm{U}(1))$ 上定义了一个 Ehresmann 联络（定理 10.1 与 \eqref{10.9}）。
 
 $\mathcal{A}$ 的场强 $\mathcal{F}$ 称为 **Berry 曲率**（Berry's curvature）：`}</Tx>
-      <Eq n="10.142" keyEq title="Berry 曲率" say={R`Berry 曲率：本征矢的两个方向导数的"叉积"——它是规范不变的，是参数空间里的"磁场"。`}>{R`\mathcal{F}=\dd\mathcal{A}=(\dd\langle${bR}|)\wedge(\dd|${bR}\rangle)=\Big(\frac{\partial\langle${bR}|}{\partial R^\mu}\Big)\Big(\frac{\partial|${bR}\rangle}{\partial R^\nu}\Big)\dd R^\mu\wedge\dd R^\nu.`}</Eq>
+      <Eq n="10.142" title="Berry 曲率" say={R`Berry 曲率：本征矢的两个方向导数的"叉积"——它是规范不变的，是参数空间里的"磁场"。`}>{R`\mathcal{F}=\dd\mathcal{A}=(\dd\langle${bR}|)\wedge(\dd|${bR}\rangle)=\Big(\frac{\partial\langle${bR}|}{\partial R^\mu}\Big)\Big(\frac{\partial|${bR}\rangle}{\partial R^\nu}\Big)\dd R^\mu\wedge\dd R^\nu.`}</Eq>
       <Tx>{R`下面先看一个原子物理的例子，再说明这一几何结构如何反映在 Berry 相位中。`}</Tx>
       <Box kind="example" n="10.7" title="快慢自由度：Born–Oppenheimer 近似中诱导的规范势">
         <Tx>{R`考虑含"快"自由度 $\boldsymbol r$ 与"慢"自由度 $${bR}$ 的量子力学体系。例如可以想象电子在缓慢振动的离子势场中运动。设哈密顿量为`}</Tx>
@@ -112,7 +112,7 @@ $$\langle\boldsymbol R|\nabla^2|\boldsymbol R\rangle=\nabla\cdot\langle\boldsymb
 
 由 \eqref{10.148} 只保留 $n'=n$ 项，且 $(\nabla\langle\boldsymbol R|)|\boldsymbol R\rangle=-\mathcal{A}$，得 $\langle\boldsymbol R|\nabla^2|\boldsymbol R\rangle\approx\nabla\cdot\mathcal{A}+\mathcal{A}\cdot\mathcal{A}$。所以 \eqref{10.147} 还应有 $\Phi\,\nabla\cdot\mathcal{A}$ 一项。只有加上它，方括号才等于 $(\nabla+\mathcal{A})^2\Phi=\nabla^2\Phi+2\mathcal{A}\cdot\nabla\Phi+(\nabla\cdot\mathcal{A})\Phi+\mathcal{A}^2\Phi$，与 \eqref{10.149} 一致。正文已改正。`}</Box>
         <Tx>{R`于是 $|\Phi(${bR})\rangle$ 的有效哈密顿量为`}</Tx>
-        <Eq n="10.149" keyEq title="诱导规范势" say={R`慢自由度"看到"一个由快自由度诱导的矢势（Berry 联络），以及由快自由度能级给出的势能——规范对称性从无到有地"产生"了。`}>{R`H_{\rm eff}(n)\equiv-\frac1{2M}\Big(\frac{\partial}{\partial R^\mu}+\mathcal{A}_\mu(${bR})\Big)^2+\varepsilon_n(${bR})`}</Eq>
+        <Eq n="10.149" title="诱导规范势" say={R`慢自由度"看到"一个由快自由度诱导的矢势（Berry 联络），以及由快自由度能级给出的势能——规范对称性从无到有地"产生"了。`}>{R`H_{\rm eff}(n)\equiv-\frac1{2M}\Big(\frac{\partial}{\partial R^\mu}+\mathcal{A}_\mu(${bR})\Big)^2+\varepsilon_n(${bR})`}</Eq>
         <Tx>{R`其中 $\mathcal{A}_\mu$ 是 Berry 联络的分量：`}</Tx>
         <Eq n="10.150" say={R`Berry 联络的分量。`}>{R`\mathcal{A}_\mu(${bR})=\langle${bR}|\frac{\partial}{\partial R^\mu}|${bR}\rangle.`}</Eq>
         <Tx>{R`值得注意：快自由度为慢自由度诱导出一个与之耦合的*矢势*。还要注意本征值 $\varepsilon_n(${bR})$ 在 $H_{\rm eff}$ 中起势能的作用。这种规范对称性的"自发产生"反映了波函数 $|${bR}\rangle$ 的相位自由度：换相位约定 $|${bR}\rangle\to e^{\mathrm{i}\chi(${bR})}|${bR}\rangle$ 时 $\Phi\to e^{-\mathrm{i}\chi}\Phi$、$\mathcal{A}\to\mathcal{A}+\mathrm{i}\dd\chi$，$H_{\rm eff}$ 协变。`}</Tx>
@@ -142,7 +142,7 @@ $$\mathrm{i}\frac{\dd\eta(t)}{\dd t}=-\langle${bR}(t)|\frac{\dd}{\dd t}|${bR}(t)
 它与 \eqref{10.134} 完全相同。积分得`}</Tx>
       <Eq n="10.158" keyEq title="Berry 相位 = 和乐" say={R`Berry 相位就是 Berry 联络沿闭路的环量：绝热定理的相位方程与水平提升方程是同一个方程。`}>{R`\eta(1)=\mathrm{i}\int_0^1\langle${bR}(s)|\frac{\dd}{\dd s}|${bR}(s)\rangle\dd s=\mathrm{i}\oint\langle${bR}|\dd|${bR}\rangle.`}</Eq>
       <Tx>{R`注意 $${bR}(0)=${bR}(1)$，所以 $|${bR}(0)\rangle=|${bR}(1)\rangle$。于是 $\exp[\mathrm{i}\eta(1)]$ 被视为和乐（\figref{10.7}）：`}</Tx>
-      <Eq n="10.159a" keyEq title="Berry 和乐" say={R`绕参数闭路一周，水平提升回到同一根纤维上的另一点：差一个相位 $e^{-\oint\mathcal{A}}=e^{\mathrm{i}\eta}$。`}>{R`\tilde{\boldsymbol{R}}(1)=\exp\Big(-\oint\langle${bR}|\dd|${bR}\rangle\Big)\cdot|${bR}(0)\rangle.`}</Eq>
+      <Eq n="10.159a" title="Berry 和乐" say={R`绕参数闭路一周，水平提升回到同一根纤维上的另一点：差一个相位 $e^{-\oint\mathcal{A}}=e^{\mathrm{i}\eta}$。`}>{R`\tilde{\boldsymbol{R}}(1)=\exp\Big(-\oint\langle${bR}|\dd|${bR}\rangle\Big)\cdot|${bR}(0)\rangle.`}</Eq>
       <Stmt id="F:berry" />
       <Figure n="10.7" caption={R`若参数沿闭路 $\boldsymbol R(t)$ 绝热变化，初始条件为 $|\boldsymbol R(0)\rangle$ 的态变为 $|\tilde{\boldsymbol R}(1)\rangle$，一般与 $|\boldsymbol R(0)\rangle$ 不同。差别就是和乐，即 Berry 相位。`} width="50%" />
       <Exercise n="10.14" title="Berry 相位 = Berry 曲率的通量" level="★"
@@ -176,7 +176,7 @@ $$R_1=R\sin\theta\cos\phi\qquad R_2=R\sin\theta\sin\phi\qquad R_3=R\cos\theta.$$
         <Tx>{R`这个态在 $\theta=\pi$ 处奇异，反映了 $|${bR}\rangle_{\rm N}$ 在 $R_3=-R$ 处无定义。考虑另一个本征矢`}</Tx>
         <Eq n="10.165" say={R`"南"规范本征矢：乘以 $e^{-\mathrm{i}\phi}$，奇点挪到了北极。`}>{R`|${bR}\rangle_{\rm S}\equiv e^{-\mathrm{i}\phi}|${bR}\rangle_{\rm N}=\begin{pmatrix}e^{-\mathrm{i}\phi}\cos(\theta/2)\\\sin(\theta/2)\end{pmatrix}=[2R(R-R_3)]^{-1/2}\begin{pmatrix}R_1-\mathrm{i}R_2\\ R-R_3\end{pmatrix}`}</Eq>
         <Tx>{R`它有相同的本征值。这个本征矢在 $\theta=0$，即 $R_3=R$ 处奇异。对应于这两个矢量，在极坐标下有 Berry 规范势`}</Tx>
-        <Eq n="10.166a" keyEq title="Berry 势（北）" say={R`北规范下的 Berry 联络：形式上就是强度 $\frac12$ 的 Wu–Yang 单极子势。`}>{R`\mathcal{A}_{\rm N}=\tfrac12\mathrm{i}(1-\cos\theta)\dd\phi\qquad\theta\neq\pi`}</Eq>
+        <Eq n="10.166a" title="Berry 势（北）" say={R`北规范下的 Berry 联络：形式上就是强度 $\frac12$ 的 Wu–Yang 单极子势。`}>{R`\mathcal{A}_{\rm N}=\tfrac12\mathrm{i}(1-\cos\theta)\dd\phi\qquad\theta\neq\pi`}</Eq>
         <Eq n="10.166b" say={R`南规范下的 Berry 联络。`}>{R`\mathcal{A}_{\rm S}=-\tfrac12\mathrm{i}(1+\cos\theta)\dd\phi\qquad\theta\neq0.`}</Eq>
         <Derivation title="补全：由 (10.164) 计算 (10.166a)" collapsed steps={[
           { tex: R`\mathcal{A}_{\rm N}=\cos\tfrac\theta2\,\dd\cos\tfrac\theta2+e^{-\mathrm{i}\phi}\sin\tfrac\theta2\,\dd\big(e^{\mathrm{i}\phi}\sin\tfrac\theta2\big)`, why: R`$\langle\boldsymbol R|\dd|\boldsymbol R\rangle$，第一分量实。` },

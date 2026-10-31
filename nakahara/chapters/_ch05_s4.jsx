@@ -24,7 +24,7 @@ $$P\omega(e_{\mu_1},e_{\mu_2},\ldots,e_{\mu_r})=\omega_{\mu_{P(1)}\mu_{P(2)}\ldo
 对一般的 $(q,r)$ 型张量，对称操作对 $q$ 个指标与 $r$ 个指标分别定义。对 $\omega\in\mathcal{T}^0_{r,p}(M)$，**对称化子**（symmetrizer）$\mathcal{S}$ 定义为`}</Tx>
       <Eq n="5.60" say={R`对称化：对所有置换求平均，得到对任意交换都不变的张量。`}>{R`\mathcal{S}\omega=\frac{1}{r!}\sum_{P\in S_r}P\omega`}</Eq>
       <Tx>{R`而**反对称化子**（anti-symmetrizer）$\mathcal{A}$ 为`}</Tx>
-      <Eq n="5.61" keyEq title="反对称化子" say={R`反对称化：对所有置换带符号求平均，得到交换任意两个变量就变号的张量——微分形式就是这样的张量。`}>{R`\mathcal{A}\omega=\frac{1}{r!}\sum_{P\in S_r}\operatorname{sgn}(P)P\omega`}</Eq>
+      <Eq n="5.61" title="反对称化子" say={R`反对称化：对所有置换带符号求平均，得到交换任意两个变量就变号的张量——微分形式就是这样的张量。`}>{R`\mathcal{A}\omega=\frac{1}{r!}\sum_{P\in S_r}\operatorname{sgn}(P)P\omega`}</Eq>
       <Tx>{R`其中偶置换 $\operatorname{sgn}(P)=+1$，奇置换 $\operatorname{sgn}(P)=-1$。$\mathcal{S}\omega$ **全对称**（即对任意 $P\in S_r$ 有 $P\mathcal{S}\omega=\mathcal{S}\omega$），$\mathcal{A}\omega$ **全反对称**（$P\mathcal{A}\omega=\operatorname{sgn}(P)\mathcal{A}\omega$）。`}</Tx>
 
       <Sub n="5.4.1" title="Definitions" zh="定义">
@@ -45,7 +45,7 @@ $$\begin{aligned}\dd x^\mu\wedge\dd x^\nu&=\dd x^\mu\otimes\dd x^\nu-\dd x^\nu\o
 （注意这个约定下 $\dd x^1\wedge\dd x^2(e_1,e_2)=1$，即 $\dd x^{\mu_1}\wedge\cdots\wedge\dd x^{\mu_r}=r!\,\mathcal{A}(\dd x^{\mu_1}\otimes\cdots\otimes\dd x^{\mu_r})$。）
 
 把 $p\in M$ 处 $r$ 形式的向量空间记作 $\Omega^r_p(M)$。\eqref{5.62} 形式的 $r$ 形式构成 $\Omega^r_p(M)$ 的基，$\omega\in\Omega^r_p(M)$ 展开为`}</Tx>
-        <Eq n="5.63" keyEq title="r 形式的展开" say={R`$r$ 形式按楔积基展开；分量取全反对称，$1/r!$ 抵消同一组指标的 $r!$ 种排列重复计数。`}>{R`\omega=\frac{1}{r!}\omega_{\mu_1\mu_2\ldots\mu_r}\dd x^{\mu_1}\wedge\dd x^{\mu_2}\wedge\ldots\wedge\dd x^{\mu_r}`}</Eq>
+        <Eq n="5.63" title="r 形式的展开" say={R`$r$ 形式按楔积基展开；分量取全反对称，$1/r!$ 抵消同一组指标的 $r!$ 种排列重复计数。`}>{R`\omega=\frac{1}{r!}\omega_{\mu_1\mu_2\ldots\mu_r}\dd x^{\mu_1}\wedge\dd x^{\mu_2}\wedge\ldots\wedge\dd x^{\mu_r}`}</Eq>
         <Tx>{R`其中 $\omega_{\mu_1\mu_2\ldots\mu_r}$ 取为**全反对称**，反映了基的反对称性。例如任意二阶张量的分量 $\omega_{\mu\nu}$ 可以分解为对称部分 $\sigma_{\mu\nu}$ 与反对称部分 $\alpha_{\mu\nu}$：`}</Tx>
         <Eq n="5.64a" say="二阶张量的对称部分。">{R`\sigma_{\mu\nu}=\omega_{(\mu\nu)}\equiv\tfrac12(\omega_{\mu\nu}+\omega_{\nu\mu})`}</Eq>
         <Eq n="5.64b" say={R`二阶张量的反对称部分——只有它能与 $\dd x^\mu\wedge\dd x^\nu$ 缩并出非零结果。`}>{R`\alpha_{\mu\nu}=\omega_{[\mu\nu]}\equiv\tfrac12(\omega_{\mu\nu}-\omega_{\nu\mu}).`}</Eq>
@@ -58,7 +58,7 @@ $$\binom{m}{r}=\frac{m!}{(m-r)!\,r!}.$$
 为了后面方便，定义 $\Omega^0_p(M)=\R$。显然 $\Omega^1_p(M)=T^*_pM$。若 \eqref{5.62} 中 $r$ 超过 $m$，它恒为零，因为在反对称求和中必有某个指标至少出现两次。等式 $\binom{m}{r}=\binom{m}{m-r}$ 意味着 $\dim\Omega^r_p(M)=\dim\Omega^{m-r}_p(M)$。由于 $\Omega^r_p(M)$ 是向量空间，$\Omega^r_p(M)$ 同构于 $\Omega^{m-r}_p(M)$（见 §2.2；第 7 章的 Hodge 星算子给出一个典范的同构）。
 
 **外积。**把楔积平凡地推广，定义 $q$ 形式与 $r$ 形式的**外积**（exterior product）$\wedge:\Omega^q_p(M)\times\Omega^r_p(M)\to\Omega^{q+r}_p(M)$。设 $\omega\in\Omega^q_p(M)$，$\xi\in\Omega^r_p(M)$，$(q+r)$ 形式 $\omega\wedge\xi$ 作用在 $q+r$ 个向量上定义为`}</Tx>
-        <Eq n="5.65" keyEq title="外积" say={R`两个形式的外积：把 $q+r$ 个向量的所有分配方式带符号求和，前 $q$ 个喂给 $\omega$、后 $r$ 个喂给 $\xi$；除以 $q!r!$ 抵消每组内部的重排。`}>{R`(\omega\wedge\xi)(V_1,\ldots,V_{q+r})=\frac{1}{q!\,r!}\sum_{P\in S_{q+r}}\operatorname{sgn}(P)\,\omega(V_{P(1)},\ldots,V_{P(q)})\,\xi(V_{P(q+1)},\ldots,V_{P(q+r)})`}</Eq>
+        <Eq n="5.65" title="外积" say={R`两个形式的外积：把 $q+r$ 个向量的所有分配方式带符号求和，前 $q$ 个喂给 $\omega$、后 $r$ 个喂给 $\xi$；除以 $q!r!$ 抵消每组内部的重排。`}>{R`(\omega\wedge\xi)(V_1,\ldots,V_{q+r})=\frac{1}{q!\,r!}\sum_{P\in S_{q+r}}\operatorname{sgn}(P)\,\omega(V_{P(1)},\ldots,V_{P(q)})\,\xi(V_{P(q+1)},\ldots,V_{P(q+r)})`}</Eq>
         <Tx>{R`其中 $V_i\in T_pM$。若 $q+r>m$，$\omega\wedge\xi$ 恒为零。有了这个乘法，就定义了一个代数`}</Tx>
         <Eq n="5.66" say={R`把各阶形式直和起来，在外积下封闭：这是 $p$ 点的外代数（Grassmann 代数），总维数 $2^m$。`}>{R`\Omega^*_p(M)\equiv\Omega^0_p(M)\oplus\Omega^1_p(M)\oplus\ldots\oplus\Omega^m_p(M).`}</Eq>
         <Tx>{R`$\Omega^*_p(M)$ 是 $p$ 处全体微分形式的空间，对外积封闭。`}</Tx>
@@ -83,7 +83,7 @@ $$\dd x\wedge\dd y=\cos\theta\cdot r\cos\theta\,\dd r\wedge\dd\theta-r\sin\theta
           <>
             <Tx>{R`设 $\xi\in\Omega^q_p(M)$，$\eta\in\Omega^r_p(M)$，$\omega\in\Omega^s_p(M)$。证明`}</Tx>
             <Eq n="5.67a" say={R`奇数阶形式与自己的外积为零（对一形式就是 $\dd x\wedge\dd x=0$）。`}>{R`\xi\wedge\xi=0\qquad\text{若 }q\text{ 为奇数}`}</Eq>
-            <Eq n="5.67b" keyEq title="外积的分次交换律" say={R`交换两个形式的次序，符号是两个阶数之积的奇偶：只要有一个是偶数阶，它们就可交换。`}>{R`\xi\wedge\eta=(-1)^{qr}\eta\wedge\xi`}</Eq>
+            <Eq n="5.67b" title="外积的分次交换律" say={R`交换两个形式的次序，符号是两个阶数之积的奇偶：只要有一个是偶数阶，它们就可交换。`}>{R`\xi\wedge\eta=(-1)^{qr}\eta\wedge\xi`}</Eq>
             <Eq n="5.67c" say="外积满足结合律。">{R`(\xi\wedge\eta)\wedge\omega=\xi\wedge(\eta\wedge\omega).`}</Eq>
           </>
         </Exercise>
@@ -130,7 +130,7 @@ $$\begin{aligned}\dd(\xi\wedge\omega)&=\partial_\lambda(fg)\,\dd x^\lambda\wedge
 第一项就是 $\dd\xi\wedge\omega$。第二项中把 $\dd x^\lambda$ 向右移过 $q$ 个 $\dd x^{\mu}$，得到因子 $(-1)^q$，变成 $(-1)^q\xi\wedge\dd\omega$。故 $\dd(\xi\wedge\omega)=\dd\xi\wedge\omega+(-1)^q\xi\wedge\dd\omega$。符号 $(-1)^q$ 说明 $\dd$ 是"反导子"：它像一个奇数阶的对象，越过 $q$ 形式时带出 $(-1)^q$。`}>
           <>
             <Tx>{R`设 $\xi\in\Omega^q(M)$，$\omega\in\Omega^r(M)$。证明`}</Tx>
-            <Eq n="5.69" keyEq title="外微分的 Leibniz 律" say={R`外微分对外积的乘积法则带一个符号：$\dd$ 越过 $q$ 形式 $\xi$ 时要乘 $(-1)^q$。`}>{R`\dd(\xi\wedge\omega)=\dd\xi\wedge\omega+(-1)^q\xi\wedge\dd\omega.`}</Eq>
+            <Eq n="5.69" title="外微分的 Leibniz 律" say={R`外微分对外积的乘积法则带一个符号：$\dd$ 越过 $q$ 形式 $\xi$ 时要乘 $(-1)^q$。`}>{R`\dd(\xi\wedge\omega)=\dd\xi\wedge\omega+(-1)^q\xi\wedge\dd\omega.`}</Eq>
           </>
         </Exercise>
         <Tx>{R`**不用坐标的写法。**外微分的一个有用的表达式这样得到。取 $X=X^\mu\partial/\partial x^\mu$、$Y=Y^\nu\partial/\partial x^\nu\in\mathcal{X}(M)$ 与 $\omega=\omega_\mu\dd x^\mu\in\Omega^1(M)$。容易验证组合
@@ -138,7 +138,7 @@ $$\begin{aligned}\dd(\xi\wedge\omega)&=\partial_\lambda(fg)\,\dd x^\lambda\wedge
 $$X[\omega(Y)]-Y[\omega(X)]-\omega([X,Y])=\frac{\partial\omega_\mu}{\partial x^\nu}(X^\nu Y^\mu-X^\mu Y^\nu)$$
 
 （展开 $X[\omega_\mu Y^\mu]$ 与 $Y[\omega_\mu X^\mu]$ 后，含 $\partial Y$、$\partial X$ 的项恰好被 $\omega([X,Y])$ 抵消），而它等于 $\dd\omega(X,Y)$（由 \eqref{5.68} 与 \eqref{5.62}，$\dd\omega=\partial_\nu\omega_\mu\dd x^\nu\wedge\dd x^\mu$，作用在 $(X,Y)$ 上就是 $\partial_\nu\omega_\mu(X^\nu Y^\mu-X^\mu Y^\nu)$）。于是得到与坐标无关的表达式`}</Tx>
-        <Eq n="5.70" keyEq title="外微分的无坐标公式" say={R`一形式的外微分在一对向量上的值：两项"沿一个方向求另一个的配对的导数"之差，再减去李括号的修正——没有任何坐标。`}>{R`\dd\omega(X,Y)=X[\omega(Y)]-Y[\omega(X)]-\omega([X,Y]).`}</Eq>
+        <Eq n="5.70" title="外微分的无坐标公式" say={R`一形式的外微分在一对向量上的值：两项"沿一个方向求另一个的配对的导数"之差，再减去李括号的修正——没有任何坐标。`}>{R`\dd\omega(X,Y)=X[\omega(Y)]-Y[\omega(X)]-\omega([X,Y]).`}</Eq>
         <Tx>{R`对 $r$ 形式 $\omega\in\Omega^r(M)$，它推广为`}</Tx>
         <Eq n="5.71" say={R`$r$ 形式外微分的无坐标公式：轮流把一个向量拿出来做方向导数（交错符号），再对每对向量用它们的李括号做修正。`}>{R`\begin{aligned}\dd\omega(X_1,\ldots,X_{r+1})&=\sum_{i=1}^{r+1}(-1)^{i+1}X_i\,\omega(X_1,\ldots,\hat X_i,\ldots,X_{r+1})\\&\quad+\sum_{i<j}(-1)^{i+j}\omega([X_i,X_j],X_1,\ldots,\hat X_i,\ldots,\hat X_j,\ldots,X_{r+1})\end{aligned}`}</Eq>
         <Tx>{R`其中带 $\nosym{\hat{\ }}$ 的项被删去。读者应当对 $r=2$ 明确验证 \eqref{5.71}。`}</Tx>
@@ -202,7 +202,7 @@ $$\dd(f^*\omega)=\frac1{r!}\dd(\omega_{\alpha_1\ldots\alpha_r}\circ f)\wedge\dd(
 意义：外微分是"自然的"，与坐标变换（以及任何光滑映射）交换——所以 \eqref{5.68} 虽然用坐标写出，结果与坐标无关。`}>
           <>
             <Tx>{R`设 $\xi,\omega\in\Omega^r(N)$，$f:M\to N$。证明`}</Tx>
-            <Eq n="5.75" keyEq title="外微分与拉回交换" say={R`先拉回再求外微分，等于先求外微分再拉回：外微分与任何光滑映射（包括坐标变换）都相容。`}>{R`\dd(f^*\omega)=f^*(\dd\omega)`}</Eq>
+            <Eq n="5.75" title="外微分与拉回交换" say={R`先拉回再求外微分，等于先求外微分再拉回：外微分与任何光滑映射（包括坐标变换）都相容。`}>{R`\dd(f^*\omega)=f^*(\dd\omega)`}</Eq>
             <Eq n="5.76" say="拉回保持外积。">{R`f^*(\xi\wedge\omega)=(f^*\xi)\wedge(f^*\omega).`}</Eq>
           </>
         </Exercise>
@@ -214,7 +214,7 @@ $$\dd(f^*\omega)=\frac1{r!}\dd(\omega_{\alpha_1\ldots\alpha_r}\circ f)\wedge\dd(
 
       <Sub n="5.4.3" title="Interior product and Lie derivative of forms" zh="内积与形式的李导数">
         <Tx>{R`另一个重要运算是**内积**（interior product）$\mathrm{i}_X:\Omega^r(M)\to\Omega^{r-1}(M)$，其中 $X\in\mathcal{X}(M)$。对 $\omega\in\Omega^r(M)$ 定义`}</Tx>
-        <Eq n="5.78" keyEq title="内积" say={R`内积把向量 $X$ "塞进"形式的第一个空位，形式降一阶。`}>{R`\mathrm{i}_X\omega(X_1,\ldots,X_{r-1})\equiv\omega(X,X_1,\ldots,X_{r-1}).`}</Eq>
+        <Eq n="5.78" title="内积" say={R`内积把向量 $X$ "塞进"形式的第一个空位，形式降一阶。`}>{R`\mathrm{i}_X\omega(X_1,\ldots,X_{r-1})\equiv\omega(X,X_1,\ldots,X_{r-1}).`}</Eq>
         <Tx>{R`对 $X=X^\mu\partial/\partial x^\mu$ 与 $\omega=(1/r!)\omega_{\mu_1\ldots\mu_r}\dd x^{\mu_1}\wedge\ldots\wedge\dd x^{\mu_r}$，有`}</Tx>
         <Eq n="5.79" say={R`内积的分量写法：把 $X$ 缩并到形式的第一个指标上；等价地，对每个基一形式轮流"吃掉"它，带上交错符号。`}>{R`\begin{aligned}\mathrm{i}_X\omega&=\frac{1}{(r-1)!}X^\nu\omega_{\nu\mu_2\ldots\mu_r}\dd x^{\mu_2}\wedge\ldots\wedge\dd x^{\mu_r}\\&=\frac{1}{r!}\sum_{s=1}^{r}X^{\mu_s}\omega_{\mu_1\ldots\mu_s\ldots\mu_r}(-1)^{s-1}\dd x^{\mu_1}\wedge\ldots\wedge\nosym{\widehat{\dd x^{\mu_s}}}\wedge\ldots\wedge\dd x^{\mu_r}\end{aligned}`}</Eq>
         <Tx>{R`其中带 $\nosym{\hat{\ }}$ 的项被删去。例如设 $(x,y,z)$ 是 $\R^3$ 的坐标，则
@@ -284,14 +284,14 @@ $$\big(\mathrm{i}_Y\mathcal{L}_X\omega\big)(X_1,\ldots,X_{r-1})=X[\omega(Y,X_1,\
 相加即得 (5.87)。下指标有 $m$ 个、上指标有 $n$ 个，所以两个求和的上限分别是 $m$ 与 $n$。特例：$n=1,m=0$ 回到 \eqref{5.49a}；$n=0,m=1$ 回到 \eqref{5.55}。`}>
           <>
             <Tx>{R`设 $t\in\mathcal{T}^n_m(M)$。证明`}</Tx>
-            <Eq n="5.87" keyEq title="张量场的李导数" say={R`一般张量场的李导数：分量的方向导数，每个下指标加一项 $+\partial X$，每个上指标减一项 $\partial X$。`}>{R`(\mathcal{L}_Xt)^{\mu_1\ldots\mu_n}{}_{\nu_1\ldots\nu_m}=X^\lambda\partial_\lambda t^{\mu_1\ldots\mu_n}{}_{\nu_1\ldots\nu_m}+\sum_{s=1}^{m}\partial_{\nu_s}X^\lambda t^{\mu_1\ldots\mu_n}{}_{\nu_1\ldots\lambda\ldots\nu_m}-\sum_{s=1}^{n}\partial_\lambda X^{\mu_s}t^{\mu_1\ldots\lambda\ldots\mu_n}{}_{\nu_1\ldots\nu_m}.`}</Eq>
+            <Eq n="5.87" title="张量场的李导数" say={R`一般张量场的李导数：分量的方向导数，每个下指标加一项 $+\partial X$，每个上指标减一项 $\partial X$。`}>{R`(\mathcal{L}_Xt)^{\mu_1\ldots\mu_n}{}_{\nu_1\ldots\nu_m}=X^\lambda\partial_\lambda t^{\mu_1\ldots\mu_n}{}_{\nu_1\ldots\nu_m}+\sum_{s=1}^{m}\partial_{\nu_s}X^\lambda t^{\mu_1\ldots\mu_n}{}_{\nu_1\ldots\lambda\ldots\nu_m}-\sum_{s=1}^{n}\partial_\lambda X^{\mu_s}t^{\mu_1\ldots\lambda\ldots\mu_n}{}_{\nu_1\ldots\nu_m}.`}</Eq>
           </>
         </Exercise>
         <Box kind="warning" title={R`勘误：\eqref{5.87} 第一个求和的上限是 $m$（p.223）`}>{R`$t\in\mathcal{T}^n_m(M)$ 有 $n$ 个上指标、$m$ 个下指标。原书 \eqref{5.87} 中对下指标 $\nu_s$ 的求和印作 $\sum_{s=1}^{n}$，应为 $\sum_{s=1}^{m}$。正文已改正。`}</Box>
 
         <Box kind="example" n="5.12" title="Hamilton 力学的形式语言">
           <Tx>{R`用微分形式重写 Hamilton 力学（§1.1）。设 $H$ 为 Hamilton 量，$(q^\mu,p_\mu)$ 为其相空间坐标。定义二形式`}</Tx>
-          <Eq n="5.88" keyEq title="辛二形式" say={R`辛二形式把每一对共轭的动量与坐标配成一个"有向面积元"，相空间的几何就由它决定。`}>{R`\omega=\dd p_\mu\wedge\dd q^\mu`}</Eq>
+          <Eq n="5.88" title="辛二形式" say={R`辛二形式把每一对共轭的动量与坐标配成一个"有向面积元"，相空间的几何就由它决定。`}>{R`\omega=\dd p_\mu\wedge\dd q^\mu`}</Eq>
           <Tx>{R`称为**辛二形式**（symplectic two-form）。若引入一形式`}</Tx>
           <Eq n="5.89" say={R`辛势（典范一形式）：动量乘坐标的微分，即作用量 $\int p\,\dd q$ 的被积式。`}>{R`\theta=p_\mu\,\dd q^\mu,`}</Eq>
           <Tx>{R`辛二形式就可写成`}</Tx>
@@ -305,17 +305,17 @@ $$\mathrm{i}_{X_f}\omega=-\frac{\partial f}{\partial p_\mu}\dd p_\mu-\frac{\part
 考虑由 Hamilton 量生成的向量场`}</Tx>
           <Eq n="5.92" say={R`取 $f=H$：Hamilton 量生成的向量场就是相空间中的"速度场"。`}>{R`X_H=\frac{\partial H}{\partial p_\mu}\frac{\partial}{\partial q^\mu}-\frac{\partial H}{\partial q^\mu}\frac{\partial}{\partial p_\mu}.`}</Eq>
           <Tx>{R`对 Hamilton 运动方程`}</Tx>
-          <Eq n="5.93" keyEq title="Hamilton 方程" say={R`Hamilton 运动方程：坐标的速度是 $H$ 对动量的偏导，动量的变化率是 $H$ 对坐标偏导的负值。`}>{R`\frac{\dd q^\mu}{\dd t}=\frac{\partial H}{\partial p_\mu}\qquad\frac{\dd p_\mu}{\dd t}=-\frac{\partial H}{\partial q^\mu},`}</Eq>
+          <Eq n="5.93" title="Hamilton 方程" say={R`Hamilton 运动方程：坐标的速度是 $H$ 对动量的偏导，动量的变化率是 $H$ 对坐标偏导的负值。`}>{R`\frac{\dd q^\mu}{\dd t}=\frac{\partial H}{\partial p_\mu}\qquad\frac{\dd p_\mu}{\dd t}=-\frac{\partial H}{\partial q^\mu},`}</Eq>
           <Tx>{R`的解 $(q^\mu,p_\mu)$，还有`}</Tx>
           <Eq n="5.94" say={R`沿运动轨道，$X_H$ 就是对时间求导：Hamilton 方程说的正是"轨道是 $X_H$ 的积分曲线"。`}>{R`X_H=\frac{\dd p_\mu}{\dd t}\frac{\partial}{\partial p_\mu}+\frac{\dd q^\mu}{\dd t}\frac{\partial}{\partial q^\mu}=\frac{\dd}{\dd t}.`}</Eq>
           <Tx>{R`辛二形式沿 $X_H$ 生成的流保持不变：`}</Tx>
-          <Eq n="5.95" keyEq title="Liouville 定理的形式版" say={R`辛形式沿 Hamilton 流不变——相空间"面积"守恒，这就是 Liouville 定理。`}>{R`\begin{aligned}\mathcal{L}_{X_H}\omega&=\dd(\mathrm{i}_{X_H}\omega)+\mathrm{i}_{X_H}(\dd\omega)\\&=\dd(\mathrm{i}_{X_H}\omega)=-\dd^2H=0\end{aligned}`}</Eq>
+          <Eq n="5.95" title="Liouville 定理的形式版" say={R`辛形式沿 Hamilton 流不变——相空间"面积"守恒，这就是 Liouville 定理。`}>{R`\begin{aligned}\mathcal{L}_{X_H}\omega&=\dd(\mathrm{i}_{X_H}\omega)+\mathrm{i}_{X_H}(\dd\omega)\\&=\dd(\mathrm{i}_{X_H}\omega)=-\dd^2H=0\end{aligned}`}</Eq>
           <Tx>{R`这里用了 \eqref{5.82}（以及 $\dd\omega=\dd^2\theta=0$）。反之，若 $X$ 满足 $\mathcal{L}_X\omega=0$，则存在 Hamilton 量 $H$，使 Hamilton 运动方程沿 $X$ 生成的流成立。这由前面的观察得出：$\mathcal{L}_X\omega=\dd(\mathrm{i}_X\omega)=0$，于是由 Poincaré 引理（\sref{X:Poincare-lemma}），（局部）存在函数 $H(q,p)$ 使
 
 $$\mathrm{i}_X\omega=-\dd H.$$
 
 **Poisson 括号。**借助 Hamilton 向量场，Poisson 括号可以写成与特殊坐标选取无关的形式。事实上`}</Tx>
-          <Eq n="5.96" keyEq title="Poisson 括号" say={R`把两个 Hamilton 向量场依次塞进辛形式，得到的正是 Poisson 括号——它是辛几何的对象，与正则坐标的选取无关。`}>{R`\mathrm{i}_{X_f}(\mathrm{i}_{X_g}\omega)=-\mathrm{i}_{X_f}(\dd g)=\frac{\partial f}{\partial q^\mu}\frac{\partial g}{\partial p_\mu}-\frac{\partial f}{\partial p_\mu}\frac{\partial g}{\partial q^\mu}=[f,g]_{\mathrm{PB}}.`}</Eq>
+          <Eq n="5.96" title="Poisson 括号" say={R`把两个 Hamilton 向量场依次塞进辛形式，得到的正是 Poisson 括号——它是辛几何的对象，与正则坐标的选取无关。`}>{R`\mathrm{i}_{X_f}(\mathrm{i}_{X_g}\omega)=-\mathrm{i}_{X_f}(\dd g)=\frac{\partial f}{\partial q^\mu}\frac{\partial g}{\partial p_\mu}-\frac{\partial f}{\partial p_\mu}\frac{\partial g}{\partial q^\mu}=[f,g]_{\mathrm{PB}}.`}</Eq>
           <Tx>{R`（中间一步：$-\mathrm{i}_{X_f}\dd g=-X_f[g]=-\frac{\partial f}{\partial p_\mu}\frac{\partial g}{\partial q^\mu}+\frac{\partial f}{\partial q^\mu}\frac{\partial g}{\partial p_\mu}$。）`}</Tx>
         </Box>
         <Box kind="warning" title={R`勘误：例 5.12 中的四处符号/指标（pp.223–224）`}>{R`**(1) \eqref{5.89}。**原书印作 $\theta=q^\mu\,\dd p_\mu$。但 $\dd(q^\mu\dd p_\mu)=\dd q^\mu\wedge\dd p_\mu=-\dd p_\mu\wedge\dd q^\mu=-\omega$，与 \eqref{5.90} $\omega=\dd\theta$ 矛盾。正文改为通常的典范一形式 $\theta=p_\mu\dd q^\mu$（等价地也可取 $\theta=-q^\mu\dd p_\mu$，二者相差恰当形式 $\dd(p_\mu q^\mu)$）。

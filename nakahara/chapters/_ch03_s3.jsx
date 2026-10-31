@@ -118,7 +118,7 @@ $$\partial_1\partial_2(p_0p_1p_2)=(p_2-p_1)-(p_2-p_0)+(p_1-p_0)=0.$$
 顶点 $p_0$ 出现在"删 $p_1$ 再删 $p_2$"与"删 $p_2$ 再删 $p_1$"两条路径中，符号相反；$p_1$、$p_2$ 同理。下面的交互图对任意 $r\le5$ 把这种两两配对全部列出来。`}</Box>
       <BoundaryLab />
       <Stmt id="T3.3">
-        <Eq n="3.27" keyEq title={R`$B_r\subset Z_r$`} say="每个边缘都是闭链：边界本身没有边界。">{R`B_r(K)\subset Z_r(K)\qquad(\subset C_r(K)).`}</Eq>
+        <Eq n="3.27" title={R`$B_r\subset Z_r$`} say="每个边缘都是闭链：边界本身没有边界。">{R`B_r(K)\subset Z_r(K)\qquad(\subset C_r(K)).`}</Eq>
         <Proof steps={[
           { claim: R`任取 $c\in B_r(K)$，写成 $c=\partial_{r+1}d$，$d\in C_{r+1}(K)$。`, uses: ["D3.4"] },
           { claim: R`于是 $\partial_rc=\partial_r(\partial_{r+1}d)=0$，即 $c\in Z_r(K)$。`, uses: ["L3.3", "D3.3"] },

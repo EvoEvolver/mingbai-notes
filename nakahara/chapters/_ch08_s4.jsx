@@ -22,7 +22,7 @@ export function Sec84() {
 
       <Sub n="8.4.1" title="The Hermitian metric" zh="Hermite 度规">
         <Tx>{R`若复流形 $M$ 的 Riemann 度规 $g$ 满足`}</Tx>
-        <Eq n="8.50" keyEq title="Hermite 度规" say={R`殆复结构 $J$ 是度规的等距：在每个复平面里转 $90^\circ$ 不改变长度与夹角。`}>{R`g_p(J_pX,J_pY)=g_p(X,Y)`}</Eq>
+        <Eq n="8.50" title="Hermite 度规" say={R`殆复结构 $J$ 是度规的等距：在每个复平面里转 $90^\circ$ 不改变长度与夹角。`}>{R`g_p(J_pX,J_pY)=g_p(X,Y)`}</Eq>
         <Tx>{R`（对每点 $p\in M$ 与任意 $X,Y\in T_pM$），则称 $g$ 为 **Hermite 度规**，$(M,g)$ 称为 **Hermite 流形**。关于 Hermite 度规，向量 $J_pX$ 与 $X$ 正交：`}</Tx>
         <Eq n="8.51" say={R`把向量转 $90^\circ$ 后与原向量正交——正如复平面上 $\mathrm{i}z$ 与 $z$ 垂直。`}>{R`g_p(J_pX,X)=g_p(J_p^2X,J_pX)=-g_p(J_pX,X)=0.`}</Eq>
         <Stmt id="T8.2">
@@ -38,7 +38,7 @@ export function Sec84() {
 $$g_{\mu\nu}=g\left(\frac{\partial}{\partial z^\mu},\frac{\partial}{\partial z^\nu}\right)=g\left(J\frac{\partial}{\partial z^\mu},J\frac{\partial}{\partial z^\nu}\right)=\mathrm{i}^2g\left(\frac{\partial}{\partial z^\mu},\frac{\partial}{\partial z^\nu}\right)=-g_{\mu\nu},$$
 
 所以 $g_{\mu\nu}=0$。（\eqref{8.50} 对实向量成立，复线性延拓后对复向量也成立。）同样 $g_{\bar\mu\bar\nu}=0$。于是 Hermite 度规取形式`}</Tx>
-        <Eq n="8.53" keyEq title="Hermite 度规的复形式" say={R`Hermite 度规只把全纯方向与反全纯方向配对：$\dd z\otimes\dd\bar z$ 型的项，没有 $\dd z\otimes\dd z$ 型的项。`}>{R`g=g_{\mu\bar\nu}\dd z^\mu\otimes\dd\bar z^\nu+g_{\bar\mu\nu}\dd\bar z^\mu\otimes\dd z^\nu.`}</Eq>
+        <Eq n="8.53" title="Hermite 度规的复形式" say={R`Hermite 度规只把全纯方向与反全纯方向配对：$\dd z\otimes\dd\bar z$ 型的项，没有 $\dd z\otimes\dd z$ 型的项。`}>{R`g=g_{\mu\bar\nu}\dd z^\mu\otimes\dd\bar z^\nu+g_{\bar\mu\nu}\dd\bar z^\mu\otimes\dd z^\nu.`}</Eq>
         <Tx>{R`［**注：**取 $X,Y\in T_pM^+$，在 $T_pM^+$ 中定义内积 $h_p$：`}</Tx>
         <Eq n="8.54" say={R`在全纯切空间上，用度规与"第二个向量取共轭"定义的内积是正定 Hermite 型——这就是"Hermite 度规"名称的由来。`}>{R`h_p(X,Y)\equiv g_p(X,\overline Y).`}</Eq>
         <Tx>{R`容易看出 $h_p$ 是 $T_pM^+$ 上的正定 Hermite 型。事实上，
@@ -64,7 +64,7 @@ $$\Omega\left(\frac{\partial}{\partial\bar z^\mu},\frac{\partial}{\partial\bar z
 所以 $\Omega$ 的分量为`}</Tx>
         <Eq n="8.57" say={R`Kähler 形式只有混合分量，等于度规的混合分量乘以 $\mathrm{i}$。`}>{R`\Omega_{\mu\nu}=\Omega_{\bar\mu\bar\nu}=0\qquad\Omega_{\mu\bar\nu}=-\Omega_{\bar\nu\mu}=\mathrm{i}g_{\mu\bar\nu}.`}</Eq>
         <Tx>{R`可以写成`}</Tx>
-        <Eq n="8.58" keyEq title="Kähler 形式的坐标表达" say={R`Kähler 形式 = $\mathrm{i}$ 乘度规矩阵，夹在 $\dd z$ 与 $\dd\bar z$ 的楔积之间。`}>{R`\Omega=\mathrm{i}g_{\mu\bar\nu}\,\dd z^\mu\otimes\dd\bar z^\nu-\mathrm{i}g_{\bar\nu\mu}\,\dd\bar z^\nu\otimes\dd z^\mu=\mathrm{i}g_{\mu\bar\nu}\,\dd z^\mu\wedge\dd\bar z^\nu.`}</Eq>
+        <Eq n="8.58" title="Kähler 形式的坐标表达" say={R`Kähler 形式 = $\mathrm{i}$ 乘度规矩阵，夹在 $\dd z$ 与 $\dd\bar z$ 的楔积之间。`}>{R`\Omega=\mathrm{i}g_{\mu\bar\nu}\,\dd z^\mu\otimes\dd\bar z^\nu-\mathrm{i}g_{\bar\nu\mu}\,\dd\bar z^\nu\otimes\dd z^\mu=\mathrm{i}g_{\mu\bar\nu}\,\dd z^\mu\wedge\dd\bar z^\nu.`}</Eq>
         <Tx>{R`$\Omega$ 也可以写成`}</Tx>
         <Eq n="8.59" say={R`用降了指标的殆复结构 $J_{\mu\bar\nu}=-\mathrm{i}g_{\mu\bar\nu}$ 表示 Kähler 形式。`}>{R`\Omega=-J_{\mu\bar\nu}\,\dd z^\mu\wedge\dd\bar z^\nu`}</Eq>
         <Tx>{R`其中 $J_{\mu\bar\nu}=g_{\mu\bar\lambda}J^{\bar\lambda}{}_{\bar\nu}=-\mathrm{i}g_{\mu\bar\nu}$（由 \eqref{8.22}，$J^{\bar\lambda}{}_{\bar\nu}=-\mathrm{i}\delta^{\bar\lambda}{}_{\bar\nu}$）。$\Omega$ 是实形式：`}</Tx>
@@ -88,7 +88,7 @@ $$\Omega\left(\frac{\partial}{\partial\bar z^\mu},\frac{\partial}{\partial\bar z
         <Tx>{R`设 $(M,g)$ 是 Hermite 流形。我们定义一个与复结构相容的联络。自然的要求是：全纯向量 $V\in T_pM^+$ 平行移动到另一点 $q$ 后仍是全纯向量 $\tilde V(q)\in T_qM^+$。后面将证明，在这一要求下殆复结构是协变守恒的（\sref{T8.4}）。设 $\{z^\mu\}$ 与 $\{z^\mu+\Delta z^\mu\}$ 分别是 $p$、$q$ 的坐标，$V=V^\mu\partial/\partial z^\mu|_p$，$\tilde V(q)=\tilde V^\mu(z+\Delta z)\partial/\partial z^\mu|_q$。仿照 \eqref{7.9} 假设`}</Tx>
         <Eq n="8.61" say={R`平行移动一小步：全纯分量的改变只由全纯分量与全纯位移决定，不引入反全纯分量。`}>{R`\tilde V^\mu(z+\Delta z)=V^\mu(z)-V^\lambda(z)\Gamma^\mu{}_{\nu\lambda}(z)\Delta z^\nu.`}</Eq>
         <Tx>{R`于是基向量满足（参看 \eqref{7.14}）`}</Tx>
-        <Eq n="8.62a" keyEq title="全纯基向量的协变导数" say={R`沿全纯方向对全纯基向量求协变导数，结果仍是全纯基向量的组合。`}>{R`\nabla_\mu\frac{\partial}{\partial z^\nu}=\Gamma^\lambda{}_{\mu\nu}(z)\frac{\partial}{\partial z^\lambda}.`}</Eq>
+        <Eq n="8.62a" title="全纯基向量的协变导数" say={R`沿全纯方向对全纯基向量求协变导数，结果仍是全纯基向量的组合。`}>{R`\nabla_\mu\frac{\partial}{\partial z^\nu}=\Gamma^\lambda{}_{\mu\nu}(z)\frac{\partial}{\partial z^\lambda}.`}</Eq>
         <Tx>{R`由于 $\partial/\partial\bar z^\mu$ 是 $\partial/\partial z^\mu$ 的共轭向量场，有`}</Tx>
         <Eq n="8.62b" say={R`取上式的复共轭：反全纯基向量沿反全纯方向的导数，由共轭的联络系数给出。`}>{R`\nabla_{\bar\mu}\frac{\partial}{\partial\bar z^\nu}=\Gamma^{\bar\lambda}{}_{\bar\mu\bar\nu}\frac{\partial}{\partial\bar z^\lambda}`}</Eq>
         <Tx>{R`其中 $\Gamma^{\bar\lambda}{}_{\bar\mu\bar\nu}=\overline{\Gamma}^\lambda{}_{\mu\nu}$。$\Gamma^\lambda{}_{\mu\nu}$ 与 $\Gamma^{\bar\lambda}{}_{\bar\mu\bar\nu}$ 是联络系数中仅有的非零分量。注意 $\nabla_\mu\partial/\partial\bar z^\nu=\nabla_{\bar\mu}\partial/\partial z^\nu=0$。对对偶基，非零的协变导数为`}</Tx>
@@ -122,7 +122,7 @@ $$(\nabla_{\bar\kappa}t)_{\mu\nu}{}^{\bar\lambda}=\partial_{\bar\kappa}t_{\mu\nu
             { claim: R`第三、四个：$J_{\bar\nu}{}^{\bar\mu}=-\mathrm{i}\delta$，同样的计算（或对前两式取复共轭）。混合分量 $J_\nu{}^{\bar\mu}=J_{\bar\nu}{}^\mu=0$，而联络不把全纯指标变成反全纯指标，所以它们的协变导数也为零。`, fill: true },
           ]} />
         </Stmt>
-        <Eq n="8.70" keyEq title="殆复结构协变常数" say={R`在 Hermite 联络下，"乘以 $\mathrm{i}$"这个操作与平行移动可交换：平行移动保持全纯向量为全纯向量。`}>{R`(\nabla_\kappa J)_\nu{}^\mu=(\nabla_{\bar\kappa}J)_\nu{}^\mu=(\nabla_\kappa J)_{\bar\nu}{}^{\bar\mu}=(\nabla_{\bar\kappa}J)_{\bar\nu}{}^{\bar\mu}=0.`}</Eq>
+        <Eq n="8.70" title="殆复结构协变常数" say={R`在 Hermite 联络下，"乘以 $\mathrm{i}$"这个操作与平行移动可交换：平行移动保持全纯向量为全纯向量。`}>{R`(\nabla_\kappa J)_\nu{}^\mu=(\nabla_{\bar\kappa}J)_\nu{}^\mu=(\nabla_\kappa J)_{\bar\nu}{}^{\bar\mu}=(\nabla_{\bar\kappa}J)_{\bar\nu}{}^{\bar\mu}=0.`}</Eq>
       </Sub>
 
       <Sub n="8.4.4" title="Torsion and curvature" zh="挠率与曲率">
@@ -136,7 +136,7 @@ $$T\left(\frac{\partial}{\partial z^\mu},\frac{\partial}{\partial z^\nu}\right)=
 $$T\left(\frac{\partial}{\partial\bar z^\mu},\frac{\partial}{\partial\bar z^\nu}\right)=(\Gamma^{\bar\lambda}{}_{\bar\mu\bar\nu}-\Gamma^{\bar\lambda}{}_{\bar\nu\bar\mu})\frac{\partial}{\partial\bar z^\lambda}.$$
 
 （坐标基向量的括号为零；混合情形两个协变导数都为零。）非零分量为`}</Tx>
-        <Eq n="8.73a" keyEq title="Hermite 联络的挠率" say={R`挠率 = 度规混合分量的"旋度"：$\partial_\mu g_{\nu\bar\xi}-\partial_\nu g_{\mu\bar\xi}$。Kähler 条件正是让它为零。`}>{R`T^\lambda{}_{\mu\nu}=\Gamma^\lambda{}_{\mu\nu}-\Gamma^\lambda{}_{\nu\mu}=g^{\bar\xi\lambda}(\partial_\mu g_{\nu\bar\xi}-\partial_\nu g_{\mu\bar\xi})`}</Eq>
+        <Eq n="8.73a" title="Hermite 联络的挠率" say={R`挠率 = 度规混合分量的"旋度"：$\partial_\mu g_{\nu\bar\xi}-\partial_\nu g_{\mu\bar\xi}$。Kähler 条件正是让它为零。`}>{R`T^\lambda{}_{\mu\nu}=\Gamma^\lambda{}_{\mu\nu}-\Gamma^\lambda{}_{\nu\mu}=g^{\bar\xi\lambda}(\partial_\mu g_{\nu\bar\xi}-\partial_\nu g_{\mu\bar\xi})`}</Eq>
         <Eq n="8.73b" say={R`反全纯分量的挠率，是上式的复共轭。`}>{R`T^{\bar\lambda}{}_{\bar\mu\bar\nu}=\Gamma^{\bar\lambda}{}_{\bar\mu\bar\nu}-\Gamma^{\bar\lambda}{}_{\bar\nu\bar\mu}=g^{\bar\lambda\xi}\left(\partial_{\bar\mu}g_{\bar\nu\xi}-\partial_{\bar\nu}g_{\bar\mu\xi}\right).`}</Eq>
         <Tx>{R`至于 Riemann 张量，例如（\eqref{7.42} 的分量形式）
 
@@ -182,7 +182,7 @@ $$R_{\lambda\bar\kappa\bar\mu\nu}=-R_{\lambda\bar\kappa\nu\bar\mu}=-\big(\partia
           </>
         </Exercise>
         <Tx>{R`**Ricci 形式。**把 Riemann 张量的指标缩并为`}</Tx>
-        <Eq n="8.78" keyEq title="Ricci 形式的分量" say={R`曲率的迹只依赖于度规行列式的对数：对 $\log G$ 先求全纯导数再求反全纯导数。`}>{R`\sym{ricf}{\mathfrak{R}}_{\mu\bar\nu}\equiv R^\kappa{}_{\kappa\mu\bar\nu}=-\partial_{\bar\nu}(g^{\kappa\bar\xi}\partial_\mu g_{\kappa\bar\xi})=-\partial_{\bar\nu}\partial_\mu\log G`}</Eq>
+        <Eq n="8.78" title="Ricci 形式的分量" say={R`曲率的迹只依赖于度规行列式的对数：对 $\log G$ 先求全纯导数再求反全纯导数。`}>{R`\sym{ricf}{\mathfrak{R}}_{\mu\bar\nu}\equiv R^\kappa{}_{\kappa\mu\bar\nu}=-\partial_{\bar\nu}(g^{\kappa\bar\xi}\partial_\mu g_{\kappa\bar\xi})=-\partial_{\bar\nu}\partial_\mu\log G`}</Eq>
         <Tx>{R`其中 $G\equiv\det(g_{\mu\bar\nu})$。（第二个等号：$R^\kappa{}_{\kappa\mu\bar\nu}=-R^\kappa{}_{\kappa\bar\nu\mu}$ 再用 \eqref{8.75a}。）最后一个等号用了恒等式 $\delta G=Gg^{\mu\bar\nu}\delta g_{\mu\bar\nu}$（见 \eqref{7.204}），于是 $g^{\kappa\bar\xi}\partial_\mu g_{\kappa\bar\xi}=\partial_\mu\log G$。定义 **Ricci 形式**`}</Tx>
         <Eq n="8.79" keyEq title="Ricci 形式" say={R`Ricci 形式是一个实的闭 $(1,1)$ 形式，局部写成 $\mathrm{i}\bar\partial\partial\log G$；它的上同调类除以 $2\pi$ 就是第一陈类。`}>{R`\sym{ricf}{\mathfrak{R}}\equiv\mathrm{i}\sym{ricf}{\mathfrak{R}}_{\mu\bar\nu}\,\dd z^\mu\wedge\dd\bar z^\nu=\mathrm{i}\bar\partial\partial\log G.`}</Eq>
         <Box kind="warning" title={R`注记（勘误）：$G=\det(g_{\mu\bar\nu})$ 与 $\sqrt g$ 相差常数因子（p.350）`}>{R`原书写 $G\equiv\det(g_{\mu\bar\nu})=\sqrt g$。直接计算：$m=1$ 时实度规 $g_{xx}=g_{yy}=a$ 给出 $g_{z\bar z}=\frac14(g_{xx}+g_{yy})=\frac a2$，而 $\sqrt{\det g_{\rm real}}=a$；一般地 $\det(g_{\mu\bar\nu})=2^{-m}\sqrt{g}$（复基与实基之间的变换矩阵是常数）。常数因子在 $\log G$ 的导数中消失，所以 \eqref{8.78}、\eqref{8.79} 及之后的一切结论不受影响；正文写作 $G\equiv\det(g_{\mu\bar\nu})\propto\sqrt g$。`}</Box>

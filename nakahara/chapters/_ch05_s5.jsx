@@ -22,7 +22,7 @@ export function Sec55() {
         <Eq n="5.98" say={R`局部上，$m$ 形式只有一个分量：一个函数乘坐标的"体积楔积"。分量处处为正就代表一个定向。`}>{R`\omega=h(p)\,\dd x^1\wedge\ldots\wedge\dd x^m`}</Eq>
         <Figure n="5.14" caption={R`(a) Möbius 带由第二条带子的 $\mathrm{B}'$ 部分扭转 $\pi$ 后，把 A 与 $\mathrm{A}'$、B 与 $\mathrm{B}'$ 粘合而成。B 上的坐标变换为 $y^1=x^1$，$y^2=-x^2$，Jacobi 行列式为 $-1$。(b) Möbius 带上的基标架。`} width="80%" />
         <Tx>{R`其中 $h(p)$ 在坐标为 $x=\varphi(p)$ 的卡 $(U,\varphi)$ 上正定。若 $M$ 可定向，就可以把 $\omega$ 延拓到整个 $M$，使它的分量 $h$ 在每张卡 $U_i$ 上都正定；这时 $\omega$ 是体积元。注意 $h$ 的正性与坐标的选取无关。事实上，设 $p\in U_i\cap U_j\neq\emptyset$，$x^\mu$ 与 $y^\alpha$ 分别是 $U_i$ 与 $U_j$ 的坐标，则 \eqref{5.98} 变成`}</Tx>
-        <Eq n="5.99" keyEq title="m 形式的变换" say={R`换坐标时，$m$ 形式的分量乘上 Jacobi 行列式——与多重积分换元公式中的 Jacobi 因子相同，只是带符号。`}>{R`\omega=h(p)\frac{\partial x^1}{\partial y^{\mu_1}}\dd y^{\mu_1}\wedge\ldots\wedge\frac{\partial x^m}{\partial y^{\mu_m}}\dd y^{\mu_m}=h(p)\det\left(\frac{\partial x^\mu}{\partial y^\nu}\right)\dd y^1\wedge\ldots\wedge\dd y^m.`}</Eq>
+        <Eq n="5.99" title="m 形式的变换" say={R`换坐标时，$m$ 形式的分量乘上 Jacobi 行列式——与多重积分换元公式中的 Jacobi 因子相同，只是带符号。`}>{R`\omega=h(p)\frac{\partial x^1}{\partial y^{\mu_1}}\dd y^{\mu_1}\wedge\ldots\wedge\frac{\partial x^m}{\partial y^{\mu_m}}\dd y^{\mu_m}=h(p)\det\left(\frac{\partial x^\mu}{\partial y^\nu}\right)\dd y^1\wedge\ldots\wedge\dd y^m.`}</Eq>
         <Derivation title={R`为什么楔积给出的恰好是行列式`} collapsed steps={[
           { tex: R`\dd y^{\mu_1}\wedge\cdots\wedge\dd y^{\mu_m}=\varepsilon^{\mu_1\ldots\mu_m}\,\dd y^1\wedge\cdots\wedge\dd y^m`, why: R`$m$ 个一形式在 $m$ 维中：指标有重复则为零（性质 (i)），否则是 $(1,\ldots,m)$ 的一个置换，等于其符号乘标准顺序（性质 (ii)）。` },
           { tex: R`\frac{\partial x^1}{\partial y^{\mu_1}}\cdots\frac{\partial x^m}{\partial y^{\mu_m}}\varepsilon^{\mu_1\ldots\mu_m}=\det\left(\frac{\partial x^\mu}{\partial y^\nu}\right)`, why: R`这正是行列式的 Leibniz 展开式。` },
@@ -33,7 +33,7 @@ export function Sec55() {
 
       <Sub n="5.5.2" title="Integration of forms" zh="形式的积分">
         <Tx>{R`现在可以定义函数 $f:M\to\R$ 在可定向流形 $M$ 上的积分了。取体积元 $\omega$。在坐标为 $x$ 的坐标邻域 $U_i$ 中，定义 $m$ 形式 $f\omega$ 的积分为`}</Tx>
-        <Eq n="5.100" keyEq title="一张卡里的积分" say={R`在一张卡里，形式的积分就是把分量函数（$f$ 乘体积元的分量 $h$）当作普通的 $m$ 元函数，做普通的多重积分。`}>{R`\int_{U_i}f\omega\equiv\int_{\varphi(U_i)}f(\varphi_i^{-1}(x))\,h(\varphi_i^{-1}(x))\,\dd x^1\ldots\dd x^m.`}</Eq>
+        <Eq n="5.100" title="一张卡里的积分" say={R`在一张卡里，形式的积分就是把分量函数（$f$ 乘体积元的分量 $h$）当作普通的 $m$ 元函数，做普通的多重积分。`}>{R`\int_{U_i}f\omega\equiv\int_{\varphi(U_i)}f(\varphi_i^{-1}(x))\,h(\varphi_i^{-1}(x))\,\dd x^1\ldots\dd x^m.`}</Eq>
         <Tx>{R`右边是 $m$ 元函数的普通多重积分。**与卡无关**：若 $f\omega$ 的支集同时含于 $U_i$ 与 $U_j$，由多重积分换元公式，$\dd x^1\cdots\dd x^m=|J|\,\dd y^1\cdots\dd y^m$；而由 \eqref{5.99}，$\omega$ 在 $y$ 坐标中的分量是 $hJ$。定向一致时 $J>0$，$|J|=J$，两种算法的被积函数逐点相同。（若 $J<0$，两种算法差一个负号——这就是为什么积分需要定向。）
 
 一旦定义了 $f$ 在 $U_i$ 上的积分，就可以借助下面定义的"单位分解"给出 $f$ 在整个 $M$ 上的积分。`}</Tx>

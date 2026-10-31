@@ -94,7 +94,7 @@ $$\mathcal{A}_i(X)e_\alpha{}^0=\frac{\dd x^\mu}{\dd t}e_\beta{}^0\mathcal{A}_{i\
 代入 \eqref{10.55}，最后得到`}</Tx>
       <Eq n="10.56a" say={R`基截面沿曲线的协变导数：规范势矩阵的第 $\alpha$ 列，按切向量的分量加权。`}>{R`\nabla_Xe_\alpha=\Big[\Big(\sigma_i(0),\frac{\dd x^\mu}{\dd t}\mathcal{A}_{i\mu}{}^\beta{}_\alpha e_\beta{}^0\Big)\Big]=\frac{\dd x^\mu}{\dd t}\mathcal{A}_{i\mu}{}^\beta{}_\alpha e_\beta`}</Eq>
       <Tx>{R`或`}</Tx>
-      <Eq n="10.56b" keyEq title="基截面的协变导数" say={R`基截面的协变导数是规范势矩阵（一形式）乘以基截面：联络在相伴丛上就是一个矩阵值一形式。`}>{R`\nabla e_\alpha=\mathcal{A}_i{}^\beta{}_\alpha e_\beta.`}</Eq>
+      <Eq n="10.56b" title="基截面的协变导数" say={R`基截面的协变导数是规范势矩阵（一形式）乘以基截面：联络在相伴丛上就是一个矩阵值一形式。`}>{R`\nabla e_\alpha=\mathcal{A}_i{}^\beta{}_\alpha e_\beta.`}</Eq>
       <Tx>{R`特别地，沿坐标曲线 $x^\mu$，`}</Tx>
       <Eq n="10.57" say={R`沿坐标方向的协变导数：规范势的 $\mu$ 分量作为矩阵作用在基截面上。`}>{R`\nabla_{\partial/\partial x^\mu}e_\alpha=\mathcal{A}_{i\mu}{}^\beta{}_\alpha e_\beta.`}</Eq>
       <Tx>{R`值得注意：主丛 $P$ 上的联络 $\mathcal{A}$ 完全确定了相伴丛 $E$ 上的协变导数（相差表示的选取）。`}</Tx>
@@ -106,7 +106,7 @@ $$\nabla_Xs=\nabla_X(\xi_i{}^\alpha e_\alpha)=X[\xi_i{}^\alpha]e_\alpha+\xi_i{}^
 
 这里第二项中把哑指标重新命名（$\nabla_Xe_\beta=\frac{\dd x^\mu}{\dd t}\mathcal{A}_{i\mu}{}^\alpha{}_\beta e_\alpha$）。写成 $(\sigma_i,\cdot)$ 的形式，就是 $[(\sigma_i(0),\frac{\dd\xi_i}{\dd t}+\mathcal{A}_i(X)\xi_i)]$。（习题 10.8 的解中由定义直接得到了同一公式 $(\ast)$。）`}>
         <Tx>{R`设 $s(p)=[(\sigma_i(p),\xi_i(p))]=\xi_i{}^\alpha(p)e_\alpha$ 是 $E$ 的一般截面，$\xi_i(p)=\xi_i{}^\alpha(p)e_\alpha{}^0$。用习题 10.8 的结果验证`}</Tx>
-        <Eq n="10.58" keyEq title="协变导数的分量形式" say={R`物质场的协变导数 = 普通导数 + 规范势作用于场：这正是物理中的"最小耦合" $\partial_\mu\to\partial_\mu+\mathcal{A}_\mu$。`}>{R`\nabla_Xs=\Big[\Big(\sigma_i(0),\frac{\dd\xi_i}{\dd t}+\mathcal{A}_i(X)\xi_i\Big|_{t=0}\Big)\Big]=\frac{\dd x^\mu}{\dd t}\Big\{\frac{\partial\xi_i{}^\alpha}{\partial x^\mu}+\mathcal{A}_{i\mu}{}^\alpha{}_\beta\xi_i{}^\beta\Big\}e_\alpha.`}</Eq>
+        <Eq n="10.58" title="协变导数的分量形式" say={R`物质场的协变导数 = 普通导数 + 规范势作用于场：这正是物理中的"最小耦合" $\partial_\mu\to\partial_\mu+\mathcal{A}_\mu$。`}>{R`\nabla_Xs=\Big[\Big(\sigma_i(0),\frac{\dd\xi_i}{\dd t}+\mathcal{A}_i(X)\xi_i\Big|_{t=0}\Big)\Big]=\frac{\dd x^\mu}{\dd t}\Big\{\frac{\partial\xi_i{}^\alpha}{\partial x^\mu}+\mathcal{A}_{i\mu}{}^\alpha{}_\beta\xi_i{}^\beta\Big\}e_\alpha.`}</Eq>
       </Exercise>
       <Tx>{R`**与局部平凡化无关。**按构造，协变导数与局部平凡化无关；这从 $\nabla_Xs$ 的局部形式也能看出。设 $\sigma_i(p)$、$\sigma_j(p)$ 是相交坐标卡 $U_i$、$U_j$ 上的局部截面，在 $U_i\cap U_j$ 上 $\sigma_j(p)=\sigma_i(p)t_{ij}(p)$。（同一截面在两种平凡化下的分量满足 $[(\sigma_i,\xi_i)]=[(\sigma_jt_{ij}^{-1},\xi_i)]=[(\sigma_j,t_{ij}^{-1}\xi_i)]$，即 $\xi_i=t_{ij}\xi_j$。）在 $i$ 平凡化下，协变导数为`}</Tx>
       <Eq n="10.59" say={R`同一个协变导数在两个规范下计算：规范势的变换律恰好抵消了场分量的变换，结果是同一个截面——协变导数是"协变"的。`}>{R`\begin{aligned}\nabla_Xs&=\Big[\Big(\sigma_i(0),\frac{\dd\xi_i}{\dd t}+\mathcal{A}_i(X)\xi_i\Big|_{t=0}\Big)\Big]=\Big[\Big(\sigma_j(0)\cdot t_{ij}^{-1},\frac{\dd}{\dd t}(t_{ij}\xi_j)+\mathcal{A}_i(X)t_{ij}\xi_j\Big|_{t=0}\Big)\Big]\\&=\Big[\Big(\sigma_j(0),\frac{\dd\xi_j}{\dd t}+\mathcal{A}_j(X)\xi_j\Big|_{t=0}\Big)\Big]\end{aligned}`}</Eq>
@@ -200,7 +200,7 @@ function Sub1044() {
       <Tx>{R`设 $E\xrightarrow{\pi}M$ 是带正定对称内积的矢量丛，内积在每点 $p\in M$ 的作用为`}</Tx>
       <Eq n="10.72" say={R`矢量丛上的内积：在每根纤维上给出一个正定对称双线性型。`}>{R`${GIN}_p:\pi^{-1}(p)\otimes\pi^{-1}(p)\to\mathbb{R}.`}</Eq>
       <Tx>{R`称 $${GIN}$ 在 $E$ 上定义了一个 **Riemann 结构**（Riemannian structure）。联络 $\nabla$ 称为**度规联络**（metric connection），如果它保持内积：`}</Tx>
-      <Eq n="10.73" keyEq title="度规联络" say={R`度规联络：内积的变化完全来自两个截面各自的协变变化——平行移动保持长度与夹角。`}>{R`\dd[${GIN}(s,s')]=${GIN}(\nabla s,s')+${GIN}(s,\nabla s').`}</Eq>
+      <Eq n="10.73" title="度规联络" say={R`度规联络：内积的变化完全来自两个截面各自的协变变化——平行移动保持长度与夹角。`}>{R`\dd[${GIN}(s,s')]=${GIN}(\nabla s,s')+${GIN}(s,\nabla s').`}</Eq>
       <Tx>{R`特别地，取 $s=e_\alpha$、$s'=e_\beta$，令 $${GIN}(e_\alpha,e_\beta)=g_{\alpha\beta}$，得到`}</Tx>
       <Eq n="10.74" say={R`度规联络在一般标架下的条件：度规分量的外微分等于联络矩阵从两侧作用于度规。`}>{R`\dd g_{\alpha\beta}=\mathcal{A}_i{}^\gamma{}_\alpha g_{\gamma\beta}+\mathcal{A}_i{}^\gamma{}_\beta g_{\alpha\gamma}.`}</Eq>
       <Tx>{R`这应与 \eqref{7.30b} 比较。若 $E=TM$，再加上无挠条件，我们的联络就化为 Riemann 几何中的 Levi-Civita 联络（\sref{T7.1}）。

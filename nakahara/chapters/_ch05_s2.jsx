@@ -14,7 +14,7 @@ export function Sec52() {
 
       <Sub n="5.2.1" title="Differentiable maps" zh="可微映射">
         <Tx>{R`设 $f:M\to N$ 是从 $m$ 维流形 $M$ 到 $n$ 维流形 $N$ 的映射，点 $p\in M$ 被映到 $f(p)\in N$，即 $f:p\mapsto f(p)$（\figref{5.6}）。取 $M$ 上的卡 $(U,\varphi)$ 与 $N$ 上的卡 $(V,\psi)$，使 $p\in U$、$f(p)\in V$。则 $f$ 有如下**坐标表示**：`}</Tx>
-        <Eq n="5.16" keyEq title="映射的坐标表示" say={R`流形之间的映射本身没法求导；先用坐标把两头都"翻译"成欧氏空间，得到一个普通的多元向量值函数，再对它求导。`}>{R`\psi\circ f\circ\varphi^{-1}:\R^m\to\R^n.`}</Eq>
+        <Eq n="5.16" title="映射的坐标表示" say={R`流形之间的映射本身没法求导；先用坐标把两头都"翻译"成欧氏空间，得到一个普通的多元向量值函数，再对它求导。`}>{R`\psi\circ f\circ\varphi^{-1}:\R^m\to\R^n.`}</Eq>
         <Figure n="5.6" caption={R`映射 $f:M\to N$ 的坐标表示 $\psi\circ f\circ\varphi^{-1}:\R^m\to\R^n$。`} width="70%" />
         <Tx>{R`若记 $\varphi(p)=\{x^\mu\}$、$\psi(f(p))=\{y^\alpha\}$，则 $\psi\circ f\circ\varphi^{-1}$ 就是通常的 $m$ 元向量值函数 $y=\psi\circ f\circ\varphi^{-1}(x)$。在清楚用的是哪套坐标时，我们有时用（其实是滥用！）记号 $y=f(x)$ 或 $y^\alpha=f^\alpha(x^\mu)$。若 $y=\psi\circ f\circ\varphi^{-1}(x)$，或简写的 $y^\alpha=f^\alpha(x^\mu)$，对每个 $x^\mu$ 都是 $C^\infty$ 的，就称 $f$ 在 $p$（或在 $x=\varphi(p)$）**可微**。可微映射也称为**光滑映射**。注意我们要求无穷次（$C^\infty$）可微，与转移函数 $\psi_{ij}$ 的光滑性相协调。
 
@@ -58,7 +58,7 @@ $M$ 上的**函数** $f$ 是光滑映射 $f:M\to\R$（\figref{5.8}）。在卡 $
         <Tx>{R`［注意记号的滥用！导数 $\partial f/\partial x^\mu$ 实际上是 $\partial(f\circ\varphi^{-1}(x))/\partial x^\mu$。］换句话说，$t=0$ 处的 $\dd f(c(t))/\dd t$ 可以通过把微分算子 $X$ 作用在 $f$ 上得到，其中`}</Tx>
         <Eq n="5.20" keyEq title="切向量" say={R`切向量就是一个一阶微分算子：系数是曲线的坐标速度，作用对象是函数。`}>{R`X=X^\mu\left(\frac{\partial}{\partial x^\mu}\right)\qquad\left(X^\mu=\left.\frac{\dd x^\mu(c(t))}{\dd t}\right|_{t=0}\right)`}</Eq>
         <Tx>{R`即`}</Tx>
-        <Eq n="5.21" keyEq title="向量作用在函数上" say={R`向量 $X$ 作用在函数 $f$ 上，得到 $f$ 沿 $X$ 方向的变化率 $X[f]$——左边与坐标无关，右边是它在某个坐标中的写法。`}>{R`\left.\frac{\dd f(c(t))}{\dd t}\right|_{t=0}=X^\mu\left(\frac{\partial f}{\partial x^\mu}\right)\equiv X[f].`}</Eq>
+        <Eq n="5.21" title="向量作用在函数上" say={R`向量 $X$ 作用在函数 $f$ 上，得到 $f$ 沿 $X$ 方向的变化率 $X[f]$——左边与坐标无关，右边是它在某个坐标中的写法。`}>{R`\left.\frac{\dd f(c(t))}{\dd t}\right|_{t=0}=X^\mu\left(\frac{\partial f}{\partial x^\mu}\right)\equiv X[f].`}</Eq>
         <Tx>{R`最后一个等号定义了 $X[f]$。我们就把 $X=X^\mu\partial/\partial x^\mu$ 定义为 $M$ 在 $p=c(0)$ 处、沿曲线 $c(t)$ 所给方向的**切向量**。`}</Tx>
         <Figure n="5.9" caption={R`曲线 $c$ 与函数 $f$ 通过方向导数确定沿曲线的切向量。`} width="70%" />
         <Box kind="example" n="5.7" title="作用在坐标函数上">{R`若把 $X$ 作用在坐标函数 $\varphi(c(t))=x^\mu(t)$ 上，得到
@@ -90,15 +90,15 @@ $T_pM$ 的基不必是 $\{e_\mu\}$；也可以考虑线性组合 $\hat e_i\equiv
 
       <Sub n="5.2.3" title="One-forms" zh="一形式">
         <Tx>{R`$T_pM$ 是向量空间，所以存在它的对偶空间，其元素是从 $T_pM$ 到 $\R$ 的线性函数（见 §2.2）。这个对偶空间称为 $p$ 处的**余切空间**（cotangent space），记作 $T_p^*M$。$T_p^*M$ 的元素 $\omega:T_pM\to\R$ 称为**对偶向量**、**余切向量**，在微分形式的语境中称为**一形式**（one-form）。一形式最简单的例子是函数 $f\in\mathcal{F}(M)$ 的微分 $\dd f$。向量 $V$ 对 $f$ 的作用是 $V[f]=V^\mu\partial f/\partial x^\mu\in\R$。于是定义 $\dd f\in T_p^*M$ 对 $V\in T_pM$ 的作用为`}</Tx>
-        <Eq n="5.24" keyEq title="函数的微分" say={R`函数的微分 $\dd f$ 是一个"吃进向量、吐出数"的机器：吃进 $V$，吐出 $f$ 沿 $V$ 的变化率。`}>{R`\langle\dd f,V\rangle\equiv V[f]=V^\mu\frac{\partial f}{\partial x^\mu}\in\R.`}</Eq>
+        <Eq n="5.24" title="函数的微分" say={R`函数的微分 $\dd f$ 是一个"吃进向量、吐出数"的机器：吃进 $V$，吐出 $f$ 沿 $V$ 的变化率。`}>{R`\langle\dd f,V\rangle\equiv V[f]=V^\mu\frac{\partial f}{\partial x^\mu}\in\R.`}</Eq>
         <Tx>{R`显然 $\langle\dd f,V\rangle$ 对 $V$ 与 $f$ 都是 $\R$ 线性的。
 
 用坐标 $x=\varphi(p)$ 表示，$\dd f=(\partial f/\partial x^\mu)\dd x^\mu$，所以自然把 $\{\dd x^\mu\}$ 看成 $T_p^*M$ 的基。而且它是**对偶基**，因为`}</Tx>
-        <Eq n="5.25" keyEq title="对偶基" say={R`坐标微分 $\dd x^\mu$ 恰好"挑出"向量的第 $\mu$ 个分量：它们与坐标基 $\partial/\partial x^\nu$ 互为对偶。`}>{R`\left\langle\dd x^\nu,\frac{\partial}{\partial x^\mu}\right\rangle=\frac{\partial x^\nu}{\partial x^\mu}=\delta^\nu_\mu.`}</Eq>
+        <Eq n="5.25" title="对偶基" say={R`坐标微分 $\dd x^\mu$ 恰好"挑出"向量的第 $\mu$ 个分量：它们与坐标基 $\partial/\partial x^\nu$ 互为对偶。`}>{R`\left\langle\dd x^\nu,\frac{\partial}{\partial x^\mu}\right\rangle=\frac{\partial x^\nu}{\partial x^\mu}=\delta^\nu_\mu.`}</Eq>
         <Tx>{R`（这是 \eqref{5.24} 取 $f=x^\nu$、$V=\partial/\partial x^\mu$。）任意一形式 $\omega$ 写成`}</Tx>
         <Eq n="5.26" say={R`一形式在对偶基下展开，系数 $\omega_\mu$ 称为它的分量（下指标）。`}>{R`\omega=\omega_\mu\,\dd x^\mu`}</Eq>
         <Tx>{R`其中 $\omega_\mu$ 是 $\omega$ 的分量。取向量 $V=V^\mu\partial/\partial x^\mu$ 与一形式 $\omega=\omega_\mu\dd x^\mu$，**内积** $\langle\ ,\ \rangle:T_p^*M\times T_pM\to\R$ 定义为`}</Tx>
-        <Eq n="5.27" keyEq title="一形式与向量的配对" say={R`一形式作用在向量上就是分量对应相乘再求和——上下指标配对，结果是与坐标无关的数。`}>{R`\langle\omega,V\rangle=\omega_\mu V^\nu\left\langle\dd x^\mu,\frac{\partial}{\partial x^\nu}\right\rangle=\omega_\mu V^\nu\delta^\mu_\nu=\omega_\mu V^\mu.`}</Eq>
+        <Eq n="5.27" title="一形式与向量的配对" say={R`一形式作用在向量上就是分量对应相乘再求和——上下指标配对，结果是与坐标无关的数。`}>{R`\langle\omega,V\rangle=\omega_\mu V^\nu\left\langle\dd x^\mu,\frac{\partial}{\partial x^\nu}\right\rangle=\omega_\mu V^\nu\delta^\mu_\nu=\omega_\mu V^\mu.`}</Eq>
         <Tx>{R`注意：内积定义在**一个向量与一个对偶向量之间**，而不是两个向量或两个对偶向量之间（后者需要度规，第 7 章）。
 
 由于 $\omega$ 的定义不依赖任何坐标系，对 $p\in U_i\cap U_j$ 有
@@ -106,7 +106,7 @@ $T_pM$ 的基不必是 $\{e_\mu\}$；也可以考虑线性组合 $\hat e_i\equiv
 $$\omega=\omega_\mu\dd x^\mu=\widetilde{\omega}_\nu\dd y^\nu,$$
 
 其中 $x=\varphi_i(p)$，$y=\varphi_j(p)$。由 $\dd x^\mu=(\partial x^\mu/\partial y^\nu)\dd y^\nu$（原书写作由 $\dd y^\nu=(\partial y^\nu/\partial x^\mu)\dd x^\mu$，二者等价）得到`}</Tx>
-        <Eq n="5.28" keyEq title="一形式分量的变换律" say={R`一形式的分量按逆 Jacobi 矩阵 $\partial x/\partial y$ 变换（"协变"），与向量分量的变换恰好相反，所以配对 $\omega_\mu V^\mu$ 不变。`}>{R`\widetilde{\omega}_\nu=\omega_\mu\frac{\partial x^\mu}{\partial y^\nu}.`}</Eq>
+        <Eq n="5.28" title="一形式分量的变换律" say={R`一形式的分量按逆 Jacobi 矩阵 $\partial x/\partial y$ 变换（"协变"），与向量分量的变换恰好相反，所以配对 $\omega_\mu V^\mu$ 不变。`}>{R`\widetilde{\omega}_\nu=\omega_\mu\frac{\partial x^\mu}{\partial y^\nu}.`}</Eq>
         <Box kind="key" title="为什么上下指标要这样放">{R`由 \eqref{5.23} 与 \eqref{5.28}，
 
 $$\widetilde{\omega}_\mu\widetilde{X}^\mu=\omega_\lambda\frac{\partial x^\lambda}{\partial y^\mu}X^\nu\frac{\partial y^\mu}{\partial x^\nu}=\omega_\lambda X^\nu\delta^\lambda_\nu=\omega_\nu X^\nu.$$
@@ -116,7 +116,7 @@ $$\widetilde{\omega}_\mu\widetilde{X}^\mu=\omega_\lambda\frac{\partial x^\lambda
 
       <Sub n="5.2.4" title="Tensors" zh="张量">
         <Tx>{R`$(q,r)$ 型**张量**（tensor）是把 $q$ 个 $T_p^*M$ 元素与 $r$ 个 $T_pM$ 元素映成实数的多重线性对象。$\mathcal{T}^q_{r,p}(M)$ 表示 $p\in M$ 处 $(q,r)$ 型张量的集合。用前面的基，$\mathcal{T}^q_{r,p}(M)$ 的元素写成`}</Tx>
-        <Eq n="5.29" keyEq title="(q,r) 型张量" say={R`一般张量是 $q$ 个坐标基向量与 $r$ 个对偶基的张量积的线性组合；系数有 $q$ 个上指标、$r$ 个下指标。`}>{R`T=T^{\mu_1\ldots\mu_q}{}_{\nu_1\ldots\nu_r}\frac{\partial}{\partial x^{\mu_1}}\ldots\frac{\partial}{\partial x^{\mu_q}}\dd x^{\nu_1}\ldots\dd x^{\nu_r}.`}</Eq>
+        <Eq n="5.29" title="(q,r) 型张量" say={R`一般张量是 $q$ 个坐标基向量与 $r$ 个对偶基的张量积的线性组合；系数有 $q$ 个上指标、$r$ 个下指标。`}>{R`T=T^{\mu_1\ldots\mu_q}{}_{\nu_1\ldots\nu_r}\frac{\partial}{\partial x^{\mu_1}}\ldots\frac{\partial}{\partial x^{\mu_q}}\dd x^{\nu_1}\ldots\dd x^{\nu_r}.`}</Eq>
         <Tx>{R`（基之间省略了张量积符号 $\otimes$。）显然这是从 $\bigotimes^qT_p^*M\otimes^rT_pM$ 到 $\R$ 的线性函数。设 $V_i=V_i^\mu\partial/\partial x^\mu$（$1\le i\le r$），$\omega_i=\omega_{i\mu}\dd x^\mu$（$1\le i\le q$），$T$ 作用在它们上面得到一个数：
 
 $$T(\omega_1,\ldots,\omega_q;V_1,\ldots,V_r)=T^{\mu_1\ldots\mu_q}{}_{\nu_1\ldots\nu_r}\,\omega_{1\mu_1}\ldots\omega_{q\mu_q}V_1^{\nu_1}\ldots V_r^{\nu_r}.$$
@@ -139,7 +139,7 @@ $$\widetilde{T}^{\alpha_1\ldots\alpha_q}{}_{\beta_1\ldots\beta_r}=\frac{\partial
         <Eq n="5.30" say={R`映射把点送到点，它的微分就把该点的切向量送到像点的切向量。`}>{R`f_*:T_pM\to T_{f(p)}N.`}</Eq>
         <Figure n="5.10" caption={R`映射 $f:M\to N$ 诱导微分映射 $f_*:T_pM\to T_{f(p)}N$。`} width="75%" />
         <Tx>{R`$f_*$ 的显式形式由"切向量是沿曲线的方向导数"这一定义得到。若 $g\in\mathcal{F}(N)$，则 $g\circ f\in\mathcal{F}(M)$。向量 $V\in T_pM$ 作用在 $g\circ f$ 上给出一个数 $V[g\circ f]$。于是定义 $f_*V\in T_{f(p)}N$ 为`}</Tx>
-        <Eq n="5.31" keyEq title="推前的定义" say={R`推前后的向量怎样对 $N$ 上的函数求导？把函数先拉回到 $M$（复合上 $f$），再让原向量去求导。`}>{R`(f_*V)[g]\equiv V[g\circ f]`}</Eq>
+        <Eq n="5.31" title="推前的定义" say={R`推前后的向量怎样对 $N$ 上的函数求导？把函数先拉回到 $M$（复合上 $f$），再让原向量去求导。`}>{R`(f_*V)[g]\equiv V[g\circ f]`}</Eq>
         <Tx>{R`或用 $M$ 上的卡 $(U,\varphi)$ 与 $N$ 上的卡 $(V,\psi)$ 写成`}</Tx>
         <Eq n="5.32" say={R`同一定义的坐标版本：两边的函数都换成坐标表示。`}>{R`(f_*V)[g\circ\psi^{-1}(y)]\equiv V[g\circ f\circ\varphi^{-1}(x)]`}</Eq>
         <Tx>{R`其中 $x=\varphi(p)$，$y=\psi(f(p))$。令 $V=V^\mu\partial/\partial x^\mu$，$f_*V=W^\alpha\partial/\partial y^\alpha$，\eqref{5.32} 给出
@@ -165,7 +165,7 @@ $h$ 任意，故 $(g\circ f)_*V=g_*f_*V$，即 $(g\circ f)_*=g_*\circ f_*$。
 **分量形式。**设 $M,N,P$ 的坐标为 $x^\mu,y^\alpha,z^\kappa$，由 \eqref{5.33}，$(g\circ f)_*$ 的矩阵是 $\partial z^\kappa/\partial x^\mu$，$g_*\circ f_*$ 的矩阵是 $(\partial z^\kappa/\partial y^\alpha)(\partial y^\alpha/\partial x^\mu)$。二者相等就是多元链式法则——推前的复合律是"Jacobi 矩阵相乘"的坐标无关版本。`}>
           <>
           <Tx>{R`设 $f:M\to N$，$g:N\to P$。证明复合映射 $g\circ f:M\to P$ 的微分映射为`}</Tx>
-          <Eq n="5.34" keyEq title="推前的复合律" say={R`先映 $f$ 再映 $g$ 的推前，等于先推前 $f_*$ 再推前 $g_*$——这就是链式法则：Jacobi 矩阵相乘。`}>{R`(g\circ f)_*=g_*\circ f_*.`}</Eq>
+          <Eq n="5.34" title="推前的复合律" say={R`先映 $f$ 再映 $g$ 的推前，等于先推前 $f_*$ 再推前 $g_*$——这就是链式法则：Jacobi 矩阵相乘。`}>{R`(g\circ f)_*=g_*\circ f_*.`}</Eq>
         </>
         </Exercise>
         <Tx>{R`**拉回。**映射 $f:M\to N$ 还诱导一个映射`}</Tx>
@@ -188,7 +188,7 @@ $$\xi_\mu=\frac{\partial y^\alpha}{\partial x^\mu}\left\langle\omega_\beta\dd y^
 等价地说：$f^*(\dd y^\alpha)=\dd(y^\alpha\circ f)=(\partial y^\alpha/\partial x^\mu)\dd x^\mu$——拉回就是"把 $y$ 当成 $x$ 的函数代进去"。`}>
           <>
           <Tx>{R`设 $f:M\to N$ 是光滑映射。证明：对 $\omega=\omega_\alpha\dd y^\alpha\in T^*_{f(p)}N$，诱导的一形式 $f^*\omega=\xi_\mu\dd x^\mu\in T^*_pM$ 的分量为`}</Tx>
-          <Eq n="5.37" keyEq title="拉回的分量" say={R`拉回的分量也是乘 Jacobi 矩阵，但这次从左边乘到一形式的下指标上——方向与推前相反。`}>{R`\xi_\mu=\omega_\alpha\frac{\partial y^\alpha}{\partial x^\mu}.`}</Eq>
+          <Eq n="5.37" title="拉回的分量" say={R`拉回的分量也是乘 Jacobi 矩阵，但这次从左边乘到一形式的下指标上——方向与推前相反。`}>{R`\xi_\mu=\omega_\alpha\frac{\partial y^\alpha}{\partial x^\mu}.`}</Eq>
         </>
         </Exercise>
         <Exercise n="5.5" title="拉回的复合律" level="★"

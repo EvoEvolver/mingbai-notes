@@ -16,7 +16,7 @@ export function Sub1055() {
       <Tx>{R`其中 Hodge $*$ 相对于 Euclid 度规。§1.10 已经证明，瞬子对应的场强是自对偶（反自对偶）的：`}</Tx>
       <Eq n="10.111" say={R`瞬子的场强等于（或等于负的）自己的 Hodge 对偶：这是一阶方程，自动满足二阶的 Yang–Mills 方程。`}>{R`\mathcal{F}_{\mu\nu}=\pm*\mathcal{F}_{\mu\nu}.`}</Eq>
       <Tx>{R`（由 Bianchi 恒等式，$\mathcal{D}*\mathcal{F}=\pm\mathcal{D}\mathcal{F}=0$，所以 \eqref{10.111} 的解自动是 Yang–Mills 方程 \eqref{10.109} 的解。）自对偶（反自对偶）场位形的作用量为`}</Tx>
-      <Eq n="10.112" keyEq title="瞬子作用量 = 拓扑项" say={R`对自对偶场，作用量化为 $\Tr\mathcal{F}\wedge\mathcal{F}$ 的积分——一个不依赖度规、只依赖拓扑的量。`}>{R`\mathcal{S}^{\rm E}_{\rm YM}[\mathcal{A}]=-\frac12\int_M\Tr(\mathcal{F}\wedge*\mathcal{F})=\mp\frac12\int_M\Tr(\mathcal{F}\wedge\mathcal{F}).`}</Eq>
+      <Eq n="10.112" title="瞬子作用量 = 拓扑项" say={R`对自对偶场，作用量化为 $\Tr\mathcal{F}\wedge\mathcal{F}$ 的积分——一个不依赖度规、只依赖拓扑的量。`}>{R`\mathcal{S}^{\rm E}_{\rm YM}[\mathcal{A}]=-\frac12\int_M\Tr(\mathcal{F}\wedge*\mathcal{F})=\mp\frac12\int_M\Tr(\mathcal{F}\wedge\mathcal{F}).`}</Eq>
       <Box kind="physics" title="Bogomol'nyi 不等式：为什么瞬子是极小">{R`对任意 $\mathcal{F}$，$0\le-\frac14\int\Tr\big((\mathcal{F}\mp*\mathcal{F})\wedge*(\mathcal{F}\mp*\mathcal{F})\big)=-\frac12\int\Tr(\mathcal{F}\wedge*\mathcal{F})\pm\frac12\int\Tr(\mathcal{F}\wedge\mathcal{F})$（用了 $**=1$ 与 $\mathcal{F}\wedge*\mathcal{F}$ 的对称性）。所以 $\mathcal{S}^{\rm E}_{\rm YM}\ge\mp\frac12\int\Tr\mathcal{F}^2=\pm4\pi^2n$（下面 \eqref{10.127}），等号当且仅当 $\mathcal{F}=\pm*\mathcal{F}$。在给定拓扑扇区 $n$ 中，作用量的最小值 $4\pi^2|n|$ 由（反）自对偶解达到。`}</Box>
       <Tx>{R`**拓扑性质。**要求作用量有限，必须有`}</Tx>
       <Eq n="10.113" say={R`有限作用的边界条件：在大球面上场强必须趋于零，规范势只能趋于纯规范。`}>{R`\mathcal{A}_\mu(x)\to g(x)^{-1}\partial_\mu g(x)\qquad\text{当 }|x|\to L`}</Eq>
@@ -41,7 +41,7 @@ $$t^4I_2+\mathrm{i}t^i${SP}_i\in\mathrm{SU}(2)\ \leftrightarrow\ \boldsymbol t^2
       <Tx>{R`属于 $\pi_3(\mathrm{SU}(2))$ 的类 0（即不卷绕）。
 
 (b) *恒等*映射（这实际上就是恒等映射 $S^3\to S^3$）`}</Tx>
-      <Eq n="10.117b" keyEq title="单位映射度的映射" say={R`把 $S^3$ 上的点 $(x^4,\boldsymbol x)$ 直接当作 SU(2) 元素 $x^4+\mathrm{i}\boldsymbol x\cdot\boldsymbol\sigma$：恒等映射，卷绕一次。`}>{R`g_1:x\mapsto\frac1r[x^4I_2+\mathrm{i}x^i${SP}_i],\quad r^2=\boldsymbol x^2+(x^4)^2`}</Eq>
+      <Eq n="10.117b" title="单位映射度的映射" say={R`把 $S^3$ 上的点 $(x^4,\boldsymbol x)$ 直接当作 SU(2) 元素 $x^4+\mathrm{i}\boldsymbol x\cdot\boldsymbol\sigma$：恒等映射，卷绕一次。`}>{R`g_1:x\mapsto\frac1r[x^4I_2+\mathrm{i}x^i${SP}_i],\quad r^2=\boldsymbol x^2+(x^4)^2`}</Eq>
       <Tx>{R`定义 $\pi_3(\mathrm{SU}(2))$ 的类 1。对应于这个同伦类的规范势的显式形式见 §1.10。
 
 (c) 映射`}</Tx>
@@ -63,7 +63,7 @@ $$t^4I_2+\mathrm{i}t^i${SP}_i\in\mathrm{SU}(2)\ \leftrightarrow\ \boldsymbol t^2
         ]} />
       </Stmt>
       <Stmt id="L10.4">
-        <Eq n="10.121" keyEq title="瞬子数化为边界积分" say={R`四维球面上场强平方的积分，只取决于赤道三维球面上纯规范 $g^{-1}\dd g$ 的立方——一个只依赖于 $g$ 的同伦类的量。`}>{R`\int_{S^4}\Tr\mathcal{F}^2=-\frac13\int_{S^3}\Tr\mathcal{A}^3.`}</Eq>
+        <Eq n="10.121" title="瞬子数化为边界积分" say={R`四维球面上场强平方的积分，只取决于赤道三维球面上纯规范 $g^{-1}\dd g$ 的立方——一个只依赖于 $g$ 的同伦类的量。`}>{R`\int_{S^4}\Tr\mathcal{F}^2=-\frac13\int_{S^3}\Tr\mathcal{A}^3.`}</Eq>
         <Proof steps={[
           { claim: R`由 Stokes 定理，`, tex: R`\int_{U_{\rm N}}\Tr\mathcal{F}^2=\int_{U_{\rm N}}\dd K=\int_{S^3}K`, why: R`$U_{\rm N}$ 由 \eqref{10.114a} 定义，$S^3=\partial U_{\rm N}$；在 $U_{\rm N}$ 上 $\mathcal{A}_{\rm N}$ 光滑，$K$ 在其上良定义。`, uses: ["T6.1", "L10.3"] },
           { claim: R`在 $S^3$ 上 $\mathcal{F}=0$（纯规范，习题 10.7），所以`, tex: R`K=\Tr[\mathcal{A}\dd\mathcal{A}+\tfrac23\mathcal{A}^3]=\Tr[\mathcal{A}(\mathcal{F}-\mathcal{A}^2)+\tfrac23\mathcal{A}^3]=-\tfrac13\Tr\mathcal{A}^3` },

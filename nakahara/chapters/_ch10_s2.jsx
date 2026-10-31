@@ -25,7 +25,7 @@ export function Sec102() {
         </Box>
         <Tx>{R`**和乐群。**取 $u\in P$，$\pi(u)=p$，考虑 $p$ 处闭路的集合 $C_p(M)\equiv\{\gamma:[0,1]\to M\mid\gamma(0)=\gamma(1)=p\}$。元素的集合`}</Tx>
         <Stmt id="F:hol">
-          <Eq n="10.22" keyEq title="和乐群" say={R`和乐群：把 $u$ 沿 $p$ 处所有可能的闭路平行移动一圈，回来时相差的群元素全体。`}>{R`\Phi_u\equiv\{g\in G\mid\tau_\gamma(u)=ug,\ \gamma\in C_p(M)\}`}</Eq>
+          <Eq n="10.22" title="和乐群" say={R`和乐群：把 $u$ 沿 $p$ 处所有可能的闭路平行移动一圈，回来时相差的群元素全体。`}>{R`\Phi_u\equiv\{g\in G\mid\tau_\gamma(u)=ug,\ \gamma\in C_p(M)\}`}</Eq>
         </Stmt>
         <Tx>{R`是结构群 $G$ 的子群，称为 $u$ 处的**和乐群**（holonomy group）。$\Phi_u$ 的群性质容易由习题 10.3 推出。若 $\alpha$、$\beta$ 与 $\gamma=\alpha*\beta$ 都是 $p$ 处的闭路，由 \eqref{10.20}，$\tau_\gamma=\tau_\beta\circ\tau_\alpha$，于是
 
@@ -92,7 +92,7 @@ $P(M,G)$ 上的联络 $\omega$ 把 $T_uP$ 分成 $H_uP\oplus V_uP$。相应地�
       <Sub n="10.3.2" title="Curvature" zh="曲率">
         <p className="muted">本小节概念：<C id="curvature" /></p>
         <Stmt id="D10.5">
-          <Eq n="10.29" keyEq title="曲率二形式" say={R`曲率就是联络一形式自己的协变导数：联络"在水平方向上的旋度"。`}>{R`\Omega\equiv\mathrm{D}\omega\in${OM}^2(P)\otimes${LG}.`}</Eq>
+          <Eq n="10.29" title="曲率二形式" say={R`曲率就是联络一形式自己的协变导数：联络"在水平方向上的旋度"。`}>{R`\Omega\equiv\mathrm{D}\omega\in${OM}^2(P)\otimes${LG}.`}</Eq>
         </Stmt>
         <Stmt id="P10.2">
           <Eq n="10.30" say={R`曲率在右作用下也按伴随表示变换，但与联络不同，它没有非齐次项。`}>{R`R_a^*\Omega=a^{-1}\Omega a\qquad a\in G.`}</Eq>
@@ -116,7 +116,7 @@ $$[\zeta,\zeta]=2\zeta\wedge\zeta=f_{\alpha\beta}{}^\gamma T_\gamma\otimes\zeta^
           ]} />
         </Stmt>
         <Stmt id="T10.3">
-          <Eq n="10.32a" keyEq title="Cartan 结构方程" say={R`曲率等于联络的外微分，再加上联络在两个方向上的读数的对易子：对易子项只在非阿贝尔群里出现。`}>{R`\Omega(X,Y)=\dd_P\omega(X,Y)+[\omega(X),\omega(Y)]`}</Eq>
+          <Eq n="10.32a" title="Cartan 结构方程" say={R`曲率等于联络的外微分，再加上联络在两个方向上的读数的对易子：对易子项只在非阿贝尔群里出现。`}>{R`\Omega(X,Y)=\dd_P\omega(X,Y)+[\omega(X),\omega(Y)]`}</Eq>
           <Tx>{R`也写作`}</Tx>
           <Eq n="10.32b" keyEq title="结构方程（形式写法）" say={R`曲率二形式 = 联络的外微分 + 联络与自身的外积。`}>{R`\Omega=\dd_P\omega+\omega\wedge\omega.`}</Eq>
           <Proof steps={[
@@ -143,7 +143,7 @@ $$\dd_P\omega(X,Y)=X\omega(Y)-Y\omega(X)-\omega([X,Y])=-\omega([X,Y]).$$
         <Eq n="10.34" say={R`两个水平提升向量场的括号投影到底流形上，是坐标向量场的括号，它为零——所以这个括号完全是竖直的。`}>{R`\pi_*([X,Y])=\epsilon\delta[V,W]=\epsilon\delta\Big[\frac{\partial}{\partial x^1},\frac{\partial}{\partial x^2}\Big]=0`}</Eq>
         <Tx>{R`即 $[X,Y]$ 是**竖直**的。（这里用了：$X$ 与 $\epsilon V$、$Y$ 与 $\delta W$ 是 $\pi$-相关的，所以 $\pi_*[X,Y]=[\pi_*X,\pi_*Y]$。）这说明闭路 $\gamma$ 的水平提升 $\tilde\gamma$ 闭不上：先沿 $X$ 再沿 $Y$，与先沿 $Y$ 再沿 $X$，到达同一根纤维上的不同点，偏差正比于连接起点与终点的竖直向量 $[X,Y]$。曲率量出这段距离：`}</Tx>
         <Box kind="warning" title={R`勘误：\eqref{10.34} 左边多了上标 $H$（p.408）`}>{R`原书印作 $\pi_*([X,Y]^H)=\epsilon\delta[V,W]=0$。等式 $\pi_*(\cdot)=\epsilon\delta[V,W]$ 来自 $\pi$-相关向量场的括号公式 $\pi_*[X,Y]=[\pi_*X,\pi_*Y]$，它作用于整个 $[X,Y]$；由此 $\pi_*[X,Y]=0$，即 $[X,Y]$ 竖直（$\ker\pi_*=V_uP$）。若左边写成水平分量 $[X,Y]^H$，就把要证明的结论（水平分量为零）预先放进了等式。应为 $\pi_*([X,Y])$，正文已改正。`}</Box>
-        <Eq n="10.35" keyEq title="曲率 = 无穷小和乐" say={R`沿一个无穷小闭路水平提升，起点与终点在纤维上的偏差由曲率给出：曲率就是"单位面积的和乐"。`}>{R`\Omega(X,Y)=-\omega([X,Y])=-A`}</Eq>
+        <Eq n="10.35" title="曲率 = 无穷小和乐" say={R`沿一个无穷小闭路水平提升，起点与终点在纤维上的偏差由曲率给出：曲率就是"单位面积的和乐"。`}>{R`\Omega(X,Y)=-\omega([X,Y])=-A`}</Eq>
         <Tx>{R`其中 $A$ 是使 $[X,Y]=A^\#$ 的 $${LG}$ 元素。`}</Tx>
         <Box kind="warning" title={R`勘误：\eqref{10.35} 的最后一个等号差一个负号（p.408）`}>{R`原书印作 $\Omega(X,Y)=-\omega([X,Y])=A$，其中 $[X,Y]=A^\#$。但由公理 \eqref{10.3a}，$\omega([X,Y])=\omega(A^\#)=A$，所以 $-\omega([X,Y])=-A$。正文写作 $-A$。（几何结论不变：曲率量出 $[X,Y]$ 的竖直偏差，只是方向相反。）`}</Box>
         <Derivation title={R`补充：无穷小闭路的和乐 $\approx1-\epsilon\delta\,\mathcal{F}_{12}$（与交互图 3 对照）`} collapsed steps={[
@@ -170,7 +170,7 @@ $$\dd_P\omega(X,Y)=X\omega(Y)-Y\omega(X)-\omega([X,Y])=-\omega([X,Y]).$$
 $$\mathcal{F}=\sigma^*(\dd_P\omega+\omega\wedge\omega)=\dd\sigma^*\omega+\sigma^*\omega\wedge\sigma^*\omega=\dd\mathcal{A}+\mathcal{A}\wedge\mathcal{A}.$$
 
 **分量形式。**在坐标为 $x^\mu=\varphi(p)$ 的卡 $U$ 上，令 $\mathcal{A}=\mathcal{A}_\mu\dd x^\mu$。若写 $\mathcal{F}=\frac12\mathcal{F}_{\mu\nu}\dd x^\mu\wedge\dd x^\nu$，直接计算给出`}</Tx>
-        <Eq n="10.39" keyEq title="场强的分量" say={R`场强分量：普通的"旋度" $\partial_\mu\mathcal{A}_\nu-\partial_\nu\mathcal{A}_\mu$ 加上势分量的对易子。`}>{R`\mathcal{F}_{\mu\nu}=\partial_\mu\mathcal{A}_\nu-\partial_\nu\mathcal{A}_\mu+[\mathcal{A}_\mu,\mathcal{A}_\nu].`}</Eq>
+        <Eq n="10.39" title="场强的分量" say={R`场强分量：普通的"旋度" $\partial_\mu\mathcal{A}_\nu-\partial_\nu\mathcal{A}_\mu$ 加上势分量的对易子。`}>{R`\mathcal{F}_{\mu\nu}=\partial_\mu\mathcal{A}_\nu-\partial_\nu\mathcal{A}_\mu+[\mathcal{A}_\mu,\mathcal{A}_\nu].`}</Eq>
         <Derivation title="补全：由 (10.38a) 得 (10.39)" collapsed steps={[
           { tex: R`\dd\mathcal{A}=\partial_\mu\mathcal{A}_\nu\,\dd x^\mu\wedge\dd x^\nu=\tfrac12(\partial_\mu\mathcal{A}_\nu-\partial_\nu\mathcal{A}_\mu)\dd x^\mu\wedge\dd x^\nu`, why: R`把系数反对称化（对称部分被 $\dd x^\mu\wedge\dd x^\nu$ 消掉）。` },
           { tex: R`\mathcal{A}\wedge\mathcal{A}=\mathcal{A}_\mu\mathcal{A}_\nu\,\dd x^\mu\wedge\dd x^\nu=\tfrac12[\mathcal{A}_\mu,\mathcal{A}_\nu]\dd x^\mu\wedge\dd x^\nu`, why: R`同理；注意 $\mathcal{A}_\mu\mathcal{A}_\nu$ 是矩阵乘积，反对称部分是对易子的一半。` },
@@ -178,10 +178,10 @@ $$\mathcal{F}=\sigma^*(\dd_P\omega+\omega\wedge\omega)=\dd\sigma^*\omega+\sigma^
         <Tx>{R`$\mathcal{F}$ 也称为曲率二形式，并被认同为（Yang–Mills）**场强**（field strength）。为避免混淆，我们称 $\Omega$ 为曲率，称 $\mathcal{F}$ 为（Yang–Mills）场强。由于 $\mathcal{A}_\mu$ 与 $\mathcal{F}_{\mu\nu}$ 是 $${LG}$ 值函数，可以用 $${LG}$ 的基 $\{T_\alpha\}$ 展开：`}</Tx>
         <Eq n="10.40" say={R`把李代数值的势与场强按生成元展开，得到实分量 $A_\mu{}^\alpha$、$F_{\mu\nu}{}^\alpha$——物理书里带"色指标"的写法。`}>{R`\mathcal{A}_\mu=A_\mu{}^\alpha T_\alpha\qquad\mathcal{F}_{\mu\nu}=F_{\mu\nu}{}^\alpha T_\alpha.`}</Eq>
         <Tx>{R`基向量满足通常的对易关系 $[T_\alpha,T_\beta]=f_{\alpha\beta}{}^\gamma T_\gamma$。于是得到熟知的表达式`}</Tx>
-        <Eq n="10.41" keyEq title="场强的实分量" say={R`场强的每个色分量：线性的旋度项，加上由结构常数决定的势的二次项——非阿贝尔规范场的自相互作用。`}>{R`F_{\mu\nu}{}^\alpha=\partial_\mu A_\nu{}^\alpha-\partial_\nu A_\mu{}^\alpha+f_{\beta\gamma}{}^\alpha A_\mu{}^\beta A_\nu{}^\gamma.`}</Eq>
+        <Eq n="10.41" title="场强的实分量" say={R`场强的每个色分量：线性的旋度项，加上由结构常数决定的势的二次项——非阿贝尔规范场的自相互作用。`}>{R`F_{\mu\nu}{}^\alpha=\partial_\mu A_\nu{}^\alpha-\partial_\nu A_\mu{}^\alpha+f_{\beta\gamma}{}^\alpha A_\mu{}^\beta A_\nu{}^\gamma.`}</Eq>
         <Tx>{R`（由 $[\mathcal{A}_\mu,\mathcal{A}_\nu]=A_\mu{}^\beta A_\nu{}^\gamma[T_\beta,T_\gamma]=f_{\beta\gamma}{}^\alpha A_\mu{}^\beta A_\nu{}^\gamma T_\alpha$。）`}</Tx>
         <Stmt id="T10.5">
-          <Eq n="10.42" keyEq title="场强协变变换" say={R`换坐标卡时场强只被转移函数共轭，没有非齐次项：场强是"协变"的，因此它的迹在整个流形上有意义。`}>{R`\mathcal{F}_j=\mathrm{Ad}_{t_{ij}^{-1}}\mathcal{F}_i=t_{ij}^{-1}\mathcal{F}_it_{ij}`}</Eq>
+          <Eq n="10.42" title="场强协变变换" say={R`换坐标卡时场强只被转移函数共轭，没有非齐次项：场强是"协变"的，因此它的迹在整个流形上有意义。`}>{R`\mathcal{F}_j=\mathrm{Ad}_{t_{ij}^{-1}}\mathcal{F}_i=t_{ij}^{-1}\mathcal{F}_it_{ij}`}</Eq>
           <Proof steps={[
             { claim: R`引入对应的规范势 $\mathcal{A}_i$、$\mathcal{A}_j$：$\mathcal{F}_i=\dd\mathcal{A}_i+\mathcal{A}_i\wedge\mathcal{A}_i$，$\mathcal{F}_j=\dd\mathcal{A}_j+\mathcal{A}_j\wedge\mathcal{A}_j$。把 $\mathcal{A}_j=t_{ij}^{-1}\mathcal{A}_it_{ij}+t_{ij}^{-1}\dd t_{ij}$ 代入 $\mathcal{F}_j$（下面把 $t_{ij}$ 简写为 $t$）：`, tex: R`\mathcal{F}_j=\dd(t^{-1}\mathcal{A}_it+t^{-1}\dd t)+(t^{-1}\mathcal{A}_it+t^{-1}\dd t)\wedge(t^{-1}\mathcal{A}_it+t^{-1}\dd t)`, uses: ["10.9"] },
             { claim: R`展开外微分（用 $\dd t^{-1}=-t^{-1}\dd t\,t^{-1}$，并注意 $\dd(t^{-1}\mathcal{A}_it)$ 的三项按 Leibniz 律带符号）：`, tex: R`\dd(\cdots)=-t^{-1}\dd t\wedge t^{-1}\mathcal{A}_it+t^{-1}\dd\mathcal{A}_it-t^{-1}\mathcal{A}_i\wedge\dd t-t^{-1}\dd t\,t^{-1}\wedge\dd t` },
@@ -222,7 +222,7 @@ $$\dd\mathcal{A}=\dd(g^{-1})\wedge\dd g=-g^{-1}\dd g\,g^{-1}\wedge\dd g=-(g^{-1}
 $$\mathrm{D}\Omega(X,Y,Z)=\dd_P\Omega(X^H,Y^H,Z^H)=0,$$
 
 其中 $X,Y,Z\in T_uP$。这就证明了 **Bianchi 恒等式**：`}</Tx>
-        <Eq n="10.45" keyEq title="Bianchi 恒等式" say={R`曲率的协变导数恒为零：这是一个几何恒等式，不是动力学方程。`}>{R`\mathrm{D}\Omega=0.`}</Eq>
+        <Eq n="10.45" title="Bianchi 恒等式" say={R`曲率的协变导数恒为零：这是一个几何恒等式，不是动力学方程。`}>{R`\mathrm{D}\Omega=0.`}</Eq>
         <Tx>{R`**局部形式。**用 $\sigma^*$ 作用于 \eqref{10.44}。左边：$\sigma^*\dd_P\Omega=\dd\cdot\sigma^*\Omega=\dd\mathcal{F}$。右边：
 
 $$\sigma^*(\dd_P\omega\wedge\omega-\omega\wedge\dd_P\omega)=\dd\sigma^*\omega\wedge\sigma^*\omega-\sigma^*\omega\wedge\dd\sigma^*\omega=\dd\mathcal{A}\wedge\mathcal{A}-\mathcal{A}\wedge\dd\mathcal{A}=\mathcal{F}\wedge\mathcal{A}-\mathcal{A}\wedge\mathcal{F}.$$

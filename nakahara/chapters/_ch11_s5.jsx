@@ -13,7 +13,7 @@ export function Sec115() {
 
       <Sub n="11.5.1" title="Definition" zh="定义">
         <Tx>{R`设 $P_j(\mathcal{F})$ 是任意一个 $2j$ 形式示性类。由于 $P_j(\mathcal{F})$ 是闭的，由 Poincaré 引理（\sref{T6.3}）它局部地可以写成恰当形式。记`}</Tx>
-        <Eq n="11.100" keyEq title="示性类的局部原函数" say={R`在一张坐标卡上，任何示性形式都是某个 $(2j-1)$ 形式的外微分——这个"原函数"就是陈–Simons 形式。`}>{R`P_j(\mathcal{F})=\dd Q_{2j-1}(\mathcal{A},\mathcal{F})`}</Eq>
+        <Eq n="11.100" title="示性类的局部原函数" say={R`在一张坐标卡上，任何示性形式都是某个 $(2j-1)$ 形式的外微分——这个"原函数"就是陈–Simons 形式。`}>{R`P_j(\mathcal{F})=\dd Q_{2j-1}(\mathcal{A},\mathcal{F})`}</Eq>
         <Tx>{R`其中 $Q_{2j-1}(\mathcal{A},\mathcal{F})\in\Omega^{2j-1}(M)$。［原书写作 $\mathfrak{g}\otimes\Omega^{2j-1}(M)$；$Q$ 由迹构成，是普通的（标量值）形式。］［**警告：**这不能整体成立。若在无边界流形 $M$ 上整体地有 $P_j=\dd Q_{2j-1}$，就会有
 
 $$\int_MP_{m/2}=\int_M\dd Q_{m-1}=\int_{\partial M}Q_{m-1}=0$$
@@ -23,7 +23,7 @@ $$\int_MP_{m/2}=\int_M\dd Q_{m-1}=\int_{\partial M}Q_{m-1}=0$$
         <Tx>{R`其中 $\tilde P_j$ 是 $P_j$ 的极化，$\mathcal{F}=\dd\mathcal{A}+\mathcal{A}^2$，并令 $\mathcal{A}'=\mathcal{F}'=0$——\eqref{11.21} 中把"第二个联络"取为零。由于 $Q_{2j-1}$ 依赖于 $\mathcal{F}$ 与 $\mathcal{A}$，我们明确写出它对 $\mathcal{A}$ 的依赖。当然，只有在丛平凡的局部坐标卡上才能令 $\mathcal{A}'=0$（零联络不是整体定义的），这正是 $Q$ 只在局部成立的原因。
 
 设 $M$ 是偶数维流形（$\dim M=m=2l$），且 $\partial M\neq\emptyset$，并设丛在 $M$ 上可以平凡化（例如 $M$ 是 $\R^{2l}$ 中的球体）。由 Stokes 定理，`}</Tx>
-        <Eq n="11.102" keyEq title="体积分 = 边界上的 CS 积分" say={R`示性形式在带边流形上的积分，等于陈–Simons 形式在边界上的积分：拓扑荷"住在"边界上。`}>{R`\int_MP_l(\mathcal{F})=\int_M\dd Q_{m-1}(\mathcal{A},\mathcal{F})=\int_{\partial M}Q_{m-1}(\mathcal{A},\mathcal{F}).`}</Eq>
+        <Eq n="11.102" title="体积分 = 边界上的 CS 积分" say={R`示性形式在带边流形上的积分，等于陈–Simons 形式在边界上的积分：拓扑荷"住在"边界上。`}>{R`\int_MP_l(\mathcal{F})=\int_M\dd Q_{m-1}(\mathcal{A},\mathcal{F})=\int_{\partial M}Q_{m-1}(\mathcal{A},\mathcal{F}).`}</Eq>
         <Tx>{R`左边取整数值（当 $M$ 的边界上场强为零、可以把 $M$ 粘成闭流形时，例如瞬子的 $\R^4\cup\{\infty\}=S^4$），右边也是如此。因此 $Q_{m-1}$ 本身就是一个示性类，它刻画边界 $\partial M$ 的拓扑。（例：瞬子数化为 $S^3$ 上纯规范 $g^{-1}\dd g$ 的 CS 积分，\sref{L10.4}。）`}</Tx>
       </Sub>
 
@@ -33,7 +33,7 @@ $$\int_MP_{m/2}=\int_M\dd Q_{m-1}=\int_{\partial M}Q_{m-1}=0$$
         <Tx>{R`相应的曲率为`}</Tx>
         <Eq n="11.104" say={R`缩放后的联络的曲率：线性项 $t\,\dd\mathcal{A}$ 与平方项 $t^2\mathcal{A}^2$ 缩放不同，所以 $\mathcal{F}_t\neq t\mathcal{F}$。`}>{R`\mathcal{F}_t=t\,\dd\mathcal{A}+t^2\mathcal{A}^2=t\mathcal{F}+(t^2-t)\mathcal{A}^2.`}</Eq>
         <Tx>{R`由 \eqref{11.21}（$P_j=\mathrm{ch}_j=\frac1{j!}\Tr(\frac{\mathrm{i}\mathcal{F}}{2\pi})^j$，其极化是 $\frac1{j!}(\frac{\mathrm{i}}{2\pi})^j\mathrm{str}$，乘以 $j$ 得 $\frac1{(j-1)!}$）得到`}</Tx>
-        <Eq n="11.105" keyEq title="陈特征的 CS 形式" say={R`陈特征的陈–Simons 形式：一个 $\mathcal{A}$ 配 $j-1$ 个插值曲率，做对称化迹再对 $t$ 积分。`}>{R`Q_{2j-1}(\mathcal{A},\mathcal{F})=\frac1{(j-1)!}\Big(\frac{\mathrm{i}}{2\pi}\Big)^j\int_0^1\dd t\,\mathrm{str}(\mathcal{A},\mathcal{F}_t^{j-1}).`}</Eq>
+        <Eq n="11.105" title="陈特征的 CS 形式" say={R`陈特征的陈–Simons 形式：一个 $\mathcal{A}$ 配 $j-1$ 个插值曲率，做对称化迹再对 $t$ 积分。`}>{R`Q_{2j-1}(\mathcal{A},\mathcal{F})=\frac1{(j-1)!}\Big(\frac{\mathrm{i}}{2\pi}\Big)^j\int_0^1\dd t\,\mathrm{str}(\mathcal{A},\mathcal{F}_t^{j-1}).`}</Eq>
         <Tx>{R`例如，`}</Tx>
         <Eq n="11.106a" say={R`一维 CS 形式：规范势的迹本身（U(1) 时就是 $\frac{\mathrm{i}}{2\pi}\mathcal{A}$，其环路积分是 Wilson 圈的相位）。`}>{R`Q_1(\mathcal{A},\mathcal{F})=\frac{\mathrm{i}}{2\pi}\int_0^1\dd t\,\Tr\mathcal{A}=\frac{\mathrm{i}}{2\pi}\Tr\mathcal{A}`}</Eq>
         <Eq n="11.106b" keyEq title={R`三维 CS 形式 $Q_3$`} say={R`著名的三维陈–Simons 形式：$\mathcal{A}\dd\mathcal{A}+\frac23\mathcal{A}^3$ 的迹——它的外微分是 $\mathrm{ch}_2$。`}>{R`Q_3(\mathcal{A},\mathcal{F})=\Big(\frac{\mathrm{i}}{2\pi}\Big)^2\int_0^1\dd t\,\mathrm{str}(\mathcal{A},t\,\dd\mathcal{A}+t^2\mathcal{A}^2)=\frac12\Big(\frac{\mathrm{i}}{2\pi}\Big)^2\Tr\Big(\mathcal{A}\,\dd\mathcal{A}+\frac23\mathcal{A}^3\Big).`}</Eq>
@@ -84,7 +84,7 @@ $$\begin{aligned}(\dd l_t+l_t\dd)\mathcal{F}_t&=\dd[\delta t(\mathcal{A}_1-\math
 这里用了 Bianchi 恒等式 $\mathcal{D}_t\mathcal{F}_t=0$（所以 $\dd\mathcal{F}_t=-\mathcal{A}_t\mathcal{F}_t+\mathcal{F}_t\mathcal{A}_t$）。［最后一步：$\partial_t\mathcal{F}_t=\dd(\mathcal{A}_1-\mathcal{A}_0)+(\mathcal{A}_1-\mathcal{A}_0)\mathcal{A}_t+\mathcal{A}_t(\mathcal{A}_1-\mathcal{A}_0)$。$\delta t$ 在这里当作与形式按反 Leibniz 律配合的形式参数，原书的符号约定即如此。］这表明对 $\mathcal{A}$ 与 $\mathcal{F}$ 的任何多项式 $S(\mathcal{A},\mathcal{F})$，都有`}</Tx>
         <Eq n="11.111" say={R`$\dd l_t+l_t\dd$ 就是"对参数 $t$ 求导"：它在生成元 $\mathcal{A}_t$、$\mathcal{F}_t$ 上成立，又满足 Leibniz 律，所以对一切多项式成立。`}>{R`(\dd l_t+l_t\dd)S(\mathcal{A}_t,\mathcal{F}_t)=\delta t\frac{\partial}{\partial t}S(\mathcal{A}_t,\mathcal{F}_t).`}</Eq>
         <Tx>{R`（为什么从生成元推广到多项式：两个反导子 $\dd$ 与 $l_t$ 的反对易子 $\dd l_t+l_t\dd$ 是一个*导子*——满足普通 Leibniz 律、不带符号；$\delta t\,\partial_t$ 也是导子。两个导子在生成元上相等，就在它们生成的整个代数上相等。）右边的 $S$ 必须只是 $\mathcal{A}$ 与 $\mathcal{F}$ 的多项式，不能含 $\dd\mathcal{A}$ 或 $\dd\mathcal{F}$：若 $S$ 含有它们，应先把 $\dd\mathcal{A}$ 换成 $\mathcal{F}-\mathcal{A}^2$，$\dd\mathcal{F}$ 换成 $\mathcal{D}\mathcal{F}-[\mathcal{A},\mathcal{F}]=-[\mathcal{A},\mathcal{F}]$——因为 $l_t$ 只在 $\mathcal{A}_t$、$\mathcal{F}_t$ 上有定义。把 \eqref{11.111} 在 $[0,1]$ 上积分，得到 **Cartan 同伦公式**：`}</Tx>
-        <Eq n="11.112" keyEq title="Cartan 同伦公式" say={R`联络两端的任意多项式之差 = $\dd$ 与同伦算子 $k_{01}$ 的反对易子作用在插值族上：沿联络空间"积分"的万能公式。`}>{R`S(\mathcal{A}_1,\mathcal{F}_1)-S(\mathcal{A}_0,\mathcal{F}_0)=(\dd k_{01}+k_{01}\dd)S(\mathcal{A}_t,\mathcal{F}_t)`}</Eq>
+        <Eq n="11.112" title="Cartan 同伦公式" say={R`联络两端的任意多项式之差 = $\dd$ 与同伦算子 $k_{01}$ 的反对易子作用在插值族上：沿联络空间"积分"的万能公式。`}>{R`S(\mathcal{A}_1,\mathcal{F}_1)-S(\mathcal{A}_0,\mathcal{F}_0)=(\dd k_{01}+k_{01}\dd)S(\mathcal{A}_t,\mathcal{F}_t)`}</Eq>
         <Tx>{R`其中**同伦算子** $k_{01}$ 定义为`}</Tx>
         <Eq n="11.113" say={R`同伦算子：先用 $l_t$ 降一次，再对 $t$ 从 0 积到 1。`}>{R`k_{01}S(\mathcal{A}_t,\mathcal{F}_t)\equiv\int_0^1\delta t\,l_tS(\mathcal{A}_t,\mathcal{F}_t).`}</Eq>
         <Tx>{R`要把 $k_{01}$ 作用在 $S(\mathcal{A},\mathcal{F})$ 上，先把 $\mathcal{A}$、$\mathcal{F}$ 分别换成 $\mathcal{A}_t$、$\mathcal{F}_t$，再让 $l_t$ 作用在 $S(\mathcal{A}_t,\mathcal{F}_t)$ 上，最后对 $t$ 积分。`}</Tx>
@@ -116,7 +116,7 @@ $$\mathcal{A}\to\mathcal{A}^g=g^{-1}(\mathcal{A}+\dd)g,\qquad\mathcal{F}\to\math
         <Tx>{R`其中 $\alpha_{2j}$ 是如下定义的 $2j$ 形式：`}</Tx>
         <Eq n="11.119" say={R`$\alpha_{2j}$：对插值族的 CS 形式施加同伦算子；把 $g$ 共轭掉后只依赖于 $\mathcal{A}_t$、$\mathcal{F}_t$ 与 $v=\dd g\,g^{-1}$。`}>{R`\alpha_{2j}(\mathcal{A},\mathcal{F},v)\equiv k_{01}Q_{2j+1}(\mathcal{A}^g_t,\mathcal{F}^g_t)=k_{01}Q_{2j+1}(\mathcal{A}_t+v,\mathcal{F}_t)`}</Eq>
         <Tx>{R`其中 $v\equiv\dd g\cdot g^{-1}$。［注意 $Q_{2j+1}(\mathcal{A},\mathcal{F})=Q_{2j+1}(g\mathcal{A}g^{-1},g\mathcal{F}g^{-1})$——把 $Q$ 写成 $\mathcal{A}$、$\mathcal{F}$ 的迹多项式时（不出现 $\dd\mathcal{A}$），它在常数式的共轭下不变；而 $g\mathcal{A}^g_tg^{-1}=t\mathcal{A}+\dd g\,g^{-1}=\mathcal{A}_t+v$，$g\mathcal{F}^g_tg^{-1}=\mathcal{F}_t$。］\eqref{11.118} 右边第一项为`}</Tx>
-        <Eq n="11.120" keyEq title="纯规范的 CS 形式" say={R`纯规范的 CS 形式：只剩 $(g^{-1}\dd g)^{2j+1}$ 的迹，乘一个 Beta 函数系数——它在 $S^{2j+1}$ 上的积分是 $g$ 的映射度（$j=1$ 时即 \sref{T10.7}）。`}>{R`\begin{aligned}Q_{2j+1}(g^{-1}\dd g,0)&=\frac1{j!}\Big(\frac{\mathrm{i}}{2\pi}\Big)^{j+1}\int_0^1\delta t\,\Tr[g^{-1}\dd g\{(t^2-t)(g^{-1}\dd g)^2\}^j]\\&=\frac1{j!}\Big(\frac{\mathrm{i}}{2\pi}\Big)^{j+1}\Tr[(g^{-1}\dd g)^{2j+1}]\int_0^1\delta t\,(t^2-t)^j\\&=(-1)^j\frac{j!}{(2j+1)!}\Big(\frac{\mathrm{i}}{2\pi}\Big)^{j+1}\Tr[(g^{-1}\dd g)^{2j+1}]\end{aligned}`}</Eq>
+        <Eq n="11.120" title="纯规范的 CS 形式" say={R`纯规范的 CS 形式：只剩 $(g^{-1}\dd g)^{2j+1}$ 的迹，乘一个 Beta 函数系数——它在 $S^{2j+1}$ 上的积分是 $g$ 的映射度（$j=1$ 时即 \sref{T10.7}）。`}>{R`\begin{aligned}Q_{2j+1}(g^{-1}\dd g,0)&=\frac1{j!}\Big(\frac{\mathrm{i}}{2\pi}\Big)^{j+1}\int_0^1\delta t\,\Tr[g^{-1}\dd g\{(t^2-t)(g^{-1}\dd g)^2\}^j]\\&=\frac1{j!}\Big(\frac{\mathrm{i}}{2\pi}\Big)^{j+1}\Tr[(g^{-1}\dd g)^{2j+1}]\int_0^1\delta t\,(t^2-t)^j\\&=(-1)^j\frac{j!}{(2j+1)!}\Big(\frac{\mathrm{i}}{2\pi}\Big)^{j+1}\Tr[(g^{-1}\dd g)^{2j+1}]\end{aligned}`}</Eq>
         <Tx>{R`这里注意到（纯规范 $\mathcal{A}=g^{-1}\dd g$ 的曲率为零，\eqref{11.104} 中只剩 $\mathcal{A}^2$ 项）$\mathcal{F}_t=(t^2-t)(g^{-1}\dd g)^2$，以及
 
 $$\int_0^1\delta t\,(t^2-t)^j=(-1)^jB(j+1,j+1)=(-1)^j\frac{(j!)^2}{(2j+1)!}$$
@@ -138,7 +138,7 @@ $$\Tr\mathcal{A}^2=\dd x^\mu\wedge\dd x^\nu\Tr(\mathcal{A}_\mu\mathcal{A}_\nu)=-
 
         <Box kind="example" n="11.10" title="三维 Maxwell–Chern–Simons 理论：拓扑质量">
           <Tx>{R`在三维时空中，规范理论可以有一个由陈–Simons 三形式给出的规范不变质量项（Jackiw–Templeton 1981，Deser 等 1982a、b）。由于陈–Simons 形式在规范变换下只改变一个局部恰当形式，作用量保持不变。为简单起见只考虑 U(1) 规范理论。考虑拉氏量（令 $\mathcal{A}=\mathrm{i}A$，$\mathcal{F}=\mathrm{i}F$）`}</Tx>
-          <Eq n="11.122" keyEq title="Maxwell–Chern–Simons 拉氏量" say={R`三维 Maxwell 项加上 Chern–Simons 项 $\epsilon FA$：后者不需要度规，是"拓扑"的，系数 $m$ 将成为光子质量。`}>{R`\mathcal{L}=-\tfrac14F_{\mu\nu}F^{\mu\nu}+\tfrac14m\epsilon^{\lambda\mu\nu}F_{\lambda\mu}A_\nu`}</Eq>
+          <Eq n="11.122" title="Maxwell–Chern–Simons 拉氏量" say={R`三维 Maxwell 项加上 Chern–Simons 项 $\epsilon FA$：后者不需要度规，是"拓扑"的，系数 $m$ 将成为光子质量。`}>{R`\mathcal{L}=-\tfrac14F_{\mu\nu}F^{\mu\nu}+\tfrac14m\epsilon^{\lambda\mu\nu}F_{\lambda\mu}A_\nu`}</Eq>
           <Tx>{R`其中 $F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu$。注意第二项是 U(1) 丛的第二陈特征 $F^2$ 的陈–Simons 形式（差一个常数因子）：$\frac14\epsilon^{\lambda\mu\nu}F_{\lambda\mu}A_\nu=\frac12\epsilon^{\lambda\mu\nu}A_\nu\partial_\lambda A_\mu$ 正是 $A\,\dd A$ 的分量。场方程为`}</Tx>
           <Eq n="11.123" say={R`Maxwell 方程多了一项 $m\ast F^\nu$：CS 项像一个与场强对偶成正比的"流"。`}>{R`\partial_\mu F^{\mu\nu}+m\ast F^\nu=0`}</Eq>
           <Tx>{R`其中

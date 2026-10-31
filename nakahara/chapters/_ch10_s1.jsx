@@ -102,7 +102,7 @@ function Sub1012() {
         <Tx>{R`即对 $X\in T_uP$，`}</Tx>
         <Eq n="10.3b'" say={R`公理 (ii) 的显式写法：先把向量右推到 $ug$ 再读数，等于在 $u$ 处读数后用 $g$ 共轭。`}>{R`R_g^*\omega_{ug}(X)=\omega_{ug}(R_{g*}X)=g^{-1}\omega_u(X)g.`}</Eq>
         <Tx>{R`用 $\omega$ 的核定义水平子空间：`}</Tx>
-        <Eq n="10.4" keyEq title={R`水平子空间 $=\omega$ 的核`} say={R`水平方向就是联络一形式"读数为零"的方向：在这些方向上移动，不产生任何纤维内的变化。`}>{R`H_uP\equiv\{X\in T_uP\mid\omega(X)=0\}.`}</Eq>
+        <Eq n="10.4" title={R`水平子空间 $=\omega$ 的核`} say={R`水平方向就是联络一形式"读数为零"的方向：在这些方向上移动，不产生任何纤维内的变化。`}>{R`H_uP\equiv\{X\in T_uP\mid\omega(X)=0\}.`}</Eq>
       </Stmt>
       <Tx>{R`**为什么公理 (i) 保证了分解。**$\omega_u:T_uP\to${LG}$ 是线性满射（(i) 说它在 $V_uP$ 上就是 $\sharp^{-1}$），所以 $\ker\omega_u=H_uP$ 的维数是 $\dim P-\dim G=\dim M$，且 $H_uP\cap V_uP=0$（若 $A^\#\in H_uP$，则 $A=\omega(A^\#)=0$）。于是 $T_uP=H_uP\oplus V_uP$，任意 $X$ 分解为 $X^V=(\omega(X))^\#$、$X^H=X-X^V$——这也说明了"$\omega$ 是竖直投影"的含义。
 
@@ -171,7 +171,7 @@ $X$ 任意，得 \eqref{10.10a}。取 $X=\partial/\partial x^\mu$，$\mathcal{A}
 
 **另一种看法：**$\sigma_1$ 与 $\sigma_2$ 都定义在同一个 $U$ 上，可以把 $U$ "复制"成两块重叠的卡，$g$ 扮演转移函数 $t_{12}$ 的角色，\eqref{10.10a} 就是 \eqref{10.9} 的特例。物理上：换截面 = 换规范，$g(p)$ 是逐点的规范变换。`}>
         <Tx>{R`设 $P(M,G)$ 是 $M$ 上的主丛，$U$ 是 $M$ 的坐标卡。在 $U$ 上取局部截面 $\sigma_1$、$\sigma_2$，使 $\sigma_2(p)=\sigma_1(p)g(p)$。证明相应的局部形式 $\mathcal{A}_1$、$\mathcal{A}_2$ 满足`}</Tx>
-        <Eq n="10.10a" keyEq title="规范变换" say={R`同一块坐标卡上换一个截面（换规范），规范势被群元 $g(p)$ 共轭，再加上纯规范项 $g^{-1}\dd g$。`}>{R`\mathcal{A}_2=g^{-1}\mathcal{A}_1g+g^{-1}\dd g.`}</Eq>
+        <Eq n="10.10a" title="规范变换" say={R`同一块坐标卡上换一个截面（换规范），规范势被群元 $g(p)$ 共轭，再加上纯规范项 $g^{-1}\dd g$。`}>{R`\mathcal{A}_2=g^{-1}\mathcal{A}_1g+g^{-1}\dd g.`}</Eq>
         <Tx>{R`写成分量，`}</Tx>
         <Eq n="10.10b" say={R`规范变换的分量形式：正是第 1 章 §1.8 中定义的非阿贝尔规范变换。`}>{R`\mathcal{A}_{2\mu}=g^{-1}(p)\mathcal{A}_{1\mu}(p)g(p)+g^{-1}(p)\partial_\mu g(p)`}</Eq>
         <Tx>{R`这正是 §1.8 中定义的**规范变换**（gauge transformation）。`}</Tx>

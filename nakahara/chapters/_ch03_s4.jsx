@@ -24,7 +24,7 @@ export function Sec34() {
           ]} />
         </Stmt>
         <Stmt id="C3.1">
-          <Eq n="3.53" keyEq title={R`$H_0$ 数连通分支`} say="零维同调群的秩就是连通分支的个数：每个分支贡献一份整数。">{R`H_0(K)\cong\underbrace{\mathbb{Z}\oplus\cdots\oplus\mathbb{Z}}_{N\text{ 个}}.`}</Eq>
+          <Eq n="3.53" title={R`$H_0$ 数连通分支`} say="零维同调群的秩就是连通分支的个数：每个分支贡献一份整数。">{R`H_0(K)\cong\underbrace{\mathbb{Z}\oplus\cdots\oplus\mathbb{Z}}_{N\text{ 个}}.`}</Eq>
           <Proof steps={[
             { claim: R`(a) 对每个连通分支 $K_i$ 有 $H_0(K_i)\cong\mathbb{Z}$，代入 \eqref{3.52}。`, uses: ["T3.5", "T3.6"] },
             { claim: R`(b) 若 $K$ 有 $N$ 个分支，则 $H_0(K)\cong\mathbb{Z}^N$；$\mathbb{Z}^N\cong\mathbb{Z}$ 迫使 $N=1$。`, why: R`自由 Abel 群的秩是同构不变量：张量 $\mathbb{R}$（或模 2）后比较维数即可。`, fill: true },

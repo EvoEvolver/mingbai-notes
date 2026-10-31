@@ -118,7 +118,7 @@ $$p^{-1}(U)=\bigcup_{n\in\mathbb{Z}}(x_0-0.1+n,\ x_0+0.1+n),$$
 
 这是 $\mathbb{R}$ 中不交开集的并，每一段都被 $p$ 同胚地映到 $U$ 上。容易证明 $p$ 还是 $\mathbb{R}$ 中的加法与 $\mathrm{U}(1)$ 中的乘法之间的同态：$p(x+y)=e^{i2\pi(x+y)}=p(x)p(y)$。所以 $(\mathbb{R},p)$ 是 $\mathrm{U}(1)=S^1$ 的万有覆叠群。`}</Tx>
         <Stmt id="T4.10">
-          <Eq n="4.44" keyEq title="覆叠映射诱导高阶同伦群同构" say={R`万有覆叠与原空间“局部长得一样”，而二维以上的球面单连通、看不出覆叠的多层结构：所以 $n\ge2$ 的同伦群完全相同。`}>{R`p_*:\pi_n(\widetilde X,\tilde x_0)\to\pi_n(X,x_0)`}</Eq>
+          <Eq n="4.44" title="覆叠映射诱导高阶同伦群同构" say={R`万有覆叠与原空间“局部长得一样”，而二维以上的球面单连通、看不出覆叠的多层结构：所以 $n\ge2$ 的同伦群完全相同。`}>{R`p_*:\pi_n(\widetilde X,\tilde x_0)\to\pi_n(X,x_0)`}</Eq>
         </Stmt>
         <Tx>{R`［**警告**：此定理不能用于 $n=1$：$\pi_1(\mathbb{R})=\{e\}$，而 $\pi_1(S^1)=\mathbb{Z}$。］证明见 Croom (1978)。`}</Tx>
         <Derivation title={R`为什么 $n\ge2$（证明思路，本站补）`} collapsed steps={[

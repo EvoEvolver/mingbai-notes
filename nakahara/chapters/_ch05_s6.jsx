@@ -32,7 +32,7 @@ $$S^1=\{\mathrm{e}^{\mathrm{i}\theta}\mid\theta\in\R\ (\bmod2\pi)\}.$$
         <Tx>{R`**矩阵群。**物理应用中特别重要的是**矩阵群**，即一般线性群 $\mathrm{GL}(n,\R)$ 或 $\mathrm{GL}(n,\C)$ 的子群。元素之积就是矩阵乘法，逆就是逆矩阵。$\mathrm{GL}(n,\R)$ 的坐标由矩阵 $M=\{x_{ij}\}$ 的 $n^2$ 个元素给出（$\mathrm{GL}(n,\R)=\det^{-1}(\R-\{0\})$ 是 $\R^{n^2}$ 的开子集）。$\mathrm{GL}(n,\R)$ 是实维数 $n^2$ 的非紧流形。
 
 $\mathrm{GL}(n,\R)$ 的有趣子群有**正交群** $\mathrm{O}(n)$、**特殊线性群** $\mathrm{SL}(n,\R)$ 与**特殊正交群** $\mathrm{SO}(n)$：`}</Tx>
-        <Eq n="5.103" keyEq title="正交群" say={R`正交群：保持欧氏长度的线性变换（转动加反射），条件是矩阵的转置就是它的逆。`}>{R`\mathrm{O}(n)=\{M\in\mathrm{GL}(n,\R)\mid MM^{\mathrm t}=M^{\mathrm t}M=I_n\}`}</Eq>
+        <Eq n="5.103" title="正交群" say={R`正交群：保持欧氏长度的线性变换（转动加反射），条件是矩阵的转置就是它的逆。`}>{R`\mathrm{O}(n)=\{M\in\mathrm{GL}(n,\R)\mid MM^{\mathrm t}=M^{\mathrm t}M=I_n\}`}</Eq>
         <Eq n="5.104" say={R`特殊线性群：保持体积（行列式为 1）的线性变换。`}>{R`\mathrm{SL}(n,\R)=\{M\in\mathrm{GL}(n,\R)\mid\det M=1\}`}</Eq>
         <Eq n="5.105" say={R`特殊正交群：只保留转动，去掉反射。`}>{R`\mathrm{SO}(n)=\mathrm{O}(n)\cap\mathrm{SL}(n,\R)`}</Eq>
         <Tx>{R`其中 $(\cdot)^{\mathrm t}$ 表示矩阵的转置。在狭义相对论中我们熟悉 **Lorentz 群**
@@ -94,11 +94,11 @@ $$L_{a*}X|_g=X^\mu(g)\frac{\partial x^\nu(ag)}{\partial x^\mu(g)}\left.\frac{\pa
           </>
         </Exercise>
         <Tx>{R`**左不变场由单位元处的值决定。**向量 $V\in T_eG$ 通过`}</Tx>
-        <Eq n="5.111" keyEq title="由 V 生成的左不变场" say={R`把单位元处的一个切向量用左平移"搬"到群的每一点，就得到一个左不变向量场。`}>{R`X_V|_g=L_{g*}V\qquad g\in G`}</Eq>
+        <Eq n="5.111" title="由 V 生成的左不变场" say={R`把单位元处的一个切向量用左平移"搬"到群的每一点，就得到一个左不变向量场。`}>{R`X_V|_g=L_{g*}V\qquad g\in G`}</Eq>
         <Tx>{R`在整个 $G$ 上定义唯一的左不变向量场 $X_V$。事实上，由 \eqref{5.34}，$X_V|_{ag}=L_{ag*}V=(L_aL_g)_*V=L_{a*}L_{g*}V=L_{a*}X_V|_g$。反过来，左不变向量场 $X$ 定义唯一的向量 $V=X|_e\in T_eG$。把 $G$ 上左不变向量场的集合记作 $\sym{lie}{\mathfrak{g}}$。由 $V\mapsto X_V$ 定义的映射 $T_eG\to\sym{lie}{\mathfrak{g}}$ 是同构，所以左不变向量场的集合是同构于 $T_eG$ 的向量空间。特别地，$\dim\sym{lie}{\mathfrak{g}}=\dim G$。
 
 **李括号下封闭。**由于 $\sym{lie}{\mathfrak{g}}$ 是向量场的集合，它是 $\mathcal{X}(G)$ 的子集，§5.3 中定义的李括号在 $\sym{lie}{\mathfrak{g}}$ 上也有定义。我们来证明 $\sym{lie}{\mathfrak{g}}$ 在李括号下封闭。取 $G$ 中两点 $g$ 与 $ag=L_ag$。把 $L_{a*}$ 作用在 $X,Y\in\sym{lie}{\mathfrak{g}}$ 的李括号 $[X,Y]$ 上，得到`}</Tx>
-        <Eq n="5.112" keyEq title="左不变场的括号仍左不变" say={R`左平移保持李括号，而左不变场在左平移下不变，所以它们的括号也在左平移下不变。`}>{R`L_{a*}[X,Y]|_g=[L_{a*}X|_g,L_{a*}Y|_g]=[X,Y]|_{ag}`}</Eq>
+        <Eq n="5.112" title="左不变场的括号仍左不变" say={R`左平移保持李括号，而左不变场在左平移下不变，所以它们的括号也在左平移下不变。`}>{R`L_{a*}[X,Y]|_g=[L_{a*}X|_g,L_{a*}Y|_g]=[X,Y]|_{ag}`}</Eq>
         <Tx>{R`这里用了 $X$、$Y$ 的左不变性与 \eqref{5.52}（$L_a$ 是微分同胚，所以 \eqref{5.52} 适用）。因此 $[X,Y]\in\sym{lie}{\mathfrak{g}}$，即 $\sym{lie}{\mathfrak{g}}$ 在李括号下封闭。
 
 **$\mathrm{GL}(n,\R)$ 的左不变向量场。**具体算出 $\mathrm{GL}(n,\R)$ 的左不变向量场很有启发。$\mathrm{GL}(n,\R)$ 的坐标是矩阵的 $n^2$ 个元素 $x^{ij}$；单位元为 $e=I_n=(\delta^{ij})$。设 $g=\{x^{ij}(g)\}$ 与 $a=\{x^{ij}(a)\}$ 是 $\mathrm{GL}(n,\R)$ 的元素。左平移为
@@ -106,13 +106,13 @@ $$L_{a*}X|_g=X^\mu(g)\frac{\partial x^\nu(ag)}{\partial x^\mu(g)}\left.\frac{\pa
 $$L_ag=ag=\sum x^{ik}(a)x^{kj}(g).$$
 
 取向量 $V=\sum V^{ij}\,\partial/\partial x^{ij}|_e\in T_eG$，其中 $V^{ij}$ 是 $V$ 的矩阵元。$V$ 生成的左不变向量场为`}</Tx>
-        <Eq n="5.113" keyEq title={R`$\mathrm{GL}(n,\R)$ 的左不变场`} say={R`对矩阵群，左平移是线性的，它的 Jacobi 矩阵就是左乘 $g$；所以左不变场在 $g$ 点的分量就是矩阵乘积 $gV$。`}>{R`\begin{aligned}X_V|_g=L_{g*}V&=\sum_{ijklm}V^{ij}\left.\frac{\partial}{\partial x^{ij}}\right|_ex^{kl}(g)x^{lm}(e)\left.\frac{\partial}{\partial x^{km}}\right|_g\\&=\sum V^{ij}x^{kl}(g)\delta^l_i\delta^m_j\left.\frac{\partial}{\partial x^{km}}\right|_g\\&=\sum x^{ki}(g)V^{ij}\left.\frac{\partial}{\partial x^{kj}}\right|_g=\sum(gV)^{kj}\left.\frac{\partial}{\partial x^{kj}}\right|_g\end{aligned}`}</Eq>
+        <Eq n="5.113" title={R`$\mathrm{GL}(n,\R)$ 的左不变场`} say={R`对矩阵群，左平移是线性的，它的 Jacobi 矩阵就是左乘 $g$；所以左不变场在 $g$ 点的分量就是矩阵乘积 $gV$。`}>{R`\begin{aligned}X_V|_g=L_{g*}V&=\sum_{ijklm}V^{ij}\left.\frac{\partial}{\partial x^{ij}}\right|_ex^{kl}(g)x^{lm}(e)\left.\frac{\partial}{\partial x^{km}}\right|_g\\&=\sum V^{ij}x^{kl}(g)\delta^l_i\delta^m_j\left.\frac{\partial}{\partial x^{km}}\right|_g\\&=\sum x^{ki}(g)V^{ij}\left.\frac{\partial}{\partial x^{kj}}\right|_g=\sum(gV)^{kj}\left.\frac{\partial}{\partial x^{kj}}\right|_g\end{aligned}`}</Eq>
         <Tx>{R`其中 $gV$ 是 $g$ 与 $V$ 的通常矩阵乘法。（第一行是 \eqref{5.33}：$L_g$ 把 $x^{lm}$ 映成 $x^{kl}(g)x^{lm}$，对 $x^{ij}$ 求导得 $x^{ki}(g)\delta^m_j$。）向量 $X_V|_g$ 常简写为 $gV$，因为它给出向量的分量。
 
 由 $V=V^{ij}\partial/\partial x^{ij}|_e$ 与 $W=W^{ij}\partial/\partial x^{ij}|_e$ 生成的 $X_V$ 与 $X_W$ 的李括号为`}</Tx>
         <Eq n="5.114" say={R`两个左不变场的李括号在 $g$ 点的分量是 $g$ 乘矩阵对易子 $[V,W]$：向量场的括号化为了矩阵的对易子。`}>{R`\begin{aligned}[X_V,X_W]|_g&=\sum x^{ki}(g)V^{ij}\left.\frac{\partial}{\partial x^{kj}}\right|_g\,x^{ca}(g)W^{ab}\left.\frac{\partial}{\partial x^{cb}}\right|_g-(V\leftrightarrow W)\\&=\sum x^{ij}(g)[V^{jk}W^{kl}-W^{jk}V^{kl}]\left.\frac{\partial}{\partial x^{il}}\right|_g\\&=\sum(g[V,W])^{ij}\left.\frac{\partial}{\partial x^{ij}}\right|_g.\end{aligned}`}</Eq>
         <Tx>{R`（第一行到第二行：$\partial/\partial x^{kj}$ 作用在 $x^{ca}(g)$ 上给出 $\delta^c_k\delta^a_j$；二阶导数项在 $V\leftrightarrow W$ 反对称化后抵消，见习题 5.9。）显然 \eqref{5.113} 与 \eqref{5.114} 对任何矩阵群都成立，于是我们确立了`}</Tx>
-        <Eq n="5.115" keyEq title="矩阵群：左平移的微分" say={R`矩阵群中，把单位元处的切向量（一个矩阵）左平移到 $g$，就是左乘 $g$。`}>{R`L_{g*}V=gV`}</Eq>
+        <Eq n="5.115" title="矩阵群：左平移的微分" say={R`矩阵群中，把单位元处的切向量（一个矩阵）左平移到 $g$，就是左乘 $g$。`}>{R`L_{g*}V=gV`}</Eq>
         <Eq n="5.116" keyEq title="矩阵群：李括号 = 对易子" say={R`矩阵群中，左不变场的李括号对应于生成矩阵的对易子 $[V,W]=VW-WV$。`}>{R`[X_V,X_W]|_g=L_{g*}[V,W]=g[V,W].`}</Eq>
         <Tx>{R`现在把李代数定义为左不变向量场的集合 $\sym{lie}{\mathfrak{g}}$ 连同李括号。`}</Tx>
         <Stmt id="D5.11" />
@@ -147,7 +147,7 @@ $$c'(0)=\left.\begin{pmatrix}-\sin s&-\cos s&0\\ \cos s&-\sin s&0\\ 0&0&0\end{pm
       <Sub n="5.6.3" title="The one-parameter subgroup" zh="单参数子群">
         <Tx>{R`向量场 $X\in\mathcal{X}(M)$ 在 $M$ 中生成流（§5.3）。这里我们关心由左不变向量场生成的流。`}</Tx>
         <Stmt id="D5.12">
-          <Eq n="5.117" keyEq title="单参数子群" say={R`单参数子群是从加法群 $\R$ 到 $G$ 的同态：参数相加对应群元相乘。`}>{R`\phi(t)\phi(s)=\phi(t+s).`}</Eq>
+          <Eq n="5.117" title="单参数子群" say={R`单参数子群是从加法群 $\R$ 到 $G$ 的同态：参数相加对应群元相乘。`}>{R`\phi(t)\phi(s)=\phi(t+s).`}</Eq>
         </Stmt>
         <Tx>{R`容易看出 $\phi(0)=e$（令 $s=0$：$\phi(t)\phi(0)=\phi(t)$），$\phi^{-1}(t)=\phi(-t)$（令 $s=-t$）。注意这样定义的曲线 $\phi$ 是从 $\R$ 到 $G$ 的同态。尽管 $G$ 可能是非 Abel 群，单参数子群却是 Abel 子群：$\phi(t)\phi(s)=\phi(t+s)=\phi(s+t)=\phi(s)\phi(t)$。
 
@@ -163,7 +163,7 @@ $$c'(0)=\left.\begin{pmatrix}-\sin s&-\cos s&0\\ \cos s&-\sin s&0\\ 0&0&0\end{pm
         <Tx>{R`由交换性 $\phi L_t=L_g\phi$（因为 $\phi(t+s)=\phi(t)\phi(s)=g\phi(s)$）得到 $\phi_*L_{t*}=L_{g*}\phi_*$。于是 \eqref{5.121a} 变成`}</Tx>
         <Eq n="5.121b" say={R`换个次序：先推前到 $e$ 再在 $G$ 中左平移到 $g$。`}>{R`\phi_*L_{t*}\left.\frac{\dd}{\dd t}\right|_0=L_{g*}\phi_*\left.\frac{\dd}{\dd t}\right|_0=L_{g*}X|_e.`}</Eq>
         <Tx>{R`由 \eqref{5.121a}、\eqref{5.121b} 得到`}</Tx>
-        <Eq n="5.122" keyEq title="单参数子群的切场是左不变的" say={R`单参数子群在 $g$ 点的速度，等于它在单位元处速度的左平移：生成它的向量场是左不变的。`}>{R`L_{g*}X|_e=X|_g.`}</Eq>
+        <Eq n="5.122" title="单参数子群的切场是左不变的" say={R`单参数子群在 $g$ 点的速度，等于它在单位元处速度的左平移：生成它的向量场是左不变的。`}>{R`L_{g*}X|_e=X|_g.`}</Eq>
         <Tx>{R`于是给定流 $\phi(t)$，存在相伴的左不变向量场 $X\in\sym{lie}{\mathfrak{g}}$。（严格说，\eqref{5.122} 只在曲线上的点 $g=\phi(t)$ 处得到；把 $X$ 定义为 $X|_e$ 生成的左不变场，它在曲线上与 $\phi$ 的切向量一致。）
 
 **从左不变场到单参数子群。**反过来，左不变向量场 $X$ 定义一个单参数变换群 $\sigma(t,g)$，满足 $\dd\sigma(t,g)/\dd t=X$ 与 $\sigma(0,g)=g$。若定义 $\phi:\R\to G$ 为 $\phi(t)\equiv\sigma(t,e)$，曲线 $\phi(t)$ 就是 $G$ 的单参数子群。为证明这一点，要证 $\phi(s+t)=\phi(s)\phi(t)$。按定义，$\sigma$ 满足`}</Tx>
@@ -177,7 +177,7 @@ $$c'(0)=\left.\begin{pmatrix}-\sin s&-\cos s&0\\ \cos s&-\sin s&0\\ 0&0&0\end{pm
         <Eq n="5.126" say={R`左不变场从 $e$ 出发的积分曲线满足群同态性质，所以就是单参数子群。`}>{R`\phi(s+t)=\phi(s)\phi(t).`}</Eq>
         <Tx>{R`我们发现单参数子群与左不变向量场之间有一一对应。如下定义指数映射后，这一对应就一目了然。`}</Tx>
         <Stmt id="D5.13">
-          <Eq n="5.127" keyEq title="指数映射" say={R`指数映射：沿生成元 $V$ 的单参数子群走单位参数长度，得到的群元记作 $\exp V$。`}>{R`\exp V\equiv\phi_V(1)`}</Eq>
+          <Eq n="5.127" title="指数映射" say={R`指数映射：沿生成元 $V$ 的单参数子群走单位参数长度，得到的群元记作 $\exp V$。`}>{R`\exp V\equiv\phi_V(1)`}</Eq>
         </Stmt>
         <Stmt id="P5.2">
           <Eq n="5.128" keyEq title={R`$\exp(tV)=\phi_V(t)$`} say={R`沿 $V$ 方向走 $t$ 的单参数子群，就是 $tV$ 的指数——指数映射把直线 $tV$ 映成单参数子群。`}>{R`\exp(tV)=\phi_V(t)`}</Eq>
@@ -191,7 +191,7 @@ $$c'(0)=\left.\begin{pmatrix}-\sin s&-\cos s&0\\ \cos s&-\sin s&0\\ 0&0&0\end{pm
           ]} />
         </Stmt>
         <Tx>{R`**矩阵群的指数映射。**对矩阵群，指数映射就是矩阵的指数函数。取 $G=\mathrm{GL}(n,\R)$，$A\in\sym{lie}{\mathfrak{gl}}(n,\R)$。定义单参数子群 $\phi_A:\R\to\mathrm{GL}(n,\R)$ 为`}</Tx>
-        <Eq n="5.129" keyEq title="矩阵指数" say={R`矩阵的指数级数对任何矩阵都绝对收敛；它给出由 $A$ 生成的单参数子群。`}>{R`\phi_A(t)=\exp(tA)=I_n+tA+\frac{t^2}{2!}A^2+\cdots+\frac{t^n}{n!}A^n+\cdots.`}</Eq>
+        <Eq n="5.129" title="矩阵指数" say={R`矩阵的指数级数对任何矩阵都绝对收敛；它给出由 $A$ 生成的单参数子群。`}>{R`\phi_A(t)=\exp(tA)=I_n+tA+\frac{t^2}{2!}A^2+\cdots+\frac{t^n}{n!}A^n+\cdots.`}</Eq>
         <Tx>{R`事实上 $\phi_A(t)\in\mathrm{GL}(n,\R)$，因为 $[\phi_A(t)]^{-1}=\phi_A(-t)$ 存在。也容易看出 $\phi_A(t)\phi_A(s)=\phi_A(t+s)$（$tA$ 与 $sA$ 可交换，指数级数的乘法法则成立）。于是指数映射为`}</Tx>
         <Eq n="5.130" say={R`矩阵群的指数映射就是矩阵指数在 $t=1$ 处的值。`}>{R`\phi_A(1)=\exp(A)=I_n+A+\frac{1}{2!}A^2+\cdots+\frac{1}{n!}A^n+\cdots.`}</Eq>
         <Tx>{R`曲线 $g\exp(tA)$ 是过 $g\in G$ 的流。我们有
@@ -207,7 +207,7 @@ $$\left.\frac{\dd}{\dd t}g\exp(tA)\right|_{t=0}=L_{g*}A=X_A|_g$$
 
       <Sub n="5.6.4" title="Frames and structure equation" zh="标架与结构方程">
         <Tx>{R`设 $n$ 个向量 $\{V_1,V_2,\ldots,V_n\}$ 是 $T_eG$ 的基，$n=\dim G$。［本书始终假定 $n$ 有限。］这组基在 $G$ 的每一点 $g$ 定义 $n$ 个线性无关的左不变向量场 $\{X_1,X_2,\ldots,X_n\}$：$X_\mu|_g=L_{g*}V_\mu$。注意 $\{X_\mu\}$ 是在整个 $G$ 上都有定义的基标架（所以李群总是**可平行化**的，$TG\cong G\times\R^n$）。由于 $[X_\mu,X_\nu]|_g$ 仍是 $g$ 处 $\sym{lie}{\mathfrak{g}}$ 的元素，可以用 $\{X_\mu\}$ 展开：`}</Tx>
-        <Eq n="5.133" keyEq title="结构常数" say={R`两个基生成元的李括号仍是生成元的线性组合，组合系数就是结构常数——它们完全刻画了李代数。`}>{R`[X_\mu,X_\nu]=c_{\mu\nu}{}^\lambda X_\lambda`}</Eq>
+        <Eq n="5.133" title="结构常数" say={R`两个基生成元的李括号仍是生成元的线性组合，组合系数就是结构常数——它们完全刻画了李代数。`}>{R`[X_\mu,X_\nu]=c_{\mu\nu}{}^\lambda X_\lambda`}</Eq>
         <Tx>{R`其中 $c_{\mu\nu}{}^\lambda$ 称为李群 $G$ 的**结构常数**（structure constants）。若 $G$ 是矩阵群，\eqref{5.133} 的左边在 $g=e$ 处恰是矩阵 $V_\mu$ 与 $V_\nu$ 的对易子，见 \eqref{5.116}。我们来证明 $c_{\mu\nu}{}^\lambda$ 确实是与 $g$ 无关的常数。设 $c_{\mu\nu}{}^\lambda(e)$ 是单位元处的结构常数。把 $L_{g*}$ 作用在李括号上（\eqref{5.112}），得到
 
 $$[X_\mu,X_\nu]|_g=c_{\mu\nu}{}^\lambda(e)X_\lambda|_g,$$
@@ -238,11 +238,11 @@ $$\begin{aligned}\dd\theta^\mu(X_\nu,X_\lambda)&=X_\nu[\theta^\mu(X_\lambda)]-X_
 （常数的导数为零），而 \eqref{5.136} 右边在 $(X_\nu,X_\lambda)$ 上的值是 $-\frac12(c_{\nu\lambda}{}^\mu-c_{\lambda\nu}{}^\mu)=-c_{\nu\lambda}{}^\mu$（用了 \eqref{5.62} 与 \eqref{5.134}）。这就证明了 \eqref{5.136}。
 
 **典范一形式。**定义取值于李代数的一形式 $\theta:T_gG\to T_eG$：`}</Tx>
-        <Eq n="5.137" keyEq title="Maurer–Cartan 形式" say={R`典范一形式把任意一点的切向量左平移回单位元：它告诉你"这个速度对应李代数里哪个生成元"。对矩阵群就是 $g^{-1}\dd g$。`}>{R`\theta:X\mapsto(L_{g^{-1}})_*X=(L_g)_*^{-1}X\qquad X\in T_gG.`}</Eq>
+        <Eq n="5.137" title="Maurer–Cartan 形式" say={R`典范一形式把任意一点的切向量左平移回单位元：它告诉你"这个速度对应李代数里哪个生成元"。对矩阵群就是 $g^{-1}\dd g$。`}>{R`\theta:X\mapsto(L_{g^{-1}})_*X=(L_g)_*^{-1}X\qquad X\in T_gG.`}</Eq>
         <Tx>{R`$\theta$ 称为 $G$ 上的**典范一形式**（canonical one-form）或 **Maurer–Cartan 形式**。（对矩阵群，由 \eqref{5.115}，$\theta=g^{-1}\dd g$。）`}</Tx>
         <Stmt id="T5.3">
           <Eq n="5.138" say={R`典范一形式在基下展开：李代数的基向量乘以对应的左不变对偶一形式。`}>{R`\theta=V_\mu\otimes\theta^\mu`}</Eq>
-          <Eq n="5.139" keyEq title="Maurer–Cartan 方程" say={R`典范一形式满足"零曲率"方程：外微分加上自己与自己的括号为零。规范理论里纯规范的场强为零就是它。`}>{R`\dd\theta+\tfrac12[\theta\wedge\theta]=0`}</Eq>
+          <Eq n="5.139" title="Maurer–Cartan 方程" say={R`典范一形式满足"零曲率"方程：外微分加上自己与自己的括号为零。规范理论里纯规范的场强为零就是它。`}>{R`\dd\theta+\tfrac12[\theta\wedge\theta]=0`}</Eq>
           <Eq n="5.140" say={R`李代数值形式的"括号楔积"：李代数部分取对易子，形式部分取楔积。`}>{R`[\theta\wedge\theta]\equiv[V_\mu,V_\nu]\otimes\theta^\mu\wedge\theta^\nu.`}</Eq>
           <Proof steps={[
             { claim: R`(a) 任取 $Y=Y^\mu X_\mu\in T_gG$，$\{X_\mu\}$ 是由 $\{V_\mu\}$ 生成的标架，$X_\mu|_g=L_{g*}V_\mu$。由 \eqref{5.137}：`, tex: R`\theta(Y)=Y^\mu\theta(X_\mu)=Y^\mu(L_{g*})^{-1}[L_{g*}V_\mu]=Y^\mu V_\mu.`, uses: ["5.137"] },

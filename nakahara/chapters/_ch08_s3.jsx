@@ -53,7 +53,7 @@ $$\overline\omega(V_1,\ldots,V_q)=\alpha(V)-\mathrm{i}\beta(V)=\nosym{\overline{
         <Tx>{R`现在限定在复流形上，这里有分解 $T_pM^\C=T_pM^+\oplus T_pM^-$ 与 $\mathcal{X}(M)^\C=\mathcal{X}(M)^+\oplus\mathcal{X}(M)^-$。`}</Tx>
         <Stmt id="D8.2" />
         <Tx>{R`取卡 $(U,\varphi)$，复坐标 $\varphi(p)=z^\mu$。对切空间 $T_pM^\pm$ 取基 \eqref{8.13a}、\eqref{8.13b}，对偶基由 \eqref{8.14} 给出。注意 $\dd z^\mu$ 是 $(1,0)$ 次的，因为 $\langle\dd z^\mu,\partial/\partial\bar z^\nu\rangle=0$；$\dd\bar z^\mu$ 是 $(0,1)$ 次的。用这些基，$(r,s)$ 次形式 $\omega$ 写成`}</Tx>
-        <Eq n="8.35" keyEq title={R`$(r,s)$ 形式的展开`} say={R`$(r,s)$ 形式 = $r$ 个 $\dd z$ 与 $s$ 个 $\dd\bar z$ 的楔积的组合；分量分别对 $\mu$ 组与 $\bar\nu$ 组全反对称，$1/(r!s!)$ 抵消重复计数。`}>{R`\omega=\frac{1}{r!\,s!}\,\omega_{\mu_1\ldots\mu_r\bar\nu_1\ldots\bar\nu_s}\,\dd z^{\mu_1}\wedge\ldots\wedge\dd z^{\mu_r}\wedge\dd\bar z^{\nu_1}\wedge\ldots\wedge\dd\bar z^{\nu_s}.`}</Eq>
+        <Eq n="8.35" title={R`$(r,s)$ 形式的展开`} say={R`$(r,s)$ 形式 = $r$ 个 $\dd z$ 与 $s$ 个 $\dd\bar z$ 的楔积的组合；分量分别对 $\mu$ 组与 $\bar\nu$ 组全反对称，$1/(r!s!)$ 抵消重复计数。`}>{R`\omega=\frac{1}{r!\,s!}\,\omega_{\mu_1\ldots\mu_r\bar\nu_1\ldots\bar\nu_s}\,\dd z^{\mu_1}\wedge\ldots\wedge\dd z^{\mu_r}\wedge\dd\bar z^{\nu_1}\wedge\ldots\wedge\dd\bar z^{\nu_s}.`}</Eq>
         <Tx>{R`集合 $\{\dd z^{\mu_1}\wedge\ldots\wedge\dd z^{\mu_r}\wedge\dd\bar z^{\nu_1}\wedge\ldots\wedge\dd\bar z^{\nu_s}\}$ 是 $\Omega^{r,s}_p(M)$ 的基。分量对 $\mu$ 与对 $\nu$ 分别全反对称。设 $z^\mu$ 与 $w^\mu$ 是两组重叠的坐标。读者应验证：在 $z^\mu$ 坐标系中的 $(r,s)$ 形式，在 $w^\nu$ 坐标系中也是 $(r,s)$ 形式。（理由：坐标变换全纯，$\dd w^\nu=(\partial w^\nu/\partial z^\mu)\dd z^\mu$ 不含 $\dd\bar z$，$\dd\bar w^\nu$ 不含 $\dd z$；这与习题 8.2 是对偶的说法。）`}</Tx>
         <Stmt id="P8.1">
           <Proof title="命题 8.1 的证明（原书留给读者）" steps={[
@@ -96,7 +96,7 @@ $$\dim_\C\Omega^{r,s}_p(M)=\begin{cases}\dbinom mr\dbinom ms&\text{若 }0\le r,s
 
       <Sub n="8.3.3" title="Dolbeault operators" zh="Dolbeault 算子">
         <Tx>{R`计算 $(r,s)$ 形式 $\omega$ 的外微分。由 \eqref{8.35}，外微分只作用在分量上，而分量是 $(z,\bar z)$ 的函数，所以`}</Tx>
-        <Eq n="8.39" keyEq title={R`$(r,s)$ 形式的外微分`} say={R`对分量求导时，沿 $z$ 方向的导数带出一个 $\dd z$，沿 $\bar z$ 方向的导数带出一个 $\dd\bar z$——外微分自然地分成两部分。`}>{R`\begin{aligned}\dd\omega=\frac{1}{r!s!}&\left(\frac{\partial}{\partial z^\lambda}\omega_{\mu_1\ldots\mu_r\bar\nu_1\ldots\bar\nu_s}\dd z^\lambda+\frac{\partial}{\partial\bar z^\lambda}\omega_{\mu_1\ldots\mu_r\bar\nu_1\ldots\bar\nu_s}\dd\bar z^\lambda\right)\\&\times\dd z^{\mu_1}\wedge\ldots\wedge\dd z^{\mu_r}\wedge\dd\bar z^{\nu_1}\wedge\ldots\wedge\dd\bar z^{\nu_s}.\end{aligned}`}</Eq>
+        <Eq n="8.39" title={R`$(r,s)$ 形式的外微分`} say={R`对分量求导时，沿 $z$ 方向的导数带出一个 $\dd z$，沿 $\bar z$ 方向的导数带出一个 $\dd\bar z$——外微分自然地分成两部分。`}>{R`\begin{aligned}\dd\omega=\frac{1}{r!s!}&\left(\frac{\partial}{\partial z^\lambda}\omega_{\mu_1\ldots\mu_r\bar\nu_1\ldots\bar\nu_s}\dd z^\lambda+\frac{\partial}{\partial\bar z^\lambda}\omega_{\mu_1\ldots\mu_r\bar\nu_1\ldots\bar\nu_s}\dd\bar z^\lambda\right)\\&\times\dd z^{\mu_1}\wedge\ldots\wedge\dd z^{\mu_r}\wedge\dd\bar z^{\nu_1}\wedge\ldots\wedge\dd\bar z^{\nu_s}.\end{aligned}`}</Eq>
         <Tx>{R`（这用到了实函数的微分 $\dd f=\partial_xf\,\dd x+\partial_yf\,\dd y$ 在复基下等于 $\partial_zf\,\dd z+\partial_{\bar z}f\,\dd\bar z$：把 \eqref{8.13a}、\eqref{8.14} 代入右边展开即可。）$\dd\omega$ 是一个 $(r+1,s)$ 形式与一个 $(r,s+1)$ 形式的混合。按去向把 $\dd$ 的作用拆开：`}</Tx>
         <Eq n="8.40" keyEq title={R`$\dd=\partial+\bar\partial$`} say={R`外微分 = 全纯部分 $\partial$（只增加一个 $\dd z$）+ 反全纯部分 $\bar\partial$（只增加一个 $\dd\bar z$）。`}>{R`\dd=\partial+\bar\partial`}</Eq>
         <Tx>{R`其中 $\partial:\Omega^{r,s}(M)\to\Omega^{r+1,s}(M)$，$\bar\partial:\Omega^{r,s}(M)\to\Omega^{r,s+1}(M)$。例如若 $\omega=\omega_{\mu\bar\nu}\dd z^\mu\wedge\dd\bar z^\nu$，其外微分为
@@ -118,15 +118,15 @@ $$\bar\partial\omega=\frac{\partial\omega_{\mu\bar\nu}}{\partial\bar z^\lambda}\
             { claim: R`代入 $\dd=\partial+\bar\partial$，$(r+r'+1,s+s')$ 部分给出 \eqref{8.42c}，$(r+r',s+s'+1)$ 部分给出 \eqref{8.42d}。`, uses: ["P8.1"], fill: true },
           ]} />
         </Stmt>
-        <Eq n="8.42a" keyEq title="Dolbeault 算子的平方" say={R`$\partial$、$\bar\partial$ 各自平方为零，并且彼此反对易——这是 $\dd^2=0$ 按双次拆开后的三个分量。`}>{R`\partial\partial\omega=(\partial\bar\partial+\bar\partial\partial)\omega=\bar\partial\bar\partial\omega=0`}</Eq>
+        <Eq n="8.42a" title="Dolbeault 算子的平方" say={R`$\partial$、$\bar\partial$ 各自平方为零，并且彼此反对易——这是 $\dd^2=0$ 按双次拆开后的三个分量。`}>{R`\partial\partial\omega=(\partial\bar\partial+\bar\partial\partial)\omega=\bar\partial\bar\partial\omega=0`}</Eq>
         <Eq n="8.42b" say={R`共轭把 $\partial$ 与 $\bar\partial$ 互换：先取共轭再作用 $\partial$，等于先作用 $\bar\partial$ 再取共轭。`}>{R`\partial\overline\omega=\nosym{\overline{\bar\partial\omega}},\qquad\bar\partial\overline\omega=\nosym{\overline{\partial\omega}}`}</Eq>
         <Eq n="8.42c" say={R`$\partial$ 满足与 $\dd$ 相同的分次 Leibniz 律。`}>{R`\partial(\omega\wedge\xi)=\partial\omega\wedge\xi+(-1)^q\omega\wedge\partial\xi`}</Eq>
-        <Eq n="8.42d" keyEq title={R`$\bar\partial$ 的 Leibniz 律`} say={R`$\bar\partial$ 同样满足分次 Leibniz 律：越过 $q$ 形式时带出 $(-1)^q$。`}>{R`\bar\partial(\omega\wedge\xi)=\bar\partial\omega\wedge\xi+(-1)^q\omega\wedge\bar\partial\xi.`}</Eq>
+        <Eq n="8.42d" title={R`$\bar\partial$ 的 Leibniz 律`} say={R`$\bar\partial$ 同样满足分次 Leibniz 律：越过 $q$ 形式时带出 $(-1)^q$。`}>{R`\bar\partial(\omega\wedge\xi)=\bar\partial\omega\wedge\xi+(-1)^q\omega\wedge\bar\partial\xi.`}</Eq>
         <Box kind="warning" title="勘误：定理 8.1 证明 (b) 中漏印的共轭号（p.343）">{R`原书写"注意 $\partial\omega$ 与 $\nosym{\overline{\bar\partial\omega}}$ 的双次为 $(s+1,r)$"，第一个应为 $\partial\overline\omega$（$\partial\omega$ 的双次是 $(r+1,s)$）。正文已改正。`}</Box>
         <Tx>{R`定理 8.1 (a) 包含三个独立的恒等式：$\partial^2=0$、$\bar\partial^2=0$、$\partial\bar\partial=-\bar\partial\partial$。最后一个在 §8.4 推导 Ricci 形式时会反复用到：$\partial\bar\partial=-\frac12\dd(\partial-\bar\partial)$，见 \eqref{8.79} 后的讨论。`}</Tx>
         <Stmt id="D8.3" />
         <Tx>{R`看卡 $(U,\varphi)$ 上的全纯 0 形式 $f\in\mathcal{F}(U)^\C$。条件 $\bar\partial f=0$ 变成`}</Tx>
-        <Eq n="8.43" keyEq title="Cauchy–Riemann 方程的复形式" say={R`函数被所有 $\partial/\partial\bar z$ 消灭——这正是多变量 Cauchy–Riemann 方程的紧凑写法。`}>{R`\frac{\partial f}{\partial\bar z^\lambda}=0\qquad1\le\lambda\le m=\dim_\C M.`}</Eq>
+        <Eq n="8.43" title="Cauchy–Riemann 方程的复形式" say={R`函数被所有 $\partial/\partial\bar z$ 消灭——这正是多变量 Cauchy–Riemann 方程的紧凑写法。`}>{R`\frac{\partial f}{\partial\bar z^\lambda}=0\qquad1\le\lambda\le m=\dim_\C M.`}</Eq>
         <Tx>{R`全纯 0 形式就是全纯函数 $f\in\mathcal{F}(U)^\C$。设 $\omega\in\Omega^{r,0}(M)$，$1\le r\le m=\dim_\C M$。在卡 $(U,\varphi)$ 上`}</Tx>
         <Eq n="8.44" say={R`$(r,0)$ 形式只含 $\dd z$，没有 $\dd\bar z$。`}>{R`\omega=\frac{1}{r!}\omega_{\mu_1\ldots\mu_r}\dd z^{\mu_1}\wedge\ldots\wedge\dd z^{\mu_r}.`}</Eq>
         <Tx>{R`则 $\bar\partial\omega=0$ 当且仅当
@@ -136,7 +136,7 @@ $$\frac{\partial}{\partial\bar z^\lambda}\omega_{\mu_1\ldots\mu_r}=0,$$
 即 $\omega_{\mu_1\ldots\mu_r}$ 是 $U$ 上的全纯函数。
 
 设 $\dim_\C M=m$。$\C$ 线性映射的序列`}</Tx>
-        <Eq n="8.45" keyEq title="Dolbeault 复形" say={R`固定全纯次数 $r$，让反全纯次数从 $0$ 走到 $m$，每一步用 $\bar\partial$ 连接；因为 $\bar\partial^2=0$，这是一个复形。`}>{R`\begin{aligned}&\Omega^{r,0}(M)\xrightarrow{\ \bar\partial\ }\Omega^{r,1}(M)\xrightarrow{\ \bar\partial\ }\cdots\\&\cdots\xrightarrow{\ \bar\partial\ }\Omega^{r,m-1}(M)\xrightarrow{\ \bar\partial\ }\Omega^{r,m}(M)\end{aligned}`}</Eq>
+        <Eq n="8.45" title="Dolbeault 复形" say={R`固定全纯次数 $r$，让反全纯次数从 $0$ 走到 $m$，每一步用 $\bar\partial$ 连接；因为 $\bar\partial^2=0$，这是一个复形。`}>{R`\begin{aligned}&\Omega^{r,0}(M)\xrightarrow{\ \bar\partial\ }\Omega^{r,1}(M)\xrightarrow{\ \bar\partial\ }\cdots\\&\cdots\xrightarrow{\ \bar\partial\ }\Omega^{r,m-1}(M)\xrightarrow{\ \bar\partial\ }\Omega^{r,m}(M)\end{aligned}`}</Eq>
         <Tx>{R`称为 **Dolbeault 复形**。注意 $\bar\partial^2=0$。$\bar\partial$ 闭的 $(r,s)$ 形式（满足 $\bar\partial\omega=0$ 的 $\omega\in\Omega^{r,s}(M)$）的集合称为 **$(r,s)$ 上闭链**（cocycle），记为 $Z^{r,s}_{\bar\partial}(M)$。$\bar\partial$ 恰当的 $(r,s)$ 形式（对某个 $\eta\in\Omega^{r,s-1}(M)$ 有 $\omega=\bar\partial\eta$ 的 $\omega\in\Omega^{r,s}(M)$）的集合称为 **$(r,s)$ 上边缘**（coboundary），记为 $B^{r,s}_{\bar\partial}(M)$。复向量空间`}</Tx>
         <Eq n="8.46" keyEq title={R`$\bar\partial$ 上同调群`} say={R`$\bar\partial$ 闭的 $(r,s)$ 形式模去 $\bar\partial$ 恰当的形式：度量"能被 $\bar\partial$ 消灭、却不是别人的 $\bar\partial$"的形式有多少。`}>{R`H^{r,s}_{\bar\partial}(M)\equiv Z^{r,s}_{\bar\partial}(M)/B^{r,s}_{\bar\partial}(M)`}</Eq>
         <Tx>{R`称为第 $(r,s)$ 个 **$\bar\partial$ 上同调群**，见 §8.6。

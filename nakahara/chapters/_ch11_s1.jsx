@@ -55,7 +55,7 @@ $$S^*(M(k,\C))\equiv\bigoplus_{r=0}^\infty S^r(M(k,\C))$$
         <Tx>{R`其中 $P$ 取遍 $(1,\ldots,p+q)$ 的置换。有了这个乘法，$S^*(M(k,\C))$ 成为一个代数。
 
 设 $G$ 是矩阵群，$\mathfrak{g}$ 是它的李代数。实际中取 $G=\mathrm{GL}(k,\C)$、$\mathrm{U}(k)$ 或 $\mathrm{SU}(k)$。李代数 $\mathfrak{g}$ 是 $M(k,\C)$ 的子空间，我们可以考虑限制 $S^r(\mathfrak{g})$ 与 $S^*(\mathfrak{g})\equiv\bigoplus_{r\ge0}S^r(\mathfrak{g})$。若对任意 $g\in G$ 与 $A_i\in\mathfrak{g}$，$\tilde P\in S^r(\mathfrak{g})$ 满足`}</Tx>
-        <Eq n="11.3" keyEq title="不变性" say={R`不变性：把所有变元同时用同一个群元共轭，函数值不变——它对"换一组规范"不敏感。`}>{R`\tilde P(\mathrm{Ad}_gA_1,\ldots,\mathrm{Ad}_gA_r)=\tilde P(A_1,\ldots,A_r)`}</Eq>
+        <Eq n="11.3" title="不变性" say={R`不变性：把所有变元同时用同一个群元共轭，函数值不变——它对"换一组规范"不敏感。`}>{R`\tilde P(\mathrm{Ad}_gA_1,\ldots,\mathrm{Ad}_gA_r)=\tilde P(A_1,\ldots,A_r)`}</Eq>
         <Tx>{R`就称它是**不变的**（invariant），其中 $\mathrm{Ad}_gA_i=g^{-1}A_ig$。例如`}</Tx>
         <Eq n="11.4" say={R`对称化迹：把矩阵的乘积以所有顺序取迹再平均。迹的循环性给出不变性，平均给出对称性。`}>{R`\tilde P(A_1,A_2,\ldots,A_r)=\mathrm{str}(A_1,A_2,\ldots,A_r)\equiv\frac1{r!}\sum_P\Tr(A_{P(1)}A_{P(2)}\cdots A_{P(r)})`}</Eq>
         <Tx>{R`是对称、$r$ 线性且不变的，其中"str"代表**对称化迹**（symmetrized trace），由最后一个等式定义。（不变性：$\Tr(g^{-1}A_1g\,g^{-1}A_2g\cdots)=\Tr(g^{-1}A_1A_2\cdots g)=\Tr(A_1A_2\cdots)$。）$S^r(\mathfrak{g})$ 中 $G$ 不变元素的集合记为 $I^r(G)$。注意 $\mathfrak{g}_1=\mathfrak{g}_2$ 并不一定意味着 $I^r(G_1)=I^r(G_2)$（例如 $\mathrm{O}(2l)$ 与 $\mathrm{SO}(2l)$ 李代数相同，但 Pfaffian 只是后者的不变量，见 §11.4.2）。由 \eqref{11.2} 定义的乘积自然诱导乘法`}</Tx>
@@ -65,7 +65,7 @@ $$S^*(M(k,\C))\equiv\bigoplus_{r=0}^\infty S^r(M(k,\C))$$
 取 $\tilde P\in I^r(G)$。"对角组合"的简写是`}</Tx>
         <Eq n="11.6" keyEq title="不变多项式" say={R`把同一个矩阵 $A$ 填满 $\tilde P$ 的全部 $r$ 个变元：得到 $A$ 的一个 $r$ 次多项式——不变多项式。`}>{R`P(A)\equiv\tilde P(\underbrace{A,A,\ldots,A}_r)\qquad A\in\mathfrak{g}.`}</Eq>
         <Tx>{R`显然 $P$ 是 $r$ 次多项式，称为**不变多项式**（invariant polynomial）。$P$ 也是 $\mathrm{Ad}\,G$ 不变的：`}</Tx>
-        <Eq n="11.7" keyEq title={R`$\mathrm{Ad}$ 不变`} say={R`不变多项式只依赖于矩阵的共轭类：这正是曲率在规范变换下"协变"而 $P(\mathcal{F})$"不变"的原因。`}>{R`P(\mathrm{Ad}_gA)=P(g^{-1}Ag)=P(A)\qquad A\in\mathfrak{g},\ g\in G.`}</Eq>
+        <Eq n="11.7" title={R`$\mathrm{Ad}$ 不变`} say={R`不变多项式只依赖于矩阵的共轭类：这正是曲率在规范变换下"协变"而 $P(\mathcal{F})$"不变"的原因。`}>{R`P(\mathrm{Ad}_gA)=P(g^{-1}Ag)=P(A)\qquad A\in\mathfrak{g},\ g\in G.`}</Eq>
         <Tx>{R`例如 $\Tr(A^r)$ 是由 \eqref{11.4} 得到的不变多项式。一般地，不变多项式可以写成 $P_r\equiv\Tr(A^r)$ 的乘积之和。
 
 **极化。**反过来，任何不变多项式 $P$ 都定义一个不变、对称的 $r$ 线性型 $\tilde P$：把 $P(t_1A_1+\cdots+t_rA_r)$ 展开成 $t_i$ 的多项式，$t_1t_2\cdots t_r$ 的系数乘以 $1/r!$，按构造就是不变且对称的，称为 $P$ 的**极化**（polarization）。以 $P(A)\equiv\Tr(A^3)$ 为例：按上面的处方，把 $\Tr(t_1A_1+t_2A_2+t_3A_3)^3$ 按 $t_1,t_2,t_3$ 的幂展开，$t_1t_2t_3$ 的系数是
@@ -104,7 +104,7 @@ $$\tilde P_r(g_t^{-1}X_1g_t,\ldots,g_t^{-1}X_rg_t)=\tilde P_r(X_1,\ldots,X_r),$$
 $$\begin{aligned}\tilde P_r(\Omega_1,\ldots,[\Omega_i,A],\ldots,\Omega_r)&=\eta_1\wedge\ldots\wedge\eta_i\wedge\eta\wedge\ldots\wedge\eta_r\,\tilde P_r(X_1,\ldots,X_iX,\ldots,X_r)\\&\quad-(-1)^{p\cdot p_i}\eta_1\wedge\ldots\wedge\eta\wedge\eta_i\wedge\ldots\wedge\eta_r\,\tilde P_r(X_1,\ldots,XX_i,\ldots,X_r)\\&=\eta\wedge\eta_1\wedge\ldots\wedge\eta_r(-1)^{p(p_1+\cdots+p_i)}\tilde P_r(X_1,\ldots,[X_i,X],\ldots,X_r).\end{aligned}$$
 
 （把 $\eta$ 移到最前面：第一项中 $\eta$ 越过 $\eta_1,\ldots,\eta_i$，得 $(-1)^{p(p_1+\cdots+p_i)}$；第二项中 $\eta$ 越过 $\eta_1,\ldots,\eta_{i-1}$，得 $(-1)^{p(p_1+\cdots+p_{i-1})}$，再乘上原有的 $(-1)^{pp_i}$，两项的符号因子相同，于是合成对易子。）由此及 \eqref{11.10}（公共形式因子 $\eta\wedge\eta_1\wedge\ldots\wedge\eta_r$ 提出后，剩下的就是 \eqref{11.10} 的左边），得到`}</Tx>
-        <Eq n="11.12" keyEq title="形式值的无穷小不变性" say={R`把 \eqref{11.10} 推广到形式值的变元：每一项带一个分次符号。下面要反复"加上一个这样的零"来把 $\dd$ 换成协变的 $\mathcal{D}$。`}>{R`\sum_{i=1}^r(-1)^{p(p_1+\cdots+p_i)}\tilde P_r(\Omega_1,\ldots,[\Omega_i,A],\ldots,\Omega_r)=0.`}</Eq>
+        <Eq n="11.12" title="形式值的无穷小不变性" say={R`把 \eqref{11.10} 推广到形式值的变元：每一项带一个分次符号。下面要反复"加上一个这样的零"来把 $\dd$ 换成协变的 $\mathcal{D}$。`}>{R`\sum_{i=1}^r(-1)^{p(p_1+\cdots+p_i)}\tilde P_r(\Omega_1,\ldots,[\Omega_i,A],\ldots,\Omega_r)=0.`}</Eq>
         <Tx>{R`其次考虑外微分`}</Tx>
         <Eq n="11.13" say={R`外微分对 $\tilde P$ 满足分次 Leibniz 律：依次作用到每个变元上，越过前面的形式时带符号。`}>{R`\begin{aligned}\dd\tilde P_r(\Omega_1,\ldots,\Omega_r)&=\dd(\eta_1\wedge\ldots\wedge\eta_r)\tilde P_r(X_1,\ldots,X_r)\\&=\sum_{i=1}^r(-1)^{(p_1+\cdots+p_{i-1})}(\eta_1\wedge\ldots\wedge\dd\eta_i\wedge\ldots\wedge\eta_r)\tilde P_r(X_1,\ldots,X_i,\ldots,X_r)\\&=\sum_{i=1}^r(-1)^{(p_1+\cdots+p_{i-1})}\tilde P_r(\Omega_1,\ldots,\dd\Omega_i,\ldots,\Omega_r).\end{aligned}`}</Eq>
         <Tx>{R`在 \eqref{11.12} 与 \eqref{11.13} 中令 $A=\mathcal{A}$、$\Omega_i=\mathcal{F}$，此时 $p=1$、$p_i=2$，所有符号因子都是 $+1$。\eqref{11.12} 给出 $\sum_i\tilde P_r(\ldots,[\mathcal{F},\mathcal{A}],\ldots)=0$，而由 \eqref{11.11}，$[\mathcal{F},\mathcal{A}]=\mathcal{F}\wedge\mathcal{A}-\mathcal{A}\wedge\mathcal{F}=-[\mathcal{A},\mathcal{F}]$。把这个形如 \eqref{11.12} 的零加到 \eqref{11.13} 上，得到`}</Tx>
@@ -146,9 +146,9 @@ $$\frac{\dd}{\dd t}P_r(\mathcal{F}_t)=r\,\dd[\tilde P_r(\theta,\mathcal{F}_t,\ld
         ]} />
 
         <Tx>{R`**超渡形式。**定义 $P_r$ 的**超渡**（transgression）$TP_r(\mathcal{A}',\mathcal{A})$ 为`}</Tx>
-        <Eq n="11.21" keyEq title="超渡形式" say={R`超渡形式：沿联络空间中的直线，把"联络之差"与插值曲率填入极化后积分——它的外微分就是两个示性形式之差。`}>{R`TP_r(\mathcal{A}',\mathcal{A})\equiv r\int_0^1\dd t\,\tilde P_r(\mathcal{A}'-\mathcal{A},\mathcal{F}_t,\ldots,\mathcal{F}_t)`}</Eq>
+        <Eq n="11.21" title="超渡形式" say={R`超渡形式：沿联络空间中的直线，把"联络之差"与插值曲率填入极化后积分——它的外微分就是两个示性形式之差。`}>{R`TP_r(\mathcal{A}',\mathcal{A})\equiv r\int_0^1\dd t\,\tilde P_r(\mathcal{A}'-\mathcal{A},\mathcal{F}_t,\ldots,\mathcal{F}_t)`}</Eq>
         <Tx>{R`其中 $\tilde P_r$ 是 $P_r$ 的极化。在 §11.5 讨论陈–Simons 形式时，超渡将扮演重要角色。设 $\dim M=m$，记 $P_m$ 为 $P$ 中恰为 $m$ 形式的那一部分（即 $m/2$ 次齐次部分）。由于 $P_m(\mathcal{F}')$ 与 $P_m(\mathcal{F})$ 只差一个恰当形式，它们在无边界流形 $M$ 上的积分应该相同：`}</Tx>
-        <Eq n="11.22" keyEq title="积分与联络无关" say={R`在没有边界的流形上，示性形式的积分与联络无关：差是全导数，由 Stokes 定理积分为零。`}>{R`\int_MP_m(\mathcal{F}')-\int_MP_m(\mathcal{F})=\int_M\dd TP_m(\mathcal{A}',\mathcal{A})=\int_{\partial M}TP_m(\mathcal{A}',\mathcal{A})=0.`}</Eq>
+        <Eq n="11.22" title="积分与联络无关" say={R`在没有边界的流形上，示性形式的积分与联络无关：差是全导数，由 Stokes 定理积分为零。`}>{R`\int_MP_m(\mathcal{F}')-\int_MP_m(\mathcal{F})=\int_M\dd TP_m(\mathcal{A}',\mathcal{A})=\int_{\partial M}TP_m(\mathcal{A}',\mathcal{A})=0.`}</Eq>
         <Box kind="warning" title={R`勘误：\eqref{11.22} 中的边界项（p.445）`}>{R`原书第三个等号右边印作 $\int_{\partial M}P_m(\mathcal{A}',\mathcal{A})$，漏了超渡的记号 $T$；由 Stokes 定理（\sref{T6.1}）应为 $\int_{\partial M}TP_m(\mathcal{A}',\mathcal{A})$，它在 $\partial M=\emptyset$ 时为零。本站已改正。`}</Box>
         <Tx>{R`**示性类。**如上所证，不变多项式是闭的，一般而言非平凡。因此它定义 $M$ 的一个上同调类。\sref{T11.1}(b) 保证这个上同调类与所选的规范势无关。这样定义的上同调类称为**示性类**（characteristic class）。由不变多项式 $P$ 定义的示性类记为 $\chi_E(P)$，其中 $E$ 是定义了联络与曲率的纤维丛。［注：由于主丛与其相伴丛共用同一组规范势与场强，Chern–Weil 定理同样适用于二者。因此 $E$ 可以是主丛，也可以是向量丛。］`}</Tx>
         <Stmt id="F:charclass" toc={false} />
@@ -163,8 +163,8 @@ $$\frac{\dd}{\dd t}P_r(\mathcal{F}_t)=r\,\dd[\tilde P_r(\theta,\mathcal{F}_t,\ld
             { claim: R`于是 $f^*P(\mathcal{F}_i)=P(f^*\mathcal{F}_i)$（$f^*$ 与 $\wedge$ 交换，$P$ 的矩阵系数是常数），即 $f^*\chi_E(P)=\chi_{f^*E}(P)$。由 \sref{T11.1}(b)，用哪个联络计算 $f^*E$ 的示性类都一样。`, uses: ["T11.1"] },
           ]} />
         </Stmt>
-        <Eq n="11.23" keyEq title="Weil 同态" say={R`每个不变多项式都给出一个上同调类，而且多项式的乘法对应上同调类的外积：示性类构成一个环。`}>{R`\chi_E:I^*(G)\to H^*(M)`}</Eq>
-        <Eq n="11.24" keyEq title="自然性" say={R`先拉回丛再取示性类，等于先取示性类再拉回上同调类：示性类与映射相容。`}>{R`\chi_{f^*E}=f^*\chi_E.`}</Eq>
+        <Eq n="11.23" title="Weil 同态" say={R`每个不变多项式都给出一个上同调类，而且多项式的乘法对应上同调类的外积：示性类构成一个环。`}>{R`\chi_E:I^*(G)\to H^*(M)`}</Eq>
+        <Eq n="11.24" title="自然性" say={R`先拉回丛再取示性类，等于先取示性类再拉回上同调类：示性类与映射相容。`}>{R`\chi_{f^*E}=f^*\chi_E.`}</Eq>
 
         <Stmt id="C11.1">
           <Proof steps={[

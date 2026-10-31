@@ -73,7 +73,7 @@ $$W=\frac{x-\mathrm{i}y}{1+z}=\frac{1-z}{1+z}(X-\mathrm{i}Y)=\frac{X-\mathrm{i}Y
 **问题：**两对 $(\omega_1,\omega_2)$ 与 $(\omega_1',\omega_2')$（$\mathrm{Im}(\omega_2/\omega_1)>0$，$\mathrm{Im}(\omega_2'/\omega_1')>0$）何时定义同一个复结构？
 
 **第一步：两个格何时相同。**两个格 $L(\omega_1,\omega_2)$ 与 $L(\omega_1',\omega_2')$ 重合，当且仅当存在矩阵 $\begin{pmatrix}a&b\\ c&d\end{pmatrix}\in\mathrm{PSL}(2,\Z)\equiv\mathrm{SL}(2,\Z)/\Z_2$ 使得`}</Tx>
-          <Eq n="8.2" keyEq title="同一个格的两组基" say={R`两组生成元张成同一个格，当且仅当它们相差一个行列式为 $1$ 的整数矩阵（再模去整体符号）——这就是"换基"。`}>{R`\begin{pmatrix}\omega_1'\\ \omega_2'\end{pmatrix}=\begin{pmatrix}a&b\\ c&d\end{pmatrix}\begin{pmatrix}\omega_1\\ \omega_2\end{pmatrix}.`}</Eq>
+          <Eq n="8.2" title="同一个格的两组基" say={R`两组生成元张成同一个格，当且仅当它们相差一个行列式为 $1$ 的整数矩阵（再模去整体符号）——这就是"换基"。`}>{R`\begin{pmatrix}\omega_1'\\ \omega_2'\end{pmatrix}=\begin{pmatrix}a&b\\ c&d\end{pmatrix}\begin{pmatrix}\omega_1\\ \omega_2\end{pmatrix}.`}</Eq>
           <Tx>{R`（$\mathrm{SL}(2,\Z)$ 已在 \eqref{2.4} 定义；在 $\mathrm{PSL}(2,\Z)$ 中，矩阵 $A$ 与 $-A$ 被等同。）证明见下。`}</Tx>
           <Proof title={R`\eqref{8.2} 的证明`} steps={[
             { claim: R`**充分性。**设 \eqref{8.2} 成立且矩阵属于 $\mathrm{SL}(2,\Z)$。由于 $\omega_1',\omega_2'\in L(\omega_1,\omega_2)$（整系数组合），$L(\omega_1',\omega_2')\subset L(\omega_1,\omega_2)$。逆矩阵仍是整数矩阵：`, tex: R`\begin{pmatrix}\omega_1\\ \omega_2\end{pmatrix}=\begin{pmatrix}d&-b\\ -c&a\end{pmatrix}\begin{pmatrix}\omega_1'\\ \omega_2'\end{pmatrix}`, why: R`$ad-bc=1$，所以逆矩阵就是伴随矩阵，元素为整数。由此 $L(\omega_1,\omega_2)\subset L(\omega_1',\omega_2')$，两个格相等。` },
@@ -117,7 +117,7 @@ $$\tau'=\frac{a\tau+b}{c\tau+d}$$
 
         <Box kind="example" n="8.3" title={R`复射影空间 $\CP^n$`}>
           <Tx>{R`**复射影空间** $\CP^n$ 的定义类似于 $\RP^n$（例 5.4）。$n+1$ 元组 $z=(z^0,\ldots,z^n)\in\C^{n+1}$ 只要 $z\neq0$，就确定一条过原点的复直线。定义等价关系 $z\sim w$：若存在复数 $a\neq0$ 使 $w=az$。则 $\CP^n\equiv(\C^{n+1}-\{0\})/\sim$。$n+1$ 个数 $z^0,z^1,\ldots,z^n$ 称为**齐次坐标**，记作 $[z^0,z^1,\ldots,z^n]$，其中 $(z^0,\ldots,z^n)$ 与 $(\lambda z^0,\ldots,\lambda z^n)$（$\lambda\neq0$）等同。卡 $U_\mu$ 是 $\C^{n+1}-\{0\}$ 中满足 $z^\mu\neq0$ 的子集（的像）。在卡 $U_\mu$ 中定义**非齐次坐标** $\xi^\nu_{(\mu)}=z^\nu/z^\mu$（$\nu\neq\mu$）。在 $U_\mu\cap U_\nu\neq\emptyset$ 上，坐标变换 $\psi_{\mu\nu}:\C^n\to\C^n$ 为`}</Tx>
-          <Eq n="8.6" keyEq title={R`$\CP^n$ 的转移函数`} say={R`两张卡的非齐次坐标只差一个公共因子 $z^\nu/z^\mu$：从 $\nu$ 卡换到 $\mu$ 卡就是乘这个在重叠区不为零的全纯函数。`}>{R`\xi^\lambda_{(\nu)}\mapsto\xi^\lambda_{(\mu)}=\frac{z^\nu}{z^\mu}\,\xi^\lambda_{(\nu)}.`}</Eq>
+          <Eq n="8.6" title={R`$\CP^n$ 的转移函数`} say={R`两张卡的非齐次坐标只差一个公共因子 $z^\nu/z^\mu$：从 $\nu$ 卡换到 $\mu$ 卡就是乘这个在重叠区不为零的全纯函数。`}>{R`\xi^\lambda_{(\nu)}\mapsto\xi^\lambda_{(\mu)}=\frac{z^\nu}{z^\mu}\,\xi^\lambda_{(\nu)}.`}</Eq>
           <Tx>{R`因此 $\psi_{\mu\nu}$ 是乘以 $z^\nu/z^\mu$，当然是全纯的。（注意 $z^\nu/z^\mu=1/\xi^\mu_{(\nu)}$ 本身是 $\nu$ 卡坐标的函数，在 $U_\mu\cap U_\nu$ 上 $\xi^\mu_{(\nu)}\neq0$，所以它是 $\nu$ 卡坐标的有理函数、分母不为零——全纯。）$n=1$ 时，$\CP^1$ 有两张卡 $\xi=z^1/z^0$ 与 $\eta=z^0/z^1$，转移函数 $\eta=1/\xi$，与例 8.1 完全相同：$\CP^1\cong S^2$。`}</Tx>
           <CP1Lab />
         </Box>

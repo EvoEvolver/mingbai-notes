@@ -174,7 +174,7 @@ $$\deg f=\frac{1}{2\pi}\big[\vartheta(1)-\vartheta(0)\big]=\frac{1}{2\pi i}\oint
         <Box kind="note" title={R`记号：$\oplus$ 与 $\times$`}>{R`$\pi_1$ 一般非交换。对非交换群，\sref{T4.6} 中的"$\oplus$"应读作**直积** $\pi_1(X)\times\pi_1(Y)$（两个因子的元素彼此交换，各因子内部未必交换）。本章涉及的因子（$\mathbb{Z}$、$\{e\}$）都是交换的，两种记号没有区别。`}</Box>
         <Box kind="example" n="4.3" title="环面与圆柱面">
           <Tx>{R`(1) 设 $T^2=S^1\times S^1$ 是环面，则`}</Tx>
-          <Eq n="4.11" keyEq title={R`$\pi_1(T^2)\cong\mathbb{Z}\oplus\mathbb{Z}$`} say="环面上的圈由两个独立的整数刻画：绕“经线”方向几圈、绕“纬线”方向几圈。">{R`\pi_1(T^2)\cong\pi_1(S^1)\oplus\pi_1(S^1)\cong\mathbb{Z}\oplus\mathbb{Z}.`}</Eq>
+          <Eq n="4.11" title={R`$\pi_1(T^2)\cong\mathbb{Z}\oplus\mathbb{Z}$`} say="环面上的圈由两个独立的整数刻画：绕“经线”方向几圈、绕“纬线”方向几圈。">{R`\pi_1(T^2)\cong\pi_1(S^1)\oplus\pi_1(S^1)\cong\mathbb{Z}\oplus\mathbb{Z}.`}</Eq>
           <Tx>{R`类似地，对 $n$ 维环面
 
 $$T^n=\underbrace{S^1\times S^1\times\cdots\times S^1}_{n}$$

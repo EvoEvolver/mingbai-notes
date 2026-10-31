@@ -71,12 +71,12 @@ $$\Phi(\zeta)(X+\mathrm{i}Y)=\omega(X+\mathrm{i}Y)+\mathrm{i}\,\eta(X+\mathrm{i}
         <Eq n="8.12" say={R`对偶的实余切基：$2m$ 个实坐标的微分。`}>{R`\left\{\dd x^1,\ldots,\dd x^m;\dd y^1,\ldots,\dd y^m\right\}.`}</Eq>
         <Tx>{R`定义 $2m$ 个向量`}</Tx>
         <Eq n="8.13a" keyEq title="全纯基向量" say={R`沿 $z$ 的"复偏导"：实部方向减去 $\mathrm{i}$ 倍虚部方向再除以 2。它作用在 $z$ 上得 1、作用在 $\bar z$ 上得 0。`}>{R`\frac{\partial}{\partial z^\mu}\equiv\frac12\left\{\frac{\partial}{\partial x^\mu}-\mathrm{i}\frac{\partial}{\partial y^\mu}\right\}`}</Eq>
-        <Eq n="8.13b" keyEq title="反全纯基向量" say={R`沿 $\bar z$ 的"复偏导"：它作用在 $\bar z$ 上得 1、作用在 $z$ 上得 0；一个函数被它消灭，正是 Cauchy–Riemann 方程。`}>{R`\frac{\partial}{\partial\bar z^\mu}\equiv\frac12\left\{\frac{\partial}{\partial x^\mu}+\mathrm{i}\frac{\partial}{\partial y^\mu}\right\}`}</Eq>
+        <Eq n="8.13b" title="反全纯基向量" say={R`沿 $\bar z$ 的"复偏导"：它作用在 $\bar z$ 上得 1、作用在 $z$ 上得 0；一个函数被它消灭，正是 Cauchy–Riemann 方程。`}>{R`\frac{\partial}{\partial\bar z^\mu}\equiv\frac12\left\{\frac{\partial}{\partial x^\mu}+\mathrm{i}\frac{\partial}{\partial y^\mu}\right\}`}</Eq>
         <Tx>{R`其中 $1\le\mu\le m$。它们显然构成 $2m$ 维（复）向量空间 $T_pM^\C$ 的基（与 \eqref{8.11} 只差一个可逆的常数矩阵）。注意 $\nosym{\overline{\partial/\partial z^\mu}}=\partial/\partial\bar z^\mu$。相应地，$2m$ 个一形式`}</Tx>
-        <Eq n="8.14" keyEq title={R`$\dd z$ 与 $\dd\bar z$`} say={R`复坐标及其共轭的微分：它们构成复化余切空间的基。`}>{R`\dd z^\mu\equiv\dd x^\mu+\mathrm{i}\,\dd y^\mu\qquad\dd\bar z^\mu\equiv\dd x^\mu-\mathrm{i}\,\dd y^\mu`}</Eq>
+        <Eq n="8.14" title={R`$\dd z$ 与 $\dd\bar z$`} say={R`复坐标及其共轭的微分：它们构成复化余切空间的基。`}>{R`\dd z^\mu\equiv\dd x^\mu+\mathrm{i}\,\dd y^\mu\qquad\dd\bar z^\mu\equiv\dd x^\mu-\mathrm{i}\,\dd y^\mu`}</Eq>
         <Tx>{R`构成 $T^*_pM^\C$ 的基。它们与 \eqref{8.13a}、\eqref{8.13b} 对偶：`}</Tx>
         <Eq n="8.15a" say={R`$\dd z$ 看不见反全纯方向，$\dd\bar z$ 看不见全纯方向。`}>{R`\langle\dd z^\mu,\partial/\partial\bar z^\nu\rangle=\langle\dd\bar z^\mu,\partial/\partial z^\nu\rangle=0`}</Eq>
-        <Eq n="8.15b" keyEq title="复对偶基" say={R`$\dd z^\mu$ 与 $\partial/\partial z^\nu$、$\dd\bar z^\mu$ 与 $\partial/\partial\bar z^\nu$ 各自配成对偶基——与实情形的 $\langle\dd x^\mu,\partial_\nu\rangle=\delta^\mu{}_\nu$ 完全平行。`}>{R`\langle\dd z^\mu,\partial/\partial z^\nu\rangle=\langle\dd\bar z^\mu,\partial/\partial\bar z^\nu\rangle=\delta^\mu{}_\nu.`}</Eq>
+        <Eq n="8.15b" title="复对偶基" say={R`$\dd z^\mu$ 与 $\partial/\partial z^\nu$、$\dd\bar z^\mu$ 与 $\partial/\partial\bar z^\nu$ 各自配成对偶基——与实情形的 $\langle\dd x^\mu,\partial_\nu\rangle=\delta^\mu{}_\nu$ 完全平行。`}>{R`\langle\dd z^\mu,\partial/\partial z^\nu\rangle=\langle\dd\bar z^\mu,\partial/\partial\bar z^\nu\rangle=\delta^\mu{}_\nu.`}</Eq>
         <Derivation title={R`验证 \eqref{8.15a}、\eqref{8.15b}，并把 Cauchy–Riemann 方程写成 $\partial f/\partial\bar z=0$`} collapsed steps={[
           { tex: R`\langle\dd z^\mu,\partial/\partial z^\nu\rangle=\tfrac12\langle\dd x^\mu+\mathrm{i}\dd y^\mu,\ \partial_{x^\nu}-\mathrm{i}\partial_{y^\nu}\rangle=\tfrac12(\delta^\mu{}_\nu+\delta^\mu{}_\nu)=\delta^\mu{}_\nu`, why: R`$\langle\dd x^\mu,\partial_{y^\nu}\rangle=0$，$\mathrm{i}\cdot(-\mathrm{i})=1$。` },
           { tex: R`\langle\dd z^\mu,\partial/\partial\bar z^\nu\rangle=\tfrac12\langle\dd x^\mu+\mathrm{i}\dd y^\mu,\ \partial_{x^\nu}+\mathrm{i}\partial_{y^\nu}\rangle=\tfrac12(\delta^\mu{}_\nu-\delta^\mu{}_\nu)=0`, why: R`$\mathrm{i}\cdot\mathrm{i}=-1$。另两个等式取复共轭即得。` },
@@ -92,23 +92,23 @@ $$\Phi(\zeta)(X+\mathrm{i}Y)=\omega(X+\mathrm{i}Y)+\mathrm{i}\,\eta(X+\mathrm{i}
 $$J_p\left(\frac{\partial}{\partial u^\mu}\right)=J_p\left(\frac{\partial x^\nu}{\partial u^\mu}\frac{\partial}{\partial x^\nu}+\frac{\partial y^\nu}{\partial u^\mu}\frac{\partial}{\partial y^\nu}\right)=\frac{\partial y^\nu}{\partial v^\mu}\frac{\partial}{\partial y^\nu}+\frac{\partial x^\nu}{\partial v^\mu}\frac{\partial}{\partial x^\nu}=\frac{\partial}{\partial v^\mu}.$$
 
 （第二个等号：$J$ 作用后 $\frac{\partial x^\nu}{\partial u^\mu}\partial_{y^\nu}-\frac{\partial y^\nu}{\partial u^\mu}\partial_{x^\nu}$，再代入 Cauchy–Riemann 关系。）同理 $J_p\,\partial/\partial v^\mu=-\partial/\partial u^\mu$。因此对基 \eqref{8.11}，$J_p$ 取形式`}</Tx>
-        <Eq n="8.18" keyEq title="殆复结构的矩阵" say={R`在实基 $(\partial_x;\partial_y)$ 下，$J$ 是标准的辛型分块矩阵：在每一对 $(x^\mu,y^\mu)$ 平面里是转 $90^\circ$ 的矩阵。它的分量是常数，并且在任何全纯坐标下都相同。`}>{R`J_p=\begin{pmatrix}0&-I_m\\ I_m&0\end{pmatrix}`}</Eq>
+        <Eq n="8.18" title="殆复结构的矩阵" say={R`在实基 $(\partial_x;\partial_y)$ 下，$J$ 是标准的辛型分块矩阵：在每一对 $(x^\mu,y^\mu)$ 平面里是转 $90^\circ$ 的矩阵。它的分量是常数，并且在任何全纯坐标下都相同。`}>{R`J_p=\begin{pmatrix}0&-I_m\\ I_m&0\end{pmatrix}`}</Eq>
         <Tx>{R`其中 $I_m$ 是 $m\times m$ 单位矩阵。由于 $J_p$ 的分量在每点都是常数（并且在所有全纯卡中相同），可以定义光滑张量场 $J$，使其在 $p$ 点的分量为 \eqref{8.18}。张量场 $J$ 称为复流形 $M$ 的**殆复结构**（almost complex structure）。注意任何 $2m$ 维流形*局部*都有平方为 $-I_{2m}$ 的张量场 $J$；但只有在复流形上，$J$ 才能跨卡拼接、在*整体*上定义。张量 $J$ 完全确定复结构（§8.7 的 Newlander–Nirenberg 定理）。
 
 把殆复结构 $J_p$ 延拓到 $T_pM^\C$ 上：`}</Tx>
         <Eq n="8.19" say={R`把 $J$ 复线性地延拓到复化切空间。`}>{R`J_p(X+\mathrm{i}Y)\equiv J_pX+\mathrm{i}J_pY.`}</Eq>
         <Tx>{R`由 \eqref{8.16} 得`}</Tx>
-        <Eq n="8.20" keyEq title={R`$J$ 的本征向量`} say={R`全纯基向量是 $J$ 的本征值 $+\mathrm{i}$ 的本征向量，反全纯基向量对应 $-\mathrm{i}$：$J$ 在复基下对角化。`}>{R`J_p\,\partial/\partial z^\mu=\mathrm{i}\,\partial/\partial z^\mu\qquad J_p\,\partial/\partial\bar z^\mu=-\mathrm{i}\,\partial/\partial\bar z^\mu.`}</Eq>
+        <Eq n="8.20" title={R`$J$ 的本征向量`} say={R`全纯基向量是 $J$ 的本征值 $+\mathrm{i}$ 的本征向量，反全纯基向量对应 $-\mathrm{i}$：$J$ 在复基下对角化。`}>{R`J_p\,\partial/\partial z^\mu=\mathrm{i}\,\partial/\partial z^\mu\qquad J_p\,\partial/\partial\bar z^\mu=-\mathrm{i}\,\partial/\partial\bar z^\mu.`}</Eq>
         <Tx>{R`（例如 $J_p\partial_{z^\mu}=\frac12(\partial_{y^\mu}+\mathrm{i}\partial_{x^\mu})=\mathrm{i}\cdot\frac12(\partial_{x^\mu}-\mathrm{i}\partial_{y^\mu})$。）于是得到 $J_p$ 在（反）全纯基下的表达式`}</Tx>
         <Eq n="8.21" say={R`$J$ 在复基下的张量写法：在全纯方向上乘 $\mathrm{i}$，在反全纯方向上乘 $-\mathrm{i}$。`}>{R`J_p=\mathrm{i}\,\dd z^\mu\otimes\frac{\partial}{\partial z^\mu}-\mathrm{i}\,\dd\bar z^\mu\otimes\frac{\partial}{\partial\bar z^\mu}`}</Eq>
         <Tx>{R`其分量为`}</Tx>
-        <Eq n="8.22" keyEq title="复基下的殆复结构" say={R`在 $(\partial_z;\partial_{\bar z})$ 基下 $J$ 是对角矩阵 $\mathrm{diag}(\mathrm{i},-\mathrm{i})$——这就是"$J$ 把复化切空间一分为二"的矩阵表述。`}>{R`J_p=\begin{pmatrix}\mathrm{i}I_m&0\\ 0&-\mathrm{i}I_m\end{pmatrix}.`}</Eq>
+        <Eq n="8.22" title="复基下的殆复结构" say={R`在 $(\partial_z;\partial_{\bar z})$ 基下 $J$ 是对角矩阵 $\mathrm{diag}(\mathrm{i},-\mathrm{i})$——这就是"$J$ 把复化切空间一分为二"的矩阵表述。`}>{R`J_p=\begin{pmatrix}\mathrm{i}I_m&0\\ 0&-\mathrm{i}I_m\end{pmatrix}.`}</Eq>
         <Tx>{R`设 $Z\in T_pM^\C$ 形如 $Z=Z^\mu\partial/\partial z^\mu$，则 $Z$ 是 $J_p$ 的本征向量，$J_pZ=\mathrm{i}Z$。类似地，$Z=Z^\mu\partial/\partial\bar z^\mu$ 满足 $J_pZ=-\mathrm{i}Z$。这样，复流形的 $T_pM^\C$ 被分成两个*不相交*（交为 $\{0\}$）的向量空间：`}</Tx>
         <Eq n="8.23" keyEq title="复化切空间的分解" say={R`复化切空间等于全纯向量空间与反全纯向量空间的直和，二者各占一半维数。`}>{R`T_pM^\C=T_pM^+\oplus T_pM^-`}</Eq>
         <Tx>{R`其中`}</Tx>
         <Eq n="8.24" say={R`按 $J$ 的本征值 $\pm\mathrm{i}$ 分类向量。`}>{R`T_pM^\pm=\{Z\in T_pM^\C\mid J_pZ=\pm\mathrm{i}Z\}.`}</Eq>
         <Tx>{R`定义投影算子 $\mathcal{P}^\pm:T_pM^\C\to T_pM^\pm$：`}</Tx>
-        <Eq n="8.25" keyEq title="全纯 / 反全纯投影" say={R`投影算子：$\frac12(1\mp\mathrm{i}J)$ 在 $+\mathrm{i}$ 本征空间上分别是 $1$ 与 $0$，在 $-\mathrm{i}$ 本征空间上分别是 $0$ 与 $1$。`}>{R`\mathcal{P}^\pm\equiv\tfrac12(I_{2m}\mp\mathrm{i}J_p).`}</Eq>
+        <Eq n="8.25" title="全纯 / 反全纯投影" say={R`投影算子：$\frac12(1\mp\mathrm{i}J)$ 在 $+\mathrm{i}$ 本征空间上分别是 $1$ 与 $0$，在 $-\mathrm{i}$ 本征空间上分别是 $0$ 与 $1$。`}>{R`\mathcal{P}^\pm\equiv\tfrac12(I_{2m}\mp\mathrm{i}J_p).`}</Eq>
         <Tx>{R`事实上，对任意 $Z\in T_pM^\C$，$J_p\mathcal{P}^\pm Z=\frac12(J_p\mp\mathrm{i}J_p^2)Z=\pm\mathrm{i}\mathcal{P}^\pm Z$。因此`}</Tx>
         <Eq n="8.26" say={R`任何复向量投影后的两部分分别是全纯向量与反全纯向量。`}>{R`Z^\pm\equiv\mathcal{P}^\pm Z\in T_pM^\pm.`}</Eq>
         <Tx>{R`于是 $Z\in T_pM^\C$ 唯一地分解为 $Z=Z^++Z^-$（$Z^\pm\in T_pM^\pm$；$\mathcal{P}^++\mathcal{P}^-=I_{2m}$）。$T_pM^+$ 由 $\{\partial/\partial z^\mu\}$ 张成，$T_pM^-$ 由 $\{\partial/\partial\bar z^\mu\}$ 张成。$Z\in T_pM^+$ 称为**全纯向量**（holomorphic vector），$Z\in T_pM^-$ 称为**反全纯向量**（anti-holomorphic vector）。容易验证`}</Tx>

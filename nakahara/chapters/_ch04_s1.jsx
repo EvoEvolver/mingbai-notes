@@ -84,7 +84,7 @@ export function Sec41() {
         <p className="muted">本小节概念：<C id="fundamental_group" /></p>
         <Tx>{R`圈的等价类记作 $[\alpha]$，称为 $\alpha$ 的**同伦类**（homotopy class）。圈的乘积自然地诱导出同伦类之间的乘积。`}</Tx>
         <Stmt id="D4.5">
-          <Eq n="4.4" keyEq title="同伦类的乘积" say="两个绕法相乘，就是任取代表圈接起来再取同伦类：基本群的乘法是“先绕这一种，再绕那一种”。">{R`[\alpha]*[\beta]=[\alpha*\beta].`}</Eq>
+          <Eq n="4.4" title="同伦类的乘积" say="两个绕法相乘，就是任取代表圈接起来再取同伦类：基本群的乘法是“先绕这一种，再绕那一种”。">{R`[\alpha]*[\beta]=[\alpha*\beta].`}</Eq>
         </Stmt>
         <Tx>{R`和第 3 章的商群加法 \eqref{3.3} 一样，首先要检查这个定义与代表元无关。`}</Tx>
         <Stmt id="L4.1">

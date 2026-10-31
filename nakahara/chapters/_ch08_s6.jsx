@@ -21,7 +21,7 @@ export function Sec86() {
 
       <Sub n="8.6.1" title="The adjoint operators" zh={R`伴随算子 $\partial^\dagger$ 与 $\bar\partial^\dagger$`}>
         <Tx>{R`设 $M$ 是 Hermite 流形，$\dim_\C M=m$。定义 $\alpha,\beta\in\Omega^{r,s}(M)$（$0\le r,s\le m$）之间的内积`}</Tx>
-        <Eq n="8.104" keyEq title={R`$(r,s)$ 形式的内积`} say={R`把第二个形式取共轭的 Hodge 对偶，与第一个楔起来积分——这是 $(r,s)$ 形式空间上的正定 Hermite 内积。`}>{R`(\alpha,\beta)\equiv\int_M\alpha\wedge\bar*\beta`}</Eq>
+        <Eq n="8.104" title={R`$(r,s)$ 形式的内积`} say={R`把第二个形式取共轭的 Hodge 对偶，与第一个楔起来积分——这是 $(r,s)$ 形式空间上的正定 Hermite 内积。`}>{R`(\alpha,\beta)\equiv\int_M\alpha\wedge\bar*\beta`}</Eq>
         <Tx>{R`其中 $\bar*:\Omega^{r,s}(M)\to\Omega^{m-r,m-s}(M)$ 是 **Hodge $*$**，定义为`}</Tx>
         <Eq n="8.105" say={R`共轭 Hodge 星：先作 Hodge 对偶再取共轭，等价于先取共轭再作 Hodge 对偶（$*$ 是实算子）。`}>{R`\bar*\beta\equiv\nosym{\overline{*\beta}}=*\overline\beta`}</Eq>
         <Tx>{R`其中 $*\beta$ 按 \eqref{7.173} 计算，并延拓到 $\Omega^{r+s}(M)^\C$ 上（$\C$ 线性）。［**注：**$*$ 把 $(r,s)$ 形式映为 $(m-s,m-r)$ 形式，因为它对 $\Omega^{r,s}(M)$ 的基的作用（相差无关紧要的因子）为
@@ -31,7 +31,7 @@ $$*\,\dd z^{\mu_1}\wedge\ldots\wedge\dd z^{\mu_r}\wedge\dd\bar z^{\nu_1}\wedge\l
 注意上面的 $\varepsilon$ 符号是 Hermite 流形中仅有的非零分量（Hermite 度规只把全纯指标降成反全纯指标，反之亦然）。由此 $\bar*:\Omega^{r,s}(M)\to\Omega^{m-r,m-s}(M)$。］于是 $\alpha\wedge\bar*\beta$ 是 $(m,m)$ 形式，可以积分；$(\alpha,\alpha)=\int\alpha\wedge*\overline\alpha\ge0$，等号仅当 $\alpha=0$（实形式时这就是 \eqref{7.180} 的正定性；复形式时把实部、虚部分开，交叉项相消）。
 
 用下式定义 $\partial$ 与 $\bar\partial$ 的**伴随算子** $\partial^\dagger$ 与 $\bar\partial^\dagger$：`}</Tx>
-        <Eq n="8.106" keyEq title="伴随算子" say={R`$\partial^\dagger$、$\bar\partial^\dagger$ 是 $\partial$、$\bar\partial$ 关于内积 \eqref{8.104} 的伴随：把算子从内积的一边挪到另一边。`}>{R`(\alpha,\partial\beta)=(\partial^\dagger\alpha,\beta)\qquad(\alpha,\bar\partial\beta)=(\bar\partial^\dagger\alpha,\beta).`}</Eq>
+        <Eq n="8.106" title="伴随算子" say={R`$\partial^\dagger$、$\bar\partial^\dagger$ 是 $\partial$、$\bar\partial$ 关于内积 \eqref{8.104} 的伴随：把算子从内积的一边挪到另一边。`}>{R`(\alpha,\partial\beta)=(\partial^\dagger\alpha,\beta)\qquad(\alpha,\bar\partial\beta)=(\bar\partial^\dagger\alpha,\beta).`}</Eq>
         <Tx>{R`算子 $\partial^\dagger$ 与 $\bar\partial^\dagger$ 改变双次：$\partial^\dagger:\Omega^{r,s}(M)\to\Omega^{r-1,s}(M)$，$\bar\partial^\dagger:\Omega^{r,s}(M)\to\Omega^{r,s-1}(M)$。显然 $\dd^\dagger=\partial^\dagger+\bar\partial^\dagger$。注意到复流形作为微分流形是偶数维的，有（见 \eqref{7.184a}）`}</Tx>
         <Eq n="8.107" say={R`偶数维 Riemann 流形上，余微分 = $-*\dd*$。`}>{R`\dd^\dagger=-*\,\dd\,*.`}</Eq>
         <Stmt id="P8.3">
@@ -42,7 +42,7 @@ $$*\,\dd z^{\mu_1}\wedge\ldots\wedge\dd z^{\mu_r}\wedge\dd\bar z^{\nu_1}\wedge\l
             { claim: R`最后 $0=(\partial\omega,\psi)+(\omega,*\bar\partial*\psi)$，即 $(\psi,\partial\omega)=(-*\bar\partial*\psi,\omega)$ 对一切 $\omega$ 成立，所以 $\partial^\dagger=-*\bar\partial*$。另一式 $\bar\partial^\dagger=-*\partial*$ 同理（或取复共轭）。` },
           ]} />
         </Stmt>
-        <Eq n="8.108" keyEq title={R`伴随算子的 Hodge 星表达`} say={R`$\partial$ 的伴随不是"$*\partial*$"而是"$*\bar\partial*$"：因为 $*$ 把全纯与反全纯次数对调。`}>{R`\partial^\dagger=-*\,\bar\partial\,*,\qquad\bar\partial^\dagger=-*\,\partial\,*.`}</Eq>
+        <Eq n="8.108" title={R`伴随算子的 Hodge 星表达`} say={R`$\partial$ 的伴随不是"$*\partial*$"而是"$*\bar\partial*$"：因为 $*$ 把全纯与反全纯次数对调。`}>{R`\partial^\dagger=-*\,\bar\partial\,*,\qquad\bar\partial^\dagger=-*\,\partial\,*.`}</Eq>
         <Eq n="8.109" say={R`证明的关键一步：$\omega\wedge\bar*\psi$ 的外微分等于两个内积的被积式之和，积分后由 Stokes 定理为零。`}>{R`\begin{aligned}\dd(\omega\wedge\bar*\psi)=\partial(\omega\wedge\bar*\psi)&=\partial\omega\wedge\bar*\psi+(-1)^{r+s-1}\omega\wedge\partial(\bar*\psi)\\&=\partial\omega\wedge\bar*\psi+(-1)^{r+s-1}\omega\wedge(-1)^{r+s+1}\bar*\bar*\partial(\bar*\psi)\\&=\partial\omega\wedge\bar*\psi+\omega\wedge\bar*\bar*\partial\bar*\psi\end{aligned}`}</Eq>
         <Tx>{R`作为 \sref{P8.3} 的推论，`}</Tx>
         <Eq n="8.110" say={R`伴随算子的平方也为零：$(\partial^\dagger)^2=*\bar\partial**\bar\partial*=\pm*\bar\partial^2*=0$。`}>{R`(\partial^\dagger)^2=(\bar\partial^\dagger)^2=0.`}</Eq>
@@ -51,7 +51,7 @@ $$*\,\dd z^{\mu_1}\wedge\ldots\wedge\dd z^{\mu_r}\wedge\dd\bar z^{\nu_1}\wedge\l
       <Sub n="8.6.2" title="Laplacians and the Hodge theorem" zh="Laplace 算子与 Hodge 定理">
         <Tx>{R`除了通常的 Laplace 算子 $\Delta=(\dd\dd^\dagger+\dd^\dagger\dd)$（\sref{D7.7}），在 Hermite 流形上定义另外两个 Laplace 算子 $\Delta_\partial$ 与 $\Delta_{\bar\partial}$：`}</Tx>
         <Eq n="8.111a" say={R`$\partial$ 版本的 Laplace 算子。`}>{R`\Delta_\partial\equiv(\partial+\partial^\dagger)^2=\partial\partial^\dagger+\partial^\dagger\partial`}</Eq>
-        <Eq n="8.111b" keyEq title={R`$\bar\partial$ Laplace 算子`} say={R`$\bar\partial$ 版本的 Laplace 算子：保持双次 $(r,s)$ 不变的非负自伴算子。`}>{R`\Delta_{\bar\partial}\equiv(\bar\partial+\bar\partial^\dagger)^2=\bar\partial\bar\partial^\dagger+\bar\partial^\dagger\bar\partial.`}</Eq>
+        <Eq n="8.111b" title={R`$\bar\partial$ Laplace 算子`} say={R`$\bar\partial$ 版本的 Laplace 算子：保持双次 $(r,s)$ 不变的非负自伴算子。`}>{R`\Delta_{\bar\partial}\equiv(\bar\partial+\bar\partial^\dagger)^2=\bar\partial\bar\partial^\dagger+\bar\partial^\dagger\bar\partial.`}</Eq>
         <Tx>{R`满足 $\Delta_\partial\omega=0$（$\Delta_{\bar\partial}\omega=0$）的 $(r,s)$ 形式称为 **$\partial$ 调和**（**$\bar\partial$ 调和**）的。若 $\Delta_\partial\omega=0$（$\Delta_{\bar\partial}\omega=0$），则 $\omega$ 满足 $\partial\omega=\partial^\dagger\omega=0$（$\bar\partial\omega=\bar\partial^\dagger\omega=0$）：因为 $(\omega,\Delta_{\bar\partial}\omega)=(\bar\partial\omega,\bar\partial\omega)+(\bar\partial^\dagger\omega,\bar\partial^\dagger\omega)$，两项都非负（与 \sref{T7.6} 同理）。
 
 我们有复版本的 Hodge 分解。设 $\mathrm{Harm}^{r,s}_{\bar\partial}(M)$ 是 $\bar\partial$ 调和 $(r,s)$ 形式的集合：`}</Tx>
@@ -88,7 +88,7 @@ $$*\,\dd z^{\mu_1}\wedge\ldots\wedge\dd z^{\mu_r}\wedge\dd\bar z^{\nu_1}\wedge\l
 
       <Sub n="8.6.4" title="The Hodge numbers of Kähler manifolds" zh="Kähler 流形的 Hodge 数">
         <Tx>{R`$H^{r,s}_{\bar\partial}(M)$ 的复维数称为 **Hodge 数** $b^{r,s}$。复流形的上同调群用 **Hodge 菱形**（Hodge diamond）概括：`}</Tx>
-        <Eq n="8.115" keyEq title="Hodge 菱形" say={R`把 $(m+1)^2$ 个 Hodge 数排成菱形：自下而上是总次数 $r+s=0,1,\ldots,2m$，每一横行之和（Kähler 时）就是对应的 Betti 数。`}>{R`\left(\begin{matrix}&&&b^{m,m}&&&\\&&b^{m,m-1}&&b^{m-1,m}&&\\&&&\cdots&&&\\b^{m,0}&b^{m-1,1}&&\cdots&&b^{1,m-1}&b^{0,m}\\&&&\cdots&&&\\&&b^{1,0}&&b^{0,1}&&\\&&&b^{0,0}&&&\end{matrix}\right).`}</Eq>
+        <Eq n="8.115" title="Hodge 菱形" say={R`把 $(m+1)^2$ 个 Hodge 数排成菱形：自下而上是总次数 $r+s=0,1,\ldots,2m$，每一横行之和（Kähler 时）就是对应的 Betti 数。`}>{R`\left(\begin{matrix}&&&b^{m,m}&&&\\&&b^{m,m-1}&&b^{m-1,m}&&\\&&&\cdots&&&\\b^{m,0}&b^{m-1,1}&&\cdots&&b^{1,m-1}&b^{0,m}\\&&&\cdots&&&\\&&b^{1,0}&&b^{0,1}&&\\&&&b^{0,0}&&&\end{matrix}\right).`}</Eq>
         <Tx>{R`这 $(m+1)^2$ 个 Hodge 数远非独立，下面将会看到。`}</Tx>
         <Stmt id="T8.10">
           <Proof steps={[
@@ -99,7 +99,7 @@ $$*\,\dd z^{\mu_1}\wedge\ldots\wedge\dd z^{\mu_r}\wedge\dd\bar z^{\nu_1}\wedge\l
           ]} />
         </Stmt>
         <Eq n="8.116" keyEq title="Hodge 对称性" say={R`复共轭对称：把菱形左右翻转不变。`}>{R`b^{r,s}=b^{s,r}`}</Eq>
-        <Eq n="8.117" keyEq title="Serre 对偶" say={R`对偶对称：把菱形上下翻转（中心反演）不变。`}>{R`b^{r,s}=b^{m-r,m-s}.`}</Eq>
+        <Eq n="8.117" title="Serre 对偶" say={R`对偶对称：把菱形上下翻转（中心反演）不变。`}>{R`b^{r,s}=b^{m-r,m-s}.`}</Eq>
         <Tx>{R`于是 Kähler 流形的 Hodge 菱形关于竖直线与水平线对称。这些对称性把独立 Hodge 数的个数减少到：$m$ 为偶数时 $(\frac12m+1)^2$，$m$ 为奇数时 $\frac14(m+1)(m+3)$。`}</Tx>
         <Derivation title="独立 Hodge 数的计数（Burnside 引理）" collapsed steps={[
           { tex: R`G=\{1,\ \sigma:(r,s)\mapsto(s,r),\ \iota:(r,s)\mapsto(m-r,m-s),\ \sigma\iota\}`, why: R`两个对称生成 Klein 四元群，作用在 $(m+1)^2$ 个格点 $(r,s)$ 上；独立 Hodge 数的个数 = 轨道数。` },

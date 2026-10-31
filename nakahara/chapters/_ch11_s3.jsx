@@ -29,7 +29,7 @@ $$\frac{\mathrm{i}\mathcal{F}}{2\pi}\to g^{-1}\Big(\frac{\mathrm{i}\mathcal{F}}{
         <Tx>{R`于是每个陈特征都可以用陈类表示：`}</Tx>
         <Eq n="11.51a" say={R`零阶陈特征就是纤维维数。`}>{R`\mathrm{ch}_0(\mathcal{F})=k`}</Eq>
         <Eq n="11.51b" say={R`一阶陈特征等于第一陈类。`}>{R`\mathrm{ch}_1(\mathcal{F})=c_1(\mathcal{F})`}</Eq>
-        <Eq n="11.51c" keyEq title={R`$\mathrm{ch}_2$ 与陈类`} say={R`二阶陈特征：$\frac12\sum x_j^2=\frac12[(\sum x_j)^2-2\sum_{i<j}x_ix_j]$。对 $\mathrm{SU}(n)$ 丛（$c_1=0$）它就是 $-c_2$。`}>{R`\mathrm{ch}_2(\mathcal{F})=\tfrac12[c_1(\mathcal{F})^2-2c_2(\mathcal{F})]`}</Eq>
+        <Eq n="11.51c" title={R`$\mathrm{ch}_2$ 与陈类`} say={R`二阶陈特征：$\frac12\sum x_j^2=\frac12[(\sum x_j)^2-2\sum_{i<j}x_ix_j]$。对 $\mathrm{SU}(n)$ 丛（$c_1=0$）它就是 $-c_2$。`}>{R`\mathrm{ch}_2(\mathcal{F})=\tfrac12[c_1(\mathcal{F})^2-2c_2(\mathcal{F})]`}</Eq>
         <Tx>{R`其中 $k$ 是丛的纤维维数。继续展开可得 $\mathrm{ch}_3=\frac16(c_1^3-3c_1c_2+3c_3)$、$\mathrm{ch}_4=\frac1{24}(c_1^4-4c_1^2c_2+4c_1c_3+2c_2^2-4c_4)$——交互图 2 用 Newton 恒等式符号地算出它们。`}</Tx>
 
         <Box kind="example" n="11.2" title="单极子与瞬子的拓扑荷">
@@ -69,7 +69,7 @@ $$\begin{aligned}\frac1{m!}\Tr\Big(\frac{\mathrm{i}\mathcal{F}}{2\pi}\Big)^m&=\f
           <Tx>{R`由 $\mathrm{ch}(\mathcal{F})=1+\Tr(\mathrm{i}\mathcal{F}/2\pi)$ 得`}</Tx>
           <Eq n="11.59" say={R`第一陈特征是一个处处为负的面积形式。`}>{R`\mathrm{ch}_1(\mathcal{F})=-\frac1\pi\frac{r\,\dd r\wedge\dd\theta}{(1+r^2)^2}.`}</Eq>
           <Tx>{R`$\mathrm{Ch}_1(L)$，即 $\mathrm{ch}_1(\mathcal{F})$ 在 $S^2$ 上的积分，是一个整数：`}</Tx>
-          <Eq n="11.60" keyEq title={R`典范线丛 $\mathrm{Ch}_1=-1$`} say={R`对整个复平面积分（加上无穷远一点就是整个球面），得到 $-1$：典范线丛是"最基本的扭曲线丛"。`}>{R`\mathrm{Ch}_1(L)=-\frac1\pi\int\frac{r\,\dd r\,\dd\theta}{(1+r^2)^2}=-\int_1^\infty t^{-2}\,\dd t=-1.`}</Eq>
+          <Eq n="11.60" title={R`典范线丛 $\mathrm{Ch}_1=-1$`} say={R`对整个复平面积分（加上无穷远一点就是整个球面），得到 $-1$：典范线丛是"最基本的扭曲线丛"。`}>{R`\mathrm{Ch}_1(L)=-\frac1\pi\int\frac{r\,\dd r\,\dd\theta}{(1+r^2)^2}=-\int_1^\infty t^{-2}\,\dd t=-1.`}</Eq>
           <Derivation title="例 11.4 的计算细节（补充）" collapsed steps={[
             { tex: R`\bar\partial\ln(1+z\bar z)=\frac{z\,\dd\bar z}{1+z\bar z},\qquad\partial\Big(\frac{z\,\dd\bar z}{1+z\bar z}\Big)=\Big[\frac1{1+z\bar z}-\frac{z\bar z}{(1+z\bar z)^2}\Big]\dd z\wedge\dd\bar z=\frac{\dd z\wedge\dd\bar z}{(1+z\bar z)^2}`, why: R`所以 $\mathcal{F}=-\partial\bar\partial\ln(1+|z|^2)=-\dd z\wedge\dd\bar z/(1+|z|^2)^2$，即 \eqref{11.57}。` },
             { tex: R`\dd z\wedge\dd\bar z=(\dd x+\mathrm{i}\dd y)\wedge(\dd x-\mathrm{i}\dd y)=-2\mathrm{i}\,\dd x\wedge\dd y,\qquad\dd x\wedge\dd y=r\,\dd r\wedge\dd\theta`, why: R`得 \eqref{11.58}。` },
@@ -83,8 +83,8 @@ $$\begin{aligned}\frac1{m!}\Tr\Big(\frac{\mathrm{i}\mathcal{F}}{2\pi}\Big)^m&=\f
       <Sub n="11.3.2" title="Properties of the Chern characters" zh="陈特征的性质">
         <Stmt id="T11.5" />
         <Eq n="11.61" say={R`陈特征与拉回交换。`}>{R`\mathrm{ch}(f^*E)=f^*\mathrm{ch}(E).`}</Eq>
-        <Eq n="11.62a" keyEq title="张量积可乘" say={R`张量积丛的陈特征是两个陈特征之积：指数把"曲率相加"变成"指数相乘"。`}>{R`\mathrm{ch}(E\otimes F)=\mathrm{ch}(E)\wedge\mathrm{ch}(F)`}</Eq>
-        <Eq n="11.62b" keyEq title="直和可加" say={R`直和丛的陈特征是两个陈特征之和：迹对分块对角矩阵相加。`}>{R`\mathrm{ch}(E\oplus F)=\mathrm{ch}(E)+\mathrm{ch}(F).`}</Eq>
+        <Eq n="11.62a" title="张量积可乘" say={R`张量积丛的陈特征是两个陈特征之积：指数把"曲率相加"变成"指数相乘"。`}>{R`\mathrm{ch}(E\otimes F)=\mathrm{ch}(E)\wedge\mathrm{ch}(F)`}</Eq>
+        <Eq n="11.62b" title="直和可加" say={R`直和丛的陈特征是两个陈特征之和：迹对分块对角矩阵相加。`}>{R`\mathrm{ch}(E\oplus F)=\mathrm{ch}(E)+\mathrm{ch}(F).`}</Eq>
         <Tx>{R`（原书把 \eqref{11.62b} 右边写作 $\mathrm{ch}(E)\oplus\mathrm{ch}(F)$，意为 $H^*(M)$ 中的和。）
 
 **证明。**(a) 由\sref{T11.2}(b) 得到（原书误写为 11.2(a)）。(b) 这些结果直接来自 ch 多项式的定义。设
@@ -113,7 +113,7 @@ $$\mathrm{ch}(B\oplus C)=\sum\frac1{j!}\Big(\frac{\mathrm{i}}{2\pi}\Big)^j\Tr(B\
 
       <Sub n="11.3.3" title="Todd classes" zh="Todd 类">
         <Tx>{R`与复向量丛相关的另一个有用的示性类是 **Todd 类**，定义为`}</Tx>
-        <Eq n="11.65" keyEq title="Todd 类" say={R`Todd 类：对每个陈根取 $x/(1-\mathrm{e}^{-x})$ 再连乘；它是乘性的，出现在 Riemann–Roch–Hirzebruch 定理与 Dolbeault 指标定理中。`}>{R`\mathrm{Td}(\mathcal{F})=\prod_j\frac{x_j}{1-\mathrm{e}^{-x_j}}`}</Eq>
+        <Eq n="11.65" title="Todd 类" say={R`Todd 类：对每个陈根取 $x/(1-\mathrm{e}^{-x})$ 再连乘；它是乘性的，出现在 Riemann–Roch–Hirzebruch 定理与 Dolbeault 指标定理中。`}>{R`\mathrm{Td}(\mathcal{F})=\prod_j\frac{x_j}{1-\mathrm{e}^{-x_j}}`}</Eq>
         <Tx>{R`这里默认使用分裂原理。按 $x_j$ 的幂展开，$\mathrm{Td}(\mathcal{F})$ 成为`}</Tx>
         <Eq n="11.66" say={R`把每个因子按 Bernoulli 数展开，再连乘并用陈类改写：一阶是 $\frac12c_1$，二阶是 $\frac1{12}(c_1^2+c_2)$。`}>{R`\begin{aligned}\mathrm{Td}(\mathcal{F})&=\prod_j\Big(1+\frac12x_j+\sum_{k\ge1}(-1)^{k-1}\frac{B_k}{(2k)!}x_j^{2k}\Big)\\&=1+\frac12\sum_jx_j+\frac1{12}\sum_jx_j^2+\frac14\sum_{j<k}x_jx_k+\cdots\\&=1+\frac12c_1(\mathcal{F})+\frac1{12}[c_1(\mathcal{F})^2+c_2(\mathcal{F})]+\cdots\end{aligned}`}</Eq>
         <Tx>{R`其中 $B_k$ 是 **Bernoulli 数**
@@ -125,7 +125,7 @@ $$B_1=\frac16\qquad B_2=\frac1{30}\qquad B_3=\frac1{42}\qquad B_4=\frac1{30}\qqu
         <Eq n="11.67b" say={R`一阶 Todd 类是第一陈类的一半。`}>{R`\mathrm{Td}_1(\mathcal{F})=\tfrac12c_1`}</Eq>
         <Eq n="11.67c" say={R`二阶 Todd 类：复曲面上 $\int\mathrm{Td}_2=\frac1{12}\int(c_1^2+c_2)$ 是 Noether 公式中的全纯 Euler 示性数。`}>{R`\mathrm{Td}_2(\mathcal{F})=\tfrac1{12}(c_1^2+c_2)`}</Eq>
         <Eq n="11.67d" say={R`三阶 Todd 类只有一项。`}>{R`\mathrm{Td}_3(\mathcal{F})=\tfrac1{24}c_1c_2`}</Eq>
-        <Eq n="11.67e" keyEq title={R`$\mathrm{Td}_4$`} say={R`四阶 Todd 类：五个单项式，公分母 720。交互图 2 由分裂原理符号地复现了它。`}>{R`\mathrm{Td}_4(\mathcal{F})=\tfrac1{720}(-c_1^4+4c_1^2c_2+3c_2^2+c_1c_3-c_4)`}</Eq>
+        <Eq n="11.67e" title={R`$\mathrm{Td}_4$`} say={R`四阶 Todd 类：五个单项式，公分母 720。交互图 2 由分裂原理符号地复现了它。`}>{R`\mathrm{Td}_4(\mathcal{F})=\tfrac1{720}(-c_1^4+4c_1^2c_2+3c_2^2+c_1c_3-c_4)`}</Eq>
         <Eq n="11.67f" say={R`五阶 Todd 类：四个单项式，公分母 1440。`}>{R`\mathrm{Td}_5(\mathcal{F})=\tfrac1{1440}(-c_1^3c_2+3c_1c_2^2+c_1^2c_3-c_1c_4)`}</Eq>
         <Tx>{R`其中 $c_i$ 代表 $c_i(\mathcal{F})$。`}</Tx>
         <SplitLab />

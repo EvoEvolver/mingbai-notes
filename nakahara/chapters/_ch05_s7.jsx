@@ -15,7 +15,7 @@ export function Sec57() {
       <Sub n="5.7.1" title="Definitions" zh="定义">
         <Stmt id="D5.14">
           <Eq n="5.141a" say="单位元什么也不做。">{R`\text{(i)}\qquad\sigma(e,p)=p\qquad\text{对任意 }p\in M`}</Eq>
-          <Eq n="5.141b" keyEq title="群作用的复合律" say={R`先用 $g_2$ 变换再用 $g_1$ 变换，等于用乘积 $g_1g_2$ 一次变换：群的乘法表被忠实地复制成变换的复合。`}>{R`\text{(ii)}\qquad\sigma(g_1,\sigma(g_2,p))=\sigma(g_1g_2,p).`}</Eq>
+          <Eq n="5.141b" title="群作用的复合律" say={R`先用 $g_2$ 变换再用 $g_1$ 变换，等于用乘积 $g_1g_2$ 一次变换：群的乘法表被忠实地复制成变换的复合。`}>{R`\text{(ii)}\qquad\sigma(g_1,\sigma(g_2,p))=\sigma(g_1g_2,p).`}</Eq>
         </Stmt>
         <Tx>{R`［注：我们常用记号 $gp$ 代替 $\sigma(g,p)$。用这个记号，第二个条件是 $g_1(g_2p)=(g_1g_2)p$。］`}</Tx>
         <Box kind="example" n="5.16" title={R`流、矩阵群与 $\mathrm{SL}(2,\C)$ 的作用`}>
@@ -26,7 +26,7 @@ export function Sec57() {
           <Tx>{R`$\mathrm{GL}(n,\R)$ 的子群的作用类似地定义。它们也可以作用在较小的空间上。例如 $\mathrm{O}(n)$ 作用在半径为 $r$ 的 $(n-1)$ 维球面 $S^{n-1}(r)$ 上（正交矩阵保持长度）：`}</Tx>
           <Eq n="5.143" say={R`正交群把球面映到自身，所以可以只看它在球面上的作用。`}>{R`\sigma:\mathrm{O}(n)\times S^{n-1}(r)\to S^{n-1}(r).`}</Eq>
           <Tx>{R`**(c)** 已知 $\mathrm{SL}(2,\C)$ 以一种特殊方式作用在四维 Minkowski 空间 $M_4$ 上。对 $x=(x^0,x^1,x^2,x^3)\in M_4$，定义 Hermite 矩阵`}</Tx>
-          <Eq n="5.144" keyEq title="时空点 ↔ Hermite 矩阵" say={R`把一个四维时空点编码成一个 $2\times2$ Hermite 矩阵：单位阵配时间分量，三个 Pauli 矩阵配三个空间分量。`}>{R`X(x)\equiv x^\mu\sigma_\mu=\begin{pmatrix}x^0+x^3&x^1-\mathrm{i}x^2\\ x^1+\mathrm{i}x^2&x^0-x^3\end{pmatrix}`}</Eq>
+          <Eq n="5.144" title="时空点 ↔ Hermite 矩阵" say={R`把一个四维时空点编码成一个 $2\times2$ Hermite 矩阵：单位阵配时间分量，三个 Pauli 矩阵配三个空间分量。`}>{R`X(x)\equiv x^\mu\sigma_\mu=\begin{pmatrix}x^0+x^3&x^1-\mathrm{i}x^2\\ x^1+\mathrm{i}x^2&x^0-x^3\end{pmatrix}`}</Eq>
           <Tx>{R`其中 $\sigma_\mu=(I_2,\sigma_1,\sigma_2,\sigma_3)$，$\sigma_i$（$i=1,2,3$）是 Pauli 矩阵。反过来，给定 Hermite 矩阵 $X$，由
 
 $$x^\mu=\tfrac12\Tr(\sigma_\mu X)$$
@@ -38,7 +38,7 @@ $$\det X(x)=(x^0)^2-(x^1)^2-(x^2)^2-(x^3)^2=-x^{\mathrm t}\eta x=-(\text{Minkows
 于是 $x$ 为类时向量时 $\det X(x)>0$，在光锥上时 $\det X(x)=0$，为类空向量时 $\det X(x)<0$。
 
 取 $A\in\mathrm{SL}(2,\C)$，定义 $\mathrm{SL}(2,\C)$ 在 $M_4$ 上的作用为`}</Tx>
-          <Eq n="5.145" keyEq title={R`$\mathrm{SL}(2,\C)$ 在时空上的作用`} say={R`用一个行列式为 1 的复矩阵两边夹住：Hermite 性与行列式都保持，所以时空间隔不变——这就是 Lorentz 变换的"旋量版本"。`}>{R`\sigma(A,x)\equiv AX(x)A^\dagger.`}</Eq>
+          <Eq n="5.145" title={R`$\mathrm{SL}(2,\C)$ 在时空上的作用`} say={R`用一个行列式为 1 的复矩阵两边夹住：Hermite 性与行列式都保持，所以时空间隔不变——这就是 Lorentz 变换的"旋量版本"。`}>{R`\sigma(A,x)\equiv AX(x)A^\dagger.`}</Eq>
           <Tx>{R`读者应验证这个作用确实满足\sref{D5.14} 的公理：$AXA^\dagger$ 仍是 Hermite 的；$\sigma(I_2,x)=X$；$\sigma(A,\sigma(B,x))=A(BXB^\dagger)A^\dagger=(AB)X(AB)^\dagger=\sigma(AB,x)$。
 
 $\mathrm{SL}(2,\C)$ 在 $M_4$ 上的作用表示 Lorentz 变换 $\mathrm{O}(1,3)$。首先注意这个作用保持 Minkowski 范数：
@@ -46,9 +46,9 @@ $\mathrm{SL}(2,\C)$ 在 $M_4$ 上的作用表示 Lorentz 变换 $\mathrm{O}(1,3)
 $$\det\sigma(A,x)=\det[AX(x)A^\dagger]=\det X(x),$$
 
 因为 $\det A=\det A^\dagger=1$。而且由于 $A(BXB^\dagger)A^\dagger=(AB)X(AB)^\dagger$，存在同态 $\varphi:\mathrm{SL}(2,\C)\to\mathrm{O}(1,3)$（$\sigma(A,\cdot)$ 是 $M_4$ 上保持范数的线性映射，即 Lorentz 变换 $\varphi(A)$）。但这个同态不可能是一对一的，因为 $A\in\mathrm{SL}(2,\C)$ 与 $-A$ 给出 $\mathrm{O}(1,3)$ 的同一个元素（见 \eqref{5.145}）。我们（在习题 5.24 中）验证，下面的矩阵是绕单位向量 $\hat{\boldsymbol n}$ 转角度 $\theta$ 的转动的显式形式：`}</Tx>
-          <Eq n="5.146a" keyEq title="旋量转动" say={R`绕 $\hat{\boldsymbol n}$ 转 $\theta$ 的 $\mathrm{SL}(2,\C)$ 矩阵带的是半角 $\theta/2$：转一整圈 $2\pi$ 时它变号——这就是旋量。`}>{R`A=\exp\left[-\mathrm{i}\frac\theta2(\hat{\boldsymbol n}\cdot\boldsymbol{\sigma})\right]=\cos\frac\theta2I_2-\mathrm{i}(\hat{\boldsymbol n}\cdot\boldsymbol{\sigma})\sin\frac\theta2.`}</Eq>
+          <Eq n="5.146a" title="旋量转动" say={R`绕 $\hat{\boldsymbol n}$ 转 $\theta$ 的 $\mathrm{SL}(2,\C)$ 矩阵带的是半角 $\theta/2$：转一整圈 $2\pi$ 时它变号——这就是旋量。`}>{R`A=\exp\left[-\mathrm{i}\frac\theta2(\hat{\boldsymbol n}\cdot\boldsymbol{\sigma})\right]=\cos\frac\theta2I_2-\mathrm{i}(\hat{\boldsymbol n}\cdot\boldsymbol{\sigma})\sin\frac\theta2.`}</Eq>
           <Tx>{R`（第二个等号用了 $(\hat{\boldsymbol n}\cdot\boldsymbol\sigma)^2=I_2$，把指数级数分成偶次项与奇次项。）$\theta/2$ 的出现保证了 $\mathrm{SL}(2,\C)$ 与 $\mathrm{O}(1,3)$ 的 $\mathrm{O}(3)$ 子群之间的同态确实是二对一的。事实上，绕 $\hat{\boldsymbol n}$ 转 $\theta$ 与转 $2\pi+\theta$ 应该是同一个 $\mathrm{O}(3)$ 转动，但在 $\mathrm{SL}(2,\C)$ 中 $A(2\pi+\theta)=-A(\theta)$。这导致了旋量的存在。［见 Misner 等 (1973) 与 Wald (1984)。］沿方向 $\hat{\boldsymbol n}$、速度为 $v=\tanh\alpha$ 的 boost 为`}</Tx>
-          <Eq n="5.146b" keyEq title="旋量 boost" say={R`沿 $\hat{\boldsymbol n}$ 的 boost：指数里没有 $\mathrm{i}$，矩阵是 Hermite 正定的，同样带半个快度 $\alpha/2$。`}>{R`A=\exp\left[\frac\alpha2(\hat{\boldsymbol n}\cdot\boldsymbol{\sigma})\right]=\cosh\frac\alpha2I_2+(\hat{\boldsymbol n}\cdot\boldsymbol{\sigma})\sinh\frac\alpha2.`}</Eq>
+          <Eq n="5.146b" title="旋量 boost" say={R`沿 $\hat{\boldsymbol n}$ 的 boost：指数里没有 $\mathrm{i}$，矩阵是 Hermite 正定的，同样带半个快度 $\alpha/2$。`}>{R`A=\exp\left[\frac\alpha2(\hat{\boldsymbol n}\cdot\boldsymbol{\sigma})\right]=\cosh\frac\alpha2I_2+(\hat{\boldsymbol n}\cdot\boldsymbol{\sigma})\sinh\frac\alpha2.`}</Eq>
           <Tx>{R`**满射到 $\mathrm{O}^\uparrow_+(1,3)$。**我们证明 $\varphi$ 把 $\mathrm{SL}(2,\C)$ 映到**正时向**（proper orthochronous）Lorentz 群 $\mathrm{O}^\uparrow_+(1,3)=\{\Lambda\in\mathrm{O}(1,3)\mid\det\Lambda=+1,\ \Lambda_{00}>0\}$ 上。取任意
 
 $$A=\begin{pmatrix}a&b\\ c&d\end{pmatrix}\in\mathrm{SL}(2,\C),$$
@@ -108,13 +108,13 @@ $$x'^0=x^0\cosh\alpha+x^3\sinh\alpha,\qquad x'^3=x^0\sinh\alpha+x^3\cosh\alpha.$
 
       <Sub n="5.7.2" title="Orbits and isotropy groups" zh="轨道与迷向群">
         <Tx>{R`给定点 $p\in M$，$G$ 的作用把 $p$ 带到 $M$ 中的各个点。$p$ 在作用 $\sigma$ 下的**轨道**（orbit）是 $M$ 的子集`}</Tx>
-        <Eq n="5.148" keyEq title="轨道" say={R`轨道：从 $p$ 出发，用群里所有元素去作用，能到达的点的全体。`}>{R`Gp=\{\sigma(g,p)\mid g\in G\}.`}</Eq>
+        <Eq n="5.148" title="轨道" say={R`轨道：从 $p$ 出发，用群里所有元素去作用，能到达的点的全体。`}>{R`Gp=\{\sigma(g,p)\mid g\in G\}.`}</Eq>
         <Tx>{R`若 $G$ 在 $M$ 上的作用可迁，任何 $p\in M$ 的轨道都是 $M$ 本身。显然 $G$ 在任何轨道 $Gp$ 上的作用都是可迁的。`}</Tx>
         <Box kind="example" n="5.17" title="转动流与正交群的轨道">{R`**(a)** 向量场 $X=-y\partial/\partial x+x\partial/\partial y$ 生成的流 $\sigma$ 以 $2\pi$ 为周期，见例 5.9。由 $(t,(x,y))\mapsto\sigma(t,(x,y))$ 定义的作用 $\sigma:\R\times\R^2\to\R^2$ 不是有效的，因为对所有 $(x,y)\in\R^2$ 有 $\sigma(2\pi n,(x,y))=(x,y)$。同理这个流也不是自由的。过 $(x,y)\neq(0,0)$ 的轨道是以原点为圆心的圆 $S^1$。（若改看 $\mathrm{SO}(2)=\R/2\pi\Z$ 的作用，它就是有效的；但仍不自由，因为原点被所有元素固定。）
 
 **(b)** $\mathrm{O}(n)$ 在 $\R^n$ 上的作用不可迁，因为若 $|x|\neq|x'|$，$\mathrm{O}(n)$ 中没有元素把 $x$ 带到 $x'$。但 $\mathrm{O}(n)$ 在 $S^{n-1}$ 上的作用显然可迁。过 $x$ 的轨道是半径 $|x|$ 的球面 $S^{n-1}$。因此给定作用 $\sigma:\mathrm{O}(n)\times\R^n\to\R^n$，轨道把 $\R^n$ 分成互不相交的、半径不同的球面。引入关系：$x\sim y$ 当且仅当对某个 $g\in G$ 有 $y=\sigma(g,x)$。容易验证 $\sim$ 是等价关系，等价类 $[x]$ 就是过 $x$ 的轨道。陪集空间 $\R^n/\mathrm{O}(n)$ 是 $[0,\infty)$，因为每个等价类由半径参数化。`}</Box>
         <Stmt id="D5.16">
-          <Eq n="5.149" keyEq title="迷向群" say={R`迷向群：群中把点 $p$ 留在原地不动的那些元素。`}>{R`H(p)=\{g\in G\mid\sigma(g,p)=p\}.`}</Eq>
+          <Eq n="5.149" title="迷向群" say={R`迷向群：群中把点 $p$ 留在原地不动的那些元素。`}>{R`H(p)=\{g\in G\mid\sigma(g,p)=p\}.`}</Eq>
         </Stmt>
         <Tx>{R`容易看出 $H(p)$ 确实是子群。设 $g_1,g_2\in H(p)$，则 $g_1g_2\in H(p)$，因为 $\sigma(g_1g_2,p)=\sigma(g_1,\sigma(g_2,p))=\sigma(g_1,p)=p$。由定义 $\sigma(e,p)=p$，显然 $e\in H(p)$。若 $g\in H(p)$，则 $g^{-1}\in H(p)$，因为 $p=\sigma(e,p)=\sigma(g^{-1}g,p)=\sigma(g^{-1},\sigma(g,p))=\sigma(g^{-1},p)$。`}</Tx>
         <Exercise n="5.26" title="自由作用的迷向群" level="★"
@@ -163,7 +163,7 @@ $$P_A=\mathrm{diag}(\underbrace{1,1,\ldots,1}_{k},\underbrace{0,\ldots,0}_{n-k})
 取由标准基 $\{f_1,\ldots,f_k\}$ 张成的特殊平面 $C_0$。迷向群 $H(C_0)$ 的元素具有形式`}</Tx>
           <Eq n="5.156" say={R`保持一个 $k$ 维平面的正交变换：在平面内任意转动，在正交补中也任意转动，两块之间不混合。`}>{R`\mathcal{M}=\begin{pmatrix}g_1&0\\ 0&g_2\end{pmatrix}\qquad(g_1:\ k\times k,\quad g_2:\ (n-k)\times(n-k))`}</Eq>
           <Tx>{R`其中 $g_1\in\mathrm{O}(k)$。（右上块为零是因为 $C_0$ 被映到自身；左下块为零则由正交性推出。）由于 $\mathcal{M}\in\mathrm{O}(n)$，$(n-k)\times(n-k)$ 矩阵 $g_2$ 必是 $\mathrm{O}(n-k)$ 的元素。于是迷向群同构于 $\mathrm{O}(k)\times\mathrm{O}(n-k)$。最终我们验证了`}</Tx>
-          <Eq n="5.157" keyEq title="Grassmann 流形是齐性空间" say={R`$k$ 维平面的空间 = 全体转动模去"保持一个 $k$ 维平面"的转动。`}>{R`G_{k,n}(\R)\cong\mathrm{O}(n)/[\mathrm{O}(k)\times\mathrm{O}(n-k)].`}</Eq>
+          <Eq n="5.157" title="Grassmann 流形是齐性空间" say={R`$k$ 维平面的空间 = 全体转动模去"保持一个 $k$ 维平面"的转动。`}>{R`G_{k,n}(\R)\cong\mathrm{O}(n)/[\mathrm{O}(k)\times\mathrm{O}(n-k)].`}</Eq>
           <Tx>{R`$G_{k,n}(\R)$ 的维数由一般公式求得：`}</Tx>
           <Eq n="5.158" say={R`用"群的维数减迷向群的维数"重新算出 $k(n-k)$，与 \eqref{5.14} 一致。`}>{R`\begin{aligned}\dim G_{k,n}(\R)&=\dim\mathrm{O}(n)-\dim[\mathrm{O}(k)\times\mathrm{O}(n-k)]\\&=\tfrac12n(n-1)-\left[\tfrac12k(k-1)+\tfrac12(n-k)(n-k-1)\right]\\&=k(n-k)\end{aligned}`}</Eq>
           <Tx>{R`与例 5.5 的结果一致。\eqref{5.157} 还说明 Grassmann 流形是紧致的（紧群 $\mathrm{O}(n)$ 的连续像）。`}</Tx>
@@ -175,7 +175,7 @@ $$P_A=\mathrm{diag}(\underbrace{1,1,\ldots,1}_{k},\underbrace{0,\ldots,0}_{n-k})
         <Tx>{R`设李群 $G$ 以 $(g,x)\mapsto gx$ 作用在 $M$ 上。由 $V\in T_eG$ 生成的左不变向量场 $X_V$ 自然地在 $M$ 上诱导一个向量场。在 $M$ 中定义流`}</Tx>
         <Eq n="5.159" say={R`用单参数子群 $\exp(tV)$ 去作用 $M$ 中的点，得到 $M$ 上的一个流。`}>{R`\sigma(t,x)=\exp(tV)x,`}</Eq>
         <Tx>{R`$\sigma(t,x)$ 是单参数变换群（由 \eqref{5.128} 与 \eqref{5.141b}：$\exp(tV)\exp(sV)x=\exp((t+s)V)x$），并定义称为**诱导向量场**（induced vector field）的向量场，记作 $V^\sharp$：`}</Tx>
-        <Eq n="5.160" keyEq title="诱导向量场" say={R`李代数元素 $V$ 在 $M$ 上诱导的向量场：沿 $\exp(tV)$ 的作用移动时，点在 $t=0$ 的速度。`}>{R`V^\sharp|_x=\left.\frac{\dd}{\dd t}\exp(tV)x\right|_{t=0}.`}</Eq>
+        <Eq n="5.160" title="诱导向量场" say={R`李代数元素 $V$ 在 $M$ 上诱导的向量场：沿 $\exp(tV)$ 的作用移动时，点在 $t=0$ 的速度。`}>{R`V^\sharp|_x=\left.\frac{\dd}{\dd t}\exp(tV)x\right|_{t=0}.`}</Eq>
         <Tx>{R`于是我们得到一个映射 $\sharp:T_eG\to\mathcal{X}(M)$，$V\mapsto V^\sharp$。`}</Tx>
         <Exercise n="5.27" title={R`$\mathrm{SO}(2)$ 在 $\R^2$ 上的诱导向量场`} level="★"
           hint={R`$V^2=-I_2$，把指数级数分成偶次项与奇次项。`}
@@ -203,7 +203,7 @@ $$X_x^\sharp=-z\frac{\partial}{\partial y}+y\frac{\partial}{\partial z},\qquad X
       <Sub n="5.7.4" title="The adjoint representation" zh="伴随表示">
         <Tx>{R`李群 $G$ 以一种特殊方式作用在 $G$ 自身上。`}</Tx>
         <Stmt id="D5.17">
-          <Eq n="5.161" keyEq title="共轭作用" say={R`用 $a$ 共轭：$g\mapsto aga^{-1}$。它保持群的乘法，并把单位元留在原地。`}>{R`\mathrm{ad}_a:g\mapsto aga^{-1}.`}</Eq>
+          <Eq n="5.161" title="共轭作用" say={R`用 $a$ 共轭：$g\mapsto aga^{-1}$。它保持群的乘法，并把单位元留在原地。`}>{R`\mathrm{ad}_a:g\mapsto aga^{-1}.`}</Eq>
         </Stmt>
         <Exercise n="5.28" title={R`$\mathrm{ad}_a$ 是同态，也是 $G$ 在自身上的作用`} level="★"
           hint={R`在 $gh$ 中间插入 $a^{-1}a$。`}

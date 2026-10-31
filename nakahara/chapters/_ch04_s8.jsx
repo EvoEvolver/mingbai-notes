@@ -49,7 +49,7 @@ $$\phi(\boldsymbol{x})\sim(\text{产生算符})+(\text{湮灭算符}),$$
         <Tx>{R`下不变。然而序参量的变换是`}</Tx>
         <Eq n="4.62" say="序参量本身随相位变换而改变——基态选定了一个相位，破缺了哈密顿量的 U(1) 对称性。">{R`\Psi(\boldsymbol{x})\to e^{i\chi}\Psi(\boldsymbol{x})`}</Eq>
         <Tx>{R`因而不遵守哈密顿量的对称性。（原书右边误印为 $\Phi(\boldsymbol{x})$。）描述 $^4$He 的唯象自由能由两部分组成。主要部分是**凝聚能**（condensation energy）`}</Tx>
-        <Eq n="4.63a" keyEq title="凝聚能（Landau 型）" say={R`$\sym{alphaGL}{\alpha}$ 在临界温度变号：高于 $T_{\rm c}$ 时极小在 $\Psi=0$，低于 $T_{\rm c}$ 时极小在一个圆周 $|\Psi|=\Delta_0$ 上——序参量空间就是这个圆周。`}>{R`\mathcal{F}_0\equiv\frac{\sym{alphaGL}{\alpha}}{2!}|\Psi(\boldsymbol{x})|^2+\frac{\sym{betaGL}{\beta}}{4!}|\Psi(\boldsymbol{x})|^4`}</Eq>
+        <Eq n="4.63a" title="凝聚能（Landau 型）" say={R`$\sym{alphaGL}{\alpha}$ 在临界温度变号：高于 $T_{\rm c}$ 时极小在 $\Psi=0$，低于 $T_{\rm c}$ 时极小在一个圆周 $|\Psi|=\Delta_0$ 上——序参量空间就是这个圆周。`}>{R`\mathcal{F}_0\equiv\frac{\sym{alphaGL}{\alpha}}{2!}|\Psi(\boldsymbol{x})|^2+\frac{\sym{betaGL}{\beta}}{4!}|\Psi(\boldsymbol{x})|^4`}</Eq>
         <Tx>{R`其中 $\sym{alphaGL}{\alpha}\sim\sym{alphaGL}{\alpha}_0(T-T_{\rm c})$ 在临界温度变号（$^4$He 的 $\lambda$ 点 $T_{\rm c}\approx2.17\ \mathrm{K}$）。\figref{4.21} 画出了 $T>T_{\rm c}$ 与 $T<T_{\rm c}$ 时的 $\mathcal{F}_0$。若 $T>T_{\rm c}$，$\mathcal{F}_0$ 的极小在 $\Psi(\boldsymbol{x})=0$；若 $T<T_{\rm c}$，极小在 $|\Psi|=\Delta_0\equiv[-(6\sym{alphaGL}{\alpha}/\sym{betaGL}{\beta})]^{1/2}$。`}</Tx>
         <Derivation title={R`极小值位置 $\Delta_0$`} steps={[
           { tex: R`\frac{\dd\mathcal{F}_0}{\dd|\Psi|}=\sym{alphaGL}{\alpha}|\Psi|+\frac{\sym{betaGL}{\beta}}{6}|\Psi|^3=0`, why: R`$\frac{\dd}{\dd x}\big(\frac{\sym{alphaGL}{\alpha}}{2}x^2+\frac{\sym{betaGL}{\beta}}{24}x^4\big)$，$x=|\Psi|$。` },
@@ -76,7 +76,7 @@ $\sigma_\mu$ 是 Pauli 矩阵。由于 $\psi_\alpha$ 按 $\psi_\alpha\to \sym{Rr
           { tex: R`\Phi=\Delta^\nu\sigma_\nu:\quad i\frac{\theta}{2}n^\mu\Delta^\nu[\sigma_\mu,\sigma_\nu]=-\theta\,\varepsilon^{\mu\nu\lambda}n_\mu\Delta_\nu\sigma_\lambda`, why: R`$[\sigma_\mu,\sigma_\nu]=2i\varepsilon^{\mu\nu\lambda}\sigma_\lambda$。$\Delta^\mu$ 像矢量一样转动：自旋三重态。` },
         ]} />
         <Tx>{R`设 $\Psi_{\alpha\beta}\propto i(\sigma_2)_{\alpha\beta}$，则 $\Psi$ 在这个转动下不变，因而表示**自旋单态**配对。我们写`}</Tx>
-        <Eq n="4.65a" keyEq title="自旋单态（常规超导）" say={R`常规超导体的序参量是一个复标量乘以单态自旋结构 $i\sigma_2$：和 $^4$He 一样，只剩一个 $\mathrm{U}(1)$ 相位。`}>{R`\Psi_{\alpha\beta}(\boldsymbol{x})=\Delta(\boldsymbol{x})(i\sigma_2)_{\alpha\beta}=\Delta_0(\boldsymbol{x})e^{i\varphi(\boldsymbol{x})}(i\sigma_2)_{\alpha\beta}.`}</Eq>
+        <Eq n="4.65a" title="自旋单态（常规超导）" say={R`常规超导体的序参量是一个复标量乘以单态自旋结构 $i\sigma_2$：和 $^4$He 一样，只剩一个 $\mathrm{U}(1)$ 相位。`}>{R`\Psi_{\alpha\beta}(\boldsymbol{x})=\Delta(\boldsymbol{x})(i\sigma_2)_{\alpha\beta}=\Delta_0(\boldsymbol{x})e^{i\varphi(\boldsymbol{x})}(i\sigma_2)_{\alpha\beta}.`}</Eq>
         <Tx>{R`若改取`}</Tx>
         <Eq n="4.65b" say={R`自旋三重态配对：序参量由自旋空间中的一个（复）矢量 $\Delta^\mu$ 描述，超流 $^3$He 就是这种情形。`}>{R`\Psi_{\alpha\beta}(\boldsymbol{x})=\Delta^\mu(\boldsymbol{x})\,i(\sigma_\mu\cdot\sigma_2)_{\alpha\beta}`}</Eq>
         <Tx>{R`则有 $\Psi_{\alpha\beta}\to[\Delta^\mu+\delta\,\varepsilon^{\mu\nu\lambda}n_\nu\Delta_\lambda](i\sigma_\mu\cdot\sigma_2)_{\alpha\beta}$（$\delta$ 为无穷小转角，符号取决于转动方向的约定）。这表明 $\Delta^\mu$ 是自旋空间中的矢量，因而 \eqref{4.65b} 表示**自旋三重态**配对。`}</Tx>

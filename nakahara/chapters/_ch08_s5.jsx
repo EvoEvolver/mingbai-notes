@@ -23,7 +23,7 @@ export function Sec85() {
             { claim: R`由 Riemann 几何基本定理（\sref{T7.1}），无挠且度规相容的联络唯一，就是 Levi-Civita 联络。所以在 Kähler 流形上 Levi-Civita 联络 = Hermite 联络，而后者满足 $\nabla J=0$（\sref{T8.4}）。`, uses: ["T7.1", "T8.4"], fill: true },
           ]} />
         </Stmt>
-        <Eq n="8.80" keyEq title="Kähler 条件的联络形式" say={R`在 Kähler 流形上，用 Levi-Civita 联络做平行移动也保持"乘以 $\mathrm{i}$"：复结构是平行的。`}>{R`\nabla_\mu J=0`}</Eq>
+        <Eq n="8.80" title="Kähler 条件的联络形式" say={R`在 Kähler 流形上，用 Levi-Civita 联络做平行移动也保持"乘以 $\mathrm{i}$"：复结构是平行的。`}>{R`\nabla_\mu J=0`}</Eq>
         <Eq n="8.81" say={R`对无挠联络，外微分可以把偏导换成协变导数：联络项在反对称化下消失。`}>{R`\dd\omega=\nabla\omega\equiv\frac1{r!}\nabla_\mu\omega_{\nu_1\ldots\nu_r}\,\dd x^\mu\wedge\dd x^{\nu_1}\wedge\ldots\wedge\dd x^{\nu_r}.`}</Eq>
         <Tx>{R`［例如
 
@@ -72,7 +72,7 @@ $$\Omega^m\equiv\underbrace{\Omega\wedge\ldots\wedge\Omega}_m$$
           <Tx>{R`注意到 $J\partial/\partial x^\mu=\partial/\partial y^\mu$、$J\partial/\partial y^\mu=-\partial/\partial x^\mu$，可知 $\delta$ 是 Hermite 度规（$J$ 把正交归一基映到正交归一基）。在复坐标下，`}</Tx>
           <Eq n="8.85b" say={R`同一个欧氏度规在复基下只有混合分量，等于 $\frac12$——因子 $\frac12$ 来自 $\partial/\partial z$ 定义中的 $\frac12$。`}>{R`\delta\left(\frac{\partial}{\partial z^\mu},\frac{\partial}{\partial z^\nu}\right)=\delta\left(\frac{\partial}{\partial\bar z^\mu},\frac{\partial}{\partial\bar z^\nu}\right)=0\qquad\delta\left(\frac{\partial}{\partial z^\mu},\frac{\partial}{\partial\bar z^\nu}\right)=\delta\left(\frac{\partial}{\partial\bar z^\mu},\frac{\partial}{\partial z^\nu}\right)=\tfrac12\delta_{\mu\nu}.`}</Eq>
           <Tx>{R`（例如 $\delta(\partial_{z^\mu},\partial_{\bar z^\nu})=\frac14\delta(\partial_x-\mathrm{i}\partial_y,\partial_x+\mathrm{i}\partial_y)=\frac14(\delta_{\mu\nu}+\delta_{\mu\nu})$。）Kähler 形式为`}</Tx>
-          <Eq n="8.86" keyEq title={R`$\C^m$ 的 Kähler 形式`} say={R`平直空间的 Kähler 形式就是各个复坐标平面上的面积元之和。`}>{R`\Omega=\frac{\mathrm{i}}{2}\sum_{\mu=1}^m\dd z^\mu\wedge\dd\bar z^\mu=\sum_{\mu=1}^m\dd x^\mu\wedge\dd y^\mu.`}</Eq>
+          <Eq n="8.86" title={R`$\C^m$ 的 Kähler 形式`} say={R`平直空间的 Kähler 形式就是各个复坐标平面上的面积元之和。`}>{R`\Omega=\frac{\mathrm{i}}{2}\sum_{\mu=1}^m\dd z^\mu\wedge\dd\bar z^\mu=\sum_{\mu=1}^m\dd x^\mu\wedge\dd y^\mu.`}</Eq>
           <Box kind="warning" title={R`勘误：\eqref{8.86} 右端没有因子 $\frac{\mathrm{i}}{2}$（p.353）`}>{R`原书印作 $\Omega=\frac{\mathrm{i}}{2}\sum\dd z^\mu\wedge\dd\bar z^\mu=\frac{\mathrm{i}}{2}\sum\dd x^\mu\wedge\dd y^\mu$。直接展开：$\dd z\wedge\dd\bar z=(\dd x+\mathrm{i}\dd y)\wedge(\dd x-\mathrm{i}\dd y)=-2\mathrm{i}\,\dd x\wedge\dd y$，所以 $\frac{\mathrm{i}}{2}\dd z\wedge\dd\bar z=\dd x\wedge\dd y$。用定义 \eqref{8.55} 独立核对：$\Omega(\partial_x,\partial_y)=\delta(J\partial_x,\partial_y)=\delta(\partial_y,\partial_y)=1$，与 $\dd x\wedge\dd y(\partial_x,\partial_y)=1$ 一致。（原书的右端是纯虚的，与 $\Omega$ 为实形式矛盾。）正文已改正。`}</Box>
           <Tx>{R`显然 $\dd\Omega=0$，所以 $\R^{2m}$ 的欧氏度规 $\delta$ 是 $\C^m$ 的 Kähler 度规。Kähler 势为`}</Tx>
           <Eq n="8.87" say={R`平直度规的 Kähler 势是到原点距离平方的一半。`}>{R`\mathcal{K}=\tfrac12\sum z^\mu\bar z^\mu.`}</Eq>
@@ -85,7 +85,7 @@ $$\Omega^m\equiv\underbrace{\Omega\wedge\ldots\wedge\Omega}_m$$
           <Tx>{R`复射影空间 $\CP^m$ 是 Kähler 流形。设 $(U_\alpha,\varphi_\alpha)$ 是一张卡，非齐次坐标 $\varphi_\alpha(p)=\xi^\nu_{(\alpha)}$，$\nu\neq\alpha$（例 8.3；这里齐次坐标记作 $z^1,\ldots,z^{m+1}$）。引入更整齐的记号 $\{\zeta^\nu_{(\alpha)}\mid1\le\nu\le m\}$：`}</Tx>
           <Eq n="8.88" say={R`把跳过第 $\alpha$ 个的非齐次坐标重新编号为 $1,\ldots,m$，只是改名。`}>{R`\xi^\nu{}_{(\alpha)}=\zeta^\nu{}_{(\alpha)}\quad(\nu\le\alpha-1)\qquad\xi^{\nu+1}{}_{(\alpha)}=\zeta^\nu{}_{(\alpha)}\quad(\nu\ge\alpha).`}</Eq>
           <Tx>{R`$\{\zeta^\nu{}_{(\alpha)}\}$ 只是 $\{\xi^\nu{}_{(\alpha)}\}$ 的重新命名。定义正定函数`}</Tx>
-          <Eq n="8.89" keyEq title={R`$\CP^m$ 的局部 Kähler 势的指数`} say={R`在第 $\alpha$ 张卡上，$\mathcal{K}_\alpha=1+|\zeta|^2$ 等于齐次坐标的模方和除以 $|z^\alpha|^2$。`}>{R`\mathcal{K}_\alpha(p)\equiv\sum_{\nu=1}^m|\zeta^\nu{}_{(\alpha)}(p)|^2+1=\sum_{\nu=1}^{m+1}\left|\frac{z^\nu}{z^\alpha}\right|^2.`}</Eq>
+          <Eq n="8.89" title={R`$\CP^m$ 的局部 Kähler 势的指数`} say={R`在第 $\alpha$ 张卡上，$\mathcal{K}_\alpha=1+|\zeta|^2$ 等于齐次坐标的模方和除以 $|z^\alpha|^2$。`}>{R`\mathcal{K}_\alpha(p)\equiv\sum_{\nu=1}^m|\zeta^\nu{}_{(\alpha)}(p)|^2+1=\sum_{\nu=1}^{m+1}\left|\frac{z^\nu}{z^\alpha}\right|^2.`}</Eq>
           <Tx>{R`在 $p\in U_\alpha\cap U_\beta$ 处，$\mathcal{K}_\alpha(p)$ 与 $\mathcal{K}_\beta(p)$ 的关系为`}</Tx>
           <Eq n="8.90" say={R`两张卡上的函数只差一个全纯函数的模方 $|z^\beta/z^\alpha|^2$。`}>{R`\mathcal{K}_\alpha(p)=\left|\frac{z^\beta}{z^\alpha}\right|^2\mathcal{K}_\beta(p).`}</Eq>
           <Tx>{R`于是`}</Tx>
@@ -93,7 +93,7 @@ $$\Omega^m\equiv\underbrace{\Omega\wedge\ldots\wedge\Omega}_m$$
           <Tx>{R`由于 $z^\beta/z^\alpha$ 是全纯函数，$\bar\partial\log z^\beta/z^\alpha=0$。又 $\partial\,\nosym{\overline{\log z^\beta/z^\alpha}}=\nosym{\overline{\bar\partial\log z^\beta/z^\alpha}}=0$（\eqref{8.42b}）。于是`}</Tx>
           <Eq n="8.92" say={R`$\partial\bar\partial\log\mathcal{K}$ 在各张卡上一致，是整体定义的二形式。`}>{R`\partial\bar\partial\log\mathcal{K}_\alpha=\partial\bar\partial\log\mathcal{K}_\beta.`}</Eq>
           <Tx>{R`（局部的 $\log z^\beta/z^\alpha$ 可能有分支，但它的导数没有歧义。）由此局部地定义一个闭二形式`}</Tx>
-          <Eq n="8.93" keyEq title="Fubini–Study 的 Kähler 形式" say={R`$\CP^m$ 的 Kähler 形式：各卡上 $\mathrm{i}\partial\bar\partial\log(1+|\zeta|^2)$ 拼成整体的闭二形式。`}>{R`\Omega\equiv\mathrm{i}\partial\bar\partial\log\mathcal{K}_\alpha.`}</Eq>
+          <Eq n="8.93" title="Fubini–Study 的 Kähler 形式" say={R`$\CP^m$ 的 Kähler 形式：各卡上 $\mathrm{i}\partial\bar\partial\log(1+|\zeta|^2)$ 拼成整体的闭二形式。`}>{R`\Omega\equiv\mathrm{i}\partial\bar\partial\log\mathcal{K}_\alpha.`}</Eq>
           <Tx>{R`存在一个以 $\Omega$ 为 Kähler 形式的 Hermite 度规。取 $X,Y\in T_p\CP^m$，定义 $g:T_p\CP^m\otimes T_p\CP^m\to\R$ 为 $g(X,Y)=\Omega(X,JY)$（由 \eqref{8.55}，$\Omega(X,JY)=g(JX,JY)=g(X,Y)$，所以这是唯一可能的选择）。要证明 $g$ 是 Hermite 度规，需要证明 $g$ 满足 \eqref{8.50} 且正定。Hermite 性是显然的：$g(JX,JY)=-\Omega(JX,Y)=\Omega(Y,JX)=g(Y,X)$，再由 $\Omega$ 的 $J$ 不变性（$(1,1)$ 型）知 $g$ 对称，$g(Y,X)=g(X,Y)$。其次证明 $g$ 正定。在卡 $(U_\alpha,\varphi_\alpha)$ 上，`}</Tx>
           <Eq n="8.94" say={R`把 Kähler 形式在一张卡上写开：度规矩阵就是 $\log\mathcal{K}$ 的混合 Hesse 矩阵。`}>{R`\Omega=\mathrm{i}\frac{\partial^2\log\mathcal{K}}{\partial\zeta^\mu\partial\bar\zeta^\nu}\dd\zeta^\mu\wedge\dd\bar\zeta^\nu`}</Eq>
           <Tx>{R`这里为简洁省去了下标 $(\alpha)$。把 \eqref{8.89} 代入 $U_\alpha$ 上的 $\mathcal{K}$，得`}</Tx>
@@ -128,10 +128,10 @@ $$\sym{ricf}{\mathfrak{R}}=\mathrm{i}\bar\partial\partial\log(1+|\zeta|^2)^{-2}=
 $$\frac{\partial g_{\mu\bar\nu}}{\partial z^\lambda}=\frac{\partial g_{\lambda\bar\nu}}{\partial z^\mu}\qquad\frac{\partial g_{\mu\bar\nu}}{\partial\bar z^\lambda}=\frac{\partial g_{\mu\bar\lambda}}{\partial\bar z^\nu}.$$
 
 这保证 Kähler 度规的（Hermite 联络）是*无挠*的：`}</Tx>
-        <Eq n="8.96a" keyEq title="Kähler ⇒ 无挠" say={R`把 Kähler 条件代入挠率公式 \eqref{8.73a}，括号恰好为零：Hermite 联络无挠，因而就是 Levi-Civita 联络。`}>{R`T^\lambda{}_{\mu\nu}=g^{\bar\xi\lambda}(\partial_\mu g_{\nu\bar\xi}-\partial_\nu g_{\mu\bar\xi})=0`}</Eq>
+        <Eq n="8.96a" title="Kähler ⇒ 无挠" say={R`把 Kähler 条件代入挠率公式 \eqref{8.73a}，括号恰好为零：Hermite 联络无挠，因而就是 Levi-Civita 联络。`}>{R`T^\lambda{}_{\mu\nu}=g^{\bar\xi\lambda}(\partial_\mu g_{\nu\bar\xi}-\partial_\nu g_{\mu\bar\xi})=0`}</Eq>
         <Eq n="8.96b" say={R`反全纯分量同样为零。`}>{R`T^{\bar\lambda}{}_{\bar\mu\bar\nu}=g^{\bar\lambda\xi}(\partial_{\bar\mu}g_{\bar\nu\xi}-\partial_{\bar\nu}g_{\bar\mu\xi})=0.`}</Eq>
         <Tx>{R`在这个意义上，Kähler 度规定义的联络与 Levi-Civita 联络非常相似（实际上就是它，见 \sref{T8.5} 的证明）。现在 Riemann 张量有一个额外的对称性`}</Tx>
-        <Eq n="8.97" keyEq title="Kähler 曲率的额外对称性" say={R`Kähler 流形上，曲率的第二个与第三个全纯指标可以交换——这是 \eqref{8.82} 在曲率上的体现，使 Ricci 形式与 Ricci 张量相同。`}>{R`R^\kappa{}_{\lambda\mu\bar\nu}=-\partial_{\bar\nu}(g^{\bar\xi\kappa}\partial_\mu g_{\lambda\bar\xi})=-\partial_{\bar\nu}(g^{\bar\xi\kappa}\partial_\lambda g_{\mu\bar\xi})=R^\kappa{}_{\mu\lambda\bar\nu}`}</Eq>
+        <Eq n="8.97" title="Kähler 曲率的额外对称性" say={R`Kähler 流形上，曲率的第二个与第三个全纯指标可以交换——这是 \eqref{8.82} 在曲率上的体现，使 Ricci 形式与 Ricci 张量相同。`}>{R`R^\kappa{}_{\lambda\mu\bar\nu}=-\partial_{\bar\nu}(g^{\bar\xi\kappa}\partial_\mu g_{\lambda\bar\xi})=-\partial_{\bar\nu}(g^{\bar\xi\kappa}\partial_\lambda g_{\mu\bar\xi})=R^\kappa{}_{\mu\lambda\bar\nu}`}</Eq>
         <Tx>{R`以及由 \eqref{8.97} 通过已知对称操作得到的`}</Tx>
         <Eq n="8.98" say={R`把额外对称性与复共轭、后两指标的反对称性组合起来得到的同类关系。`}>{R`R^{\bar\kappa}{}_{\bar\lambda\bar\mu\nu}=R^{\bar\kappa}{}_{\bar\mu\bar\lambda\nu},\qquad R^\kappa{}_{\lambda\bar\mu\nu}=R^\kappa{}_{\nu\bar\mu\lambda},\qquad R^{\bar\kappa}{}_{\bar\lambda\mu\bar\nu}=R^{\bar\kappa}{}_{\bar\nu\mu\bar\lambda}.`}</Eq>
         <Tx>{R`Ricci 形式 $\sym{ricf}{\mathfrak{R}}$ 的定义同前，
@@ -163,7 +163,7 @@ $$\sym{ricf}{\mathfrak{R}}=-\mathrm{i}\partial_{\bar\nu}\partial_\mu\log G\,\dd 
         </Stmt>
         <Eq n="8.99" say={R`全纯向量绕一个由全纯位移 $\varepsilon$ 与反全纯位移 $\bar\delta$ 张成的小回路一圈，改变量由曲率给出，并且仍是全纯向量。`}>{R`X'^\mu=X^\mu+X^\nu R^\mu{}_{\nu\kappa\bar\lambda}\varepsilon^\kappa\bar\delta^\lambda`}</Eq>
         <Eq n="8.100" say={R`无穷小和乐矩阵 = 单位阵 + 曲率与面积元的乘积。`}>{R`h_\mu{}^\nu=\delta_\mu{}^\nu+R^\nu{}_{\mu\kappa\bar\lambda}\varepsilon^\kappa\bar\delta^\lambda.`}</Eq>
-        <Eq n="8.101" keyEq title={R`$\sym{um}{\mathfrak{u}}(m)$ 的分解`} say={R`酉李代数等于无迹部分（特殊酉）与迹部分（一个 $\mathrm{U}(1)$）；Ricci 形式正是和乐的 $\mathrm{U}(1)$ 部分。`}>{R`\sym{um}{\mathfrak{u}}(m)=\sym{sum}{\mathfrak{su}}(m)\oplus\sym{um}{\mathfrak{u}}(1).`}</Eq>
+        <Eq n="8.101" title={R`$\sym{um}{\mathfrak{u}}(m)$ 的分解`} say={R`酉李代数等于无迹部分（特殊酉）与迹部分（一个 $\mathrm{U}(1)$）；Ricci 形式正是和乐的 $\mathrm{U}(1)$ 部分。`}>{R`\sym{um}{\mathfrak{u}}(m)=\sym{sum}{\mathfrak{su}}(m)\oplus\sym{um}{\mathfrak{u}}(1).`}</Eq>
         <Tx>{R`**物理意义。**和乐群 $\subset\mathrm{SU}(m)$ 意味着存在平行的旋量场（$\mathrm{SU}(3)\subset\mathrm{SO}(6)$ 在旋量表示 $\nosym{\mathbf{4}}$ 中留下一个不变分量），因而在 Calabi–Yau 三维流形上紧化十维超弦，可以在四维中保留 $\mathcal{N}=1$ 超对称（Candelas–Horowitz–Strominger–Witten 1985）。这就是本节为什么在物理文献中如此重要。`}</Tx>
       </Sub>
     </Sec>);

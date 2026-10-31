@@ -12,7 +12,7 @@ export function Sec53() {
       gives={["5.39", "5.41", "5.42", "5.43", "5.47", "5.49a", "5.49b", "5.50", "5.53", "5.55", "5.56"]}>
       <p className="muted">本节概念：<C id="flow" /> · <C id="lie_derivative" /></p>
       <Tx>{R`设 $X$ 是 $M$ 上的向量场。$X$ 的**积分曲线**（integral curve）$x(t)$ 是 $M$ 中这样一条曲线：它在 $x(t)$ 处的切向量就是 $X|_x$。给定卡 $(U,\varphi)$，这意味着`}</Tx>
-      <Eq n="5.39" keyEq title="积分曲线" say={R`积分曲线处处顺着向量场走：曲线的坐标速度等于该点向量场的分量——一组一阶自治常微分方程。`}>{R`\frac{\dd x^\mu}{\dd t}=X^\mu(x(t))`}</Eq>
+      <Eq n="5.39" title="积分曲线" say={R`积分曲线处处顺着向量场走：曲线的坐标速度等于该点向量场的分量——一组一阶自治常微分方程。`}>{R`\frac{\dd x^\mu}{\dd t}=X^\mu(x(t))`}</Eq>
       <Tx>{R`其中 $x^\mu(t)$ 是 $\varphi(x(t))$ 的第 $\mu$ 个分量，$X=X^\mu\partial/\partial x^\mu$。注意记号的滥用：$x$ 既表示 $M$ 中的点，也表示它的坐标。［为了后面方便，假定点 $x(0)$ 在 $U$ 中。］换句话说，**求向量场 $X$ 的积分曲线等价于解自治常微分方程组（ODE）**\eqref{5.39}。初始条件 $x^\mu_0=x^\mu(0)$ 对应积分曲线在 $t=0$ 时的坐标。ODE 的存在唯一性定理（\sref{X:ODE-uniq}）保证 \eqref{5.39} 以 $x^\mu_0$ 为初值的解唯一存在，至少在局部如此。积分曲线可能只在 $\R$ 的一个子集上有定义，这时要注意参数 $t$ 不越出给定区间。下面假定 $t$ 已最大限度地延拓。已知若 $M$ 紧致，积分曲线对一切 $t\in\R$ 存在。
 
 设 $\sigma(t,x_0)$ 是 $X$ 在 $t=0$ 时通过 $x_0$ 的积分曲线，其坐标记作 $\sigma^\mu(t,x_0)$。方程 \eqref{5.39} 变成`}</Tx>
@@ -20,7 +20,7 @@ export function Sec53() {
       <Tx>{R`以及初始条件`}</Tx>
       <Eq n="5.40b" say={R`时间为零时还在起点。`}>{R`\sigma^\mu(0,x_0)=x^\mu_0.`}</Eq>
       <Tx>{R`映射 $\sigma:\R\times M\to M$ 称为由 $X\in\mathcal{X}(M)$ 生成的**流**（flow）。流满足规则`}</Tx>
-      <Eq n="5.41" keyEq title="流的群性质" say={R`先流 $s$ 再流 $t$，等于一口气流 $t+s$：因为向量场不随时间变，从中途出发与从头出发走的是同一条路。`}>{R`\sigma(t,\sigma(s,x_0))=\sigma(t+s,x_0)`}</Eq>
+      <Eq n="5.41" title="流的群性质" say={R`先流 $s$ 再流 $t$，等于一口气流 $t+s$：因为向量场不随时间变，从中途出发与从头出发走的是同一条路。`}>{R`\sigma(t,\sigma(s,x_0))=\sigma(t+s,x_0)`}</Eq>
       <Tx>{R`其中 $s,t\in\R$ 使两边都有意义。这可以由 ODE 解的唯一性看出。事实上，固定 $s$，把两边都看作 $t$ 的曲线：
 
 $$\frac{\dd}{\dd t}\sigma^\mu(t,\sigma(s,x_0))=X^\mu(\sigma(t,\sigma(s,x_0))),\qquad\sigma(0,\sigma(s,x_0))=\sigma(s,x_0)$$
@@ -70,7 +70,7 @@ $$\begin{pmatrix}\cos\theta&-\sin\theta\\ \sin\theta&\cos\theta\end{pmatrix}$$
 的 $2\times2$ 实矩阵构成的乘法群——或同构于 $\mathrm{U}(1)$，即模为 1 的复数 $\mathrm{e}^{\mathrm{i}\theta}$ 构成的乘法群。
 
 在 $\sigma_\varepsilon$（$\varepsilon$ 为无穷小）的作用下，由 \eqref{5.40a}、\eqref{5.40b}，坐标为 $x^\mu$ 的点 $x$ 被映到`}</Tx>
-        <Eq n="5.42" keyEq title="无穷小变换" say={R`流一小段时间 $\varepsilon$，点沿向量场方向移动 $\varepsilon X$：向量场就是这族变换的"无穷小生成元"。`}>{R`\sigma^\mu_\varepsilon(x)=\sigma^\mu(\varepsilon,x)=x^\mu+\varepsilon X^\mu(x).`}</Eq>
+        <Eq n="5.42" title="无穷小变换" say={R`流一小段时间 $\varepsilon$，点沿向量场方向移动 $\varepsilon X$：向量场就是这族变换的"无穷小生成元"。`}>{R`\sigma^\mu_\varepsilon(x)=\sigma^\mu(\varepsilon,x)=x^\mu+\varepsilon X^\mu(x).`}</Eq>
         <Tx>{R`（准确到 $\varepsilon$ 的一阶。）在这个意义下，向量场 $X$ 称为变换 $\sigma_t$ 的**无穷小生成元**（infinitesimal generator）。
 
 给定向量场 $X$，对应的流 $\sigma$ 常称为 $X$ 的**指数化**（exponentiation），记作`}</Tx>
@@ -117,7 +117,7 @@ $$Y|_{\sigma_\varepsilon(x)}=Y^\mu(x^\nu+\varepsilon X^\nu(x))e_\mu|_{x+\varepsi
 其中 $\{e_\mu\}=\{\partial/\partial x^\mu\}$ 是坐标基，$\partial_\nu\equiv\partial/\partial x^\nu$。用 $(\sigma_{-\varepsilon})_*$ 把这个 $\sigma_\varepsilon(x)$ 处的向量映到 $x$（\eqref{5.33}，映射 $\sigma_{-\varepsilon}$ 的坐标表示为 $x^\nu\mapsto x^\nu-\varepsilon X^\nu(x)$），得到`}</Tx>
         <Eq n="5.48" say={R`把邻点的 $Y$ 推回 $x$：分量先因位置不同多出 $\varepsilon X\cdot\partial Y$，再因流的 Jacobi 矩阵少掉 $\varepsilon Y\cdot\partial X$。`}>{R`\begin{aligned}&[Y^\mu(x)+\varepsilon X^\lambda(x)\partial_\lambda Y^\mu(x)]\partial_\mu[x^\nu-\varepsilon X^\nu(x)]e_\nu|_x\\&\quad=[Y^\mu(x)+\varepsilon X^\lambda(x)\partial_\lambda Y^\mu(x)][\delta^\nu_\mu-\varepsilon\partial_\mu X^\nu(x)]e_\nu|_x\\&\quad=Y^\mu(x)e_\mu|_x+\varepsilon[X^\mu(x)\partial_\mu Y^\nu(x)-Y^\mu(x)\partial_\mu X^\nu(x)]e_\nu|_x+O(\varepsilon^2).\end{aligned}`}</Eq>
         <Tx>{R`（Jacobi 矩阵应在 $\sigma_\varepsilon(x)$ 处取值，但它与在 $x$ 处取值只差 $O(\varepsilon)$，乘上已有的 $\varepsilon$ 后进入 $O(\varepsilon^2)$。）由 \eqref{5.47} 与 \eqref{5.48} 得到`}</Tx>
-        <Eq n="5.49a" keyEq title="李导数的分量" say={R`$Y$ 沿 $X$ 的李导数 = "$Y$ 沿 $X$ 方向的普通导数"减去"$X$ 沿 $Y$ 方向的普通导数"：第二项来自流把坐标网格本身拉伸扭转。`}>{R`\mathcal{L}_XY=(X^\mu\partial_\mu Y^\nu-Y^\mu\partial_\mu X^\nu)e_\nu.`}</Eq>
+        <Eq n="5.49a" title="李导数的分量" say={R`$Y$ 沿 $X$ 的李导数 = "$Y$ 沿 $X$ 方向的普通导数"减去"$X$ 沿 $Y$ 方向的普通导数"：第二项来自流把坐标网格本身拉伸扭转。`}>{R`\mathcal{L}_XY=(X^\mu\partial_\mu Y^\nu-Y^\mu\partial_\mu X^\nu)e_\nu.`}</Eq>
         <Exercise n="5.9" title="李括号" level="★"
           hint={R`把 $X[Y[f]]$ 与 $Y[X[f]]$ 用分量展开，二阶导数项因混合偏导可交换而相消。`}
           solution={R`用 \eqref{5.21}：
@@ -174,7 +174,7 @@ $g$ 任意，故 $f_*[X,Y]=[f_*X,f_*Y]$。这条性质在 §5.6 中用来证明�
             <Eq n="5.51a" say={R`把 $X$ 乘上函数后求李导数，除了乘上 $f$ 外还多出一项——因为流本身被函数"调速"了。`}>{R`\mathcal{L}_{fX}Y=f[X,Y]-Y[f]X`}</Eq>
             <Eq n="5.51b" say={R`对 $fY$ 求李导数满足 Leibniz 律：$f$ 被 $X$ 求导，$Y$ 被李导数作用。`}>{R`\mathcal{L}_X(fY)=f[X,Y]+X[f]Y.`}</Eq>
             <Tx>{R`(b) 设 $X,Y\in\mathcal{X}(M)$，$f:M\to N$。证明`}</Tx>
-            <Eq n="5.52" keyEq title="推前保持李括号" say={R`李括号是"自然的"：先求括号再推前，与先推前再求括号相同。`}>{R`f_*[X,Y]=[f_*X,f_*Y].`}</Eq>
+            <Eq n="5.52" title="推前保持李括号" say={R`李括号是"自然的"：先求括号再推前，与先推前再求括号相同。`}>{R`f_*[X,Y]=[f_*X,f_*Y].`}</Eq>
           </>
         </Exercise>
         <Box kind="warning" title={R`注意：$\mathcal{L}_XY$ 对 $X$ 不是函数线性的`}>{R`由 \eqref{5.51a}，$\mathcal{L}_{fX}Y\neq f\mathcal{L}_XY$：李导数在一点的值不仅依赖 $X$ 在该点的值，还依赖 $X$ 在附近怎样变化。这与第 7 章的协变导数 $\nabla_XY$ 不同（$\nabla_{fX}Y=f\nabla_XY$）。李导数不需要联络，代价就是这一点"非张量性"。`}</Box>
@@ -195,7 +195,7 @@ $$\tau^\mu(\delta,\sigma(\varepsilon,x))-\sigma^\mu(\varepsilon,\tau(\delta,x))=
         <Box kind="warning" title={R`勘误：指标 $\partial_\nu Y^\mu$（p.213）`}>{R`原书第一条路径的最后一行印作 "$\varepsilon\delta X^\nu(x)\partial_\nu Y^\nu(x)$"，被求导的分量指标应为自由指标 $\mu$：$\varepsilon\delta X^\nu(x)\partial_\nu Y^\mu(x)$（与第二条路径中的 $\varepsilon\delta Y^\nu\partial_\nu X^\mu$ 对应）。否则 $\nu$ 出现三次，表达式无意义。正文已改正；交互图 2 用数值积分验证了改正后的式子。`}</Box>
         <Figure n="5.13" caption={R`李括号 $[X,Y]$ 度量平行四边形不闭合的程度。`} width="55%" />
         <Tx>{R`$X$ 与 $Y$ 的李括号度量\figref{5.13} 中平行四边形**不闭合**的程度。容易看出 $\mathcal{L}_XY=[X,Y]=0$ 当且仅当`}</Tx>
-        <Eq n="5.53" keyEq title="流可交换的判据" say={R`两个流可以交换次序（四边形处处闭合），当且仅当两个向量场的李括号为零。`}>{R`\sigma(s,\tau(t,x))=\tau(t,\sigma(s,x)).`}</Eq>
+        <Eq n="5.53" title="流可交换的判据" say={R`两个流可以交换次序（四边形处处闭合），当且仅当两个向量场的李括号为零。`}>{R`\sigma(s,\tau(t,x))=\tau(t,\sigma(s,x)).`}</Eq>
         <Derivation title={R`\eqref{5.53} 的证明（原书说"容易看出"，本站补全两个方向）`} collapsed steps={[
           { tex: R`\sigma_s\circ\tau_t=\tau_t\circ\sigma_s\ \ \forall s,t\ \Rightarrow\ [X,Y]=0`, why: R`把两边在 $x$ 处对 $s$、$t$ 展开到 $st$ 阶：由上面的计算，差的 $st$ 项系数就是 $[X,Y]^\mu$，它必须为零。` },
           { tex: R`\frac{\dd}{\dd s}\Big[(\sigma_{-s})_*Y|_{\sigma_s(x)}\Big]=(\sigma_{-s})_*\big(\mathcal{L}_XY\big)|_{\sigma_s(x)}`, why: R`在 $s$ 处求导，用群性质 $\sigma_{-s-\varepsilon}=\sigma_{-s}\circ\sigma_{-\varepsilon}$ 与 \eqref{5.34}，差商化为 $(\sigma_{-s})_*$ 作用在 \eqref{5.47} 的差商上。` },
@@ -206,23 +206,23 @@ $$\tau^\mu(\delta,\sigma(\varepsilon,x))-\sigma^\mu(\varepsilon,\tau(\delta,x))=
         <BracketLab />
 
         <Tx>{R`**一形式的李导数。**也可以定义一形式 $\omega\in\Omega^1(M)$ 沿 $X\in\mathcal{X}(M)$ 的李导数：`}</Tx>
-        <Eq n="5.54" keyEq title="一形式的李导数" say={R`一形式用拉回 $(\sigma_\varepsilon)^*$ 从邻点搬回来（方向与向量相反），再做差商。`}>{R`\mathcal{L}_X\omega\equiv\lim_{\varepsilon\to0}\frac{1}{\varepsilon}\left[(\sigma_\varepsilon)^*\omega|_{\sigma_\varepsilon(x)}-\omega|_x\right]`}</Eq>
+        <Eq n="5.54" title="一形式的李导数" say={R`一形式用拉回 $(\sigma_\varepsilon)^*$ 从邻点搬回来（方向与向量相反），再做差商。`}>{R`\mathcal{L}_X\omega\equiv\lim_{\varepsilon\to0}\frac{1}{\varepsilon}\left[(\sigma_\varepsilon)^*\omega|_{\sigma_\varepsilon(x)}-\omega|_x\right]`}</Eq>
         <Tx>{R`其中 $\omega|_x\in T^*_xM$ 是 $\omega$ 在 $x$ 处的值。令 $\omega=\omega_\mu\dd x^\mu$，重复与前面类似的分析（\eqref{5.37}，映射 $\sigma_\varepsilon$ 的 Jacobi 矩阵为 $\delta^\nu_\mu+\varepsilon\partial_\mu X^\nu$）：
 
 $$(\sigma_\varepsilon)^*\omega|_{\sigma_\varepsilon(x)}=\omega_\nu(x+\varepsilon X)\,[\delta^\nu_\mu+\varepsilon\partial_\mu X^\nu]\dd x^\mu=\omega_\mu(x)\dd x^\mu+\varepsilon[X^\nu(x)\partial_\nu\omega_\mu(x)+\partial_\mu X^\nu(x)\omega_\nu(x)]\dd x^\mu+O(\varepsilon^2),$$
 
 于是`}</Tx>
-        <Eq n="5.55" keyEq title="一形式李导数的分量" say={R`一形式的李导数：分量沿 $X$ 的普通导数，加上流的 Jacobi 矩阵带来的修正——符号与向量的情形相反。`}>{R`\mathcal{L}_X\omega=(X^\nu\partial_\nu\omega_\mu+\partial_\mu X^\nu\omega_\nu)\dd x^\mu.`}</Eq>
+        <Eq n="5.55" title="一形式李导数的分量" say={R`一形式的李导数：分量沿 $X$ 的普通导数，加上流的 Jacobi 矩阵带来的修正——符号与向量的情形相反。`}>{R`\mathcal{L}_X\omega=(X^\nu\partial_\nu\omega_\mu+\partial_\mu X^\nu\omega_\nu)\dd x^\mu.`}</Eq>
         <Tx>{R`显然 $\mathcal{L}_X\omega\in T^*_xM$，因为它是同一点 $x$ 处两个一形式之差。
 
 **函数的李导数。**$f\in\mathcal{F}(M)$ 沿 $X$ 生成的流 $\sigma_s$ 的李导数为`}</Tx>
-        <Eq n="5.56" keyEq title="函数的李导数" say={R`函数的李导数就是通常的方向导数：函数沿流的变化率。`}>{R`\begin{aligned}\mathcal{L}_Xf&\equiv\lim_{\varepsilon\to0}\frac{1}{\varepsilon}[f(\sigma_\varepsilon(x))-f(x)]\\&=\lim_{\varepsilon\to0}\frac{1}{\varepsilon}[f(x^\mu+\varepsilon X^\mu(x))-f(x^\mu)]\\&=X^\mu(x)\frac{\partial f}{\partial x^\mu}=X[f]\end{aligned}`}</Eq>
+        <Eq n="5.56" title="函数的李导数" say={R`函数的李导数就是通常的方向导数：函数沿流的变化率。`}>{R`\begin{aligned}\mathcal{L}_Xf&\equiv\lim_{\varepsilon\to0}\frac{1}{\varepsilon}[f(\sigma_\varepsilon(x))-f(x)]\\&=\lim_{\varepsilon\to0}\frac{1}{\varepsilon}[f(x^\mu+\varepsilon X^\mu(x))-f(x^\mu)]\\&=X^\mu(x)\frac{\partial f}{\partial x^\mu}=X[f]\end{aligned}`}</Eq>
         <Tx>{R`即通常的 $f$ 沿 $X$ 的方向导数。
 
 **一般张量。**一般张量的李导数由下面的命题得到。`}</Tx>
         <Stmt id="P5.1">
           <Eq n="5.57a" say="李导数是线性的。">{R`\mathcal{L}_X(t_1+t_2)=\mathcal{L}_Xt_1+\mathcal{L}_Xt_2`}</Eq>
-          <Eq n="5.57b" keyEq title="李导数的 Leibniz 律" say={R`李导数对张量积满足乘积法则：轮流作用在每个因子上。`}>{R`\mathcal{L}_X(t_1\otimes t_2)=(\mathcal{L}_Xt_1)\otimes t_2+t_1\otimes(\mathcal{L}_Xt_2)`}</Eq>
+          <Eq n="5.57b" title="李导数的 Leibniz 律" say={R`李导数对张量积满足乘积法则：轮流作用在每个因子上。`}>{R`\mathcal{L}_X(t_1\otimes t_2)=(\mathcal{L}_Xt_1)\otimes t_2+t_1\otimes(\mathcal{L}_Xt_2)`}</Eq>
           <Proof steps={[
             { claim: R`(a) 显然：$(\sigma_{-\varepsilon})_*$（或 $(\sigma_\varepsilon)^*$）是线性映射，差商与极限都是线性的。` },
             { claim: R`(b) 不写满是指标的一般证明，取一个推广到一般情形显而易见的例子：$Y\in\mathcal{X}(M)$、$\omega\in\Omega^1(M)$，作张量积 $Y\otimes\omega$。用 $(\sigma_{-\varepsilon})_*\otimes(\sigma_\varepsilon)^*$ 把 $(Y\otimes\omega)|_{\sigma_\varepsilon(x)}$ 映到 $x$ 处的张量：`, tex: R`[(\sigma_{-\varepsilon})_*\otimes(\sigma_\varepsilon)^*](Y\otimes\omega)|_{\sigma_\varepsilon(x)}=[(\sigma_{-\varepsilon})_*Y\otimes(\sigma_\varepsilon)^*\omega]|_x`, why: R`$(\sigma_\varepsilon)^*$ 把 $\sigma_\varepsilon(x)$ 处的一形式拉回到 $x$；对微分同胚，它与 $(\sigma_{-\varepsilon})_*$ 方向一致。` },

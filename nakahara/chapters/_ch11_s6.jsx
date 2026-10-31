@@ -33,7 +33,7 @@ $M$ 上的**自旋结构**（spin structure）由满足下式的转移函数 $\t
 $$f(i_{P(0)},\ldots,i_{P(r)})=f(i_0,\ldots,i_r).$$
 
 令 $C^r(M,\Z_2)$ 为 Čech $r$ 上链的乘法群。定义上边缘算子 $\delta:C^r(M;\Z_2)\to C^{r+1}(M;\Z_2)$：`}</Tx>
-        <Eq n="11.130" keyEq title="Čech 上边缘" say={R`上边缘：在 $r+2$ 重交上，把"去掉一个指标"得到的 $r+2$ 个值全部乘起来（乘法记号下的交错和）。`}>{R`(\delta f)(i_0,\ldots,i_{r+1})=\prod_{j=0}^{r+1}f(i_0,\ldots,\hat i_j,\ldots,i_{r+1})`}</Eq>
+        <Eq n="11.130" title="Čech 上边缘" say={R`上边缘：在 $r+2$ 重交上，把"去掉一个指标"得到的 $r+2$ 个值全部乘起来（乘法记号下的交错和）。`}>{R`(\delta f)(i_0,\ldots,i_{r+1})=\prod_{j=0}^{r+1}f(i_0,\ldots,\hat i_j,\ldots,i_{r+1})`}</Eq>
         <Tx>{R`其中带 $\hat{}$ 的变量被略去。例如
 
 $$(\delta f_0)(i_0,i_1)=f_0(i_1)f_0(i_0)\qquad f_0\in C^0(M;\Z_2)$$
@@ -49,13 +49,13 @@ $$(\delta^2f)(i_0,\ldots,i_{r+2})=\prod_{j\neq k}f(i_0,\ldots,\hat i_j,\ldots,\h
         <Eq n="11.132" say={R`上闭链：上边缘为平凡的上链。`}>{R`Z^r(M;\Z_2)=\{f\in C^r(M;\Z_2)\mid\delta f=1\}`}</Eq>
         <Eq n="11.133" say={R`上边缘：本身是某个低一阶上链的上边缘的上链。`}>{R`B^r(M;\Z_2)=\{f\in C^r(M;\Z_2)\mid f=\delta f',\ f'\in C^{r-1}(M;\Z_2)\}.`}</Eq>
         <Tx>{R`于是第 $r$ 个 **Čech 上同调群** $H^r(M;\Z_2)$ 定义为`}</Tx>
-        <Eq n="11.134" keyEq title="Čech 上同调" say={R`Čech 上同调：上闭链模去上边缘——"局部可以消掉、整体消不掉"的 $\pm1$ 数据。`}>{R`H^r(M;\Z_2)=\ker\delta_r/\mathrm{im}\,\delta_{r-1}=Z^r(M;\Z_2)/B^r(M;\Z_2).`}</Eq>
+        <Eq n="11.134" title="Čech 上同调" say={R`Čech 上同调：上闭链模去上边缘——"局部可以消掉、整体消不掉"的 $\pm1$ 数据。`}>{R`H^r(M;\Z_2)=\ker\delta_r/\mathrm{im}\,\delta_{r-1}=Z^r(M;\Z_2)/B^r(M;\Z_2).`}</Eq>
         <Box kind="example" title={R`小例子：$S^1$ 的 $H^1(S^1;\Z_2)=\Z_2$（补充）`}>{R`用三段弧 $U_1,U_2,U_3$ 覆盖 $S^1$，两两相交（三段两两交于一小段），三者无公共交（所以没有 2 上链，每个 1 上链都是闭的）。1 上链是三个符号 $(f(1,2),f(2,3),f(3,1))$；上边缘 $\delta f_0(i,j)=f_0(i)f_0(j)$ 的三个值之积总是 $f_0(1)^2f_0(2)^2f_0(3)^2=1$。所以"三个符号之积"是 $H^1$ 的不变量，取 $\pm1$：$H^1(S^1;\Z_2)\cong\Z_2$。Möbius 带（一个交上 $\det t=-1$）对应非平凡类，正是下面的 $w_1\neq1$：Möbius 带作为 $S^1$ 上的线丛不可定向。`}</Box>
       </Sub>
 
       <Sub n="11.6.3" title="Stiefel–Whitney classes" zh="Stiefel–Whitney 类">
         <Tx>{R`Stiefel–Whitney 类 $w_r$ 是取值于 $H^r(M;\Z_2)$ 的示性类。设 $TM\xrightarrow{\pi}M$ 是带 Riemann 度规的切丛，结构群为 $\mathrm{O}(m)$，$m=\dim M$。假设 $\{U_i\}$ 是 $M$ 的*简单*开覆盖：任意多个卡的交要么是空集、要么可缩。设 $\{e_{i\alpha}\}$（$1\le\alpha\le m$）是 $U_i$ 上 $TM$ 的局部正交归一标架。有 $e_{i\alpha}=t_{ij}e_{j\alpha}$，其中 $t_{ij}:U_i\cap U_j\to\mathrm{O}(m)$ 是转移函数。定义 Čech 1 上链 $f(i,j)$：`}</Tx>
-        <Eq n="11.135" keyEq title={R`$w_1$ 的代表`} say={R`第一 Stiefel–Whitney 类的代表：每个重叠区上转移函数的行列式——$+1$ 表示两张卡的定向一致，$-1$ 表示相反。`}>{R`f(i,j)\equiv\det(t_{ij})=\pm1.`}</Eq>
+        <Eq n="11.135" title={R`$w_1$ 的代表`} say={R`第一 Stiefel–Whitney 类的代表：每个重叠区上转移函数的行列式——$+1$ 表示两张卡的定向一致，$-1$ 表示相反。`}>{R`f(i,j)\equiv\det(t_{ij})=\pm1.`}</Eq>
         <Tx>{R`由于 $f(i,j)=f(j,i)$（$t_{ji}=t_{ij}^{-1}$，$\det t_{ij}^{-1}=\det t_{ij}$ 对 $\pm1$ 成立），它确实是 $C^1(M;\Z_2)$ 的元素。由余循环条件 $t_{ij}t_{jk}t_{ki}=I$，我们验证`}</Tx>
         <Eq n="11.136" say={R`行列式的乘积等于乘积的行列式：余循环条件直接给出 $f$ 是上闭链。`}>{R`\delta f(i,j,k)=\det(t_{ij})\det(t_{jk})\det(t_{ki})=\det(t_{ij}t_{jk}t_{ki})=1.`}</Eq>
         <Tx>{R`于是 $f\in Z^1(M,\Z_2)$，它定义 $H^1(M;\Z_2)$ 的一个元素 $[f]$。现在证明这个元素与所选的局部标架无关。设 $\{\bar e_{i\alpha}\}$ 是 $U_i$ 上的另一个标架，$\bar e_{i\alpha}=h_ie_{i\alpha}$，$h_i\in\mathrm{O}(m)$。由 $\bar e_{i\alpha}=\bar t_{ij}\bar e_{j\alpha}$ 得 $\bar t_{ij}=h_it_{ij}h_j^{-1}$。若定义 0 上链 $f_0(i)\equiv\det h_i$，则
@@ -106,7 +106,7 @@ $$f'(i,j,k)I=\tilde t'_{ij}\tilde t'_{jk}\tilde t'_{ki}=f_1(i,j)f_1(j,k)f_1(k,i)
           ]} />
         </Stmt>
         <Tx>{R`我们列出一些有用的结果：`}</Tx>
-        <Eq n="11.140" keyEq title={R`$\CP^m$ 的 Stiefel–Whitney 类`} say={R`复射影空间都可定向；$m$ 为奇数时是自旋流形，$m$ 为偶数时 $w_2$ 是生成元——$\CP^2$ 上没有自旋结构。`}>{R`\text{(a)}\qquad w_1(\CP^m)=1\qquad w_2(\CP^m)=\begin{cases}1&m\text{ 奇数}\\x&m\text{ 偶数}\end{cases}`}</Eq>
+        <Eq n="11.140" title={R`$\CP^m$ 的 Stiefel–Whitney 类`} say={R`复射影空间都可定向；$m$ 为奇数时是自旋流形，$m$ 为偶数时 $w_2$ 是生成元——$\CP^2$ 上没有自旋结构。`}>{R`\text{(a)}\qquad w_1(\CP^m)=1\qquad w_2(\CP^m)=\begin{cases}1&m\text{ 奇数}\\x&m\text{ 偶数}\end{cases}`}</Eq>
         <Tx>{R`$x$ 是 $H^2(\CP^m;\Z_2)$ 的生成元。（复流形都可定向，所以 $w_1=1$；$w_2(\CP^m)=(m+1)x\bmod2$，因为 $T\CP^m\oplus\C\cong(m+1)L^*$，$c_1(T\CP^m)=(m+1)$ 倍生成元，而 $w_2$ 是 $c_1$ 模 2 的约化。）`}</Tx>
         <Eq n="11.141" say={R`所有球面都可定向、都有自旋结构。`}>{R`\text{(b)}\qquad w_1(S^m)=w_2(S^m)=1`}</Eq>
         <Eq n="11.142" say={R`所有可定向闭曲面（亏格 $g$ 的 Riemann 面）都可定向、都有自旋结构。`}>{R`\text{(c)}\qquad w_1(\Sigma_g)=w_2(\Sigma_g)=1`}</Eq>

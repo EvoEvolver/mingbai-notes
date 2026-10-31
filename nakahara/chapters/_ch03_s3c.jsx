@@ -125,7 +125,7 @@ $$\partial_2z=-2ma,\qquad a=(p_0p_1)+(p_1p_2)+(p_2p_0).$$
 左右两边的 $b$ 方向相同、在绕外圈时一上一下，相互抵消；上下两边的 $a$ 方向相反，绕外圈时却同向，叠加成 $-2a$。$\partial_2z=0$ 要求 $m=0$；而一般的 $z$ 要在内部棱处相消，就必须各三角形系数相等。所以`}</Tx>
         <Eq n="3.50" say="Klein 瓶和射影平面一样不可定向，没有非零的二维闭链。">{R`H_2(K)=Z_2(K)\cong\{0\}.`}</Eq>
         <Tx>{R`**$H_1$。**借鉴环面的经验，每个 1 闭链都同调于某个 $ia+jb$（$i,j\in\mathbb{Z}$）。要让一个 2 链的边界只由 $a$ 和 $b$ 组成，所有 2 单形必须以相同系数相加；对这样的 2 链 $z=\sum m\sigma_{2,i}$，$\partial z=-2ma$。这说明 $2ma\sim0$。所以 $H_1(K)$ 由两个闭链 $a$、$b$ 生成，且 $a+a\sim0$：`}</Tx>
-        <Eq n="3.51" keyEq title={R`Klein 瓶的 $H_1$`} say={R`Klein 瓶有一条自由的闭路 $b$，还有一条绕两次才成为边界的闭路 $a$：一维同调群是整数加二元循环群。`}>{R`H_1(K)=\{i[a]+j[b]\mid i,j\in\mathbb{Z}\}\cong\mathbb{Z}_2\oplus\mathbb{Z}.`}</Eq>
+        <Eq n="3.51" title={R`Klein 瓶的 $H_1$`} say={R`Klein 瓶有一条自由的闭路 $b$，还有一条绕两次才成为边界的闭路 $a$：一维同调群是整数加二元循环群。`}>{R`H_1(K)=\{i[a]+j[b]\mid i,j\in\mathbb{Z}\}\cong\mathbb{Z}_2\oplus\mathbb{Z}.`}</Eq>
         <Tx>{R`$K$ 连通，$H_0(K)\cong\mathbb{Z}$。`}</Tx>
       </Box>
       <Figure n="3.12" caption={R`Klein 瓶的三角剖分。`} width="55%" />

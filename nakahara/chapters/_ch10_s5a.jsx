@@ -43,14 +43,14 @@ function Sub1051() {
       <Tx>{R`若把分量 $\mathcal{F}_{\mu\nu}\equiv\mathrm{i}F_{\mu\nu}$ 与电场 $\boldsymbol E$、磁场 $\boldsymbol B$ 认同为`}</Tx>
       <Eq n="10.84" say={R`场强张量的时空分量是电场，空间分量是磁场。`}>{R`E_i=F_{i0},\ B_i=\tfrac12\epsilon_{ijk}F_{jk}\qquad(i,j,k=1,2,3)`}</Eq>
       <Tx>{R`\eqref{10.83b} 就化为 Maxwell 方程中的两个：`}</Tx>
-      <Eq n="10.83c" keyEq title="齐次 Maxwell 方程" say={R`没有磁荷、法拉第电磁感应定律：这两条 Maxwell 方程不是动力学，而是"场强是某个势的外微分"的几何推论。`}>{R`\nabla\times\boldsymbol E+\frac{\partial\boldsymbol B}{\partial t}=0\qquad\nabla\cdot\boldsymbol B=0.`}</Eq>
+      <Eq n="10.83c" title="齐次 Maxwell 方程" say={R`没有磁荷、法拉第电磁感应定律：这两条 Maxwell 方程不是动力学，而是"场强是某个势的外微分"的几何推论。`}>{R`\nabla\times\boldsymbol E+\frac{\partial\boldsymbol B}{\partial t}=0\qquad\nabla\cdot\boldsymbol B=0.`}</Eq>
       <Derivation title="补全：由 (10.83b) 得 (10.83c)" collapsed steps={[
         { tex: R`(\lambda,\mu,\nu)=(1,2,3):\ \partial_1F_{23}+\partial_3F_{12}+\partial_2F_{31}=\partial_1B_1+\partial_3B_3+\partial_2B_2=\nabla\cdot\boldsymbol B=0`, why: R`$F_{23}=B_1$、$F_{31}=B_2$、$F_{12}=B_3$（由 \eqref{10.84}）。` },
         { tex: R`(\lambda,\mu,\nu)=(0,j,k):\ \partial_0F_{jk}+\partial_kF_{0j}+\partial_jF_{k0}=\epsilon_{ijk}\partial_tB_i-\partial_kE_j+\partial_jE_k=0`, why: R`$F_{0j}=-E_j$、$F_{k0}=E_k$。` },
         { tex: R`\text{乘 }\tfrac12\epsilon_{ljk}\text{ 求和}:\ \partial_tB_l+(\nabla\times\boldsymbol E)_l=0`, why: R`$\frac12\epsilon_{ljk}(\partial_jE_k-\partial_kE_j)=(\nabla\times\boldsymbol E)_l$。` },
       ]} />
       <Tx>{R`这些方程是**几何的**而不是**动力学的**。要得到动力学，必须给出作用量。**Maxwell 作用量** $\mathcal{S}_{\rm M}[\mathcal{A}]$ 是 $\mathcal{A}$ 的泛函：`}</Tx>
-      <Eq n="10.85a" keyEq title="Maxwell 作用量" say={R`Maxwell 作用量：场强平方的时空积分；由于 $\mathcal{F}=\mathrm{i}F$，两种写法差一个负号。`}>{R`\mathcal{S}_{\rm M}[\mathcal{A}]\equiv\frac14\int_{\mathbb{R}^4}\mathcal{F}_{\mu\nu}\mathcal{F}^{\mu\nu}\dd^4x=-\frac14\int_{\mathbb{R}^4}F_{\mu\nu}F^{\mu\nu}\dd^4x.`}</Eq>
+      <Eq n="10.85a" title="Maxwell 作用量" say={R`Maxwell 作用量：场强平方的时空积分；由于 $\mathcal{F}=\mathrm{i}F$，两种写法差一个负号。`}>{R`\mathcal{S}_{\rm M}[\mathcal{A}]\equiv\frac14\int_{\mathbb{R}^4}\mathcal{F}_{\mu\nu}\mathcal{F}^{\mu\nu}\dd^4x=-\frac14\int_{\mathbb{R}^4}F_{\mu\nu}F^{\mu\nu}\dd^4x.`}</Eq>
       <Exercise n="10.12" title="作用量的形式写法与电磁不变量" level="★★"
         hint={R`(a) 先证明二形式的恒等式 $\mathcal{F}\wedge*\mathcal{F}=\frac12\mathcal{F}_{\mu\nu}\mathcal{F}^{\mu\nu}\,\dd x^0\wedge\dd x^1\wedge\dd x^2\wedge\dd x^3$（第 7 章 $\omega\wedge*\omega=\frac1{r!}\omega_{\mu_1\ldots}\omega^{\mu_1\ldots}\sqrt{|g|}\dd^mx$ 的特例）。(b) 把 $F_{\mu\nu}F^{\mu\nu}$ 拆成 $2F_{0i}F^{0i}+F_{ij}F^{ij}$；对 $F_{\mu\nu}*F^{\mu\nu}$，只有"一个时间指标对一对空间指标"的项存活。`}
         solution={R`**(a)** 用第 7 章的 Hodge 星（$\epsilon_{0123}=+1$，$\eta=\mathrm{diag}(-1,1,1,1)$）：$*\mathcal{F}=\frac12(*\mathcal{F})_{\mu\nu}\dd x^\mu\wedge\dd x^\nu$，$(*\mathcal{F})_{\mu\nu}=\frac12\mathcal{F}^{\kappa\lambda}\varepsilon_{\kappa\lambda\mu\nu}$，与题中定义一致。直接展开（或用 $\omega\wedge*\omega=\frac1{r!}\omega_{\mu\ldots}\omega^{\mu\ldots}\mathrm{vol}$）得
@@ -81,7 +81,7 @@ $$F_{\mu\nu}*F^{\mu\nu}=\tfrac12\cdot4\,\varepsilon^{0123}\epsilon_{ijk}F_{0i}F_
       <Tx>{R`对 $\mathcal{S}_{\rm M}[\mathcal{A}]$ 关于 $\mathcal{A}_\mu$ 变分，得到运动方程`}</Tx>
       <Eq n="10.88a" say={R`Maxwell 作用量的 Euler–Lagrange 方程：场强的四维散度为零（真空中无源）。`}>{R`\partial_\mu\mathcal{F}^{\mu\nu}=0.`}</Eq>
       <Tx>{R`这个方程化为（真空中的）另一组 Maxwell 方程：`}</Tx>
-      <Eq n="10.88b" keyEq title="非齐次 Maxwell 方程（真空）" say={R`Gauss 定律与 Ampère–Maxwell 定律：它们来自作用量，是真正的动力学方程。`}>{R`\nabla\cdot\boldsymbol E=0\qquad\nabla\times\boldsymbol B-\frac{\partial\boldsymbol E}{\partial t}=0.`}</Eq>
+      <Eq n="10.88b" title="非齐次 Maxwell 方程（真空）" say={R`Gauss 定律与 Ampère–Maxwell 定律：它们来自作用量，是真正的动力学方程。`}>{R`\nabla\cdot\boldsymbol E=0\qquad\nabla\times\boldsymbol B-\frac{\partial\boldsymbol E}{\partial t}=0.`}</Eq>
       <Derivation title="补全：变分与分量" collapsed steps={[
         { tex: R`\delta\mathcal{S}_{\rm M}=\frac12\int\mathcal{F}^{\mu\nu}\delta\mathcal{F}_{\mu\nu}\dd^4x=\int\mathcal{F}^{\mu\nu}\partial_\mu\delta\mathcal{A}_\nu\dd^4x=-\int\partial_\mu\mathcal{F}^{\mu\nu}\,\delta\mathcal{A}_\nu\dd^4x`, why: R`$\delta\mathcal{F}_{\mu\nu}=\partial_\mu\delta\mathcal{A}_\nu-\partial_\nu\delta\mathcal{A}_\mu$，两项由反对称性相等；分部积分，边界项为零。` },
         { tex: R`\nu=0:\ \partial_iF^{i0}=-\partial_iF_{i0}=-\nabla\cdot\boldsymbol E=0`, why: R`在 $\mathrm{diag}(-1,1,1,1)$ 下 $F^{i0}=-F_{i0}=-E_i$（$\mathcal{F}=\mathrm{i}F$，常数因子不影响"$=0$"）。` },
@@ -101,7 +101,7 @@ Dirac 单极子定义在挖去原点 O 的 $\mathbb{R}^3$ 中。$\mathbb{R}^3-\{
 $$U_{\rm N}\equiv\{(\theta,\phi)\mid0\le\theta\le\tfrac12\pi+\epsilon\}\qquad U_{\rm S}\equiv\{(\theta,\phi)\mid\tfrac12\pi-\epsilon\le\theta\le\pi\}$$
 
 其中 $\theta$、$\phi$ 是极坐标。设 $\omega$ 是 $P$ 上的 Ehresmann 联络。在 $U_{\rm N}$（$U_{\rm S}$）上取局部截面 $\sigma_{\rm N}$（$\sigma_{\rm S}$），定义局部规范势 $\mathcal{A}_{\rm N}=\sigma_{\rm N}^*\omega$、$\mathcal{A}_{\rm S}=\sigma_{\rm S}^*\omega$。取 $\mathcal{A}_{\rm N}$、$\mathcal{A}_{\rm S}$ 为 Wu–Yang 形式（§1.9）：`}</Tx>
-      <Eq n="10.89" keyEq title="Wu–Yang 单极子势" say={R`单极子的两块规范势：北势在南极奇异、南势在北极奇异，各自只在自己的半球（加一条重叠带）上使用。`}>{R`\mathcal{A}_{\rm N}=\mathrm{i}${GM}(1-\cos\theta)\dd\phi\qquad\mathcal{A}_{\rm S}=-\mathrm{i}${GM}(1+\cos\theta)\dd\phi`}</Eq>
+      <Eq n="10.89" title="Wu–Yang 单极子势" say={R`单极子的两块规范势：北势在南极奇异、南势在北极奇异，各自只在自己的半球（加一条重叠带）上使用。`}>{R`\mathcal{A}_{\rm N}=\mathrm{i}${GM}(1-\cos\theta)\dd\phi\qquad\mathcal{A}_{\rm S}=-\mathrm{i}${GM}(1+\cos\theta)\dd\phi`}</Eq>
       <Tx>{R`其中 $${GM}$ 是单极子的强度。（在北极 $\theta=0$，$1-\cos\theta\sim\theta^2/2$ 抵消了 $\dd\phi$ 的奇异性，$\mathcal{A}_{\rm N}$ 光滑；$\mathcal{A}_{\rm S}$ 在南极同理。）
 
 **转移函数。**设 $t_{\rm NS}$ 是定义在赤道 $U_{\rm N}\cap U_{\rm S}$ 上的转移函数。$t_{\rm NS}$ 定义了从 $S^1$（赤道）到 U(1)（结构群）的映射，按 $\pi_1(\mathrm{U}(1))=\mathbb{Z}$ 分类（见例 9.7）。写成`}</Tx>
@@ -118,7 +118,7 @@ $$\dd\varphi=-\mathrm{i}(\mathcal{A}_{\rm N}-\mathcal{A}_{\rm S})=2${GM}\,\dd\ph
       <Tx>{R`要使 $t_{\rm NS}$ 唯一确定（单值），$\Delta\varphi$ 必须是 $2\pi$ 的倍数：`}</Tx>
       <Eq n="10.93" keyEq title="Dirac 量子化条件" say={R`磁单极强度的量子化：转移函数沿赤道必须单值，所以 $2g$ 只能是整数——它就是丛所属的同伦类。`}>{R`\Delta\varphi/2\pi=2${GM}\in\mathbb{Z}`}</Eq>
       <Tx>{R`这就是磁单极子的**量子化条件**。整数 $2${GM}$ 表示这个丛所属的同伦类。这个数也可以通过考虑 $F_{\rm N}=\dd A_{\rm N}$、$F_{\rm S}=\dd A_{\rm S}$（$\mathcal{F}_{\rm N}=\mathrm{i}F_{\rm N}$ 等）得到。总通量 $\Phi$ 为`}</Tx>
-      <Eq n="10.94" keyEq title="单极子总通量" say={R`穿过球面的总磁通：两块半球各用自己的势做 Stokes 定理，剩下的只是赤道上两个势之差的积分——它由转移函数的卷绕数决定。`}>{R`\Phi=\int_{S^2}\boldsymbol B\cdot\dd\boldsymbol S=\int_{U_{\rm N}}\dd A_{\rm N}+\int_{U_{\rm S}}\dd A_{\rm S}=\int_{S^1}A_{\rm N}-\int_{S^1}A_{\rm S}=2${GM}\int_0^{2\pi}\dd\phi=4\pi${GM}.`}</Eq>
+      <Eq n="10.94" title="单极子总通量" say={R`穿过球面的总磁通：两块半球各用自己的势做 Stokes 定理，剩下的只是赤道上两个势之差的积分——它由转移函数的卷绕数决定。`}>{R`\Phi=\int_{S^2}\boldsymbol B\cdot\dd\boldsymbol S=\int_{U_{\rm N}}\dd A_{\rm N}+\int_{U_{\rm S}}\dd A_{\rm S}=\int_{S^1}A_{\rm N}-\int_{S^1}A_{\rm S}=2${GM}\int_0^{2\pi}\dd\phi=4\pi${GM}.`}</Eq>
       <Tx>{R`（这里 $U_{\rm N}$、$U_{\rm S}$ 取成以赤道为界的两个闭半球；北半球的边界是逆时针的赤道，南半球的边界是顺时针的赤道，所以出现相减。）因此曲率——即场强的一对 $\dd A_{\rm N}$ 与 $\dd A_{\rm S}$——刻画了丛的扭曲。第 11 章将进一步讨论：$\frac1{2\pi}\int_{S^2}F=2${GM}$ 就是第一陈数。`}</Tx>
       <Box kind="physics" title="与球面切丛的联系">{R`交互图 1 中，$S^2$ 上平行移动的转角在北极正则的标架下是 $\oint(1-\cos\theta)\dd\phi$——与 \eqref{10.89} 的 $\mathcal{A}_{\rm N}/\mathrm{i}$ 在 $${GM}=1$ 时完全相同。也就是说，$S^2$ 的切丛（看作复线丛，即全纯切丛 $TS^{2+}$）正是 $2${GM}=2$ 的单极子丛：它的"总通量" $4\pi$ 等于 $2\pi\chi(S^2)$（Gauss–Bonnet），而 Euler 数 $\chi=2$ 就是转移函数的卷绕数。这也是"不能给毛球梳平毛"的丛论解释。`}</Box>
       <MonopoleLab />
@@ -146,7 +146,7 @@ Aharonov–Bohm（AB）实验如 \figref{10.4} 所示。电荷为 $${EC}$ 的电
       <Tx>{R`其中 $\gamma\equiv\gamma_{\rm I}-\gamma_{\rm II}$。显然，尽管电子经过的空间各点 $\boldsymbol B=0$，波函数仍依赖于矢势 $\boldsymbol A$。由 Stokes 定理，`}</Tx>
       <Eq n="10.99" say={R`沿包围螺线管的闭路，矢势的环量等于穿过任一张以它为边界的曲面的磁通——而磁通全部集中在电子到不了的管内。`}>{R`\oint_\gamma\boldsymbol A\cdot\dd\boldsymbol r'=\int_S(\nabla\times\boldsymbol A)\cdot\dd\boldsymbol S=\int_S\boldsymbol B\cdot\dd\boldsymbol S=\Phi`}</Eq>
       <Tx>{R`其中 $S$ 是以 $\gamma$ 为边界的曲面（它必须穿过螺线管——在 $M=\mathbb{R}^2-\{0\}$ 内部没有这样的曲面，这里的 Stokes 定理是在包含螺线管的 $\mathbb{R}^2$ 中使用的）。由此与 \eqref{10.98}，若两个通量值 $\Phi_{\rm a}$、$\Phi_{\rm b}$ 满足`}</Tx>
-      <Eq n="10.100" keyEq title="AB 效应的周期性" say={R`干涉图样随磁通周期变化，周期是磁通量子 $2\pi/e$：只有和乐 $e^{\mathrm{i}e\Phi}$ 是可观测的。`}>{R`${EC}(\Phi_{\rm a}-\Phi_{\rm b})=2\pi n\qquad n\in\mathbb{Z}`}</Eq>
+      <Eq n="10.100" title="AB 效应的周期性" say={R`干涉图样随磁通周期变化，周期是磁通量子 $2\pi/e$：只有和乐 $e^{\mathrm{i}e\Phi}$ 是可观测的。`}>{R`${EC}(\Phi_{\rm a}-\Phi_{\rm b})=2\pi n\qquad n\in\mathbb{Z}`}</Eq>
       <Tx>{R`则干涉图样相同。
 
 **背后的几何。**问题本质上是二维的，考虑区域 $M=\mathbb{R}^2-\{\boldsymbol0\}$，螺线管在原点。相关的丛是主丛 $P(M,\mathrm{U}(1))$ 及其相伴丛 $E=P\times_\rho\mathbb{C}$，U(1) 以显然的方式作用在 $\mathbb{C}$ 上。$E$ 是 $M$ 上的复线丛，它的截面是波函数 $\psi$。
@@ -179,12 +179,12 @@ $$[T_\alpha,T_\beta]=\epsilon_{\alpha\beta\gamma}T_\gamma.$$
 （验证：$[\frac{${SP}_\alpha}{2\mathrm{i}},\frac{${SP}_\beta}{2\mathrm{i}}]=-\frac14\cdot2\mathrm{i}\epsilon_{\alpha\beta\gamma}${SP}_\gamma=\epsilon_{\alpha\beta\gamma}\frac{${SP}_\gamma}{2\mathrm{i}}$。）场强为`}</Tx>
       <Eq n="10.106a" say={R`SU(2) 场强：势的外微分加上势的外平方，展开为二形式。`}>{R`\mathcal{F}\equiv\dd\mathcal{A}+\mathcal{A}\wedge\mathcal{A}=\tfrac12\mathcal{F}_{\mu\nu}\dd x^\mu\wedge\dd x^\nu`}</Eq>
       <Tx>{R`其中`}</Tx>
-      <Eq n="10.106b" keyEq title="Yang–Mills 场强分量" say={R`场强分量：旋度加对易子，再按生成元展开成三个色分量。`}>{R`\mathcal{F}_{\mu\nu}=\partial_\mu\mathcal{A}_\nu-\partial_\nu\mathcal{A}_\mu+[\mathcal{A}_\mu,\mathcal{A}_\nu]=F_{\mu\nu}{}^\alpha T_\alpha`}</Eq>
+      <Eq n="10.106b" title="Yang–Mills 场强分量" say={R`场强分量：旋度加对易子，再按生成元展开成三个色分量。`}>{R`\mathcal{F}_{\mu\nu}=\partial_\mu\mathcal{A}_\nu-\partial_\nu\mathcal{A}_\mu+[\mathcal{A}_\mu,\mathcal{A}_\nu]=F_{\mu\nu}{}^\alpha T_\alpha`}</Eq>
       <Eq n="10.106c" say={R`SU(2) 场强的色分量：结构常数就是 $\epsilon_{\alpha\beta\gamma}$，二次项是两个势的叉乘。`}>{R`F_{\mu\nu}{}^\alpha=\partial_\mu${AC}_{\nu\alpha}-\partial_\nu${AC}_{\mu\alpha}+\epsilon_{\alpha\beta\gamma}${AC}_{\mu\beta}${AC}_{\nu\gamma}.`}</Eq>
       <Tx>{R`（这里 $${AC}_{\mu\alpha}\equiv A_\mu{}^\alpha$。）Bianchi 恒等式为`}</Tx>
       <Eq n="10.107" say={R`非阿贝尔的 Bianchi 恒等式：场强的协变外微分为零——它不再意味着 $\dd\mathcal{F}=0$。`}>{R`\mathcal{D}\mathcal{F}=\dd\mathcal{F}+[\mathcal{A},\mathcal{F}]=0.`}</Eq>
       <Tx>{R`Yang–Mills 作用量为`}</Tx>
-      <Eq n="10.108" keyEq title="Yang–Mills 作用量" say={R`Yang–Mills 作用量：场强平方的迹的积分，它在规范变换 $\mathcal{F}\to g^{-1}\mathcal{F}g$ 下不变。`}>{R`\mathcal{S}_{\rm YM}[\mathcal{A}]\equiv\frac14\int_M\Tr(\mathcal{F}_{\mu\nu}\mathcal{F}^{\mu\nu})=\frac12\int_M\Tr(\mathcal{F}\wedge*\mathcal{F}).`}</Eq>
+      <Eq n="10.108" title="Yang–Mills 作用量" say={R`Yang–Mills 作用量：场强平方的迹的积分，它在规范变换 $\mathcal{F}\to g^{-1}\mathcal{F}g$ 下不变。`}>{R`\mathcal{S}_{\rm YM}[\mathcal{A}]\equiv\frac14\int_M\Tr(\mathcal{F}_{\mu\nu}\mathcal{F}^{\mu\nu})=\frac12\int_M\Tr(\mathcal{F}\wedge*\mathcal{F}).`}</Eq>
       <Box kind="warning" title={R`勘误：\eqref{10.108} 第一个表达式的符号（p.425）`}>{R`原书印作 $\mathcal{S}_{\rm YM}\equiv-\frac14\int\Tr(\mathcal{F}_{\mu\nu}\mathcal{F}^{\mu\nu})=\frac12\int\Tr(\mathcal{F}\wedge*\mathcal{F})$。由恒等式 $\mathcal{F}\wedge*\mathcal{F}=\frac12\mathcal{F}_{\mu\nu}\mathcal{F}^{\mu\nu}\dd^4x$（约定同第 7 章 \eqref{7.172}：这就是 \eqref{7.178} 取 $r=2$，对每个 Lie 代数分量成立后再取迹；见习题 10.12 的解答与勘误），两端相差一个负号。与 U(1) 情形 \eqref{10.85a}（$+\frac14\int\mathcal{F}_{\mu\nu}\mathcal{F}^{\mu\nu}$，其中 $\mathcal{F}=\mathrm{i}F$ 使它等于 $-\frac14\int F_{\mu\nu}F^{\mu\nu}$）保持一致的写法是 $+\frac14$：反 Hermite 生成元下 $\Tr(T_\alpha T_\beta)=-\frac12\delta_{\alpha\beta}$，于是 $\frac14\Tr(\mathcal{F}_{\mu\nu}\mathcal{F}^{\mu\nu})=-\frac18F_{\mu\nu}{}^\alpha F^{\mu\nu\alpha}$，正是标准的 Yang–Mills 拉氏量（相差归一化）。正文改用 $+\frac14$；右端 $\frac12\int\Tr(\mathcal{F}\wedge*\mathcal{F})$ 不变。`}</Box>
       <Tx>{R`对 $\mathcal{A}_\mu$ 变分得`}</Tx>
       <Eq n="10.109" keyEq title="Yang–Mills 方程" say={R`Yang–Mills 方程：场强对偶的协变外微分为零——非阿贝尔版本的无源 Maxwell 方程。`}>{R`\mathcal{D}_\mu\mathcal{F}^{\mu\nu}=0\qquad\text{或}\qquad\mathcal{D}*\mathcal{F}=0.`}</Eq>

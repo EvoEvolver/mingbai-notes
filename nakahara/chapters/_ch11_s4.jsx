@@ -33,7 +33,7 @@ $$\det\Big(I+\frac{\mathcal{F}}{2\pi}\Big)=\det\Big(I+\frac{\mathcal{F}^{\rm t}}
 把 $\mathcal{F}/2\pi$ 对角化为`}</Tx>
         <Eq n="11.72" say={R`实丛的"陈根"：$\mathcal{F}/2\pi$ 的每个 $2\times2$ 块贡献一对本征值 $\pm\mathrm{i}x_k$，$x_k$ 是块元除以 $2\pi$。`}>{R`\frac{\mathcal{F}}{2\pi}\to A\equiv\begin{pmatrix}\mathrm{i}x_1&&&&\\&-\mathrm{i}x_1&&&\\&&\mathrm{i}x_2&&\\&&&-\mathrm{i}x_2&\\&&&&\ddots\end{pmatrix}`}</Eq>
         <Tx>{R`其中 $x_k\equiv\lambda_k/2\pi$，$\lambda_k$ 是 $\mathcal{F}$ 化为块对角形 \eqref{11.69} 后的块元（$\mathcal{F}$ 的本征值为 $\pm\mathrm{i}\lambda_k$）。这个符号的选择是为了简化下文定义的 Euler 类（见下面的勘误）。$p(\mathcal{F})$ 的生成函数为`}</Tx>
-        <Eq n="11.73" keyEq title="Pontrjagin 类的生成函数" say={R`每对本征值 $\pm\mathrm{i}x$ 贡献 $(1+\mathrm{i}x)(1-\mathrm{i}x)=1+x^2$：Pontrjagin 类只记得 $x^2$。`}>{R`p(\mathcal{F})=\det(I+A)=\prod_{i=1}^{[k/2]}(1+x_i^2)`}</Eq>
+        <Eq n="11.73" title="Pontrjagin 类的生成函数" say={R`每对本征值 $\pm\mathrm{i}x$ 贡献 $(1+\mathrm{i}x)(1-\mathrm{i}x)=1+x^2$：Pontrjagin 类只记得 $x^2$。`}>{R`p(\mathcal{F})=\det(I+A)=\prod_{i=1}^{[k/2]}(1+x_i^2)`}</Eq>
         <Tx>{R`其中 $[k/2]=k/2$（$k$ 为偶数）或 $(k-1)/2$（$k$ 为奇数）。\eqref{11.73} 中只出现*偶*次幂，反映了反对称性。每个 **Pontrjagin 类**由 \eqref{11.73} 算出：`}</Tx>
         <Eq n="11.74" say={R`第 $j$ 个 Pontrjagin 类是 $x_i^2$ 的第 $j$ 个初等对称函数。`}>{R`p_j(\mathcal{F})=\sum_{i_1<i_2<\ldots<i_j}^{[k/2]}x_{i_1}^2x_{i_2}^2\cdots x_{i_j}^2.`}</Eq>
         <Tx>{R`为了用曲率二形式 $\mathcal{F}/2\pi$ 表示 $p_j(\mathcal{F})$，先注意
@@ -41,7 +41,7 @@ $$\det\Big(I+\frac{\mathcal{F}}{2\pi}\Big)=\det\Big(I+\frac{\mathcal{F}^{\rm t}}
 $$\Tr\Big(\frac{\mathcal{F}}{2\pi}\Big)^{2j}=\Tr A^{2j}=2(-1)^j\sum_{i=1}^{[k/2]}x_i^{2j}$$
 
 （$(\mathrm{i}x)^{2j}+(-\mathrm{i}x)^{2j}=2(-1)^jx^{2j}$；奇数次幂的迹为零。）于是`}</Tx>
-        <Eq n="11.75a" keyEq title={R`$p_1$ 的迹表达`} say={R`第一 Pontrjagin 类：$x_i^2$ 之和，即 $-\frac12\Tr(\mathcal{F}/2\pi)^2$——反对称矩阵平方的迹是负的，负号使 $p_1$ 成为"正"的量。`}>{R`p_1(\mathcal{F})=\sum_ix_i^2=-\frac12\Big(\frac1{2\pi}\Big)^2\Tr\mathcal{F}^2`}</Eq>
+        <Eq n="11.75a" title={R`$p_1$ 的迹表达`} say={R`第一 Pontrjagin 类：$x_i^2$ 之和，即 $-\frac12\Tr(\mathcal{F}/2\pi)^2$——反对称矩阵平方的迹是负的，负号使 $p_1$ 成为"正"的量。`}>{R`p_1(\mathcal{F})=\sum_ix_i^2=-\frac12\Big(\frac1{2\pi}\Big)^2\Tr\mathcal{F}^2`}</Eq>
         <Eq n="11.75b" say={R`第二 Pontrjagin 类：由幂和 $\sum x^2$、$\sum x^4$ 用 Newton 恒等式得到。`}>{R`p_2(\mathcal{F})=\sum_{i<j}x_i^2x_j^2=\frac12\Big[\Big(\sum_ix_i^2\Big)^2-\sum_ix_i^4\Big]=\frac18\Big(\frac1{2\pi}\Big)^4[(\Tr\mathcal{F}^2)^2-2\Tr\mathcal{F}^4]`}</Eq>
         <Eq n="11.75c" say={R`第三 Pontrjagin 类：三个迹单项式，公分母 48。`}>{R`p_3(\mathcal{F})=\sum_{i<j<k}x_i^2x_j^2x_k^2=\frac1{48}\Big(\frac1{2\pi}\Big)^6[-(\Tr\mathcal{F}^2)^3+6\Tr\mathcal{F}^2\Tr\mathcal{F}^4-8\Tr\mathcal{F}^6]`}</Eq>
         <Eq n="11.75d" say={R`第四 Pontrjagin 类：五个迹单项式，公分母 384。`}>{R`\begin{aligned}p_4(\mathcal{F})&=\sum_{i<j<k<l}x_i^2x_j^2x_k^2x_l^2\\&=\frac1{384}\Big(\frac1{2\pi}\Big)^8[(\Tr\mathcal{F}^2)^4-12(\Tr\mathcal{F}^2)^2\Tr\mathcal{F}^4+32\Tr\mathcal{F}^2\Tr\mathcal{F}^6+12(\Tr\mathcal{F}^4)^2-48\Tr\mathcal{F}^8]\end{aligned}`}</Eq>
@@ -61,14 +61,14 @@ $$\Tr\Big(\frac{\mathcal{F}}{2\pi}\Big)^{2j}=\Tr A^{2j}=2(-1)^j\sum_{i=1}^{[k/2]
 $$\det(I+\mathrm{i}A)=\det\begin{pmatrix}1-x_1&&&&\\&1+x_1&&&\\&&1-x_2&&\\&&&1+x_2&\\&&&&\ddots\end{pmatrix}=\prod_{i=1}^{[k/2]}(1-x_i^2)=1-p_1(A)+p_2(A)-\cdots$$
 
 由此得到`}</Tx>
-        <Eq n="11.77" keyEq title="Pontrjagin 类与陈类" say={R`实丛的 Pontrjagin 类就是其复化丛的偶数阶陈类（带交错符号）；复化丛的奇数阶陈类为零。`}>{R`p_j(E)=(-1)^jc_{2j}(E^{\C}).`}</Eq>
+        <Eq n="11.77" title="Pontrjagin 类与陈类" say={R`实丛的 Pontrjagin 类就是其复化丛的偶数阶陈类（带交错符号）；复化丛的奇数阶陈类为零。`}>{R`p_j(E)=(-1)^jc_{2j}(E^{\C}).`}</Eq>
 
         <Box kind="example" n="11.5" title="四维 Riemann 流形的 Pontrjagin 类">
           <Tx>{R`设 $M$ 是四维 Riemann 流形。采用正交归一标架 $\{\hat e_\alpha\}$ 时，切丛 $TM$ 的结构群可以约化为 $\mathrm{O}(4)$。设 $\mathcal{R}=(\mathcal{R}_{\alpha\beta})$ 是曲率二形式，$\mathcal{R}_{\alpha\beta}=\frac12R_{\alpha\beta\gamma\delta}\theta^\gamma\wedge\theta^\delta$（$\mathcal{R}$ 不要与标量曲率混淆；原书简写为 $\mathcal{R}=\frac12\mathcal{R}_{\alpha\beta}\theta^\alpha\wedge\theta^\beta$）。对切丛，通常写 $p(M)$ 而不是 $p(\mathcal{R})$。我们有`}</Tx>
           <Eq n="11.78" say={R`四维时 Pontrjagin 多项式只有三项：常数 1、四形式 $p_1$ 与（作为矩阵多项式的）八次项 $p_2$。`}>{R`\det\Big(I+\frac{\mathcal{R}}{2\pi}\Big)=1-\frac1{8\pi^2}\Tr\mathcal{R}^2+\frac1{128\pi^4}[(\Tr\mathcal{R}^2)^2-2\Tr\mathcal{R}^4].`}</Eq>
           <Tx>{R`各 **Pontrjagin 类**为`}</Tx>
           <Eq n="11.79a" say={R`零阶 Pontrjagin 类是 1。`}>{R`p_0(M)=1`}</Eq>
-          <Eq n="11.79b" keyEq title={R`$p_1(M)$`} say={R`四维流形的第一 Pontrjagin 类：Riemann 曲率二形式的"平方的迹"，它的积分是符号差的 3 倍。`}>{R`p_1(M)=-\frac1{8\pi^2}\Tr\mathcal{R}^2=-\frac1{8\pi^2}\mathcal{R}_{\alpha\beta}\wedge\mathcal{R}_{\beta\alpha}`}</Eq>
+          <Eq n="11.79b" title={R`$p_1(M)$`} say={R`四维流形的第一 Pontrjagin 类：Riemann 曲率二形式的"平方的迹"，它的积分是符号差的 3 倍。`}>{R`p_1(M)=-\frac1{8\pi^2}\Tr\mathcal{R}^2=-\frac1{8\pi^2}\mathcal{R}_{\alpha\beta}\wedge\mathcal{R}_{\beta\alpha}`}</Eq>
           <Eq n="11.79c" say={R`第二 Pontrjagin 类：作为四维流形上的八形式恒为零，但作为矩阵多项式它是行列式，下面用来定义 Euler 类。`}>{R`p_2(M)=\frac1{128\pi^4}[(\Tr\mathcal{R}^2)^2-2\Tr\mathcal{R}^4]=\Big(\frac1{2\pi}\Big)^4\det\mathcal{R}.`}</Eq>
           <Tx>{R`虽然 $p_2(M)$ 作为微分形式为零，下一小节计算 Euler 类时需要它。`}</Tx>
         </Box>
@@ -78,7 +78,7 @@ $$\det(I+\mathrm{i}A)=\det\begin{pmatrix}1-x_1&&&&\\&1+x_1&&&\\&&1-x_2&&\\&&&1+x
         <Tx>{R`**我们要找什么。**$\mathrm{SO}(2l)$ 比 $\mathrm{O}(2l)$ 多一个不变多项式：反对称矩阵的行列式恰好是另一个多项式的平方。这个"平方根"给出一个 $2l$ 形式——恰好是流形维数的形式，可以直接积分。
 
 设 $M$ 是 $2l$ 维可定向 Riemann 流形，$TM$ 是其切丛，曲率记为 $\mathcal{R}$。采用正交归一标架总可以把 $TM$ 的结构群约化到 $\mathrm{SO}(2l)$。$M$ 的 **Euler 类** $e$ 定义为 $4l$ 形式 $p_l$ 的平方根：`}</Tx>
-        <Eq n="11.80" keyEq title={R`$e^2=p_l$`} say={R`Euler 类是最高 Pontrjagin 多项式的平方根——作为矩阵 $A$ 的多项式理解。`}>{R`e(A)e(A)=p_l(A).`}</Eq>
+        <Eq n="11.80" title={R`$e^2=p_l$`} say={R`Euler 类是最高 Pontrjagin 多项式的平方根——作为矩阵 $A$ 的多项式理解。`}>{R`e(A)e(A)=p_l(A).`}</Eq>
         <Tx>{R`两边都应理解为 $2l\times2l$ 矩阵 $A$ 的函数，而不是曲率 $\mathcal{R}$ 的函数，因为 $p_l(\mathcal{R})$（$4l$ 形式，$4l>2l$）恒为零。［原书此处印作"$p_1(\mathcal{R})$ 恒为零"，应为 $p_l$。］但这样定义的 $e(M)\equiv e(\mathcal{R})$ 是 $2l$ 形式，而且确实给出 $M$ 的一个体积元。若 $M$ 是奇数维流形，定义 $e(M)=0$（见下文）。`}</Tx>
 
         <Box kind="example" n="11.6" title={R`$S^2$ 的 Euler 类`}>
@@ -91,7 +91,7 @@ $$\mathcal{R}_{\theta\phi}=-\mathcal{R}_{\phi\theta}=\dd\omega^1{}_2=\sin\theta\
 $$p_1(S^2)=-\frac1{8\pi^2}\Tr\mathcal{R}^2=-\frac1{8\pi^2}[\mathcal{R}_{\theta\phi}\mathcal{R}_{\phi\theta}+\mathcal{R}_{\phi\theta}\mathcal{R}_{\theta\phi}]=\Big(\frac1{2\pi}\sin\theta\,\dd\theta\wedge\dd\phi\Big)^2$$
 
 由此读出`}</Tx>
-          <Eq n="11.81" keyEq title={R`$e(S^2)$`} say={R`单位球面的 Euler 形式就是面积元除以 $2\pi$（Gauss 曲率 $K=1$）。`}>{R`e(S^2)=\frac1{2\pi}\sin\theta\,\dd\theta\wedge\dd\phi.`}</Eq>
+          <Eq n="11.81" title={R`$e(S^2)$`} say={R`单位球面的 Euler 形式就是面积元除以 $2\pi$（Gauss 曲率 $K=1$）。`}>{R`e(S^2)=\frac1{2\pi}\sin\theta\,\dd\theta\wedge\dd\phi.`}</Eq>
           <Tx>{R`有趣的是`}</Tx>
           <Eq n="11.82" say={R`把 Euler 形式在球面上积分得到 2——恰好是球面的 Euler 示性数。`}>{R`\int_{S^2}e(S^2)=\frac1{2\pi}\int_0^{2\pi}\dd\phi\int_0^\pi\dd\theta\sin\theta=2`}</Eq>
           <Tx>{R`它是 $S^2$ 的 Euler 示性数（§2.4）。这不仅仅是巧合。再看另一个有说服力的例子：环面 $T^2$。由于 $T^2$ 容许平坦联络，曲率恒为零，于是 $e(T^2)\equiv0$，而 $\chi(T^2)=0$。这些是 **Gauss–Bonnet 定理**的特例：`}</Tx>
@@ -102,9 +102,9 @@ $$p_1(S^2)=-\frac1{8\pi^2}\Tr\mathcal{R}^2=-\frac1{8\pi^2}[\mathcal{R}_{\theta\p
         <GaussBonnetLab />
 
         <Tx>{R`**Pfaffian。**一般地，$2l\times2l$ 反对称矩阵 $A$ 的行列式是一个多项式——**Pfaffian** $\mathrm{Pf}(A)$——的平方（命题 1.3）：`}</Tx>
-        <Eq n="11.84" keyEq title={R`$\det=\mathrm{Pf}^2$`} say={R`反对称矩阵的行列式是一个多项式的完全平方：Pfaffian 是"带符号的平方根"。`}>{R`\det A=\mathrm{Pf}(A)^2.`}</Eq>
+        <Eq n="11.84" title={R`$\det=\mathrm{Pf}^2$`} say={R`反对称矩阵的行列式是一个多项式的完全平方：Pfaffian 是"带符号的平方根"。`}>{R`\det A=\mathrm{Pf}(A)^2.`}</Eq>
         <Tx>{R`我们证明 Pfaffian 由下式给出：`}</Tx>
-        <Eq n="11.85" keyEq title="Pfaffian" say={R`Pfaffian：把 $2l$ 个指标两两配对，带置换的符号求和；$2^ll!$ 消去每对内部交换与各对之间重排带来的重复。`}>{R`\mathrm{Pf}(A)=\frac{1}{2^ll!}\sum_P\mathrm{sgn}(P)A_{P(1)P(2)}A_{P(3)P(4)}\cdots A_{P(2l-1)P(2l)}`}</Eq>
+        <Eq n="11.85" title="Pfaffian" say={R`Pfaffian：把 $2l$ 个指标两两配对，带置换的符号求和；$2^ll!$ 消去每对内部交换与各对之间重排带来的重复。`}>{R`\mathrm{Pf}(A)=\frac{1}{2^ll!}\sum_P\mathrm{sgn}(P)A_{P(1)P(2)}A_{P(3)P(4)}\cdots A_{P(2l-1)P(2l)}`}</Eq>
         <Tx>{R`首先注意反对称矩阵 $A$ 可以用 $\mathrm{O}(2l)$ 的元素块对角化：`}</Tx>
         <Eq n="11.86" say={R`实反对称矩阵的正交标准形：$l$ 个 $2\times2$ 转动块。`}>{R`S^{\rm t}AS=\Lambda=\begin{pmatrix}0&\lambda_1&&&&&&\\-\lambda_1&0&&&&&&\\&&0&\lambda_2&&&&\\&&-\lambda_2&0&&&&\\&&&&\ddots&&&\\&&&&&\ddots&&\\&&&&&&0&\lambda_l\\&&&&&&-\lambda_l&0\end{pmatrix}.`}</Eq>
         <Tx>{R`容易看出
@@ -124,7 +124,7 @@ $$A_{12}A_{34}\cdots A_{2l-1,2l}\to A_{34}A_{12}\cdots A_{2l-1,2l}$$
 $$\mathrm{Pf}(\Lambda)=A_{12}A_{34}\cdots A_{2l-1,2l}=\prod_{i=1}^l\lambda_i.$$
 
 于是块对角矩阵 $\Lambda$ 满足 $\det\Lambda=\mathrm{Pf}(\Lambda)^2$。为了证明 \eqref{11.84} 对任何（不一定块对角的）反对称矩阵成立，我们用下面的引理：`}</Tx>
-        <Eq n="11.87" keyEq title="Pfaffian 的变换律" say={R`Pfaffian 在 $A\to X^{\rm t}AX$ 下乘以 $\det X$：在正常转动下不变，在反射下变号。`}>{R`\mathrm{Pf}(X^{\rm t}AX)=\mathrm{Pf}(A)\det X.`}</Eq>
+        <Eq n="11.87" title="Pfaffian 的变换律" say={R`Pfaffian 在 $A\to X^{\rm t}AX$ 下乘以 $\det X$：在正常转动下不变，在反射下变号。`}>{R`\mathrm{Pf}(X^{\rm t}AX)=\mathrm{Pf}(A)\det X.`}</Eq>
         <Stmt id="F:pfaffian">
           <Proof steps={[
             { claim: R`用全反对称符号改写定义 \eqref{11.85}：对 $(1,\ldots,2l)$ 的置换 $P$ 求和就是对指标 $i_1,\ldots,i_{2l}$ 带 $\epsilon^{i_1\cdots i_{2l}}$ 求和。`, tex: R`\mathrm{Pf}(A)=\frac1{2^ll!}\epsilon^{i_1i_2\cdots i_{2l}}A_{i_1i_2}\cdots A_{i_{2l-1}i_{2l}}`, fill: true },
@@ -150,7 +150,7 @@ $n$ 为奇数时得 $\det A=-\det A$，即 $\det A=0$。（几何上：实反对
         <Tx>{R`**Euler 类**用曲率 $\mathcal{R}$ 定义为`}</Tx>
         <Eq n="11.88" keyEq title="Euler 类" say={R`Euler 类是曲率（除以 $2\pi$）的 Pfaffian：一个 $2l$ 形式，在 $\mathrm{SO}(2l)$ 规范变换下不变。`}>{R`e(M)=\mathrm{Pf}(\mathcal{R}/2\pi)=\frac{1}{(4\pi)^ll!}\sum_P\mathrm{sgn}(P)\mathcal{R}_{P(1)P(2)}\cdots\mathcal{R}_{P(2l-1)P(2l)}.`}</Eq>
         <Tx>{R`取 $x_j=\lambda_j/2\pi$ 得到生成函数`}</Tx>
-        <Eq n="11.89" keyEq title="Euler 类的生成函数" say={R`用实丛的"陈根"表示，Euler 类就是它们的乘积；平方后正是 $p_l=\prod x_i^2$。`}>{R`e(x)=x_1x_2\cdots x_l=\prod_{i=1}^lx_i.`}</Eq>
+        <Eq n="11.89" title="Euler 类的生成函数" say={R`用实丛的"陈根"表示，Euler 类就是它们的乘积；平方后正是 $p_l=\prod x_i^2$。`}>{R`e(x)=x_1x_2\cdots x_l=\prod_{i=1}^lx_i.`}</Eq>
         <Box kind="warning" title={R`勘误：Pfaffian 的相位与 $x_j$ 的符号（pp.457、460–462）`}>{R`**原书写法。**\eqref{11.85} 与 \eqref{11.88} 带有相位 $(-1)^l$：$\mathrm{Pf}(A)=\frac{(-1)^l}{2^ll!}\sum_P\ldots$，$e(M)=\frac{(-1)^l}{(4\pi)^ll!}\sum_P\ldots$；相应地 $\mathrm{Pf}(\Lambda)=(-1)^l\prod\lambda_i$，并在 \eqref{11.72}、\eqref{11.89} 中取 $x_j\equiv-\lambda_j/2\pi$，\eqref{11.72} 的对角元排为 $(-\mathrm{i}x_1,\mathrm{i}x_1,\ldots)$。
 
 **问题。**这一组约定内部自洽（$e=\prod x_j$），但与例 11.6 和 Gauss–Bonnet 矛盾：$S^2$ 上 $l=1$，$\mathcal{R}_{12}=\mathcal{R}_{\theta\phi}=\sin\theta\,\dd\theta\wedge\dd\phi$，按原书 \eqref{11.88}，
@@ -163,7 +163,7 @@ $$e(S^2)=\frac{-1}{4\pi}(\mathcal{R}_{12}-\mathcal{R}_{21})=-\frac1{2\pi}\sin\th
 
         <Box kind="example" n="11.7" title="四维流形的 Euler 类">
           <Tx>{R`设 $M$ 是四维可定向流形，$TM$ 的结构群为 $\mathrm{SO}(4)$（见例 11.5）。由 \eqref{11.88} 得 Euler 类`}</Tx>
-          <Eq n="11.90" keyEq title="四维 Euler 形式" say={R`四维 Euler 形式：两个曲率二形式用 Levi-Civita 符号全缩并——它的积分是四维流形的 Euler 示性数（Chern–Gauss–Bonnet）。`}>{R`e(M)=\frac1{2(4\pi)^2}\epsilon^{ijkl}\mathcal{R}_{ij}\wedge\mathcal{R}_{kl}.`}</Eq>
+          <Eq n="11.90" title="四维 Euler 形式" say={R`四维 Euler 形式：两个曲率二形式用 Levi-Civita 符号全缩并——它的积分是四维流形的 Euler 示性数（Chern–Gauss–Bonnet）。`}>{R`e(M)=\frac1{2(4\pi)^2}\epsilon^{ijkl}\mathcal{R}_{ij}\wedge\mathcal{R}_{kl}.`}</Eq>
           <Tx>{R`这与例 11.5 的结果一致。相关的 Pontrjagin 类为
 
 $$p_2(M)=\frac1{128\pi^4}[(\Tr\mathcal{R}^2)^2-2\Tr\mathcal{R}^4]=x_1^2x_2^2.$$
@@ -182,9 +182,9 @@ $$\frac1{128\pi^4}[(\Tr A^2)^2-2\Tr A^4]=\Big(\frac1{2(4\pi)^2}\epsilon^{ijkl}A_
 
       <Sub n="11.4.3" title="Hirzebruch L-polynomial and Â-genus" zh={R`Hirzebruch $L$ 多项式与 $\hat A$ 亏格`}>
         <Tx>{R`**Hirzebruch $L$ 多项式**定义为`}</Tx>
-        <Eq n="11.91" keyEq title={R`$L$ 多项式`} say={R`$L$ 多项式：对每个根取 $x/\tanh x$ 再连乘；它是偶函数，所以能用 Pontrjagin 类表达。`}>{R`L(x)=\prod_{j=1}^k\frac{x_j}{\tanh x_j}=\prod_{j=1}^k\Big(1+\sum_{n\ge1}(-1)^{n-1}\frac{2^{2n}}{(2n)!}B_nx_j^{2n}\Big)`}</Eq>
+        <Eq n="11.91" title={R`$L$ 多项式`} say={R`$L$ 多项式：对每个根取 $x/\tanh x$ 再连乘；它是偶函数，所以能用 Pontrjagin 类表达。`}>{R`L(x)=\prod_{j=1}^k\frac{x_j}{\tanh x_j}=\prod_{j=1}^k\Big(1+\sum_{n\ge1}(-1)^{n-1}\frac{2^{2n}}{(2n)!}B_nx_j^{2n}\Big)`}</Eq>
         <Tx>{R`其中 $B_n$ 是 Bernoulli 数（见 \eqref{11.66}）。（这里的乘积对实丛的 $[k/2]$ 个根 $x_j$ 取。）函数 $L(x)$ 是 $x_j$ 的偶函数，可以用 Pontrjagin 类写出：`}</Tx>
-        <Eq n="11.92" keyEq title={R`$L$ 用 $p_j$ 表达`} say={R`$L$ 多项式的前几阶：一阶 $\frac13p_1$，二阶 $\frac1{45}(7p_2-p_1^2)$——四维的符号差、八维的符号差公式。`}>{R`L(\mathcal{F})=1+\tfrac13p_1+\tfrac1{45}(-p_1^2+7p_2)+\tfrac1{945}(2p_1^3-13p_1p_2+62p_3)+\cdots`}</Eq>
+        <Eq n="11.92" title={R`$L$ 用 $p_j$ 表达`} say={R`$L$ 多项式的前几阶：一阶 $\frac13p_1$，二阶 $\frac1{45}(7p_2-p_1^2)$——四维的符号差、八维的符号差公式。`}>{R`L(\mathcal{F})=1+\tfrac13p_1+\tfrac1{45}(-p_1^2+7p_2)+\tfrac1{945}(2p_1^3-13p_1p_2+62p_3)+\cdots`}</Eq>
         <Tx>{R`其中 $p_j$ 代表 $p_j(\mathcal{F})$。由分裂原理得`}</Tx>
         <Eq n="11.93" say={R`$L$ 多项式对 Whitney 和是乘性的。`}>{R`L(E\oplus F)=L(E)\wedge L(F).`}</Eq>
         <Tx>{R`**$\hat A$（A-roof）亏格** $\hat A(\mathcal{F})$ 定义为`}</Tx>
@@ -193,7 +193,7 @@ $$\frac1{128\pi^4}[(\Tr A^2)^2-2\Tr A^4]=\Big(\frac1{2(4\pi)^2}\epsilon^{ijkl}A_
         <Tx>{R`它是 $x_j$ 的偶函数，可以按 $p_j$ 展开。$\hat A$ 也被物理学家称为 **Dirac 亏格**。它满足`}</Tx>
         <Eq n="11.95" say={R`$\hat A$ 亏格对 Whitney 和是乘性的。`}>{R`\hat A(E\oplus F)=\hat A(E)\wedge\hat A(F).`}</Eq>
         <Tx>{R`$\hat A$ 用 Pontrjagin 类写出为`}</Tx>
-        <Eq n="11.96" keyEq title={R`$\hat A$ 用 $p_j$ 表达`} say={R`$\hat A$ 的前几阶：一阶 $-\frac1{24}p_1$——四维自旋流形上 $\int p_1$ 必须被 24 整除的根源（Rokhlin 定理进一步给出 48）。`}>{R`\hat A(\mathcal{F})=1-\tfrac1{24}p_1+\tfrac1{5760}(7p_1^2-4p_2)+\tfrac1{967\,680}(-31p_1^3+44p_1p_2-16p_3)+\cdots.`}</Eq>
+        <Eq n="11.96" title={R`$\hat A$ 用 $p_j$ 表达`} say={R`$\hat A$ 的前几阶：一阶 $-\frac1{24}p_1$——四维自旋流形上 $\int p_1$ 必须被 24 整除的根源（Rokhlin 定理进一步给出 48）。`}>{R`\hat A(\mathcal{F})=1-\tfrac1{24}p_1+\tfrac1{5760}(7p_1^2-4p_2)+\tfrac1{967\,680}(-31p_1^3+44p_1p_2-16p_3)+\cdots.`}</Eq>
         <Tx>{R`交互图 2 的"实向量丛"模式由生成函数 $\frac{x}{\tanh x}$、$\frac{x/2}{\sinh(x/2)}$ 出发，符号地导出 \eqref{11.92}、\eqref{11.96} 的全部系数，并对数值根逐阶核对。`}</Tx>
 
         <Box kind="example" n="11.8" title="符号差与 Hirzebruch 符号差定理">
