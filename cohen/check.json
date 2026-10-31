@@ -1,0 +1,4 @@
+{
+ "problems_heading": "@@no-problems-heading@@",
+ "eq_regex": "\\(([A-F]-\\d+[a-z]?)\\)\\s*$"
+}

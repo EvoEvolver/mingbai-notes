@@ -1,0 +1,58 @@
+[
+ {
+  "id": "ch01",
+  "roman": "I",
+  "title_en": "Waves and particles. Introduction to the basic ideas of quantum mechanics",
+  "title_zh": "波与粒子：量子力学基本概念",
+  "pdf_from": 25,
+  "pdf_to": 56
+ },
+ {
+  "id": "ch01c",
+  "roman": "I",
+  "title_en": "Complements of Chapter I",
+  "title_zh": "第 I 章补充材料",
+  "pdf_from": 57,
+  "pdf_to": 110
+ },
+ {
+  "id": "ch02",
+  "roman": "II",
+  "title_en": "The mathematical tools of quantum mechanics",
+  "title_zh": "量子力学的数学工具",
+  "pdf_from": 111,
+  "pdf_to": 182
+ },
+ {
+  "id": "ch02c",
+  "roman": "II",
+  "title_en": "Complements of Chapter II",
+  "title_zh": "第 II 章补充材料",
+  "pdf_from": 183,
+  "pdf_to": 236
+ },
+ {
+  "id": "ch03",
+  "roman": "III",
+  "title_en": "The postulates of quantum mechanics",
+  "title_zh": "量子力学的基本假设",
+  "pdf_from": 237,
+  "pdf_to": 290
+ },
+ {
+  "id": "ch03c",
+  "roman": "III",
+  "title_en": "Complements of Chapter III (A–H)",
+  "title_zh": "第 III 章补充材料（上）",
+  "pdf_from": 291,
+  "pdf_to": 359
+ },
+ {
+  "id": "ch03d",
+  "roman": "III",
+  "title_en": "Complements of Chapter III (J–N)",
+  "title_zh": "第 III 章补充材料（下）",
+  "pdf_from": 360,
+  "pdf_to": 416
+ }
+]
