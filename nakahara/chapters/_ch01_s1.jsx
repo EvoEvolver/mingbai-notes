@@ -129,7 +129,7 @@ $$\begin{aligned}&\frac{\partial}{\partial q_k}\left(L+\frac{\dd Q}{\dd t}\right
         <Tx>{R`Lagrange 形式给出二阶常微分方程（ODE）。相比之下，Hamilton 形式给出关于时间**一阶**的运动方程，因而可以在后面定义的**相空间**里引入"流"。更重要的是，Hamilton 形式使**辛结构**（symplectic structure）显现出来，这将在例 5.12 中说明。
 
 给定 Lagrange 量 $L$，对应的 **Hamilton 量**由变量的 Legendre 变换定义：`}</Tx>
-        <Eq n="1.15" keyEq title="Hamilton 量（Legendre 变换）" say={R`Hamilton 量是 Lagrange 量的 Legendre 变换：用动量 $p$ 取代速度 $\dot q$ 作自变量；对普通粒子它就是能量。`}>{R`H(q,p)\equiv\sum_kp_k\dot q_k-L(q,\dot q),`}</Eq>
+        <Eq n="1.15" title="Hamilton 量（Legendre 变换）" say={R`Hamilton 量是 Lagrange 量的 Legendre 变换：用动量 $p$ 取代速度 $\dot q$ 作自变量；对普通粒子它就是能量。`}>{R`H(q,p)\equiv\sum_kp_k\dot q_k-L(q,\dot q),`}</Eq>
         <Tx>{R`其中左边的 $\dot q$ 已利用动量定义 $p_k=\partial L(q,\dot q)/\partial\dot q_k$ 换成 $p$ 的函数。要使这个变换有定义（能把 $\dot q$ 反解为 $p$ 的函数），Jacobi 行列式必须满足
 
 $$\det\left(\frac{\partial p_i}{\partial\dot q_j}\right)=\det\left(\frac{\partial^2L}{\partial\dot q_i\partial\dot q_j}\right)\neq0.$$
@@ -151,7 +151,7 @@ $$\begin{aligned}\delta H&=\sum_k\left[\delta p_k\dot q_k+p_k\delta\dot q_k-\fra
           <Tx>{R`两式合起来即 $\ddot q=-\omega^2q$，解为 $q=A\cos(\omega t+\phi)$。`}</Tx>
         </Box>
         <Tx>{R`**Poisson 括号。**取相空间上的两个函数 $A(q,p)$、$B(q,p)$，定义 **Poisson 括号**（Poisson bracket）`}</Tx>
-        <Eq n="1.20" keyEq title="Poisson 括号" say={R`Poisson 括号：两个相空间函数的"辛内积"，坐标导数与动量导数交叉相乘再相减；它是量子对易子的经典原型。`}>{R`[A,B]=\sum_k\left(\frac{\partial A}{\partial q_k}\frac{\partial B}{\partial p_k}-\frac{\partial A}{\partial p_k}\frac{\partial B}{\partial q_k}\right).`}</Eq>
+        <Eq n="1.20" title="Poisson 括号" say={R`Poisson 括号：两个相空间函数的"辛内积"，坐标导数与动量导数交叉相乘再相减；它是量子对易子的经典原型。`}>{R`[A,B]=\sum_k\left(\frac{\partial A}{\partial q_k}\frac{\partial B}{\partial p_k}-\frac{\partial A}{\partial p_k}\frac{\partial B}{\partial q_k}\right).`}</Eq>
         <Tx>{R`（后面引入算符的对易子 $[A,B]$ 后，为避免混淆，Poisson 括号将记作 $[A,B]_{\rm PB}$。）`}</Tx>
         <Exercise n="1.1" title="Poisson 括号是 Lie 括号" level="★"
           hint={R`线性与反对称直接由定义 \eqref{1.20} 看出。Jacobi 恒等式：把 $[[A,B],C]$ 展开后，每一项都恰好含一个二阶导数；按"二阶导数落在哪个函数上"分组，证明落在 $A$ 上的项在三个循环项中相消（另两组由轮换对称性同理）。`}

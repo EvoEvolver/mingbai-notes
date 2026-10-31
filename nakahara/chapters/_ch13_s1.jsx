@@ -19,7 +19,7 @@ export function Intro() {
 
 本章主要依据 Alvarez-Gaumé (1986)、Alvarez-Gaumé 与 Ginsparg (1985) 以及 Sumitani (1985)；完整的处理见 Rennie (1990) 与 Bertlmann (1996)，更数学化的讲法见 Mickelsson (1989) 与 Nash (1991)。
 
-**本章的路线**可以先一句话说清：§13.2 用 Fujikawa 方法证明阿贝尔（手征）反常就是 Dirac 算子的指标（第 12 章的 Atiyah–Singer 定理）；§13.3 给出手征费米子的非阿贝尔（规范）反常，它只影响有效作用量的相位；§13.4 用 BRS 算子写出 Wess–Zumino 一致性条件，并用"下降方程"从 $2l+2$ 维的陈特征构造出它的解；§13.5 解释为什么必须从高两维出发——非阿贝尔反常的相位卷绕本身就是高两维的指标；§13.6 讨论奇数维的宇称反常，并把三者串成"维数阶梯" 4–3–2。`}</Tx>
+**本章的路线**可以先一句话说清：§13.2 用 Fujikawa 方法证明阿贝尔（手征）反常就是 Dirac 算子的指标（第 12 章的 Atiyah–Singer 指标定理 \sref{T12.2}）；§13.3 给出手征费米子的非阿贝尔（规范）反常，它只影响有效作用量的相位；§13.4 用 BRS 算子写出 Wess–Zumino 一致性条件，并用"下降方程"从 $2l+2$ 维的陈特征构造出它的解；§13.5 解释为什么必须从高两维出发——非阿贝尔反常的相位卷绕本身就是高两维的指标；§13.6 讨论奇数维的宇称反常，并把三者串成"维数阶梯" 4–3–2。`}</Tx>
     </Sec>);
 }
 
@@ -80,7 +80,7 @@ $$T^\dagger{}_\alpha=-T_\alpha\qquad[T_\alpha,T_\beta]=f_{\alpha\beta}{}^\gamma 
 （$m=4$ 时 $\gamma^5=-\gamma^1\gamma^2\gamma^3\gamma^4$，与例 12.4 一致；由此 $\Tr\gamma^5\gamma^1\gamma^2\gamma^3\gamma^4=-4$，这是 \eqref{13.32} 中负号的来源。）`}</Tx>
 
       <Sub n="13.2.1" title="Fujikawa's method" zh="Fujikawa 方法">
-        <Tx>{R`推导反常的方法有好几种，Fujikawa 的方法（Fujikawa 1979, 1980, 1986）最直接地揭示了问题的拓扑与几何本质。它等价于相应指标定理的**热核证明**（§12.7）。
+        <Tx>{R`推导反常的方法有好几种，Fujikawa 的方法（Fujikawa 1979, 1980, 1986）最直接地揭示了问题的拓扑与几何本质。它等价于相应指标定理的**热核证明**（§12.7，\sref{T12.5}）。
 
 **思路。**经典作用量在手征转动下不变，Noether 定理给出守恒流；量子理论是路径积分，除了作用量，**积分测度** $\mathcal{D}\psi\mathcal{D}\bar\psi$ 也要跟着变。Fujikawa 的发现是：测度不是不变的，它的变化（一个 Jacobian）恰好给出反常。要把"测度"写清楚，就把场按一组完备基展开，测度变成展开系数的乘积——而最好的基就是 Dirac 算子自身的本征函数。
 
@@ -160,7 +160,7 @@ $$\langle\psi_i|\gamma^{m+1}\exp[-(\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}
 
 $$\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}=\begin{pmatrix}0&\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}_-\\ \mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}_+&0\end{pmatrix}\qquad\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}_-=(\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}_+)^\dagger$$
 
-定义（$\ker\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}_\pm$ 恰好是手征 $\pm$ 的零模空间）。注意推导中没有用到 $M\to\infty$：在紧流形上，对**任意** $M$ 截断后的和都等于 $\nu_+-\nu_-$；$M\to\infty$ 只在把它写成局部积分 \eqref{13.32} 时才需要——这正是 McKean–Singer 公式（定理 12.5）的物理版本。现在 Atiyah–Singer 指标定理进入了问题。`}</Tx>
+定义（$\ker\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}_\pm$ 恰好是手征 $\pm$ 的零模空间）。注意推导中没有用到 $M\to\infty$：在紧流形上，对**任意** $M$ 截断后的和都等于 $\nu_+-\nu_-$；$M\to\infty$ 只在把它写成局部积分 \eqref{13.32} 时才需要——这正是 McKean–Singer 公式（\sref{T12.5}）的物理版本。现在 Atiyah–Singer 指标定理（\sref{T12.2}）进入了问题。`}</Tx>
         <FujikawaLab />
         <Tx>{R`**局部计算。**为了证明 \eqref{13.28} 确实是相应陈特征的积分，先注意到`}</Tx>
         <Eq n="13.29" title="Dirac 算子的平方（Lichnerowicz 型公式）" say={R`Dirac 算子的平方 = 协变 Laplace 算子 + 场强与自旋的耦合 $\frac14[\gamma^\mu,\gamma^\nu]\mathcal{F}_{\mu\nu}$；正是后一项在迹中留下反常。`}>{R`\begin{aligned}(\mathrm{i}${DN})^2&=-\gamma^\mu\gamma^\nu\nabla_\mu\nabla_\nu=-\{\delta^{\mu\nu}+\tfrac12[\gamma^\mu,\gamma^\nu]\}\tfrac12[\{\nabla_\mu,\nabla_\nu\}+\mathcal{F}_{\mu\nu}]\\&=-\nabla_\mu\nabla^\mu-\tfrac14[\gamma^\mu,\gamma^\nu]\mathcal{F}_{\mu\nu}\end{aligned}`}</Eq>
@@ -195,10 +195,10 @@ $$\Tr\gamma^5=\Tr\gamma^5\gamma^\mu\gamma^\nu=0\qquad\Tr\gamma^5\gamma^\kappa\ga
         <Tx>{R`这可以看作 AS 指标定理的**局部版本**。用场强形式 $\mathcal{F}=\frac12\mathcal{F}_{\mu\nu}\dd x^\mu\wedge\dd x^\nu$ 改写 \eqref{13.33}，容易验证（见上面推导的最后一步）`}</Tx>
         <Eq n="13.34" say={R`积分形式：正、负手征零模数之差 = 陈特征 $\mathrm{ch}_2$ 的积分 = 正规化 Jacobian 的积分，这就是背景几何平凡（$\hat A=1$）时扭曲旋量复形的指标定理。`}>{R`\nu_+-\nu_-=\int_M\dd x\,${AN}(x)=\frac{\mathrm{i}}2\int_M\dd x\,\partial_\mu j^\mu_{m+1}=\int_M${CH}_2(\mathcal{F}).`}</Eq>
         <Box kind="warning" title={R`勘误：\eqref{13.33}–\eqref{13.35}、\eqref{13.113} 中 $\partial_\mu j^\mu$ 与 $\boldsymbol A$ 之间的因子（pp.528, 545）`}>{R`原书写作 $\partial_\mu j^\mu_5=\frac1{16\pi^2}\Tr\epsilon\mathcal{F}\mathcal{F}$ 与 $\nu_+-\nu_-=\int\dd x\,\partial_\mu j^\mu_{m+1}=\int\mathrm{ch}$。但本节自己的推导给出 $\partial_\mu j^\mu_{m+1}=-2\mathrm{i}\boldsymbol A$（\eqref{13.25}）与 $\boldsymbol A=-\frac1{32\pi^2}\Tr\epsilon\mathcal{F}\mathcal{F}$（\eqref{13.32}），二者相乘是 $+\frac{\mathrm{i}}{16\pi^2}$；而 $\nu_+-\nu_-=\int\boldsymbol A=\frac{\mathrm{i}}2\int\partial_\mu j^\mu$。原书的形式实际上是 Minkowski 版本 \eqref{13.5} 的系数（Wick 转动带出的 $\mathrm{i}$ 正好抵消），但在本节的欧氏约定下应带上这些因子。本站已在 \eqref{13.33}、\eqref{13.34}、\eqref{13.35}、\eqref{13.113} 中改正。**拓扑结论 $\nu_+-\nu_-=\int\boldsymbol A=\int\mathrm{ch}_l(\mathcal{F})$ 不受影响**。另外，$\int_M\partial_\mu j^\mu$ 对处处有定义的流本应为零；它在这里不为零，正说明有零模时 $\langle j^\mu\rangle$ 不是一个光滑的整体流（有零模时 $\mathrm{e}^{-W}=0$，需插入零模才能定义期望值），所以最好把 $\int\boldsymbol A$ 当作指标的**定义式**来读。`}</Box>
-        <Tx>{R`这是背景几何平凡（$\hat A(TM)=1$）时**扭曲旋量复形**的指标定理（§12.6.2）。对 $\dim M=m=2l$，有如下恒等式：`}</Tx>
+        <Tx>{R`这是背景几何平凡（$\hat A(TM)=1$）时**扭曲旋量复形**的指标定理（§12.6.2，\sref{F:spinAS12}）。对 $\dim M=m=2l$，有如下恒等式：`}</Tx>
         <Eq n="13.35" keyEq title="m 维阿贝尔反常 = 指标定理" say={R`任意偶数维：手征零模数之差 = 第 $l$ 个陈特征的积分。阿贝尔反常的积分是一个拓扑不变量。`}>{R`\nu_+-\nu_-=\frac{\mathrm{i}}{2}\int_M\dd x\,\partial_\mu j^\mu_{m+1}=\int_M${CH}_l(\mathcal{F})=\int_M\frac1{l!}${TR}\Big(\frac{\mathrm{i}\mathcal{F}}{2\pi}\Big)^l.`}</Eq>
         <Stmt id="F:fujikawa13" />
-        <Box kind="physics" title="为什么说反常是“拓扑的”">{R`(1) \eqref{13.28} 是整数，在 $\mathcal{A}$ 的连续形变下不能连续变化——所以反常的积分不会被高阶圈图修正（Adler–Bardeen 定理的几何根源）。(2) 局部密度 $\boldsymbol A(x)$ 是陈–Simons 流的散度，$\Tr\mathcal{F}^2=\dd\Tr(\mathcal{A}\dd\mathcal{A}+\frac23\mathcal{A}^3)$，所以在 $\R^4$ 上只有当规范场在无穷远处"缠绕"（瞬子）时积分才不为零；紧化到 $S^4$ 后它就是第 10 章的瞬子数。(3) Fujikawa 的 Gauss 截断恰好是第 12 章热核 $\mathrm{e}^{-tD^\dagger D}$ 的"超迹"，非零模成对抵消就是 McKean–Singer 论证：路径积分推导本身就是指标定理的一个证明。`}</Box>
+        <Box kind="physics" title="为什么说反常是“拓扑的”">{R`(1) \eqref{13.28} 是整数，在 $\mathcal{A}$ 的连续形变下不能连续变化——所以反常的积分不会被高阶圈图修正（Adler–Bardeen 定理的几何根源）。(2) 局部密度 $\boldsymbol A(x)$ 是陈–Simons 流的散度，$\Tr\mathcal{F}^2=\dd\Tr(\mathcal{A}\dd\mathcal{A}+\frac23\mathcal{A}^3)$，所以在 $\R^4$ 上只有当规范场在无穷远处"缠绕"（瞬子）时积分才不为零；紧化到 $S^4$ 后它就是第 10 章的瞬子数。(3) Fujikawa 的 Gauss 截断恰好是第 12 章热核 $\mathrm{e}^{-tD^\dagger D}$ 的"超迹"，非零模成对抵消就是 McKean–Singer 论证（\sref{T12.5}）：路径积分推导本身就是指标定理的一个证明。`}</Box>
       </Sub>
     </Sec>);
 }

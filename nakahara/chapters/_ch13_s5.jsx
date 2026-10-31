@@ -70,7 +70,7 @@ $$W[\mathcal{A}^{g(2\pi)}]-W[\mathcal{A}^{g(0)}]=-\mathrm{i}[w(\mathcal{A},2\pi)
       <Eq n="13.96b" say={R`南半球上的 $(m+2)$ 维规范势：只有 $S^m$ 方向的分量。`}>{R`\mathbb{A}_{\rm S}(s,\theta,x)=(\mathcal{A}_s,\mathcal{A}_\theta,\mathcal{A}_\mu)=(0,0,\mathcal{A}_{{\rm S}\mu}).`}</Eq>
       <Tx>{R`在赤道上（$t=s=1$），$\mathbb{A}_{\rm N}=g^{-1}(\mathbb{A}_{\rm S}+\Delta)g$，其中 $\Delta=\dd+\dd_\theta+\dd_t$（注意 $\dd_tg=0$）。因此 $\mathbb{A}=\{\mathbb{A}_{\rm N},\mathbb{A}_{\rm S}\}$ 定义了 $S^2\times S^m$ 上的整体联络，**$g$ 是赤道上的转移函数**。`}</Tx>
       <Box kind="warning" title={R`存疑：\eqref{13.95a} 与 \eqref{13.96a} 中 $\theta$ 分量的写法（p.541）`}>{R`\eqref{13.95a} 中的 $g^{-1}\dd_\theta g$ 是沿 $\theta$ 方向的一形式，而 \eqref{13.96a} 又把 $\theta$ 分量写成 $0$、只保留 $\mathcal{A}_{{\rm N}\mu}$——两者字面上不一致。赤道上的粘合 $\mathbb{A}_{\rm N}=g^{-1}(\mathbb{A}_{\rm S}+\dd+\dd_\theta)g=\mathcal{A}^{g(\theta)}+g^{-1}\dd_\theta g$ 要求 $\mathbb{A}_{\rm N}$ 在 $t=1$ 处的 $\theta$ 分量**等于** $g^{-1}\partial_\theta g$；合理的读法是 \eqref{13.95a}（含 $\theta$ 分量）为准，并在 $t\to0$ 处用一个截断函数把 $\theta$ 分量光滑地关掉（圆盘中心 $\theta$ 无定义）。之后的论证（\eqref{13.99}–\eqref{13.101}）只用到赤道上的粘合关系与"$\mathbb{A}$ 是某个 $G$ 丛上的联络"，因此结论不受影响。本站保留原式并作此说明。`}</Box>
-      <Tx>{R`考虑与 $\mathbb{A}$ 耦合的 **Dirac** 算子 $\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}_{m+2}$。它的指标定理为`}</Tx>
+      <Tx>{R`考虑与 $\mathbb{A}$ 耦合的 **Dirac** 算子 $\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}_{m+2}$。它的指标定理（\sref{F:spinAS12}）为`}</Tx>
       <Eq n="13.97" say={R`$S^2\times S^m$ 上的指标定理：$(m+2)$ 维手征零模数之差 = 第 $l+1$ 个陈特征的积分（$\hat A=1$）。`}>{R`${IND}\,\mathrm{i}${DN}_{m+2}=${NN}_+-${NN}_-=\int_{S^2\times S^m}${CH}_{l+1}(\mathbb{F})`}</Eq>
       <Tx>{R`其中 $\mathbb{F}=\Delta\mathbb{A}+\mathbb{A}^2$，$\mathcal{N}_+$（$\mathcal{N}_-$）是 $\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}_{m+2}$ 的手征 $+$（$-$）零模个数（手征在 $(m+2)$ 维空间中定义）。
 
@@ -85,11 +85,11 @@ Alvarez-Gaumé 与 Ginsparg (1984) 用绝热微扰计算证明：每个卷绕数
         { tex: R`Q_{2l+1}(\mathcal{A},\mathcal{F})=\frac1{l!}\Big(\frac{\mathrm{i}}{2\pi}\Big)^{l+1}\int_0^1\dd t\,\mathrm{str}(\mathcal{A},\mathcal{F}_t^{\,l})`, why: R`式 (11.105)，$j=l+1$。` },
         { tex: R`\mathcal{A}=g^{-1}\dd g,\ \mathcal{F}=0:\quad\mathcal{F}_t=(t^2-t)\mathcal{A}^2`, why: R`纯规范：$\dd(g^{-1}\dd g)=-(g^{-1}\dd g)^2$。` },
         { tex: R`\int_0^1(t^2-t)^l\dd t=(-1)^l\frac{(l!)^2}{(2l+1)!}`, why: R`Beta 函数 $B(l+1,l+1)$。` },
-        { tex: R`Q_{2l+1}(g^{-1}\dd g,0)=(-1)^l\Big(\frac{\mathrm{i}}{2\pi}\Big)^{l+1}\frac{l!}{(2l+1)!}\Tr(g^{-1}\dd g)^{2l+1}`, why: R`$m+1=2l+1$，即 \eqref{13.100}。$l=1$：$-(\frac{\mathrm{i}}{2\pi})^2\frac16=\frac1{24\pi^2}$，与定理 10.7 的瞬子数公式一致。` },
+        { tex: R`Q_{2l+1}(g^{-1}\dd g,0)=(-1)^l\Big(\frac{\mathrm{i}}{2\pi}\Big)^{l+1}\frac{l!}{(2l+1)!}\Tr(g^{-1}\dd g)^{2l+1}`, why: R`$m+1=2l+1$，即 \eqref{13.100}。$l=1$：$-(\frac{\mathrm{i}}{2\pi})^2\frac16=\frac1{24\pi^2}$，与 \sref{T10.7} 的瞬子数公式一致。` },
       ]} />
       <Tx>{R`于是指标定理成为（$\Delta\alpha_m$ 在闭流形 $S^1\times S^m$ 上积分为零）`}</Tx>
       <Eq n="13.101" keyEq title="指标 = 规范变换圈的卷绕数" say={R`$(m+2)$ 维指标 = 映射 $g:S^1\times S^m\simeq S^{m+1}\to G$ 的卷绕数（$\pi_{m+1}(G)$ 中的整数）。`}>{R`${IND}\,\mathrm{i}${DN}_{m+2}=(-1)^l\Big(\frac{\mathrm{i}}{2\pi}\Big)^{l+1}\frac{l!}{(m+1)!}\int_{S^1\times S^m}${TR}(g^{-1}\Delta g)^{m+1}.`}</Eq>
-      <Tx>{R`定理 10.7（\sref{T10.7}）说 $\int_{S^3}\Tr(g^{-1}\dd g)^3$ 给出映射 $g:S^3\to\mathrm{SU}(2)$ 的卷绕数。同样，\eqref{13.101} 表示映射 $g:S^{m+1}\to G$ 的卷绕数，按 $\pi_{m+1}(G)$ 分类（注意 $S^1\wedge S^m=S^{m+1}$）。
+      <Tx>{R`\sref{T10.7} 说 $\int_{S^3}\Tr(g^{-1}\dd g)^3$ 给出映射 $g:S^3\to\mathrm{SU}(2)$ 的卷绕数。同样，\eqref{13.101} 表示映射 $g:S^{m+1}\to G$ 的卷绕数，按 $\pi_{m+1}(G)$ 分类（注意 $S^1\wedge S^m=S^{m+1}$）。
 
 **识别非阿贝尔反常。**最后证明非阿贝尔反常应当等同于 $Q^1_m$。首先注意
 

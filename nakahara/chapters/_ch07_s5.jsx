@@ -13,7 +13,7 @@ export function Sec75() {
       <p className="muted">本节概念：<C id="holonomy" /></p>
       <Tx>{R`设 $(M,g)$ 是带仿射联络 $\nabla$ 的 $m$ 维 Riemann 流形。联络在每个切空间 $T_pM$ 上自然地定义一个变换群，如下。`}</Tx>
       <Stmt id="D7.3" />
-      <Eq n="7.90" keyEq title="和乐变换" say={R`沿一个闭合回路把切向量平行移动一圈，回到起点时得到的向量与原向量线性相关：回路给出切空间上的一个线性变换。`}>{R`P_c:T_pM\to T_pM.`}</Eq>
+      <Eq n="7.90" title="和乐变换" say={R`沿一个闭合回路把切向量平行移动一圈，回到起点时得到的向量与原向量线性相关：回路给出切空间上的一个线性变换。`}>{R`P_c:T_pM\to T_pM.`}</Eq>
       <Tx>{R`我们约定 $H(p)$ 从右边作用在 $T_pM$ 上：$P_cX=Xh$（$h\in H(p)$），分量形式为 $P_cX=X^\mu h_\mu{}^\nu e_\nu$，$\{e_\nu\}$ 是 $T_pM$ 的基。容易看出 $H(p)$ 是群。乘积 $P_{c'}P_c$ 对应先沿 $c$、再沿 $c'$ 平行移动。若写 $P_d=P_{c'}P_c$，回路 $d$ 为`}</Tx>
       <Eq n="7.91" say={R`两个回路首尾相接、各用一半时间走完，就是和乐群中的乘积。`}>{R`d(t)=\begin{cases}c(2t)&0\le t\le\frac12\\c'(2t-1)&\frac12\le t\le1.\end{cases}`}</Eq>
       <Tx>{R`单位元对应常值映射 $c_p(t)=p$（$0\le t\le1$），$P_c$ 的逆为 $P_{c^{-1}}$，其中 $c^{-1}(t)=c(1-t)$。（平行移动方程 \eqref{7.18b} 是线性 ODE，反向积分恰好撤销正向积分。）注意 $H(p)$ 是 $\mathrm{GL}(m,\R)$ 的子群，$\mathrm{GL}(m,\R)$ 是可能的最大和乐群。若 $M$ 单连通，$H(p)$ 平凡当且仅当 Riemann 张量为零。特别地，若 $(M,g)$ 可平行化（见例 7.2），可以让 $H(p)$ 平凡。`}</Tx>
@@ -35,7 +35,7 @@ export function Sec75() {
 $$X^\theta=\cos(C_0\phi)\qquad X^\phi=-\frac{\sin(C_0\phi)}{\sin\theta_0}.$$
 
 沿圆周平行移动一圈后，得到`}</Tx>
-        <Eq n="7.95" keyEq title="纬圈的和乐" say={R`走完一圈纬圈，向量相对于坐标标架转过 $2\pi\cos\theta_0$；模 $2\pi$ 等价于所围极冠的面积 $2\pi(1-\cos\theta_0)$——Gauss–Bonnet 的雏形。`}>{R`X(\phi=2\pi)=\cos(2\pi C_0)e_\theta-\frac{\sin(2\pi C_0)}{\sin\theta_0}e_\phi.`}</Eq>
+        <Eq n="7.95" title="纬圈的和乐" say={R`走完一圈纬圈，向量相对于坐标标架转过 $2\pi\cos\theta_0$；模 $2\pi$ 等价于所围极冠的面积 $2\pi(1-\cos\theta_0)$——Gauss–Bonnet 的雏形。`}>{R`X(\phi=2\pi)=\cos(2\pi C_0)e_\theta-\frac{\sin(2\pi C_0)}{\sin\theta_0}e_\phi.`}</Eq>
         <Box kind="warning" title={R`勘误：\eqref{7.95} 中 $\sin(2\pi C_0)$（p.293）`}>{R`原书第二项印作 $\sin(2\pi C_0\phi)/\sin\theta_0$，多了一个 $\phi$：这里已代入 $\phi=2\pi$，应为 $\sin(2\pi C_0)$。正文已改正；交互图 1 的"纬圈"模式逐位核对了这两个分量。`}</Box>
         <Tx>{R`现在向量转过了 $\Theta=2\pi\cos\theta_0$，长度不变（$e_\theta$ 的长度为 1，$e_\phi$ 的长度为 $\sin\theta_0$，$|X|^2=\cos^2+\sin^2=1$）。［$\Theta$ 是相对于标架 $e_\theta,e_\phi$ 的转角，方向从 $e_\theta$ 转向 $-e_\phi$。$(e_\theta,e_\phi)$（向南、向东）从球外看是逆时针定向的（$\hat e_\theta\times\hat e_\phi=\hat r$），所以按这个定向，转角是 $-2\pi\cos\theta_0\equiv2\pi(1-\cos\theta_0)\pmod{2\pi}$——恰是回路（沿 $\phi$ 增加方向，从外看绕北极逆时针）左侧所围北极冠的面积，与 \eqref{7.44} 积分后的结论"转角 $=\iint K\,\dd A$"一致。］若取 $p\in S^2$ 与过 $p$ 的圆，总能选坐标使该圆为 $\theta=\theta_0$（$0\le\theta<\pi$），并套用上面的计算。转角范围为 $-2\pi\le\Theta<2\pi$，所以 $p\in S^2$ 处的和乐群是 $\mathrm{SO}(2)$。`}</Tx>
       </Box>
@@ -127,7 +127,7 @@ $$\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}\qquad\frac{\partia
             { claim: R`由于这对任意 $Z$ 成立（$g$ 非退化），得 \eqref{7.103}。` },
           ]} />
         </Stmt>
-        <Eq n="7.103" keyEq title="共形变换下联络之差" say={R`Weyl 重标度后联络的改变量只由 $\sigma$ 的梯度决定：两项"沿 $X$、$Y$ 方向的伸缩"减去一项"沿梯度方向的修正"。`}>{R`K(X,Y)=X[\sigma]Y+Y[\sigma]X-g(X,Y)U.`}</Eq>
+        <Eq n="7.103" title="共形变换下联络之差" say={R`Weyl 重标度后联络的改变量只由 $\sigma$ 的梯度决定：两项"沿 $X$、$Y$ 方向的伸缩"减去一项"沿梯度方向的修正"。`}>{R`K(X,Y)=X[\sigma]Y+Y[\sigma]X-g(X,Y)U.`}</Eq>
         <Eq n="7.104a" say={R`度规相容条件在 Weyl 重标度下的差：$K$ 的"对称化"等于 $\sigma$ 的梯度乘度规。`}>{R`g(K(X,Y),Z)+g(Y,K(X,Z))=2X[\sigma]g(Y,Z).`}</Eq>
         <Eq n="7.104b" say={R`同一式，$(X,Y,Z)$ 轮换一次。`}>{R`g(K(Y,X),Z)+g(X,K(Y,Z))=2Y[\sigma]g(X,Z)`}</Eq>
         <Eq n="7.104c" say={R`同一式，再轮换一次。`}>{R`g(K(Z,X),Y)+g(X,K(Z,Y))=2Z[\sigma]g(X,Y).`}</Eq>
@@ -151,7 +151,7 @@ $$\begin{aligned}K(e_\mu,e_\nu)&=\bar\nabla_\mu e_\nu-\nabla_\mu e_\nu=(\bar\Gam
         <Tx>{R`定义 $(1,1)$ 型张量场 $B$：`}</Tx>
         <Eq n="7.109" say={R`把 $\sigma$ 的二阶与一阶导数打包成一个 $(1,1)$ 张量 $B$，曲率的变化就只通过 $B$ 出现。`}>{R`BX\equiv-X[\sigma]U+\nabla_XU+\tfrac12U[\sigma]X.`}</Eq>
         <Tx>{R`由于 $g(\nabla_YU,Z)=\langle\nabla_Y\dd\sigma,Z\rangle$（习题 7.8(c)），\eqref{7.108} 成为`}</Tx>
-        <Eq n="7.110" keyEq title="共形变换下的曲率" say={R`Weyl 重标度下，曲率的改变量只是度规与 $B$ 的"楔积"：$g$ 与 $B$ 两两搭配的四项组合。`}>{R`\bar R(X,Y)Z=R(X,Y)Z-[g(Y,Z)BX-g(BX,Z)Y+g(BY,Z)X-g(X,Z)BY].`}</Eq>
+        <Eq n="7.110" title="共形变换下的曲率" say={R`Weyl 重标度下，曲率的改变量只是度规与 $B$ 的"楔积"：$g$ 与 $B$ 两两搭配的四项组合。`}>{R`\bar R(X,Y)Z=R(X,Y)Z-[g(Y,Z)BX-g(BX,Z)Y+g(BY,Z)X-g(X,Z)BY].`}</Eq>
         <Tx>{R`（展开验证：$-g(Y,Z)BX=X[\sigma]g(Y,Z)U-g(Y,Z)\nabla_XU-\frac12U[\sigma]g(Y,Z)X$，$g(BX,Z)Y=-X[\sigma]Z[\sigma]Y+\langle\nabla_X\dd\sigma,Z\rangle Y+\frac12U[\sigma]g(X,Z)Y$，另两项同理；相加正是 \eqref{7.108} 的十项。）用分量写，`}</Tx>
         <Eq n="7.111" say={R`\eqref{7.110} 的分量形式。`}>{R`\bar R^\kappa{}_{\lambda\mu\nu}=R^\kappa{}_{\lambda\mu\nu}-g_{\nu\lambda}B_\mu{}^\kappa+g_{\xi\lambda}B_\mu{}^\xi\delta^\kappa{}_\nu-g_{\xi\lambda}B_\nu{}^\xi\delta^\kappa{}_\mu+g_{\mu\lambda}B_\nu{}^\kappa`}</Eq>
         <Tx>{R`其中张量 $B$ 的分量为`}</Tx>
@@ -162,7 +162,7 @@ $$\begin{aligned}K(e_\mu,e_\nu)&=\bar\nabla_\mu e_\nu-\nabla_\mu e_\nu=(\bar\Gam
         <Tx>{R`其中 $m=\dim M$。\eqref{7.114a} 也写作`}</Tx>
         <Eq n="7.114b" say={R`同一关系的另一写法。`}>{R`\bar g_{\mu\nu}\bar{\mathcal R}=[\mathcal R-2(m-1)B_\lambda{}^\lambda]g_{\mu\nu}.`}</Eq>
         <Tx>{R`（检验：$m=2$、$g=\delta$、$\mathrm{e}^{2\sigma}=4/(1+r^2)^2$ 给出单位球面的球极投影度规；$B_\lambda{}^\lambda=\nabla^2\sigma=-4/(1+r^2)^2$，于是 $\bar{\mathcal R}=-2\mathrm{e}^{-2\sigma}B_\lambda{}^\lambda=2$，正是单位球面的标量曲率。）若用 $\overline{\sym{Ric}{\mathit{Ric}}}$ 与 $\bar{\mathcal R}$ 消去 $\bar R^\kappa{}_{\lambda\mu\nu}$ 中的 $g_{\mu\nu}B_\lambda{}^\lambda$ 与 $B_{\mu\nu}$，并把带横线与不带横线的项分开，就得到一个与 $\sigma$ 无关的组合：`}</Tx>
-        <Eq n="7.115" keyEq title="Weyl 张量" say={R`Weyl 张量：从 Riemann 张量中减去 Ricci 部分后剩下的"无迹"部分，它在 Weyl 重标度下不变，度量的是潮汐形变中与体积无关的那一块（引力波就在这里）。`}>{R`\begin{aligned}C_{\kappa\lambda\mu\nu}&=R_{\kappa\lambda\mu\nu}-\frac{1}{m-2}(\sym{Ric}{\mathit{Ric}}_{\kappa\mu}g_{\lambda\nu}-\sym{Ric}{\mathit{Ric}}_{\lambda\mu}g_{\kappa\nu}+\sym{Ric}{\mathit{Ric}}_{\lambda\nu}g_{\kappa\mu}-\sym{Ric}{\mathit{Ric}}_{\kappa\nu}g_{\lambda\mu})\\&\quad+\frac{\mathcal R}{(m-2)(m-1)}(g_{\kappa\mu}g_{\lambda\nu}-g_{\kappa\nu}g_{\lambda\mu})\end{aligned}`}</Eq>
+        <Eq n="7.115" title="Weyl 张量" say={R`Weyl 张量：从 Riemann 张量中减去 Ricci 部分后剩下的"无迹"部分，它在 Weyl 重标度下不变，度量的是潮汐形变中与体积无关的那一块（引力波就在这里）。`}>{R`\begin{aligned}C_{\kappa\lambda\mu\nu}&=R_{\kappa\lambda\mu\nu}-\frac{1}{m-2}(\sym{Ric}{\mathit{Ric}}_{\kappa\mu}g_{\lambda\nu}-\sym{Ric}{\mathit{Ric}}_{\lambda\mu}g_{\kappa\nu}+\sym{Ric}{\mathit{Ric}}_{\lambda\nu}g_{\kappa\mu}-\sym{Ric}{\mathit{Ric}}_{\kappa\nu}g_{\lambda\mu})\\&\quad+\frac{\mathcal R}{(m-2)(m-1)}(g_{\kappa\mu}g_{\lambda\nu}-g_{\kappa\nu}g_{\lambda\mu})\end{aligned}`}</Eq>
         <Box kind="warning" title={R`勘误：Weyl 张量 \eqref{7.115} 中 Ricci 项的符号（p.297）`}>{R`原书 Ricci 项前印作 $+\frac{1}{m-2}$。按本书的曲率约定（单位球面 $R_{\kappa\lambda\mu\nu}=g_{\kappa\mu}g_{\lambda\nu}-g_{\kappa\nu}g_{\lambda\mu}$，\eqref{7.89}），应为 $-\frac1{m-2}$。
 
 **判据：**常曲率空间 $R_{\kappa\lambda\mu\nu}=K(g_{\kappa\mu}g_{\lambda\nu}-g_{\kappa\nu}g_{\lambda\mu})$ 共形平坦（球极投影），Weyl 张量必须为零。此时 $\sym{Ric}{\mathit{Ric}}=(m-1)Kg$，$\mathcal R=m(m-1)K$，括号中的 Ricci 组合 $=2(m-1)K(g_{\kappa\mu}g_{\lambda\nu}-g_{\kappa\nu}g_{\lambda\mu})$。取 $-$ 号：$K[1-\frac{2(m-1)}{m-2}+\frac{m}{m-2}]=0$ ✓；取原书的 $+$ 号得 $K\frac{4(m-1)}{m-2}\neq0$。也可直接从 \eqref{7.111}、\eqref{7.113}、\eqref{7.114a} 消去 $B$ 推出 $-$ 号。正文已改正。

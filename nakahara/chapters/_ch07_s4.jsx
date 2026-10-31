@@ -52,7 +52,7 @@ $$g(\nabla_XU,V)+g(U,\nabla_XV)=\langle\nabla_X\omega,V\rangle+\langle\omega,\na
           <Tx>{R`(a) $\R^2$ 在极坐标中的度规为 $g=\dd r\otimes\dd r+r^2\dd\phi\otimes\dd\phi$。由 \eqref{7.53}，唯一非零的导数是 $\partial_rg_{\phi\phi}=2r$，Levi-Civita 联络系数的非零分量为 $\Gamma^\phi{}_{r\phi}=\Gamma^\phi{}_{\phi r}=\frac12g^{\phi\phi}\partial_rg_{\phi\phi}=r^{-1}$，$\Gamma^r{}_{\phi\phi}=-\frac12g^{rr}\partial_rg_{\phi\phi}=-r$。与例 7.1 的结果一致。
 
 (b) $S^2$ 上的诱导度规为 $g=\dd\theta\otimes\dd\theta+\sin^2\theta\,\dd\phi\otimes\dd\phi$。唯一非零导数 $\partial_\theta g_{\phi\phi}=2\sin\theta\cos\theta$，Levi-Civita 联络的非零分量为`}</Tx>
-          <Eq n="7.57" keyEq title="球面的 Christoffel 符号" say={R`单位球面的联络系数：沿纬圈走时，向量会被"拉向赤道"（$\Gamma^\theta{}_{\phi\phi}$），而角向分量按纬圈半径的变化率修正（$\cot\theta$）。`}>{R`\Gamma^\theta{}_{\phi\phi}=-\cos\theta\sin\theta\qquad\Gamma^\phi{}_{\theta\phi}=\Gamma^\phi{}_{\phi\theta}=\cot\theta.`}</Eq>
+          <Eq n="7.57" title="球面的 Christoffel 符号" say={R`单位球面的联络系数：沿纬圈走时，向量会被"拉向赤道"（$\Gamma^\theta{}_{\phi\phi}$），而角向分量按纬圈半径的变化率修正（$\cot\theta$）。`}>{R`\Gamma^\theta{}_{\phi\phi}=-\cos\theta\sin\theta\qquad\Gamma^\phi{}_{\theta\phi}=\Gamma^\phi{}_{\phi\theta}=\cot\theta.`}</Eq>
         </Box>
       </Sub>
 
@@ -83,7 +83,7 @@ $$\phi(t)=at+b,\qquad z(t)=ct+d.$$
         <Tx>{R`于是 $F=L^2/2$ 满足`}</Tx>
         <Eq n="7.60" say={R`把拉氏量换成它的平方：Euler–Lagrange 表达式只多出一项 $\frac{\partial L}{\partial x'}\frac{\dd L}{\dd s}$，而按弧长参数化时 $L\equiv1$，这一项为零。`}>{R`\frac{\dd}{\dd s}\left(\frac{\partial F}{\partial x'^\lambda}\right)-\frac{\partial F}{\partial x^\lambda}=L\left[\frac{\dd}{\dd s}\left(\frac{\partial L}{\partial x'^\lambda}\right)-\frac{\partial L}{\partial x^\lambda}\right]+\frac{\partial L}{\partial x'^\lambda}\frac{\dd L}{\dd s}=\frac{\partial L}{\partial x'^\lambda}\frac{\dd L}{\dd s}.`}</Eq>
         <Tx>{R`沿曲线 $L\equiv1$，$\dd L/\dd s=0$，最后的表达式为零。这就证明了：只要 $L$ 满足 Euler–Lagrange 方程，$F$ 也满足。于是`}</Tx>
-        <Eq n="7.61" keyEq title="测地线 = 长度的极值" say={R`"能量"$F=\frac12g_{\mu\nu}x'^\mu x'^\nu$ 的 Euler–Lagrange 方程恰好是 Levi-Civita 联络的测地线方程：最短（极值）与最直是同一件事。`}>{R`\begin{aligned}&\frac{\dd}{\dd s}(g_{\lambda\mu}x'^\mu)-\frac12\frac{\partial g_{\mu\nu}}{\partial x^\lambda}x'^\mu x'^\nu\\&\quad=\frac{\partial g_{\lambda\mu}}{\partial x^\nu}x'^\mu x'^\nu+g_{\lambda\mu}\frac{\dd^2x^\mu}{\dd s^2}-\frac12\frac{\partial g_{\mu\nu}}{\partial x^\lambda}x'^\mu x'^\nu\\&\quad=g_{\lambda\mu}\frac{\dd^2x^\mu}{\dd s^2}+\frac12\left(\frac{\partial g_{\lambda\mu}}{\partial x^\nu}+\frac{\partial g_{\lambda\nu}}{\partial x^\mu}-\frac{\partial g_{\mu\nu}}{\partial x^\lambda}\right)\frac{\dd x^\mu}{\dd s}\frac{\dd x^\nu}{\dd s}=0.\end{aligned}`}</Eq>
+        <Eq n="7.61" title="测地线 = 长度的极值" say={R`"能量"$F=\frac12g_{\mu\nu}x'^\mu x'^\nu$ 的 Euler–Lagrange 方程恰好是 Levi-Civita 联络的测地线方程：最短（极值）与最直是同一件事。`}>{R`\begin{aligned}&\frac{\dd}{\dd s}(g_{\lambda\mu}x'^\mu)-\frac12\frac{\partial g_{\mu\nu}}{\partial x^\lambda}x'^\mu x'^\nu\\&\quad=\frac{\partial g_{\lambda\mu}}{\partial x^\nu}x'^\mu x'^\nu+g_{\lambda\mu}\frac{\dd^2x^\mu}{\dd s^2}-\frac12\frac{\partial g_{\mu\nu}}{\partial x^\lambda}x'^\mu x'^\nu\\&\quad=g_{\lambda\mu}\frac{\dd^2x^\mu}{\dd s^2}+\frac12\left(\frac{\partial g_{\lambda\mu}}{\partial x^\nu}+\frac{\partial g_{\lambda\nu}}{\partial x^\mu}-\frac{\partial g_{\mu\nu}}{\partial x^\lambda}\right)\frac{\dd x^\mu}{\dd s}\frac{\dd x^\nu}{\dd s}=0.\end{aligned}`}</Eq>
         <Tx>{R`（第二个等号把 $\partial_\nu g_{\lambda\mu}x'^\mu x'^\nu$ 写成对 $\mu\nu$ 对称化的一半加一半。）把 \eqref{7.61} 乘以 $g^{\kappa\lambda}$，就得到测地线方程 \eqref{7.19b}（$\Gamma$ 取 \eqref{7.53}）。
 
 既然 $L$ 与 $F$ 满足同一个变分问题，就可以利用它来**计算 Christoffel 符号**——这往往比直接套 \eqref{7.53} 快。以 $S^2$ 为例，$F=\frac12(\theta'^2+\sin^2\theta\,\phi'^2)$，Euler–Lagrange 方程为`}</Tx>
@@ -114,7 +114,7 @@ $$\frac{\dd^2f}{\dd\phi^2}+f=0,$$
         </Box>
         <Box kind="example" n="7.6" title={R`Poincaré 上半平面的测地线`}>
           <Tx>{R`设 $U$ 为上半平面 $U\equiv\{(x,y)\mid y>0\}$，引入 **Poincaré 度规**`}</Tx>
-          <Eq n="7.67" keyEq title="Poincaré 度规" say={R`Poincaré 度规：越靠近实轴，同样的坐标长度代表越长的实际距离；它的 Gauss 曲率处处为 $-1$。`}>{R`g=\frac{\dd x\otimes\dd x+\dd y\otimes\dd y}{y^2}.`}</Eq>
+          <Eq n="7.67" title="Poincaré 度规" say={R`Poincaré 度规：越靠近实轴，同样的坐标长度代表越长的实际距离；它的 Gauss 曲率处处为 $-1$。`}>{R`g=\frac{\dd x\otimes\dd x+\dd y\otimes\dd y}{y^2}.`}</Eq>
           <Tx>{R`由 \eqref{7.53}（或由 $F=\frac12(x'^2+y'^2)/y^2$ 的 Euler–Lagrange 方程），非零的 Christoffel 符号为 $\Gamma^x{}_{xy}=\Gamma^x{}_{yx}=-1/y$，$\Gamma^y{}_{xx}=1/y$，$\Gamma^y{}_{yy}=-1/y$。测地线方程为`}</Tx>
           <Eq n="7.68a" say={R`$x$ 方程：等价于 $x'/y^2$ 守恒（$x$ 方向平移对称对应的守恒量）。`}>{R`x''-\frac2yx'y'=0`}</Eq>
           <Eq n="7.68b" say={R`$y$ 方程：$x$ 方向的速度把曲线"往上推"，$y$ 方向的速度则相反。`}>{R`y''+\frac1y\left[x'^2-y'^2\right]=0`}</Eq>
@@ -136,7 +136,7 @@ $$x'=\frac{y^2}{R}=R\sin^2t.$$
 $$x=\int x'\,\dd s=\int\frac{\dd x}{\dd s}\frac{\dd s}{\dd t}\dd t=\int R\sin t\,\dd t=-R\cos t+x_0.$$
 
 最后得到解`}</Tx>
-          <Eq n="7.70" keyEq title="双曲平面的测地线" say={R`Poincaré 上半平面的测地线是圆心在实轴上的半圆（以及竖直的半直线，$R\to\infty$ 的极限）。`}>{R`x=-R\cos t+x_0\qquad y=R\sin t\qquad(y>0)`}</Eq>
+          <Eq n="7.70" title="双曲平面的测地线" say={R`Poincaré 上半平面的测地线是圆心在实轴上的半圆（以及竖直的半直线，$R\to\infty$ 的极限）。`}>{R`x=-R\cos t+x_0\qquad y=R\sin t\qquad(y>0)`}</Eq>
           <Tx>{R`这是以 $(x_0,0)$ 为圆心、半径为 $R$ 的圆。最大延拓的测地线由 $0<t<\pi$ 给出（\figref{7.8}），其长度是无穷大：
 
 $$I=\int\dd s=\int_{0+\varepsilon}^{\pi-\varepsilon}\frac{\dd s}{\dd t}\dd t=\int_{0+\varepsilon}^{\pi-\varepsilon}\frac{1}{\sin t}\dd t=-\frac12\log\frac{1+\cos t}{1-\cos t}\bigg|_{0+\varepsilon}^{\pi-\varepsilon}\xrightarrow[\varepsilon\to0]{}\infty.$$
@@ -158,7 +158,7 @@ $$I=\int\dd s=\int_{0+\varepsilon}^{\pi-\varepsilon}\frac{\dd s}{\dd t}\dd t=\in
 现在证明：在正规坐标系中，Levi-Civita 联络系数在基点为零。在正规坐标中写出测地线方程：`}</Tx>
         <Eq n="7.74" say={R`把直线 $X^\mu=X_q^\mu t$ 代入测地线方程，二阶导数为零，只剩 $\Gamma$ 与速度的二次项。`}>{R`0=\frac{\dd^2X^\mu}{\dd t^2}+\Gamma^\mu{}_{\nu\lambda}(X_q^\kappa t)\frac{\dd X^\nu}{\dd t}\frac{\dd X^\lambda}{\dd t}=\Gamma^\mu{}_{\nu\lambda}(X_q^\kappa t)X_q^\nu X_q^\lambda.`}</Eq>
         <Tx>{R`取 $t=0$，对 $p$ 点的**任意** $X_q^\nu$ 都有 $\Gamma^\mu{}_{\nu\lambda}(p)X_q^\nu X_q^\lambda=0$，所以 $\Gamma^\mu{}_{\nu\lambda}(p)+\Gamma^\mu{}_{\lambda\nu}(p)=0$（二次型恒为零 ⇒ 对称部分为零）。由于我们的联络对称，必有`}</Tx>
-        <Eq n="7.75" keyEq title={R`正规坐标中 $\Gamma(p)=0$`} say={R`在基点的正规坐标里，Levi-Civita 联络系数全部为零：局部上总能"消去引力"——这就是等效原理的数学形式。`}>{R`\Gamma^\mu{}_{\nu\lambda}(p)=0.`}</Eq>
+        <Eq n="7.75" title={R`正规坐标中 $\Gamma(p)=0$`} say={R`在基点的正规坐标里，Levi-Civita 联络系数全部为零：局部上总能"消去引力"——这就是等效原理的数学形式。`}>{R`\Gamma^\mu{}_{\nu\lambda}(p)=0.`}</Eq>
         <Tx>{R`于是，在这个坐标系中任意张量 $t$ 的协变导数在 $p$ 点取极简单的形式：`}</Tx>
         <Eq n="7.76" say={R`在正规坐标的基点，协变导数就是普通偏导数——许多张量恒等式可以在这里用偏导数证明，再因"两边都是张量"推广到任意坐标。`}>{R`\nabla_Xt^{\ldots}{}_{\ldots}=X[t^{\ldots}{}_{\ldots}].`}</Eq>
         <Tx>{R`\eqref{7.75} 并不意味着 $\Gamma^\mu{}_{\nu\lambda}$ 在 $q\,(\neq p)$ 处也为零。事实上由 \eqref{7.42}，`}</Tx>
@@ -247,7 +247,7 @@ $$R_{\kappa\lambda\mu\nu}=\tfrac12\Big(\partial_\lambda\partial_\nu g_{\kappa\mu
 两个问题：(1) 最后一个二阶导数项 $\partial_\kappa\partial_\mu g_{\mu\nu}$ 的指标重复，应为 $g_{\lambda\nu}$；(2) 即便改正 (1)，整个表达式也恰为本书约定 \eqref{7.42} 下 $R_{\kappa\lambda\mu\nu}$ 的**负值**（它等于 $R_{\kappa\lambda\nu\mu}$）。判据：单位球面赤道上原书公式给出 $R_{\theta\phi\theta\phi}=-1$，而 \eqref{7.42} 直接计算（以及 \eqref{7.89} 中 $K=+1$、例 7.14）都给出 $+1$。题面已按 \eqref{7.42} 的约定改正；交互图 3 也按 \eqref{7.42} 计算，并用独立的 Brioschi 公式核对 $K$。`}</Box>
         <Eq n="7.80a" say={R`对最后两个指标反对称（来自 $R(X,Y)=-R(Y,X)$）。`}>{R`R_{\kappa\lambda\mu\nu}=-R_{\kappa\lambda\nu\mu}\qquad(\text{参看 }(7.43))`}</Eq>
         <Eq n="7.80b" say={R`对前两个指标反对称：度规联络的曲率是"无穷小转动"，在每个切空间里是反对称矩阵。`}>{R`R_{\kappa\lambda\mu\nu}=-R_{\lambda\kappa\mu\nu}`}</Eq>
-        <Eq n="7.80c" keyEq title="成对对称" say={R`交换前后两对指标不变：曲率是"二形式空间上的对称矩阵"。`}>{R`R_{\kappa\lambda\mu\nu}=R_{\mu\nu\kappa\lambda}`}</Eq>
+        <Eq n="7.80c" title="成对对称" say={R`交换前后两对指标不变：曲率是"二形式空间上的对称矩阵"。`}>{R`R_{\kappa\lambda\mu\nu}=R_{\mu\nu\kappa\lambda}`}</Eq>
         <Eq n="7.80d" say={R`Levi-Civita 联络的 Ricci 张量是对称的。`}>{R`\sym{Ric}{\mathit{Ric}}_{\mu\nu}=\sym{Ric}{\mathit{Ric}}_{\nu\mu}.`}</Eq>
         <Stmt id="T7.2">
           <Proof steps={[
@@ -262,7 +262,7 @@ $$R_{\kappa\lambda\mu\nu}=\tfrac12\Big(\partial_\lambda\partial_\nu g_{\kappa\mu
         <Eq n="7.82" say={R`第二 Bianchi 恒等式证明的中间式：把恒等式 $R(T(X,Y),Z)V=0$ 轮换求和并重排，协变导数被移到 $R$ 的宗量上。`}>{R`0=\mathfrak{S}\{R(\nabla_XY,Z)-R(\nabla_YX,Z)-R([X,Y],Z)\}V=\mathfrak{S}\{R(\nabla_ZX,Y)+R(X,\nabla_ZY)-R([X,Y],Z)\}V.`}</Eq>
         <Box kind="warning" title={R`勘误：\eqref{7.82} 第二行中 $R(X,\nabla_ZY)$ 前的符号（p.289）`}>{R`原书第二行印作 $\mathfrak S\{R(\nabla_ZX,Y)-R(X,\nabla_ZY)-R([X,Y],Z)\}V$。由循环重命名，$-\mathfrak S\{R(\nabla_YX,Z)\}=-\mathfrak S\{R(\nabla_ZY,X)\}=+\mathfrak S\{R(X,\nabla_ZY)\}$，应为加号。也只有加号才能与紧接着的 Leibniz 律 $\nabla_Z\{R(X,Y)V\}=(\nabla_ZR)(X,Y)V+R(X,Y)\nabla_ZV+R(\nabla_ZX,Y)V+R(X,\nabla_ZY)V$ 合并成原书下一行的 $\mathfrak S\{-(\nabla_ZR)(X,Y)+[\nabla_Z,R(X,Y)]-R([X,Y],Z)\}V$（原书这一行是对的）。正文已改正。`}</Box>
         <Eq n="7.81a" keyEq title="第一 Bianchi 恒等式" say={R`第一 Bianchi 恒等式：曲率算子对三个向量轮换求和为零——无挠的代价。`}>{R`R(X,Y)Z+R(Z,X)Y+R(Y,Z)X=0\qquad(\text{第一 Bianchi 恒等式})`}</Eq>
-        <Eq n="7.81b" keyEq title="第二 Bianchi 恒等式" say={R`第二 Bianchi 恒等式：曲率的协变导数轮换求和为零，类比 $\dd F=0$（"曲率的边界为零"）。`}>{R`(\nabla_XR)(Y,Z)V+(\nabla_ZR)(X,Y)V+(\nabla_YR)(Z,X)V=0\qquad(\text{第二 Bianchi 恒等式})`}</Eq>
+        <Eq n="7.81b" title="第二 Bianchi 恒等式" say={R`第二 Bianchi 恒等式：曲率的协变导数轮换求和为零，类比 $\dd F=0$（"曲率的边界为零"）。`}>{R`(\nabla_XR)(Y,Z)V+(\nabla_ZR)(X,Y)V+(\nabla_YR)(Z,X)V=0\qquad(\text{第二 Bianchi 恒等式})`}</Eq>
         <Tx>{R`（证明按 Nomizu 1981。）用分量写，Bianchi 恒等式为`}</Tx>
         <Eq n="7.83a" say={R`第一 Bianchi 恒等式的分量形式：后三个指标轮换求和为零。`}>{R`R^\kappa{}_{\lambda\mu\nu}+R^\kappa{}_{\mu\nu\lambda}+R^\kappa{}_{\nu\lambda\mu}=0\qquad(\text{第一 Bianchi 恒等式})`}</Eq>
         <Eq n="7.83b" say={R`第二 Bianchi 恒等式的分量形式：求导指标与最后两个指标轮换求和为零。`}>{R`(\nabla_\kappa R)^\xi{}_{\lambda\mu\nu}+(\nabla_\mu R)^\xi{}_{\lambda\nu\kappa}+(\nabla_\nu R)^\xi{}_{\lambda\kappa\mu}=0\qquad(\text{第二 Bianchi 恒等式}).`}</Eq>
@@ -271,7 +271,7 @@ $$R_{\kappa\lambda\mu\nu}=\tfrac12\Big(\partial_\lambda\partial_\nu g_{\kappa\mu
         <Tx>{R`再缩并 $\lambda$ 与 $\nu$（乘 $g^{\lambda\nu}$；$g^{\lambda\nu}R^\mu{}_{\lambda\nu\kappa}=-\sym{Ric}{\mathit{Ric}}^\mu{}_\kappa$ 由 \eqref{7.80b}），得 $\nabla_\mu(\mathcal R\delta-2\sym{Ric}{\mathit{Ric}})^\mu{}_\kappa=0$，或`}</Tx>
         <Eq n="7.85" keyEq title="Einstein 张量无散" say={R`Einstein 张量的散度恒为零——这是几何恒等式，与物质无关；它要求物质的能动张量也守恒。`}>{R`\nabla_\mu G^{\mu\nu}=0`}</Eq>
         <Tx>{R`其中 $G^{\mu\nu}$ 是 **Einstein 张量**，定义为`}</Tx>
-        <Eq n="7.86" keyEq title="Einstein 张量" say={R`Einstein 张量：Ricci 张量减去半个标量曲率乘度规，是曲率中唯一"自动守恒"的二阶对称张量。`}>{R`G^{\mu\nu}=\sym{Ric}{\mathit{Ric}}^{\mu\nu}-\tfrac12g^{\mu\nu}\mathcal{R}.`}</Eq>
+        <Eq n="7.86" title="Einstein 张量" say={R`Einstein 张量：Ricci 张量减去半个标量曲率乘度规，是曲率中唯一"自动守恒"的二阶对称张量。`}>{R`G^{\mu\nu}=\sym{Ric}{\mathit{Ric}}^{\mu\nu}-\tfrac12g^{\mu\nu}\mathcal{R}.`}</Eq>
         <Tx>{R`历史上，Einstein 建立广义相对论时，起初让 Ricci 张量 $\sym{Ric}{\mathit{Ric}}^{\mu\nu}$ 等于能动张量 $T^{\mu\nu}$。后来他意识到 $T^{\mu\nu}$ 满足协变守恒方程 $\nabla_\mu T^{\mu\nu}=0$，而 $\sym{Ric}{\mathit{Ric}}^{\mu\nu}$ 不满足。为避开这个困难，他提出让 $G^{\mu\nu}$ 等于 $T^{\mu\nu}$。这个新方程是自然的：它可以由一个标量作用量变分得到，见 §7.10。`}</Tx>
         <Exercise n="7.12" title={R`二维时空的 Einstein 张量`} level="★★"
           hint={R`非零 Christoffel 符号：$\Gamma^t{}_{xx}=R\dot R$，$\Gamma^x{}_{tx}=\Gamma^x{}_{xt}=\dot R/R$。或者直接用习题 7.13 的一般结论。`}
@@ -292,7 +292,7 @@ $$G_{tt}=-\frac{\ddot R}{R}-\frac12(-1)\frac{2\ddot R}{R}=0,\qquad G_{xx}=R\ddot
         <Box kind="warning" title={R`勘误：反对称性的写法（p.290）`}>{R`原书写"反对称性 $R_{\kappa\lambda\mu\nu}=-R_{\lambda\kappa\nu\mu}$ 意味着 $(\mu,\nu)$ 有 $N$ 种选择"。这里应是 \eqref{7.80a} $R_{\kappa\lambda\mu\nu}=-R_{\kappa\lambda\nu\mu}$；而 $R_{\lambda\kappa\nu\mu}$ 由两次反对称恰等于 $+R_{\kappa\lambda\mu\nu}$。正文已改正。`}</Box>
         <Eq n="7.87" say={R`全协变形式的第一 Bianchi 恒等式；与成对对称结合后，它只在四个指标全不同时才是新约束。`}>{R`R_{\kappa\lambda\mu\nu}+R_{\kappa\mu\nu\lambda}+R_{\kappa\nu\lambda\mu}=0`}</Eq>
         <Tx>{R`进一步减少独立分量数。\eqref{7.87} 的左边关于 $(\lambda,\mu,\nu)$ 的交换全反对称；再加上反对称性 \eqref{7.80b}（以及 \eqref{7.80c}），它关于全部指标全反对称。若 $m<4$，\eqref{7.87} 自动满足，不带来额外限制。若 $m\ge4$，\eqref{7.87} 只在所有指标互不相同时给出非平凡约束，约束的个数等于从 $m$ 个指标中选出四个不同指标的方式数，即 $\binom m4$。注意 $\binom m4=m(m-1)(m-2)(m-3)/4!$ 在 $m<4$ 时为零，于是 Riemann 张量的独立分量数为`}</Tx>
-        <Eq n="7.88" keyEq title="独立分量数" say={R`Riemann 张量的独立分量数：一维 0、二维 1、三维 6、四维 20。`}>{R`F(m)=\frac12\binom m2\left[\binom m2+1\right]-\binom m4=\frac1{12}m^2(m^2-1).`}</Eq>
+        <Eq n="7.88" title="独立分量数" say={R`Riemann 张量的独立分量数：一维 0、二维 1、三维 6、四维 20。`}>{R`F(m)=\frac12\binom m2\left[\binom m2+1\right]-\binom m4=\frac1{12}m^2(m^2-1).`}</Eq>
         <Tx>{R`$F(1)=0$ 说明一维流形是平坦的（一条曲线没有内禀曲率）。由于 $F(2)=1$，二维流形上只有一个独立分量 $R_{1212}$，其余分量为 $0$ 或 $\pm R_{1212}$。$F(4)=20$ 是广义相对论中众所周知的事实。（三维 $F(3)=6$，恰等于 Ricci 张量的分量数：三维中 Riemann 张量完全由 Ricci 张量决定，所以 Weyl 张量恒为零，见章末习题 7.2。）`}</Tx>
         <Exercise n="7.13" title="二维流形的曲率" level="★★"
           hint={R`$K(g_{\kappa\mu}g_{\lambda\nu}-g_{\kappa\nu}g_{\lambda\mu})$ 与 $R_{\kappa\lambda\mu\nu}$ 有相同的对称性；二维中这样的张量只有一个独立分量。`}
@@ -303,7 +303,7 @@ $$G_{tt}=-\frac{\ddot R}{R}-\frac12(-1)\frac{2\ddot R}{R}=0,\qquad G_{xx}=R\ddot
 **标量曲率：**$\mathcal R=g^{\lambda\nu}\sym{Ric}{\mathit{Ric}}_{\lambda\nu}=2K$，即 $K=\mathcal R/2$。$K$ 就是曲面的 **Gauss 曲率**：半径 $a$ 的球面 $K=1/a^2$，Poincaré 上半平面 $K=-1$，环面 \eqref{7.7} 上 $K=\cos\theta/[r(R+r\cos\theta)]$。交互图 3 让你输入任意二维度规，按 \eqref{7.53}、\eqref{7.42} 数值地算出 $\Gamma$、$R_{1212}$、$K$，并用 Brioschi 公式独立核对。`}>
           {R`设 $(M,g)$ 是二维流形。证明 Riemann 张量可写成`}
         </Exercise>
-        <Eq n="7.89" keyEq title="二维曲率与 Gauss 曲率" say={R`二维中整个 Riemann 张量只由一个函数——Gauss 曲率 $K$——决定，$K=\mathcal R/2$。`}>{R`R_{\kappa\lambda\mu\nu}=K(g_{\kappa\mu}g_{\lambda\nu}-g_{\kappa\nu}g_{\lambda\mu})`}</Eq>
+        <Eq n="7.89" title="二维曲率与 Gauss 曲率" say={R`二维中整个 Riemann 张量只由一个函数——Gauss 曲率 $K$——决定，$K=\mathcal R/2$。`}>{R`R_{\kappa\lambda\mu\nu}=K(g_{\kappa\mu}g_{\lambda\nu}-g_{\kappa\nu}g_{\lambda\mu})`}</Eq>
         <Tx>{R`其中 $K\in\mathcal{F}(M)$。计算 Ricci 张量，证明 $\sym{Ric}{\mathit{Ric}}_{\mu\nu}\propto g_{\mu\nu}$；计算标量曲率，证明 $K=\mathcal R/2$。`}</Tx>
         <CurvatureLab />
       </Sub>

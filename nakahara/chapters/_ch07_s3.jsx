@@ -12,7 +12,7 @@ export function Sec73() {
       <p className="muted">本节概念：<C id="curvature" /></p>
       <Sub n="7.3.1" title="Definitions" zh="定义">
         <Tx>{R`$\Gamma$ 不是张量，不可能具有内禀的几何意义来度量流形弯曲了多少。例如例 7.1 的联络系数在 Cartesian 坐标中为零，在极坐标中却不为零。作为内禀的对象，我们定义**挠率张量**（torsion tensor）$T:\mathcal{X}(M)\otimes\mathcal{X}(M)\to\mathcal{X}(M)$ 与 **Riemann 曲率张量**（Riemann curvature tensor，简称 Riemann 张量）$R:\mathcal{X}(M)\otimes\mathcal{X}(M)\otimes\mathcal{X}(M)\to\mathcal{X}(M)$：`}</Tx>
-        <Eq n="7.36" keyEq title="挠率张量" say={R`挠率：沿 $X$ 求 $Y$ 的协变导数减去沿 $Y$ 求 $X$ 的，再减去李括号。若联络"对称"，这三者恰好相消。`}>{R`T(X,Y)\equiv\nabla_XY-\nabla_YX-[X,Y]`}</Eq>
+        <Eq n="7.36" title="挠率张量" say={R`挠率：沿 $X$ 求 $Y$ 的协变导数减去沿 $Y$ 求 $X$ 的，再减去李括号。若联络"对称"，这三者恰好相消。`}>{R`T(X,Y)\equiv\nabla_XY-\nabla_YX-[X,Y]`}</Eq>
         <Eq n="7.37" keyEq title="Riemann 曲率张量" say={R`曲率：两个协变导数的对易子，再扣除 $[X,Y]$ 方向的导数——协变导数不可交换的程度。`}>{R`R(X,Y,Z)\equiv\nabla_X\nabla_YZ-\nabla_Y\nabla_XZ-\nabla_{[X,Y]}Z.`}</Eq>
         <Tx>{R`通常把 $R(X,Y,Z)$ 写成 $R(X,Y)Z$，使 $R$ 看起来像作用在 $Z$ 上的算子。显然它们满足`}</Tx>
         <Eq n="7.38" say={R`挠率与曲率都对前两个向量反对称。`}>{R`T(X,Y)=-T(Y,X),\qquad R(X,Y)Z=-R(Y,X)Z.`}</Eq>
@@ -75,7 +75,7 @@ $$pr_1=ps+sr_1=\delta^\mu+\varepsilon^\mu-\Gamma^\mu{}_{\nu\lambda}\varepsilon^\
 $$pr_2=pq+qr_2=\varepsilon^\mu+\delta^\mu-\Gamma^\mu{}_{\lambda\nu}\varepsilon^\lambda\delta^\nu.$$
 
 一般 $r_1$ 与 $r_2$ 不重合，从 $r_1$ 指向 $r_2$ 的差为`}</Tx>
-        <Eq n="7.45" keyEq title="挠率 = 平行四边形不闭合" say={R`用平行移动搭一个无穷小"平行四边形"，两条边走完到达的终点不重合，缺口正比于面积元，比例系数是挠率。`}>{R`\overrightarrow{r_1r_2}=pr_2-pr_1=(\Gamma^\mu{}_{\nu\lambda}-\Gamma^\mu{}_{\lambda\nu})\varepsilon^\lambda\delta^\nu=T^\mu{}_{\nu\lambda}\varepsilon^\lambda\delta^\nu.`}</Eq>
+        <Eq n="7.45" title="挠率 = 平行四边形不闭合" say={R`用平行移动搭一个无穷小"平行四边形"，两条边走完到达的终点不重合，缺口正比于面积元，比例系数是挠率。`}>{R`\overrightarrow{r_1r_2}=pr_2-pr_1=(\Gamma^\mu{}_{\nu\lambda}-\Gamma^\mu{}_{\lambda\nu})\varepsilon^\lambda\delta^\nu=T^\mu{}_{\nu\lambda}\varepsilon^\lambda\delta^\nu.`}</Eq>
         <Figure n="7.4" caption={R`向量 $qr_2$（$sr_1$）是向量 $ps$（$pq$）平行移动到 $q$（$s$）的结果。一般 $r_1\neq r_2$，挠率度量两者之差。`} width="55%" />
         <Tx>{R`所以，挠率张量度量的是"由小位移向量及其平行移动构成的平行四边形"不闭合的程度。（原书把这个差记作 $r_2r_1$；按 $pr_2-pr_1$ 的定义它是从 $r_1$ 指向 $r_2$ 的向量。）`}</Tx>
         <Box kind="example" n="7.2" title={R`保持与纬线夹角的"航海"联络：有挠无曲`}>

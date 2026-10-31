@@ -29,7 +29,7 @@ export function Sec71() {
         <Tx>{R`容易验证（把两个坐标基向量喂给 $g_p$，用 $\langle\dd x^\mu,\partial_\nu\rangle=\delta^\mu_\nu$）`}</Tx>
         <Eq n="7.1b" say={R`度规分量就是坐标基向量两两之间的内积，因而关于两个指标对称。`}>{R`g_{\mu\nu}(p)=g_p\left(\frac{\partial}{\partial x^\mu},\frac{\partial}{\partial x^\nu}\right)=g_{\nu\mu}(p)\qquad(p\in M).`}</Eq>
         <Tx>{R`不会引起混淆时，$g_{\mu\nu}$ 中的 $p$ 通常省略。习惯上把 $(g_{\mu\nu})$ 看作第 $(\mu,\nu)$ 个元素为 $g_{\mu\nu}$ 的矩阵。非退化性意味着 $(g_{\mu\nu})$ 满秩，所以有逆矩阵，按传统记作 $(g^{\mu\nu})$：$g_{\mu\nu}g^{\nu\lambda}=g^{\lambda\nu}g_{\nu\mu}=\delta^\lambda_\mu$。行列式 $\det(g_{\mu\nu})$ 记作 $g$，显然 $\det(g^{\mu\nu})=g^{-1}$。于是 $T_pM$ 与 $T^*_pM$ 之间的同构写作`}</Tx>
-        <Eq n="7.2" keyEq title="升降指标" say={R`度规把向量的上指标"降"成一形式的下指标，逆度规再把它"升"回来：这就是物理书里随手升降指标的数学含义。`}>{R`\omega_\mu=g_{\mu\nu}U^\nu,\qquad U^\mu=g^{\mu\nu}\omega_\nu.`}</Eq>
+        <Eq n="7.2" title="升降指标" say={R`度规把向量的上指标"降"成一形式的下指标，逆度规再把它"升"回来：这就是物理书里随手升降指标的数学含义。`}>{R`\omega_\mu=g_{\mu\nu}U^\nu,\qquad U^\mu=g^{\mu\nu}\omega_\nu.`}</Eq>
         <Tx>{R`**"老式"定义：线元。**由 \eqref{7.1a}、\eqref{7.1b} 可以回到把度规看作"无穷小距离平方"的旧定义。取无穷小位移 $\dd x^\mu\,\partial/\partial x^\mu\in T_pM$，代入 $g$：`}</Tx>
         <Eq n="7.3" keyEq title="线元" say={R`把一小段位移喂给度规两次，得到这段位移长度的平方：$\dd s^2=g_{\mu\nu}\dd x^\mu\dd x^\nu$，弯曲空间里的勾股定理。`}>{R`\begin{aligned}\dd s^2&=g\left(\dd x^\mu\frac{\partial}{\partial x^\mu},\dd x^\nu\frac{\partial}{\partial x^\nu}\right)=\dd x^\mu\dd x^\nu\,g\left(\frac{\partial}{\partial x^\mu},\frac{\partial}{\partial x^\nu}\right)\\&=g_{\mu\nu}\,\dd x^\mu\,\dd x^\nu.\end{aligned}`}</Eq>
         <Tx>{R`我们也把 $\dd s^2=g_{\mu\nu}\dd x^\mu\dd x^\nu$ 称作度规，尽管严格说来度规是**张量** $g=g_{\mu\nu}\dd x^\mu\otimes\dd x^\nu$。
@@ -66,13 +66,13 @@ $$(g_{\mu\nu})=\begin{pmatrix}0&1&0&0\\1&0&0&0\\0&0&1&0\\0&0&0&1\end{pmatrix}$$
 
       <Sub n="7.1.2" title="Induced metric" zh="诱导度规">
         <Tx>{R`**问题：**$\R^3$ 中的球面、环面为什么"天然"有度规？答案是从外面继承来的。设 $M$ 是 $n$ 维 Riemann 流形 $N$（度规 $g_N$）的 $m$ 维子流形。若 $f:M\to N$ 是诱导出 $M$ 的子流形结构的嵌入（\sref{D5.3}），拉回 $f^*$ 在 $M$ 上诱导出自然的度规 $g_M=f^*g_N$。$g_M$ 的分量为`}</Tx>
-        <Eq n="7.5" keyEq title="诱导度规" say={R`子流形上两点的距离按外面的空间来量：把外部度规用嵌入映射的 Jacobi 矩阵拉回来。`}>{R`g_{M\mu\nu}(x)=g_{N\alpha\beta}(f(x))\frac{\partial f^\alpha}{\partial x^\mu}\frac{\partial f^\beta}{\partial x^\nu}`}</Eq>
+        <Eq n="7.5" title="诱导度规" say={R`子流形上两点的距离按外面的空间来量：把外部度规用嵌入映射的 Jacobi 矩阵拉回来。`}>{R`g_{M\mu\nu}(x)=g_{N\alpha\beta}(f(x))\frac{\partial f^\alpha}{\partial x^\mu}\frac{\partial f^\beta}{\partial x^\nu}`}</Eq>
         <Tx>{R`其中 $f^\alpha$ 是 $f(x)$ 的坐标——这就是拉回的分量公式 \eqref{5.37} 作用在 $(0,2)$ 型张量上。例如考虑嵌入 $(\R^3,\delta)$ 的单位球面。令 $(\theta,\phi)$ 为 $S^2$ 的极坐标，$f$ 为通常的包含映射
 
 $$f:(\theta,\phi)\mapsto(\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta),$$
 
 于是 $\partial_\theta f=(\cos\theta\cos\phi,\cos\theta\sin\phi,-\sin\theta)$，$\partial_\phi f=(-\sin\theta\sin\phi,\sin\theta\cos\phi,0)$，两者正交，长度平方分别为 $1$ 与 $\sin^2\theta$。由此得**诱导度规**（induced metric）`}</Tx>
-        <Eq n="7.6" keyEq title="球面的度规" say={R`单位球面从 $\R^3$ 继承的度规：沿经线走 $\dd\theta$ 的长度就是 $\dd\theta$，沿纬线走 $\dd\phi$ 的长度要乘纬圈半径 $\sin\theta$。`}>{R`\begin{aligned}g_{\mu\nu}\,\dd x^\mu\otimes\dd x^\nu&=\delta_{\alpha\beta}\frac{\partial f^\alpha}{\partial x^\mu}\frac{\partial f^\beta}{\partial x^\nu}\dd x^\mu\otimes\dd x^\nu\\&=\dd\theta\otimes\dd\theta+\sin^2\theta\,\dd\phi\otimes\dd\phi.\end{aligned}`}</Eq>
+        <Eq n="7.6" title="球面的度规" say={R`单位球面从 $\R^3$ 继承的度规：沿经线走 $\dd\theta$ 的长度就是 $\dd\theta$，沿纬线走 $\dd\phi$ 的长度要乘纬圈半径 $\sin\theta$。`}>{R`\begin{aligned}g_{\mu\nu}\,\dd x^\mu\otimes\dd x^\nu&=\delta_{\alpha\beta}\frac{\partial f^\alpha}{\partial x^\mu}\frac{\partial f^\beta}{\partial x^\nu}\dd x^\mu\otimes\dd x^\nu\\&=\dd\theta\otimes\dd\theta+\sin^2\theta\,\dd\phi\otimes\dd\phi.\end{aligned}`}</Eq>
         <Exercise n="7.2" title="环面的诱导度规" level="★"
           hint={R`计算 $\partial_\theta f$ 与 $\partial_\phi f$，再代入 \eqref{7.5}：$g_{\theta\theta}=|\partial_\theta f|^2$，$g_{\theta\phi}=\partial_\theta f\cdot\partial_\phi f$，$g_{\phi\phi}=|\partial_\phi f|^2$。`}
           solution={R`$$\partial_\theta f=(-r\sin\theta\cos\phi,\ -r\sin\theta\sin\phi,\ r\cos\theta),\qquad\partial_\phi f=(-(R+r\cos\theta)\sin\phi,\ (R+r\cos\theta)\cos\phi,\ 0).$$

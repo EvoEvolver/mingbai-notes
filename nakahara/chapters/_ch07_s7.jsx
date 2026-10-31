@@ -16,7 +16,7 @@ export function Sec77() {
 $$\frac{\partial(x^\kappa+\varepsilon X^\kappa)}{\partial x^\mu}\frac{\partial(x^\lambda+\varepsilon X^\lambda)}{\partial x^\nu}g_{\kappa\lambda}(x+\varepsilon X)=g_{\mu\nu}(x).$$
 
 展开到 $\varepsilon$ 的一阶（$(\delta^\kappa_\mu+\varepsilon\partial_\mu X^\kappa)(\delta^\lambda_\nu+\varepsilon\partial_\nu X^\lambda)(g_{\kappa\lambda}+\varepsilon X^\xi\partial_\xi g_{\kappa\lambda})$），零阶项两边相同，一阶项给出 **Killing 方程**`}</Tx>
-        <Eq n="7.120a" keyEq title="Killing 方程" say={R`Killing 方程：度规沿 $X$ 的流不变——度规分量的变化被坐标基的变化恰好抵消。`}>{R`X^\xi\partial_\xi g_{\mu\nu}+\partial_\mu X^\kappa g_{\kappa\nu}+\partial_\nu X^\lambda g_{\mu\lambda}=0.`}</Eq>
+        <Eq n="7.120a" title="Killing 方程" say={R`Killing 方程：度规沿 $X$ 的流不变——度规分量的变化被坐标基的变化恰好抵消。`}>{R`X^\xi\partial_\xi g_{\mu\nu}+\partial_\mu X^\kappa g_{\kappa\nu}+\partial_\nu X^\lambda g_{\mu\lambda}=0.`}</Eq>
         <Tx>{R`由李导数的定义（\eqref{5.47} 及其对 $(0,2)$ 型张量的推广），它可紧凑地写作`}</Tx>
         <Eq n="7.120b" say={R`Killing 场就是使度规的李导数为零的向量场。`}>{R`(\mathcal{L}_Xg)_{\mu\nu}=0.`}</Eq>
         <Tx>{R`设 $\phi_t:M\to M$ 是生成 Killing 场 $X$ 的单参数变换群。\eqref{7.120b} 说明沿 $\phi_t$ 移动时局部几何不变。在这个意义下，Killing 向量场代表流形的**对称方向**。
@@ -120,7 +120,7 @@ $$\begin{aligned}X_\phi(\theta,\phi)&=-(-A\cos\phi+B\sin\phi-C)\sin\theta\cos\th
 $$\frac{\partial(x^\kappa+\varepsilon X^\kappa)}{\partial x^\mu}\frac{\partial(x^\lambda+\varepsilon X^\lambda)}{\partial x^\nu}g_{\kappa\lambda}(x+\varepsilon X)=\mathrm{e}^{2\sigma}g_{\mu\nu}(x).$$
 
 注意 $\sigma\propto\varepsilon$，令 $\sigma=\varepsilon\psi/2$，$\psi\in\mathcal{F}(M)$。于是 $g_{\mu\nu}$ 与 $X^\mu$ 满足`}</Tx>
-        <Eq n="7.129a" keyEq title="共形 Killing 方程" say={R`共形 Killing 方程：度规沿 $X$ 的李导数正比于度规本身——只伸缩、不变形。`}>{R`\mathcal{L}_Xg_{\mu\nu}=X^\xi\partial_\xi g_{\mu\nu}+\partial_\mu X^\kappa g_{\kappa\nu}+\partial_\nu X^\lambda g_{\mu\lambda}=\psi g_{\mu\nu}.`}</Eq>
+        <Eq n="7.129a" title="共形 Killing 方程" say={R`共形 Killing 方程：度规沿 $X$ 的李导数正比于度规本身——只伸缩、不变形。`}>{R`\mathcal{L}_Xg_{\mu\nu}=X^\xi\partial_\xi g_{\mu\nu}+\partial_\mu X^\kappa g_{\kappa\nu}+\partial_\nu X^\lambda g_{\mu\lambda}=\psi g_{\mu\nu}.`}</Eq>
         <Tx>{R`用 $g^{\mu\nu}$ 对 \eqref{7.129a} 取迹（$g^{\mu\nu}g_{\mu\nu}=m$），立即解出 $\psi$：`}</Tx>
         <Eq n="7.129b" say={R`伸缩率 $\psi$ 由 $X$ 的"散度"决定。`}>{R`\psi=\frac{X^\xi g^{\mu\nu}\partial_\xi g_{\mu\nu}+2\partial_\mu X^\mu}{m}`}</Eq>
         <Tx>{R`其中 $m=\dim M$。（用 \eqref{7.204} 的 $g^{\mu\nu}\partial_\xi g_{\mu\nu}=\partial_\xi\ln|g|$，可写成 $\psi=\frac2m\nabla_\mu X^\mu$。）容易验证：

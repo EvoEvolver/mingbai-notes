@@ -31,7 +31,7 @@ export const meta = {
     { ch: "ch01", what: R`第 1 章：路径积分、Grassmann 数与 Berezin 积分（§1.5，$\dd(ca)=\dd a/c$）` },
     { ch: "ch10", what: R`第 10 章：联络与规范势、规范变换 $g^{-1}(\mathcal{A}+\dd)g$、Ehresmann 联络的重建（定理 10.1）、瞬子与映射度 $\frac1{24\pi^2}\int\Tr(g^{-1}\dd g)^3$（定理 10.7）、Berry 相位` },
     { ch: "ch11", what: R`第 11 章：陈特征 $\mathrm{ch}_l$、对称化迹 str（式 (11.8)）、陈–Simons 形式的插值公式（式 (11.105)）及其规范变换（式 (11.118)）` },
-    { ch: "ch12", what: R`第 12 章：Dirac 算子与扭曲旋量复形的 Atiyah–Singer 指标定理、热核与 McKean–Singer 公式、$\eta$ 不变量、谱流与 APS 指标定理（§12.8、例 12.8）` },
+    { ch: "ch12", what: R`第 12 章：Dirac 算子与扭曲旋量复形的 Atiyah–Singer 指标定理（定理 12.2）、热核与 McKean–Singer 公式（定理 12.5）、$\eta$ 不变量、谱流与 APS 指标定理（定理 12.3；§12.8、例 12.8）` },
   ],
 };
 

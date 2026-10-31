@@ -6,7 +6,7 @@ const R = String.raw;
 export const HOOK_TITLE = "一个衰变、一个整数，和一张必须对上的账";
 export const HOOK = R`**一个衰变。**中性 $\pi$ 介子几乎总是衰变成两个光子，寿命约 $8\times10^{-17}$ 秒。1960 年代的理论家却算出它"应当"几乎不衰变：手征对称性禁止了这一过程。矛盾的解决是 Adler、Bell 与 Jackiw 发现的**反常**——一个在 Lagrange 量层面成立的对称性，在量子论中被破坏了，而破坏量正比于 $\epsilon^{\mu\nu\rho\sigma}F_{\mu\nu}F_{\rho\sigma}$。把这个"破坏量"代入，$\pi^0\to\gamma\gamma$ 的衰变率与实验符合到百分之几，还顺带证明了夸克有三种颜色。
 
-**一个整数。**Fujikawa 后来指出，反常并非来自某个 Feynman 图的细节，而是来自路径积分的**积分测度**：做手征转动时，测度乘上一个 Jacobian，它的对数恰好是 Dirac 算子的**指标**——正手征零模数减负手征零模数。指标是整数，连续地改变规范场时它不能连续地变化。所以反常是**拓扑的**：第 11 章的陈特征、第 12 章的 Atiyah–Singer 定理在这里成为物理。
+**一个整数。**Fujikawa 后来指出，反常并非来自某个 Feynman 图的细节，而是来自路径积分的**积分测度**：做手征转动时，测度乘上一个 Jacobian，它的对数恰好是 Dirac 算子的**指标**——正手征零模数减负手征零模数。指标是整数，连续地改变规范场时它不能连续地变化。所以反常是**拓扑的**：第 11 章的陈特征、第 12 章的 Atiyah–Singer 定理（\sref{T12.2}）在这里成为物理。
 
 **一张必须对上的账。**如果被破坏的是**规范**对称性，理论就会失去一致性。标准模型中夸克与轻子各自都有规范反常，只有放在一起才恰好相消：$3\times\frac16+(-\frac12)=0$。为什么非阿贝尔反常的系数是 $\frac1{24\pi^2}$、三次项是 $\frac12$，而阿贝尔反常是 $\frac1{4\pi^2}$、$\frac23$？本章的回答令人惊讶：四维的非阿贝尔反常来自**六维**的阿贝尔反常，经由一串"下降方程"一层一层落下来；而三维的宇称反常恰好夹在中间。`;
 
@@ -89,7 +89,7 @@ export const concepts = [
   {
     id: "heat_kernel", name_zh: "热核正规化与成对抵消", name_en: "Heat-kernel regularization", icon: "🔥", section_id: "13.2.1", group: "abelian",
     plain: R`用 $\mathrm{e}^{-\lambda^2/M^2}$ 截断后，非零模成对抵消，只剩零模。`,
-    explain: R`$\gamma^{m+1}$ 与 $\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}$ 反对易，把本征值 $\lambda$ 的态映到 $-\lambda$ 的态；二者正交，故 $\langle\psi|\gamma^{m+1}|\psi\rangle=0$。截断权重只依赖 $\lambda^2$，于是所有非零模的贡献为零，剩下 $\nu_+-\nu_-$——对任意 $M$ 都如此（McKean–Singer）。
+    explain: R`$\gamma^{m+1}$ 与 $\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}$ 反对易，把本征值 $\lambda$ 的态映到 $-\lambda$ 的态；二者正交，故 $\langle\psi|\gamma^{m+1}|\psi\rangle=0$。截断权重只依赖 $\lambda^2$，于是所有非零模的贡献为零，剩下 $\nu_+-\nu_-$——对任意 $M$ 都如此（McKean–Singer，\sref{T12.5}）。
 
 另一方面，取 $M\to\infty$ 时热核展开是局部的：$\boldsymbol A(x)=-\frac1{32\pi^2}\Tr\epsilon\mathcal{F}\mathcal{F}$。"整体 = 整数"与"局部 = 陈特征密度"合起来就是指标定理。`,
     analogy: "天平两端成对放砝码：每放一个正本征值的砝码就有一个负本征值的配对，无论放多少对，天平的读数只取决于那几个没有配对的（零模）。",
@@ -99,7 +99,7 @@ export const concepts = [
   {
     id: "abelian_anomaly", name_zh: "阿贝尔反常 = 指标", name_en: "Abelian anomaly as index", icon: "🔢", section_id: "13.2", group: "abelian",
     plain: R`手征反常的积分 = 正手征零模数 − 负手征零模数 = $\int\mathrm{ch}_l(\mathcal{F})$。`,
-    explain: R`$\int\boldsymbol A=\nu_+-\nu_-=\ind\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}_+=\int_M\frac1{l!}\Tr(\frac{\mathrm{i}\mathcal{F}}{2\pi})^l$（\eqref{13.35}）。这是背景几何平凡时扭曲旋量复形的 Atiyah–Singer 定理（第 12 章）。
+    explain: R`$\int\boldsymbol A=\nu_+-\nu_-=\ind\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}_+=\int_M\frac1{l!}\Tr(\frac{\mathrm{i}\mathcal{F}}{2\pi})^l$（\eqref{13.35}）。这是背景几何平凡时扭曲旋量复形的 Atiyah–Singer 定理（\sref{F:spinAS12}）。
 
 因为是整数，反常不受微扰修正（Adler–Bardeen）；局部密度是陈–Simons 流的散度，$\Tr\mathcal{F}^2=\dd\Tr(\mathcal{A}\dd\mathcal{A}+\frac23\mathcal{A}^3)$——系数 $\frac23$ 的来源。`,
     analogy: "数一数一座城的人口，可以挨家挨户点（零模计数），也可以对人口密度图积分（陈特征）；两者必然相等，而且城市边界稍微挪一挪也不会让人口出现小数。",

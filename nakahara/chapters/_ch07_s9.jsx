@@ -12,7 +12,7 @@ export function Sec79() {
       <p className="muted">本节概念：<C id="hodge" /></p>
       <Sub n="7.9.1" title="Invariant volume elements" zh="不变体积元">
         <Tx>{R`§5.5 中把体积元定义为 $m$ 维可定向流形 $M$ 上处处不为零的 $m$ 形式。若 $M$ 带有度规 $g$，就存在一个在坐标变换下不变的自然体积元。定义**不变体积元**（invariant volume element）`}</Tx>
-        <Eq n="7.168" keyEq title="不变体积元" say={R`度规给出的典范体积元：坐标体积乘 $\sqrt{|g|}$，后者恰好抵消换坐标时的 Jacobi 行列式。`}>{R`\Omega_M\equiv\sqrt{|g|}\,\dd x^1\wedge\dd x^2\wedge\ldots\wedge\dd x^m`}</Eq>
+        <Eq n="7.168" title="不变体积元" say={R`度规给出的典范体积元：坐标体积乘 $\sqrt{|g|}$，后者恰好抵消换坐标时的 Jacobi 行列式。`}>{R`\Omega_M\equiv\sqrt{|g|}\,\dd x^1\wedge\dd x^2\wedge\ldots\wedge\dd x^m`}</Eq>
         <Tx>{R`其中 $g=\det g_{\mu\nu}$，$x^\mu$ 是卡 $(U,\varphi)$ 的坐标。$m$ 形式 $\Omega_M$ 确实在坐标变换下不变。设 $y^\lambda$ 是另一张卡 $(V,\psi)$ 的坐标，$U\cap V\neq\emptyset$。用 $y$ 坐标写出的不变体积元为
 
 $$\sqrt{\left|\det\left(\frac{\partial x^\mu}{\partial y^\kappa}\frac{\partial x^\nu}{\partial y^\lambda}g_{\mu\nu}\right)\right|}\,\dd y^1\wedge\ldots\wedge\dd y^m.$$
@@ -70,7 +70,7 @@ $$\omega=\frac1{r!}\omega_{\mu_1\mu_2\ldots\mu_r}\dd x^{\mu_1}\wedge\dd x^{\mu_2
             { claim: R`**Lorentz 情形（原书留给读者，本站补全）：**两次作用时，$\varepsilon^{\alpha_1\ldots\alpha_r}{}_{\beta\ldots}$ 中被升起的 $r$ 个指标与 $\varepsilon^{\beta\ldots}{}_{\gamma\ldots}$ 中被升起的 $m-r$ 个指标合起来，恰好把 $\{1,\ldots,m\}$ 的每个指标各升起一次，产生因子 $\prod_\alpha\eta^{\alpha\alpha}=\det\eta^{-1}=-1$；其余步骤不变，得 $**\omega=(-1)^{1+r(m-r)}\omega$。`, fill: true },
           ]} />
         </Stmt>
-        <Eq n="7.176a" keyEq title={R`$**$ 的符号`} say={R`Riemann 流形上 Hodge 星做两次回到自身，至多差一个符号 $(-1)^{r(m-r)}$。`}>{R`**\omega=(-1)^{r(m-r)}\omega.`}</Eq>
+        <Eq n="7.176a" title={R`$**$ 的符号`} say={R`Riemann 流形上 Hodge 星做两次回到自身，至多差一个符号 $(-1)^{r(m-r)}$。`}>{R`**\omega=(-1)^{r(m-r)}\omega.`}</Eq>
         <Tx>{R`（若 $(M,g)$ 是 Riemann 流形；）以及`}</Tx>
         <Eq n="7.176b" say={R`Lorentz 流形上多一个负号，来自 $\det\eta=-1$。`}>{R`**\omega=(-1)^{1+r(m-r)}\omega`}</Eq>
         <Tx>{R`（若是 Lorentz 流形。）于是 $(-1)^{r(m-r)}**$（或 $(-1)^{1+r(m-r)}**$）是 $\Omega^r(M)$ 上的恒等映射。定义 $*$ 的逆为`}</Tx>
@@ -84,7 +84,7 @@ $$\omega=\frac1{r!}\omega_{\mu_1\mu_2\ldots\mu_r}\dd x^{\mu_1}\wedge\dd x^{\mu_2
 $$\omega=\frac1{r!}\omega_{\mu_1\ldots\mu_r}\dd x^{\mu_1}\wedge\ldots\wedge\dd x^{\mu_r}\qquad\eta=\frac1{r!}\eta_{\mu_1\ldots\mu_r}\dd x^{\mu_1}\wedge\ldots\wedge\dd x^{\mu_r}.$$
 
 外积 $\omega\wedge*\eta$ 是 $m$ 形式：`}</Tx>
-        <Eq n="7.178" keyEq title={R`$\omega\wedge*\eta$`} say={R`$\omega\wedge*\eta$ 就是分量的逐点内积乘体积元：Hodge 星把"楔积"变成了"内积"。`}>{R`\begin{aligned}\omega\wedge*\eta&=\frac1{(r!)^2}\omega_{\mu_1\ldots\mu_r}\eta_{\nu_1\ldots\nu_r}\frac{\sqrt{|g|}}{(m-r)!}\varepsilon^{\nu_1\ldots\nu_r}{}_{\mu_{r+1}\ldots\mu_m}\dd x^{\mu_1}\wedge\ldots\wedge\dd x^{\mu_r}\wedge\dd x^{\mu_{r+1}}\wedge\ldots\wedge\dd x^{\mu_m}\\&=\frac1{r!}\sum_{\mu\nu}\omega_{\mu_1\ldots\mu_r}\eta^{\nu_1\ldots\nu_r}\frac1{r!(m-r)!}\varepsilon_{\nu_1\ldots\nu_r\mu_{r+1}\ldots\mu_m}\varepsilon_{\mu_1\ldots\mu_r\mu_{r+1}\ldots\mu_m}\sqrt{|g|}\,\dd x^1\wedge\ldots\wedge\dd x^m\\&=\frac1{r!}\omega_{\mu_1\ldots\mu_r}\eta^{\mu_1\ldots\mu_r}\sqrt{|g|}\,\dd x^1\wedge\ldots\wedge\dd x^m.\end{aligned}`}</Eq>
+        <Eq n="7.178" title={R`$\omega\wedge*\eta$`} say={R`$\omega\wedge*\eta$ 就是分量的逐点内积乘体积元：Hodge 星把"楔积"变成了"内积"。`}>{R`\begin{aligned}\omega\wedge*\eta&=\frac1{(r!)^2}\omega_{\mu_1\ldots\mu_r}\eta_{\nu_1\ldots\nu_r}\frac{\sqrt{|g|}}{(m-r)!}\varepsilon^{\nu_1\ldots\nu_r}{}_{\mu_{r+1}\ldots\mu_m}\dd x^{\mu_1}\wedge\ldots\wedge\dd x^{\mu_r}\wedge\dd x^{\mu_{r+1}}\wedge\ldots\wedge\dd x^{\mu_m}\\&=\frac1{r!}\sum_{\mu\nu}\omega_{\mu_1\ldots\mu_r}\eta^{\nu_1\ldots\nu_r}\frac1{r!(m-r)!}\varepsilon_{\nu_1\ldots\nu_r\mu_{r+1}\ldots\mu_m}\varepsilon_{\mu_1\ldots\mu_r\mu_{r+1}\ldots\mu_m}\sqrt{|g|}\,\dd x^1\wedge\ldots\wedge\dd x^m\\&=\frac1{r!}\omega_{\mu_1\ldots\mu_r}\eta^{\mu_1\ldots\mu_r}\sqrt{|g|}\,\dd x^1\wedge\ldots\wedge\dd x^m.\end{aligned}`}</Eq>
         <Tx>{R`这个表达式说明该乘积是对称的：`}</Tx>
         <Eq n="7.179" say={R`$\omega\wedge*\eta$ 关于 $\omega,\eta$ 对称。`}>{R`\omega\wedge*\eta=\eta\wedge*\omega.`}</Eq>
         <Tx>{R`设 $\{\hat\theta^\alpha\}$ 是非坐标基，
@@ -94,7 +94,7 @@ $$\omega=\frac1{r!}\omega_{\alpha_1\ldots\alpha_r}\hat\theta^{\alpha_1}\wedge\ld
 \eqref{7.178} 改写为`}</Tx>
         <Eq n="7.180" say={R`在正交标架中，分量的内积就是普通的平方和（Riemann 情形）。`}>{R`\omega\wedge*\eta=\frac1{r!}\omega_{\alpha_1\ldots\alpha_r}\eta^{\alpha_1\ldots\alpha_r}\hat\theta^1\wedge\ldots\wedge\hat\theta^m.`}</Eq>
         <Tx>{R`由于 $\alpha\wedge*\beta$ 是 $m$ 形式，它在 $M$ 上的积分有意义。定义两个 $r$ 形式的**内积** $(\omega,\eta)$：`}</Tx>
-        <Eq n="7.181" keyEq title="形式的内积" say={R`形式空间上的 $L^2$ 内积：逐点内积在整个流形上积分。`}>{R`(\omega,\eta)\equiv\int\omega\wedge*\eta=\frac1{r!}\int_M\omega_{\mu_1\ldots\mu_r}\eta^{\mu_1\ldots\mu_r}\sqrt{|g|}\,\dd x^1\ldots\dd x^m.`}</Eq>
+        <Eq n="7.181" title="形式的内积" say={R`形式空间上的 $L^2$ 内积：逐点内积在整个流形上积分。`}>{R`(\omega,\eta)\equiv\int\omega\wedge*\eta=\frac1{r!}\int_M\omega_{\mu_1\ldots\mu_r}\eta^{\mu_1\ldots\mu_r}\sqrt{|g|}\,\dd x^1\ldots\dd x^m.`}</Eq>
         <Tx>{R`由于 $\omega\wedge*\eta=\eta\wedge*\omega$，内积是对称的：`}</Tx>
         <Eq n="7.182" say={R`内积对称。`}>{R`(\omega,\eta)=(\eta,\omega).`}</Eq>
         <Tx>{R`若 $(M,g)$ 是 Riemann 流形，内积是正定的：`}</Tx>
@@ -104,7 +104,7 @@ $$\omega=\frac1{r!}\omega_{\alpha_1\ldots\alpha_r}\hat\theta^{\alpha_1}\wedge\ld
 
       <Sub n="7.9.4" title="Adjoints of exterior derivatives" zh="外微分的伴随">
         <Stmt id="D7.6" />
-        <Eq n="7.184a" keyEq title="余微分" say={R`余微分：先对偶、再外微分、再对偶回来，带一个使其成为 $\dd$ 的伴随的符号。作用在一形式上就是负的散度。`}>{R`\dd^\dagger=(-1)^{mr+m+1}*\dd*`}</Eq>
+        <Eq n="7.184a" title="余微分" say={R`余微分：先对偶、再外微分、再对偶回来，带一个使其成为 $\dd$ 的伴随的符号。作用在一形式上就是负的散度。`}>{R`\dd^\dagger=(-1)^{mr+m+1}*\dd*`}</Eq>
         <Tx>{R`（若 $(M,g)$ 是 Riemann 流形；）以及`}</Tx>
         <Eq n="7.184b" say={R`Lorentz 情形的余微分。`}>{R`\dd^\dagger=(-1)^{mr+m}*\dd*`}</Eq>
         <Tx>{R`（若是 Lorentz 流形，$m=\dim M$。）总结为下面的图（Riemann 流形）：`}</Tx>
@@ -125,7 +125,7 @@ $$\omega=\frac1{r!}\omega_{\alpha_1\ldots\alpha_r}\hat\theta^{\alpha_1}\wedge\ld
         <Stmt id="D7.7" />
         <Eq n="7.187" keyEq title="Laplace 算子" say={R`Laplace–de Rham 算子：$\dd$ 与 $\dd^\dagger$ 之和的平方，保持形式的次数。`}>{R`\Delta=(\dd+\dd^\dagger)^2=\dd\dd^\dagger+\dd^\dagger\dd.`}</Eq>
         <Tx>{R`作为例子，求 $\Delta:\Omega^0(M)\to\Omega^0(M)$ 的显式形式。设 $f\in\mathcal{F}(M)$。由于 $\dd^\dagger f=0$（没有 $(-1)$ 形式），由 \eqref{7.184a}（$r=1$ 时符号为 $(-1)^{2m+1}=-1$）：`}</Tx>
-        <Eq n="7.188" keyEq title="Laplace–Beltrami 算子" say={R`作用在函数上，$\Delta$ 就是弯曲空间的 Laplace–Beltrami 算子（带负号）：$-\frac1{\sqrt{|g|}}\partial_\nu(\sqrt{|g|}g^{\nu\mu}\partial_\mu f)$。`}>{R`\begin{aligned}\Delta f&=\dd^\dagger\dd f=-*\dd*(\partial_\mu f\,\dd x^\mu)\\&=-*\dd\left(\frac{\sqrt{|g|}}{(m-1)!}\partial_\mu fg^{\mu\lambda}\varepsilon_{\lambda\nu_2\ldots\nu_m}\dd x^{\nu_2}\wedge\ldots\wedge\dd x^{\nu_m}\right)\\&=-*\frac1{(m-1)!}\partial_\nu[\sqrt{|g|}g^{\lambda\mu}\partial_\mu f]\varepsilon_{\lambda\nu_2\ldots\nu_m}\dd x^\nu\wedge\dd x^{\nu_2}\wedge\ldots\wedge\dd x^{\nu_m}\\&=-*\partial_\nu[\sqrt{|g|}g^{\nu\mu}\partial_\mu f]\,\dd x^1\wedge\ldots\wedge\dd x^m\\&=-\frac1{\sqrt{|g|}}\partial_\nu[\sqrt{|g|}g^{\nu\mu}\partial_\mu f].\end{aligned}`}</Eq>
+        <Eq n="7.188" title="Laplace–Beltrami 算子" say={R`作用在函数上，$\Delta$ 就是弯曲空间的 Laplace–Beltrami 算子（带负号）：$-\frac1{\sqrt{|g|}}\partial_\nu(\sqrt{|g|}g^{\nu\mu}\partial_\mu f)$。`}>{R`\begin{aligned}\Delta f&=\dd^\dagger\dd f=-*\dd*(\partial_\mu f\,\dd x^\mu)\\&=-*\dd\left(\frac{\sqrt{|g|}}{(m-1)!}\partial_\mu fg^{\mu\lambda}\varepsilon_{\lambda\nu_2\ldots\nu_m}\dd x^{\nu_2}\wedge\ldots\wedge\dd x^{\nu_m}\right)\\&=-*\frac1{(m-1)!}\partial_\nu[\sqrt{|g|}g^{\lambda\mu}\partial_\mu f]\varepsilon_{\lambda\nu_2\ldots\nu_m}\dd x^\nu\wedge\dd x^{\nu_2}\wedge\ldots\wedge\dd x^{\nu_m}\\&=-*\partial_\nu[\sqrt{|g|}g^{\nu\mu}\partial_\mu f]\,\dd x^1\wedge\ldots\wedge\dd x^m\\&=-\frac1{\sqrt{|g|}}\partial_\nu[\sqrt{|g|}g^{\nu\mu}\partial_\mu f].\end{aligned}`}</Eq>
         <Tx>{R`［第四行：$\varepsilon_{\lambda\nu_2\ldots\nu_m}\dd x^\nu\wedge\dd x^{\nu_2}\wedge\ldots$ 只在 $\nu=\lambda$ 时非零，给出 $(m-1)!\,\delta^\nu_\lambda\,\dd x^1\wedge\ldots\wedge\dd x^m$。最后一行用 $*(\dd x^1\wedge\ldots\wedge\dd x^m)=\sqrt{|g|}\varepsilon^{12\ldots m}=\sqrt{|g|}g^{-1}=1/\sqrt{|g|}$（\eqref{7.171b}，Riemann 情形 $g>0$）。原书把 $g^{-1}$ 写在了第四行，最终结果相同。］在 $(\R^m,\delta)$ 中这就是 $\Delta f=-\sum_\mu\partial_\mu^2f$：本书的 $\Delta$ 是**正**算子，与物理中常用的 $\nabla^2$ 差一个负号。`}</Tx>
         <Exercise n="7.21" title={R`$\R^m$ 中一形式的 Laplace 算子`} level="★★"
           hint={R`先证明（或用）Riemann 流形上 $\dd^\dagger$ 的分量公式 $(\dd^\dagger\omega)_{\nu_2\ldots\nu_r}=-\nabla^\mu\omega_{\mu\nu_2\ldots\nu_r}$；在 $\R^m$ 中 $\nabla=\partial$。对 $r=1$ 它就是 \eqref{7.188} 的中间步骤。`}
@@ -152,7 +152,7 @@ $$\Delta\omega=-\sum_{\mu=1}^m\frac{\partial^2\omega_\nu}{\partial x^\mu\partial
         </Exercise>
         <Box kind="example" n="7.16" title="Maxwell 方程的另一半">
           <Tx>{R`例 5.11 中已证明一半 Maxwell 方程化为恒等式 $\dd F=\dd^2A=0$，其中 $A=A_\mu\dd x^\mu$ 是矢势一形式，$F=\dd A$ 是电磁二形式。设 $\rho$ 是电荷密度、$\boldsymbol j$ 是电流密度，构成电流一形式 $j=\eta_{\mu\nu}j^\nu\dd x^\mu=-\rho\,\dd t+\boldsymbol j\cdot\dd\boldsymbol x$。则其余的 Maxwell 方程成为`}</Tx>
-          <Eq n="7.189a" keyEq title="有源 Maxwell 方程" say={R`有源的一半 Maxwell 方程：场强的余微分（散度）等于电流。与 $\dd F=0$ 合起来就是全部 Maxwell 方程。`}>{R`\dd^\dagger F=\dd^\dagger\dd A=j.`}</Eq>
+          <Eq n="7.189a" title="有源 Maxwell 方程" say={R`有源的一半 Maxwell 方程：场强的余微分（散度）等于电流。与 $\dd F=0$ 合起来就是全部 Maxwell 方程。`}>{R`\dd^\dagger F=\dd^\dagger\dd A=j.`}</Eq>
           <Tx>{R`分量表达式为`}</Tx>
           <Eq n="7.189b" say={R`Gauss 定律与 Ampère–Maxwell 定律。`}>{R`\nabla\cdot\boldsymbol E=\rho\qquad\nabla\times\boldsymbol B-\frac{\partial\boldsymbol E}{\partial t}=\boldsymbol j.`}</Eq>
           <Tx>{R`［核对：$m=4$、$r=2$ 的 Lorentz 情形，\eqref{7.184b} 的符号为 $(-1)^{8+4}=+1$，$\dd^\dagger=*\dd*$。用 \eqref{7.172}（$\eta=\mathrm{diag}(-1,1,1,1)$、$\varepsilon_{0123}=1$）得 $*(\dd x^i\wedge\dd x^0)=\dd x^j\wedge\dd x^k$、$*(\dd x^j\wedge\dd x^k)=-\dd x^i\wedge\dd x^0$（$(ijk)$ 为偶置换）。由例 5.11 的 $F=E_i\dd x^i\wedge\dd x^0+B_i\dd x^j\wedge\dd x^k$，$*F=E_i\dd x^j\wedge\dd x^k-B_i\dd x^i\wedge\dd x^0$，
@@ -164,7 +164,7 @@ $$\dd*F=(\nabla\cdot\boldsymbol E)\dd x^1\wedge\dd x^2\wedge\dd x^3+(\partial_t\
 矢势 $A$ 有大量自由度（规范自由度 $A\to A+\dd\chi$），总可以选 $A$ 满足 **Lorenz 条件** $\dd^\dagger A=0$。于是 \eqref{7.189a} 成为 $(\dd\dd^\dagger+\dd^\dagger\dd)A=\Delta A=j$：每个分量满足有源波动方程。`}</Tx>
         </Box>
         <Tx>{R`设 $(M,g)$ 是紧致 Riemann 流形。Laplace 算子 $\Delta$ 在下述意义下是 $M$ 上的正算子：`}</Tx>
-        <Eq n="7.190" keyEq title="Δ 非负" say={R`Laplace 算子的期望值是两个平方之和：它是非负的自伴算子，零模必须同时满足 $\dd\omega=0$ 与 $\dd^\dagger\omega=0$。`}>{R`(\omega,\Delta\omega)=(\omega,(\dd^\dagger\dd+\dd\dd^\dagger)\omega)=(\dd\omega,\dd\omega)+(\dd^\dagger\omega,\dd^\dagger\omega)\ge0`}</Eq>
+        <Eq n="7.190" title="Δ 非负" say={R`Laplace 算子的期望值是两个平方之和：它是非负的自伴算子，零模必须同时满足 $\dd\omega=0$ 与 $\dd^\dagger\omega=0$。`}>{R`(\omega,\Delta\omega)=(\omega,(\dd^\dagger\dd+\dd\dd^\dagger)\omega)=(\dd\omega,\dd\omega)+(\dd^\dagger\omega,\dd^\dagger\omega)\ge0`}</Eq>
         <Tx>{R`这里用了 \eqref{7.186} 与 \eqref{7.183}。若 $\Delta\omega=0$，就称 $r$ 形式 $\omega$ 为**调和的**（harmonic）；若 $\dd\omega=0$（$\dd^\dagger\omega=0$），就称它为**闭的**（**余闭的**，coclosed）。下面的定理是 \eqref{7.190} 的直接推论。`}</Tx>
         <Stmt id="T7.6">
           <Proof steps={[
@@ -183,7 +183,7 @@ $$\dd*F=(\nabla\cdot\boldsymbol E)\dd x^1\wedge\dd x^2\wedge\dd x^3+(\partial_t\
             { claim: R`于是 $\omega_r=\dd(\dd^\dagger\psi_r)+\dd^\dagger(\dd\psi_r)+P\omega_r$，即 \eqref{7.195}，实现了分解；唯一性来自正交性。`, uses: ["7.195"] },
           ]} />
         </Stmt>
-        <Eq n="7.192a" keyEq title="Hodge 分解" say={R`任意形式唯一地分成三块：恰当部分、余恰当部分与调和部分，三者互相正交。`}>{R`\Omega^r(M)=\dd\Omega^{r-1}(M)\oplus\dd^\dagger\Omega^{r+1}(M)\oplus\mathrm{Harm}^r(M).`}</Eq>
+        <Eq n="7.192a" title="Hodge 分解" say={R`任意形式唯一地分成三块：恰当部分、余恰当部分与调和部分，三者互相正交。`}>{R`\Omega^r(M)=\dd\Omega^{r-1}(M)\oplus\dd^\dagger\Omega^{r+1}(M)\oplus\mathrm{Harm}^r(M).`}</Eq>
         <Tx>{R`［即任何 $r$ 形式 $\omega_r$ 都可以整体地写成`}</Tx>
         <Eq n="7.192b" say={R`Hodge 分解的显式形式（类比 $\R^3$ 向量场的 Helmholtz 分解：无旋 + 无源 + 调和）。`}>{R`\omega_r=\dd\alpha_{r-1}+\dd^\dagger\beta_{r+1}+\gamma_r`}</Eq>
         <Tx>{R`其中 $\alpha_{r-1}\in\Omega^{r-1}(M)$，$\beta_{r+1}\in\Omega^{r+1}(M)$，$\gamma_r\in\mathrm{Harm}^r(M)$。］$r=0$ 时约定 $\Omega^{-1}(M)=\{0\}$。这个定理的证明需要下面两个简单习题的结果。`}</Tx>
@@ -234,7 +234,7 @@ $$0=(\dd\omega_r,\beta_{r+1})=(\dd\dd^\dagger\beta_{r+1},\beta_{r+1})=(\dd^\dagg
         <Tx>{R`同构由把 $[\omega]\in H^r(M)$ 对应于 $P\omega\in\mathrm{Harm}^r(M)$ 给出。特别地，`}</Tx>
         <Eq n="7.198" say={R`调和形式的个数等于 Betti 数——与度规无关。`}>{R`\dim\mathrm{Harm}^r(M)=\dim H^r(M)=b^r`}</Eq>
         <Tx>{R`$b^r$ 是 Betti 数。Euler 示性数为`}</Tx>
-        <Eq n="7.199" keyEq title="Euler 示性数 = 调和形式的交错和" say={R`左边是拓扑量（三角剖分的顶点−边+面……），右边是分析量（Laplace 算子零模数的交错和）：指标定理的原型。`}>{R`\chi(M)=\sum(-1)^rb^r=\sum(-1)^r\dim\mathrm{Harm}^r(M)`}</Eq>
+        <Eq n="7.199" title="Euler 示性数 = 调和形式的交错和" say={R`左边是拓扑量（三角剖分的顶点−边+面……），右边是分析量（Laplace 算子零模数的交错和）：指标定理的原型。`}>{R`\chi(M)=\sum(-1)^rb^r=\sum(-1)^r\dim\mathrm{Harm}^r(M)`}</Eq>
         <Tx>{R`见\sref{T3.7}。左边是拓扑量，右边则是由 Laplace 算子 $\Delta$ 的本征值问题给出的分析量。例如环面 $T^2=\R^2/\Z^2$（平坦度规）：调和形式就是常系数形式 $1$；$\dd x,\dd y$；$\dd x\wedge\dd y$，所以 $b^0=1,b^1=2,b^2=1$，$\chi=0$；$S^2$ 上只有常数与体积形式是调和的，$\chi=2$。`}</Tx>
       </Sub>
     </Sec>);

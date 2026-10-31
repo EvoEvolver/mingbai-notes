@@ -11,7 +11,7 @@ export function Sec136() {
   return (
     <Sec n="13.6" title="The parity anomaly in odd-dimensional spaces" zh="奇数维空间中的宇称反常"
       gist={R`奇数维没有复旋量表示，因而没有规范反常，但宇称可能在量子化中破缺 → Pauli–Villars 正规化 $\mathrm{e}^{-W}=\prod\lambda_i/(\lambda_i+\mathrm{i}M)$（\eqref{13.107}）；宇称使本征值变号，$W[\mathcal{A}^{\rm P}]=\overline{W}$（\eqref{13.108}）→ 宇称破缺部分 $=2\mathrm{i}\,\mathrm{Im}\,W$，$\mathrm{Im}\,W=\frac\pi2\eta$（\eqref{13.110}–\eqref{13.111}）→ 维数阶梯：四维阿贝尔反常的指标 $\mathcal{N}$（\eqref{13.114}）= 三维 Dirac 算子的谱流（APS，\eqref{13.119}）= 二维非阿贝尔反常的相位卷绕数（\eqref{13.115a}）。`}
-      why={R`前面所有讨论都在偶数维。奇数维中反常以另一种面貌出现：不是流不守恒，而是**谱的不对称性**（$\eta$ 不变量）。它与偶数维的反常通过 Atiyah–Patodi–Singer 定理相连，于是本章三类反常归结为同一个拓扑整数的三种读法。`}
+      why={R`前面所有讨论都在偶数维。奇数维中反常以另一种面貌出现：不是流不守恒，而是**谱的不对称性**（$\eta$ 不变量）。它与偶数维的反常通过 Atiyah–Patodi–Singer 定理（\sref{T12.3}）相连，于是本章三类反常归结为同一个拓扑整数的三种读法。`}
       gives={["13.107", "13.109", "13.110", "13.111", "13.114", "13.117", "13.119"]}>
       <p className="muted">本节概念：<C id="parity_anomaly" /> · <C id="ladder" /></p>
       <Tx>{R`到目前为止我们一直在偶数维空间中工作。原因之一是 $\mathrm{SO}(2l+1)$ 有实或赝实的旋量表示，但没有**复**表示，因此预期不会有规范反常（§13.3 的 $d_{\alpha\beta\gamma}$ 对实表示为零）。但是可以证明，奇数维空间中的规范理论有另一种反常，称为**宇称反常**（parity anomaly）：经典作用量的宇称对称性在量子化之后不能保持。应当注意，Alvarez-Gaumé 等 (1985) 指出，$2l+1$ 维的宇称反常与 $2l+2$ 维的阿贝尔反常相关。`}</Tx>
@@ -68,7 +68,7 @@ $$\begin{aligned}&\mathrm{i}[\gamma^0(\partial_0-\mathcal{A}_0(-t,x))+\gamma^i(\
 
 **中间的梯级：谱流。**接下来证明 $\mathcal{N}$ 也与三维空间中的宇称反常相关。设 $\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}_3$ 是三维 Dirac 算子，定义四维 Dirac 算子`}</Tx>
         <Eq n="13.116" say={R`用三维算子与一个"时间"方向搭出四维 Dirac 算子：$\sigma_1,\sigma_2$ 反对易，使 $(\mathrm{i}\sym{D4}{D\hspace{-0.639em}/}_4)^2=-\partial_t^2+(\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}_3)^2+\cdots$；它的零模对应三维谱沿 $t$ 的流动。`}>{R`\mathrm{i}${D4}_4[\mathcal{A}]\equiv\mathrm{i}\sigma_1\otimes I\frac{\partial}{\partial t}+\sigma_2\otimes\mathrm{i}${DN}_3[\mathcal{A}_t]`}</Eq>
-        <Tx>{R`其中 $\mathcal{A}_t$ 是在 $\mathcal{A}_0=\mathcal{A}_{t=0}$ 与 $\mathcal{A}_1=\mathcal{A}_{t=1}$ 之间插值的单参数规范势族。Atiyah–Patodi–Singer 指标定理（§12.8）为`}</Tx>
+        <Tx>{R`其中 $\mathcal{A}_t$ 是在 $\mathcal{A}_0=\mathcal{A}_{t=0}$ 与 $\mathcal{A}_1=\mathcal{A}_{t=1}$ 之间插值的单参数规范势族。Atiyah–Patodi–Singer 指标定理（§12.8，\sref{T12.3}）为`}</Tx>
         <Eq n="13.117" title="APS 指标定理" say={R`带边流形上的指标 = 体积分（陈特征）+ 两端 $\eta$ 不变量之差的一半：$\eta$ 是边界对指标的修正。`}>{R`${IND}\,\mathrm{i}${D4}_4=-\int_{S^2\times S^1\times I}${CH}_2(\mathcal{F})+\tfrac12[\eta(t=1)-\eta(t=0)]`}</Eq>
         <Tx>{R`这里注意到 Dirac 亏格 $\hat A$ 在 $S^2\times S^1\times I$ 上平凡。设 $\mathcal{A}_0$ 与 $\mathcal{A}_1$ 由规范变换相联系：`}</Tx>
         <Eq n="13.118a" say={R`两端的三维规范势规范等价。`}>{R`\mathcal{A}_1=g^{-1}(\mathcal{A}_0+\dd)g`}</Eq>

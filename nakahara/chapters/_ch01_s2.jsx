@@ -134,7 +134,7 @@ $$|\psi\rangle=\int|x\rangle\langle x|\,\dd x\,|\psi\rangle=\int\psi(x)|x\rangle
         <Tx>{R`以及它的对偶`}</Tx>
         <Eq n="1.49" say={R`取 Hermite 共轭：动量算符从右边作用在位置左矢上，是 $-\mathrm{i}$ 乘对 $x$ 的导数。`}>{R`\langle x|\hat p=\frac{\langle x+\varepsilon|-\langle x|}{\mathrm{i}\varepsilon}\ \xrightarrow{\varepsilon\to0}\ -\mathrm{i}\frac{\dd}{\dd x}\langle x|.`}</Eq>
         <Tx>{R`因此对任何态 $|\psi\rangle$：`}</Tx>
-        <Eq n="1.50" keyEq title="坐标表象中的动量算符" say={R`坐标表象中，动量算符就是 $-\mathrm{i}\,\dd/\dd x$。`}>{R`\langle x|\hat p|\psi\rangle=-\mathrm{i}\frac{\dd}{\dd x}\langle x|\psi\rangle=-\mathrm{i}\frac{\dd}{\dd x}\psi(x).`}</Eq>
+        <Eq n="1.50" title="坐标表象中的动量算符" say={R`坐标表象中，动量算符就是 $-\mathrm{i}\,\dd/\dd x$。`}>{R`\langle x|\hat p|\psi\rangle=-\mathrm{i}\frac{\dd}{\dd x}\langle x|\psi\rangle=-\mathrm{i}\frac{\dd}{\dd x}\psi(x).`}</Eq>
         <Tx>{R`也写作 $(\hat p\psi)(x)=-\mathrm{i}\,\dd\psi(x)/\dd x$。类似地，在基 $|p\rangle$ 中得到算符的**动量表象**：`}</Tx>
         <Eq n="1.51" say={R`动量表象中位置算符作用于动量本征态：对标签 $p$ 求导乘 $-\mathrm{i}$（与 \eqref{1.48} 符号相反）。`}>{R`\hat x|p\rangle=-\mathrm{i}\frac{\dd}{\dd p}|p\rangle`}</Eq>
         <Eq n="1.52" say={R`动量算符作用于自己的本征态，给出本征值。`}>{R`\hat p|p\rangle=p|p\rangle`}</Eq>
@@ -162,7 +162,7 @@ $$\hat x|p\rangle=\frac{|p+\varepsilon\rangle-|p\rangle}{\mathrm{i}\varepsilon}\
           {R`证明 \eqref{1.51}–\eqref{1.54}。`}
         </Exercise>
         <Stmt id="P1.1">
-          <Eq n="1.55" keyEq title="位置–动量重叠" say={R`动量本征态在坐标表象中是平面波，归一化常数 $1/\sqrt{2\pi}$ 使它归一到 $\delta$ 函数。`}>{R`\langle x|p\rangle=\frac{1}{\sqrt{2\pi}}\mathrm{e}^{\mathrm{i}px}`}</Eq>
+          <Eq n="1.55" title="位置–动量重叠" say={R`动量本征态在坐标表象中是平面波，归一化常数 $1/\sqrt{2\pi}$ 使它归一到 $\delta$ 函数。`}>{R`\langle x|p\rangle=\frac{1}{\sqrt{2\pi}}\mathrm{e}^{\mathrm{i}px}`}</Eq>
           <Eq n="1.56" say={R`上式的复共轭：位置本征态在动量表象中也是平面波。`}>{R`\langle p|x\rangle=\frac{1}{\sqrt{2\pi}}\mathrm{e}^{-\mathrm{i}px}`}</Eq>
           <Proof steps={[
             { claim: R`在 $(\hat p\psi)(x)=\langle x|\hat p|\psi\rangle=-\mathrm{i}\tfrac{\dd}{\dd x}\psi(x)$ 中取 $|\psi\rangle=|p\rangle$：`, tex: R`p\langle x|p\rangle=\langle x|\hat p|p\rangle=-\mathrm{i}\frac{\dd}{\dd x}\langle x|p\rangle`, uses: ["1.50"] },

@@ -25,7 +25,7 @@ Einstein 提出以下原理来构造广义相对论：
 在广义相对论中，引力势换成度规张量的分量。于是 \eqref{7.200} 的左边换成 **Einstein 张量**`}</Tx>
         <Eq n="7.201" say={R`Einstein 张量，与 \eqref{7.86} 相同（指标降下）。`}>{R`G_{\mu\nu}\equiv \sym{Ric}{\mathit{Ric}}_{\mu\nu}-\tfrac12g_{\mu\nu}\mathcal R.`}</Eq>
         <Tx>{R`同样，质量密度换成更一般的对象——**能动张量** $T_{\mu\nu}$。**Einstein 方程**取与 \eqref{7.200} 非常相似的形式：`}</Tx>
-        <Eq n="7.202" keyEq title="Einstein 方程" say={R`物质告诉时空怎样弯曲：曲率（Einstein 张量）正比于能动张量。`}>{R`G_{\mu\nu}=8\pi GT_{\mu\nu}.`}</Eq>
+        <Eq n="7.202" title="Einstein 方程" say={R`物质告诉时空怎样弯曲：曲率（Einstein 张量）正比于能动张量。`}>{R`G_{\mu\nu}=8\pi GT_{\mu\nu}.`}</Eq>
         <Tx>{R`常数 $8\pi G$ 的选取使 \eqref{7.202} 在弱场极限下重现 Newton 的结果（习题 7.24）。张量 $T_{\mu\nu}$ 由物质作用量通过变分原理得到。由 Noether 定理，$T_{\mu\nu}$ 必须满足形如 $\nabla_\mu T^{\mu\nu}=0$ 的守恒方程。$G_{\mu\nu}$ 也满足类似的守恒律（\eqref{7.85}；$\sym{Ric}{\mathit{Ric}}_{\mu\nu}$ 不满足）。下一小节将看到，\eqref{7.202} 的左边也可以由变分原理得到。`}</Tx>
         <Exercise n="7.24" title="Newton 极限" level="★★"
           hint={R`保留 $\Phi/c^2$ 的一阶。用迹反转形式 $\sym{Ric}{\mathit{Ric}}_{\mu\nu}=\frac{8\pi G}{c^4}(T_{\mu\nu}-\frac12g_{\mu\nu}T)$（恢复 $c$ 后 $G_{\mu\nu}=\frac{8\pi G}{c^4}T_{\mu\nu}$），只需算 $\sym{Ric}{\mathit{Ric}}_{00}$。`}
@@ -60,10 +60,10 @@ $$g_{00}=-1-\frac{2\Phi}{c^2}\qquad g_{0i}=0\qquad g_{ij}=\delta_{ij}\qquad1\le 
           ]} />
         </Stmt>
         <Eq n="7.203" say={R`逆度规的变分：用两个逆度规把 $\delta g_{\kappa\lambda}$ 的指标"翻上去"，再加负号。`}>{R`\text{(a)}\quad\delta g^{\mu\nu}=-g^{\mu\kappa}g^{\lambda\nu}\delta g_{\kappa\lambda}`}</Eq>
-        <Eq n="7.204" keyEq title="行列式的变分" say={R`度规行列式的变分是它乘以 $g^{\mu\nu}\delta g_{\mu\nu}$：体积元对度规的"迹"变化敏感。`}>{R`\text{(b)}\quad\delta g=gg^{\mu\nu}\delta g_{\mu\nu},\qquad\delta\sqrt{|g|}=\tfrac12\sqrt{|g|}g^{\mu\nu}\delta g_{\mu\nu}`}</Eq>
-        <Eq n="7.205" keyEq title="Palatini 恒等式" say={R`Ricci 张量的变分是联络变分（一个张量）的协变散度之差：缩并后成为全散度，不影响运动方程。`}>{R`\text{(c)}\quad\delta \sym{Ric}{\mathit{Ric}}_{\mu\nu}=\nabla_\kappa\delta\Gamma^\kappa{}_{\nu\mu}-\nabla_\nu\delta\Gamma^\kappa{}_{\kappa\mu}\qquad(\text{Palatini 恒等式}).`}</Eq>
+        <Eq n="7.204" title="行列式的变分" say={R`度规行列式的变分是它乘以 $g^{\mu\nu}\delta g_{\mu\nu}$：体积元对度规的"迹"变化敏感。`}>{R`\text{(b)}\quad\delta g=gg^{\mu\nu}\delta g_{\mu\nu},\qquad\delta\sqrt{|g|}=\tfrac12\sqrt{|g|}g^{\mu\nu}\delta g_{\mu\nu}`}</Eq>
+        <Eq n="7.205" title="Palatini 恒等式" say={R`Ricci 张量的变分是联络变分（一个张量）的协变散度之差：缩并后成为全散度，不影响运动方程。`}>{R`\text{(c)}\quad\delta \sym{Ric}{\mathit{Ric}}_{\mu\nu}=\nabla_\kappa\delta\Gamma^\kappa{}_{\nu\mu}-\nabla_\nu\delta\Gamma^\kappa{}_{\kappa\mu}\qquad(\text{Palatini 恒等式}).`}</Eq>
         <Tx>{R`定义 **Einstein–Hilbert 作用量**`}</Tx>
-        <Eq n="7.206" keyEq title="Einstein–Hilbert 作用量" say={R`引力的作用量：标量曲率在时空上的不变积分——最简单的、含度规导数的标量。`}>{R`S_{\rm EH}\equiv\frac1{16\pi G}\int\mathcal R\sqrt{-g}\,\dd^4x.`}</Eq>
+        <Eq n="7.206" title="Einstein–Hilbert 作用量" say={R`引力的作用量：标量曲率在时空上的不变积分——最简单的、含度规导数的标量。`}>{R`S_{\rm EH}\equiv\frac1{16\pi G}\int\mathcal R\sqrt{-g}\,\dd^4x.`}</Eq>
         <Tx>{R`常数因子 $1/16\pi G$ 是为了在加入物质时重现 Newton 极限，见 \eqref{7.214}。我们证明 $\delta S_{\rm EH}=0$ 给出真空 Einstein 方程。在变分 $g\to g+\delta g$（$|x|\to\infty$ 时 $\delta g\to0$）下，被积函数的改变为
 
 $$\begin{aligned}\delta(\mathcal R\sqrt{-g})&=\delta(g^{\mu\nu}\sym{Ric}{\mathit{Ric}}_{\mu\nu}\sqrt{-g})\\&=\delta g^{\mu\nu}\sym{Ric}{\mathit{Ric}}_{\mu\nu}\sqrt{-g}+g^{\mu\nu}\delta \sym{Ric}{\mathit{Ric}}_{\mu\nu}\sqrt{-g}+\mathcal R\,\delta(\sqrt{-g})\\&=-g^{\mu\kappa}g^{\lambda\nu}\delta g_{\kappa\lambda}\sym{Ric}{\mathit{Ric}}_{\mu\nu}\sqrt{-g}+g^{\mu\nu}(\nabla_\kappa\delta\Gamma^\kappa{}_{\nu\mu}-\nabla_\nu\delta\Gamma^\kappa{}_{\kappa\mu})\sqrt{-g}+\tfrac12\mathcal R\sqrt{-g}g^{\mu\nu}\delta g_{\mu\nu}.\end{aligned}$$
@@ -73,7 +73,7 @@ $$\begin{aligned}\delta(\mathcal R\sqrt{-g})&=\delta(g^{\mu\nu}\sym{Ric}{\mathit
 $$\nabla_\kappa(g^{\mu\nu}\delta\Gamma^\kappa{}_{\nu\mu}\sqrt{-g})-\nabla_\nu(g^{\mu\nu}\delta\Gamma^\kappa{}_{\kappa\mu}\sqrt{-g})=\partial_\kappa(g^{\mu\nu}\delta\Gamma^\kappa{}_{\mu\nu}\sqrt{-g})-\partial_\nu(g^{\mu\nu}\delta\Gamma^\kappa{}_{\kappa\mu}\sqrt{-g})$$
 
 ［$\nabla g=0$；对向量密度 $V^\kappa\sqrt{-g}$，$\nabla_\kappa(V^\kappa\sqrt{-g})=\partial_\kappa(V^\kappa\sqrt{-g})$，因为 $\Gamma^\kappa{}_{\kappa\lambda}=\partial_\lambda\ln\sqrt{|g|}$。］所以不贡献变分（边界上 $\delta g=0$）。由其余各项得`}</Tx>
-        <Eq n="7.207" keyEq title="作用量的变分" say={R`Einstein–Hilbert 作用量对度规的"梯度"正是（负的）Einstein 张量。`}>{R`\delta S_{\rm EH}=\frac1{16\pi G}\int\Big(-\sym{Ric}{\mathit{Ric}}^{\mu\nu}+\frac12\mathcal Rg^{\mu\nu}\Big)\delta g_{\mu\nu}\sqrt{-g}\,\dd^4x.`}</Eq>
+        <Eq n="7.207" title="作用量的变分" say={R`Einstein–Hilbert 作用量对度规的"梯度"正是（负的）Einstein 张量。`}>{R`\delta S_{\rm EH}=\frac1{16\pi G}\int\Big(-\sym{Ric}{\mathit{Ric}}^{\mu\nu}+\frac12\mathcal Rg^{\mu\nu}\Big)\delta g_{\mu\nu}\sqrt{-g}\,\dd^4x.`}</Eq>
         <Tx>{R`若要求对任意变分 $\delta g$ 都有 $\delta S_{\rm EH}=0$，就得到真空 Einstein 方程`}</Tx>
         <Eq n="7.208" say={R`真空 Einstein 方程；在四维中等价于 $\sym{Ric}{\mathit{Ric}}_{\mu\nu}=0$（取迹得 $\mathcal R=0$）。`}>{R`G_{\mu\nu}=\sym{Ric}{\mathit{Ric}}_{\mu\nu}-\tfrac12g_{\mu\nu}\mathcal R=0`}</Eq>
         <Tx>{R`其中对称张量 $G$ 称为 **Einstein 张量**。（习题 7.10(c) 已验证 Schwarzschild 度规满足它。）
@@ -84,7 +84,7 @@ $$\nabla_\kappa(g^{\mu\nu}\delta\Gamma^\kappa{}_{\nu\mu}\sqrt{-g})-\nabla_\nu(g^
         <Eq n="7.210a" say={R`实标量场的作用量（度规符号 $(-,+,+,+)$，动能项前为负号）。`}>{R`S_{\rm S}\equiv-\tfrac12\int[g^{\mu\nu}\partial_\mu\phi\partial_\nu\phi+m^2\phi^2]\sqrt{-g}\,\dd^4x`}</Eq>
         <Eq n="7.210b" say={R`Maxwell 场的作用量。`}>{R`S_{\rm ED}\equiv-\tfrac14\int F_{\mu\nu}F^{\mu\nu}\sqrt{-g}\,\dd^4x`}</Eq>
         <Tx>{R`其中 $F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu=\nabla_\mu A_\nu-\nabla_\nu A_\mu$（无挠时 $\Gamma$ 项相消，参看 \eqref{7.55}）。若物质作用量在 $\delta g$ 下改变 $\delta S_{\rm M}$，**能动张量** $T^{\mu\nu}$ 由下式定义：`}</Tx>
-        <Eq n="7.211" keyEq title="能动张量的定义" say={R`能动张量是物质作用量对度规的响应：时空几何怎样"推"物质，物质就以同样的方式"推"几何。`}>{R`\delta S_{\rm M}=\tfrac12\int T^{\mu\nu}\delta g_{\mu\nu}\sqrt{-g}\,\dd^4x.`}</Eq>
+        <Eq n="7.211" title="能动张量的定义" say={R`能动张量是物质作用量对度规的响应：时空几何怎样"推"物质，物质就以同样的方式"推"几何。`}>{R`\delta S_{\rm M}=\tfrac12\int T^{\mu\nu}\delta g_{\mu\nu}\sqrt{-g}\,\dd^4x.`}</Eq>
         <Tx>{R`由于 $\delta g_{\mu\nu}$ 对称，$T^{\mu\nu}$ 也取为对称的。例如实标量场的 $T_{\mu\nu}$ 为`}</Tx>
         <Eq n="7.212" say={R`标量场的能动张量；$T_{00}=\frac12(\dot\phi^2+(\nabla\phi)^2+m^2\phi^2)$ 是正定的能量密度。`}>{R`\begin{aligned}T_{\mu\nu}(x)&=-2\frac1{\sqrt{-g}}\frac{\delta}{\delta g^{\mu\nu}(x)}S_{\rm S}\\&=\partial_\mu\phi\partial_\nu\phi-\tfrac12g_{\mu\nu}(g^{\kappa\lambda}\partial_\kappa\phi\partial_\lambda\phi+m^2\phi^2).\end{aligned}`}</Eq>
         <Box kind="warning" title={R`勘误：\eqref{7.212} 第一行的符号（p.320）`}>{R`原书印作 $T_{\mu\nu}=+2\frac1{\sqrt{-g}}\frac{\delta S_{\rm S}}{\delta g^{\mu\nu}}$。由定义 \eqref{7.211}（对**下**指标 $\delta g_{\mu\nu}$），$T^{\mu\nu}=\frac2{\sqrt{-g}}\frac{\delta S}{\delta g_{\mu\nu}}$；换成对**上**指标变分，由 \eqref{7.203}，$\delta g_{\mu\nu}=-g_{\mu\kappa}g_{\nu\lambda}\delta g^{\kappa\lambda}$，得 $T_{\mu\nu}=-\frac2{\sqrt{-g}}\frac{\delta S}{\delta g^{\mu\nu}}$。直接验证：$\frac{\delta S_{\rm S}}{\delta g^{\mu\nu}}=-\frac12\sqrt{-g}\big[\partial_\mu\phi\partial_\nu\phi-\frac12g_{\mu\nu}(g^{\kappa\lambda}\partial_\kappa\phi\partial_\lambda\phi+m^2\phi^2)\big]$（用 $\delta\sqrt{-g}=-\frac12\sqrt{-g}g_{\mu\nu}\delta g^{\mu\nu}$），所以只有带负号的定义才给出第二行（以及正的能量密度）。第二行与 \eqref{7.214} 原书正确。正文已改正。`}</Box>
@@ -121,7 +121,7 @@ $$\sym{Ric}{\mathit{Ric}}_{\mu\nu}-\frac12g_{\mu\nu}\mathcal R-\frac12\Lambda g_
         <Tx>{R`$m$ 是 $\psi$ 的质量。注意 $e_\alpha{}^\mu\partial_\mu\psi$ 在 $\Lambda(p)$ 下变换为`}</Tx>
         <Eq n="7.220" say={R`普通导数不协变：$\Lambda$ 随点变化，$\partial_\mu\rho(\Lambda)$ 多出一项。`}>{R`e_\alpha{}^\mu\partial_\mu\psi\to\Lambda_\alpha{}^\beta e_\beta{}^\mu\partial_\mu\rho(\Lambda)\psi=\Lambda_\alpha{}^\beta e_\beta{}^\mu[\rho(\Lambda)\partial_\mu\psi+\partial_\mu\rho(\Lambda)\psi].`}</Eq>
         <Tx>{R`（原书第二个等号后的 $\Lambda_\alpha{}^\eta$ 应为 $\Lambda_\alpha{}^\beta$。）设 $\nabla_\alpha$ 的形式为`}</Tx>
-        <Eq n="7.221" keyEq title="旋量协变导数" say={R`旋量的协变导数：普通导数加一个"自旋联络" $\Omega_\mu$，用来吸收标架随点转动带来的多余项。`}>{R`\nabla_\alpha\psi=e_\alpha{}^\mu[\partial_\mu+\Omega_\mu]\psi.`}</Eq>
+        <Eq n="7.221" title="旋量协变导数" say={R`旋量的协变导数：普通导数加一个"自旋联络" $\Omega_\mu$，用来吸收标架随点转动带来的多余项。`}>{R`\nabla_\alpha\psi=e_\alpha{}^\mu[\partial_\mu+\Omega_\mu]\psi.`}</Eq>
         <Tx>{R`由 \eqref{7.218} 与 \eqref{7.220}，$\Omega_\mu$ 必须满足`}</Tx>
         <Eq n="7.222" say={R`自旋联络必须像规范势一样变换：共轭加一个非齐次项。`}>{R`\Omega_\mu\to\rho(\Lambda)\Omega_\mu\rho(\Lambda)^{-1}-\partial_\mu\rho(\Lambda)\rho(\Lambda)^{-1}.`}</Eq>
         <Tx>{R`为求 $\Omega_\mu$ 的显式形式，考虑无穷小局部 Lorentz 变换 $\Lambda_\alpha{}^\beta(p)=\delta_\alpha{}^\beta+\varepsilon_\alpha{}^\beta(p)$。Dirac 旋量变换为`}</Tx>
@@ -135,7 +135,7 @@ $$\sym{Ric}{\mathit{Ric}}_{\mu\nu}-\frac12g_{\mu\nu}\mathcal R-\frac12\Lambda g_
         <Tx>{R`或用分量写（$\omega^\alpha{}_\beta=\Gamma^\alpha{}_{\mu\beta}\dd x^\mu$，这里 $\Gamma^\alpha{}_{\mu\beta}\equiv e^\gamma{}_\mu\Gamma^\alpha{}_{\gamma\beta}$：中间的"求导方向"指标换成了坐标指标）`}</Tx>
         <Eq n="7.226b" say={R`同一变换律的分量形式。`}>{R`\Gamma^\alpha{}_{\mu\beta}\to\Gamma^\alpha{}_{\mu\beta}+\varepsilon^\alpha{}_\gamma\Gamma^\gamma{}_{\mu\beta}-\Gamma^\alpha{}_{\mu\gamma}\varepsilon^\gamma{}_\beta-\partial_\mu\varepsilon^\alpha{}_\beta.`}</Eq>
         <Tx>{R`由 \eqref{7.224}、\eqref{7.225} 与 \eqref{7.226b}，组合`}</Tx>
-        <Eq n="7.227" keyEq title="自旋联络" say={R`自旋联络就是联络一形式（取值于 Lorentz 李代数）在旋量表示中的像：$\Omega_\mu=\frac12\mathrm{i}\Gamma^\alpha{}_\mu{}^\beta\Sigma_{\alpha\beta}$。`}>{R`\Omega_\mu\equiv\tfrac12\mathrm{i}\Gamma^\alpha{}_\mu{}^\beta\Sigma_{\alpha\beta}=\tfrac12\mathrm{i}e^\alpha{}_\nu\nabla_\mu e^{\beta\nu}\Sigma_{\alpha\beta}`}</Eq>
+        <Eq n="7.227" title="自旋联络" say={R`自旋联络就是联络一形式（取值于 Lorentz 李代数）在旋量表示中的像：$\Omega_\mu=\frac12\mathrm{i}\Gamma^\alpha{}_\mu{}^\beta\Sigma_{\alpha\beta}$。`}>{R`\Omega_\mu\equiv\tfrac12\mathrm{i}\Gamma^\alpha{}_\mu{}^\beta\Sigma_{\alpha\beta}=\tfrac12\mathrm{i}e^\alpha{}_\nu\nabla_\mu e^{\beta\nu}\Sigma_{\alpha\beta}`}</Eq>
         <Tx>{R`满足变换性质 \eqref{7.222}。事实上，
 
 $$\begin{aligned}\tfrac12\mathrm{i}\Gamma^\alpha{}_\mu{}^\beta\Sigma_{\alpha\beta}&\to\tfrac12\mathrm{i}(\Gamma^\alpha{}_\mu{}^\beta+\varepsilon^\alpha{}_\gamma\Gamma^\gamma{}_\mu{}^\beta-\Gamma^\alpha{}_{\mu\gamma}\varepsilon^{\gamma\beta}-\partial_\mu\varepsilon^{\alpha\beta})\Sigma_{\alpha\beta}\\&=\tfrac12\mathrm{i}\Gamma^\alpha{}_\mu{}^\beta\Sigma_{\alpha\beta}+\tfrac12\mathrm{i}(\varepsilon^\alpha{}_\gamma\Gamma^\gamma{}_\mu{}^\beta\Sigma_{\alpha\beta}-\Gamma^\alpha{}_{\mu\gamma}\varepsilon^{\gamma\beta}\Sigma_{\alpha\beta})-\tfrac12\mathrm{i}\partial_\mu\varepsilon^{\alpha\beta}\Sigma_{\alpha\beta}\\&=\tfrac12\mathrm{i}\Gamma^\alpha{}_\mu{}^\beta\Sigma_{\alpha\beta}+\tfrac12\mathrm{i}\varepsilon^{\alpha\beta}[\Sigma_{\alpha\beta},\tfrac12\mathrm{i}\Gamma^\gamma{}_\mu{}^\delta\Sigma_{\gamma\delta}]-\tfrac12\mathrm{i}\partial_\mu\varepsilon^{\alpha\beta}\Sigma_{\alpha\beta}.\end{aligned}$$
@@ -143,7 +143,7 @@ $$\begin{aligned}\tfrac12\mathrm{i}\Gamma^\alpha{}_\mu{}^\beta\Sigma_{\alpha\bet
 （最后一步用 \eqref{7.224} 把对易子展开，并利用 $\varepsilon_{\alpha\beta}$ 与 $\Gamma_{\gamma\mu\delta}$ 关于各自两个标架指标的反对称性（\eqref{7.155}）；与 \eqref{7.225} 逐项一致。）最后得到在坐标变换与局部 Lorentz 转动下都是标量的拉氏量`}</Tx>
         <Eq n="7.228" say={R`弯曲时空的 Dirac 拉氏量：$\gamma^\alpha e_\alpha{}^\mu$ 加上自旋联络。`}>{R`\mathcal L\equiv\bar\psi[\mathrm{i}\gamma^\alpha e_\alpha{}^\mu(\partial_\mu+\tfrac12\mathrm{i}\Gamma^\beta{}_\mu{}^\gamma\Sigma_{\beta\gamma})+m]\psi`}</Eq>
         <Tx>{R`以及标量作用量`}</Tx>
-        <Eq n="7.229a" keyEq title="弯曲时空的 Dirac 作用量" say={R`弯曲时空中的 Dirac 作用量：体积元 $\sqrt{-g}$、vierbein 与自旋联络三者缺一不可。`}>{R`S_\psi\equiv\int_M\dd^4x\sqrt{-g}\,\bar\psi[\mathrm{i}\gamma^\alpha e_\alpha{}^\mu(\partial_\mu+\tfrac12\mathrm{i}\Gamma^\beta{}_\mu{}^\gamma\Sigma_{\beta\gamma})+m]\psi.`}</Eq>
+        <Eq n="7.229a" title="弯曲时空的 Dirac 作用量" say={R`弯曲时空中的 Dirac 作用量：体积元 $\sqrt{-g}$、vierbein 与自旋联络三者缺一不可。`}>{R`S_\psi\equiv\int_M\dd^4x\sqrt{-g}\,\bar\psi[\mathrm{i}\gamma^\alpha e_\alpha{}^\mu(\partial_\mu+\tfrac12\mathrm{i}\Gamma^\beta{}_\mu{}^\gamma\Sigma_{\beta\gamma})+m]\psi.`}</Eq>
         <Tx>{R`若 $\psi$ 与规范场 $\mathcal A$ 耦合，作用量为`}</Tx>
         <Eq n="7.229b" say={R`再加上内部对称性的规范势 $\mathcal A_\mu$：时空的联络与内部的联络并列出现。`}>{R`S_\psi=\int_M\dd^4x\sqrt{-g}\,\bar\psi[\mathrm{i}\gamma^\alpha e_\alpha{}^\mu(\partial_\mu+\mathcal A_\mu+\tfrac12\mathrm{i}\Gamma^\beta{}_\mu{}^\gamma\Sigma_{\beta\gamma})+m]\psi.`}</Eq>
         <Tx>{R`有趣的是，若 $\dim M=2$，自旋联络项消失。为看清这一点，把 \eqref{7.229a} 改写为（二维）

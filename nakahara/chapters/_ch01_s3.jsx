@@ -56,7 +56,7 @@ $$\hat x[\mathrm{e}^{-\mathrm{i}\hat Ht_i}|x_i,t_i\rangle]=x_i[\mathrm{e}^{-\mat
         </Stmt>
         <Tx>{R`下面用这个引理求出无穷小时间间隔的热核。`}</Tx>
         <Stmt id="P1.2">
-          <Eq n="1.92" keyEq title="短时传播子" say={R`无穷小时间 $\varepsilon$ 内的跃迁振幅 = 归一化因子乘 $\mathrm{e}^{\mathrm{i}\Delta S}$，其中 $\Delta S$ 是沿直线路径的作用量（势能取在中点，即 Weyl 排序）。`}>{R`\langle x|\mathrm{e}^{-\mathrm{i}\hat H\varepsilon}|y\rangle=\sqrt{\frac{m}{2\pi\mathrm{i}\varepsilon}}\exp\left[\mathrm{i}\varepsilon\left\{\frac{m}{2}\left(\frac{(x-y)}{\varepsilon}\right)^2-V\left(\frac{x+y}{2}\right)\right\}+\mathcal{O}(\varepsilon^2)+\mathcal{O}(\varepsilon(x-y)^2)\right].`}</Eq>
+          <Eq n="1.92" title="短时传播子" say={R`无穷小时间 $\varepsilon$ 内的跃迁振幅 = 归一化因子乘 $\mathrm{e}^{\mathrm{i}\Delta S}$，其中 $\Delta S$ 是沿直线路径的作用量（势能取在中点，即 Weyl 排序）。`}>{R`\langle x|\mathrm{e}^{-\mathrm{i}\hat H\varepsilon}|y\rangle=\sqrt{\frac{m}{2\pi\mathrm{i}\varepsilon}}\exp\left[\mathrm{i}\varepsilon\left\{\frac{m}{2}\left(\frac{(x-y)}{\varepsilon}\right)^2-V\left(\frac{x+y}{2}\right)\right\}+\mathcal{O}(\varepsilon^2)+\mathcal{O}(\varepsilon(x-y)^2)\right].`}</Eq>
           <Proof steps={[
             { claim: R`在左边插入动量本征矢的完备性关系（用 \eqref{1.55}）：`, tex: R`\langle x|\mathrm{e}^{-\mathrm{i}\hat H\varepsilon}|y\rangle=\int\dd k\,\langle x|\mathrm{e}^{-\mathrm{i}\varepsilon\hat H}|k\rangle\langle k|y\rangle=\int\frac{\dd k}{2\pi}\mathrm{e}^{-\mathrm{i}ky}\mathrm{e}^{-\mathrm{i}\varepsilon\hat H_x}\mathrm{e}^{\mathrm{i}kx}`, why: R`其中 $\hat H_x=-\dfrac{1}{2m}\dfrac{\dd^2}{\dd x^2}+V(x)$ 是坐标表象中的 Hamilton 算符。`, uses: ["1.36", "1.55", "1.56"] },
             { claim: R`由 $\partial_x\equiv\dd/\dd x$ 与 $\mathrm{e}^{\mathrm{i}kx}$ 的对易关系 $\partial_x\mathrm{e}^{\mathrm{i}kx}=\mathrm{i}k\mathrm{e}^{\mathrm{i}kx}+\mathrm{e}^{\mathrm{i}kx}\partial_x=\mathrm{e}^{\mathrm{i}kx}(\mathrm{i}k+\partial_x)$，反复使用得 $\partial_x^n\mathrm{e}^{\mathrm{i}kx}=\mathrm{e}^{\mathrm{i}kx}(\mathrm{i}k+\partial_x)^n$，因而`, tex: R`\mathrm{e}^{-\mathrm{i}\varepsilon[-\partial_x^2/2m+V(x)]}\mathrm{e}^{\mathrm{i}kx}=\mathrm{e}^{\mathrm{i}kx}\mathrm{e}^{-\mathrm{i}\varepsilon[-(\mathrm{i}k+\partial_x)^2/2m+V(x)]}` },
@@ -144,7 +144,7 @@ $$\dot x=\frac{\dd x}{\dd t}=\mathrm{i}\frac{\dd x}{\dd\tau},\qquad\mathrm{e}^{-
 $$\mathrm{i}\int_{t_i}^{t_f}\dd t\left[\frac12m\dot x^2-V(x)\right]=\mathrm{i}(-\mathrm{i})\int_{\tau_i}^{\tau_f}\dd\tau\left[-\frac12m\left(\frac{\dd x}{\dd\tau}\right)^2-V(x)\right]=-\int_{\tau_i}^{\tau_f}\dd\tau\left[\frac12m\left(\frac{\dd x}{\dd\tau}\right)^2+V(x)\right].$$
 
 于是路径积分用新变量表示为`}</Tx>
-        <Eq n="1.109" keyEq title="Euclid 路径积分" say={R`虚时间的路径积分：相位 $\mathrm{e}^{\mathrm{i}S}$ 变成实的衰减权重 $\mathrm{e}^{-S_E}$，$S_E$ 是动能加势能的积分。`}>{R`\begin{aligned}\langle x_f,\tau_f|x_i,\tau_i\rangle&=\langle x_f|\mathrm{e}^{-\hat H(\tau_f-\tau_i)}|x_i\rangle\\&=\int\bar{\mathcal{D}}x\,\mathrm{e}^{-\int_{\tau_i}^{\tau_f}\dd\tau\left[\frac12m\left(\frac{\dd x}{\dd\tau}\right)^2+V(x)\right]},\end{aligned}`}</Eq>
+        <Eq n="1.109" title="Euclid 路径积分" say={R`虚时间的路径积分：相位 $\mathrm{e}^{\mathrm{i}S}$ 变成实的衰减权重 $\mathrm{e}^{-S_E}$，$S_E$ 是动能加势能的积分。`}>{R`\begin{aligned}\langle x_f,\tau_f|x_i,\tau_i\rangle&=\langle x_f|\mathrm{e}^{-\hat H(\tau_f-\tau_i)}|x_i\rangle\\&=\int\bar{\mathcal{D}}x\,\mathrm{e}^{-\int_{\tau_i}^{\tau_f}\dd\tau\left[\frac12m\left(\frac{\dd x}{\dd\tau}\right)^2+V(x)\right]},\end{aligned}`}</Eq>
         <Tx>{R`$\bar{\mathcal{D}}$ 是虚时间 $\tau$ 中的积分测度。
 
 **配分函数。**对给定的 Hamilton 量 $\hat H$，**配分函数**（partition function）定义为`}</Tx>

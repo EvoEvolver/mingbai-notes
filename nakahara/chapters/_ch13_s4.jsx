@@ -46,7 +46,7 @@ export function Sec134() {
         <Tx>{R`我们还定义`}</Tx>
         <Eq n="13.65a" say={R`扩展联络：把鬼场看成联络在"规范参数方向"上的分量，$\mathbb{A}=\boldsymbol A+\omega$。`}>{R`\mathbb{A}\equiv g^{-1}(\mathcal{A}+\Delta)g=${BA}+g^{-1}${S}g=${BA}+\omega`}</Eq>
         <Eq n="13.65b" keyEq title="横向曲率为零（Russian formula）" say={R`扩展联络的曲率与原场强完全相同：沿规范轨道方向没有曲率。这一条就是下降方程与 WZ 条件的全部来源。`}>{R`\mathbb{F}\equiv\Delta\mathbb{A}+\mathbb{A}^2=g^{-1}\mathcal{F}g=${BF}`}</Eq>
-        <Tx>{R`其中 \eqref{13.65b} 成立是因为 $\mathcal{F}=\dd\mathcal{A}+\mathcal{A}^2=\Delta\mathcal{A}+\mathcal{A}^2$（注意 $\mathcal{S}\mathcal{A}=0$），而 $\mathbb{A}$ 正是 $\mathcal{A}$ 关于"$\Delta$"的规范变换，曲率按伴随方式变换。由定理 10.1 可知 $\mathbb{A}$ 是主丛上的 Ehresmann 联络，$\mathbb{F}$ 是它的曲率二形式（\sref{T10.1}：丛上的联络一形式局部写成 $g^{-1}\pi^*\mathcal{A}g+g^{-1}\dd_Pg$；把规范参数方向并入丛的方向、$\dd_P\to\Delta$，就得到 $\mathbb{A}$）。
+        <Tx>{R`其中 \eqref{13.65b} 成立是因为 $\mathcal{F}=\dd\mathcal{A}+\mathcal{A}^2=\Delta\mathcal{A}+\mathcal{A}^2$（注意 $\mathcal{S}\mathcal{A}=0$），而 $\mathbb{A}$ 正是 $\mathcal{A}$ 关于"$\Delta$"的规范变换，曲率按伴随方式变换。由 \sref{T10.1} 可知 $\mathbb{A}$ 是主丛上的 Ehresmann 联络，$\mathbb{F}$ 是它的曲率二形式（该定理说：丛上的联络一形式局部写成 $g^{-1}\pi^*\mathcal{A}g+g^{-1}\dd_Pg$；把规范参数方向并入丛的方向、$\dd_P\to\Delta$，就得到 $\mathbb{A}$）。
 
 非阿贝尔反常的存在意味着 $W[\boldsymbol A]$ 在 BRS 算子 $\mathcal{S}$ 作用下不为零（$\omega$ 大致对应于 $v$，见 \eqref{13.39} 与 \eqref{13.63a}）：`}</Tx>
         <Eq n="13.66" say={R`反常的 BRS 表述：有效作用量的 BRS 变分 $G[\omega,\boldsymbol A]$ 就是反常，对鬼场是线性的。`}>{R`${S}W[${BA}]=${GA}[\omega,${BA}].`}</Eq>

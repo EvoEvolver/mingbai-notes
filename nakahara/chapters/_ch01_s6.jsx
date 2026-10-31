@@ -36,7 +36,7 @@ export function Sec16() {
 $$(\square-m^2+\mathrm{i}\varepsilon)\Delta(x-y)=\delta^d(x-y)$$
 
 （$(\square-m^2+\mathrm{i}\varepsilon)\mathrm{e}^{\mathrm{i}kx}=-(k^2+m^2-\mathrm{i}\varepsilon)\mathrm{e}^{\mathrm{i}kx}$，与分母相消，余下 $\int\dd^dk\,\mathrm{e}^{\mathrm{i}k(x-y)}/(2\pi)^d=\delta^d(x-y)$）。容易证明（原书留作习题）泛函 $Z_0[J]$ 现在写成`}</Tx>
-        <Eq n="1.216" keyEq title="自由场生成泛函的显式形式" say={R`自由场的生成泛函是源的 Gauss 型泛函：源与源之间通过传播子相互作用。`}>{R`Z_0[J]=Z_0[0]\exp\left[-\frac{\mathrm{i}}{2}\int\dd x\,\dd y\,J(x)\Delta(x-y)J(y)\right].`}</Eq>
+        <Eq n="1.216" title="自由场生成泛函的显式形式" say={R`自由场的生成泛函是源的 Gauss 型泛函：源与源之间通过传播子相互作用。`}>{R`Z_0[J]=Z_0[0]\exp\left[-\frac{\mathrm{i}}{2}\int\dd x\,\dd y\,J(x)\Delta(x-y)J(y)\right].`}</Eq>
         <Derivation title={R`证明 \eqref{1.216}：平移到经典解`} collapsed steps={[
           { tex: R`\phi=\phi_{\rm c}+\varphi,\qquad\mathcal{D}\phi=\mathcal{D}\varphi`, why: R`平移不改变测度（与 \eqref{1.139} 同理）。记 $K=\square-m^2+\mathrm{i}\varepsilon$，它在分部积分下是对称的。` },
           { tex: R`\tfrac12\phi K\phi+J\phi=\tfrac12\varphi K\varphi+\varphi(K\phi_{\rm c}+J)+\tfrac12\phi_{\rm c}K\phi_{\rm c}+J\phi_{\rm c}`, why: R`展开（积分号下，$\int\phi_{\rm c}K\varphi=\int\varphi K\phi_{\rm c}$）。` },

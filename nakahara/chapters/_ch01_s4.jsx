@@ -100,7 +100,7 @@ $$\int\dd a_n\exp\left[\frac{\mathrm{i}mT}{4}a_n^2\left\{\left(\frac{n\pi}{T}\ri
       <Sub n="1.4.2" title="Partition function" zh="配分函数">
         <p className="muted">本小节概念：<C id="euclid" /> · <C id="zeta_reg" /></p>
         <Tx>{R`谐振子的配分函数很容易由本征值 $E_n=(n+1/2)\omega$ 求出：`}</Tx>
-        <Eq n="1.150" keyEq title="谐振子配分函数" say={R`谐振子的配分函数：几何级数求和，得到 $1/(2\sinh(\beta\omega/2))$；低温时由基态能 $\tfrac12\omega$ 主导。`}>{R`\Tr\,\mathrm{e}^{-\beta\hat H}=\sum_{n=0}^{\infty}\mathrm{e}^{-\beta(n+1/2)\omega}=\frac{1}{2\sinh(\beta\omega/2)}.`}</Eq>
+        <Eq n="1.150" title="谐振子配分函数" say={R`谐振子的配分函数：几何级数求和，得到 $1/(2\sinh(\beta\omega/2))$；低温时由基态能 $\tfrac12\omega$ 主导。`}>{R`\Tr\,\mathrm{e}^{-\beta\hat H}=\sum_{n=0}^{\infty}\mathrm{e}^{-\beta(n+1/2)\omega}=\frac{1}{2\sinh(\beta\omega/2)}.`}</Eq>
         <Tx>{R`令 $\mathrm{i}T=\beta$，逆温度 $\beta$ 就可以看作虚时间，于是可以从路径积分的观点计算配分函数。
 
 **方法 1：**在 $\{|x\rangle\}$ 上取迹。由 \eqref{1.149}（$T=-\mathrm{i}\beta$，$\sin\omega T=-\mathrm{i}\sinh\beta\omega$，$\cos\omega T=\cosh\beta\omega$）：`}</Tx>
@@ -155,7 +155,7 @@ $$\prod_{k=1}^n\left(\int_{-\infty}^{\infty}\dd x_k\right)\mathrm{e}^{-\frac12\s
 $$\left.\frac{\dd\zeta_{\mathcal{O}}(s)}{\dd s}\right|_{s=0}=-\sum_n\log\lambda_n,$$
 
 我们得到表达式`}</Tx>
-        <Eq n="1.159" keyEq title={R`$\zeta$ 函数正规化的行列式`} say={R`$\zeta$ 函数正规化的行列式：用谱 $\zeta$ 函数在 $s=0$ 处（解析延拓后）的导数来定义发散的无穷乘积。`}>{R`\operatorname{Det}\mathcal{O}=\exp\left[-\left.\frac{\dd\zeta_{\mathcal{O}}(s)}{\dd s}\right|_{s=0}\right].`}</Eq>
+        <Eq n="1.159" title={R`$\zeta$ 函数正规化的行列式`} say={R`$\zeta$ 函数正规化的行列式：用谱 $\zeta$ 函数在 $s=0$ 处（解析延拓后）的导数来定义发散的无穷乘积。`}>{R`\operatorname{Det}\mathcal{O}=\exp\left[-\left.\frac{\dd\zeta_{\mathcal{O}}(s)}{\dd s}\right|_{s=0}\right].`}</Eq>
         <Tx>{R`现在把 $\mathcal{O}$ 换成 $-\dd^2/\dd\tau^2$，得到`}</Tx>
         <Eq n="1.160" say={R`$-\dd^2/\dd\tau^2$ 的谱 $\zeta$ 函数就是 Riemann $\zeta$ 函数乘一个标度因子。`}>{R`\zeta_{-\dd^2/\dd\tau^2}(s)=\sum_{n\ge1}\left(\frac{n\pi}{\beta}\right)^{-2s}=\left(\frac\beta\pi\right)^{2s}\zeta(2s)`}</Eq>
         <Tx>{R`其中 $\zeta$ 是著名的 **Riemann $\zeta$ 函数** $\zeta(s)=\sum_{n\ge1}n^{-s}$，它在整个复平面上除 $s=1$ 处的单极点外都解析（所以 $\zeta(2s)$ 在 $s=0$ 附近解析）。由熟知的值`}</Tx>

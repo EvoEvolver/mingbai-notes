@@ -16,7 +16,7 @@ export const S = {
   "F:fujikawa13": {
     kind: "fact", n: "（13.28）（13.35）", ch: "ch13", en: "Fujikawa: the Jacobian is the index", zh: "Fujikawa：Jacobian 即指标", page: 526, eq: "13.35",
     stmt: R`在 $m=2l$ 维紧致欧氏流形上（背景几何平凡，$\hat A(TM)=1$），手征转动的路径积分 Jacobian 经 Gauss 截断正规化后为 $\int\dd x\,\boldsymbol{A}(x)=\sum_i\langle\psi_i|\gamma^{m+1}\mathrm{e}^{-(\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}/M)^2}|\psi_i\rangle\big|_{M\to\infty}=\nu_+-\nu_-=\ind\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}_+$，且 $\nu_+-\nu_-=\int_M\mathrm{ch}_l(\mathcal{F})=\int_M\frac1{l!}\Tr\big(\frac{\mathrm{i}\mathcal{F}}{2\pi}\big)^l$。局部地（$m=4$）$\boldsymbol{A}(x)=-\frac{1}{32\pi^2}\Tr\epsilon^{\kappa\lambda\mu\nu}\mathcal{F}_{\kappa\lambda}\mathcal{F}_{\mu\nu}$，反常的守恒律为 $\partial_\mu j^\mu_{m+1}=-2\mathrm{i}\boldsymbol{A}(x)$。`,
-    deps: ["13.22", "13.25", "13.26", "13.27", "13.29", "13.31"], status: "filled",
+    deps: ["13.22", "13.25", "13.26", "13.27", "13.29", "13.31", "T12.5", "F:spinAS12"], status: "filled",
     statusNote: R`(a) 原书 \eqref{13.33}–\eqref{13.35} 把 $\partial_\mu j^\mu$ 与 $\boldsymbol{A}(x)$ 之间的因子 $-2\mathrm{i}$ 丢掉了；本站按 \eqref{13.25} 改正（见正文勘误框）。(b) 补出非零模成对抵消、平面波计算中 $\mathrm{tr}\,\gamma^5\gamma^\kappa\gamma^\lambda\gamma^\mu\gamma^\nu=-4\epsilon^{\kappa\lambda\mu\nu}$ 与动量积分的每一步，并说明为何高阶项在 $M\to\infty$ 时消失。交互图 1 在环面常磁场背景上数值验证"截断后的和与 $M$ 无关且等于 $\int\mathrm{ch}_1$"。`,
     role: R`本章的出发点：反常不是计算的瑕疵，而是路径积分测度对手征转动不变性的破坏，其大小恰是 Dirac 算子的指标——一个拓扑不变量（指标定理的"局部版本"）。`,
     key: R`$\gamma^{m+1}$ 与 $\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}$ 反对易，把本征值 $\lambda$ 与 $-\lambda$ 的本征态配对；它们对 $\langle\psi|\gamma^{m+1}\mathrm{e}^{-\lambda^2/M^2}|\psi\rangle$ 的贡献为零，只剩零模。`,
@@ -37,7 +37,7 @@ export const S = {
   "F:descent13": {
     kind: "fact", n: "（13.80）", ch: "ch13", en: "Stora–Zumino descent equations", zh: "Stora–Zumino 下降方程", page: 536, eq: "13.80b",
     stmt: R`设 $Q_{2l+1}(\boldsymbol A,\boldsymbol F)$ 是 $\mathrm{ch}_{l+1}(\boldsymbol F)$ 的陈–Simons 形式，把 $Q_{2l+1}(\boldsymbol A+\omega,\boldsymbol F)$ 按鬼场 $\omega$ 的阶数展开为 $\sum_{s=0}^{2l+1}Q^s_{2l+1-s}$。则 $\mathcal{S}Q^0_{2l+1}+\dd Q^1_{2l}=0$，$\mathcal{S}Q^1_{2l}+\dd Q^2_{2l-1}=0$，…，$\mathcal{S}Q^{2l}_1+\dd Q^{2l+1}_0=0$，$\mathcal{S}Q^{2l+1}_0=0$。`,
-    deps: ["13.63a", "13.63b", "13.65a", "13.65b", "13.75", "13.76"], status: "filled",
+    deps: ["13.63a", "13.63b", "13.65a", "13.65b", "13.75", "13.76", "T10.1"], status: "filled",
     statusNote: R`补出两点：(1) $(\Delta,\mathbb{A},\mathbb{F})$ 与 $(\dd,\boldsymbol A,\boldsymbol F)$ 满足同样的代数关系，所以陈–Simons 公式 $\mathrm{ch}=\dd Q$ 对前者照样成立（\eqref{13.76}）；(2) 因 $\mathbb{F}=\boldsymbol F$ 中不含 $\omega$ 与 $\mathcal S$，比较 \eqref{13.79} 两边鬼场数相同、形式次数相同的项即得各式；鬼场数为 0 的一项给出平凡等式 $\dd Q^0_{2l+1}=\dd Q^0_{2l+1}$。`,
     role: R`把 $(2l+2)$ 维的阿贝尔反常 $\mathrm{ch}_{l+1}$ 一级一级"下降"为 $2l$ 维的非阿贝尔反常 $Q^1_{2l}$。`,
     key: R`"横向曲率为零"：$\mathbb F=\boldsymbol F$（\eqref{13.65b}）是整个构造的发动机。`,
@@ -65,10 +65,10 @@ $$Q^1_{2l}(\omega,\mathcal{A},\mathcal{F})=\Big(\frac{\mathrm{i}}{2\pi}\Big)^{l+
   "F:ag13": {
     kind: "fact", n: "（13.98）", ch: "ch13", en: "Winding of the chiral phase equals an (m+2)-dimensional index", zh: "相位卷绕数 = (m+2) 维指标", page: 542, eq: "13.98",
     stmt: R`设 $g(\theta,x)$ 是满足 $g(0,x)=g(2\pi,x)=e$ 的规范变换族，$\mathcal{N}=\frac1{2\pi}\int_0^{2\pi}\partial_\theta w\,\dd\theta$ 是 $\det\mathrm{i}\hat D(\mathcal{A}^{g(\theta)})$ 的相位卷绕数。则 $\mathcal{N}=\ind\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}_{m+2}=\int_{S^2\times S^m}\mathrm{ch}_{l+1}(\mathbb{F})=(-1)^l\big(\frac{\mathrm{i}}{2\pi}\big)^{l+1}\frac{l!}{(m+1)!}\int_{S^1\times S^m}\Tr(g^{-1}\Delta g)^{m+1}$，即映射 $g:S^{m+1}\to G$ 在 $\pi_{m+1}(G)$ 中的类。`,
-    deps: ["13.94", "13.97", "X:AG1984", "F:cs-gauge", "T10.7"], status: "note",
+    deps: ["13.94", "13.97", "X:AG1984", "F:cs-gauge", "T10.7", "F:spinAS12"], status: "note",
     statusNote: R`"$\sum m_i=\mathcal{N}_+-\mathcal{N}_-$" 依赖外部结果 \sref{X:AG1984}。原书 \eqref{13.95a} 与 \eqref{13.96a} 对 $\theta$ 分量的写法不一致（见正文存疑框）；结论只用到赤道上的粘合关系 $\mathbb{A}_{\rm N}=g^{-1}(\mathbb{A}_{\rm S}+\Delta)g$，不受影响。`,
     role: R`回答 Sumitani 的第 (2) 个疑问：为什么要从 $m+2$ 维的阿贝尔反常出发——因为非阿贝尔反常的相位卷绕本身就是 $S^2\times S^m$ 上一个 $G$ 丛的指标。`,
-    key: R`把参数圆盘 $D^2$ 与另一个圆盘粘成 $S^2$，规范变换族 $g(\theta,x)$ 变成 $S^2\times S^m$ 上 $G$ 丛在赤道的转移函数；指标 = 转移函数的卷绕数（式 (11.118)、定理 10.7）。`,
+    key: R`把参数圆盘 $D^2$ 与另一个圆盘粘成 $S^2$，规范变换族 $g(\theta,x)$ 变成 $S^2\times S^m$ 上 $G$ 丛在赤道的转移函数；指标 = 转移函数的卷绕数（\eqref{11.118}、\sref{T10.7}）。`,
   },
   "F:nonab13": {
     kind: "fact", n: "（13.103）", ch: "ch13", en: "Non-Abelian anomaly with normalization", zh: "带归一化的非阿贝尔反常", page: 543, eq: "13.103",
@@ -90,7 +90,7 @@ $$Q^1_{2l}(\omega,\mathcal{A},\mathcal{F})=\Big(\frac{\mathrm{i}}{2\pi}\Big)^{l+
   "F:ladder13": {
     kind: "fact", n: "（13.119）", ch: "ch13", en: "Dimensional ladder 4–3–2", zh: "维数阶梯 4–3–2", page: 547, eq: "13.119",
     stmt: R`同一个映射 $g:S^2\times S^1\to G$ 的整数 $\mathcal{N}=\frac1{24\pi^2}\int_{S^1\times S^2}\Tr(g^{-1}\dd g)^3$ 有三种身份：(1) $S^2\times S^2$ 上 $G$ 丛的转移函数，给出四维阿贝尔反常的指标；(2) 三维 Dirac 算子 $\mathrm{i}\sym{Dsl}{\nabla\hspace{-0.667em}/}_3$ 在 $\mathcal{A}_0$ 与 $\mathcal{A}_1=g^{-1}(\mathcal{A}_0+\dd)g$ 之间的谱流；(3) 二维非阿贝尔反常（相位卷绕数）。`,
-    deps: ["F:ag13", "F:parity13", "F:cs-gauge"], status: "note",
+    deps: ["F:ag13", "F:parity13", "F:cs-gauge", "T12.3"], status: "note",
     statusNote: R`原书 \eqref{13.117} 中积分前的负号与 \eqref{13.119} 第一个等号不一致，且 \eqref{13.119} 中的积分区域应为 $S^2\times S^1\times I$（与 \eqref{13.117} 相同），见正文存疑框；结论 "谱流 $=\mathcal{N}$"（在适当的定向约定下）不受影响。`,
     role: R`把本章三种反常串成一条线：$(2l+2)$ 维阿贝尔 → $(2l+1)$ 维宇称 → $2l$ 维非阿贝尔。`,
   },

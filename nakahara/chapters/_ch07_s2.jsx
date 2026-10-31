@@ -23,7 +23,7 @@ $$\frac{\partial V^\mu}{\partial x^\nu}=\lim_{\Delta x\to0}\frac{V^\mu(\ldots,x^
         <Eq n="7.8a" say={R`平行移动造成的分量变化与位移成正比：位移趋于零时，搬运后的向量趋于原向量。`}>{R`\widetilde V^\mu(x+\Delta x)-V^\mu(x)\propto\Delta x`}</Eq>
         <Eq n="7.8b" say={R`平行移动是线性的：先相加再搬运，等于分别搬运再相加。`}>{R`\big(\nosym{\widetilde{V^\mu+W^\mu}}\big)(x+\Delta x)=\widetilde V^\mu(x+\Delta x)+\widetilde W^\mu(x+\Delta x).`}</Eq>
         <Tx>{R`取下面的形式就满足这两个条件（对 $\Delta x$ 一阶、对 $V$ 线性的最一般形式）：`}</Tx>
-        <Eq n="7.9" keyEq title="无穷小平行移动" say={R`把向量平行移动一小步 $\Delta x$，分量的改变量对 $V$ 和 $\Delta x$ 都是线性的，比例系数就是联络系数 $\Gamma$。`}>{R`\widetilde V^\mu(x+\Delta x)=V^\mu(x)-V^\lambda(x)\Gamma^\mu{}_{\nu\lambda}(x)\Delta x^\nu.`}</Eq>
+        <Eq n="7.9" title="无穷小平行移动" say={R`把向量平行移动一小步 $\Delta x$，分量的改变量对 $V$ 和 $\Delta x$ 都是线性的，比例系数就是联络系数 $\Gamma$。`}>{R`\widetilde V^\mu(x+\Delta x)=V^\mu(x)-V^\lambda(x)\Gamma^\mu{}_{\nu\lambda}(x)\Delta x^\nu.`}</Eq>
         <Tx>{R`$V$ 对 $x^\nu$ 的**协变导数**（covariant derivative）定义为`}</Tx>
         <Eq n="7.10" say={R`协变导数 = 同一点上"实际的场值"与"从邻点平行搬来的值"之差除以位移：普通偏导数加上一项 $\Gamma$ 修正。`}>{R`\lim_{\Delta x^\nu\to0}\frac{V^\mu(x+\Delta x)-\widetilde V^\mu(x+\Delta x)}{\Delta x^\nu}\frac{\partial}{\partial x^\mu}=\left(\frac{\partial V^\mu}{\partial x^\nu}+V^\lambda\Gamma^\mu{}_{\nu\lambda}\right)\frac{\partial}{\partial x^\mu}.`}</Eq>
         <Tx>{R`这个量是 $x+\Delta x$ 处的向量：它是**同一点** $x+\Delta x$ 上两个向量 $V|_{x+\Delta x}$ 与 $\widetilde V|_{x+\Delta x}$ 之差。每选一个 $\Gamma$，就有一种平行移动规则，可能性很多。若流形带有度规，则存在一个优选的 $\Gamma$，称为 **Levi-Civita 联络**，见例 7.1 与 §7.4。`}</Tx>
@@ -64,7 +64,7 @@ $$\widetilde V^\phi=V\frac{\sin(\theta-\Delta\phi)}{r}\simeq V\frac{\sin\theta}{
         <Tx>{R`其中 $f\in\mathcal{F}(M)$，$X,Y,Z\in\mathcal{X}(M)$。
 
 **联络系数。**取卡 $(U,\varphi)$，坐标 $x=\varphi(p)$，定义 $m^3$ 个函数 $\Gamma^\lambda{}_{\nu\mu}$，称为**联络系数**（connection coefficients）：`}</Tx>
-        <Eq n="7.14" keyEq title="联络系数" say={R`联络系数记录坐标基向量从一点到邻点怎样变化：沿 $e_\nu$ 方向对 $e_\mu$ 求协变导数，结果按基展开的系数就是 $\Gamma^\lambda{}_{\nu\mu}$（第一个下标是求导方向）。`}>{R`\nabla_\nu e_\mu\equiv\nabla_{e_\nu}e_\mu=e_\lambda\Gamma^\lambda{}_{\nu\mu}`}</Eq>
+        <Eq n="7.14" title="联络系数" say={R`联络系数记录坐标基向量从一点到邻点怎样变化：沿 $e_\nu$ 方向对 $e_\mu$ 求协变导数，结果按基展开的系数就是 $\Gamma^\lambda{}_{\nu\mu}$（第一个下标是求导方向）。`}>{R`\nabla_\nu e_\mu\equiv\nabla_{e_\nu}e_\mu=e_\lambda\Gamma^\lambda{}_{\nu\mu}`}</Eq>
         <Tx>{R`其中 $\{e_\mu\}=\{\partial/\partial x^\mu\}$ 是 $T_pM$ 的坐标基。一旦规定了 $\nabla$ 在基向量上的作用，就能算出它在任意向量上的作用。设 $V=V^\mu e_\mu$、$W=W^\nu e_\nu$ 是 $T_p(M)$ 的元素，由 \eqref{7.13a}–\eqref{7.13d}，`}</Tx>
         <Eq n="7.15" say={R`任意向量场的协变导数 = 分量的普通方向导数 + 基向量自身变化带来的 $\Gamma$ 项；它只用到 $V$ 在该点的值。`}>{R`\begin{aligned}\nabla_VW&=V^\mu\nabla_{e_\mu}(W^\nu e_\nu)=V^\mu\big(e_\mu[W^\nu]e_\nu+W^\nu\nabla_{e_\mu}e_\nu\big)\\&=V^\mu\left(\frac{\partial W^\lambda}{\partial x^\mu}+W^\nu\Gamma^\lambda{}_{\mu\nu}\right)e_\lambda.\end{aligned}`}</Eq>
         <Box kind="warning" title={R`勘误：\eqref{7.15} 第一行中的 $e_\mu[W^\nu]$（p.270）`}>{R`原书第一行印作 $V^\mu(e_\mu[W^\mu]e_\nu+\ldots)$，被求导的分量应带求和指标 $\nu$：$e_\mu[W^\nu]e_\nu$（它与 $e_\nu$ 缩并）。写成 $W^\mu$ 会与外面的 $V^\mu$ 重复指标。第二行结果不受影响。正文已改正。`}</Box>
@@ -79,7 +79,7 @@ $$\widetilde V^\phi=V\frac{\sin(\theta-\Delta\phi)}{r}\simeq V\frac{\sin\theta}{
         <Tx>{R`其中 $e_\mu=\partial/\partial x^\mu$。若 $X$ 满足条件`}</Tx>
         <Eq n="7.18a" say={R`沿曲线的切方向，向量场的协变导数处处为零：向量在每一小步里都"不转不缩"地被搬运。`}>{R`\nabla_VX=0\qquad\text{对任意 }t\in(a,b)`}</Eq>
         <Tx>{R`就称 $X$ 沿 $c(t)$ **平行移动**（parallel transported），其中 $V=\dd/\dd t=(\dd x^\mu(c(t))/\dd t)\,e_\mu|_{c(t)}$ 是 $c(t)$ 的切向量。用分量写，条件 \eqref{7.18a} 为（由 \eqref{7.15}，$V^\mu\partial_\mu X^\lambda=\dd X^\lambda/\dd t$）`}</Tx>
-        <Eq n="7.18b" keyEq title="平行移动方程" say={R`平行移动方程是关于分量 $X^\mu(t)$ 的一阶线性常微分方程：给定起点的向量，沿曲线的搬运结果唯一确定。`}>{R`\frac{\dd X^\mu}{\dd t}+\Gamma^\mu{}_{\nu\lambda}\frac{\dd x^\nu(c(t))}{\dd t}X^\lambda=0.`}</Eq>
+        <Eq n="7.18b" title="平行移动方程" say={R`平行移动方程是关于分量 $X^\mu(t)$ 的一阶线性常微分方程：给定起点的向量，沿曲线的搬运结果唯一确定。`}>{R`\frac{\dd X^\mu}{\dd t}+\Gamma^\mu{}_{\nu\lambda}\frac{\dd x^\nu(c(t))}{\dd t}X^\lambda=0.`}</Eq>
         <Tx>{R`**测地线。**若切向量 $V(t)$ 本身沿 $c(t)$ 平行移动，即`}</Tx>
         <Eq n="7.19a" say={R`测地线是"速度向量自己平行于自己"的曲线：不拐弯、也不加速。`}>{R`\nabla_VV=0`}</Eq>
         <Tx>{R`则称曲线 $c(t)$ 为**测地线**（geodesic）。在某种意义上，测地线是 Riemann 流形中"尽可能直"的曲线。用分量写，测地线方程 \eqref{7.19a} 成为`}</Tx>
@@ -126,7 +126,7 @@ $$X[\langle\omega,Y\rangle]=\nabla_X[\langle\omega,Y\rangle]=\langle\nabla_X\ome
         <Tx>{R`对 $\omega=\dd x^\nu$（参看 \eqref{7.14}），得`}</Tx>
         <Eq n="7.25" say={R`坐标一形式的协变导数：与 \eqref{7.14} 对偶，系数取负号，保证 $\langle\dd x^\nu,e_\mu\rangle=\delta^\nu_\mu$ 的导数为零。`}>{R`\nabla_\mu\dd x^\nu=-\Gamma^\nu{}_{\mu\lambda}\dd x^\lambda.`}</Eq>
         <Tx>{R`这些结果容易推广为`}</Tx>
-        <Eq n="7.26" keyEq title="一般张量的协变导数" say={R`一般张量的协变导数：每个上指标配一个 $+\Gamma$，每个下指标配一个 $-\Gamma$，再加上分量的偏导数。`}>{R`\begin{aligned}\nabla_\nu t^{\lambda_1\ldots\lambda_p}{}_{\mu_1\ldots\mu_q}&=\partial_\nu t^{\lambda_1\ldots\lambda_p}{}_{\mu_1\ldots\mu_q}+\Gamma^{\lambda_1}{}_{\nu\kappa}t^{\kappa\lambda_2\ldots\lambda_p}{}_{\mu_1\ldots\mu_q}+\cdots\\&\quad+\Gamma^{\lambda_p}{}_{\nu\kappa}t^{\lambda_1\ldots\lambda_{p-1}\kappa}{}_{\mu_1\ldots\mu_q}-\Gamma^\kappa{}_{\nu\mu_1}t^{\lambda_1\ldots\lambda_p}{}_{\kappa\mu_2\ldots\mu_q}-\cdots\\&\quad-\Gamma^\kappa{}_{\nu\mu_q}t^{\lambda_1\ldots\lambda_p}{}_{\mu_1\ldots\mu_{q-1}\kappa}.\end{aligned}`}</Eq>
+        <Eq n="7.26" title="一般张量的协变导数" say={R`一般张量的协变导数：每个上指标配一个 $+\Gamma$，每个下指标配一个 $-\Gamma$，再加上分量的偏导数。`}>{R`\begin{aligned}\nabla_\nu t^{\lambda_1\ldots\lambda_p}{}_{\mu_1\ldots\mu_q}&=\partial_\nu t^{\lambda_1\ldots\lambda_p}{}_{\mu_1\ldots\mu_q}+\Gamma^{\lambda_1}{}_{\nu\kappa}t^{\kappa\lambda_2\ldots\lambda_p}{}_{\mu_1\ldots\mu_q}+\cdots\\&\quad+\Gamma^{\lambda_p}{}_{\nu\kappa}t^{\lambda_1\ldots\lambda_{p-1}\kappa}{}_{\mu_1\ldots\mu_q}-\Gamma^\kappa{}_{\nu\mu_1}t^{\lambda_1\ldots\lambda_p}{}_{\kappa\mu_2\ldots\mu_q}-\cdots\\&\quad-\Gamma^\kappa{}_{\nu\mu_q}t^{\lambda_1\ldots\lambda_p}{}_{\mu_1\ldots\mu_{q-1}\kappa}.\end{aligned}`}</Eq>
         <Exercise n="7.4" title="度规的协变导数" level="★"
           hint={R`在 \eqref{7.26} 中取 $p=0$、$q=2$，$t_{\lambda\mu}=g_{\lambda\mu}$。或者：$g=g_{\lambda\mu}\dd x^\lambda\otimes\dd x^\mu$，用 \eqref{7.22} 与 \eqref{7.25}。`}
           solution={R`$g=g_{\lambda\mu}\,\dd x^\lambda\otimes\dd x^\mu$。由 Leibniz 律 \eqref{7.22} 与 \eqref{7.21}、\eqref{7.25}：
@@ -151,7 +151,7 @@ $$(\nabla_\nu g)_{\lambda\mu}=\partial_\nu g_{\lambda\mu}-\Gamma^\kappa{}_{\nu\l
 $$\begin{aligned}\nabla_{f_\alpha}f_\beta&=\nabla_{f_\alpha}\left(\frac{\partial x^\mu}{\partial y^\beta}e_\mu\right)=\frac{\partial^2x^\mu}{\partial y^\alpha\partial y^\beta}e_\mu+\frac{\partial x^\lambda}{\partial y^\alpha}\frac{\partial x^\mu}{\partial y^\beta}\nabla_{e_\lambda}e_\mu\\&=\left(\frac{\partial^2x^\nu}{\partial y^\alpha\partial y^\beta}+\frac{\partial x^\lambda}{\partial y^\alpha}\frac{\partial x^\mu}{\partial y^\beta}\Gamma^\nu{}_{\lambda\mu}\right)e_\nu.\end{aligned}$$
 
 （第一步用 \eqref{7.13d}，$f_\alpha[\partial x^\mu/\partial y^\beta]=\partial^2x^\mu/\partial y^\alpha\partial y^\beta$；第二步用 \eqref{7.13c}。）由于 \eqref{7.28} 的右边等于 $\widetilde\Gamma^\gamma{}_{\alpha\beta}(\partial x^\nu/\partial y^\gamma)e_\nu$，两边乘 $\partial y^\gamma/\partial x^\nu$，联络系数必须按如下规则变换：`}</Tx>
-        <Eq n="7.29" keyEq title={R`$\Gamma$ 的变换律`} say={R`联络系数不是张量：第一项像 $(1,2)$ 型张量那样变换，第二项是只依赖坐标变换的二阶导数的"非齐次项"。正因如此，$\Gamma$ 可以在一点处被坐标变换消掉。`}>{R`\widetilde\Gamma^\gamma{}_{\alpha\beta}=\frac{\partial x^\lambda}{\partial y^\alpha}\frac{\partial x^\mu}{\partial y^\beta}\frac{\partial y^\gamma}{\partial x^\nu}\Gamma^\nu{}_{\lambda\mu}+\frac{\partial^2x^\nu}{\partial y^\alpha\partial y^\beta}\frac{\partial y^\gamma}{\partial x^\nu}.`}</Eq>
+        <Eq n="7.29" title={R`$\Gamma$ 的变换律`} say={R`联络系数不是张量：第一项像 $(1,2)$ 型张量那样变换，第二项是只依赖坐标变换的二阶导数的"非齐次项"。正因如此，$\Gamma$ 可以在一点处被坐标变换消掉。`}>{R`\widetilde\Gamma^\gamma{}_{\alpha\beta}=\frac{\partial x^\lambda}{\partial y^\alpha}\frac{\partial x^\mu}{\partial y^\beta}\frac{\partial y^\gamma}{\partial x^\nu}\Gamma^\nu{}_{\lambda\mu}+\frac{\partial^2x^\nu}{\partial y^\alpha\partial y^\beta}\frac{\partial y^\gamma}{\partial x^\nu}.`}</Eq>
         <Tx>{R`读者应当验证这个变换规则确实使 $\nabla_XY$ 成为向量，即
 
 $$\widetilde X^\alpha(\widetilde\partial_\alpha\widetilde Y^\gamma+\widetilde\Gamma^\gamma{}_{\alpha\beta}\widetilde Y^\beta)f_\gamma=X^\lambda(\partial_\lambda Y^\nu+\Gamma^\nu{}_{\lambda\mu}Y^\mu)e_\nu.$$`}</Tx>
@@ -186,7 +186,7 @@ $$\widetilde\Gamma^\gamma{}_{\alpha\beta}-\widetilde{\bar\Gamma}{}^\gamma{}_{\al
 $$\begin{aligned}0=\nabla_V[g(X,Y)]&=V^\kappa[(\nabla_\kappa g)(X,Y)+g(\nabla_\kappa X,Y)+g(X,\nabla_\kappa Y)]\\&=V^\kappa X^\mu Y^\nu(\nabla_\kappa g)_{\mu\nu}\end{aligned}$$
 
 这里用了 $\nabla_\kappa X=\nabla_\kappa Y=0$。由于这对任意曲线与向量都成立，必有`}</Tx>
-        <Eq n="7.30a" keyEq title="度规相容" say={R`度规相容：度规在平行移动下不变，于是长度与夹角都被平行移动保持。`}>{R`(\nabla_\kappa g)_{\mu\nu}=0`}</Eq>
+        <Eq n="7.30a" title="度规相容" say={R`度规相容：度规在平行移动下不变，于是长度与夹角都被平行移动保持。`}>{R`(\nabla_\kappa g)_{\mu\nu}=0`}</Eq>
         <Tx>{R`或者由习题 7.4，`}</Tx>
         <Eq n="7.30b" say={R`度规相容条件的分量形式：度规的偏导数被两个 $\Gamma$ 项恰好抵消。`}>{R`\partial_\lambda g_{\mu\nu}-\Gamma^\kappa{}_{\lambda\mu}g_{\kappa\nu}-\Gamma^\kappa{}_{\lambda\nu}g_{\kappa\mu}=0.`}</Eq>
         <Tx>{R`若 \eqref{7.30a} 成立，就说仿射联络 $\nabla$ 与度规**相容**（metric compatible），或简称为**度规联络**（metric connection）。我们只讨论度规联络。对 $(\lambda,\mu,\nu)$ 作轮换，得`}</Tx>
@@ -197,9 +197,9 @@ $$\begin{aligned}0=\nabla_V[g(X,Y)]&=V^\kappa[(\nabla_\kappa g)(X,Y)+g(\nabla_\k
         <Tx>{R`其中 $T^\kappa{}_{\lambda\mu}\equiv2\Gamma^\kappa{}_{[\lambda\mu]}\equiv\Gamma^\kappa{}_{\lambda\mu}-\Gamma^\kappa{}_{\mu\lambda}$，$\Gamma^\kappa{}_{(\mu\nu)}\equiv\frac12(\Gamma^\kappa{}_{\nu\mu}+\Gamma^\kappa{}_{\mu\nu})$。张量 $T^\kappa{}_{\lambda\mu}$ 关于下指标反对称，$T^\kappa{}_{\lambda\mu}=-T^\kappa{}_{\mu\lambda}$，称为**挠率张量**（torsion tensor），见习题 7.6；下一节将详细研究。从 \eqref{7.31} 解出 $\Gamma^\kappa{}_{(\mu\nu)}$（乘 $\frac12g^{\kappa\lambda}$）：`}</Tx>
         <Eq n="7.32" say={R`联络的对称部分 = Christoffel 符号 + 一个由挠率决定的修正。`}>{R`\Gamma^\kappa{}_{(\mu\nu)}=\left\{{\kappa\atop\mu\nu}\right\}+\frac12\left(T_\nu{}^\kappa{}_\mu+T_\mu{}^\kappa{}_\nu\right)`}</Eq>
         <Tx>{R`其中 $T_\nu{}^\kappa{}_\mu\equiv g_{\nu\rho}g^{\kappa\lambda}T^\rho{}_{\lambda\mu}$，$\left\{{\kappa\atop\mu\nu}\right\}$ 是 **Christoffel 符号**（Christoffel symbols），定义为`}</Tx>
-        <Eq n="7.33" keyEq title="Christoffel 符号" say={R`Christoffel 符号完全由度规及其一阶导数决定：三个导数项"两加一减"，再用逆度规升指标。`}>{R`\left\{{\kappa\atop\mu\nu}\right\}=\frac12g^{\kappa\lambda}\left(\partial_\mu g_{\nu\lambda}+\partial_\nu g_{\mu\lambda}-\partial_\lambda g_{\mu\nu}\right).`}</Eq>
+        <Eq n="7.33" title="Christoffel 符号" say={R`Christoffel 符号完全由度规及其一阶导数决定：三个导数项"两加一减"，再用逆度规升指标。`}>{R`\left\{{\kappa\atop\mu\nu}\right\}=\frac12g^{\kappa\lambda}\left(\partial_\mu g_{\nu\lambda}+\partial_\nu g_{\mu\lambda}-\partial_\lambda g_{\mu\nu}\right).`}</Eq>
         <Tx>{R`最后，联络系数 $\Gamma$ 为`}</Tx>
-        <Eq n="7.34" keyEq title="度规联络的一般形式" say={R`任何度规相容的联络都是 Christoffel 符号加上切扭（contorsion）张量：度规固定后，联络只剩挠率这一点自由。`}>{R`\begin{aligned}\Gamma^\kappa{}_{\mu\nu}&=\Gamma^\kappa{}_{(\mu\nu)}+\Gamma^\kappa{}_{[\mu\nu]}\\&=\left\{{\kappa\atop\mu\nu}\right\}+\frac12\left(T_\nu{}^\kappa{}_\mu+T_\mu{}^\kappa{}_\nu+T^\kappa{}_{\mu\nu}\right).\end{aligned}`}</Eq>
+        <Eq n="7.34" title="度规联络的一般形式" say={R`任何度规相容的联络都是 Christoffel 符号加上切扭（contorsion）张量：度规固定后，联络只剩挠率这一点自由。`}>{R`\begin{aligned}\Gamma^\kappa{}_{\mu\nu}&=\Gamma^\kappa{}_{(\mu\nu)}+\Gamma^\kappa{}_{[\mu\nu]}\\&=\left\{{\kappa\atop\mu\nu}\right\}+\frac12\left(T_\nu{}^\kappa{}_\mu+T_\mu{}^\kappa{}_\nu+T^\kappa{}_{\mu\nu}\right).\end{aligned}`}</Eq>
         <Tx>{R`\eqref{7.34} 最后一式的第二项称为**切扭**（contorsion），记作 $K^\kappa{}_{\mu\nu}$：`}</Tx>
         <Eq n="7.35" say={R`切扭张量：度规联络与 Levi-Civita 联络之差，完全由挠率决定。`}>{R`K^\kappa{}_{\mu\nu}\equiv\tfrac12\left(T^\kappa{}_{\mu\nu}+T_\mu{}^\kappa{}_\nu+T_\nu{}^\kappa{}_\mu\right).`}</Eq>
         <Tx>{R`若流形 $M$ 上挠率张量为零，度规联络 $\nabla$ 就称为 **Levi-Civita 联络**。Levi-Civita 联络是经典曲面几何中所定义联络的自然推广，见 §7.4。`}</Tx>
