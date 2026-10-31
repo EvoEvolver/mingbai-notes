@@ -19,6 +19,8 @@ export const NOTATION = [
   { sym: R`y`, name: "笛卡尔坐标 y", def: R`二维平面上的第二个笛卡尔坐标，$x^2=y$`, unit: "长度", eq: "2.2" },
   { sym: R`\boldsymbol x`, name: "共动位置矢量", en: "comoving position", def: R`$\boldsymbol x=(x^1,x^2,x^3)$；分布函数 $f_s(\boldsymbol x,\boldsymbol p,t)$ 的位置变量`, unit: R`共动长度` },
   { sym: R`\hat x`, name: "新坐标系中的坐标", def: R`Box 2.2 中坐标变换 $x^\mu\to\hat x^\mu$ 后的坐标；带帽的 $\hat\phi$、$\hat A_\mu$、$\hat g_{\mu\nu}$、$\hat\Gamma$ 是同一对象在新坐标中的表示`, eq: "2.46" },
+  { sym: R`\hat\partial`, name: "新坐标下的偏导数", def: R`Box 2.2 推导中 $\hat\partial_\mu\equiv\partial/\partial\hat x^\mu$：对新坐标 $\hat x^\mu$ 求偏导`, eq: "2.46" },
+  { sym: R`b`, name: "碰撞参数（习题 2.2 解答）", en: "impact parameter", def: R`验证匀速直线运动时所取直线 $x=b$ 到原点的距离；角动量 $r^2\dot\theta=bv$`, unit: "长度" },
   { sym: R`r`, name: "极坐标径向坐标", def: R`二维极坐标 $x'^1=r$；度规 $g_{ij}=\mathrm{diag}(1,r^2)$`, unit: "长度", eq: "2.3" },
   { id: "theta", sym: R`\theta`, name: "极坐标角", def: R`二维极坐标的角坐标 $x'^2=\theta$`, unit: "弧度", eq: "2.3" },
   { id: "thang", sym: R`\theta`, name: "张角", en: "angular size", def: R`已知物理尺度 $l$ 的天体在天空上所张的（小）角；$d_A\equiv l/\sym{ch02-thang}{\theta}$`, unit: "弧度", eq: "2.36" },

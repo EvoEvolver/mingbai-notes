@@ -145,7 +145,7 @@ $$\lambda_\alpha=\bar\lambda_\alpha+\sum_\beta(F^{-1})_{\alpha\beta}B_\beta.\qqu
       </Exercise>
 
       <Exercise n="14.11" title="Euclid 对增长率 f 的预期约束" level="★★★"
-        hint={R`$P_{\rm g}(k,\mu)=(b_1+f\mu^2)^2P_{\rm L}(k,z)+P_N$（\eqref{11.23}）。对每个 $(k,\mu)$ 单元，用 \eqref{14.60} 的方差构造 $F_{ab}=\sum\frac{\partial P_{\rm g}}{\partial a}\frac{\partial P_{\rm g}}{\partial b}\big/\mathrm{Var}[\hat P_{\rm g}]$，参数 $(b_1,f)$，再取 $\sqrt{(F^{-1})_{ff}}$。`}
+        hint={R`$P_{\rm g}(k,\mu)=(b_1+f\mu^2)^2P_{\rm L}(k,z)+P_N$（\eqref{11.23}）。对每个 $(k,\mu)$ 单元，用 \eqref{14.60} 的方差构造 $F_{ab}=\sum\frac{\partial P_{\rm g}}{\partial\lambda_a}\frac{\partial P_{\rm g}}{\partial\lambda_b}\big/\mathrm{Var}[\hat P_{\rm g}]$，参数 $(b_1,f)$，再取 $\sqrt{(F^{-1})_{ff}}$。`}
         solution={R`**Fisher 矩阵。**把 \eqref{14.68} 的 $l$ 求和换成对 $k$ 区间与 $\mu$ 区间的求和，$\mathrm{Var}[\hat C(l)]$ 换成 \eqref{14.60} 的方差。对模式计数取连续极限（按改正后的 \eqref{14.53}，即标准的 FKP 计数，见 \secref{14.4.2} 的勘误），
 $$F_{ab}=\frac{V}{8\pi^2}\int_{k_F}^{k_{\rm max}}k^2dk\int_{-1}^{1}d\mu\,\frac{\partial_aP_{\rm g}\,\partial_bP_{\rm g}}{\left[P_{\rm g}(k,\mu)+1/\bar n_{\rm g}\right]^2},\qquad\partial_{b_1}P_{\rm g}=2(b_1+f\mu^2)P_{\rm L},\ \ \partial_fP_{\rm g}=2\mu^2(b_1+f\mu^2)P_{\rm L}.$$
 （若照搬原书印刷的 \eqref{14.53}（带 $\frac12$）+\eqref{14.59}，前因子变为 $V/16\pi^2$，下表误差都乘 $\sqrt2$。）

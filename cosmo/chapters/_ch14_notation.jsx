@@ -144,4 +144,10 @@ export const NOTATION = [
   { sym: R`H_0`, name: "哈勃常数", def: R`$H_0=100h\,{\rm km\,s^{-1}Mpc^{-1}}$`, unit: R`km s$^{-1}$Mpc$^{-1}$` },
   { sym: R`\rho`, name: "自相关函数", def: R`链中相隔 $t$ 步的样本的归一化相关 $\rho(t)$`, unit: "无量纲" },
   { sym: R`\gamma`, name: "剪切分量", def: R`弱透镜剪切 $\gamma_1,\gamma_2$；观测椭率 $\epsilon_i=\epsilon_i^{\rm true}+2\gamma_i$（\eqref{13.40}）`, unit: "无量纲" },
+  // ---------- 折叠内容（推导、习题解答）中的符号 ----------
+  { sym: R`S`, name: "残差平方和（§14.1 推导）", def: R`$S(w)\equiv\sum_i(d_i-w)^2$：$m$ 个测量 $d_i$ 相对参数 $w$ 的残差平方和；对 $\sigma_w$ 边缘化后后验 $\propto S(w)^{-(m-1)/2}$`, unit: "数据量纲的平方" },
+  { id: "Svar", sym: R`S`, name: R`观测 $a_{lm}$ 的方差（\eqref{14.46} 推导）`, def: R`$\sym{ch14-Svar}{S}\equiv C(l)B_l^2+N(l)$：信号（经束斑压低）加噪声，即每个 $a_{lm}^{\rm obs}$ 的方差`, unit: R`温度$^2$` },
+  { sym: R`u`, name: "换元变量（§14.1 推导）", def: R`本推导中的积分变量 $u=S/2\sigma_w^2$，把对 $\sigma_w$ 的积分化成 $\Gamma$ 函数`, unit: "无量纲" },
+  { sym: R`\Gamma`, name: "Γ 函数", en: "gamma function", def: R`$\Gamma(x)=\int_0^\infty u^{x-1}e^{-u}du$；正整数时 $\Gamma(n)=(n-1)!$` },
+  { sym: R`p`, name: "Markov 链样本的分布", def: R`$p_n(\lambda)$：第 $n$ 个样本所服从的分布；细致平衡保证若 $p_n=P$（后验），则 $p_{n+1}=P$` },
 ];

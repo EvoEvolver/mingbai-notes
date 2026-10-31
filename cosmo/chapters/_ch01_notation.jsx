@@ -102,6 +102,8 @@ export const NOTATION = [
   // ---------- 习题 ----------
   { id: "xint", sym: R`x`, name: "积分变量（习题 1.2）", def: R`$\sym{ch01-xint}{x}\equiv\ln(1/a^3)$`, unit: "无量纲", eq: "1.12" },
   { id: "xbb", sym: R`x`, name: "无量纲频率（习题 1.4）", def: R`$\sym{ch01-xbb}{x}\equiv2\pi\hbar\nu/k_{\rm B}T$；$I_\nu$ 在 $\sym{ch01-xbb}{x}\simeq2.82$ 处取极大`, unit: "无量纲" },
+  { sym: R`u`, name: "换元变量（习题 1.2 解答）", def: R`本推导中的辅助量 $u\equiv\sqrt{1+\alpha e^{\sym{ch01-xint}{x}}}$，把积分 \eqref{1.12} 化为 $\int 2\,du/(u^2-1)$；$u>1$`, unit: "无量纲", eq: "1.12" },
+  { sym: R`y`, name: "恒等式中的自变量（习题 1.2 解答）", def: R`恒等式 $\coth^{-1}y=\tanh^{-1}(1/y)$（$|y|>1$）中的一般自变量，仅用于说明反双曲函数的换写` },
   { sym: R`\alpha`, name: "常数（习题 1.2）/ 精细结构常数", def: R`积分公式 \eqref{1.12} 中的正常数，习题 1.2 中 $\alpha=(1-\Omega_\Lambda)/\Omega_\Lambda$；习题 1.3 解答中为精细结构常数 $\alpha\approx1/137$`, unit: "无量纲", eq: "1.12" },
   { sym: R`n`, name: "主量子数", def: R`氢原子能级 $n$；Lyman-$\alpha$ 跃迁为 $n=2\to n=1$` },
   { sym: R`p`, name: "动量", en: "momentum", def: R`量子场模式的动量；$d^3p/(2\pi\hbar)^3$ 为单位体积内的模式数`, unit: "动量", eq: "1.13" },

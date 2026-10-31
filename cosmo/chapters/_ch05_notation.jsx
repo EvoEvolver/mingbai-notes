@@ -159,4 +159,14 @@ export const NOTATION = [
   { id: "hfun", sym: R`h`, name: "同步规范扰动（实空间）", def: R`$h_{ij}(\boldsymbol x,t)$ 的分量`, unit: "无量纲" },
   { id: "pres", sym: R`\mathcal P`, name: "压强", en: "pressure", def: R`$\mathcal P=\int\frac{d^3p}{(2\pi)^3}f\frac{p^2}{3E}$（\eqref{2.64}）；仅在习题 5.5 中出现`, unit: "能量/体积", eq: "2.64" },
   { id: "afs", sym: R`\alpha`, name: "精细结构常数", def: R`$\alpha=e^2/4\pi\simeq1/137$`, unit: "无量纲" },
+  // ---------- 折叠内容（推导、习题解答）中的符号 ----------
+  { sym: R`\hbar`, name: "约化普朗克常数", def: R`本章取 $\hbar=c=1$；换回物理单位时乘 $(\hbar c)^2=(1.973\times10^{-5}\,\mathrm{eV\,cm})^2$（习题 5.6）`, unit: R`能量 $\times$ 时间` },
+  { sym: R`c`, name: "光速", def: R`本章取 $c=1$；习题 5.6 的数值估计中把速度换回 $\mathrm{cm\,s^{-1}}$ 时显式写出`, unit: "长度/时间" },
+  { sym: R`\Gamma^\mu{}_{\alpha\beta}`, name: "Christoffel 符号", en: "Christoffel symbol", def: R`测地线方程中的联络系数（第 2 章 \eqref{2.21}）；习题 5.1 同步规范中 $\Gamma^0{}_{ij}=\frac12\partial_tg_{ij}$` },
+  { id: "rate", sym: R`\Gamma`, name: "散射率（习题 5.6）", def: R`中性氢原子与自由质子的散射率 $\sym{ch05-rate}{\Gamma}=x_e\bar n_{\rm b}\langle\sigma v\rangle$；与 $H$ 比较判断是否仍紧耦合`, unit: R`时间$^{-1}$` },
+  { sym: R`P`, name: "四维动量", en: "four-momentum", def: R`$P^\mu\equiv dx^\mu/d\lambda$；$P^0=E$，$g_{ij}P^iP^j=p^2$，$P^i=p\hat p^i/a$（习题 5.1，同步规范）`, unit: "能量" },
+  { sym: R`\Delta`, name: "修正量（习题 5.4）", def: R`$\Delta|\mathcal M|^2$、$\Delta C[f]$：用精确的 Compton 振幅代替角平均振幅后，振幅平方与碰撞项多出的部分（四极项 $\propto\mathcal P_2$）` },
+  { sym: R`\theta`, name: "极角", en: "polar angle", def: R`球谐函数的极角（与 $z$ 轴的夹角）；$Y_{20}(\theta)=\sqrt{5/16\pi}\,(3\cos^2\theta-1)$`, unit: "弧度" },
+  { sym: R`b`, name: "碰撞参数（习题 5.6）", en: "impact parameter", def: R`估计库仑截面时令势能 $\alpha/b$ 等于动能 $\sim T$，得 $b\sim\alpha/T$、$\sigma_{\rm C}\sim\pi b^2$`, unit: "长度" },
+  { sym: R`\mathcal O`, name: "量级记号", en: "big-O", def: R`$\mathcal O(x)$ 表示与 $x$ 同阶、被略去的高阶小量；如紧耦合展开中 $\mathcal O(1/\tau')$` },
 ];

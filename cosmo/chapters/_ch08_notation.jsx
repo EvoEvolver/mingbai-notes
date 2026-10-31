@@ -147,4 +147,9 @@ export const NOTATION = [
   { id: "Aks", sym: R`A`, name: "积分常数 A（Kodama–Sasaki）", def: R`\eqref{8.29}–\eqref{8.30} 中的积分常数；由小 $y$ 极限定出 $A=3\Phi(0)/4$。与 \eqref{8.52} 中的 $A$ 无关`, unit: "无量纲", eq: "8.29" },
   { id: "solid", sym: R`\Omega`, name: "立体角", en: "solid angle", def: R`\eqref{8.9} 中 $d\Omega'$ 是 $\boldsymbol k'$ 方向的立体角元，$\int d\Omega'=4\pi$`, unit: "sr" },
   { id: "Rrad", sym: R`R`, name: "重子–光子能量比", def: R`$R\equiv3\rho_{\rm b}/4\rho_\gamma$（\eqref{5.74}）`, unit: "无量纲", eq: "5.74" },
+  // ---------- 折叠内容（习题解答）中的符号 ----------
+  { sym: R`P`, name: "物质功率谱（泛指）", en: "power spectrum", def: R`不特指线性/非线性时的物质功率谱 $P(k)$；以 $h^{-1}\mathrm{Mpc}$ 为长度单位时其单位为 $(h^{-1}\mathrm{Mpc})^3$（习题 8.7）`, unit: R`体积` },
+  { sym: R`v`, name: "中微子速度（习题 8.11）", def: R`$v=p/E=p/\sqrt{p^2+m_\nu^2}$；一个哈勃时间内自由流的共动距离 $x_{\rm fs}=v/(aH)$`, unit: "无量纲（以 c 为单位）" },
+  { sym: R`E`, name: "中微子能量（习题 8.11）", def: R`$E=\sqrt{p^2+m_\nu^2}$`, unit: "能量" },
+  { sym: R`V_R`, name: "半径 R 的球体积（习题 8.13）", def: R`$V_R=4\pi R^3/3$：顶帽窗口函数 $W_R(x)=1/V_R$（$x<R$）的归一化因子`, unit: "体积" },
 ];

@@ -140,4 +140,10 @@ export const NOTATION = [
   { sym: R`i`, name: "虚数单位", def: R`$i=\sqrt{-1}$`, unit: "无量纲" },
   { sym: R`R`, name: "旋转矩阵", def: R`\exref{10.1} 中绕视线转 $\alpha$ 的二维旋转矩阵 $R(\alpha)$`, unit: "无量纲" },
   { sym: R`\Psi`, name: "引力势（时间分量）", def: R`共形牛顿规范度规扰动 $g_{00}=-(1+2\Psi)$`, unit: "无量纲" },
+  // ---------- 折叠内容（习题解答）中的符号 ----------
+  { sym: R`\tilde{\boldsymbol l}`, name: "旋转后的二维波矢（习题 10.1）", def: R`$\tilde{\boldsymbol l}=R\boldsymbol l=l(\cos(\phi_l+\alpha),\sin(\phi_l+\alpha))$：坐标绕视线转 $\alpha$ 后，同一模式的波矢`, unit: "无量纲" },
+  { sym: R`\hat{\boldsymbol a}`, name: "转 45° 的单位矢量（习题 10.3）", def: R`$\hat{\boldsymbol a}=(\hat{\boldsymbol e}_x+\hat{\boldsymbol e}_y)/\sqrt2$；沿 $\hat{\boldsymbol a}$、$\hat{\boldsymbol b}$ 的强度差给出 Stokes $U$`, unit: "单位矢量" },
+  { sym: R`\hat{\boldsymbol b}`, name: "转 −45° 的单位矢量（习题 10.3）", def: R`$\hat{\boldsymbol b}=(\hat{\boldsymbol e}_x-\hat{\boldsymbol e}_y)/\sqrt2$，与 $\hat{\boldsymbol a}$ 正交`, unit: "单位矢量" },
+  { sym: R`\boldsymbol v`, name: "任意矢量（习题 10.3）", def: R`本推导中的辅助量：恒等式 $(\hat{\boldsymbol a}\cdot\boldsymbol v)^2-(\hat{\boldsymbol b}\cdot\boldsymbol v)^2=2v_xv_y$ 对任意矢量成立；随后取 $\boldsymbol v=\hat{\boldsymbol\epsilon}'_j$` },
+  { sym: R`v`, name: R`矢量 $\boldsymbol v$ 的分量（习题 10.3）`, def: R`$v_x$、$v_y$ 为 $\boldsymbol v$ 的笛卡儿分量` },
 ];

@@ -43,4 +43,8 @@ export const NT = [
   { sym: R`\phi_{\rm p}`, name: R`$k_{\rm p}$ 穿出视界时的场值`, def: R`二次势中 $\phi_{\rm p}^2=\frac{m_{\rm Pl}^2}{4\pi}(1+2N)$，约 $3\,m_{\rm Pl}$`, unit: "质量" },
   { sym: R`a_{\rm p}`, name: R`$k_{\rm p}$ 穿出视界时的标度因子`, def: R`$k_{\rm p}=a_{\rm p}H$，$a_{\rm p}=a_ee^{-N}$`, unit: "无量纲" },
   { sym: R`a_{\rm re}`, name: R`$k_{\rm p}$ 重新进入视界时的标度因子`, def: R`辐射主导时 $aH\propto a^{-1}$，故 $a_{\rm re}=a_ee^{N}$`, unit: "无量纲" },
+  // 折叠内容（推导、习题解答）中的符号
+  { sym: R`\ddot{\bar\phi}`, name: "零阶标量场对 t 的二阶导数", def: R`$\ddot{\bar\phi}\equiv d^2\bar\phi/dt^2$；第二慢滚参数 $\delta_{\rm sr}=\ddot{\bar\phi}/(H\dot{\bar\phi})$；慢滚近似要求 $|\ddot{\bar\phi}|\ll|3H\dot{\bar\phi}|$`, unit: R`质量$^3$` },
+  { sym: R`\epsilon_V`, name: "势慢滚参数", en: "potential slow-roll parameter", def: R`$\epsilon_V\equiv\frac{1}{16\pi G}(V_{,\phi}/V)^2$；慢滚时 $\epsilon_{\rm sr}\simeq\epsilon_V$、$\delta_{\rm sr}\simeq\epsilon_V-\eta_V$，$n_s=1-6\epsilon_V+2\eta_V$（习题 7.8）`, unit: "无量纲" },
+  { sym: R`\eta_V`, name: "势慢滚参数（二阶）", def: R`$\eta_V\equiv\frac{1}{8\pi G}V_{,\phi\phi}/V$；与 $\epsilon_V$ 一起给出 $n_s=1-6\epsilon_V+2\eta_V$（习题 7.8）。注意它与共形时间 $\eta$ 无关`, unit: "无量纲" },
 ];

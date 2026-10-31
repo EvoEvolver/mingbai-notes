@@ -8,4 +8,8 @@ export const NT = [
   { sym: R`\Delta_h`, name: "无量纲张量功率谱（单一偏振）", def: R`$\Delta_h^2=\frac{k^3}{2\pi^2}P_h$ \eqref{7.36}：$\ln k$ 每单位间隔内的 $h$ 方差；视界外 $\Delta_h^2=4GH^2/\pi$`, unit: "无量纲", eq: "7.36" },
   { sym: R`a''`, name: R`标度因子对 $\eta$ 的二阶导数`, def: R`$a''/a$ 在 \eqref{7.33} 中扮演"负的质量平方"；暴胀期间 $a''/a\simeq2/\eta^2$ \eqref{7.38}`, unit: R`共动长度$^{-2}$`, eq: "7.38" },
   { sym: R`W`, name: "Wronski 行列式", en: "Wronskian", def: R`$W\equiv vv^{*\prime}-v^*v'$；对形如 $v''+\omega^2(\eta)v=0$ 的方程 $W$ 守恒，归一化要求 $W=i$（等价于 $[\hat x,\hat p]=i$）`, unit: "无量纲" },
+  // 折叠内容（拓展、推导）中的符号
+  { sym: R`S`, name: "作用量", en: "action", def: R`$S=\int d^4x\sqrt{-g}\,\mathcal L$；§7.3 拓展中 $S^{(2)}$ 为 Einstein–Hilbert 作用量展开到张量扰动二阶的部分，习题 7.4 中对度规变分得到能动张量 \eqref{7.113}` },
+  { sym: R`\varphi`, name: "归一化的张量扰动（§7.3 拓展）", def: R`$\varphi=h/\sqrt{16\pi G}$：使每个偏振的作用量化为标准标量场形式 $\frac12\int d\eta\,d^3x\,a^2[(\varphi')^2-(\nabla\varphi)^2]$ 的辅助量`, unit: "质量" },
+  { sym: R`f`, name: "模函数的包络（\eqref{7.40} 验证推导）", def: R`本推导中的辅助函数：$v=\frac{e^{-ik\eta}}{\sqrt{2k}}f(\eta)$，de Sitter 中 $f=1-\frac{i}{k\eta}$`, unit: "无量纲" },
 ];

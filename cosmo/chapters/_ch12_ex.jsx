@@ -81,12 +81,12 @@ $$\boldsymbol s^{(1)}(\boldsymbol k,\eta)=\frac{i\boldsymbol k}{k^2}\delta^{(1)}
       </Exercise>
 
       <Exercise n="12.9" title={R`球坍缩：推导 $\delta_{\rm cr}$ 与 $\Delta_{\rm vir}$`} level="★★★"
-        hint={R`(b) 能量守恒：$\frac12\dot r^2-GM/r=E$，转向时 $\dot r=0$。(c) 摆线：$r=A(1-\cos\theta)$、$t=B(\theta-\sin\theta)$ 满足 $\ddot r=-GM/r^2$ 当且仅当 $A^3=GMB^2$。`}
+        hint={R`(b) 能量守恒：$\frac12\dot r^2-GM/r=E$，转向时 $\dot r=0$。(c) 摆线：$r=\sym{ch12-cycA}{A}(1-\cos\theta)$、$t=\sym{ch12-cycB}{B}(\theta-\sin\theta)$ 满足 $\ddot r=-GM/r^2$ 当且仅当 $\sym{ch12-cycA}{A}^3=GM\sym{ch12-cycB}{B}^2$。`}
         solution={R`**(a)** 质量守恒 $M=\frac{4\pi}3\bar\rho_i(1+\delta_i)r_i^3$，代入 \eqref{12.67}（去掉 $\rho_\Lambda$）即得 \eqref{12.107}。
 
 **(b)** 能量 $E=\frac12\dot r_i^2-\frac{GM}{r_i}$。用 $H_i^2=\frac{8\pi G}3\bar\rho_i$，$\frac{GM}{r_i}=\frac12H_i^2r_i^2(1+\delta_i)$，$\dot r_i^2\approx H_i^2r_i^2(1-\frac23\delta_i)$，得 $E=-\frac56H_i^2r_i^2\delta_i$（$\delta_i\ll1$）。转向时 $-GM/r_{\rm ta}=E$，所以 $r_{\rm ta}=\frac{GM}{|E|}=\frac35\frac{1+\delta_i}{\delta_i}r_i$。（这里的 $\dot r_i$ 包含了增长模式的速度扰动 $-\frac13\delta_i$；若取 $\dot r_i=H_ir_i$，只有 3/5 的扰动处于增长模式。）
 
-**(c)** $r=A(1-\cos\theta)$，$t=B(\theta-\sin\theta)$：$\dot r=\frac{A\sin\theta}{B(1-\cos\theta)}$，$\ddot r=-\frac{A}{B^2(1-\cos\theta)^2}$，而 $-GM/r^2=-\frac{GM}{A^2(1-\cos\theta)^2}$，故需 $A^3=GMB^2$。与 \eqref{12.68} 比较 $A=r_{\rm ta}/2$、$B=t_{\rm ta}/\pi$，所以 $t_{\rm ta}=\pi\sqrt{r_{\rm ta}^3/(8GM)}=\frac{\pi}{2H_i}\left(\frac35\right)^{3/2}\frac{1+\delta_i}{\delta_i^{3/2}}$。
+**(c)** $r=\sym{ch12-cycA}{A}(1-\cos\theta)$，$t=\sym{ch12-cycB}{B}(\theta-\sin\theta)$：$\dot r=\frac{\sym{ch12-cycA}{A}\sin\theta}{\sym{ch12-cycB}{B}(1-\cos\theta)}$，$\ddot r=-\frac{\sym{ch12-cycA}{A}}{\sym{ch12-cycB}{B}^2(1-\cos\theta)^2}$，而 $-GM/r^2=-\frac{GM}{\sym{ch12-cycA}{A}^2(1-\cos\theta)^2}$，故需 $\sym{ch12-cycA}{A}^3=GM\sym{ch12-cycB}{B}^2$。与 \eqref{12.68} 比较 $\sym{ch12-cycA}{A}=r_{\rm ta}/2$、$\sym{ch12-cycB}{B}=t_{\rm ta}/\pi$，所以 $t_{\rm ta}=\pi\sqrt{r_{\rm ta}^3/(8GM)}=\frac{\pi}{2H_i}\left(\frac35\right)^{3/2}\frac{1+\delta_i}{\delta_i^{3/2}}$。
 
 **(d)** $1+\delta=\frac{\rho}{\bar\rho}=\frac92\frac{(\theta-\sin\theta)^2}{(1-\cos\theta)^3}$（物质主导 $\bar\rho=1/6\pi Gt^2$）。转向（$\theta=\pi$）：$1+\delta=9\pi^2/16\approx5.55$。线性外推 $\delta^{(1)}=\frac35\big(\frac34\big)^{2/3}(\theta-\sin\theta)^{2/3}$，转向时 $1.062$。展开：$\delta=\delta^{(1)}+\frac{17}{21}(\delta^{(1)})^2+\frac{341}{567}(\delta^{(1)})^3+\cdots$（二阶系数 $17/21$ 正是 $F_2$ 的角度平均）。图见 \figref{12.7} 交互版。
 

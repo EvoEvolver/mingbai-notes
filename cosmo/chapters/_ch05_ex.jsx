@@ -81,10 +81,10 @@ $$\frac{\partial\rho}{\partial t}+\frac{\dot a}{a}\left[3\rho+3\sym{ch05-pres}{\
 $$\Gamma_{\rm C}=n_e\sigma_{\rm C}v\approx1.2\times10^{-2}\,\mathrm s^{-1},\qquad H(z=1100)\approx5\times10^{-14}\,\mathrm s^{-1},\qquad \frac{\Gamma_{\rm C}}{H}\approx2\times10^{11}.$$
 标度：$n_e\propto a^{-3}$、$\sigma_{\rm C}\propto T^{-2}\propto a^2$、$v\propto a^{-1/2}$，所以 $\Gamma_{\rm C}\propto a^{-3/2}$，物质主导时 $H\propto a^{-3/2}$，比值几乎不变（$z=3\times10^4$ 到 $z=100$ 都在 $10^{11}$ 量级）；辐射主导时 $H\propto a^{-2}$，比值 $\propto a^{1/2}$，回溯到 $T\sim m_e$ 仍远大于 1。再乘上库仑对数只会更大。电子与质子始终紧耦合。
 
-**(b)** 对一个中性氢原子，与自由质子的散射率为 $\Gamma=x_e\bar n_{\rm b}\langle\sigma v\rangle$。取 $x_e\sim10^{-4}$（复合后剩余电离度的量级，参见图 4.4）与 Langevin 速率 $\langle\sigma v\rangle\approx2.7\times10^{-9}\,\mathrm{cm^3\,s^{-1}}$：
-- $z=1100$：$\Gamma\approx9\times10^{-11}\,\mathrm s^{-1}$，$\Gamma/H\approx2\times10^3$；
-- $z=300$：$\Gamma/H\approx3\times10^2$；
-- $z=100$：$\Gamma/H\approx50$。
+**(b)** 对一个中性氢原子，与自由质子的散射率为 $\sym{ch05-rate}{\Gamma}=x_e\bar n_{\rm b}\langle\sigma v\rangle$。取 $x_e\sim10^{-4}$（复合后剩余电离度的量级，参见图 4.4）与 Langevin 速率 $\langle\sigma v\rangle\approx2.7\times10^{-9}\,\mathrm{cm^3\,s^{-1}}$：
+- $z=1100$：$\sym{ch05-rate}{\Gamma}\approx9\times10^{-11}\,\mathrm s^{-1}$，$\sym{ch05-rate}{\Gamma}/H\approx2\times10^3$；
+- $z=300$：$\sym{ch05-rate}{\Gamma}/H\approx3\times10^2$；
+- $z=100$：$\sym{ch05-rate}{\Gamma}/H\approx50$。
 
 即使电离度低到 $10^{-4}$，中性氢与质子的散射率仍远大于膨胀率（比值 $\propto a^{-3/2}$，随时间缓慢下降，但直到 $z\sim100$ 仍 $\gg1$）。若改用几何截面 $\sim10^{-15}\,\mathrm{cm^2}$ 与热速度估计，结论在复合期间同样成立。因此中性原子、原子核与电子在整个复合期间紧耦合，\eqref{5.61} 描述的是全部重子。`}>
         <Tx>{R`证明电子、原子核与原子在整个复合过程中都保持紧耦合。

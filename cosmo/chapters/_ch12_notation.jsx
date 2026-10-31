@@ -192,4 +192,9 @@ export const NOTATION = [
   { sym: R`q`, name: "一维位置", def: R`\figref{12.8} 中初始（拉格朗日）位置坐标`, unit: "共动长度" },
   { sym: R`l`, name: "微扰阶（求和指标）", def: R`\eqref{12.41} 中与 $n$ 一起求和，$n+l$ 为偶数`, unit: "无量纲" },
   { sym: R`j`, name: "空间指标", def: R`$x^j$、$u^j$ 等的分量指标，重复指标求和`, unit: "—" },
+  // ---------- 折叠内容（习题提示/解答）中的符号 ----------
+  { id: "cycA", sym: R`A`, name: "摆线解的长度系数（习题 12.9）", def: R`球坍缩摆线解 $r=\sym{ch12-cycA}{A}(1-\cos\theta)$ 中的系数；$\sym{ch12-cycA}{A}=r_{\rm ta}/2$，且 $\sym{ch12-cycA}{A}^3=GM\sym{ch12-cycB}{B}^2$`, unit: "长度" },
+  { id: "cycB", sym: R`B`, name: "摆线解的时间系数（习题 12.9）", def: R`球坍缩摆线解 $t=\sym{ch12-cycB}{B}(\theta-\sin\theta)$ 中的系数；$\sym{ch12-cycB}{B}=t_{\rm ta}/\pi$`, unit: "时间" },
+  { sym: R`w`, name: "换元变量（习题 12.10）", def: R`本推导中的积分变量 $w\equiv(\nu_2-\hat\xi\nu_1)/\sqrt{1-\hat\xi^2}$：把二元 Gauss 分布的指数配方成 $-\frac12(w^2+\nu_1^2)$，使两个积分分离`, unit: "无量纲" },
+  { sym: R`B_1`, name: "晕模型的有效线性偏袒（习题 12.13）", def: R`$B_1(k)=\frac1{\rho_{\rm m}}\int d\ln M\frac{dn}{d\ln M}Mb_1(M)y(k,M)$；两晕项 $P_{2{\rm h}}=[B_1(k)]^2P_{\rm L}(k)$，一致性要求 $\lim_{k\to0}B_1=1$`, unit: "无量纲" },
 ];

@@ -158,4 +158,9 @@ export const NOTATION = [
   // ---------- 多义字母（公式中用 \sym{ch09-<id>}{…} 指定） ----------
   { id: "kspring", sym: R`k`, name: "弹簧劲度（习题 9.2）", def: R`\eqref{9.84}：$m\ddot x+b\dot x+kx=0$ 中的劲度系数（与波数 $k$ 无关）`, unit: "力/长度" },
   { id: "Rcurv", sym: R`\mathcal R`, name: "原初曲率扰动", def: R`见 $\mathcal R$`, unit: "无量纲" },
+  // ---------- 折叠内容（推导、习题解答）中的符号 ----------
+  { sym: R`N`, name: "一个哈勃时间内的散射次数", def: R`$N=n_e\sigma_{\rm T}/H$（\eqref{9.4}）：随机行走的步数；$N\gg1$ 所以扩散长度远小于哈勃尺度`, unit: "无量纲", eq: "9.4" },
+  { sym: R`\sigma`, name: "高斯变量的标准差", def: R`§9.5 宇宙方差推导中，均值为零、方差 $\sigma^2$ 的高斯变量 $x$ 满足 $\mathrm{Var}(x^2)=2\sigma^4$`, unit: "视变量而定" },
+  { sym: R`s`, name: "辅助变量（习题 9.8）", def: R`本推导中的辅助量 $s\equiv1+1/y=1+a_{\rm eq}/a$，用来把扩散积分整理成 $f_D(y)$ \eqref{9.89}`, unit: "无量纲" },
+  { sym: R`\chi`, name: "共动距离", en: "comoving distance", def: R`沿视线到观测者的共动距离；自由传播时 $\chi=\eta_0-\eta$（习题 9.10 中平面波的球面展开 $e^{i\boldsymbol k\cdot\hat{\boldsymbol p}\chi}$）`, unit: "共动长度" },
 ];

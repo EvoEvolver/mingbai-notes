@@ -18,7 +18,7 @@ $$\Omega(t)-1=\frac{K}{a^2H^2}=\frac{K}{(aH)^2}.$$
 $$1-\Omega(a)=\frac{\Omega_Ka^2}{\Omega_{\rm m}a+\Omega_{\rm r}+\Omega_Ka^2},$$
 其中 $\Omega_{\rm r}=4.15\times10^{-5}\sym{ch07-hred}{h}^{-2}\approx9.1\times10^{-5}$（$\sym{ch07-hred}{h}=0.677$），$\Omega_{\rm m}=0.3-\Omega_{\rm r}$。
 
-**(a)** 早期 $1-\Omega\simeq\Omega_Ka^2/\Omega_{\rm r}\propto a^2$（辐射期）；$a\gtrsim a_{\rm eq}\sim3\times10^{-4}$ 之后变为 $\simeq\Omega_Ka/\Omega_{\rm m}\propto a$（物质期）；直到 $a\gtrsim0.1$ 才成为 $O(1)$，今天等于 0.7。在双对数图上，$1-\Omega$ 是一条先以斜率 2、后以斜率 1 上升的折线。几个数值：$a=10^{-10}$ 时 $1-\Omega\approx8\times10^{-17}$，$a=10^{-4}$ 时 $\approx6\times10^{-5}$。在 Planck 时期 $a\sim10^{-32}$：
+**(a)** 早期 $1-\Omega\simeq\Omega_Ka^2/\Omega_{\rm r}\propto a^2$（辐射期）；$a\gtrsim a_{\rm eq}\sim3\times10^{-4}$ 之后变为 $\simeq\Omega_Ka/\Omega_{\rm m}\propto a$（物质期）；直到 $a\gtrsim0.1$ 才成为 $\mathcal O(1)$，今天等于 0.7。在双对数图上，$1-\Omega$ 是一条先以斜率 2、后以斜率 1 上升的折线。几个数值：$a=10^{-10}$ 时 $1-\Omega\approx8\times10^{-17}$，$a=10^{-4}$ 时 $\approx6\times10^{-5}$。在 Planck 时期 $a\sim10^{-32}$：
 $$1-\Omega\simeq\frac{0.7\times10^{-64}}{9.1\times10^{-5}}\approx8\times10^{-61}.$$
 也就是说，若没有暴胀，$\Omega$ 在 Planck 时期必须与 1 相差不超过约 $10^{-60}$。哪怕初始偏离大到 $10^{-58}$，今天的开放宇宙就已是 $\Omega\approx0$，闭合宇宙则早已重新坍缩。
 
@@ -26,7 +26,7 @@ $$1-\Omega\simeq\frac{0.7\times10^{-64}}{9.1\times10^{-5}}\approx8\times10^{-61}
 $$1-\Omega(a_e)\simeq\frac{\Omega_Ka_e^2}{\Omega_{\rm r}}\approx4\times10^{-50}.$$
 暴胀期间 $H\simeq H_{\rm inf}$ 几乎不变（这时 $\rho$ 由暴胀子主导），$|\Omega-1|=|K|/(aH)^2\propto a^{-2}$。往回推 60 个 e 倍，$a$ 缩小 $e^{60}$，$|\Omega-1|$ 增大 $e^{120}\approx1.3\times10^{52}$ 倍：
 $$|\Omega-1|_{\text{60 个 e 倍之前}}\approx4\times10^{-50}\times1.3\times10^{52}\approx6\times10^{2}.$$
-这个数远大于 1。也就是说，即使暴胀开始时曲率完全主导（$|\Omega-1|$ 为 $O(1)$ 乃至 $O(10^2)$），60 个 e 倍的加速膨胀也足以把它压到今天观测所允许的水平：$\Omega=1$ 不再是精细调节，而是暴胀的"吸引子"——就像 \figref{7.4} 中被吹平的气球。反过来，若暴胀只有约 57 个 e 倍，初始就需要 $|\Omega-1|\lesssim1$；这与 \exref{7.3} 中解决视界问题所需的 e 倍数相同，并非巧合：两者都由共动哈勃半径 $1/(aH)$ 缩小了多少决定。`}>
+这个数远大于 1。也就是说，即使暴胀开始时曲率完全主导（$|\Omega-1|$ 为 $\mathcal O(1)$ 乃至 $\mathcal O(10^2)$），60 个 e 倍的加速膨胀也足以把它压到今天观测所允许的水平：$\Omega=1$ 不再是精细调节，而是暴胀的"吸引子"——就像 \figref{7.4} 中被吹平的气球。反过来，若暴胀只有约 57 个 e 倍，初始就需要 $|\Omega-1|\lesssim1$；这与 \exref{7.3} 中解决视界问题所需的 e 倍数相同，并非巧合：两者都由共动哈勃半径 $1/(aH)$ 缩小了多少决定。`}>
         <Tx>{R`暴胀也解决了*平坦性问题*（flatness problem）：为什么今天的能量密度如此接近临界密度？
 
 (a) 设`}</Tx>
@@ -106,7 +106,7 @@ $$\frac{\phi''}{a^2}-\frac{H\phi'}{a}+\frac{3H\phi'}{a}+V_{,\phi}=\frac{\phi''}{
         hint={R`试探解 $\phi=A_\phi(t)\cos(mt+\alpha)$，其中振幅缓变：$\dot A_\phi/A_\phi\sim H\ll m$。保留 $H/m$ 的领头阶。也可以直接对一个振荡周期平均压强。`}
         solution={R`**振荡频率。**均匀场满足 \eqref{7.14}：$\ddot\phi+3H\dot\phi+m^2\phi=0$。当 $m\gg H$ 时，哈勃摩擦在一个振荡周期内只是微扰。取 $\phi=A_\phi(t)\cos(mt+\alpha)$，振幅缓变（$\dot A_\phi\sim HA_\phi$）。代入后：
 $$\left[\ddot A_\phi+3H\dot A_\phi\right]\cos(mt+\alpha)-m\left[2\dot A_\phi+3HA_\phi\right]\sin(mt+\alpha)=0,$$
-其中 $-m^2A_\phi\cos$ 与 $m^2\phi$ 恰好抵消。$\sin$ 项是 $O(mHA_\phi)$，而 $\cos$ 项只有 $O(H^2A_\phi)$，比它小 $H/m$ 倍。令领头阶的 $\sin$ 项为零：
+其中 $-m^2A_\phi\cos$ 与 $m^2\phi$ 恰好抵消。$\sin$ 项是 $\mathcal O(mHA_\phi)$，而 $\cos$ 项只有 $\mathcal O(H^2A_\phi)$，比它小 $H/m$ 倍。令领头阶的 $\sin$ 项为零：
 $$2\dot A_\phi+3HA_\phi=0\ \Rightarrow\ A_\phi\propto a^{-3/2}.$$
 因此场以频率 $m$（即它的质量）振荡，振幅缓慢衰减。
 
@@ -191,8 +191,8 @@ $$\frac{\delta\mathcal P}{\delta\rho}-c_s^2\simeq\frac23(\delta_{\rm sr}-Y).$$
 $$\frac{\delta\dot\phi}{H\delta\phi}=-\frac{(k\eta)^2}{1+ik\eta},$$
 它在视界外按 $(k/aH)^2\propto e^{-2\Delta N}$ 迅速消失（$\Delta N$ 为穿出视界后的 e 倍数）；计入慢滚修正后，视界外 $\delta\phi\propto\dot{\bar\phi}$（$\mathcal R$ 守恒），剩下 $\delta\dot\phi/(H\delta\phi)\to\ddot{\bar\phi}/(H\dot{\bar\phi})=\delta_{\rm sr}$。
 
-所以在模式穿出视界之时及之后，$Y=O(\epsilon_{\rm sr},\delta_{\rm sr})$，
-$$\frac{\delta\mathcal P}{\delta\rho}-c_s^2=O(\epsilon_{\rm sr},\delta_{\rm sr}),$$
+所以在模式穿出视界之时及之后，$Y=\mathcal O(\epsilon_{\rm sr},\delta_{\rm sr})$，
+$$\frac{\delta\mathcal P}{\delta\rho}-c_s^2=\mathcal O(\epsilon_{\rm sr},\delta_{\rm sr}),$$
 即单场暴胀产生的扰动在超视界尺度上是绝热的。（严格在 $k|\eta|=1$ 那一刻，梯度项 $|(k\eta)^2/(1+ik\eta)|=1/\sqrt2$ 尚未衰减；它与慢滚无关，而是有限 $k/aH$ 的效应，穿出视界后一两个 e 倍内即降到百分之几以下。注意比值 $\delta\mathcal P/\delta\rho$ 依赖规范，而 $\delta\mathcal P-c_s^2\delta\rho$ 是规范不变的。）`}>
         <Tx>{R`描述宇宙中的压强、以及把压强与能量密度联系起来的方式有好几种。第一种在第 2 章引入，即*物态方程*`}</Tx>
         <Eq n="7.117" say={R`物态方程参数是压强与能量密度之比：物质为 0，辐射为 1/3，慢滚标量场接近 $-1$。`}>{R`w\equiv\frac{\mathcal P}{\rho}.`}</Eq>
@@ -365,7 +365,7 @@ $$-\Psi=-2\Psi-\frac{5(\Phi+\Psi)}{2f_\nu}\ \Rightarrow\ 2f_\nu\Psi=-5\Phi-5\Psi
       {/* ---------------- 7.17 ---------------- */}
       <Exercise n="7.17" title={R`速度与偶极矩的初始条件 \eqref{7.95}`} level="★★"
         hint={R`取 $k\eta\ll1$、辐射主导（$aH=1/\eta$）、$\Psi=-\Phi$ 为常数，$\Theta_0=\mathcal N_0=\Phi/2$。中微子用 \eqref{7.120} 第二式；光子–重子在紧耦合下 $u_{\rm b}=-3i\Theta_1$，且早期 $R\to0$；暗物质用 \eqref{5.70}。`}
-        solution={R`取辐射主导早期：$a\propto\eta$，$a'/a=aH=1/\eta$；常数模 $\Psi=-\Phi$；由 \eqref{7.90}–\eqref{7.91}，$\Theta_0=\mathcal N_0=\Phi/2$。偶极矩与速度都是 $O(k\eta)$ 的小量，四极矩是 $O((k\eta)^2)$，可以忽略。
+        solution={R`取辐射主导早期：$a\propto\eta$，$a'/a=aH=1/\eta$；常数模 $\Psi=-\Phi$；由 \eqref{7.90}–\eqref{7.91}，$\Theta_0=\mathcal N_0=\Phi/2$。偶极矩与速度都是 $\mathcal O(k\eta)$ 的小量，四极矩是 $\mathcal O((k\eta)^2)$，可以忽略。
 
 **中微子。**由 \eqref{7.120} 第二式（丢掉 $\mathcal N_2$）：
 $$\mathcal N_1'=\frac k3(\mathcal N_0+\Psi)=\frac k3\left(\frac\Phi2-\Phi\right)=-\frac{k\Phi}{6}\ \Rightarrow\ \mathcal N_1=-\frac{k\eta}{6}\Phi=-\frac{k}{6aH}\Phi,$$

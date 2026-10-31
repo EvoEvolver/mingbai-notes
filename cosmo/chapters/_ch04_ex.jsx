@@ -38,7 +38,7 @@ $$2\left(\frac{m_eT}{2\pi}\right)^{3/2}e^{-m_e/T}=\eta_{\rm b}\frac{2\zeta(3)}{\
 
       <Exercise n="4.3" title="没有重子不对称的宇宙" level="★★"
         hint={R`这正是 §4.4 的冻结问题：$X=$ 核子，$\psi=$ 介子/光子。核子–反核子湮灭截面是强相互作用量级，$\langle\sigma v\rangle\sim m_\pi^{-2}$。用 \eqref{4.50} 算 $\lambda$，再用 \eqref{4.53} 与习题 4.8 的 $x_f$。`}
-        solution={R`把核子（质子、中子，$g=4$）当作 §4.4 中的 $X$，反核子同理，湮灭 $\mathrm N\bar{\mathrm N}\to\pi$'s，截面取强作用量级 $\langle\sigma v\rangle\sim1/m_\pi^2\approx51\,\mathrm{GeV^{-2}}\approx6\times10^{-16}\,\mathrm{cm^3\,s^{-1}}$。取 $m=0.94\,\mathrm{GeV}$、$g_*\approx10.75$–$17$：
+        solution={R`把核子（质子、中子，$g=4$）当作 §4.4 中的 $X$，反核子同理，湮灭 $\mathrm{N\bar N}\to\pi$'s，截面取强作用量级 $\langle\sigma v\rangle\sim1/m_\pi^2\approx51\,\mathrm{GeV^{-2}}\approx6\times10^{-16}\,\mathrm{cm^3\,s^{-1}}$。取 $m=0.94\,\mathrm{GeV}$、$g_*\approx10.75$–$17$：
 $$\lambda=\frac{m^3\langle\sigma v\rangle}{H(m)}=\frac{m\,m_{\rm Pl}\langle\sigma v\rangle}{1.66\sqrt{g_*}}\approx1\times10^{20}.$$
 习题 4.8 的近似给出 $x_f\approx\ln[g\lambda/(2\pi)^{3/2}]+\frac12\ln x_f\approx45$；数值解 \eqref{4.49}（$g=4$）给出 $x_f\approx44$，即冻结温度 **$T_f\approx m/44\approx21\,\mathrm{MeV}$**，$Y_\infty\approx4\times10^{-19}$。由于 $\lambda$ 极大，冻结后 $Y$ 几乎立刻（$T$ 再降低百分之几十，约 $T\sim15$–$20\,\mathrm{MeV}$）达到渐近值。
 
@@ -139,7 +139,7 @@ $$x_f=\ln\left[\frac{g\lambda}{(2\pi)^{3/2}}\right]+\frac12\ln x_f,$$
       <Exercise n="4.9" title="粒子湮灭对光子的加热" level="★★" fromBook
         hint={R`熵密度 $s=(\rho+\mathcal P)/T\propto g_{*}T^3$（相对论粒子），$sa^3$ 守恒。数出 $T=10\,\mathrm{GeV}$ 时的相对论自由度。`}
         solution={<>
-          <Tx>{R`计算两个时刻的熵密度 $(\mathcal P+\rho)/T$。两种情况下只有相对论粒子显著贡献熵。高温时贡献能量密度的有：夸克（$g_q=5\times3\times2$，五种最轻的夸克——u、d、s、c、b——各有三种颜色、两个自旋态）；反夸克（$g_{\bar q}=30$）；轻子（$g_l=3\times2$ 对三种有质量的 $e,\mu,\tau$，各两个自旋态，再加 3 对相应的中微子，它们只有一个螺旋度，见 §2.4.4）；反轻子（$g_{\bar l}=9$）；光子（2）；胶子（$g_g=8\times2$）。总计
+          <Tx>{R`计算两个时刻的熵密度 $(\mathcal P+\rho)/T$。两种情况下只有相对论粒子显著贡献熵。高温时贡献能量密度的有：夸克（$g_q=5\times3\times2$，五种最轻的夸克——u、d、s、c、b——各有三种颜色、两个自旋态）；反夸克（$g_{\bar q}=30$）；轻子（$g_l=3\times2$ 对三种有质量的 $e,\sym{ch04-muon}{\mu},\tau$，各两个自旋态，再加 3 对相应的中微子，它们只有一个螺旋度，见 §2.4.4）；反轻子（$g_{\bar l}=9$）；光子（2）；胶子（$g_g=8\times2$）。总计
 $$g_*=2+16+\frac78(30+30+9+9)=86.25.$$
 第六种夸克——顶夸克——太重（$m_t\simeq175\,\mathrm{GeV}$），在这样的温度下不存在；$W$、$\nosym{Z}$ 与 Higgs 玻色子同理。
 

@@ -88,8 +88,8 @@ export function Sec146() {
       <Eq n="14.74" keyEq title="细致平衡" say={R`在后验分布下，从 $\lambda$ 跳到 $\lambda'$ 的"流量"等于反向流量——所以后验是链的平衡分布。`}>{R`P(\lambda)K(\lambda'|\lambda)=P(\lambda')K(\lambda|\lambda').`}</Eq>
       <Tx>{R`若一开始 $\lambda$ 的分布服从 $P(\lambda)$，满足 \eqref{14.74} 的算法会保持这个分布。这与 Boltzmann 方程中碰撞项的细致平衡类似——后者保持平衡分布：把 \eqref{14.74} 写成 $P(\lambda)K(\lambda'|\lambda)-P(\lambda')K(\lambda|\lambda')=0$，就是说正向（$\lambda\to\lambda'$）与反向（$\lambda'\to\lambda$）反应的速率相同（参见 \secref{5.1} 的讨论）。因此，若要从后验 $P(\lambda)$ 采样，就需要找到一个以 $P(\lambda)$ 为平衡分布的"散射过程"，然后模拟这个散射。`}</Tx>
       <Derivation title={R`细致平衡 ⇒ $P$ 是稳态分布`} collapsed steps={[
-        { tex: R`p_{\rm next}(\lambda')=\int d\lambda\,p(\lambda)K(\lambda'|\lambda)`, why: R`Markov 链一步后的分布。` },
-        { tex: R`p=P:\quad\int d\lambda\,P(\lambda)K(\lambda'|\lambda)=\int d\lambda\,P(\lambda')K(\lambda|\lambda')=P(\lambda')\int d\lambda\,K(\lambda|\lambda')=P(\lambda')`, why: R`用 \eqref{14.74}，再用 $K$ 的归一化 $\int d\lambda\,K(\lambda|\lambda')=1$。` },
+        { tex: R`p_{n+1}(\lambda')=\int d\lambda\,p_n(\lambda)K(\lambda'|\lambda)`, why: R`设第 $n$ 个样本服从分布 $p_n$，Markov 链走一步后，下一个样本服从 $p_{n+1}$。` },
+        { tex: R`p_n=P:\quad\int d\lambda\,P(\lambda)K(\lambda'|\lambda)=\int d\lambda\,P(\lambda')K(\lambda|\lambda')=P(\lambda')\int d\lambda\,K(\lambda|\lambda')=P(\lambda')`, why: R`若 $p_n$ 已是后验 $P$，则 $p_{n+1}=P$。用 \eqref{14.74}，再用 $K$ 的归一化 $\int d\lambda\,K(\lambda|\lambda')=1$。` },
       ]} result={R`后验是链的不动点。（细致平衡是充分条件；收敛到它还需链能到达所有区域——"遍历性"。）`} />
       <Tx>{R`**为什么从远处出发也行：burn-in。**先理解为什么细致平衡 \eqref{14.74} 正是我们需要的。如果初始样本已服从目标后验，\eqref{14.74} 保证继续从正确分布采样，这是清楚的。实践中我们会从某个很可能远离后验极大值的初始猜测出发。\eqref{14.74} 仍能保证正确结果，原因同样来自 Boltzmann 类比：如果从一个远离 Bose–Einstein 分布的光子分布出发，让它与某温度的电子接触，经过多次散射后它会被驱向同一温度的平衡分布。类似地，即使初始样本远离真实后验分布，满足细致平衡的采样算法也保证经过足够多次"散射"（即随机抽样）后，样本分布趋于 $P(\lambda)$。所以趋向真实分布不是立即发生的，而是在一个"**burn-in**"期间完成——这段样本要丢掉。
 

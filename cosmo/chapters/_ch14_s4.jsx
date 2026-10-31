@@ -59,8 +59,8 @@ $$\begin{aligned}\left\langle B_l^{-4}\left(\frac{1}{2l+1}\sum_{m=-l}^{l}\left|a
 最后一行等于 $-(C(l)+N(l)B_l^{-2})^2$。由 \eqref{14.42} 的分布，右边第一项为`}</Tx>
         <Eq n="14.46" say={R`$2l+1$ 个独立高斯平方的平均，其平方的期望 = 均值平方 $\times$ $(1+\frac{2}{2l+1})$——额外的 $\frac{2}{2l+1}$ 就是宇宙方差。`}>{R`\left\langle B_l^{-4}\left(\frac{1}{2l+1}\sum_{m=-l}^{l}\left|a_{lm}^{\rm obs}\right|^2\right)^2\right\rangle = \frac{2l+3}{2l+1}\left[C(l)+N(l)B_l^{-2}\right]^2`}</Eq>
         <Derivation title={R`\eqref{14.46} 的来历：与 \eqref{14.17}–\eqref{14.20} 同一个计算`} collapsed steps={[
-          { tex: R`S\equiv C(l)B_l^2+N(l),\qquad \left\langle\Big(\sum_m|a_{lm}^{\rm obs}|^2\Big)^2\right\rangle=\sum_{m\neq m'}S^2+\sum_m3S^2=\big[(2l+1)(2l)+3(2l+1)\big]S^2`, why: R`各 $a_{lm}^{\rm obs}$ 独立、方差 $S$；交叉项 $(2l+1)2l$ 个，对角项用 $\langle x^4\rangle=3S^2$。` },
-          { tex: R`\frac{(2l+1)(2l+3)}{(2l+1)^2}S^2B_l^{-4}=\frac{2l+3}{2l+1}\left[C(l)+N(l)B_l^{-2}\right]^2`, why: R`除以 $(2l+1)^2$，乘 $B_l^{-4}$；$SB_l^{-2}=C+NB_l^{-2}$。` },
+          { tex: R`\sym{ch14-Svar}{S}\equiv C(l)B_l^2+N(l),\qquad \left\langle\Big(\sum_m|a_{lm}^{\rm obs}|^2\Big)^2\right\rangle=\sum_{m\neq m'}\sym{ch14-Svar}{S}^2+\sum_m3\sym{ch14-Svar}{S}^2=\big[(2l+1)(2l)+3(2l+1)\big]\sym{ch14-Svar}{S}^2`, why: R`各 $a_{lm}^{\rm obs}$ 独立、方差 $\sym{ch14-Svar}{S}$；交叉项 $(2l+1)2l$ 个，对角项用 $\langle x^4\rangle=3\sym{ch14-Svar}{S}^2$。` },
+          { tex: R`\frac{(2l+1)(2l+3)}{(2l+1)^2}\sym{ch14-Svar}{S}^2B_l^{-4}=\frac{2l+3}{2l+1}\left[C(l)+N(l)B_l^{-2}\right]^2`, why: R`除以 $(2l+1)^2$，乘 $B_l^{-4}$；$\sym{ch14-Svar}{S}B_l^{-2}=C+NB_l^{-2}$。` },
           { tex: R`\mathrm{Var}[\hat C]=\left(\frac{2l+3}{2l+1}-1\right)\left[C+NB_l^{-2}\right]^2=\frac{2}{2l+1}\left[C+NB_l^{-2}\right]^2`, why: R`减去上面的最后一行 $(C+NB_l^{-2})^2$。正是 \eqref{14.20} 中 $m\to2l+1$、$\sigma_w^2\to C+NB_l^{-2}$。` },
         ]} />
         <Tx>{R`所以 $C(l)$ 的估计量 \eqref{14.44} 的误差为`}</Tx>

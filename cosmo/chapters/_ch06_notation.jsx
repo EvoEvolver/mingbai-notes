@@ -168,4 +168,10 @@ export const NOTATION = [
   { sym: R`c`, name: "光速", def: R`本书取 $c=1$`, unit: "速度" },
   { sym: R`\sigma_{\rm T}`, name: "Thomson 截面", def: R`$\sigma_{\rm T}=0.665\times10^{-24}\,\mathrm{cm}^2$`, unit: "面积" },
   { sym: R`n_e`, name: "自由电子数密度", unit: R`体积$^{-1}$` },
+  // ---------- 折叠内容（推导、习题解答）中的符号 ----------
+  { sym: R`\Omega`, name: "立体角", en: "solid angle", def: R`动量方向 $\hat{\boldsymbol p}$ 的立体角元 $d\Omega$：$d^3p=p^2dp\,d\Omega$，$\int d\Omega=4\pi\int d\mu/2$（方位对称时）`, unit: "球面度" },
+  { sym: R`\boldsymbol r`, name: "物理位置矢量", def: R`$\boldsymbol r=a\boldsymbol x$；$\nabla_r^2=a^{-2}\nabla^2$（习题 6.7 中换回物理坐标得 Poisson 方程）`, unit: "物理长度" },
+  { sym: R`S`, name: "散射源项（习题 6.14）", def: R`Compton 散射进入方向 $\hat{\boldsymbol p}$ 的光子贡献 $S(\hat{\boldsymbol p})=\frac{3}{16\pi}\int d\Omega'[1+(\hat{\boldsymbol p}\cdot\hat{\boldsymbol p}')^2]\Theta(\hat{\boldsymbol p}')$；碰撞项为 $-\tau'[S-\Theta]$` },
+  { sym: R`\gamma`, name: "散射角（习题 6.14）", def: R`入射方向 $\hat{\boldsymbol p}'$ 与出射方向 $\hat{\boldsymbol p}$ 的夹角，$\cos\gamma=\hat{\boldsymbol p}\cdot\hat{\boldsymbol p}'$；$1+\cos^2\gamma=\frac43+\frac23\mathcal P_2(\cos\gamma)$`, unit: "弧度" },
+  { sym: R`Y`, name: "球谐函数", en: "spherical harmonic", def: R`$Y_{lm}(\hat{\boldsymbol p})$；加法定理 $\mathcal P_2(\hat{\boldsymbol p}\cdot\hat{\boldsymbol p}')=\frac{4\pi}5\sum_mY_{2m}(\hat{\boldsymbol p})Y^*_{2m}(\hat{\boldsymbol p}')$` },
 ];

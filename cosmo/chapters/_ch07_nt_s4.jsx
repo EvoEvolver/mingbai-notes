@@ -11,4 +11,10 @@ export const NT = [
   { sym: R`\delta\rho`, name: "能量密度扰动", def: R`$\delta\rho=-\delta T^0{}_0$`, unit: "能量密度", eq: "7.70" },
   { sym: R`\dot\Psi`, name: R`$\Psi$ 对 t 的导数`, def: R`能量守恒方程 \eqref{7.56} 中唯一新出现的度规项 $3(\rho+\mathcal P)\dot\Psi$ 的来源（原为 $-3(\rho+\mathcal P)\dot\Phi$，用了 $\Phi=-\Psi$）`, unit: R`时间$^{-1}$`, eq: "7.56" },
   { sym: R`u_{\rm m}`, name: "物质速度", def: R`共形牛顿规范中物质的（纵向）速度；$u_{\rm m}=ik\mathcal V$`, unit: "无量纲", eq: "7.73" },
+  // 折叠推导「规范不变性与 (7.76)」中的符号
+  { sym: R`\zeta`, name: "时间切片的移动（规范变换）", def: R`规范变换 $t\to t+\zeta$ 中的时间平移量（\eqref{6.17}–\eqref{6.18}）；只在本推导中使用`, unit: "时间" },
+  { sym: R`\xi`, name: "空间坐标的移动（规范变换）", def: R`规范变换 $x^i\to x^i+\partial^i\xi$ 中的标量函数；$\hat E=E+\xi$，所以保持 $E=0$ 的规范之间 $\xi=0$`, unit: R`共动长度$^2$` },
+  { sym: R`\widehat{\delta\phi}`, name: "规范变换后的标量场扰动", def: R`$\widehat{\delta\phi}=\delta\phi-\dot{\bar\phi}\,\zeta$：时间切片移动 $\zeta$ 后，同一时空点的场扰动改变 $\dot{\bar\phi}\zeta$`, unit: "质量" },
+  { sym: R`\hat{\mathcal H}`, name: R`规范变换后的 Bardeen 变量 $\mathcal H$`, def: R`$\hat{\mathcal H}=-\hat D+aH(\hat B-\hat E')=\mathcal H$：$\zeta$、$\xi$ 都相消，说明 $\mathcal H$ 规范不变；带帽的 $\hat B$、$\hat D$、$\hat E$ 同理为变换后的度规函数` },
+  { sym: R`\dot{\mathcal R}`, name: R`曲率扰动对 $t$ 的导数`, def: R`$\dot{\mathcal R}\equiv\partial\mathcal R/\partial t$；\eqref{7.70}：它正比于非绝热压强，单场暴胀中视界外为零`, unit: R`时间$^{-1}$`, eq: "7.70" },
 ];

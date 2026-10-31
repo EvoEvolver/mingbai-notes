@@ -180,4 +180,8 @@ export const NOTATION = [
   { id: "dxrsd", sym: R`\Delta\boldsymbol x_{\rm RSD}`, name: "红移空间位移", en: "redshift-space displacement", def: R`本动速度造成的表观位移 $u_\parallel\hat{\boldsymbol n}/aH$（\eqref{11.4}），严格沿视线；线性理论 RMS 约 $3\,h^{-1}\mathrm{Mpc}$（\exref{11.3}）`, unit: R`$h^{-1}\mathrm{Mpc}$`, eq: "11.4" },
   { id: "dchi", sym: R`\delta\chi`, name: "距离误差", def: R`$\delta\chi(z)=\chi_{\rm fid}(z)-\chi(z)$（\eqref{11.2}），只依赖红移；$\alpha_\perp=\delta\chi/\chi_{\rm fid}$`, unit: R`$h^{-1}\mathrm{Mpc}$`, eq: "11.2" },
   { id: "dH", sym: R`\delta H`, name: "哈勃率误差", def: R`$\delta H(z)=H(z)-H_{\rm fid}(z)$（\eqref{11.12} 下方）。注意它的符号约定（真实减基准）与 $\delta\chi$（基准减真实）相反，见 \eqref{11.13} 下方的勘误说明`, unit: R`$h\,\mathrm{Mpc^{-1}}$` },
+  // ---------- 折叠内容（推导、习题解答）中的符号 ----------
+  { sym: R`j`, name: "球 Bessel 函数", en: "spherical Bessel function", def: R`$j_l(x)$ 的通用条目；习题中 $j_2$、$j_4$ 出现在关联函数的四极、十六极矩 $\xi_2,\xi_4$ 的积分里` },
+  { sym: R`E`, name: "无量纲哈勃率", def: R`$E(z)\equiv H(z)/H_0$；物理速度 $v=100\,aE(z)\,\sigma_{\rm RSD}\,\mathrm{km\,s^{-1}}$（$\sigma_{\rm RSD}$ 以 $h^{-1}\mathrm{Mpc}$ 计）`, unit: "无量纲" },
+  { sym: R`\mathcal O`, name: "量级记号", en: "big-O", def: R`$\mathcal O(x)$ 表示与 $x$ 同阶、被略去的高阶小量；如 AP 效应展开中的 $\mathcal O(f\alpha)$` },
 ];
