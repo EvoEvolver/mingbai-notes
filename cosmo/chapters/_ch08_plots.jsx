@@ -235,7 +235,9 @@ export function GrowthPlot() {
         { label: R`\text{基准 }\Omega_\Lambda=0.69,\,w=-1`, f: a => num.interp(fl, fid.D, Math.log(a)) / a, color: "#1f1b16", width: 1.2 },
         { label: R`\text{数值解 (8.75)}`, f: Da, color: "#c0392b", width: 2.6 },
         { label: R`\text{积分式 (8.77)}`, f: a => P.growthIntegral(a, pr) / a, color: "#2c4a6e", dash: "dash", width: 1.6 },
-        { label: R`D_+(1)=${f3(D1)};\ f(1)=${f3(f1)}\ \text{vs}\ \Omega_{\rm m}(1)^{0.55}=${f3(P.OmegaMa(1, pr) ** 0.55)}`, f: () => NaN },
+        {label:R`D_+(1)=${f3(D1)}`,f:()=>NaN},
+        {label:R`f(1)=${f3(f1)}`,f:()=>NaN},
+        {label:R`\Omega_{\rm m}(1)^{0.55}=${f3(P.OmegaMa(1,pr)**0.55)}`,f:()=>NaN},
       ];
     }}
     samples={160} height={380} />;
