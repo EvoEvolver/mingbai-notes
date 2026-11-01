@@ -1,0 +1,6414 @@
+[
+ {
+  "num": "1.1",
+  "page": 14,
+  "caption": "Figure 1.1 Photomicrographs (top views) of the world’s first integrated circuit (left) from Fairchild Semiconductor(1959) and a recent microprocessor (Intel). The left chip is an RTL (resistor transistor logic) flip-flop and contains four transistors and several resistors. It is about 1.5 mm in diameter. The right chip contains several billion transistors and is about 2 x 4 cm. Left photo reprinted with permission from onsemi. Right photo copyright © Intel Corporation, reprinted with permission.",
+  "box": [
+   80.6,
+   113.3,
+   531.8,
+   251.5
+  ],
+  "file": "fig-1.1.png",
+  "w": 1129,
+  "h": 346
+ },
+ {
+  "num": "1.2",
+  "page": 15,
+  "caption": "Figure 1.2 The point contact transistor invented at Bell Telephone Labs in 1947 by Bardeen, Brattain and Shockley. Left photo cover of Electronics magazine, September 1948. The slab on the bottom right is polycrystalline Ge that forms the base region of the transistor. The triangular piece of plastic carries electrical connections down the two edges to make point contacts with the Ge. The third contact is on the backside of the Ge slab. Right photo copyright © Nokia Corporation and AT&T Archives, reprinted with permission.",
+  "box": [
+   36.0,
+   162.7,
+   576.0,
+   335.4
+  ],
+  "file": "fig-1.2.png",
+  "w": 1350,
+  "h": 433
+ },
+ {
+  "num": "1.3",
+  "page": 16,
+  "caption": "Figure 1.3 Grown junction technology of the 1950s. (After [1.3]).",
+  "box": [
+   134.1,
+   141.6,
+   475.1,
+   385.8
+  ],
+  "file": "fig-1.3.png",
+  "w": 853,
+  "h": 611
+ },
+ {
+  "num": "1.4",
+  "page": 16,
+  "caption": "Figure 1.4 Bipolar transistor alloy junction technology of the 1950s, for vertical and lateral devices.",
+  "box": [
+   116.8,
+   427.4,
+   489.4,
+   597.0
+  ],
+  "file": "fig-1.4.png",
+  "w": 932,
+  "h": 425
+ },
+ {
+  "num": "1.5",
+  "page": 17,
+  "caption": "Figure 1.5 Bipolar transistor double diffused mesa transistor technology of the late 1950s.",
+  "box": [
+   149.2,
+   290.7,
+   456.1,
+   513.5
+  ],
+  "file": "fig-1.5.png",
+  "w": 768,
+  "h": 558
+ },
+ {
+  "num": "1.6",
+  "page": 18,
+  "caption": "Figure 1.6 The planar process invented by Jean Hoerni of Fairchild in the late 1950s.",
+  "box": [
+   150.7,
+   142.7,
+   458.3,
+   364.9
+  ],
+  "file": "fig-1.6.png",
+  "w": 770,
+  "h": 557
+ },
+ {
+  "num": "1.7",
+  "page": 19,
+  "caption": "Figure 1.7 Basic photolithography process. The IC pattern is transferred from a mask to the silicon by printing it on the wafer using a light-sensitive resist material.",
+  "box": [
+   143.6,
+   302.2,
+   454.1,
+   368.4
+  ],
+  "file": "fig-1.7.png",
+  "w": 778,
+  "h": 167
+ },
+ {
+  "num": "1.9",
+  "page": 20,
+  "caption": "Figure 1.9 illustrates these extensions for a simple circuit example. Kilby and Noyce have been widely recognized for their work leading to the integrated circuit. By combining P- and N- type diffusions and SiO2 passivation layers, many types of devices including transistors, resistors and capacitors are possible in modern IC structures.",
+  "box": [
+   139.2,
+   399.4,
+   475.2,
+   617.3
+  ],
+  "file": "fig-1.9.png",
+  "w": 840,
+  "h": 546
+ },
+ {
+  "num": "1.8",
+  "page": 20,
+  "caption": "Figure 1.8 First integrated circuit constructed by Jack Kilby in 1958. Photo courtesy Texas Instruments.",
+  "box": [
+   36.0,
+   162.7,
+   576.0,
+   359.4
+  ],
+  "file": "fig-1.8.png",
+  "w": 1350,
+  "h": 493
+ },
+ {
+  "num": "1.10",
+  "page": 21,
+  "caption": "Figure 1.10 Cross-sections of Intel 32 nm technology. The left image shows the interconnect layers. The MOS transistors are on the bottom of this image but are not visible unless observed at much higher magnification as shown on the right. The width of the gates on the right and the width of the smallest metal lines (bottom of the left photo) are on the order of 32 nm. Left photo © IEEE [2008] reprinted with permission from [1.6]. Right photos © IEEE [2008] reprinted with permission from [1.7].",
+  "box": [
+   69.6,
+   279.4,
+   537.6,
+   406.1
+  ],
+  "file": "fig-1.10.png",
+  "w": 1170,
+  "h": 318
+ },
+ {
+  "num": "1.11",
+  "page": 22,
+  "caption": "Figure 1.11 The MOS transistor. Equivalent circuit on the left, cross-section in the center and actual device cross-section on the right. Photo © IEEE [2008] reprinted with permission from [1.7].",
+  "box": [
+   88.1,
+   349.7,
+   393.1,
+   472.0
+  ],
+  "file": "fig-1.11.png",
+  "w": 763,
+  "h": 306
+ },
+ {
+  "num": "1.12",
+  "page": 23,
+  "caption": "Figure 1.12 Simplified cross-section of an MOS transistor biased in its OFF (accumulation), intermediate (depletion) and ON (inversion) states. The dotted areas are the depletion regions of the N+P diodes. The gate vertical electric field controls the device and gives the device its FET “field-effect” transistor name.",
+  "box": [
+   67.7,
+   248.0,
+   547.6,
+   401.9
+  ],
+  "file": "fig-1.12.png",
+  "w": 1201,
+  "h": 385
+ },
+ {
+  "num": "1.13",
+  "page": 26,
+  "caption": "Figure 1.13 The Bipolar transistor. Equivalent circuit on the left, cross-section on the right.",
+  "box": [
+   115.8,
+   247.1,
+   503.8,
+   384.1
+  ],
+  "file": "fig-1.13.png",
+  "w": 971,
+  "h": 344
+ },
+ {
+  "num": "1.14",
+  "page": 27,
+  "caption": "Figure 1.14 A simple CMOS inverter (left), composed of a PMOS and NMOS device in series. Right, a CMOS NAND gate.",
+  "box": [
+   36.0,
+   148.1,
+   576.0,
+   291.7
+  ],
+  "file": "fig-1.14.png",
+  "w": 1350,
+  "h": 360
+ },
+ {
+  "num": "1.15",
+  "page": 28,
+  "caption": "Figure 1.15 shows a cross-section of the basic NMOS and PMOS devices integrated in a modern CMOS process. This cross-section was actually produced by a technology computer- aided design program (TCAD simulator) in which the fabrication steps such as etching, deposition, lithography etc. were inputs to the program. This example uses Athena and Victory Process which are commercially available simulators from Silvaco [1.9] that we will use throughout this book to illustrate fabrication steps. In Chapter 2 we will go through the complete CMOS fabrication sequence that results in the structure in Figure 1.15, in order to introduce many of the topics to be covered in detail in this book. The color contours in the silicon represent the N- and P-type doping profiles. The MOS gate structures are in the centers of each transistor and the darker materials above the surface are the first level of metal wiring used to interconnect the transistors. This simulated cross-section can be compared with actual device images in Figure 1.10.",
+  "box": [
+   72.0,
+   93.6,
+   538.6,
+   328.8
+  ],
+  "file": "fig-1.15.png",
+  "w": 1167,
+  "h": 588
+ },
+ {
+  "num": "1.16",
+  "page": 29,
+  "caption": "Figure 1.16 Ideal or Dennard scaling. The device in the center is scaled down in size by 2X (k = 2) [1.10].",
+  "box": [
+   66.7,
+   218.0,
+   342.7,
+   372.3
+  ],
+  "file": "fig-1.16.png",
+  "w": 691,
+  "h": 387
+ },
+ {
+  "num": "1.17",
+  "page": 30,
+  "caption": "Figure 1.17 Technology nodes vs. time during the “ideal” scaling period. The shaded red region corresponds to the minimum feature size printed with lithography in each generation.",
+  "box": [
+   129.0,
+   232.8,
+   478.5,
+   466.7
+  ],
+  "file": "fig-1.17.png",
+  "w": 875,
+  "h": 586
+ },
+ {
+  "num": "1.18",
+  "page": 32,
+  "caption": "Figure 1.18 Typical IDS vs VGS characteristics for an MOS transistor.",
+  "box": [
+   137.3,
+   115.1,
+   373.3,
+   380.5
+  ],
+  "file": "fig-1.18.png",
+  "w": 591,
+  "h": 665
+ },
+ {
+  "num": "1.19",
+  "page": 33,
+  "caption": "Figure 1.19 Microprocessor trends over time showing saturation of power dissipation and clock frequency but continued device density improvements. After K. Rupp [1.13].",
+  "box": [
+   108.0,
+   91.2,
+   499.2,
+   295.2
+  ],
+  "file": "fig-1.19.png",
+  "w": 978,
+  "h": 510
+ },
+ {
+  "num": "1.20",
+  "page": 33,
+  "caption": "Figure 1.20 Material and device structure innovations since ideal scaling ended. These examples are taken from Intel technology generations. Copyright [2017] IEEE. Reprinted with permission from [1.14). Other manufacturers have followed a similar path.",
+  "box": [
+   72.0,
+   418.6,
+   533.8,
+   546.2
+  ],
+  "file": "fig-1.20.png",
+  "w": 1155,
+  "h": 320
+ },
+ {
+  "num": "1.21",
+  "page": 34,
+  "caption": "Figure 1.21 Technology nodes vs. time through the current 5 nm generation. The red dots are expected technology generations in the next decade. The shaded red region corresponds to the minimum feature size printed with lithography in each generation.",
+  "box": [
+   131.0,
+   320.3,
+   486.0,
+   569.4
+  ],
+  "file": "fig-1.21.png",
+  "w": 889,
+  "h": 624
+ },
+ {
+  "num": "1.22",
+  "page": 37,
+  "caption": "Figure 1.22 General roadmap for CMOS device structures beyond the FinFET. GAA is gate-all around since the gate surrounds all four sides of the silicon wire or nanosheet.",
+  "box": [
+   120.8,
+   115.1,
+   511.9,
+   311.7
+  ],
+  "file": "fig-1.22.png",
+  "w": 979,
+  "h": 493
+ },
+ {
+  "num": "1.23",
+  "page": 37,
+  "caption": "Figure 1.23 Left - GAA MOSFET technology reported by IBM at the 2017 VLSI Symposium. © [2017] Japan Society of Applied Physics. Reprinted with permission from [1.17]. Right – stacked PMOS and NMOS GAA devices reported by Intel at the 2020 IEDM. © [2020] IEEE. Reprinted with permission from [1.18].",
+  "box": [
+   80.6,
+   367.2,
+   531.8,
+   522.2
+  ],
+  "file": "fig-1.23.png",
+  "w": 1129,
+  "h": 388
+ },
+ {
+  "num": "1.24",
+  "page": 38,
+  "caption": "Figure 1.24 3D NAND structure showing the circuit arrangement transistor floating gate structure. Vertical stacking of the transistors is shown on the right in a Samsung 3D NAND chip cross-section. Photo from Chipworks (now TechInsights).",
+  "box": [
+   72.0,
+   384.0,
+   547.2,
+   564.0
+  ],
+  "file": "fig-1.24.png",
+  "w": 1188,
+  "h": 450
+ },
+ {
+  "num": "1.25",
+  "page": 39,
+  "caption": "Figure 1.25 Left System on Chip (SOC) – Apple M2 Max. Copyright © Apple Corporation, reprinted with permission. Right – Complex system realized by packaging multiple chips, each more specialized than the SOC, in a package. TSV = through-silicon via.",
+  "box": [
+   69.6,
+   319.2,
+   537.6,
+   489.6
+  ],
+  "file": "fig-1.25.png",
+  "w": 1170,
+  "h": 426
+ },
+ {
+  "num": "2.1",
+  "page": 47,
+  "caption": "Figure 2.1 A simple CMOS inverter (left), composed of a PMOS and NMOS device in series. Right, a CMOS NAND gate, a universal gate capable of implementing any Boolean function.",
+  "box": [
+   115.4,
+   130.0,
+   497.5,
+   266.5
+  ],
+  "file": "fig-2.1.png",
+  "w": 956,
+  "h": 343
+ },
+ {
+  "num": "2.2",
+  "page": 47,
+  "caption": "Figure 2.2 A cross-section of the final CMOS integrated circuit, with a PMOS device on the left and an NMOS device on the right.",
+  "box": [
+   36.0,
+   401.7,
+   576.0,
+   625.6
+  ],
+  "file": "fig-2.2.png",
+  "w": 1350,
+  "h": 560
+ },
+ {
+  "num": "2.3",
+  "page": 48,
+  "caption": "Figure 2.3 Top view of a simple layout for a CMOS inverter circuit.",
+  "box": [
+   77.1,
+   272.4,
+   542.6,
+   446.8
+  ],
+  "file": "fig-2.3.png",
+  "w": 1165,
+  "h": 436
+ },
+ {
+  "num": "2.4",
+  "page": 50,
+  "caption": "Figure 2.4 Shallow Trench Isolation (STI) formation. The photoresist, nitride and pad oxide layers are all uniformly deposited or grown on the silicon surface to start. The left side shows the structure after lithography and patterning of the nitride and pad oxide. The right side shows the silicon trench etch at an 85o tapered angle.",
+  "box": [
+   36.0,
+   326.4,
+   576.0,
+   454.0
+  ],
+  "file": "fig-2.4.png",
+  "w": 1350,
+  "h": 320
+ },
+ {
+  "num": "2.5",
+  "page": 52,
+  "caption": "Figure 2.5 (Left side): a thin liner oxide is thermally grown to passivate the trench sidewalls. (Right side): a CVD deposited oxide fills the trench. The oxide deposition actually overfills the trench.",
+  "box": [
+   36.0,
+   62.0,
+   576.0,
+   190.9
+  ],
+  "file": "fig-2.5.png",
+  "w": 1350,
+  "h": 323
+ },
+ {
+  "num": "2.6",
+  "page": 53,
+  "caption": "Figure 2.6 Top left, the CVD deposited oxide is polished back to the nitride stop layer. Top right, the nitride is exposed by etching any residual oxide and also the height of the oxide above the trench is controlled by a HF etch. Lower figure, the nitride is stripped producing the final STI structure.",
+  "box": [
+   36.0,
+   62.0,
+   576.0,
+   316.0
+  ],
+  "file": "fig-2.6.png",
+  "w": 1350,
+  "h": 635
+ },
+ {
+  "num": "2.7",
+  "page": 53,
+  "caption": "Figure 2.7 The well implants are performed to create the N well (right) and P well (left) regions which act as local substrates for the PMOS and NMOS devices (phosphorus, 10keV, 1013/cm2: boron, 3keV, 1013/cm2). The photoresist masks the implants where it is present.",
+  "box": [
+   36.0,
+   510.0,
+   576.0,
+   639.7
+  ],
+  "file": "fig-2.7.png",
+  "w": 1350,
+  "h": 326
+ },
+ {
+  "num": "2.8",
+  "page": 56,
+  "caption": "Figure 2.8 Left side, the well profile after the drive-in anneal. Right side, a 1D cutline (dashed line) through the center of the boron doped well shows the boron doping profile as implanted and after the drive-in anneal (10 minutes @ 1000oC).",
+  "box": [
+   36.0,
+   177.3,
+   576.0,
+   328.0
+  ],
+  "file": "fig-2.8.png",
+  "w": 1350,
+  "h": 377
+ },
+ {
+  "num": "2.9",
+  "page": 57,
+  "caption": "Figure 2.9 The low-dose threshold adjust implants in the wells change the surface doping to obtain the desired threshold voltage in the devices (phosphorus 15keV, 6x1012/cm2; boron 5keV, 6x1012/cm2). These slight modifications in the surface doping tune the threshold voltages. In Figures 2.7 and 2.9, it is apparent that the same dopant is implanted into each well, although at different doses and energies for the well implant and the VTH adjust implant. A modern process might use a single masking step and multiple implants at different energies to form the well structure, with a shallow VTH adjust implant, a deeper implant to set the bulk well concentration and a very high-energy implant to form a “punch-through” implant layer at the base of the trench. A short anneal would repair the damage and leave the implant profiles largely unchanged (unlike the drive-in process in the process described here). This kind of retrograde well profile (the doping is higher as you go deeper in the substrate) may have advantages for avoiding an electrical problem called “latch-up” in CMOS devices [2.8]. Without adequate isolation or doping deep in the substrate, CMOS devices are prone to latch-up which creates electrical shorting between the PMOS and NMOS regions. After this threshold adjust implant, there is a short anneal to repair the damage.",
+  "box": [
+   36.0,
+   132.1,
+   576.0,
+   234.4
+  ],
+  "file": "fig-2.9.png",
+  "w": 1350,
+  "h": 256
+ },
+ {
+  "num": "2.10",
+  "page": 58,
+  "caption": "Figure 2.10 Left side: polysilicon gate regions after being patterned and etched with high selectivity to the underlying gate oxide. Right side: polysilicon gates after a short re-oxidation to passivate the sidewalls (30 minutes @ 800oC in dry O2).",
+  "box": [
+   36.0,
+   514.3,
+   576.0,
+   641.2
+  ],
+  "file": "fig-2.10.png",
+  "w": 1350,
+  "h": 318
+ },
+ {
+  "num": "2.11",
+  "page": 60,
+  "caption": "Figure 2.11 Angled halo implants introduce extra pockets of well doping under the source/drain extensions to minimize punchthrough between the source and drain. (phosphorus 15keV, 4 rotations each 5x1012/cm2: boron 5keV, 4 rotations each 5x1012/cm2). The halo implants are done at a 25 degrees implant angle. 4 implants are done with 90˚ rotations so transistors oriented in both the x and y directions are equally implanted.",
+  "box": [
+   36.0,
+   294.5,
+   576.0,
+   420.8
+  ],
+  "file": "fig-2.11.png",
+  "w": 1350,
+  "h": 317
+ },
+ {
+  "num": "2.12",
+  "page": 61,
+  "caption": "Figure 2.12 Shallow extension implants next to the gate edge form the NMOS and PMOS shallow doped regions that contact the channel (arsenic, 1.5keV, 1015/cm2; boron, 300eV, 1015/cm2 ).",
+  "box": [
+   36.0,
+   104.1,
+   576.0,
+   227.9
+  ],
+  "file": "fig-2.12.png",
+  "w": 1350,
+  "h": 310
+ },
+ {
+  "num": "2.13",
+  "page": 61,
+  "caption": "Figure 2.13 Spacer formation. Left side: conformal deposition of a nitride or oxide layer. Right side: anisotropic (directional) etch of the nitride layer leaves a sub-lithographic nitride spacer on the polysilicon gate edge (10nm nitride deposition).",
+  "box": [
+   36.0,
+   287.7,
+   576.0,
+   399.7
+  ],
+  "file": "fig-2.13.png",
+  "w": 1350,
+  "h": 281
+ },
+ {
+  "num": "2.14",
+  "page": 62,
+  "caption": "Figure 2.14 Deep source/drain implants, doping both polysilicon gate and the substrate (B, 600eV, 3x1015/cm2: As 3keV, 3x1015/cm2).",
+  "box": [
+   36.0,
+   206.6,
+   576.0,
+   335.4
+  ],
+  "file": "fig-2.14.png",
+  "w": 1350,
+  "h": 323
+ },
+ {
+  "num": "2.15",
+  "page": 62,
+  "caption": "Figure 2.15 Final source/drain profiles after anneal (20msec, 1000oC).",
+  "box": [
+   36.0,
+   395.3,
+   576.0,
+   604.4
+  ],
+  "file": "fig-2.15.png",
+  "w": 1350,
+  "h": 524
+ },
+ {
+  "num": "2.16",
+  "page": 64,
+  "caption": "Figure 2.16 Silicide formation steps. (Left side): Titanium is sputter deposited (Right side): A low- temperature anneal in nitrogen forms Titanium Silicide (TiSi2) in exposed silicon or polysilicon regions and TiN on the dielectric regions. The TiN is wet etched, leaving low resistance silicide on the source/drain and gate.",
+  "box": [
+   36.0,
+   62.0,
+   576.0,
+   190.8
+  ],
+  "file": "fig-2.16.png",
+  "w": 1350,
+  "h": 322
+ },
+ {
+  "num": "2.17",
+  "page": 65,
+  "caption": "Figure 2.17 (Left side): A CVD deposited oxide covers the structure and is polished back by CMP (Right side): Polysilicon is removed by a highly selective etch to the underlying gate oxide.",
+  "box": [
+   36.0,
+   294.5,
+   576.0,
+   409.6
+  ],
+  "file": "fig-2.17.png",
+  "w": 1350,
+  "h": 288
+ },
+ {
+  "num": "2.18",
+  "page": 65,
+  "caption": "Figure 2.18 (Left side): the dummy gate oxide is wet etched (Right side): the ALD high-K stack is deposited, consisting of interfacial oxide, high-K HfO2, TiN and TaN barrier layer.",
+  "box": [
+   36.0,
+   557.5,
+   576.0,
+   674.8
+  ],
+  "file": "fig-2.18.png",
+  "w": 1350,
+  "h": 294
+ },
+ {
+  "num": "2.19",
+  "page": 66,
+  "caption": "Figure 2.19 (Left side): A thick Titanium Nitride fill is thinned in the NMOS device, so that the subsequent aluminum fill can set the NMOS work function (Right side): A thick aluminum deposition fills the gate and is planarized by CMP, setting the NMOS and PMOS work functions.",
+  "box": [
+   36.0,
+   355.7,
+   576.0,
+   480.6
+  ],
+  "file": "fig-2.19.png",
+  "w": 1350,
+  "h": 313
+ },
+ {
+  "num": "2.21",
+  "page": 67,
+  "caption": "Figure 2.21 shows actual cross-sections of an older polysilicon/SiO2 gate structure and a newer metal/high-K gate structure. Figure 2.22 shows actual cross-sections of these gate",
+  "box": [
+   177.6,
+   283.2,
+   461.8,
+   446.4
+  ],
+  "file": "fig-2.21.png",
+  "w": 711,
+  "h": 408
+ },
+ {
+  "num": "2.20",
+  "page": 67,
+  "caption": "Figure 2.20 Detailed cross-section of the high-K layer stack near the gate edge in the NMOS device. For scale, the HfO2 layer is ≈ 3nm thick.",
+  "box": [
+   189.6,
+   118.1,
+   421.4,
+   237.1
+  ],
+  "file": "fig-2.20.png",
+  "w": 580,
+  "h": 298
+ },
+ {
+  "num": "2.22",
+  "page": 67,
+  "caption": "Figure 2.22 Cross-sections of older polysilicon gate/SiO2 gate technologies (Intel’s 65 nm technology on the left) and newer metal/high-K gate technologies (Intel’s 45 nm technology on the right). © [2005, 2007] IEEE. Reprinted with permission from [2.10] (left) and [2.11] (right).",
+  "box": [
+   137.3,
+   524.2,
+   476.2,
+   673.9
+  ],
+  "file": "fig-2.22.png",
+  "w": 848,
+  "h": 375
+ },
+ {
+  "num": "2.23",
+  "page": 68,
+  "caption": "Figure 2.23 (Left side): Via holes are patterned in ILD1 using lithography and then etched. (Right side): Tungsten deposited by CVD (or sputtering) overfills the vias and is then planarized by CMP.",
+  "box": [
+   36.0,
+   384.9,
+   576.0,
+   515.0
+  ],
+  "file": "fig-2.23.png",
+  "w": 1350,
+  "h": 326
+ },
+ {
+  "num": "2.24",
+  "page": 69,
+  "caption": "Figure 2.24 (Left side): The Cu interconnect pattern is formed and etched in ILD2 in preparation for copper seed layer deposition and electrodeposition of thick Cu. (Right side): Copper is electrodeposited in patterns etched in ILD1 and ILD2, overfilled, and then planarized by CMP.",
+  "box": [
+   36.0,
+   104.1,
+   576.0,
+   233.9
+  ],
+  "file": "fig-2.24.png",
+  "w": 1350,
+  "h": 325
+ },
+ {
+  "num": "2.25",
+  "page": 70,
+  "caption": "Figure 2.25 illustrates some of the details that were not shown in the earlier BEOL figures. The barrier layers and Cu seed layers are now shown in the inlaid Cu patterns. Also shown is the fact that the insulating layers in the BEOL structures are actually multilayer structures. The dual lithography steps needed for each Cu layer to form the vias and then the M1, M2 . . . wiring patterns need an etch stop layer to be manufacturable. These etch stop layers are the lighter blue/green-colored layers in the dielectric layers. Chapter 11 will discuss these process details.",
+  "box": [
+   108.0,
+   117.6,
+   504.0,
+   319.2
+  ],
+  "file": "fig-2.25.png",
+  "w": 990,
+  "h": 504
+ },
+ {
+  "num": "2.26",
+  "page": 71,
+  "caption": "Figure 2.26 (a) A nitride hard mask defines the Fin dimension (b) A deep anisotropic etch forms the silicon fin (c) A thick oxide is deposited prior to CMP",
+  "box": [
+   72.0,
+   410.4,
+   542.4,
+   552.0
+  ],
+  "file": "fig-2.26.png",
+  "w": 1176,
+  "h": 354
+ },
+ {
+  "num": "2.27",
+  "page": 72,
+  "caption": "Figure 2.27 (a) CMP of the deposited oxide stops on the nitride stop layer (b) FinFET structure after “fin reveal” step to expose the active channels surrounded by isolation oxide (equivalent to STI isolated devices in a planar process) (c) After nitride strip, a thick polysilicon layer is deposited on the fin, which will become the gate.",
+  "box": [
+   72.0,
+   129.6,
+   542.4,
+   249.6
+  ],
+  "file": "fig-2.27.png",
+  "w": 1176,
+  "h": 300
+ },
+ {
+  "num": "2.28",
+  "page": 72,
+  "caption": "Figure 2.28 (a) Polysilicon is CMP polished to form a planar surface (b) A thick nitride layer is deposited (c) The nitride hard mask is patterned and etched. Then the polysilicon is anisotropically etched to the isolation oxide.",
+  "box": [
+   72.0,
+   432.0,
+   542.4,
+   577.0
+  ],
+  "file": "fig-2.28.png",
+  "w": 1176,
+  "h": 363
+ },
+ {
+  "num": "2.29",
+  "page": 73,
+  "caption": "Figure 2.29 (a) Thin nitride is conformally deposited everywhere (b) after anisotropic nitride etch, the spacer on the gate sidewall offsets the fin source/drain regions from the channel (c) a thick oxide is deposited and planarized by CMP to the nitride etch stop as the first step in forming the RMG.",
+  "box": [
+   72.0,
+   220.8,
+   537.6,
+   367.2
+  ],
+  "file": "fig-2.29.png",
+  "w": 1164,
+  "h": 366
+ },
+ {
+  "num": "2.30",
+  "page": 74,
+  "caption": "Figure 2.30 (a) Source/Drain Fin extension (b) Source/Drain Fin etched (c) 15 seconds of SiGe epitaxial growth (d) 30 seconds (e) 1minute (f) 2minutes, showing formation of a strained SiGe souce/drain Fin extension which would be doped with Boron for a PMOS Fin.",
+  "box": [
+   36.0,
+   118.8,
+   576.0,
+   218.3
+  ],
+  "file": "fig-2.30.png",
+  "w": 1350,
+  "h": 250
+ },
+ {
+  "num": "2.31",
+  "page": 74,
+  "caption": "Figure 2.31 (a) the nitride CMP stop layer on the polysilicon is removed (b) the polysilicon dummy gate and oxide are removed (c) the high-K gate dielectric stack is deposited.",
+  "box": [
+   36.0,
+   278.1,
+   576.0,
+   426.8
+  ],
+  "file": "fig-2.31.png",
+  "w": 1350,
+  "h": 373
+ },
+ {
+  "num": "2.32",
+  "page": 74,
+  "caption": "Figure 2.32 The final FinFET structure with the planarized RMG stack on the gate crossing at right angles to the fin channel, simulated with Victory Process [2.13].",
+  "box": [
+   36.0,
+   486.9,
+   576.0,
+   633.0
+  ],
+  "file": "fig-2.32.png",
+  "w": 1350,
+  "h": 366
+ },
+ {
+  "num": "2.33",
+  "page": 75,
+  "caption": "Figure 2.33 Cross-sections of 14 nm FinFET devices from Samsung (left), Intel (center) and TSMC (right). © [2016] IEEE. Reprinted with permission from [2.14].",
+  "box": [
+   71.0,
+   161.3,
+   542.4,
+   270.7
+  ],
+  "file": "fig-2.33.png",
+  "w": 1179,
+  "h": 274
+ },
+ {
+  "num": "3.1",
+  "page": 78,
+  "caption": "Figure 3.1 illustrates three simple cubic crystal unit cells. The body-centered cubic or BCC cell has an extra atom in the center of the cube (shown in red); the face-centered cubic or FCC cell has an extra atom in the center of each face of the cube (shown in red). Silicon and other semiconductors have more complex unit cells than these simple examples, but we can illustrate all of the basic ideas about crystal directions and planes with these simpler structures. An xyz coordinate system defines the directions in the crystal. The dimension a is called the lattice constant and is the basic distance over which the unit cell repeats in the cubic crystal. Directions in cubic crystals are expressed in terms of three integers, which are the same as the components of a vector in that direction. For example, to get from atom A in the cubic crystal to atom B, we move 1 unit in each (x, y and z) direction. This is then the [111] direction in this crystal. To get from atom A to atom C, we would move in the [010] direction. By symmetry, many directions in a crystal are often equivalent, simply depending on our choice of reference. For example, the [100], [010] and [001] directions are equivalent in this example and by convention are referred to as <100> directions.",
+  "box": [
+   36.0,
+   177.3,
+   576.0,
+   334.2
+  ],
+  "file": "fig-3.1.png",
+  "w": 1350,
+  "h": 393
+ },
+ {
+  "num": "3.2",
+  "page": 79,
+  "caption": "Figure 3.2 Crystal planes and major directions for a cubic lattice. The heavy arrows in each case illustrate crystal directions, designated [hkl]. The crosshatched areas are the corresponding crystal planes, designated (hkl).",
+  "box": [
+   80.0,
+   169.9,
+   523.9,
+   323.2
+  ],
+  "file": "fig-3.2.png",
+  "w": 1110,
+  "h": 384
+ },
+ {
+  "num": "3.3",
+  "page": 80,
+  "caption": "Figure 3.3 Diamond crystal structure of silicon. The unit cell may be visualized as two merged FCC cells, offset from each other by a/4 in all three directions. Top left shows the basic FCC unit cell. Top right shows two merged cells, offset by a/4. In the bottom left, only the four atoms in the second FCC cell that lie within the first FCC cell are shown. The arrows show the corresponding a/4 displacement of these four atoms. In the bottom right, the actual tetragonal bonding between the atoms in the diamond cell is shown. Note that only the four red atoms have all four covalent bonds within the unit cell.",
+  "box": [
+   98.8,
+   68.0,
+   523.0,
+   411.7
+  ],
+  "file": "fig-3.3.png",
+  "w": 1061,
+  "h": 860
+ },
+ {
+  "num": "3.4",
+  "page": 81,
+  "caption": "Figure 3.4 Bandgap vs. lattice constant for many important semiconductor materials.",
+  "box": [
+   36.0,
+   382.5,
+   576.0,
+   666.1
+  ],
+  "file": "fig-3.4.png",
+  "w": 1350,
+  "h": 710
+ },
+ {
+  "num": "3.5",
+  "page": 82,
+  "caption": "Figure 3.5 Hexagonal crystal structure of GaN (Ga blue, N red) using the Miller-Bravais notation.",
+  "box": [
+   68.0,
+   394.0,
+   539.6,
+   560.0
+  ],
+  "file": "fig-3.5.png",
+  "w": 1179,
+  "h": 416
+ },
+ {
+  "num": "3.6",
+  "page": 83,
+  "caption": "Figure 3.6 Directions and planes in the Miller-Bravais system for hexagonal crystals.",
+  "box": [
+   128.5,
+   116.0,
+   487.1,
+   298.0
+  ],
+  "file": "fig-3.6.png",
+  "w": 897,
+  "h": 456
+ },
+ {
+  "num": "3.7",
+  "page": 84,
+  "caption": "Figure 3.7 Simple 2D representation of some of the common defects found in crystals. V and I are point defects, the dislocation represents a typical line defect, the stacking fault is an area defect and the precipitate is a volume defect.",
+  "box": [
+   198.0,
+   173.8,
+   413.5,
+   382.4
+  ],
+  "file": "fig-3.7.png",
+  "w": 539,
+  "h": 523
+ },
+ {
+  "num": "3.8",
+  "page": 86,
+  "caption": "Figure 3.8 Left – top view of oxidation-induced stacking faults in silicon. Reprinted from [3.1] with the permission of AIP Publishing. Right – cross-sectional view of a GaN epitaxial structure grown on a silicon <111> substrate. Courtesy S. Chowdhury.",
+  "box": [
+   100.8,
+   261.6,
+   496.8,
+   456.0
+  ],
+  "file": "fig-3.8.png",
+  "w": 990,
+  "h": 486
+ },
+ {
+  "num": "3.9",
+  "page": 89,
+  "caption": "Figure 3.9 Intrinsic carrier concentration ni , C-! ∗, and C/! ∗ vs. inverse temperature in silicon. As shown in Figure 3.9, C/! ∗ ≈ 1014 cm-3 and C-! ∗ ≈ 1017 cm-3 at 1000˚C. At this temperature, the intrinsic carrier concentration ni is about 7.14 x 1018 cm-3. Normal doping concentrations in silicon devices are 1015 - 1020 cm-3. It is easy to see then why it is so difficult to measure the point defect concentrations directly. Their concentrations are much smaller than either the impurity concentrations or the intrinsic carrier concentration at all temperatures, and since silicon has ≈ 5 x1022 atoms/cm3, they represent only about 1 in 105 to 1 in 1010 lattice sites, and are well below the detection limit of physical techniques.",
+  "box": [
+   133.0,
+   243.0,
+   466.7,
+   463.9
+  ],
+  "file": "fig-3.9.png",
+  "w": 835,
+  "h": 553
+ },
+ {
+  "num": "3.10",
+  "page": 91,
+  "caption": "Figure 3.10 Vacancy and interstitial diffusivities in silicon inferred from diffusion experiments [3.3].",
+  "box": [
+   127.9,
+   158.7,
+   470.8,
+   385.3
+  ],
+  "file": "fig-3.10.png",
+  "w": 859,
+  "h": 568
+ },
+ {
+  "num": "3.11",
+  "page": 91,
+  "caption": "Figure 3.11 Approximate location of charged vacancy energy levels in the silicon bandgap. Ei is the intrinsic Fermi level. EF is the Fermi level in N-type material.",
+  "box": [
+   127.9,
+   158.7,
+   612.0,
+   563.6
+  ],
+  "file": "fig-3.11.png",
+  "w": 1211,
+  "h": 1014
+ },
+ {
+  "num": "3.12",
+  "page": 94,
+  "caption": "Figure 3.12 Simple 2D representation of compound semiconductor point defects.",
+  "box": [
+   190.0,
+   86.1,
+   414.9,
+   251.4
+  ],
+  "file": "fig-3.12.png",
+  "w": 563,
+  "h": 414
+ },
+ {
+  "num": "3.13",
+  "page": 95,
+  "caption": "Figure 3.13 Basic Czochralski (CZ) crystal growing apparatus. Photo courtesy of R. Carranza. Schematic reproduced from [3.8], open access publication.",
+  "box": [
+   86.1,
+   364.4,
+   519.4,
+   612.9
+  ],
+  "file": "fig-3.13.png",
+  "w": 1084,
+  "h": 623
+ },
+ {
+  "num": "3.14",
+  "page": 98,
+  "caption": "Figure 3.14 Freezing processes occurring during CZ crystal growth.",
+  "box": [
+   171.6,
+   117.6,
+   440.9,
+   362.8
+  ],
+  "file": "fig-3.14.png",
+  "w": 675,
+  "h": 613
+ },
+ {
+  "num": "3.15",
+  "page": 99,
+  "caption": "Figure 3.15 Example of numerical modeling of the CZ growth process showing the temperature distribution throughout the CZ puller. This example was taken from the FEMAG Soft website using FEMAG/CZ software (https://www.femagsoft.com/products/femag-cz.html). FEMAG Soft is a commercial supplier of software to simulate crystal growth.",
+  "box": [
+   36.0,
+   62.0,
+   576.0,
+   311.9
+  ],
+  "file": "fig-3.15.png",
+  "w": 1350,
+  "h": 625
+ },
+ {
+  "num": "3.16",
+  "page": 100,
+  "caption": "Figure 3.16 Basic Float Zone (FZ) crystal growth or zone refining apparatus shown conceptually on the left and in an actual machine on the right. Photo courtesy Topsil GlobalWafers A/S. Photographer Lars Dalby Nielsen.",
+  "box": [
+   96.0,
+   119.0,
+   485.8,
+   339.8
+  ],
+  "file": "fig-3.16.png",
+  "w": 975,
+  "h": 553
+ },
+ {
+  "num": "3.17",
+  "page": 101,
+  "caption": "Figure 3.17 Numerical modeling of the Si float zone growth process, simulating the growth of a 100 mm Si crystal grown at a 1 mm/min growth rate. The left figure shows the temperature distribution around the liquid zone. The right figure shows a simulation of the flow lines in the liquid silicon region. After https://www.femagsoft.com/products/femag-fz.html . FEMAG Soft is a commercial supplier of software to simulate crystal growth.",
+  "box": [
+   36.0,
+   62.0,
+   576.0,
+   304.0
+  ],
+  "file": "fig-3.17.png",
+  "w": 1350,
+  "h": 605
+ },
+ {
+  "num": "3.18",
+  "page": 102,
+  "caption": "Figure 3.18 Left - Liquid Encapsulated Czochralski (LEC) crystal growth method. Right – Bridgman two-zone furnace crystal growth apparatus [3.18].",
+  "box": [
+   79.5,
+   126.0,
+   532.6,
+   321.2
+  ],
+  "file": "fig-3.18.png",
+  "w": 1134,
+  "h": 489
+ },
+ {
+  "num": "3.19",
+  "page": 103,
+  "caption": "Figure 3.19 Sublimation growth of SiC single-crystal growth.",
+  "box": [
+   167.1,
+   173.9,
+   445.4,
+   332.8
+  ],
+  "file": "fig-3.19.png",
+  "w": 697,
+  "h": 398
+ },
+ {
+  "num": "3.20",
+  "page": 105,
+  "caption": "Figure 3.20 CMP process shown schematically on the left with an actual machine on the right, (the Applied Materials Reflexion CMP tool). Photo courtesy of Applied Materials, Inc.",
+  "box": [
+   74.4,
+   237.6,
+   543.4,
+   398.4
+  ],
+  "file": "fig-3.20.png",
+  "w": 1173,
+  "h": 402
+ },
+ {
+  "num": "3.21",
+  "page": 107,
+  "caption": "Figure 3.21 (Left). Dopant behavior during CZ crystal growth. Table 3.1 (Right). Equilibrium segregation coefficients during CZ crystal growth for Si.",
+  "box": [
+   83.2,
+   67.4,
+   321.9,
+   311.8
+  ],
+  "file": "fig-3.21.png",
+  "w": 597,
+  "h": 612
+ },
+ {
+  "num": "3.22",
+  "page": 108,
+  "caption": "Figure 3.22 Doping concentration versus position along the grown CZ crystal for common dopants in silicon.",
+  "box": [
+   110.0,
+   257.6,
+   495.8,
+   471.9
+  ],
+  "file": "fig-3.22.png",
+  "w": 966,
+  "h": 536
+ },
+ {
+  "num": "3.23",
+  "page": 109,
+  "caption": "Figure 3.23 Float Zone crystal growth process. The liquid zone moves left to right.",
+  "box": [
+   236.7,
+   85.1,
+   402.8,
+   226.0
+  ],
+  "file": "fig-3.23.png",
+  "w": 417,
+  "h": 354
+ },
+ {
+  "num": "3.24",
+  "page": 110,
+  "caption": "Figure 3.24 Behavior of impurities during Float zone growth or zone refining. The solid is assumed to start with a uniform doping concentration CO. The curves correspond to one pass of the molten zone through the solid.",
+  "box": [
+   139.5,
+   84.4,
+   468.3,
+   315.3
+  ],
+  "file": "fig-3.24.png",
+  "w": 823,
+  "h": 579
+ },
+ {
+  "num": "3.25",
+  "page": 110,
+  "caption": "Figure 3.25 Zone refining with multiple passes. kO = 0.1 in this example.",
+  "box": [
+   135.5,
+   402.6,
+   477.2,
+   646.2
+  ],
+  "file": "fig-3.25.png",
+  "w": 856,
+  "h": 610
+ },
+ {
+  "num": "3.26",
+  "page": 112,
+  "caption": "Figure 3.26 Silicon on Insulator (SOI) Wafer Technology. The buried oxide layer is typically several hundred nm thick.",
+  "box": [
+   207.5,
+   129.8,
+   426.9,
+   201.9
+  ],
+  "file": "fig-3.26.png",
+  "w": 550,
+  "h": 181
+ },
+ {
+  "num": "4.1",
+  "page": 117,
+  "caption": "Figure 4.1 Typical industrial process for developing a new generation of silicon technology.",
+  "box": [
+   69.4,
+   69.4,
+   540.0,
+   126.3
+  ],
+  "file": "fig-4.1.png",
+  "w": 1178,
+  "h": 143
+ },
+ {
+  "num": "4.2",
+  "page": 117,
+  "caption": "Figure 4.2 Illustration of the yield improvement that occurs during the development phase.",
+  "box": [
+   217.5,
+   463.1,
+   431.7,
+   631.1
+  ],
+  "file": "fig-4.2.png",
+  "w": 537,
+  "h": 421
+ },
+ {
+  "num": "4.3",
+  "page": 119,
+  "caption": "Figure 4.3 illustrates the situation once we are in the high-volume manufacturing phase and random defects dominate chip yield. During the manufacturing process semiconductor wafers often are coated with photoresist as part of the lithography process. Particles may well be present from the room air or from process steps the wafers have been exposed to; these must be removed. Small concentrations of undesirable elements such as metals (Fe, Au, Cu etc.) and alkali ions (Na, K etc.) may be present from machines, chemicals, or the people the wafers have been exposed to; these must also be removed. The wafers themselves contain a variety of thin films, doped regions and metal films that generally must not be significantly attacked by cleaning processes.",
+  "box": [
+   378.2,
+   132.5,
+   515.5,
+   278.4
+  ],
+  "file": "fig-4.3.png",
+  "w": 344,
+  "h": 365
+ },
+ {
+  "num": "4.4",
+  "page": 121,
+  "caption": "Figure 4.4 Equivalent circuit of a DRAM memory cell. Charge is stored on a MOS capacitor and the stored information is accessed through the MOS transistor switch.",
+  "box": [
+   175.7,
+   129.7,
+   439.4,
+   288.6
+  ],
+  "file": "fig-4.4.png",
+  "w": 660,
+  "h": 398
+ },
+ {
+  "num": "4.5",
+  "page": 122,
+  "caption": "Figure 4.5 Left axis - Empirical particle size distribution in room air. Right axis - Probability of a particle causing a chip defect.",
+  "box": [
+   173.0,
+   432.6,
+   436.5,
+   593.2
+  ],
+  "file": "fig-4.5.png",
+  "w": 660,
+  "h": 402
+ },
+ {
+  "num": "4.6",
+  "page": 124,
+  "caption": "Figure 4.6 Conceptual drawing of a modern semiconductor cleanroom.",
+  "box": [
+   78.9,
+   232.1,
+   526.9,
+   467.9
+  ],
+  "file": "fig-4.6.png",
+  "w": 1121,
+  "h": 590
+ },
+ {
+  "num": "4.7",
+  "page": 125,
+  "caption": "Figure 4.7 Modern silicon chip manufacturing facilities. The wafers are carried in sealed containers on the ceiling tracks from machine to machine. Left photo courtesy Intel, right photo courtesy Taiwan Semiconductor Manufacturing Co., Ltd. (TSMC).",
+  "box": [
+   36.0,
+   104.1,
+   576.0,
+   250.0
+  ],
+  "file": "fig-4.7.png",
+  "w": 1350,
+  "h": 365
+ },
+ {
+  "num": "4.8",
+  "page": 126,
+  "caption": "Figure 4.8 The photo on the left is a recent 16,000 sq. ft. GaAs ISO 4 fabrication facility at Skyworks Solutions. The right photo is a SiC manufacturing facility at NY Power Electronics Manufacturing Consortium that processes 6” (150 mm) SiC wafers for power electronic devices. Right photo courtesy of SUNY Polytechnic Institute. The yellow color on the right is typical of the parts of manufacturing facilities that are used for photolithography because yellow light will not expose the photoresist.",
+  "box": [
+   36.0,
+   265.2,
+   576.0,
+   424.0
+  ],
+  "file": "fig-4.8.png",
+  "w": 1350,
+  "h": 398
+ },
+ {
+  "num": "4.9",
+  "page": 127,
+  "caption": "Figure 4.9 illustrates the general strategy used in cleaning wafers. Most cleaning procedures begin with photoresist removal since photolithography normally precedes each processing step. Photoresists are organic compounds and can be stripped in a variety of chemicals. For front-end processing (no metals on the wafers), two methods are common. The first uses an acid (usually H2SO4) and a strong oxidant (usually H2O2) to decompose the resist into CO2 and H2O. The second method uses an oxygen plasma to convert the resist to gaseous byproducts (again CO2 and H2O). The oxygen plasma method offers the advantages of reduced pollution problems and very good selectivity to almost all underlying materials. For removal of photoresists in back-end processes the oxygen plasma approach can often be used as can a variety of phenol-based organic strippers that do not significantly attack metals.",
+  "box": [
+   36.0,
+   62.0,
+   576.0,
+   187.6
+  ],
+  "file": "fig-4.9.png",
+  "w": 1350,
+  "h": 314
+ },
+ {
+  "num": "4.10",
+  "page": 129,
+  "caption": "Figure 4.10 Resist stripping details added to cleaning strategies in a modern silicon IC fabrication process: front-end cleaning (left) and back-end cleaning (right).",
+  "box": [
+   171.0,
+   113.5,
+   434.1,
+   264.1
+  ],
+  "file": "fig-4.10.png",
+  "w": 659,
+  "h": 378
+ },
+ {
+  "num": "4.11",
+  "page": 130,
+  "caption": "Figure 4.11 RCA Clean details added to cleaning strategies in a modern silicon IC fabrication process: front-end cleaning (left) and back-end cleaning (right).",
+  "box": [
+   161.5,
+   69.7,
+   450.9,
+   402.4
+  ],
+  "file": "fig-4.11.png",
+  "w": 725,
+  "h": 832
+ },
+ {
+  "num": "4.12",
+  "page": 131,
+  "caption": "Figure 4.12 Left: A simple cleaning station. Wet chemical cleaning baths are in the sinks. The robot is loading a cassette of wafers into a spin dryer. Photo courtesy Ruth Carranza. Right: a modern fully enclosed automated system for RCA cleaning. Photo courtesy SCREEN Semiconductor Solutions, reprinted with permission https://www.screen.co.jp/spe/en.",
+  "box": [
+   38.4,
+   356.2,
+   533.8,
+   524.2
+  ],
+  "file": "fig-4.12.png",
+  "w": 1239,
+  "h": 421
+ },
+ {
+  "num": "4.13",
+  "page": 132,
+  "caption": "Figure 4.13 Conceptual experiment in which a Si wafer is immersed in water.",
+  "box": [
+   247.4,
+   185.4,
+   364.9,
+   324.8
+  ],
+  "file": "fig-4.13.png",
+  "w": 295,
+  "h": 350
+ },
+ {
+  "num": "4.14",
+  "page": 137,
+  "caption": "Figure 4.14 Periodic table indicating the elements that are of most concern in gettering. The alkali ions are in Column 1 of the table; the metal atoms that form deep level SRH centers are largely in the central portion of the table.",
+  "box": [
+   113.9,
+   115.2,
+   500.0,
+   353.9
+  ],
+  "file": "fig-4.14.png",
+  "w": 967,
+  "h": 597
+ },
+ {
+  "num": "4.15",
+  "page": 137,
+  "caption": "Figure 4.15 Wafer gettering strategies showing a surface denuded zone, intrinsic or bulk gettering regions and backside or extrinsic gettering. AuS is Au on a substitutional site in the silicon lattice, Aui is Au in an interstitial site.",
+  "box": [
+   146.1,
+   424.4,
+   467.3,
+   661.1
+  ],
+  "file": "fig-4.15.png",
+  "w": 804,
+  "h": 592
+ },
+ {
+  "num": "4.16",
+  "page": 140,
+  "caption": "Figure 4.16 Diffusivities of various species in silicon. Metal atoms that diffuse interstitially are shown in red. AuS refers to gold in substitutional form (on a lattice site); AuI to gold in an interstitial site. The silicon interstitial (I) diffusivity is also shown and will be discussed later. The shaded red area indicates the uncertainty in this parameter. (After [4.29, 4.30].)",
+  "box": [
+   102.2,
+   293.8,
+   511.2,
+   579.8
+  ],
+  "file": "fig-4.16.png",
+  "w": 1023,
+  "h": 716
+ },
+ {
+  "num": "4.17",
+  "page": 142,
+  "caption": "Figure 4.17 Illustration of point defect and diffusion mechanisms that contribute to the growth or shrinkage of SiO2 precipitates in silicon. OI is interstitial oxygen. After Kennel [4.33].",
+  "box": [
+   198.6,
+   490.3,
+   441.2,
+   573.5
+  ],
+  "file": "fig-4.17.png",
+  "w": 607,
+  "h": 209
+ },
+ {
+  "num": "4.18",
+  "page": 144,
+  "caption": "Figure 4.18 Processes and time/temperature cycle for a typical intrinsic gettering process.",
+  "box": [
+   161.2,
+   276.2,
+   461.4,
+   473.2
+  ],
+  "file": "fig-4.18.png",
+  "w": 752,
+  "h": 493
+ },
+ {
+  "num": "4.19",
+  "page": 145,
+  "caption": "Figure 4.19 Cross-sectional optical image of a CZ wafer with a starting [O] of 1 x1018 cm-3. The wafer was heat-treated for 4 hr at 1150 ˚C (outdiffusion) + 8 hr at 800 ˚C (nucleation) + 16 hr. at 1050 ˚C (precipitate growth), resulting in the surface denuded zone and the SiO2 precipitates in the wafer bulk. Used with permission of IOP Publishing Ltd. from [4.34]; permission conveyed through Copyright Clearance Center Inc.",
+  "box": [
+   152.6,
+   289.9,
+   433.0,
+   434.4
+  ],
+  "file": "fig-4.19.png",
+  "w": 702,
+  "h": 362
+ },
+ {
+  "num": "4.20",
+  "page": 147,
+  "caption": "Figure 4.20 General shape of Au outdiffusion profiles from Athena simulations [4.37] if simple outdiffusion dominates the gettering process. Starting with a flat profile (1015 cm-3), the concentration drops off with time through the wafer as the Au diffuses to the back surface.",
+  "box": [
+   36.0,
+   265.2,
+   576.0,
+   474.8
+  ],
+  "file": "fig-4.20.png",
+  "w": 1350,
+  "h": 526
+ },
+ {
+  "num": "4.21",
+  "page": 148,
+  "caption": "Figure 4.21 Simulated interstitial injection from wafer back surface (left) [4.37]. Right, experimental 1000˚C Au outdiffusion profiles during gettering to the wafer backside. After [4.38].",
+  "box": [
+   101.8,
+   128.6,
+   508.8,
+   304.3
+  ],
+  "file": "fig-4.21.png",
+  "w": 1018,
+  "h": 440
+ },
+ {
+  "num": "4.22",
+  "page": 150,
+  "caption": "Figure 4.22 Au experimentally diffused through a 450 µm thick wafer at 900 ˚C from the wafer backside (right) for times between 10 minutes and 465 minutes. Used with permission of IOP Publishing Ltd., from [4.42]; permission conveyed through Copyright Clearance Center Inc.",
+  "box": [
+   207.4,
+   355.2,
+   404.2,
+   621.1
+  ],
+  "file": "fig-4.22.png",
+  "w": 493,
+  "h": 665
+ },
+ {
+  "num": "4.23",
+  "page": 153,
+  "caption": "Figure 4.23 plots chip yield vs. chip area for several yield models. The negative binomial model is often used in industry with a C value of approximately 2. One can see in the figure that when C ⟶∞ , the negative binomial model approaches the Poisson model and when C ⟶0 it approaches the Seeds model.",
+  "box": [
+   210.0,
+   87.7,
+   547.0,
+   192.1
+  ],
+  "file": "fig-4.23.png",
+  "w": 844,
+  "h": 262
+ },
+ {
+  "num": "4.24",
+  "page": 155,
+  "caption": "Figure 4.24 Typical distribution of a process parameter such as sheet resistance, oxide thickness, photoresist linewidth etc., resulting from a manufacturing process.",
+  "box": [
+   109.1,
+   70.9,
+   510.8,
+   259.1
+  ],
+  "file": "fig-4.24.png",
+  "w": 1005,
+  "h": 471
+ },
+ {
+  "num": "4.25",
+  "page": 155,
+  "caption": "Figure 4.25 Normal parameter distribution examples shown with respect to the upper and lower specification or tolerance limits.",
+  "box": [
+   172.9,
+   315.1,
+   446.3,
+   584.0
+  ],
+  "file": "fig-4.25.png",
+  "w": 684,
+  "h": 674
+ },
+ {
+  "num": "4.26",
+  "page": 156,
+  "caption": "Figure 4.26 Example of process control in a manufacturing step. After https://en.wikipedia.org/wiki/Process_capability_index.",
+  "box": [
+   149.8,
+   238.1,
+   461.8,
+   419.5
+  ],
+  "file": "fig-4.26.png",
+  "w": 781,
+  "h": 454
+ },
+ {
+  "num": "4.27",
+  "page": 157,
+  "caption": "Figure 4.27 Yield vs. time data presented by Intel in 2013 as their 14 nm process was ramped into full production. The vertical scale is not specified quantitatively.",
+  "box": [
+   162.2,
+   77.8,
+   455.0,
+   271.7
+  ],
+  "file": "fig-4.27.png",
+  "w": 733,
+  "h": 486
+ },
+ {
+  "num": "5.1",
+  "page": 164,
+  "caption": "Figure 5.1 Lithography process from mask design to wafer printing.",
+  "box": [
+   81.7,
+   304.3,
+   523.4,
+   539.2
+  ],
+  "file": "fig-5.1.png",
+  "w": 1105,
+  "h": 588
+ },
+ {
+  "num": "5.2",
+  "page": 166,
+  "caption": "Figure 5.2 EUV exposure system [5.4]. Copyright © ASML Corporation, reprinted with permission.",
+  "box": [
+   182.4,
+   378.2,
+   430.1,
+   567.4
+  ],
+  "file": "fig-5.2.png",
+  "w": 620,
+  "h": 474
+ },
+ {
+  "num": "5.3",
+  "page": 167,
+  "caption": "Figure 5.3 Separation of the lithography process into exposure and wafer features. The dividing line is the aerial image of the mask, which is the pattern of radiation that strikes the surface of the photoresist. This example corresponds to Figure 2.23 in Chapter 2.",
+  "box": [
+   94.0,
+   201.3,
+   525.7,
+   425.6
+  ],
+  "file": "fig-5.3.png",
+  "w": 1080,
+  "h": 562
+ },
+ {
+  "num": "5.4",
+  "page": 168,
+  "caption": "Figure 5.4 Light wavelengths used in silicon manufacturing over time (red). Technology nodes vs. time are shown in blue. Note that node names are not equal to minimum feature sizes after 2000. (After [5.5]).",
+  "box": [
+   128.6,
+   311.0,
+   479.0,
+   529.0
+  ],
+  "file": "fig-5.4.png",
+  "w": 877,
+  "h": 546
+ },
+ {
+  "num": "5.5",
+  "page": 171,
+  "caption": "Figure 5.5 Example (left) of a relatively simple mask for an optical lithography system. The use of a pellicle for mask protection is shown on the right.",
+  "box": [
+   85.4,
+   362.9,
+   527.0,
+   529.0
+  ],
+  "file": "fig-5.5.png",
+  "w": 1105,
+  "h": 416
+ },
+ {
+  "num": "5.6",
+  "page": 172,
+  "caption": "Figure 5.6 EUV mask structure. The Mo/Si stack shown is an actual TEM image of an EUV mirror or mask. The period of the stack is 6.8 nm (Purdue University).",
+  "box": [
+   205.4,
+   311.0,
+   402.2,
+   435.8
+  ],
+  "file": "fig-5.6.png",
+  "w": 493,
+  "h": 313
+ },
+ {
+  "num": "5.7",
+  "page": 173,
+  "caption": "Figure 5.7 Three basic methods of wafer exposure in optical lithography systems.",
+  "box": [
+   77.4,
+   173.8,
+   526.3,
+   387.0
+  ],
+  "file": "fig-5.7.png",
+  "w": 1123,
+  "h": 534
+ },
+ {
+  "num": "5.8",
+  "page": 174,
+  "caption": "Figure 5.8 Examples of typical contact/proximity aligners. Left – SÜSS MJB4 system designed for research labs and small-scale production. Right – SÜSS MA300 system designed for production with up to 300 mm (12 inch) wafers. Photos from SÜSS MicroTec website.",
+  "box": [
+   144.0,
+   75.8,
+   460.8,
+   212.2
+  ],
+  "file": "fig-5.8.png",
+  "w": 792,
+  "h": 342
+ },
+ {
+  "num": "5.9",
+  "page": 174,
+  "caption": "Figure 5.9 Examples of state-of-the-art lithography tools. Upper photo: ASML 193 nm immersion tool. Lower photo: ASML EUV exposure tool (yellow regions indicate the EUV path, see Fig. 5.2). Copyright © ASML Corporation, reprinted with permission.",
+  "box": [
+   153.6,
+   265.0,
+   457.0,
+   668.2
+  ],
+  "file": "fig-5.9.png",
+  "w": 759,
+  "h": 1009
+ },
+ {
+  "num": "5.10",
+  "page": 176,
+  "caption": "Figure 5.10 Schematic of an electron beam lithography/mask making tool (left). The machine on the right is a Raith product EBPG5200 used for both direct writing on wafers and mask writing. Photo courtesy Raith Corp. Reprinted with permission.",
+  "box": [
+   129.6,
+   170.4,
+   472.8,
+   346.6
+  ],
+  "file": "fig-5.10.png",
+  "w": 858,
+  "h": 441
+ },
+ {
+  "num": "5.11",
+  "page": 176,
+  "caption": "Figure 5.11 Simple schematic of the DMD approach to laser direct writing (left). After [5.11]. An example of a commercial laser direct write system is shown on the right. Photo courtesy Heidelberg Instruments. Reprinted with permission. This DWL 66+ laser lithography system is a high-resolution pattern generator for direct writing and low-volume mask making.",
+  "box": [
+   100.8,
+   396.0,
+   511.2,
+   568.8
+  ],
+  "file": "fig-5.11.png",
+  "w": 1026,
+  "h": 432
+ },
+ {
+  "num": "5.12",
+  "page": 179,
+  "caption": "Figure 5.12 Process occurring in diazoquinones upon exposure to light. The top representation uses organic chemistry nomenclature; the bottom shows the same reaction using atoms. R refers to the rest of the molecule.",
+  "box": [
+   112.8,
+   120.0,
+   499.2,
+   391.2
+  ],
+  "file": "fig-5.12.png",
+  "w": 966,
+  "h": 678
+ },
+ {
+  "num": "5.13",
+  "page": 180,
+  "caption": "Figure 5.13 Basic operation of a chemically amplified (CA) resist. PAG is the photo-acid generator; the blocking groups are insoluble in the developer. Step c) may repeat tens or hundreds of times during the PEB.",
+  "box": [
+   108.5,
+   276.4,
+   506.9,
+   531.4
+  ],
+  "file": "fig-5.13.png",
+  "w": 997,
+  "h": 639
+ },
+ {
+  "num": "5.16",
+  "page": 184,
+  "caption": "Figure 5.16 Simple example of ray tracing applying Snell’s Law at each material interface. (After [5.22]).",
+  "box": [
+   165.6,
+   212.0,
+   462.9,
+   321.7
+  ],
+  "file": "fig-5.16.png",
+  "w": 744,
+  "h": 276
+ },
+ {
+  "num": "5.17",
+  "page": 184,
+  "caption": "Figure 5.17 Simple example of diffraction effects. Light passes through a narrow aperture. The image formed covers a much larger area than can be explained based on simple straight line ray tracing.",
+  "box": [
+   200.6,
+   393.8,
+   409.4,
+   528.1
+  ],
+  "file": "fig-5.17.png",
+  "w": 523,
+  "h": 337
+ },
+ {
+  "num": "5.18",
+  "page": 185,
+  "caption": "Figure 5.18 Propagation of a plane wave in a) free space and b) through a small aperture, illustrating the use of the Huygens-Fresnel Principle to construct the wavefront as it propagates.",
+  "box": [
+   161.1,
+   162.2,
+   444.2,
+   332.8
+  ],
+  "file": "fig-5.18.png",
+  "w": 709,
+  "h": 427
+ },
+ {
+  "num": "5.19",
+  "page": 185,
+  "caption": "Figure 5.19 Qualitative example of a small aperture being imaged.",
+  "box": [
+   100.5,
+   506.3,
+   496.9,
+   675.0
+  ],
+  "file": "fig-5.19.png",
+  "w": 992,
+  "h": 423
+ },
+ {
+  "num": "5.20",
+  "page": 186,
+  "caption": "Figure 5.20 Image intensity of a circular aperture in the image plane (Fraunhofer diffraction pattern). The intensity is sketched along any diameter on the left. The pattern on the right illustrates the diffraction pattern which is described more fully later in this Chapter (Fig. 5.33).",
+  "box": [
+   136.4,
+   419.3,
+   475.9,
+   549.0
+  ],
+  "file": "fig-5.20.png",
+  "w": 850,
+  "h": 325
+ },
+ {
+  "num": "5.21",
+  "page": 187,
+  "caption": "Figure 5.21 illustrates the situation for contact and proximity lithography systems. We assume that the mask and the wafer are separated by some small gap g. A plane wave is assumed to be incident on an aperture in a mask. The diffraction pattern on the opposite side of the mask can be constructed by imagining Huygens wavelets as emanating from each point in the aperture or mathematically using Fresnel diffraction theory. The resulting light intensity distribution striking the top surface of the resist is also shown in Figure 5.21.",
+  "box": [
+   36.0,
+   104.1,
+   576.0,
+   231.5
+  ],
+  "file": "fig-5.21.png",
+  "w": 1350,
+  "h": 319
+ },
+ {
+  "num": "5.22",
+  "page": 189,
+  "caption": "Figure 5.22 Two point sources moving closer together from top to bottom. The Airy patterns are shown on the left (Wikipedia); the light intensity on the white cutline through the center is shown on the right.",
+  "box": [
+   178.6,
+   402.7,
+   321.0,
+   410.7
+  ],
+  "file": "fig-5.22.png",
+  "w": 357,
+  "h": 21
+ },
+ {
+  "num": "5.23",
+  "page": 190,
+  "caption": "Figure 5.23 Illustration of the resolving power of a lens when two point sources are to be separated in the image. Note that d is the aperture size, or if there is no aperture, it is the lens diameter.",
+  "box": [
+   170.7,
+   186.7,
+   438.5,
+   372.1
+  ],
+  "file": "fig-5.23.png",
+  "w": 671,
+  "h": 465
+ },
+ {
+  "num": "5.24",
+  "page": 191,
+  "caption": "Figure 5.24 Geometry for estimating the depth of focus of an imaging system.",
+  "box": [
+   36.0,
+   118.8,
+   576.0,
+   274.9
+  ],
+  "file": "fig-5.24.png",
+  "w": 1350,
+  "h": 392
+ },
+ {
+  "num": "5.25",
+  "page": 192,
+  "caption": "Figure 5.25 Modulation Transfer Function (MTF) concept. A generic lithography system is shown at the top with a mask being imaged on photoresist on a wafer. The mask MTF is almost ideal (M = 1) since the feature sizes are 4 - 5 X larger than those imaged in the resist and diffraction effects are minimal. The wafer aerial image MTF is much lower (M ≈ 0.6) because of diffraction in the optical system.",
+  "box": [
+   140.1,
+   335.4,
+   472.4,
+   586.0
+  ],
+  "file": "fig-5.25.png",
+  "w": 831,
+  "h": 627
+ },
+ {
+  "num": "5.26",
+  "page": 193,
+  "caption": "Figure 5.26 illustrates the concept of spatial coherency. An ideal point source produces light in which the waves are in phase at all points along the emitted wavefronts. A condenser lens can then convert these waves to plane waves, all of which strike the mask at exactly the same angle as illustrated on the left of the figure. Such a source is an ideal coherent source. As the physical size of the source increases as shown on the right of Figure 5.26, light is emitted from a volume rather than a point and the waves will not be perfectly in phase everywhere. If the same condenser lens is used to convert the light to plane waves, the result will be light arriving at the mask from a variety of angles as illustrated. Such a source is a partially coherent source. A useful definition of the spatial coherence of practical light sources, usually called s in the lithography literature is",
+  "box": [
+   36.0,
+   192.0,
+   576.0,
+   334.2
+  ],
+  "file": "fig-5.26.png",
+  "w": 1350,
+  "h": 357
+ },
+ {
+  "num": "5.27",
+  "page": 194,
+  "caption": "Figure 5.27 Aerial images produced by the three types of optical lithography tools. The mask and wafer would be in hard contact in a contact aligner, separated by a gap g in a proximity aligner, and far apart with an intervening focusing lens in a projection system.",
+  "box": [
+   159.4,
+   395.4,
+   446.3,
+   617.4
+  ],
+  "file": "fig-5.27.png",
+  "w": 718,
+  "h": 556
+ },
+ {
+  "num": "5.28",
+  "page": 195,
+  "caption": "Figure 5.28 Idealized contrast curves for positive and negative resists.",
+  "box": [
+   91.7,
+   501.5,
+   518.6,
+   667.4
+  ],
+  "file": "fig-5.28.png",
+  "w": 1068,
+  "h": 416
+ },
+ {
+  "num": "5.29",
+  "page": 196,
+  "caption": "Figure 5.29 Two examples of how the quality of the aerial image and the resist contrast combine to produce the resist edge profile. The left side shows a sharp aerial image and narrow resist transition region (gray area). The example on the right shows a poorer aerial image and the resulting wider transition region in the resist profile.",
+  "box": [
+   84.6,
+   440.8,
+   522.0,
+   602.0
+  ],
+  "file": "fig-5.29.png",
+  "w": 1094,
+  "h": 405
+ },
+ {
+  "num": "5.30",
+  "page": 197,
+  "caption": "Figure 5.30 Typical photoresist process flow for i-line, DUV and EUV resists. Differences in the process flow for the various resist types are described in the text.",
+  "box": [
+   82.8,
+   348.7,
+   528.2,
+   665.9
+  ],
+  "file": "fig-5.30.png",
+  "w": 1115,
+  "h": 794
+ },
+ {
+  "num": "5.31",
+  "page": 201,
+  "caption": "Figure 5.31 Diffraction regions where various approximations become accurate. W is the width of a slit that extends infinitely far into the page. l is the light wavelength and z is the distance from the slit [5.21].",
+  "box": [
+   121.2,
+   160.9,
+   480.4,
+   414.8
+  ],
+  "file": "fig-5.31.png",
+  "w": 899,
+  "h": 636
+ },
+ {
+  "num": "5.32",
+  "page": 202,
+  "caption": "Figure 5.32 Generic projection lithography system. The shaded area inside the entrance aperture to the right of the mask illustrates the portion of the diffraction pattern that is collected by the projection lens and used to form the aerial image of the mask feature.",
+  "box": [
+   98.8,
+   221.6,
+   511.5,
+   427.1
+  ],
+  "file": "fig-5.32.png",
+  "w": 1032,
+  "h": 514
+ },
+ {
+  "num": "5.33",
+  "page": 204,
+  "caption": "Figure 5.33 Far field Fraunhofer diffraction patterns for a slit (left), a square (center) and a circle (right). -----------------------------------------------------------------------------------------------------------",
+  "box": [
+   36.0,
+   271.7,
+   576.0,
+   379.6
+  ],
+  "file": "fig-5.33.png",
+  "w": 1350,
+  "h": 270
+ },
+ {
+  "num": "5.34",
+  "page": 205,
+  "caption": "Figure 5.34 Mathematical models used to describe the projection exposure system.",
+  "box": [
+   107.6,
+   408.9,
+   503.9,
+   679.6
+  ],
+  "file": "fig-5.34.png",
+  "w": 992,
+  "h": 677
+ },
+ {
+  "num": "5.35",
+  "page": 207,
+  "caption": "Figure 5.35 Optolith’s lithography system model. See the Optolith User’s Manual [5.2].",
+  "box": [
+   36.0,
+   104.1,
+   576.0,
+   277.8
+  ],
+  "file": "fig-5.35.png",
+  "w": 1350,
+  "h": 435
+ },
+ {
+  "num": "5.36",
+  "page": 207,
+  "caption": "Figure 5.36 Optolith simulation of the aerial image (left) of two elbow shapes and a contact hole. The mask geometry is shown with the solid black lines. System: i-line (365 nm) stepper, NA = 0.43, 1 µm feature sizes. The right plot shows the intensity along a cutline at y = 0 (dashed line).",
+  "box": [
+   89.8,
+   432.0,
+   525.1,
+   671.0
+  ],
+  "file": "fig-5.36.png",
+  "w": 1089,
+  "h": 598
+ },
+ {
+  "num": "5.37",
+  "page": 208,
+  "caption": "Figure 5.37 Optolith simulation of the aerial image (left) of two elbow shapes and a contact hole. The mask geometry is shown with the solid black lines. System: 193 nm stepper, NA = 0.8, 0.2 µm feature sizes. The right plot shows the intensity along a cutline at y = 0 (dashed line).",
+  "box": [
+   76.3,
+   162.2,
+   538.6,
+   401.3
+  ],
+  "file": "fig-5.37.png",
+  "w": 1157,
+  "h": 599
+ },
+ {
+  "num": "5.38",
+  "page": 209,
+  "caption": "Figure 5.38 Optolith simulation of the aerial image (left) of two elbow shapes and a contact hole. The mask geometry is shown with the solid black lines. System: 193 nm stepper, NA = 0.8, 0.1 µm feature sizes. The right plot shows the intensity along a cutline at y = 0 (dashed line).",
+  "box": [
+   87.4,
+   102.7,
+   522.2,
+   337.0
+  ],
+  "file": "fig-5.38.png",
+  "w": 1088,
+  "h": 587
+ },
+ {
+  "num": "5.39",
+  "page": 209,
+  "caption": "Figure 5.39 Optolith simulation of the aerial image (left) of two elbow shapes and a contact hole. The mask geometry is shown with the solid black lines. System: 193 nm stepper, NA = 0.93, 0.1 µm feature sizes. The right plot shows the intensity along a cutline at y = 0 (dashed line).",
+  "box": [
+   79.2,
+   392.6,
+   529.0,
+   625.9
+  ],
+  "file": "fig-5.39.png",
+  "w": 1125,
+  "h": 584
+ },
+ {
+  "num": "5.40",
+  "page": 210,
+  "caption": "Figure 5.40 EUV mask with photon irradiation at 6˚ from the normal. After [5.37].",
+  "box": [
+   146.0,
+   349.1,
+   469.8,
+   589.3
+  ],
+  "file": "fig-5.40.png",
+  "w": 810,
+  "h": 602
+ },
+ {
+  "num": "5.41",
+  "page": 211,
+  "caption": "Figure 5.41 Generic proximity lithography system. The shaded area to the right of the mask illustrates the diffracted light that is incident on the resist.",
+  "box": [
+   172.6,
+   474.6,
+   441.4,
+   633.0
+  ],
+  "file": "fig-5.41.png",
+  "w": 673,
+  "h": 397
+ },
+ {
+  "num": "5.42",
+  "page": 213,
+  "caption": "Figure 5.42 Optolith simulation of the aerial image (left) of two elbow shapes and a contact hole. The mask geometry is shown with the solid black lines. System: g-line (436 nm) stepper, 10 µm feature sizes, gap g = 50 µm. The right plot shows the intensity along a cutline at y = 0 (dashed line).",
+  "box": [
+   76.8,
+   102.7,
+   538.1,
+   346.6
+  ],
+  "file": "fig-5.42.png",
+  "w": 1154,
+  "h": 611
+ },
+ {
+  "num": "5.43",
+  "page": 213,
+  "caption": "Figure 5.43 Optolith simulation of the aerial image (left) of two elbow shapes and a contact hole. The mask geometry is shown with the solid black lines. System: g-line (436 nm) stepper, 10 µm feature sizes, gap g = 100 µm. The right plot shows the intensity along a cutline at y = 0 (dashed line).",
+  "box": [
+   76.8,
+   416.6,
+   534.2,
+   643.2
+  ],
+  "file": "fig-5.43.png",
+  "w": 1144,
+  "h": 567
+ },
+ {
+  "num": "5.44",
+  "page": 214,
+  "caption": "Figure 5.44 Optolith simulation of the aerial image (left) of two elbow shapes and a contact hole. The mask geometry is shown with the solid black lines. System: g-line (436 nm) stepper, 1 µm feature sizes, gap g = 5 µm. The right plot shows the intensity along a cutline at y = 0 (dashed line).",
+  "box": [
+   36.0,
+   60.0,
+   576.0,
+   266.9
+  ],
+  "file": "fig-5.44.png",
+  "w": 1350,
+  "h": 518
+ },
+ {
+  "num": "5.45",
+  "page": 214,
+  "caption": "Figure 5.45 Optolith simulation of the aerial image (left) of two elbow shapes and a contact hole with 1 µm feature sizes. The mask geometry is shown with the solid black lines. On the left the gap is reduced to 2 µm with a g-line (436 nm) stepper. On the right the exposing wavelength is reduced to 193 nm with the gap g at 5 µm.",
+  "box": [
+   36.0,
+   449.3,
+   576.0,
+   649.0
+  ],
+  "file": "fig-5.45.png",
+  "w": 1350,
+  "h": 500
+ },
+ {
+  "num": "5.46",
+  "page": 215,
+  "caption": "Figure 5.46 Summary of diffraction regimes.",
+  "box": [
+   127.1,
+   262.3,
+   485.6,
+   462.8
+  ],
+  "file": "fig-5.46.png",
+  "w": 897,
+  "h": 503
+ },
+ {
+  "num": "5.47",
+  "page": 216,
+  "caption": "Figure 5.47 Representation of the electric field distribution in the photoresist layer.",
+  "box": [
+   177.7,
+   49.3,
+   444.5,
+   203.2
+  ],
+  "file": "fig-5.47.png",
+  "w": 668,
+  "h": 385
+ },
+ {
+  "num": "5.48",
+  "page": 217,
+  "caption": "Figure 5.48 Cross-sectional view of calculated optical intensity pattern for a 1 µm feature exposed in an i-line lithography system with a NA = 0.43 using the Optolith simulator [5.33].",
+  "box": [
+   146.4,
+   99.8,
+   461.8,
+   352.8
+  ],
+  "file": "fig-5.48.png",
+  "w": 789,
+  "h": 633
+ },
+ {
+  "num": "5.49",
+  "page": 220,
+  "caption": "Figure 5.49 Conceptual experimental setup for measuring the Dill parameters characterizing a particular DNQ resist.",
+  "box": [
+   128.3,
+   232.6,
+   480.5,
+   391.3
+  ],
+  "file": "fig-5.49.png",
+  "w": 882,
+  "h": 398
+ },
+ {
+  "num": "5.50",
+  "page": 221,
+  "caption": "Figure 5.50 Typical experimental result from a measurement like that shown in Figure 5.49.",
+  "box": [
+   201.0,
+   125.7,
+   399.6,
+   292.2
+  ],
+  "file": "fig-5.50.png",
+  "w": 498,
+  "h": 417
+ },
+ {
+  "num": "5.51",
+  "page": 222,
+  "caption": "Figure 5.51 Simulation cross-section of the exposure of a 1µm feature in 0.5 µm AZ1350J resist on an SiO2 substrate using an i-line stepper and the Optolith simulator [5.33].",
+  "box": [
+   141.1,
+   375.8,
+   471.4,
+   631.7
+  ],
+  "file": "fig-5.51.png",
+  "w": 827,
+  "h": 641
+ },
+ {
+  "num": "5.52",
+  "page": 224,
+  "caption": "Figure 5.52 Simulation cross-section of the post exposure bake (PEB) of a 1µm feature in 0.5 µm AZ1350J resist on an SiO2 substrate using an i-line stepper and the Optolith simulator [5.33]: left, before PEB and right after a 45 sec 115˚C PEB.",
+  "box": [
+   109.4,
+   144.0,
+   506.4,
+   338.9
+  ],
+  "file": "fig-5.52.png",
+  "w": 993,
+  "h": 488
+ },
+ {
+  "num": "5.53",
+  "page": 226,
+  "caption": "Figure 5.53 shows an example using Optolith of the development of a resist pattern. The structure is the same as in Figure 5.52 on the right, which includes the post-exposure bake. The Dill development model was used in the simulation with default model parameters for AZ1350J resist. The simulation on the left is part way through the development cycle. The right side shows the structure after the develop cycle is complete. Note in the right-hand simulation that the developed image is actually about 1.15 µm wide (dashed lines) rather than the designed 1.0 µm. This simulation used a large exposure dose (200 mJ/cm2) and a long development time (60 sec), that resulted in some degree of overexposure. In a real manufacturing environment, additional simulations could be run at smaller doses and development times to better optimize the final result. Alternatively, a better resolution lithography tool could be used that would produce a sharper aerial image with less grayscale at the edges of the 1 µm feature.",
+  "box": [
+   103.2,
+   320.6,
+   511.2,
+   482.4
+  ],
+  "file": "fig-5.53.png",
+  "w": 1020,
+  "h": 405
+ },
+ {
+  "num": "5.54",
+  "page": 227,
+  "caption": "Figure 5.54 Simulation cross-section of the post-exposure bake (5 min @ 125˚C) of a 1µm feature in 0.5 µm AZ1350J resist on an SiO2 substrate using an i-line stepper and the Optolith simulator [5.33].",
+  "box": [
+   85.9,
+   131.5,
+   529.4,
+   308.2
+  ],
+  "file": "fig-5.54.png",
+  "w": 1110,
+  "h": 443
+ },
+ {
+  "num": "5.55",
+  "page": 228,
+  "caption": "Figure 5.55 Illustration of the idea of on-axis illumination (top) and off-axis illumination (bottom). The shaded areas emanating from the mask regions represent the diffracted light pattern.",
+  "box": [
+   138.7,
+   287.2,
+   474.2,
+   523.7
+  ],
+  "file": "fig-5.55.png",
+  "w": 840,
+  "h": 593
+ },
+ {
+  "num": "5.56",
+  "page": 228,
+  "caption": "Figure 5.56 Illustration of light source geometries used in modern projection lithography tools.",
+  "box": [
+   154.2,
+   578.7,
+   478.3,
+   663.9
+  ],
+  "file": "fig-5.56.png",
+  "w": 811,
+  "h": 214
+ },
+ {
+  "num": "5.57",
+  "page": 229,
+  "caption": "Figure 5.57 illustrates the idea behind a Köhler illumination source. Named for August Köhler, developer of illumination systems for Zeiss microscopes in the late 1800s, Köhler illumination uses the condenser lens to form an image of the source at the entrance pupil of the objective lens, rather than having collimated light pass through the mask as illustrated conceptually in the top part of Figure 5.55. The reason for using a Köhler source arrangement is so that the objective lens can capture the diffracted light from any of the features on the mask equally well. This is illustrated in Figure 5.57 by the triangles emanating from the mask apertures that represent the angular spread of the diffracted light. If collimated light were used though the mask, it is apparent that much of the diffracted light would be lost from mask features near the outside edge of the mask.",
+  "box": [
+   36.0,
+   221.3,
+   576.0,
+   319.6
+  ],
+  "file": "fig-5.57.png",
+  "w": 1350,
+  "h": 246
+ },
+ {
+  "num": "5.58",
+  "page": 230,
+  "caption": "Figure 5.58 Dry vs. wet (immersion) lithography systems. After [5.43].",
+  "box": [
+   84.0,
+   349.4,
+   513.8,
+   482.8
+  ],
+  "file": "fig-5.58.png",
+  "w": 1076,
+  "h": 334
+ },
+ {
+  "num": "5.59",
+  "page": 231,
+  "caption": "Figure 5.59 Projection lithography systems with NA < 1 (left) and with NA > 1 on the right.",
+  "box": [
+   85.3,
+   431.1,
+   524.9,
+   600.1
+  ],
+  "file": "fig-5.59.png",
+  "w": 1100,
+  "h": 424
+ },
+ {
+  "num": "5.60",
+  "page": 232,
+  "caption": "Figure 5.60 Illustration of the impact of surface topography on thickness variations in deposited photoresist layers using Figures 2.12 and 2.25.",
+  "box": [
+   99.2,
+   381.6,
+   512.4,
+   544.0
+  ],
+  "file": "fig-5.60.png",
+  "w": 1033,
+  "h": 406
+ },
+ {
+  "num": "5.61",
+  "page": 233,
+  "caption": "Figure 5.61 Illustration of the impact of standing waves. The simulation on the left is identical to Figure 5.51 except with a Si substrate. Photo courtesy P. Rissman.",
+  "box": [
+   75.8,
+   323.5,
+   541.0,
+   515.5
+  ],
+  "file": "fig-5.61.png",
+  "w": 1164,
+  "h": 481
+ },
+ {
+  "num": "5.62",
+  "page": 234,
+  "caption": "Figure 5.62 Examples of multilayer resist process flows. In each case, the final step (not shown) would be to etch the red layer.",
+  "box": [
+   123.7,
+   141.6,
+   495.1,
+   384.1
+  ],
+  "file": "fig-5.62.png",
+  "w": 929,
+  "h": 607
+ },
+ {
+  "num": "5.63",
+  "page": 235,
+  "caption": "Figure 5.63 Illustration of the use of a BARC to minimize reflections back into the PR layer.",
+  "box": [
+   206.2,
+   128.8,
+   547.0,
+   300.1
+  ],
+  "file": "fig-5.63.png",
+  "w": 853,
+  "h": 430
+ },
+ {
+  "num": "5.64",
+  "page": 236,
+  "caption": "Figure 5.64 Evolution of design rule restrictions as feature size has decreased. After [5.44].",
+  "box": [
+   129.6,
+   410.4,
+   480.0,
+   669.6
+  ],
+  "file": "fig-5.64.png",
+  "w": 876,
+  "h": 648
+ },
+ {
+  "num": "5.65",
+  "page": 237,
+  "caption": "Figure 5.65 Optolith simulation of the aerial image (left) of two elbow shapes and a contact hole. The mask geometry is shown with the solid black lines. System: 193 nm stepper, NA = 0.93, 0.1 µm feature sizes, similar to Figure 5.39. On the right OPC using serifs has been used to improve the quality of the aerial image.",
+  "box": [
+   87.8,
+   433.0,
+   527.5,
+   636.0
+  ],
+  "file": "fig-5.65.png",
+  "w": 1100,
+  "h": 508
+ },
+ {
+  "num": "5.66",
+  "page": 238,
+  "caption": "Figure 5.66 Example of the use of phase shifting techniques on masks to improve the resolution of the aerial image. After Levenson et. al. [5.49].",
+  "box": [
+   123.4,
+   334.7,
+   490.6,
+   557.6
+  ],
+  "file": "fig-5.66.png",
+  "w": 919,
+  "h": 559
+ },
+ {
+  "num": "5.67",
+  "page": 239,
+  "caption": "Figure 5.67 Methods of implementing phase shift masks.",
+  "box": [
+   175.4,
+   443.8,
+   439.2,
+   571.1
+  ],
+  "file": "fig-5.67.png",
+  "w": 660,
+  "h": 319
+ },
+ {
+  "num": "5.68",
+  "page": 240,
+  "caption": "Figure 5.68 Optolith simulation of the aerial image (left) of three 0.1 µm contact holes. System: 193 nm stepper, NA = 0.93, similar to Figure 5.65. In the middle and right contact holes scattering bar PSM elements have been added with 180˚ phase shifts. The intensity cut line on the right is at y = 0.2 µm.",
+  "box": [
+   100.8,
+   111.4,
+   514.6,
+   309.1
+  ],
+  "file": "fig-5.68.png",
+  "w": 1035,
+  "h": 495
+ },
+ {
+  "num": "5.69",
+  "page": 241,
+  "caption": "Figure 5.69 Example of optimizing the light source and the mask to print a simple two rectangle pattern. In this example the primary effect of the optimization is to improve the depth of focus of the image. In these examples, the pixel size is 10 x 10 nm. The imaging system uses l = 193 nm and NA = 1.35. The rectangular features are 60 x 110 nm. Reprinted/Adapted with permission from [5.52] © The Optical Society.",
+  "box": [
+   81.6,
+   102.7,
+   529.4,
+   337.0
+  ],
+  "file": "fig-5.69.png",
+  "w": 1120,
+  "h": 587
+ },
+ {
+  "num": "5.70",
+  "page": 241,
+  "caption": "Figure 5.70 Example of a pixelated mask (left). The glass has been etched pixel by pixel to control the phase of the light passing through each pixel. The mask pattern in shown in the center. The printed pattern in photoresist is shown on the right. © [2013] IEEE. Reprinted, with permission from [5.53].",
+  "box": [
+   36.0,
+   528.7,
+   576.0,
+   646.9
+  ],
+  "file": "fig-5.70.png",
+  "w": 1350,
+  "h": 297
+ },
+ {
+  "num": "5.71",
+  "page": 242,
+  "caption": "Figure 5.71 Optolith simulation of 0.1 µm lines and spaces using a 193 nm lithography tool with NA = 0.8. The cutline on the right shows the light intensity along the dashed line at x = 0.",
+  "box": [
+   135.8,
+   186.7,
+   478.6,
+   350.4
+  ],
+  "file": "fig-5.71.png",
+  "w": 858,
+  "h": 410
+ },
+ {
+  "num": "5.72",
+  "page": 243,
+  "caption": "Figure 5.72 Same Optolith simulation of 0.1 µm lines and spaces as in Figure 5.71 but with only alternate lines simulated. The cutline on the right shows the light intensity along the dashed line at x = 0.",
+  "box": [
+   119.0,
+   110.9,
+   495.8,
+   289.0
+  ],
+  "file": "fig-5.72.png",
+  "w": 943,
+  "h": 446
+ },
+ {
+  "num": "5.73",
+  "page": 243,
+  "caption": "Figure 5.73 Typical process sequence for double patterning.",
+  "box": [
+   126.8,
+   352.2,
+   477.3,
+   477.5
+  ],
+  "file": "fig-5.73.png",
+  "w": 877,
+  "h": 314
+ },
+ {
+  "num": "5.74",
+  "page": 244,
+  "caption": "Figure 5.74 Process steps in Self Aligned Double Patterning (SADP) process flow. The simulation was done using Silvaco’s Victory Process 3D simulation tool [5.33].",
+  "box": [
+   36.0,
+   118.8,
+   576.0,
+   238.0
+  ],
+  "file": "fig-5.74.png",
+  "w": 1350,
+  "h": 299
+ },
+ {
+  "num": "5.75",
+  "page": 244,
+  "caption": "Figure 5.75 illustrates how the SADP process can implement a mask pattern. We used sidewall spacers in the CMOS process in Chapter 2 for a different purpose, in that case to form the LDD regions in the transistors.",
+  "box": [
+   103.4,
+   112.3,
+   509.1,
+   254.8
+  ],
+  "file": "fig-5.75.png",
+  "w": 1015,
+  "h": 358
+ },
+ {
+  "num": "5.76",
+  "page": 246,
+  "caption": "Figure 5.76 Nanoimprint lithography (NIL). On the left, temperature and pressure are used to create the image in the resist. On the right, UV light is used to cure the resist.",
+  "box": [
+   130.1,
+   393.3,
+   489.5,
+   659.5
+  ],
+  "file": "fig-5.76.png",
+  "w": 899,
+  "h": 666
+ },
+ {
+  "num": "5.77",
+  "page": 247,
+  "caption": "Figure 5.77 Two approaches in UV NIL for clearing the photoresist down to the substrate. On the left an O2 plasma descumming is used, which thins the resist everywhere. On the right, a NiCr absorber blocks the UV light so the photoresist can simply be developed without thinning where it was exposed.",
+  "box": [
+   131.0,
+   303.6,
+   481.1,
+   584.3
+  ],
+  "file": "fig-5.77.png",
+  "w": 876,
+  "h": 702
+ },
+ {
+  "num": "5.78",
+  "page": 248,
+  "caption": "Figure 5.78 Two approaches for etching the mold pattern into the substrate are shown. On the left, the photoresist is used as the mask and dry etching transfers the pattern. On the right, a hard mask is deposited, then lift-off is used, followed by dry etching.",
+  "box": [
+   131.4,
+   171.2,
+   488.7,
+   354.6
+  ],
+  "file": "fig-5.78.png",
+  "w": 894,
+  "h": 460
+ },
+ {
+  "num": "5.79",
+  "page": 249,
+  "caption": "Figure 5.79 Step and flash approach to using NIL on large-diameter silicon wafers.",
+  "box": [
+   130.2,
+   71.3,
+   472.5,
+   201.6
+  ],
+  "file": "fig-5.79.png",
+  "w": 857,
+  "h": 327
+ },
+ {
+  "num": "5.80",
+  "page": 249,
+  "caption": "Figure 5.80 Example of production NIL tool using the concepts shown in Fig. 5.78. Copyright © Canon Corporation, reprinted with permission.",
+  "box": [
+   36.0,
+   240.9,
+   576.0,
+   403.1
+  ],
+  "file": "fig-5.80.png",
+  "w": 1350,
+  "h": 406
+ },
+ {
+  "num": "6.1",
+  "page": 255,
+  "caption": "Figure 6.1 Approximate range of oxide and dielectric thicknesses in silicon technology.",
+  "box": [
+   122.5,
+   229.9,
+   516.0,
+   353.5
+  ],
+  "file": "fig-6.1.png",
+  "w": 984,
+  "h": 310
+ },
+ {
+  "num": "6.2",
+  "page": 256,
+  "caption": "Figure 6.2 Conceptual picture of a thermal oxidation furnace (left). Example of Si wafers being loaded into such a horizontal furnace system (right). Photo courtesy of R. Carranza.",
+  "box": [
+   74.4,
+   528.0,
+   543.4,
+   682.6
+  ],
+  "file": "fig-6.2.png",
+  "w": 1173,
+  "h": 387
+ },
+ {
+  "num": "6.3",
+  "page": 257,
+  "caption": "Figure 6.3 Basic process for oxidation of silicon where oxygen diffuses through the growing layer to complete a chemical reaction at the Si/SiO2 interface.",
+  "box": [
+   219.2,
+   276.4,
+   391.4,
+   416.5
+  ],
+  "file": "fig-6.3.png",
+  "w": 432,
+  "h": 352
+ },
+ {
+  "num": "6.5",
+  "page": 258,
+  "caption": "Figure 6.5 illustrates this process for a classical LOCOS structure where a thick isolation oxide is grown next to a nitride mask. In the LOCOS process, the nitride acts as diffusion barrier to the O2 or H2O oxidant and prevents oxidation underneath the Si3N4 layer. Thus the silicon is oxidized locally and hence the name LOCOS. The cross-section image clearly shows that the volume expansion on the planar surface is accommodated by the oxide both growing down towards the silicon interface and expanding upwards beyond the original interface for the 2.2",
+  "box": [
+   169.0,
+   356.6,
+   439.2,
+   537.6
+  ],
+  "file": "fig-6.5.png",
+  "w": 676,
+  "h": 453
+ },
+ {
+  "num": "6.4",
+  "page": 258,
+  "caption": "Figure 6.4 Schematic of the volume expansion that occurs during silicon oxidation where a 30% volume expansion on converting silicon to silicon dioxide is constrained by the silicon substrate to give a 2.2 unit thickness expansion.",
+  "box": [
+   117.3,
+   158.8,
+   476.6,
+   286.7
+  ],
+  "file": "fig-6.4.png",
+  "w": 899,
+  "h": 321
+ },
+ {
+  "num": "6.6",
+  "page": 259,
+  "caption": "Figure 6.6 A silicon tetrahedra (left) is oxidized by inserting O atoms between each Si atom. The volume expands to accommodate the oxygen atoms. This forms SiO4 tetrahedra (center), which are the basic units that link up to make SiO2 as shown on the right.",
+  "box": [
+   122.4,
+   68.2,
+   487.2,
+   226.6
+  ],
+  "file": "fig-6.6.png",
+  "w": 912,
+  "h": 397
+ },
+ {
+  "num": "6.8",
+  "page": 260,
+  "caption": "Figure 6.8 Oxidant flux from the gas phase to the silicon/oxide interface during thermal oxidation. The bold line represents the O2 or H2O concentration.",
+  "box": [
+   36.0,
+   308.9,
+   576.0,
+   485.7
+  ],
+  "file": "fig-6.8.png",
+  "w": 1350,
+  "h": 443
+ },
+ {
+  "num": "6.7",
+  "page": 260,
+  "caption": "Figure 6.7 High-resolution transmission electron micrograph (TEM) image of the abrupt interface between silicon and silicon dioxide, showing crystalline silicon and amorphous oxide. Photo © Intel Corporation. Reprinted with permission.",
+  "box": [
+   36.0,
+   118.8,
+   576.0,
+   248.4
+  ],
+  "file": "fig-6.7.png",
+  "w": 1350,
+  "h": 326
+ },
+ {
+  "num": "6.9",
+  "page": 263,
+  "caption": "Figure 6.9 Limiting cases of the Deal-Grove oxidation model. The interface reaction is the limiting step in the thin oxide on the left; the diffusive transport of oxidant through the existing thick SiO2 is the limiting step on the right.",
+  "box": [
+   104.3,
+   278.1,
+   460.9,
+   405.8
+  ],
+  "file": "fig-6.9.png",
+  "w": 893,
+  "h": 320
+ },
+ {
+  "num": "6.10",
+  "page": 264,
+  "caption": "Figure 6.10 B and B/A for O2 and H2O oxidation of (111) silicon. Values are taken from the parameters in Table 6-1.",
+  "box": [
+   158.4,
+   242.4,
+   453.6,
+   472.8
+  ],
+  "file": "fig-6.10.png",
+  "w": 738,
+  "h": 576
+ },
+ {
+  "num": "6.11",
+  "page": 265,
+  "caption": "Figure 6.11 Thickness versus time plots for Dry O2 (left) and Wet O2 (Right)for (100) silicon using the parameters from Table 6-1, scaled appropriately for the orientation dependence (B/A values for Dry O2 in Table 6.1 divided by 1.68).",
+  "box": [
+   72.0,
+   354.2,
+   530.4,
+   529.0
+  ],
+  "file": "fig-6.11.png",
+  "w": 1146,
+  "h": 438
+ },
+ {
+  "num": "6.12",
+  "page": 266,
+  "caption": "Figure 6.12 Experimental dry oxide data at 700 ˚C showing the anomalous initial oxidation regime (left) and definition of anomalous initial thickness x* and equivalent initial time τ.",
+  "box": [
+   93.6,
+   339.8,
+   523.2,
+   530.4
+  ],
+  "file": "fig-6.12.png",
+  "w": 1074,
+  "h": 477
+ },
+ {
+  "num": "6.13",
+  "page": 269,
+  "caption": "Figure 6.13 Athena simulation of shallow trench oxidation (20 min at 1000 ˚C in H2O), where both the orientation effects of the sidewall (110) and base (100) are visible, as well as retardation in the corners due to stress effects.",
+  "box": [
+   36.0,
+   206.6,
+   576.0,
+   361.2
+  ],
+  "file": "fig-6.13.png",
+  "w": 1350,
+  "h": 387
+ },
+ {
+  "num": "6.14",
+  "page": 270,
+  "caption": "Figure 6.14 Athena simulation of heavily doped oxidation. A 3x1015 cm-2 50 keV phosphorus implant was done on the right side. The surface oxidation was 5 min, wet at 1000 ˚C.",
+  "box": [
+   187.8,
+   386.4,
+   421.0,
+   534.6
+  ],
+  "file": "fig-6.14.png",
+  "w": 584,
+  "h": 371
+ },
+ {
+  "num": "6.15",
+  "page": 271,
+  "caption": "Figure 6.15 Right: Simulation of oxidation enhanced diffusion (OED). The colors correspond to boron concentration (red being highest concentration to blue being lowest). Left: Point defect reactions taking place at the Si/SiO2 interface during oxidation. Oxidation reactions (*) can both consume V and generate I in order to help provide the volume needed for the reaction to take place. Most generated I are injected into the SiO2.",
+  "box": [
+   100.8,
+   482.4,
+   523.2,
+   640.8
+  ],
+  "file": "fig-6.15.png",
+  "w": 1056,
+  "h": 396
+ },
+ {
+  "num": "6.16",
+  "page": 273,
+  "caption": "Figure 6.16 Complete oxidation of a silicon cylinder leads to a 2.2X increase in volume. Note the schematic ignores the crystal orientation dependence around the cylinder.",
+  "box": [
+   139.2,
+   317.0,
+   475.0,
+   429.0
+  ],
+  "file": "fig-6.16.png",
+  "w": 840,
+  "h": 281
+ },
+ {
+  "num": "6.17",
+  "page": 274,
+  "caption": "Figure 6.17 Experimental results on oxidation on inside (concave) and outside (convex) corners, cylinders (convex) and holes (concave) in silicon. The structures are anisotropically etched into the screen, oxidized and then cross-sectioned by CMP for viewing by microscopy. The polysilicon is deposited after oxidation to provide a contrast layer to more easily measure the oxide thickness by microscopy. © [1987] IEEE. Reprinted, with permission from [6.7].",
+  "box": [
+   95.0,
+   421.4,
+   517.4,
+   573.6
+  ],
+  "file": "fig-6.17.png",
+  "w": 1057,
+  "h": 381
+ },
+ {
+  "num": "6.18",
+  "page": 275,
+  "caption": "Figure 6.18 Experimental wet oxide thickness measurements on convex (outside corner) and concave (inner corner) structures of various radius of curvature, normalized to the thickness on a planar surface (after [6.7]). The normalized thickness of 1.0 corresponds to a 500 nm planar oxide thickness.",
+  "box": [
+   178.6,
+   171.8,
+   434.4,
+   375.4
+  ],
+  "file": "fig-6.18.png",
+  "w": 640,
+  "h": 510
+ },
+ {
+  "num": "6.19",
+  "page": 276,
+  "caption": "Figure 6.19 A simple LOCOS structure simulated, using Athena, with (right) and without (left) stress-dependent effects. The oxidation was 90 min at 1000 ˚C in H2O in both cases.",
+  "box": [
+   36.0,
+   379.2,
+   576.0,
+   544.0
+  ],
+  "file": "fig-6.19.png",
+  "w": 1350,
+  "h": 413
+ },
+ {
+  "num": "6.20",
+  "page": 277,
+  "caption": "Figure 6.20 A range of isolation structures (standard LOCOS, nitride-spacer LOCOS, poly buffered LOCOS and poly spacer LOCOS) tested by simulation using the nonlinear viscous models discussed above. The poly spacer LOCOS produced the best oxide isolation with acceptable encroachment and the least stress in the silicon. The oxidation was 24 min at 1050 ˚C in H2O.",
+  "box": [
+   36.0,
+   104.1,
+   576.0,
+   638.3
+  ],
+  "file": "fig-6.20.png",
+  "w": 1350,
+  "h": 1336
+ },
+ {
+  "num": "6.21",
+  "page": 278,
+  "caption": "Figure 6.21 Schematic of the position and type of charges in silicon dioxide (after Deal [6.11])",
+  "box": [
+   178.6,
+   306.4,
+   434.3,
+   478.7
+  ],
+  "file": "fig-6.21.png",
+  "w": 640,
+  "h": 431
+ },
+ {
+  "num": "6.22",
+  "page": 279,
+  "caption": "Figure 6.22 The Qf triangle, showing the variation of the fixed oxide charge with oxidation temperature and ambient. Values shown are for (111) silicon; (100) values are ≈ 3X lower.",
+  "box": [
+   169.0,
+   362.4,
+   427.2,
+   540.0
+  ],
+  "file": "fig-6.22.png",
+  "w": 646,
+  "h": 444
+ },
+ {
+  "num": "6.23",
+  "page": 281,
+  "caption": "Figure 6.23 Typical distribution of fast interface traps D*@ in the silicon bandgap after thermal oxidation in dry O2. Note that D*@ measurement accuracy decreases away from midgap.",
+  "box": [
+   82.8,
+   175.2,
+   487.6,
+   317.0
+  ],
+  "file": "fig-6.23.png",
+  "w": 1013,
+  "h": 356
+ },
+ {
+  "num": "6.24",
+  "page": 282,
+  "caption": "Figure 6.24 Oxide thickness in nm and layer color under normal incident daylight fluorescent lighting. After 250nm (2500 Å), the colors begin to repeat starting with the dark violet, though they become somewhat muted for the thicker oxides (see Appendix A7).",
+  "box": [
+   149.9,
+   341.5,
+   489.4,
+   349.5
+  ],
+  "file": "fig-6.24.png",
+  "w": 850,
+  "h": 21
+ },
+ {
+  "num": "6.25",
+  "page": 283,
+  "caption": "Figure 6.25 Schematic of the CV measurement technique on a MOS capacitor.",
+  "box": [
+   131.1,
+   302.3,
+   547.0,
+   530.0
+  ],
+  "file": "fig-6.25.png",
+  "w": 1041,
+  "h": 571
+ },
+ {
+  "num": "6.26",
+  "page": 284,
+  "caption": "Figure 6.26 C-V curve under accumulation. A positive charge on the gate attracts majority electrons in the substrate and the oxide capacitance is measured. By overall charge neutrality, |+Q'| = |−Q$| where QG is the charge on the gate and QA is the electron charge in the accumulation layer.",
+  "box": [
+   68.4,
+   173.7,
+   538.9,
+   329.6
+  ],
+  "file": "fig-6.26.png",
+  "w": 1178,
+  "h": 391
+ },
+ {
+  "num": "6.27",
+  "page": 285,
+  "caption": "Figure 6.27 C-V curve under depletion conditions. A negative gate voltage depletes majority electrons under the gate and uncovers positive donor charges to a depth XD required to balance the gate voltage.",
+  "box": [
+   75.8,
+   114.7,
+   539.3,
+   260.8
+  ],
+  "file": "fig-6.27.png",
+  "w": 1160,
+  "h": 366
+ },
+ {
+  "num": "6.28",
+  "page": 286,
+  "caption": "Figure 6.28 C-V curve under inversion. A large negative gate voltage “inverts” the substrate and attracts mobile holes to the interface. The gate charge is balanced by the charge in the inversion layer and the fixed donor charge in the substrate out to the maximum depletion layer thickness XDMax. Further increases in gate charge are balanced by increased charge in the inversion layer.",
+  "box": [
+   75.8,
+   217.2,
+   539.3,
+   363.2
+  ],
+  "file": "fig-6.28.png",
+  "w": 1160,
+  "h": 366
+ },
+ {
+  "num": "6.29",
+  "page": 287,
+  "caption": "Figure 6.29 Ideal MOS C-V curves at high and low frequencies. Also shown is the deep depletion C-V curve where the DC bias sweeps faster than equilibrium.",
+  "box": [
+   172.7,
+   276.0,
+   442.6,
+   449.6
+  ],
+  "file": "fig-6.29.png",
+  "w": 676,
+  "h": 435
+ },
+ {
+  "num": "6.30",
+  "page": 289,
+  "caption": "Figure 6.30 High-frequency (HF) C-V curves illustrating some of the nonidealities that be present in actual experimental structures. The “ideal” C-V curve is laterally shifted by fixed charge and the metal-semiconductor work function. A stretch in the C-V curve occurs because of interface states with different energy levels in the silicon bandgap.",
+  "box": [
+   161.1,
+   129.7,
+   454.2,
+   262.7
+  ],
+  "file": "fig-6.30.png",
+  "w": 734,
+  "h": 333
+ },
+ {
+  "num": "6.31",
+  "page": 290,
+  "caption": "Figure 6.31 Schematic of the “quasi-static” measurement of the interface traps Q*@.",
+  "box": [
+   172.6,
+   363.9,
+   435.4,
+   558.5
+  ],
+  "file": "fig-6.31.png",
+  "w": 658,
+  "h": 488
+ },
+ {
+  "num": "6.32",
+  "page": 292,
+  "caption": "Figure 6.32 Simulated tunneling currents for very thin silicon dioxide layers on silicon. The simulations take quantum mechanical corrections into account.",
+  "box": [
+   81.6,
+   288.0,
+   525.6,
+   511.2
+  ],
+  "file": "fig-6.32.png",
+  "w": 1110,
+  "h": 558
+ },
+ {
+  "num": "6.33",
+  "page": 295,
+  "caption": "Figure 6.33 Bandgap and Relative Dielectric Constant for a range of insulators.",
+  "box": [
+   153.6,
+   140.2,
+   455.0,
+   385.4
+  ],
+  "file": "fig-6.33.png",
+  "w": 754,
+  "h": 614
+ },
+ {
+  "num": "6.34",
+  "page": 296,
+  "caption": "Figure 6.34 Periodic table of elements with potentially stable and unstable binary oxides with silicon indicated.",
+  "box": [
+   87.4,
+   165.6,
+   526.1,
+   480.0
+  ],
+  "file": "fig-6.34.png",
+  "w": 1098,
+  "h": 786
+ },
+ {
+  "num": "6.35",
+  "page": 298,
+  "caption": "Figure 6.35 Schematic of the O2 and CO fluxes involved in the oxidation of SiC. The transport, diffusion and reaction fluxes are the same as for silicon oxidation, with the addition of a CO outdiffusion flux and a transport flux of CO back to the gas phase.",
+  "box": [
+   36.0,
+   115.1,
+   576.0,
+   278.5
+  ],
+  "file": "fig-6.35.png",
+  "w": 1350,
+  "h": 410
+ },
+ {
+  "num": "6.36",
+  "page": 299,
+  "caption": "Figure 6.36 (Left) Oxide thickness for dry O2 oxidation of (0001R) C-terminated face of 4H-SiC (Right) Oxide thickness for dry O2 oxidation of (0001) Si-terminated face of 4H-SiC. The solid lines are Deal-Grove fits from Equation 10.51 with τ = 0, using values from Table 6.3. Data is from [6.19, 20].",
+  "box": [
+   79.2,
+   271.2,
+   539.5,
+   444.0
+  ],
+  "file": "fig-6.36.png",
+  "w": 1151,
+  "h": 432
+ },
+ {
+  "num": "6.37",
+  "page": 300,
+  "caption": "Figure 6.37 Left: Hexagonal SiC crystal structure showing the Si and C faces. The M and A faces are of interest in SiC devices. Right: 4H unit cell showing the Si and C faces along with the bonding structure within the cell. (See Figures 3.5 and 3.6 that discuss how directions and planes are defined in hexagonal unit cells.)",
+  "box": [
+   108.0,
+   372.0,
+   520.8,
+   576.0
+  ],
+  "file": "fig-6.37.png",
+  "w": 1032,
+  "h": 510
+ },
+ {
+  "num": "7.1",
+  "page": 304,
+  "caption": "Figure 7.1 Schematic of a MOS device cross section showing the shallow extension (or tip) region to control short-channel effects and the deeper source/drain region (contact junction) to allow good silicide contacts.",
+  "box": [
+   155.1,
+   327.6,
+   464.7,
+   486.6
+  ],
+  "file": "fig-7.1.png",
+  "w": 775,
+  "h": 398
+ },
+ {
+  "num": "7.2",
+  "page": 305,
+  "caption": "Figure 7.2 The relationships between resistance, resistivity and sheet resistance are illustrated. On the left, the resistivity r (Wcm) is the resistance that would be measured between the sides of a cube of material having edges of unit length (1 cm). The resistance (W) that would be measured between the sides of a more general material shape is rL/A. On the right, the sheet resistance (W/square) is the resistance that would be measured between the sides of a square of any dimension L with junction depth xu.",
+  "box": [
+   133.1,
+   332.7,
+   479.5,
+   453.0
+  ],
+  "file": "fig-7.2.png",
+  "w": 867,
+  "h": 302
+ },
+ {
+  "num": "7.3",
+  "page": 308,
+  "caption": "Figure 7.3 Two-step process for producing a junction at the desired depth. The implant or predeposition step introduces a controlled number of impurity atoms, while the drive-in step thermally diffuses the dopant to the desired junction depth. The doping concentration vs. depth is shown qualitatively on the right for both profiles along the dashed cutline.",
+  "box": [
+   36.0,
+   118.8,
+   576.0,
+   281.4
+  ],
+  "file": "fig-7.3.png",
+  "w": 1350,
+  "h": 408
+ },
+ {
+  "num": "7.4",
+  "page": 310,
+  "caption": "Figure 7.4 Solid solubility curves for various dopants in silicon. These values are the equilibrium chemical solubilities at each temperature and may be different from the electrically active concentrations. After [7.3].",
+  "box": [
+   163.2,
+   280.8,
+   448.8,
+   504.0
+  ],
+  "file": "fig-7.4.png",
+  "w": 714,
+  "h": 558
+ },
+ {
+  "num": "7.5",
+  "page": 311,
+  "caption": "Figure 7.5 Representation of arsenic in a substitutional position (left) versus 4 arsenic atoms around a vacancy in an inactive configuration (right).",
+  "box": [
+   172.0,
+   171.0,
+   437.0,
+   272.8
+  ],
+  "file": "fig-7.5.png",
+  "w": 663,
+  "h": 255
+ },
+ {
+  "num": "7.6",
+  "page": 312,
+  "caption": "Figure 7.6 Fick’s first law states that diffusion is driven by the concentration gradient.",
+  "box": [
+   36.0,
+   215.9,
+   576.0,
+   364.0
+  ],
+  "file": "fig-7.6.png",
+  "w": 1350,
+  "h": 371
+ },
+ {
+  "num": "7.7",
+  "page": 313,
+  "caption": "Figure 7.7 Flux in and out of a volume element, used to derive Fick’s second law.",
+  "box": [
+   216.7,
+   68.8,
+   389.8,
+   192.4
+  ],
+  "file": "fig-7.7.png",
+  "w": 434,
+  "h": 309
+ },
+ {
+  "num": "7.8",
+  "page": 314,
+  "caption": "Figure 7.8 A delta function of dopant containing a dose Q is introduced into an infinite medium and subsequently diffused.",
+  "box": [
+   179.1,
+   475.1,
+   428.2,
+   658.2
+  ],
+  "file": "fig-7.8.png",
+  "w": 624,
+  "h": 459
+ },
+ {
+  "num": "7.9",
+  "page": 315,
+  "caption": "Figure 7.9 Time evolution of a Gaussian diffusion profile on linear and log scales.",
+  "box": [
+   105.1,
+   440.4,
+   508.8,
+   594.6
+  ],
+  "file": "fig-7.9.png",
+  "w": 1011,
+  "h": 386
+ },
+ {
+  "num": "7.10",
+  "page": 316,
+  "caption": "Figure 7.10 A surface Gaussian diffusion can be treated as a Gaussian diffusion with dose 2Q in an infinite bulk medium.",
+  "box": [
+   183.8,
+   262.2,
+   424.2,
+   438.1
+  ],
+  "file": "fig-7.10.png",
+  "w": 602,
+  "h": 441
+ },
+ {
+  "num": "7.11",
+  "page": 317,
+  "caption": "Figure 7.11 An infinite source of material for x < 0 can be considered to be made up of a sum of delta functions. The diffused solution is then given by a sum of Gaussians, known as the error- function solution.",
+  "box": [
+   187.3,
+   235.6,
+   443.2,
+   470.3
+  ],
+  "file": "fig-7.11.png",
+  "w": 641,
+  "h": 588
+ },
+ {
+  "num": "7.12",
+  "page": 319,
+  "caption": "Figure 7.12 Time evolution of erfc diffused profiles on linear and log scales. The left side shows the time evolution of Eqn. 7.25. The right side shows the time evolution of Eqn. 7.26. The horizontal axis units are in terms of the diffused distance 2√Dt, a measure of how far the profile has diffused.",
+  "box": [
+   36.0,
+   190.8,
+   576.0,
+   364.7
+  ],
+  "file": "fig-7.12.png",
+  "w": 1350,
+  "h": 436
+ },
+ {
+  "num": "7.13",
+  "page": 320,
+  "caption": "Figure 7.13 The spatial form of the Gaussian and erfc solutions are similar for a particular normalized value of Dt.",
+  "box": [
+   200.7,
+   70.8,
+   407.2,
+   230.0
+  ],
+  "file": "fig-7.13.png",
+  "w": 517,
+  "h": 400
+ },
+ {
+  "num": "7.14",
+  "page": 321,
+  "caption": "Figure 7.14 Arrhenius plot of the intrinsic diffusivity of the common dopants in silicon along with the self-diffusion coefficient of silicon itself (Boron and Indium are indistinguishable on this scale).",
+  "box": [
+   149.1,
+   144.6,
+   449.1,
+   363.7
+  ],
+  "file": "fig-7.14.png",
+  "w": 751,
+  "h": 549
+ },
+ {
+  "num": "7.16",
+  "page": 327,
+  "caption": "Figure 7.16 Atomic planes ∆x apart, with Ni atoms at each plane. Atoms at a plane have an equal probability of jumping left or right.",
+  "box": [
+   207.4,
+   132.0,
+   405.4,
+   265.3
+  ],
+  "file": "fig-7.16.png",
+  "w": 496,
+  "h": 335
+ },
+ {
+  "num": "7.17",
+  "page": 329,
+  "caption": "Figure 7.17 Schematic of the electric field. This develops because the electron or hole mobility exceeds the dopant mobility, so that electrons or holes diffuse ahead until they reach a steady- state condition where the drift flux from the internal electric field balances the diffusion flux.",
+  "box": [
+   36.0,
+   279.8,
+   576.0,
+   453.7
+  ],
+  "file": "fig-7.17.png",
+  "w": 1350,
+  "h": 436
+ },
+ {
+  "num": "7.18",
+  "page": 330,
+  "caption": "Figure 7.18 Athena simulation of phosphorus and boron profiles with and without the ℇ -field effect. The phosphorus diffusivity was increased by 2x when there was no ℇ -field, almost matching the effect of the field (see text). Diffusion was 15 min at 1000 ˚C.",
+  "box": [
+   144.0,
+   235.2,
+   468.0,
+   480.0
+  ],
+  "file": "fig-7.18.png",
+  "w": 810,
+  "h": 612
+ },
+ {
+  "num": "7.19",
+  "page": 331,
+  "caption": "Figure 7.19 Effect of concentration dependent diffusion coefficients on the profile shapes. The labelling of the D- and D= curves is explained below.",
+  "box": [
+   163.2,
+   298.6,
+   444.0,
+   514.6
+  ],
+  "file": "fig-7.19.png",
+  "w": 702,
+  "h": 541
+ },
+ {
+  "num": "7.20",
+  "page": 335,
+  "caption": "Figure 7.20 (a) Athena plot of boron contours after a LOCOS oxidation of an initially uniform (1016 cm-3) boron-doped substrate. (b) The boron depletes from the bulk into the oxide layer due to segregation.",
+  "box": [
+   79.2,
+   408.0,
+   525.6,
+   588.0
+  ],
+  "file": "fig-7.20.png",
+  "w": 1116,
+  "h": 450
+ },
+ {
+  "num": "7.21",
+  "page": 336,
+  "caption": "Figure 7.21 Athena simulation of initially uniform (1018 cm-3) arsenic, phosphorus and boron profiles after an oxidation of the silicon surface. Arsenic and phosphorus pile-up in front of the moving interface, while boron is depleted.",
+  "box": [
+   168.0,
+   73.0,
+   444.0,
+   283.2
+  ],
+  "file": "fig-7.21.png",
+  "w": 690,
+  "h": 526
+ },
+ {
+  "num": "7.22",
+  "page": 336,
+  "caption": "Figure 7.22 Schematic diagram of interfacial dopant dose loss.",
+  "box": [
+   36.0,
+   491.0,
+   576.0,
+   622.2
+  ],
+  "file": "fig-7.22.png",
+  "w": 1350,
+  "h": 329
+ },
+ {
+  "num": "7.23",
+  "page": 337,
+  "caption": "Figure 7.23 Simulation showing 25% arsenic dose loss after a 30 sec 1050˚C RTA (left). The dose loss results in the areas under the two curves being different by 25%. Experimental SIMS data showing similar dose loss for the same anneal (right). After [7.9, 7.10].",
+  "box": [
+   76.8,
+   134.4,
+   532.8,
+   307.2
+  ],
+  "file": "fig-7.23.png",
+  "w": 1140,
+  "h": 432
+ },
+ {
+  "num": "7.24",
+  "page": 338,
+  "caption": "Figure 7.24 (a) Schematic of vacancy-assisted diffusion mechanism (left), (b) of interstitial- assisted kick-out diffusion (center) and (c) interstitialcy-assisted diffusion mechanisms (right).",
+  "box": [
+   87.0,
+   243.1,
+   530.7,
+   391.3
+  ],
+  "file": "fig-7.24.png",
+  "w": 1110,
+  "h": 372
+ },
+ {
+  "num": "7.25",
+  "page": 340,
+  "caption": "Figure 7.25 Two-dimensional simulation showing boron OED under a growing oxide.",
+  "box": [
+   218.4,
+   344.6,
+   399.4,
+   510.7
+  ],
+  "file": "fig-7.25.png",
+  "w": 453,
+  "h": 416
+ },
+ {
+  "num": "7.26",
+  "page": 341,
+  "caption": "Figure 7.26 Athena simulations of oxidation-enhanced diffusion of boron (OED) on the left and oxidation retarded diffusion of antimony (ORD) on the right during the growth of a thermal oxide on the surface of silicon. The initial implants were 1x1013 cm-2, the B at 30 keV and the Sb at 300 keV. The inert drive-in for boron was 300 min at 900 ˚C in each case. The oxidation was 300 min in dry O2 at 900 ˚C. For Sb, the drive-in was 3000 min at 1000 ˚C since it diffuses slowly.",
+  "box": [
+   75.8,
+   217.0,
+   536.6,
+   394.6
+  ],
+  "file": "fig-7.26.png",
+  "w": 1153,
+  "h": 445
+ },
+ {
+  "num": "7.27",
+  "page": 344,
+  "caption": "Figure 7.27 (Left) Athena simulation using the Fermi level (concentration-dependent) model (red curve) and the fully coupled model (blue curve). The initial implant (green curve) is a 30keV, 1x1016 cm-3 phosphorus implant. (Right) The fully coupled model illustrates the chemical or diffusion pumping of native point defects from the surface region into the bulk region by dopant- defect coupling. A supersaturation of 40X in the interstitial concentration causes enhanced tail diffusion in the phosphorus profile, producing the characteristic “kink and tail” profile.",
+  "box": [
+   85.4,
+   320.6,
+   541.4,
+   476.2
+  ],
+  "file": "fig-7.27.png",
+  "w": 1141,
+  "h": 390
+ },
+ {
+  "num": "7.28",
+  "page": 345,
+  "caption": "Figure 7.28 Schematic of the emitter-push effect in a bipolar transistor. The diffusion of the emitter region (phosphorus) affects the base region (boron) underneath the emitter and causes the base to “push-out” further than expected [7.15]. This interaction is now known to be due to the chemical pumping of interstitials from the emitter region to the deeper bulk regions.",
+  "box": [
+   167.0,
+   381.6,
+   446.4,
+   579.4
+  ],
+  "file": "fig-7.28.png",
+  "w": 699,
+  "h": 495
+ },
+ {
+  "num": "7.29",
+  "page": 347,
+  "caption": "Figure 7.29 (Left) Athena simulation of short-channel MOS devices. The doping profiles are shown on the left with arrows that indicate the interstitial fluxes emanating from the diffusing heavily doped source drain regions. (Right) qualitative plot of the reverse short-channel effect (RSCE), where the threshold voltage actually increases as the gate length reduces.",
+  "box": [
+   85.4,
+   173.8,
+   527.0,
+   354.2
+  ],
+  "file": "fig-7.29.png",
+  "w": 1105,
+  "h": 452
+ },
+ {
+  "num": "7.30",
+  "page": 353,
+  "caption": "Figure 7.30 Self-diffusion data for Ga and As in GaAs or GaAs superlattices. After [7.18] and [7.19].",
+  "box": [
+   150.6,
+   197.8,
+   447.5,
+   415.6
+  ],
+  "file": "fig-7.30.png",
+  "w": 743,
+  "h": 546
+ },
+ {
+  "num": "7.31",
+  "page": 354,
+  "caption": "Figure 7.31 A beveled image of GaAs/AlAs heterstructures disrupted by Zn diffusion causing impurity induced lattice disordering (IILD) in the center of the image. Reproduced from [7.25] with the permission of AIP Publishing.",
+  "box": [
+   242.4,
+   375.4,
+   369.6,
+   532.8
+  ],
+  "file": "fig-7.31.png",
+  "w": 318,
+  "h": 394
+ },
+ {
+  "num": "7.32",
+  "page": 356,
+  "caption": "Figure 7.32 SIMS data (blue dots) and fitted results (red line) for an 850oC, 120 minute anneal of implanted zinc in GaAs. The box-shaped profile is a result of the square-law concentration dependent diffusivity. (Silvaco Athena simulation to data from [7.23]).",
+  "box": [
+   184.8,
+   88.8,
+   429.6,
+   283.2
+  ],
+  "file": "fig-7.32.png",
+  "w": 612,
+  "h": 486
+ },
+ {
+  "num": "7.33",
+  "page": 356,
+  "caption": "Figure 7.33 SIMS data (blue dots) and simulated results for a 750oC, 120 minute anneal of implanted zinc in GaAs. The green line shows the box-shaped profile, a result of the square-law concentration dependent diffusivity (similar to Figure 7.32). The red line shows the extended tail of the dopant profile, as the fully-coupled model captures the interaction between the dopant and self-interstitial fluxes (Silvaco Athena simulation to data from [7.23]). The pink line shows the interstitial profile, after interstitials are “pumped” into the bulk by the dopant flux, enhancing the dopant diffusion in the tail. This is analogous to the “kink-and-tail” phosphorus diffusion profile in silicon (Figure 7.27).",
+  "box": [
+   184.8,
+   355.2,
+   424.8,
+   538.6
+  ],
+  "file": "fig-7.33.png",
+  "w": 600,
+  "h": 459
+ },
+ {
+  "num": "7.34",
+  "page": 358,
+  "caption": "Figure 7.34 SIMS profiles (blue dots) and square-law dependent fit to the profile based on Eq. 7.69 for a 1 × 1014 cm%!, 40 keV Si implant into a semi-insulating GaAs substrate, annealed for 45 minutes at 900˚. Based on Silvaco Athena simulations and data (from [7.33]).",
+  "box": [
+   180.0,
+   453.6,
+   434.4,
+   648.0
+  ],
+  "file": "fig-7.34.png",
+  "w": 636,
+  "h": 486
+ },
+ {
+  "num": "7.35",
+  "page": 359,
+  "caption": "Figure 7.35 Compilation of diffusivity for N-type (Sn, Ge, Si) and P-type (Zn, Be) dopants in GaAs [from Table 7.5].",
+  "box": [
+   149.7,
+   238.8,
+   447.5,
+   457.3
+  ],
+  "file": "fig-7.35.png",
+  "w": 745,
+  "h": 547
+ },
+ {
+  "num": "7.36",
+  "page": 360,
+  "caption": "Figure 7.36 Plot of percent activation for implanted boron versus anneal temperature, showing the very high temperatures required for substantial activation. After [7.34].",
+  "box": [
+   194.4,
+   123.8,
+   413.8,
+   296.6
+  ],
+  "file": "fig-7.36.png",
+  "w": 549,
+  "h": 433
+ },
+ {
+  "num": "8.1",
+  "page": 365,
+  "caption": "Figure 8.1 Schematic of an ion implanter.",
+  "box": [
+   126.0,
+   216.2,
+   476.4,
+   425.6
+  ],
+  "file": "fig-8.1.png",
+  "w": 877,
+  "h": 525
+ },
+ {
+  "num": "8.2",
+  "page": 366,
+  "caption": "Figure 8.2 Modern ion implanter (Axcelis Purion H Series)) on the left. Typical configuration for the end station wafer mounting system (right). Reprinted with permission of Hitachi Ltd., from [8.2].",
+  "box": [
+   91.2,
+   189.6,
+   518.4,
+   348.0
+  ],
+  "file": "fig-8.2.png",
+  "w": 1068,
+  "h": 396
+ },
+ {
+  "num": "8.3",
+  "page": 366,
+  "caption": "Figure 8.3 Typical ranges of implant dose and energy used in CMOS processing. Red indicates a high-current implanter. Blue indicates a high-voltage implanter. (After [8.3].)",
+  "box": [
+   120.0,
+   392.6,
+   492.0,
+   680.6
+  ],
+  "file": "fig-8.3.png",
+  "w": 930,
+  "h": 721
+ },
+ {
+  "num": "8.4",
+  "page": 367,
+  "caption": "Figure 8.4 Monte Carlo simulations using UT-Marlowe of the 3D distribution of 1000 phosphorus ions implanted at 35 keV. The implant beam is centered at (x, y = 0, 0) and the axes are in units of nm. [8.4].",
+  "box": [
+   146.4,
+   184.8,
+   463.2,
+   365.8
+  ],
+  "file": "fig-8.4.png",
+  "w": 792,
+  "h": 453
+ },
+ {
+  "num": "8.5",
+  "page": 368,
+  "caption": "Figure 8.5 Athena simulations of 1x1015 cm2, 100 keV implants into silicon [8.6]. Si substrate assumed amorphous, Gaussian profiles.",
+  "box": [
+   115.2,
+   168.0,
+   518.4,
+   417.6
+  ],
+  "file": "fig-8.5.png",
+  "w": 1008,
+  "h": 624
+ },
+ {
+  "num": "8.6",
+  "page": 370,
+  "caption": "Figure 8.6 Broadening of an implanted profile by diffusion. On the left a shallow implant (1x1014 cm-2 at 25 keV) broadens into a one-sided Gaussian profile after diffusing (60 min at 1100˚C). On the right, a deep Gaussian profile (1x1014 cm-2 at 300 keV) remains Gaussian after diffusion (60 min at 1000˚C). Athena simulations [8.6].",
+  "box": [
+   74.4,
+   76.8,
+   537.6,
+   221.8
+  ],
+  "file": "fig-8.6.png",
+  "w": 1158,
+  "h": 363
+ },
+ {
+  "num": "8.7",
+  "page": 371,
+  "caption": "Figure 8.7 Illustration showing the impact of implantation damage and the need for an anneal and repair process.",
+  "box": [
+   84.0,
+   68.7,
+   529.0,
+   255.0
+  ],
+  "file": "fig-8.7.png",
+  "w": 1113,
+  "h": 467
+ },
+ {
+  "num": "8.8",
+  "page": 372,
+  "caption": "Figure 8.8 100 keV, 1x1015 cm-2 Sb and B implants modeled with Gaussian and Pearson distributions. Si substrate assumed amorphous [8.6].",
+  "box": [
+   133.4,
+   470.4,
+   480.0,
+   687.4
+  ],
+  "file": "fig-8.8.png",
+  "w": 867,
+  "h": 543
+ },
+ {
+  "num": "8.9",
+  "page": 373,
+  "caption": "Figure 8.9 Structure of a silicon crystal looking down the 110 axial channels (left) and with a tilt and rotation to simulate a “random” direction (right).",
+  "box": [
+   95.2,
+   272.4,
+   512.0,
+   457.9
+  ],
+  "file": "fig-8.9.png",
+  "w": 1042,
+  "h": 464
+ },
+ {
+  "num": "8.10",
+  "page": 374,
+  "caption": "Figure 8.10 shows simulations of a series of P implants (various doses at 100 keV) into a silicon substrate that is aligned with the incoming beam (0˚ tilt and rotation, like the image on the left in Figure 8.9). The yellow curve is the Gaussian model for the lowest dose implant (1x1013 cm-2). The modeled profile including channeling effects is the red curve, a vastly different prediction! While 0˚ tilt and rotation is the worst possible case, the prediction is that a significant",
+  "box": [
+   125.8,
+   120.0,
+   485.8,
+   339.8
+  ],
+  "file": "fig-8.10.png",
+  "w": 901,
+  "h": 550
+ },
+ {
+  "num": "8.11",
+  "page": 375,
+  "caption": "Figure 8.11 shows a series of B implants simulated in Athena with the ion beam tilted at various angles with respect to the crystalline substrate. The black curve is a simulation using the Pearson distribution with the substrate assumed amorphous (no channeling). The black curve shows the skewness toward the surface expected for a light ion implant. Even with a tilt of 10˚, there is still a significant effect of the channeling component on the final boron profile.",
+  "box": [
+   135.4,
+   146.4,
+   474.2,
+   359.0
+  ],
+  "file": "fig-8.11.png",
+  "w": 848,
+  "h": 532
+ },
+ {
+  "num": "8.12",
+  "page": 376,
+  "caption": "Figure 8.12 Implantation into a multilayer target.",
+  "box": [
+   36.0,
+   62.0,
+   576.0,
+   239.9
+  ],
+  "file": "fig-8.12.png",
+  "w": 1350,
+  "h": 445
+ },
+ {
+  "num": "8.13",
+  "page": 377,
+  "caption": "Figure 8.13 Athena simulation of 1x1014 cm-2, 100 keV P implant into a multilayer structure (80 nm Si3N4 on a Si substrate). Substrate assumed amorphous [8.6].",
+  "box": [
+   146.4,
+   147.8,
+   459.8,
+   341.8
+  ],
+  "file": "fig-8.13.png",
+  "w": 784,
+  "h": 486
+ },
+ {
+  "num": "8.14",
+  "page": 377,
+  "caption": "Figure 8.14 Athena simulation of a 1x1015 cm-2, 100 keV B implant into an SiO2 mask on a Si substrate. Gaussian profile, Si assumed amorphous [8.6].",
+  "box": [
+   152.6,
+   397.4,
+   459.8,
+   608.6
+  ],
+  "file": "fig-8.14.png",
+  "w": 769,
+  "h": 529
+ },
+ {
+  "num": "8.15",
+  "page": 379,
+  "caption": "Figure 8.15 Cross-sectional images of As implants at 35 keV (left) and 120 keV (right) masked by the edge of a polysilicon gate region. The doped regions were delineated by etching the silicon. Reproduced from [8.9] with the permission of the American Vacuum Society.",
+  "box": [
+   115.2,
+   496.8,
+   496.8,
+   634.6
+  ],
+  "file": "fig-8.15.png",
+  "w": 954,
+  "h": 345
+ },
+ {
+  "num": "8.16",
+  "page": 380,
+  "caption": "Figure 8.16 Athena simulation of an As source drain implant in a 0.3 µm gate length MOS device. The implant was 5x1015 cm-2 at 100 keV and 0˚ tilt (red arrows). The cutline on the right shows the lateral doping profile at approximately the peak of the As vertical profile (dashed line).",
+  "box": [
+   104.6,
+   431.0,
+   514.6,
+   625.0
+  ],
+  "file": "fig-8.16.png",
+  "w": 1026,
+  "h": 486
+ },
+ {
+  "num": "8.17",
+  "page": 381,
+  "caption": "Figure 8.17 shows a second example in which the same device structure as in Figure 8.16 is simulated except that the As source drain implant is done at an angle of 30˚ to the substrate. The",
+  "box": [
+   104.6,
+   215.0,
+   514.6,
+   402.2
+  ],
+  "file": "fig-8.17.png",
+  "w": 1026,
+  "h": 469
+ },
+ {
+  "num": "8.18",
+  "page": 383,
+  "caption": "Figure 8.18 Schematic of a nuclear collision or scattering encounter between an ion and a stationary target atom.",
+  "box": [
+   169.0,
+   394.9,
+   443.4,
+   574.4
+  ],
+  "file": "fig-8.18.png",
+  "w": 687,
+  "h": 450
+ },
+ {
+  "num": "8.19",
+  "page": 386,
+  "caption": "Figure 8.19 Nuclear (superscript N) and electronic (superscript e) stopping powers for common dopants in silicon. The vertical scale is NSn(E) where N is the silicon density. After [8.15].",
+  "box": [
+   196.8,
+   164.2,
+   420.0,
+   389.8
+  ],
+  "file": "fig-8.19.png",
+  "w": 558,
+  "h": 565
+ },
+ {
+  "num": "8.20",
+  "page": 388,
+  "caption": "Figure 8.20 shows an example of a Monte Carlo implant profile simulation. In this case 500,000 As+ ions were implanted to simulate a 1x1013 cm-2 100 keV implant. With no preamorphization and 0˚ tilt significant channeling is present which is included in the Monte Carlo simulation. For the blue and green curves, Si+ implants at 70 keV and 7˚ tilt were used to",
+  "box": [
+   122.4,
+   134.4,
+   485.8,
+   359.0
+  ],
+  "file": "fig-8.20.png",
+  "w": 909,
+  "h": 562
+ },
+ {
+  "num": "8.21",
+  "page": 389,
+  "caption": "Figure 8.21 shows another interesting simulation again using Victory Process [8.6]. In these simulations, sequential B and As implants were done into a narrow, 10 nm wide window. In the simulation on the left, the B implant is done first and then the As implant. The colors show the calculated B concentration profile. When the B implant is done first, the substrate is undamaged and there is clear evidence of significant channeling down the <100> channels that are aligned with the implant beam (tilt = 0˚). A significant number of B ions penetrate down to 0.2 µm.",
+  "box": [
+   104.6,
+   80.6,
+   500.2,
+   337.0
+  ],
+  "file": "fig-8.21.png",
+  "w": 990,
+  "h": 642
+ },
+ {
+  "num": "8.22",
+  "page": 389,
+  "caption": "Figure 8.22 Same simulation as Figure 8.20 except that only 5,000 ions were simulated.",
+  "box": [
+   138.2,
+   392.6,
+   469.4,
+   599.0
+  ],
+  "file": "fig-8.22.png",
+  "w": 829,
+  "h": 517
+ },
+ {
+  "num": "8.23",
+  "page": 390,
+  "caption": "Figure 8.23 Monte Carlo simulations of Al+ (2x1013 cm2, 65 keV) implants into 4H SiC using Victory Process [8.6]. The substrates were miscut from the [0001] axis by 0˚ to 3˚.",
+  "box": [
+   133.4,
+   169.0,
+   476.2,
+   391.7
+  ],
+  "file": "fig-8.23.png",
+  "w": 858,
+  "h": 558
+ },
+ {
+  "num": "8.24",
+  "page": 391,
+  "caption": "Figure 8.24 Schematic of damage caused by a 30 keV arsenic ion in silicon. With a range of 23 nm the ion crosses approximately 90 atomic planes. After [8.19]. -----------------------------------------------------------------------------------------------------------",
+  "box": [
+   152.4,
+   288.3,
+   472.1,
+   432.1
+  ],
+  "file": "fig-8.24.png",
+  "w": 800,
+  "h": 361
+ },
+ {
+  "num": "8.25",
+  "page": 392,
+  "caption": "Figure 8.25 Molecular dynamics simulation of a single 5 keV Si+ ion implant into silicon, showing the damage evolution and stabilization. Only displaced atoms are shown. The simulation space is a 15.2 nm square [100] surface. The depth is 13.5 nm. Reprinted with permission from [8.21]. © (1995) by the American Physical Society.",
+  "box": [
+   177.6,
+   280.8,
+   432.0,
+   494.4
+  ],
+  "file": "fig-8.25.png",
+  "w": 636,
+  "h": 534
+ },
+ {
+  "num": "8.26",
+  "page": 393,
+  "caption": "Figure 8.26 shows a further molecular dynamics simulation of a very short anneal (1 nsec at 1025˚C) of a small region of the damage simulated in Figure 8.25. Clearly much of the damage is removed even in this very short time anneal. Molecular dynamics simulations have proven very helpful in understanding damage and damage annealing, but the computational costs are too large to simulate real device structures and real anneal times. Generally, these kinds of simulations are limited to structures with a few million atoms and a few nsec of time. However, we should take away from Figures 8.25 and 8.26 that a lot of the damage seems to “heal” and disappear pretty quickly. In order to develop models useful for real device structures and real processing times, we now discuss different approaches at a more macroscopic level.",
+  "box": [
+   141.6,
+   72.0,
+   472.8,
+   244.8
+  ],
+  "file": "fig-8.26.png",
+  "w": 828,
+  "h": 432
+ },
+ {
+  "num": "8.27",
+  "page": 394,
+  "caption": "Figure 8.27 Cross sectional TEM images of the formation of an amorphous layer for increasing 300 keV Si+ implant doses. The layer begins to form where the nuclear damage is highest, spreading with higher doses. Reproduced from [8.22] with the permission of AIP Publishing.",
+  "box": [
+   96.0,
+   72.0,
+   520.8,
+   266.4
+  ],
+  "file": "fig-8.27.png",
+  "w": 1062,
+  "h": 486
+ },
+ {
+  "num": "8.28",
+  "page": 395,
+  "caption": "Figure 8.28 would seem to suggest that the implant damage anneals very quickly (< 1 sec at 815 ˚C), restoring the substrate to crystalline form. While this is true, at least for the relatively low dose considered in this simulation, there is something we have forgotten to this point. The interstitials and vacancies generated by the implanted ions are formed in exactly equal numbers and so if they all recombined, we would be left with a perfect crystal. But we must also consider the implanted ion which is typically a dopant ion. It too needs to sit on a lattice site and when it does so, it will create one additional Si interstitial. This gives rise to the “+1” model for residual damage due to implants that we will discuss in detail in Section 8.9 [8.24]. This model states that to a good approximation, all of the original damage recombines leaving only one interstitial created when the implanted ion finally occupies a lattice site. The profile of the excess “+1” interstitials will mirror the implanted dopant profile.",
+  "box": [
+   172.8,
+   76.8,
+   439.2,
+   276.0
+  ],
+  "file": "fig-8.28.png",
+  "w": 666,
+  "h": 498
+ },
+ {
+  "num": "8.29",
+  "page": 396,
+  "caption": "Figure 8.29 Schematic (left) and cross-section TEM (right) of {311} clusters that form by capturing a row of interstitial dimers that lie on the {311} plane and grows by extending in the <110> direction. Photo reprinted from [8.25] with the permission of AIP Publishing.",
+  "box": [
+   93.6,
+   172.8,
+   508.8,
+   330.2
+  ],
+  "file": "fig-8.29.png",
+  "w": 1038,
+  "h": 394
+ },
+ {
+  "num": "8.30",
+  "page": 396,
+  "caption": "Figure 8.30 Molecular dynamics and Kinetic Monte Carlo simulations of the defect structure resulting from a 5 keV 1x1014 cm-2 Si+ implant. Black and grey points represent silicon I and V respectively. (a) is the damage at room T after the implant. (b) is the damage during the beginning of the anneal (ramp up in T to 800 ˚C). (c) is after the anneal at 800 ˚C. Reproduced from [8.26] with the permission of AIP Publishing.",
+  "box": [
+   139.2,
+   393.6,
+   472.8,
+   528.0
+  ],
+  "file": "fig-8.30.png",
+  "w": 834,
+  "h": 336
+ },
+ {
+  "num": "8.31",
+  "page": 397,
+  "caption": "Figure 8.31 Schematic of the stable end-of-range (EOR) dislocation loops that form at the amorphous-crystalline (a/c) interface after solid-phase epitaxial regrowth.",
+  "box": [
+   163.6,
+   248.8,
+   447.2,
+   422.3
+  ],
+  "file": "fig-8.31.png",
+  "w": 711,
+  "h": 434
+ },
+ {
+  "num": "8.32",
+  "page": 398,
+  "caption": "Figure 8.32 Cross sectional TEM images of the regrowth of an amorphous layer at 525˚C as a function of time. The red arrows indicate the amorphous region. The dark band at the original a/c interface consists of end of range dislocation loops. Reproduced from [8.27] with the permission of AVS: Science and Technology of Materials, Interfaces and Processing.",
+  "box": [
+   132.7,
+   421.9,
+   490.4,
+   547.4
+  ],
+  "file": "fig-8.32.png",
+  "w": 895,
+  "h": 315
+ },
+ {
+  "num": "8.33",
+  "page": 399,
+  "caption": "Figure 8.33 Molecular dynamics and Kinetic Monte Carlo simulations of the defect structure resulting from a 5 keV 1x1015 cm-2 Si+ implant. Black and grey points represent silicon I and V respectively. a) is the damge at room T after the implant. b) is the SPE regrowth process occurring at 550 ˚C. c) is after the anneal at 800 ˚C. Reproduced from [8.26] with the permission of AIP Publishing.",
+  "box": [
+   153.6,
+   76.8,
+   465.6,
+   284.2
+  ],
+  "file": "fig-8.33.png",
+  "w": 780,
+  "h": 519
+ },
+ {
+  "num": "8.34",
+  "page": 399,
+  "caption": "Figure 8.34 summarizes what we have learned to this point about damage issues in crystalline substrates during an implant. The left part of the figure applies to implant doses low",
+  "box": [
+   36.0,
+   549.3,
+   576.0,
+   676.9
+  ],
+  "file": "fig-8.34.png",
+  "w": 1350,
+  "h": 320
+ },
+ {
+  "num": "8.35",
+  "page": 401,
+  "caption": "Figure 8.35 Temperature dependence of transient enhanced diffusion, showing more diffusion for lower temperatures even though the Dt is larger for the high-temperature anneal. After [8.28].",
+  "box": [
+   158.4,
+   232.8,
+   453.6,
+   451.2
+  ],
+  "file": "fig-8.35.png",
+  "w": 738,
+  "h": 546
+ },
+ {
+  "num": "8.36",
+  "page": 402,
+  "caption": "Figure 8.36 Buried marker layer experiment structure.",
+  "box": [
+   154.6,
+   127.3,
+   440.0,
+   321.8
+  ],
+  "file": "fig-8.36.png",
+  "w": 715,
+  "h": 487
+ },
+ {
+  "num": "8.37",
+  "page": 403,
+  "caption": "Figure 8.37 Plot of the number of interstitials contained in {311} defect clusters as a function of anneal time at various temperatures. The {311} defects dissolve and provide the interstitial supersaturation that controls TED. Reproduced from [8.31] with the permission of AIP Publishing.",
+  "box": [
+   160.8,
+   168.0,
+   453.6,
+   374.4
+  ],
+  "file": "fig-8.37.png",
+  "w": 732,
+  "h": 516
+ },
+ {
+  "num": "8.38",
+  "page": 406,
+  "caption": "Figure 8.38 The maximum interstitial supersaturation as a function of anneal temperature. ------------------------------------------------------------------------------------------------------------",
+  "box": [
+   158.4,
+   218.4,
+   456.0,
+   427.2
+  ],
+  "file": "fig-8.38.png",
+  "w": 744,
+  "h": 522
+ },
+ {
+  "num": "8.39",
+  "page": 407,
+  "caption": "Figure 8.39 A schematic of the recombination flux at the surface which removes the +1 damage introduced by an implant at a range RP [8.33]. Using RP for the diffusion distance presumes that the implant dose is below the amorphization level.",
+  "box": [
+   178.8,
+   205.8,
+   434.8,
+   392.8
+  ],
+  "file": "fig-8.39.png",
+  "w": 641,
+  "h": 468
+ },
+ {
+  "num": "8.40",
+  "page": 408,
+  "caption": "Figure 8.40 Duration of TED vs. temperature for a 100 keV, 5x1013 cm-2 phosphorus implant into silicon. ------------------------------------------------------------------------------------------------------------",
+  "box": [
+   144.0,
+   206.4,
+   463.2,
+   412.8
+  ],
+  "file": "fig-8.40.png",
+  "w": 798,
+  "h": 516
+ },
+ {
+  "num": "8.41",
+  "page": 409,
+  "caption": "Figure 8.41 Silvaco Athena simulation of TED. A 5x1013 cm-2 100 keV P+ implant with a tilt of 7˚ into a silicon substrate was used. A Pearson distribution (red curve) was used to model the implant. The other curves show the TED during an 800 ˚C anneal.",
+  "box": [
+   120.0,
+   408.0,
+   489.6,
+   650.4
+  ],
+  "file": "fig-8.41.png",
+  "w": 924,
+  "h": 606
+ },
+ {
+  "num": "8.42",
+  "page": 410,
+  "caption": "Figure 8.42 {311} defect concentrations and free I concentrations calculated in the simulation shown in Figure 8.39.",
+  "box": [
+   141.6,
+   261.6,
+   465.6,
+   472.8
+  ],
+  "file": "fig-8.42.png",
+  "w": 810,
+  "h": 528
+ },
+ {
+  "num": "8.43",
+  "page": 411,
+  "caption": "Figure 8.43 Silvaco Athena simulation of TED. A 5x1013 cm-2 100 keV P+ implant with a tilt of 7˚ into a silicon substrate was used. A Pearson distribution (red curve) was used to model the implant. The other curves show the TED during a 1200 ˚C anneal.",
+  "box": [
+   144.0,
+   173.8,
+   489.6,
+   398.4
+  ],
+  "file": "fig-8.43.png",
+  "w": 864,
+  "h": 562
+ },
+ {
+  "num": "8.44",
+  "page": 411,
+  "caption": "Figure 8.44 {311} defect concentrations and free I concentrations calculated in the simulation shown in Figure 8.41.",
+  "box": [
+   129.6,
+   454.1,
+   492.0,
+   687.4
+  ],
+  "file": "fig-8.44.png",
+  "w": 906,
+  "h": 584
+ },
+ {
+  "num": "8.45",
+  "page": 412,
+  "caption": "Figure 8.45 Silvaco Athena simulation of TED. A 5x1015 cm-2 100 keV P+ implant with a tilt of 7˚ into a silicon substrate was used. A Pearson distribution (red curve) was used to model the implant. The other curves show the TED during an 800 ˚C anneal.",
+  "box": [
+   160.8,
+   247.2,
+   468.0,
+   444.0
+  ],
+  "file": "fig-8.45.png",
+  "w": 768,
+  "h": 492
+ },
+ {
+  "num": "8.46",
+  "page": 412,
+  "caption": "Figure 8.46 {311} defect concentrations and free I concentrations calculated in the simulation shown in Figure 8.45.",
+  "box": [
+   158.4,
+   486.2,
+   468.0,
+   688.8
+  ],
+  "file": "fig-8.46.png",
+  "w": 774,
+  "h": 507
+ },
+ {
+  "num": "8.47",
+  "page": 413,
+  "caption": "Figure 8.47 Schematic of the magnitude and duration of TED, determined from Equation 8.43 and Equation 8.48. The blue shaded area is primarily responsible for the profile motion observed during TED.",
+  "box": [
+   145.4,
+   174.7,
+   464.5,
+   395.2
+  ],
+  "file": "fig-8.47.png",
+  "w": 799,
+  "h": 552
+ },
+ {
+  "num": "8.48",
+  "page": 414,
+  "caption": "Figure 8.48 Schematic of flash annealing system and the temperature profile in the wafer.",
+  "box": [
+   69.4,
+   514.6,
+   536.9,
+   686.0
+  ],
+  "file": "fig-8.48.png",
+  "w": 1170,
+  "h": 430
+ },
+ {
+  "num": "8.50",
+  "page": 418,
+  "caption": "Figure 8.50 Process flow for the “SmartCut” process. In b) a H+ implant is performed. In c) and d) the two wafers are bonded. In e) the H implanted layer splits wafer A. The surface roughness is exaggerated. In f) CMP produces an atomically flat surface.",
+  "box": [
+   112.6,
+   129.4,
+   517.2,
+   358.4
+  ],
+  "file": "fig-8.50.png",
+  "w": 1012,
+  "h": 574
+ },
+ {
+  "num": "8.51",
+  "page": 419,
+  "caption": "Figure 8.51 Plasma immersion ion implantation (PIII) system.",
+  "box": [
+   162.0,
+   188.0,
+   450.6,
+   383.4
+  ],
+  "file": "fig-8.51.png",
+  "w": 723,
+  "h": 489
+ },
+ {
+  "num": "9.1",
+  "page": 425,
+  "caption": "Figure 9.1 (a) Schematic of isotropic etching and (b) directional or anisotropic etching.",
+  "box": [
+   36.0,
+   104.1,
+   576.0,
+   214.2
+  ],
+  "file": "fig-9.1.png",
+  "w": 1350,
+  "h": 276
+ },
+ {
+  "num": "9.2",
+  "page": 426,
+  "caption": "Figure 9.2 Isotropic (semi-circular) etch profile at a mask edge, where the lateral and vertical etch rates are equal and apparent steeper lateral etch profile after over-etch.",
+  "box": [
+   172.8,
+   476.6,
+   440.4,
+   592.7
+  ],
+  "file": "fig-9.2.png",
+  "w": 671,
+  "h": 291
+ },
+ {
+  "num": "9.3",
+  "page": 427,
+  "caption": "Figure 9.3 Left: Schematic of pyramidal structures formed by KOH etching, stopping on the (111) plane. Right: suspended cantilever over a pyramidal cavity. (From P. Apte et. al., https://www.ee.iitb.ac.in/~apte/PFOLIO.htm). The red arrows indicate crystal directions which are perpendicular to planes in cubic crystals like silicon.",
+  "box": [
+   79.2,
+   477.6,
+   532.3,
+   659.5
+  ],
+  "file": "fig-9.3.png",
+  "w": 1133,
+  "h": 455
+ },
+ {
+  "num": "9.4",
+  "page": 428,
+  "caption": "Figure 9.4 Schematic of directional etching in a plasma system.",
+  "box": [
+   216.3,
+   340.0,
+   393.2,
+   463.9
+  ],
+  "file": "fig-9.4.png",
+  "w": 444,
+  "h": 311
+ },
+ {
+  "num": "9.5",
+  "page": 429,
+  "caption": "Figure 9.5 (a) Simple parallel-plate plasma and (b) Schematic of neutrals, ions, electrons and inhibitors in a plasma reaction. Only a few of the much more common neutrals from the source gas are shown in the plasma schematic.",
+  "box": [
+   101.3,
+   349.0,
+   514.0,
+   494.8
+  ],
+  "file": "fig-9.5.png",
+  "w": 1032,
+  "h": 365
+ },
+ {
+  "num": "9.6",
+  "page": 431,
+  "caption": "Figure 9.6 Density and energy of various components of a simple RF capacitive plasma (after McVittie [9.4]).",
+  "box": [
+   176.3,
+   365.0,
+   452.0,
+   544.0
+  ],
+  "file": "fig-9.6.png",
+  "w": 690,
+  "h": 448
+ },
+ {
+  "num": "9.7",
+  "page": 432,
+  "caption": "Figure 9.7 (a) Plasma and sheath region, with electric field and ion and electron fluxes indicated (after Lieberman [9.3]). (b) shows a simple circuit model for a typical high-frequency RF plasma.",
+  "box": [
+   88.9,
+   257.8,
+   526.2,
+   482.0
+  ],
+  "file": "fig-9.7.png",
+  "w": 1094,
+  "h": 562
+ },
+ {
+  "num": "9.8",
+  "page": 433,
+  "caption": "Figure 9.8 (a) Development of the plasma potential VP, and (b) electron currents flowing during a small part of the RF cycle to maintain the sheath voltage.",
+  "box": [
+   66.6,
+   465.1,
+   539.0,
+   655.6
+  ],
+  "file": "fig-9.8.png",
+  "w": 1182,
+  "h": 477
+ },
+ {
+  "num": "9.9",
+  "page": 434,
+  "caption": "Figure 9.9 Schematic of the higher DC field on the smaller electrode. An additional DC sheath bias (-VDC) is created by the system to maintain the same current at the smaller electrode.",
+  "box": [
+   76.2,
+   192.9,
+   539.2,
+   376.0
+  ],
+  "file": "fig-9.9.png",
+  "w": 1158,
+  "h": 458
+ },
+ {
+  "num": "9.10",
+  "page": 435,
+  "caption": "Figure 9.10 (a) Simple schematic of the three basic types of reactions that occur in a CF4 plasma due to electron collisions with the source gas molecules and (b) typical optical emission spectrum in a CF4/O2 discharge. Only some of the spectral peaks are labelled. The horizontal axis is the molecular weight of the various molecules. Reprinted from [9.5] with the permission of AIP Publishing.",
+  "box": [
+   173.3,
+   114.7,
+   495.8,
+   262.6
+  ],
+  "file": "fig-9.10.png",
+  "w": 807,
+  "h": 371
+ },
+ {
+  "num": "9.11",
+  "page": 436,
+  "caption": "Figure 9.11 Distribution of electron energies with a long, high-energy tail (after Libermann [9.3])",
+  "box": [
+   160.5,
+   153.1,
+   360.8,
+   227.2
+  ],
+  "file": "fig-9.11.png",
+  "w": 501,
+  "h": 186
+ },
+ {
+  "num": "9.12",
+  "page": 437,
+  "caption": "Figure 9.12 Schematic of (a) purely chemical, (b) purely physical, (c) ion-enhanced chemical and (d) ion-enhanced inhibitor etching mechanisms (after Flamm and Donnelly, 1981 [9.7]).",
+  "box": [
+   106.8,
+   283.3,
+   506.1,
+   526.9
+  ],
+  "file": "fig-9.12.png",
+  "w": 1000,
+  "h": 610
+ },
+ {
+  "num": "9.13",
+  "page": 438,
+  "caption": "Figure 9.13 Schematic of plasma etching where reactive neutrals (radicals) etch isotropically.",
+  "box": [
+   214.5,
+   145.0,
+   393.0,
+   256.3
+  ],
+  "file": "fig-9.13.png",
+  "w": 447,
+  "h": 279
+ },
+ {
+  "num": "9.14",
+  "page": 438,
+  "caption": "Figure 9.14 A simple barrel etching system using an oxygen plasma to strip photoresist. An end view is shown on the left and a side view on the right.",
+  "box": [
+   75.6,
+   390.8,
+   543.4,
+   596.5
+  ],
+  "file": "fig-9.14.png",
+  "w": 1171,
+  "h": 516
+ },
+ {
+  "num": "9.15",
+  "page": 439,
+  "caption": "Figure 9.15 Schematic of purely physical plasma etching, producing very anisotropic profiles.",
+  "box": [
+   217.4,
+   352.5,
+   388.0,
+   453.9
+  ],
+  "file": "fig-9.15.png",
+  "w": 427,
+  "h": 254
+ },
+ {
+  "num": "9.16",
+  "page": 439,
+  "caption": "Figure 9.16 Sputter yield as a function of incident angle, showing maximum sputter yield (corresponding to maximum sputter etch rate) at an angle of 50-60 degrees.",
+  "box": [
+   95.2,
+   493.0,
+   505.8,
+   657.5
+  ],
+  "file": "fig-9.16.png",
+  "w": 1027,
+  "h": 412
+ },
+ {
+  "num": "9.17",
+  "page": 440,
+  "caption": "Figure 9.17 Plot showing silicon etch rate in three regimes: purely chemical, ion enhanced chemical etching and purely physical ion etching (data from [9.8]).",
+  "box": [
+   135.4,
+   404.2,
+   467.0,
+   644.6
+  ],
+  "file": "fig-9.17.png",
+  "w": 830,
+  "h": 602
+ },
+ {
+  "num": "9.18",
+  "page": 441,
+  "caption": "Figure 9.18 Schematic of Ion Enhanced Chemical Etching Process, whereby adsorbed reactive species are activated by ion bombardment to produce volatile reaction products.",
+  "box": [
+   219.2,
+   320.1,
+   393.2,
+   422.0
+  ],
+  "file": "fig-9.18.png",
+  "w": 437,
+  "h": 256
+ },
+ {
+  "num": "9.19",
+  "page": 442,
+  "caption": "Figure 9.19 (a) Experimental setup for determining plasma etch kinetics and (b) etch yield versus neutral/ion flow ratio. After Chang et al., [9.9].",
+  "box": [
+   75.8,
+   68.6,
+   544.3,
+   270.7
+  ],
+  "file": "fig-9.19.png",
+  "w": 1172,
+  "h": 506
+ },
+ {
+  "num": "9.20",
+  "page": 442,
+  "caption": "Figure 9.20 Schematic of ion-enhanced inhibitor etching.",
+  "box": [
+   215.2,
+   462.0,
+   397.4,
+   580.1
+  ],
+  "file": "fig-9.20.png",
+  "w": 456,
+  "h": 296
+ },
+ {
+  "num": "9.21",
+  "page": 443,
+  "caption": "Figure 9.21 Relative etch rates of oxide, nitride and silicon as the F/C ratio increases. After R.J. Shul, Sandia National Laboratory.",
+  "box": [
+   174.7,
+   440.2,
+   439.2,
+   617.8
+  ],
+  "file": "fig-9.21.png",
+  "w": 662,
+  "h": 445
+ },
+ {
+  "num": "9.22",
+  "page": 444,
+  "caption": "Figure 9.22 Schematic of interacting ion flux, F/C source gas ratio and O2 and H2 additions on etch and deposition landscape. (after [9.5])",
+  "box": [
+   167.0,
+   453.6,
+   445.4,
+   661.9
+  ],
+  "file": "fig-9.22.png",
+  "w": 697,
+  "h": 521
+ },
+ {
+  "num": "9.23",
+  "page": 445,
+  "caption": "Figure 9.23 Schematic of the Bosch process",
+  "box": [
+   118.1,
+   320.1,
+   501.4,
+   495.8
+  ],
+  "file": "fig-9.23.png",
+  "w": 959,
+  "h": 440
+ },
+ {
+  "num": "9.24",
+  "page": 446,
+  "caption": "Figure 9.24 Schematic of an inductively coupled plasma system (ICP) that separates bulk plasma generation and the ion energy distribution using different power sources.",
+  "box": [
+   160.4,
+   354.0,
+   452.2,
+   582.9
+  ],
+  "file": "fig-9.24.png",
+  "w": 731,
+  "h": 574
+ },
+ {
+  "num": "9.25",
+  "page": 447,
+  "caption": "Figure 9.25 Silicon lateral and vertical etch rates in the Fluorine, Chlorine and Bromine chemistries. The relative etch rates are approximate. After J.W. Coburn, Chapter 1 in Handbook of Advanced Plasma Processing Techniques edited by R.J. Shul, S.J. Pearton [9.13].",
+  "box": [
+   158.4,
+   326.4,
+   477.6,
+   581.8
+  ],
+  "file": "fig-9.25.png",
+  "w": 798,
+  "h": 639
+ },
+ {
+  "num": "9.26",
+  "page": 448,
+  "caption": "Figure 9.26 Left: GaAs etch profile showing backside via etch to reduce source resistance and separate high-selectivity etch to remove GaAs and selectively stop on AlGaAs. Right: Schematic of the range of etch processes that can be achieved by ICP high-density plasma systems, where the ion energy (Y-axis) and radical density (X-axis) can be independently controlled.",
+  "box": [
+   68.6,
+   422.4,
+   537.6,
+   630.7
+  ],
+  "file": "fig-9.26.png",
+  "w": 1173,
+  "h": 521
+ },
+ {
+  "num": "9.27",
+  "page": 449,
+  "caption": "Figure 9.27 (a) bowing (b) microtrenching and (c) aspect-ratio-dependent etching (ARDE) (after McVittie [9.4]).",
+  "box": [
+   97.6,
+   427.6,
+   514.6,
+   583.7
+  ],
+  "file": "fig-9.27.png",
+  "w": 1043,
+  "h": 392
+ },
+ {
+  "num": "9.28",
+  "page": 451,
+  "caption": "Figure 9.28 (Left) Explicit evolution of a string of points due to the velocity from the normal component of etching flux and (Right) Implicit evolution of a surface cross-section using the level- set method.",
+  "box": [
+   129.0,
+   172.7,
+   489.9,
+   426.5
+  ],
+  "file": "fig-9.28.png",
+  "w": 903,
+  "h": 636
+ },
+ {
+  "num": "9.29",
+  "page": 452,
+  "caption": "Figure 9.29 Ions and neutral species generated by the plasma arrive at the wafer surface with an angular distribution.",
+  "box": [
+   163.6,
+   287.5,
+   449.3,
+   468.9
+  ],
+  "file": "fig-9.29.png",
+  "w": 715,
+  "h": 455
+ },
+ {
+  "num": "9.30",
+  "page": 453,
+  "caption": "Figure 9.30 Normalized flux distribution for a cosine function to various powers. An ideal cosine function corresponds to n = 1. After Silvaco Victory Process Users Manual [9.16].",
+  "box": [
+   36.0,
+   118.8,
+   576.0,
+   295.8
+  ],
+  "file": "fig-9.30.png",
+  "w": 1350,
+  "h": 444
+ },
+ {
+  "num": "9.31",
+  "page": 454,
+  "caption": "Figure 9.31 Etching profile for an ideal cosine input distribution of neutrals, accounting for shadowing and with various sticking coefficients and also accounting for re-emission with an ideal cosine distribution, allowing for shadowed areas to be etched (from Victory Process [9.16]).",
+  "box": [
+   182.4,
+   119.0,
+   441.6,
+   299.0
+  ],
+  "file": "fig-9.31.png",
+  "w": 648,
+  "h": 451
+ },
+ {
+  "num": "9.32",
+  "page": 454,
+  "caption": "Figure 9.32 Viewing angle concept in calculating the total incoming flux density at a point i.",
+  "box": [
+   184.1,
+   520.0,
+   424.3,
+   622.8
+  ],
+  "file": "fig-9.32.png",
+  "w": 601,
+  "h": 258
+ },
+ {
+  "num": "9.33",
+  "page": 455,
+  "caption": "Figure 9.33 Linear combination of isotropic and anisotropic etching, with the SHK/F/ term varying from 0% to 100% of the total, showing a progression from completely directional to completely isotropic (from Victory Process [9.16]).",
+  "box": [
+   165.6,
+   399.8,
+   441.6,
+   613.0
+  ],
+  "file": "fig-9.33.png",
+  "w": 690,
+  "h": 534
+ },
+ {
+  "num": "9.34",
+  "page": 457,
+  "caption": "Figure 9.34 Schematic of ion-enhanced and natural desorption of SiFX byproducts.",
+  "box": [
+   186.6,
+   334.9,
+   426.2,
+   447.5
+  ],
+  "file": "fig-9.34.png",
+  "w": 600,
+  "h": 282
+ },
+ {
+  "num": "9.35",
+  "page": 458,
+  "caption": "Figure 9.35 Simulation of ion-enhanced chemical etching, showing an approximately 12x enhancement in the chemical etch rate when ion bombardment is present (from Victory Process [9.16])",
+  "box": [
+   168.0,
+   501.6,
+   441.6,
+   669.6
+  ],
+  "file": "fig-9.35.png",
+  "w": 684,
+  "h": 420
+ },
+ {
+  "num": "9.36",
+  "page": 459,
+  "caption": "Figure 9.36 Simulation of aspect ratio dependent etching where ion and neutral fluxes stick on the sidewalls of narrow trenches and reduce the etch rate depending on the aspect ratio (from Victory Process [9.16]).",
+  "box": [
+   172.8,
+   297.1,
+   422.4,
+   465.1
+  ],
+  "file": "fig-9.36.png",
+  "w": 624,
+  "h": 421
+ },
+ {
+  "num": "9.37",
+  "page": 460,
+  "caption": "Figure 9.37 Schematic of the two sequential reactions that constitute a cycle of ALE etching. In Reaction A, a modified surface layer is formed. In Reaction B, a removal step etches the modified layer without disturbing the underlying substrate.",
+  "box": [
+   68.0,
+   293.3,
+   537.5,
+   432.6
+  ],
+  "file": "fig-9.37.png",
+  "w": 1174,
+  "h": 349
+ },
+ {
+  "num": "9.38",
+  "page": 461,
+  "caption": "Figure 9.38 Cyclic processing during ALE removes material during each etch-per-cycle (EPC), with the time needed to switch between the modification and etching reactions shown in grey bars i.e. to pump out the chlorine species and introduce the Argon at the right ion energy (after [9.17]).",
+  "box": [
+   177.1,
+   98.8,
+   437.9,
+   285.7
+  ],
+  "file": "fig-9.38.png",
+  "w": 653,
+  "h": 469
+ },
+ {
+  "num": "9.39",
+  "page": 461,
+  "caption": "Figure 9.39 Surface coverage by adsorbed molecules versus time, with the kinetics being determined by the number of vacant surface sites according to the Langmuir model [9.18, 9.19].",
+  "box": [
+   153.4,
+   521.7,
+   462.0,
+   672.1
+  ],
+  "file": "fig-9.39.png",
+  "w": 772,
+  "h": 377
+ },
+ {
+  "num": "9.40",
+  "page": 463,
+  "caption": "Figure 9.40 Schematic illustration of the etch per cycle versus the ion energy, showing an ALE window with the useful operating regime.",
+  "box": [
+   178.0,
+   173.3,
+   435.9,
+   357.0
+  ],
+  "file": "fig-9.40.png",
+  "w": 646,
+  "h": 460
+ },
+ {
+  "num": "9.41",
+  "page": 464,
+  "caption": "Figure 9.41 Examples of an older multi-level metal technology (left) and a modern CMOS process (right), both illustrating the need for planarization.",
+  "box": [
+   81.6,
+   119.0,
+   530.4,
+   285.6
+  ],
+  "file": "fig-9.41.png",
+  "w": 1122,
+  "h": 417
+ },
+ {
+  "num": "9.42",
+  "page": 465,
+  "caption": "Figure 9.42 Illustration of photoresist etchback process. Photoresist is deposited over rough topography, then the structure is etched back, leaving a smooth top surface of the oxide.",
+  "box": [
+   205.3,
+   142.8,
+   400.0,
+   218.3
+  ],
+  "file": "fig-9.42.png",
+  "w": 487,
+  "h": 189
+ },
+ {
+  "num": "9.43",
+  "page": 466,
+  "caption": "Figure 9.43 Example of degree of planarization (DOP).",
+  "box": [
+   97.1,
+   147.0,
+   526.0,
+   254.0
+  ],
+  "file": "fig-9.43.png",
+  "w": 1073,
+  "h": 269
+ },
+ {
+  "num": "9.44",
+  "page": 466,
+  "caption": "Figure 9.44 Basic CMP planarization tool [9.24].",
+  "box": [
+   148.4,
+   412.9,
+   464.4,
+   620.0
+  ],
+  "file": "fig-9.44.png",
+  "w": 790,
+  "h": 519
+ },
+ {
+  "num": "9.45",
+  "page": 467,
+  "caption": "Figure 9.45 Left, Applied Materials Reflexion CMP Machine. Right, Applied OptaTM CMP System. Photos courtesy of Applied Materials, Inc.",
+  "box": [
+   36.0,
+   221.3,
+   576.0,
+   408.0
+  ],
+  "file": "fig-9.45.png",
+  "w": 1350,
+  "h": 467
+ },
+ {
+  "num": "9.46",
+  "page": 468,
+  "caption": "Figure 9.46 Illustration of CMP processes at the macroscopic and microscopic levels. The left side repeats Figure 9.44. The right side shows an expanded, microscopic view of the polishing pad/wafer interface.",
+  "box": [
+   75.8,
+   259.2,
+   536.6,
+   439.7
+  ],
+  "file": "fig-9.46.png",
+  "w": 1153,
+  "h": 452
+ },
+ {
+  "num": "9.47",
+  "page": 469,
+  "caption": "Figure 9.47 Parameters in Warnock’s model for CMP. The shape of the pad depends on its physical structure, rigidity and the pad pressure. After [9.26].",
+  "box": [
+   180.0,
+   242.4,
+   432.0,
+   398.4
+  ],
+  "file": "fig-9.47.png",
+  "w": 630,
+  "h": 390
+ },
+ {
+  "num": "9.48",
+  "page": 470,
+  "caption": "Figure 9.48 Athena simulation of CMP on an SiO2 structure. The starting structure shown on the left consists of 20 µm SiO2 columns and spaces on an SiO2 substrate. The simulated polished profiles after 3 and 6 minutes are shown on the right. Nominal simulation parameters were used, KINETIC.FAC.SOFT =25, HEIGHT.FAC =0.02, LENGTH.FAC =4.2, and KINETIC.FAC =10.",
+  "box": [
+   36.0,
+   119.0,
+   576.0,
+   266.4
+  ],
+  "file": "fig-9.48.png",
+  "w": 1350,
+  "h": 369
+ },
+ {
+  "num": "9.49",
+  "page": 470,
+  "caption": "Figure 9.49 Results from Warnock’s paper for the same SiO2 structure simulated in Figure 9.48. The solid lines are experimental results, the dashed lines are simulations. Used with permission of IOP Publishing Ltd., from [9.27]; permission conveyed through Copyright Clearance Center, Inc.",
+  "box": [
+   100.8,
+   337.0,
+   498.7,
+   487.2
+  ],
+  "file": "fig-9.49.png",
+  "w": 995,
+  "h": 376
+ },
+ {
+  "num": "9.51",
+  "page": 471,
+  "caption": "Figure 9.51 shows an Athena simulation of a similar structure but with 5 µm SiO2 columns and spaces. On the right in the figure are Warnock’s experimental results and his simulation results for this structure [9.27]. The agreement between both simulations and the experimental results is quite good.",
+  "box": [
+   108.0,
+   424.8,
+   487.2,
+   669.6
+  ],
+  "file": "fig-9.51.png",
+  "w": 948,
+  "h": 612
+ },
+ {
+  "num": "9.50",
+  "page": 471,
+  "caption": "Figure 9.50 Left, Athena simulation of CMP on an SiO2 structure. The starting structure consists of 5 µm SiO2 columns and spaces on an SiO2 substrate. The same simulation parameters as in Fig. 9.48 were used. Warnock’s experimental and simulation results are shown on the right. Used with permission of IOP Publishing Ltd., from [9.27]; permission conveyed through Copyright Clearance Center, Inc.",
+  "box": [
+   36.0,
+   133.4,
+   576.0,
+   343.2
+  ],
+  "file": "fig-9.50.png",
+  "w": 1350,
+  "h": 525
+ },
+ {
+  "num": "9.52",
+  "page": 472,
+  "caption": "Figure 9.52 Athena simulation of chemical-mechanical polishing of a tungsten via structure: Left: after W deposition by CVD; Center: polishing has almost removed the W outside the vias. Right: after polishing is complete. Due to the faster polishing of tungsten compared to silicon dioxide and the semi-rigid pad, “dishing” of the tungsten plug can result.",
+  "box": [
+   102.2,
+   273.6,
+   512.6,
+   470.9
+  ],
+  "file": "fig-9.52.png",
+  "w": 1027,
+  "h": 494
+ },
+ {
+  "num": "10.1",
+  "page": 477,
+  "caption": "Figure 10.1 (Left) Schematic of lightly doped silicon epitaxial layer on a silicon substrate and (Right) a power bipolar device that utilizes a lightly doped collector layer on a heavily doped substrate.",
+  "box": [
+   95.2,
+   421.0,
+   517.3,
+   578.5
+  ],
+  "file": "fig-10.1.png",
+  "w": 1056,
+  "h": 395
+ },
+ {
+  "num": "10.2",
+  "page": 478,
+  "caption": "Figure 10.2 Schematic of adsorbed silicon atoms from SiH4 or SiCl4 on the surface of the wafer, where they migrate to low-energy kink sites or ledge sites. Surface and ledge nucleation can also occur and continue the crystal structure. After Ted Kamins [10.1].",
+  "box": [
+   131.8,
+   451.8,
+   483.3,
+   636.4
+  ],
+  "file": "fig-10.2.png",
+  "w": 880,
+  "h": 462
+ },
+ {
+  "num": "10.3",
+  "page": 479,
+  "caption": "Figure 10.3 Schematic of an atmospheric-pressure chemical vapor deposition (APCVD) system.",
+  "box": [
+   110.4,
+   261.4,
+   502.4,
+   410.0
+  ],
+  "file": "fig-10.3.png",
+  "w": 981,
+  "h": 373
+ },
+ {
+  "num": "10.4",
+  "page": 479,
+  "caption": "Figure 10.4 Schematic of the important gas-phase transport flux (F1) and the surface reaction flux (F2) in a CVD deposition system.",
+  "box": [
+   167.0,
+   452.1,
+   451.6,
+   603.2
+  ],
+  "file": "fig-10.4.png",
+  "w": 712,
+  "h": 379
+ },
+ {
+  "num": "10.5",
+  "page": 481,
+  "caption": "Figure 10.5 (left) Surface reaction-controlled regime, where the surface reaction is slow (strong function of temperature) and (right) Mass-transfer-controlled regime, where the surface reaction is fast (weak function of temperature).",
+  "box": [
+   90.0,
+   501.8,
+   529.7,
+   658.2
+  ],
+  "file": "fig-10.5.png",
+  "w": 1101,
+  "h": 392
+ },
+ {
+  "num": "10.6",
+  "page": 482,
+  "caption": "Figure 10.6 Arrhenius plot of the growth velocity (log scale) versus 1/T, showing the mass- transfer and surface-reaction-controlled regimes. For a 2eV surface reaction activation energy, a 10oC change in temperature causes a 20% change in deposition rate. The surface reactions are exponentially activated, so that kS is given by",
+  "box": [
+   153.2,
+   302.9,
+   454.1,
+   487.6
+  ],
+  "file": "fig-10.6.png",
+  "w": 754,
+  "h": 462
+ },
+ {
+  "num": "10.7",
+  "page": 483,
+  "caption": "Figure 10.7 Complementary error function doping from substrate solid-state diffusion and exponential doping from evaporating dopant atoms, combining to cause “autodoping” during epitaxial growth.",
+  "box": [
+   174.2,
+   377.6,
+   447.9,
+   571.8
+  ],
+  "file": "fig-10.7.png",
+  "w": 685,
+  "h": 486
+ },
+ {
+  "num": "10.8",
+  "page": 484,
+  "caption": "Figure 10.8 Arrhenius plot of normalized deposition rate for equal silicon containing gas flows using different molecular weight silicon source gases (After [10.1, 10.2])",
+  "box": [
+   156.0,
+   252.0,
+   463.2,
+   453.6
+  ],
+  "file": "fig-10.8.png",
+  "w": 768,
+  "h": 504
+ },
+ {
+  "num": "10.9",
+  "page": 486,
+  "caption": "Figure 10.9 shows a range of semiconductors with their band gap and lattice constant. Materials with the same lattice constant can be easily grown using lattice-matched unstrained heteroepitaxy without creating defects, such as the GaAs/AlAs materials shown in the dotted blue region. This allows the bandgap of AlGaAs alloys to be tuned in these direct-bandgap materials. Materials with different lattice constants can also be grown using strained heteroepitaxy, such as the SiGe layers indicated in the yellow region. Because both of these applications are very important, we describe them in more detail.",
+  "box": [
+   189.6,
+   86.4,
+   424.8,
+   261.6
+  ],
+  "file": "fig-10.9.png",
+  "w": 588,
+  "h": 438
+ },
+ {
+  "num": "10.10",
+  "page": 486,
+  "caption": "Figure 10.10 (Left) Photomicrographs of two generations of recessed SiGe source/drain structures in PMOS devices. Upper photo © IEEE [2004]. Reprinted with permission from [10.3]. Lower photo © IEEE [2007]. Reprinted with permission from [10.4]. (Right) a schematic of how the Ge or SiGe lattice constant is compressed during heteroepitaxial growth [10.1]. This causes the SiGe region in the PMOS source/drain region to push sideways on the silicon channel creating the compression that increases hole mobility in the channel region.",
+  "box": [
+   88.8,
+   304.8,
+   518.4,
+   543.4
+  ],
+  "file": "fig-10.10.png",
+  "w": 1074,
+  "h": 597
+ },
+ {
+  "num": "10.11",
+  "page": 487,
+  "caption": "Figure 10.11 SiGe layers on Si grown below and above the critical thickness. Above the critical thickness, many dislocations are introduced. R is the degree of strain relaxation. The measurements were made with an atomic force microscope (AFM). The vertical scale (out of the page) is shown on the right. Reprinted from [10.5] with the permission of AIP Publishing.",
+  "box": [
+   110.4,
+   117.6,
+   513.6,
+   263.0
+  ],
+  "file": "fig-10.11.png",
+  "w": 1008,
+  "h": 364
+ },
+ {
+  "num": "10.12",
+  "page": 488,
+  "caption": "Figure 10.12 An illustration of a strained epitaxial layer below hc in thickness on the left and a relaxed epitaxial layer with dislocations (red circles) forming at a thickness beyond hc on the right.",
+  "box": [
+   112.0,
+   99.1,
+   500.0,
+   252.0
+  ],
+  "file": "fig-10.12.png",
+  "w": 970,
+  "h": 383
+ },
+ {
+  "num": "10.13",
+  "page": 488,
+  "caption": "Figure 10.13 Left: Typical model predictions for hc as a function of the mismatch in lattice constant between the epitaxial film and the substrate. Right: Specific example for the Si1-xGex system. After [10.8]. The red dots correspond to the images in Figure 10.11.",
+  "box": [
+   74.4,
+   442.6,
+   528.0,
+   613.4
+  ],
+  "file": "fig-10.13.png",
+  "w": 1134,
+  "h": 428
+ },
+ {
+  "num": "10.14",
+  "page": 489,
+  "caption": "Figure 10.14 Schematic of the formation of antiphase domain boundaries when even a lattice- matched material like GaAs is grown on a Ge substrate.",
+  "box": [
+   174.0,
+   158.7,
+   447.0,
+   313.7
+  ],
+  "file": "fig-10.14.png",
+  "w": 684,
+  "h": 389
+ },
+ {
+  "num": "10.15",
+  "page": 489,
+  "caption": "Figure 10.15 Schematic illustration of GaN on Si heteroepitaxial growth for a device structure, showing the barrier and buffer layers required to produce device-quality GaN layers.",
+  "box": [
+   90.2,
+   480.7,
+   516.9,
+   646.0
+  ],
+  "file": "fig-10.15.png",
+  "w": 1068,
+  "h": 414
+ },
+ {
+  "num": "10.16",
+  "page": 491,
+  "caption": "Figure 10.16 Schematic of epitaxial lateral overgrowth (ELO) method, where masking layers and narrow growth windows inhibit the propagation of threading dislocations into the “wings” or later grown regions over the mask, providing high quality material on a lattice mismatched substrate.",
+  "box": [
+   167.4,
+   203.0,
+   444.2,
+   343.8
+  ],
+  "file": "fig-10.16.png",
+  "w": 693,
+  "h": 353
+ },
+ {
+  "num": "10.17",
+  "page": 492,
+  "caption": "Figure 10.17 Growth velocity vs 1/T for APCVD (760 Torr) and LPCVD (1 Torr) systems. The lower total pressure shifts the hG curve upward, extending the surface reaction regime to higher temperatures. The red dots show possible operating points.",
+  "box": [
+   144.7,
+   405.6,
+   463.4,
+   586.9
+  ],
+  "file": "fig-10.17.png",
+  "w": 798,
+  "h": 454
+ },
+ {
+  "num": "10.18",
+  "page": 493,
+  "caption": "Figure 10.18 Vertical LPCVD reactor with wafers stacked close together, enabled by the deposition reaction operating in the surface-reaction-dominated regime.",
+  "box": [
+   173.3,
+   217.1,
+   383.5,
+   412.4
+  ],
+  "file": "fig-10.18.png",
+  "w": 526,
+  "h": 490
+ },
+ {
+  "num": "10.19",
+  "page": 495,
+  "caption": "Figure 10.19 Schematic of H2 or N2 carrier gas transporting TMG and AsH3 precursors to a heated substrate to pyrolyze and form GaAs and reactant byproducts.",
+  "box": [
+   90.3,
+   114.6,
+   545.0,
+   264.9
+  ],
+  "file": "fig-10.19.png",
+  "w": 1138,
+  "h": 377
+ },
+ {
+  "num": "10.20",
+  "page": 496,
+  "caption": "Figure 10.20 Schematic showing some of the desirable properties of an ideal MOCVD precursor (after [10.18]).",
+  "box": [
+   204.2,
+   303.7,
+   409.2,
+   498.4
+  ],
+  "file": "fig-10.20.png",
+  "w": 513,
+  "h": 487
+ },
+ {
+  "num": "10.21",
+  "page": 497,
+  "caption": "Figure 10.21 (Left) Schematic of a vertical flow reactor, with a showerhead baffle to uniformly distribute input gases which decompose on the RF-heated susceptor. (Right) Schematic of the uniform boundary development from a combination of susceptor rotation and careful hydrodynamic system design (after [10.20]).",
+  "box": [
+   89.6,
+   495.7,
+   522.8,
+   646.7
+  ],
+  "file": "fig-10.21.png",
+  "w": 1085,
+  "h": 378
+ },
+ {
+  "num": "10.23",
+  "page": 500,
+  "caption": "Figure 10.23 A possible configuration for a remote high-density HD-PECVD system for oxide deposition, where one gas is excited far from the wafer in a high-density excitation region (ICP) and the more reactive gas is introduced close to the wafer.",
+  "box": [
+   186.4,
+   127.7,
+   466.7,
+   310.2
+  ],
+  "file": "fig-10.23.png",
+  "w": 702,
+  "h": 457
+ },
+ {
+  "num": "10.24",
+  "page": 500,
+  "caption": "Figure 10.24 (Left) Filling of a trench using PECVD (with void), and (Right) using etch profiling to taper sidewalls and using high-density PECVD with simultaneous deposition and corner sputter etching to uniformly fill the trench.",
+  "box": [
+   102.5,
+   527.4,
+   503.0,
+   660.2
+  ],
+  "file": "fig-10.24.png",
+  "w": 1002,
+  "h": 333
+ },
+ {
+  "num": "10.25",
+  "page": 502,
+  "caption": "Figure 10.25 The sequence of steps in the ALD process: (a) hydroxylated Si surface; (b) TMA reaction with OH; (c) first monolayer; (d) H2O pulse; (e) H2O reaction with methyl groups releasing methane; and (f) second passivating monolayer. After J. Ruzyllo, Penn State.",
+  "box": [
+   76.0,
+   186.0,
+   540.0,
+   431.9
+  ],
+  "file": "fig-10.25.png",
+  "w": 1160,
+  "h": 615
+ },
+ {
+  "num": "10.26",
+  "page": 503,
+  "caption": "Figure 10.26 Two full cycles deposits 2 monolayers, with approximately 1 Angstrom per cycle. (After J. Ruzyllo, Penn State.)",
+  "box": [
+   156.0,
+   70.7,
+   453.0,
+   241.3
+  ],
+  "file": "fig-10.26.png",
+  "w": 743,
+  "h": 428
+ },
+ {
+  "num": "10.27",
+  "page": 504,
+  "caption": "Figure 10.27 A DC plasma created by applying a DC voltage high enough to ionize the low- pressure gas between the cathode and anode. The voltage distribution between the cathode and anode is also shown on the right side.",
+  "box": [
+   118.5,
+   130.8,
+   501.5,
+   302.8
+  ],
+  "file": "fig-10.27.png",
+  "w": 958,
+  "h": 430
+ },
+ {
+  "num": "10.28",
+  "page": 505,
+  "caption": "Figure 10.28 (Left) A low aspect DC sputtering discharge, where the cathode target material is sputtered onto a substrate on the grounded anode. (Right) A practical implementation for semiconductor deposition using a peripheral electrode to minimize DC current through the substrate.",
+  "box": [
+   75.6,
+   169.9,
+   543.7,
+   334.1
+  ],
+  "file": "fig-10.28.png",
+  "w": 1171,
+  "h": 412
+ },
+ {
+  "num": "10.29",
+  "page": 506,
+  "caption": "Figure 10.29 A schematic of a DC planar magnetron sputtering target. Permanent magnets behind the cathode target produce a magnetic field that is substantially parallel to the target, creating an ℇ x B field that causes electrons to spiral around the cathode surface, increasing the plasma density and thus increasing the sputtering rate.",
+  "box": [
+   224.0,
+   130.4,
+   388.9,
+   230.8
+  ],
+  "file": "fig-10.29.png",
+  "w": 414,
+  "h": 251
+ },
+ {
+  "num": "10.30",
+  "page": 507,
+  "caption": "Figure 10.30 Typical experimental hysteresis curve for a reactive sputtering process with increasing and decreasing gas flow rates. The deposition rate does not increase and decrease at the same value with the supply of reactive gas due to target poisoning.",
+  "box": [
+   191.7,
+   70.9,
+   402.2,
+   209.9
+  ],
+  "file": "fig-10.30.png",
+  "w": 527,
+  "h": 348
+ },
+ {
+  "num": "10.31",
+  "page": 508,
+  "caption": "Figure 10.31 Sputtering equipment showing sputtering from the smaller electrode with higher sheath fields.",
+  "box": [
+   144.2,
+   71.0,
+   463.9,
+   282.8
+  ],
+  "file": "fig-10.31.png",
+  "w": 800,
+  "h": 531
+ },
+ {
+  "num": "10.32",
+  "page": 508,
+  "caption": "Figure 10.32 Cosine distribution of ejected target atoms from a sputtering target under ion bombardment.",
+  "box": [
+   175.5,
+   441.5,
+   437.4,
+   590.0
+  ],
+  "file": "fig-10.32.png",
+  "w": 656,
+  "h": 373
+ },
+ {
+  "num": "10.33",
+  "page": 509,
+  "caption": "Figure 10.33 (Left) Schematic of an evaporation system with an operating pressure of 10-5 Torr and (Right) E-beam deposition system.",
+  "box": [
+   118.6,
+   423.1,
+   495.3,
+   619.3
+  ],
+  "file": "fig-10.33.png",
+  "w": 943,
+  "h": 492
+ },
+ {
+  "num": "10.34",
+  "page": 510,
+  "caption": "Figure 10.34 (Left) Schematic of isotropic deposition from a point source, while (Right) a typical small planar evaporation source deposits with a cosine angle distribution.",
+  "box": [
+   175.3,
+   191.2,
+   416.9,
+   286.7
+  ],
+  "file": "fig-10.34.png",
+  "w": 605,
+  "h": 240
+ },
+ {
+  "num": "10.35",
+  "page": 510,
+  "caption": "Figure 10.35 A planar source placed at the base of a sphere deposits the same thickness on wafers mounted around the sphere, because the reduced flux at an angle θ from the vertical is exactly compensated for by a shorter distance to the source, if the emission is an ideal cosine distribution.",
+  "box": [
+   263.4,
+   316.9,
+   414.3,
+   482.8
+  ],
+  "file": "fig-10.35.png",
+  "w": 378,
+  "h": 415
+ },
+ {
+  "num": "10.36",
+  "page": 511,
+  "caption": "Figure 10.36 (Left) Schematic of an MBE chamber, showing the source effusion cells, RHEED analytical monitoring of layer thickness and other ports. (Right) A commercially available Veeco MBE system, showing various stainless steel ports and chambers. Photo courtesy Veeco Corp., used with permission.",
+  "box": [
+   86.4,
+   456.0,
+   530.4,
+   653.8
+  ],
+  "file": "fig-10.36.png",
+  "w": 1110,
+  "h": 495
+ },
+ {
+  "num": "10.37",
+  "page": 513,
+  "caption": "Figure 10.37 Simulations of deposited layers with different ratios of sidewall to planar coverage.",
+  "box": [
+   36.0,
+   177.3,
+   576.0,
+   360.4
+  ],
+  "file": "fig-10.37.png",
+  "w": 1350,
+  "h": 458
+ },
+ {
+  "num": "10.38",
+  "page": 514,
+  "caption": "Figure 10.38 Overhang test structure to determine the input angle distribution and sticking coefficient. Shadowing is accounted for through the view angle of the incoming atoms. Note that the incoming atoms emit with an ideal cosine emission during each bounce after they strike the surface.",
+  "box": [
+   195.9,
+   115.8,
+   417.1,
+   282.8
+  ],
+  "file": "fig-10.38.png",
+  "w": 554,
+  "h": 419
+ },
+ {
+  "num": "10.39",
+  "page": 514,
+  "caption": "Figure 10.39 Simulations of deposition on an overhang test structure. The columns are for n = 1, 3, 20 in the (cos q)n exponent. The rows are for sticking coefficients SC = 0.1 and 0.9. Simulated with Victory Process [10.31].",
+  "box": [
+   79.2,
+   374.4,
+   537.6,
+   629.8
+  ],
+  "file": "fig-10.39.png",
+  "w": 1146,
+  "h": 639
+ },
+ {
+  "num": "10.40",
+  "page": 515,
+  "caption": "Figure 10.40 Experimental results for (a) conformal tungsten CVD deposition (WF6 +H2) (b) TEOS oxide deposition – note the darker oxide layer is surrounded by a conformal polysilicon layer for image contrast and (c) A sputtered Aluminum layer, showing high sticking on landing. Courtesy of Jim McVittie.",
+  "box": [
+   86.4,
+   84.0,
+   518.4,
+   160.8
+  ],
+  "file": "fig-10.40.png",
+  "w": 1080,
+  "h": 192
+ },
+ {
+  "num": "10.41",
+  "page": 515,
+  "caption": "Figure 10.41 Viewing angle for a trench structure and a via structure with the same aspect ratio or etch depth. The trench is effectively a 2D structure while the via is a 3D structure. The dashed red lines show cross-sections that are considered in Figure 10.42. Simulated with Victory Process [10.31].",
+  "box": [
+   148.8,
+   355.2,
+   463.2,
+   499.2
+  ],
+  "file": "fig-10.41.png",
+  "w": 786,
+  "h": 360
+ },
+ {
+  "num": "10.42",
+  "page": 516,
+  "caption": "Figure 10.42 Deposition in a trench versus a via differs because of 2D versus 3D view angles and shadowing effects. The cosine exponent n=3 for the incoming particles and the sticking coefficient is SC = 0.2. These represent cross-sections from the structures in Figure 10.41.",
+  "box": [
+   129.6,
+   74.4,
+   482.4,
+   259.2
+  ],
+  "file": "fig-10.42.png",
+  "w": 882,
+  "h": 462
+ },
+ {
+  "num": "10.43",
+  "page": 516,
+  "caption": "Figure 10.43 Creation of a “keyhole” due to incomplete filling in a trench. An ideal cosine distribution (n=1) of incoming particles and an SC = 0.2 was used in the simulation.",
+  "box": [
+   225.6,
+   324.0,
+   388.8,
+   499.2
+  ],
+  "file": "fig-10.43.png",
+  "w": 408,
+  "h": 438
+ },
+ {
+  "num": "11.1",
+  "page": 520,
+  "caption": "Figure 11.1 Left: 2D cross-section of the final CMOS integrated circuit discussed in Chapter 2, with a PMOS device on the left and an NMOS device on the right. Only the first level of Cu metallization is shown. Right 3D SEM of a portion of the interconnect structure in an actual silicon chip with the dielectric layers etched away so the Cu metal layers and vias are clearly seen. IBM was the first to introduce Cu interconnects in 1997. Photo reprint courtesy of IBM Corporation ©.",
+  "box": [
+   69.6,
+   271.2,
+   540.0,
+   456.0
+  ],
+  "file": "fig-11.1.png",
+  "w": 1176,
+  "h": 462
+ },
+ {
+  "num": "11.2",
+  "page": 521,
+  "caption": "Figure 11.2 Hierarchy of interconnects in a modern silicon CMOS chip [11.1]. This figure is based on a figure in the last version (2013) of the ITRS.",
+  "box": [
+   133.6,
+   173.3,
+   479.0,
+   404.5
+  ],
+  "file": "fig-11.2.png",
+  "w": 865,
+  "h": 579
+ },
+ {
+  "num": "11.3",
+  "page": 522,
+  "caption": "Figure 11.3 Simple interconnect structure for RC analysis. The two lines on top are metal interconnects of dimensions W, L, and H, sitting on a dielectric layer such as SiO2. The dielectric material is also between and above the metal lines (dotted blue lines). After [11.3].",
+  "box": [
+   156.3,
+   306.1,
+   463.3,
+   445.9
+  ],
+  "file": "fig-11.3.png",
+  "w": 769,
+  "h": 350
+ },
+ {
+  "num": "11.4",
+  "page": 523,
+  "caption": "Figure 11.4 Electrical equivalent circuit for very short wires for which RWire << RDriver.",
+  "box": [
+   90.2,
+   219.0,
+   507.8,
+   305.9
+  ],
+  "file": "fig-11.4.png",
+  "w": 1045,
+  "h": 218
+ },
+ {
+  "num": "11.5",
+  "page": 525,
+  "caption": "Figure 11.5 Global interconnect and gate time delay versus chip area and minimum feature sizes, for various interconnect materials. The diagonal lines are the interconnect delays for various materials. The dashed horizontal line is the gate delay. Fmin corresponds to the minimum feature size. Interconnect delay corresponds to longest global interconnect in the circuit. After [11.3].",
+  "box": [
+   85.4,
+   230.4,
+   526.5,
+   442.2
+  ],
+  "file": "fig-11.5.png",
+  "w": 1104,
+  "h": 530
+ },
+ {
+  "num": "11.6",
+  "page": 526,
+  "caption": "Figure 11.6 Example of breaking up a long interconnect line into sections (3 in this case) and inserting repeaters (amplifiers) between each section.",
+  "box": [
+   89.1,
+   351.7,
+   532.8,
+   420.2
+  ],
+  "file": "fig-11.6.png",
+  "w": 1111,
+  "h": 172
+ },
+ {
+  "num": "11.7",
+  "page": 527,
+  "caption": "Figure 11.7 Early back-end structure with Al interconnect making contact to a highly doped Si active region. The chip is a photograph of the first integrated circuit from Fairchild Semiconductor (1959) which used a simple Al wiring technology. Right photo reprinted with permission from onsemi.",
+  "box": [
+   367.2,
+   116.2,
+   537.6,
+   242.9
+  ],
+  "file": "fig-11.7.png",
+  "w": 426,
+  "h": 318
+ },
+ {
+  "num": "11.8",
+  "page": 529,
+  "caption": "Figure 11.8 Si-Al contact region showing spiking of Al into Si active region. This is due to Si diffusing into the Al to satisfy the solubility requirement, with Al filling the resulting voids in the Si substrate.",
+  "box": [
+   159.8,
+   99.6,
+   426.0,
+   181.6
+  ],
+  "file": "fig-11.8.png",
+  "w": 667,
+  "h": 206
+ },
+ {
+  "num": "11.9",
+  "page": 531,
+  "caption": "Figure 11.9 shows a multilayer contact structure using TiSi2/TiN contact/barrier layers which is a typical structure used with Al interconnects. The TiSi2 makes good electrical contact to the Si, and provides good adhesion. The TiN serves as a barrier to interaction between the Al and both the TiSi2 and Si. There are, of course other material options that can also provide the combination of low contact resistance, adhesion and diffusion barrier. We will see additional examples throughout this chapter.",
+  "box": [
+   36.0,
+   208.1,
+   576.0,
+   370.7
+  ],
+  "file": "fig-11.9.png",
+  "w": 1350,
+  "h": 407
+ },
+ {
+  "num": "11.10",
+  "page": 532,
+  "caption": "Figure 11.10 Illustration of early two-level metal structure.",
+  "box": [
+   172.8,
+   200.6,
+   417.5,
+   329.8
+  ],
+  "file": "fig-11.10.png",
+  "w": 613,
+  "h": 324
+ },
+ {
+  "num": "11.11",
+  "page": 533,
+  "caption": "Figure 11.11 Left: Using Al as both the contact and the next level interconnect layer results in nonplanar topography. Right: Using a tungsten plug as the contact along with CMP, results in planar topography.",
+  "box": [
+   119.9,
+   246.1,
+   494.3,
+   332.1
+  ],
+  "file": "fig-11.11.png",
+  "w": 937,
+  "h": 216
+ },
+ {
+  "num": "11.12",
+  "page": 534,
+  "caption": "Figure 11.12 Illustration of photoresist etchback process. Photoresist is deposited over rough topography, then the structure is etched back, leaving a smooth top surface of the oxide.",
+  "box": [
+   203.6,
+   216.1,
+   401.6,
+   292.8
+  ],
+  "file": "fig-11.12.png",
+  "w": 495,
+  "h": 192
+ },
+ {
+  "num": "11.13",
+  "page": 535,
+  "caption": "Figure 11.13 Backend structure (left) without etchback step, showing poisoned via (* labelled region) where the via metal is in direct contact with spin-on glass (SOG) layer. The backend structure on the right with an etchback step, does not have poisoned vias since the via metal is not in direct contact with SOG layer.",
+  "box": [
+   95.2,
+   140.6,
+   511.1,
+   272.1
+  ],
+  "file": "fig-11.13.png",
+  "w": 1040,
+  "h": 330
+ },
+ {
+  "num": "11.14",
+  "page": 536,
+  "caption": "Figure 11.14 Five layer interconnect structure used in Intel’s 0.25 µm technology in 1998 [11.12]. The metal layers are Ti/Al-Cu/Ti/TiN. The Ti and TiN layers are adhesion and barriers layers. The small % Cu was added to the Al for electromigration reasons (discussed later). White W plugs are visible in via holes connecting the Al wiring levels. CMP was used to planarize the structure at each wiring level. © Intel, reprinted with permission.",
+  "box": [
+   162.2,
+   144.0,
+   470.4,
+   319.7
+  ],
+  "file": "fig-11.14.png",
+  "w": 771,
+  "h": 440
+ },
+ {
+  "num": "11.15",
+  "page": 537,
+  "caption": "Figure 11.15 Schematic illustration of hillock formation due to compressive stress in an Al film. Al diffusion along grain boundaries is indicated by the red arrows.",
+  "box": [
+   36.0,
+   62.0,
+   576.0,
+   231.0
+  ],
+  "file": "fig-11.15.png",
+  "w": 1350,
+  "h": 423
+ },
+ {
+  "num": "11.16",
+  "page": 538,
+  "caption": "Figure 11.16 SEM top view of hillock and voids that have formed due to electromigration in an Al(Cu,Si) line. Reprinted by permission from Springer Nature: from [11.13] © (1996).",
+  "box": [
+   96.0,
+   115.2,
+   506.4,
+   231.4
+  ],
+  "file": "fig-11.16.png",
+  "w": 1026,
+  "h": 291
+ },
+ {
+  "num": "11.17",
+  "page": 538,
+  "caption": "Figure 11.17 Illustration of shunt layers to minimize electromigration problems. Thin layers of metals, such as Ti, are used above and below the Al interconnect line.",
+  "box": [
+   164.2,
+   540.6,
+   456.5,
+   641.2
+  ],
+  "file": "fig-11.17.png",
+  "w": 732,
+  "h": 252
+ },
+ {
+  "num": "11.18",
+  "page": 539,
+  "caption": "Figure 11.18 A typical metallization scheme used in Al interconnect I.C. technology circa 2000, showing the multilayer structures that evolved.",
+  "box": [
+   185.4,
+   422.9,
+   427.7,
+   602.0
+  ],
+  "file": "fig-11.18.png",
+  "w": 607,
+  "h": 449
+ },
+ {
+  "num": "11.19",
+  "page": 540,
+  "caption": "Figure 11.19 Example of dual damascene process used today for Cu interconnects.",
+  "box": [
+   109.0,
+   408.3,
+   511.2,
+   690.4
+  ],
+  "file": "fig-11.19.png",
+  "w": 1006,
+  "h": 706
+ },
+ {
+  "num": "11.20",
+  "page": 541,
+  "caption": "Figure 11.20 Examples of modern silicon CMOS chips with many levels of Cu wiring. These images are from Intel’s 14nm technologies. © [2016] IEEE. Reprinted with permission from [11.15].",
+  "box": [
+   88.8,
+   437.8,
+   520.8,
+   682.6
+  ],
+  "file": "fig-11.20.png",
+  "w": 1080,
+  "h": 613
+ },
+ {
+  "num": "11.21",
+  "page": 542,
+  "caption": "Figure 11.21 illustrates these two general approaches, which can be combined to achieve even lower K values [11.17, 11.18]. Table 11.2 classifies the various approaches to achieving low- K materials [11.19].",
+  "box": [
+   36.0,
+   353.3,
+   576.0,
+   555.5
+  ],
+  "file": "fig-11.21.png",
+  "w": 1350,
+  "h": 506
+ },
+ {
+  "num": "11.22",
+  "page": 544,
+  "caption": "Figure 11.22 Example of one approach to mitigate the reduced mechanical strength of low-K dielectric materials. In this example a low-K dielectric is given temporary mechanical strength by filling its pores with a polymer which is later removed. (After [11.22]).",
+  "box": [
+   84.6,
+   526.8,
+   527.8,
+   596.5
+  ],
+  "file": "fig-11.22.png",
+  "w": 1109,
+  "h": 175
+ },
+ {
+  "num": "11.23",
+  "page": 545,
+  "caption": "Figure 11.23 Example of another approach to mitigate the reduced mechanical strength of low- K dielectric materials. In this example a stronger dielectric material is used during processing and replaced with a low-K material at the end of the process. (After [11.22]).",
+  "box": [
+   76.2,
+   96.7,
+   536.4,
+   360.6
+  ],
+  "file": "fig-11.23.png",
+  "w": 1152,
+  "h": 661
+ },
+ {
+  "num": "11.24",
+  "page": 545,
+  "caption": "Figure 11.24 Backend wiring in one version of Intel’s 14nm technology. The white areas are air gaps used in two of the metal levels (M4 and M6). The black areas are the Cu metal wires, the gray areas are the backend dielectric layers. © [2015] IEEE. Reprinted with permission from [11.23].",
+  "box": [
+   170.4,
+   439.2,
+   441.6,
+   586.6
+  ],
+  "file": "fig-11.24.png",
+  "w": 678,
+  "h": 369
+ },
+ {
+  "num": "11.25",
+  "page": 546,
+  "caption": "Figure 11.25 Schematic of a MOS device cross section showing the device resistance components along with contact resistances and metal interconnect resistance.",
+  "box": [
+   167.5,
+   393.1,
+   442.7,
+   563.1
+  ],
+  "file": "fig-11.25.png",
+  "w": 689,
+  "h": 426
+ },
+ {
+  "num": "11.26",
+  "page": 547,
+  "caption": "Figure 11.26 Band diagrams and I-V characteristics for metal-semiconductor junctions or contacts, illustrating different modes of current transfer. Top: Schottky or rectifying contact. Bottom: tunneling or ohmic contact.",
+  "box": [
+   167.7,
+   187.1,
+   471.9,
+   443.4
+  ],
+  "file": "fig-11.26.png",
+  "w": 761,
+  "h": 642
+ },
+ {
+  "num": "11.27",
+  "page": 549,
+  "caption": "Figure 11.27 Calculated specific contact resistance for various values of fB and doping concentration in the silicon. After [11.24, 11.25].",
+  "box": [
+   153.6,
+   321.6,
+   468.0,
+   562.6
+  ],
+  "file": "fig-11.27.png",
+  "w": 786,
+  "h": 603
+ },
+ {
+  "num": "11.28",
+  "page": 550,
+  "caption": "Figure 11.28 Examples of compound semiconductor contact technologies. Left – GaAs metal- semiconductor field effect transistor (MESFET) with both ohmic (Au-Ge/Ni/Au) and Schottky contacts (WN). Right – GaN high-electron-mobility transistor (HEMT) device which also uses both ohmic and rectifying (Schottky) contacts.",
+  "box": [
+   74.0,
+   163.0,
+   543.1,
+   336.4
+  ],
+  "file": "fig-11.28.png",
+  "w": 1173,
+  "h": 434
+ },
+ {
+  "num": "11.29",
+  "page": 552,
+  "caption": "Figure 11.29 Generic process flow for TiSi2 formation.",
+  "box": [
+   90.0,
+   228.5,
+   522.6,
+   415.6
+  ],
+  "file": "fig-11.29.png",
+  "w": 1082,
+  "h": 468
+ },
+ {
+  "num": "11.30",
+  "page": 553,
+  "caption": "Figure 11.30 Schematic illustration of silicide formation for a silicide that forms by diffusion of metal species (left) and by diffusion of silicon (right). In the latter case, lateral encroachment of the silicide over the spacer can occur.",
+  "box": [
+   139.4,
+   395.8,
+   466.5,
+   549.5
+  ],
+  "file": "fig-11.30.png",
+  "w": 819,
+  "h": 385
+ },
+ {
+  "num": "11.31",
+  "page": 554,
+  "caption": "Figure 11.31 shows the 1D physical structure for the case of TiSi2. The left-hand side illustrates silicide formation in an inert ambient (Ar) so that only TiSi2 is formed. This is often called the salicide process. This looks much like the Deal-Grove oxidation model except that the reaction is occurring at the top surface of the TiSi2, not the bottom surface as it does in oxidation. On the right, the reaction takes place in an N2 atmosphere so two reactions occur simultaneously, forming TiN on the top of the Ti layer and TiSi2 on the bottom. In the case of Ti as the reacting metal, the diffusing species are N and Si as illustrated in the figure.",
+  "box": [
+   267.3,
+   441.0,
+   547.0,
+   533.0
+  ],
+  "file": "fig-11.31.png",
+  "w": 700,
+  "h": 231
+ },
+ {
+  "num": "11.32",
+  "page": 557,
+  "caption": "Figure 11.32 shows an example of an Athena simulation of the salicide process (a self- aligned silicide process). A 0.1 µm layer of Ti is conformally deposited on a structure that is the left half of an NMOS transistor with a 1.2 µm long gate (e.g., 1980s technology). The CMOS example in Chapter 2 (Figure 2.16) would use a thinner Ti layer and a much thinner TiSi2 layer. The anneal in Figure 11.34 is 675˚C for 2.5 min in an inert Ar atmosphere. This forms ≈ 0.1 µm of",
+  "box": [
+   76.8,
+   177.6,
+   532.8,
+   468.0
+  ],
+  "file": "fig-11.32.png",
+  "w": 1140,
+  "h": 726
+ },
+ {
+  "num": "11.33",
+  "page": 558,
+  "caption": "Figure 11.33 Simulation of TiSi2 formation using FLOOPS [11.44] on a 0.35 µm wide gate structure. Left: before formation anneal step. Right: after formation anneal step: 30 sec at 650˚C in a nitrogen atmosphere. TiSi2 is formed everywhere the Ti is in contact or close to Si. TiN is formed on top of the Ti layer",
+  "box": [
+   71.5,
+   186.2,
+   539.2,
+   348.2
+  ],
+  "file": "fig-11.33.png",
+  "w": 1170,
+  "h": 406
+ },
+ {
+  "num": "11.34",
+  "page": 560,
+  "caption": "Figure 11.34 Left, Cu electroplating basics. Right, Applied Endura® copper barrier/seed PVD system: A high-vacuum integrated metal deposition system, including surface preparation, PVD TaN barrier, CVD Co liners and PVD copper seed films. Electroplating on the seed Cu layer is done in a separate machine. Photo courtesy Applied Materials Inc.",
+  "box": [
+   86.4,
+   69.6,
+   533.8,
+   277.4
+  ],
+  "file": "fig-11.34.png",
+  "w": 1119,
+  "h": 520
+ },
+ {
+  "num": "11.35",
+  "page": 562,
+  "caption": "Figure 11.35 Challenges in plating Cu to completely fill via holes in modern structures.",
+  "box": [
+   182.9,
+   188.2,
+   426.9,
+   435.0
+  ],
+  "file": "fig-11.35.png",
+  "w": 611,
+  "h": 618
+ },
+ {
+  "num": "11.36",
+  "page": 563,
+  "caption": "Figure 11.36 Left, physical models explaining the “superfilling” concept in Cu electroplating. Right, experimental Cu plating profile partway through the deposition, showing “superfilling”. Photo reprinted from [11.49] with permission from Elsevier.",
+  "box": [
+   36.0,
+   118.8,
+   576.0,
+   323.9
+  ],
+  "file": "fig-11.36.png",
+  "w": 1350,
+  "h": 514
+ },
+ {
+  "num": "11.37",
+  "page": 564,
+  "caption": "Figure 11.37 Illustration of the forces acting on lattice atoms (Cu in this case) in an interconnect wire carrying current.",
+  "box": [
+   195.0,
+   147.5,
+   358.4,
+   211.3
+  ],
+  "file": "fig-11.37.png",
+  "w": 410,
+  "h": 161
+ },
+ {
+  "num": "11.38",
+  "page": 566,
+  "caption": "Figure 11.38 Diffusion mechanisms in polycrystalline metal thin films. The EA values in the table are taken from [11.57].",
+  "box": [
+   85.5,
+   174.1,
+   333.9,
+   272.5
+  ],
+  "file": "fig-11.38.png",
+  "w": 622,
+  "h": 247
+ },
+ {
+  "num": "11.39",
+  "page": 566,
+  "caption": "Figure 11.39 Left - illustration of void formation processes in modern multi-level Cu interconnects. After [11.57]. Right – experimental results similar to the drawings on the left © [2002] IEEE. Reprinted with permission from [11.58].",
+  "box": [
+   93.6,
+   352.8,
+   516.0,
+   583.2
+  ],
+  "file": "fig-11.39.png",
+  "w": 1056,
+  "h": 576
+ },
+ {
+  "num": "11.40",
+  "page": 567,
+  "caption": "Figure 11.40 Experimental data on electromigration failures using a lognormal plot. The stress time would typically be in seconds but the units depend on the stress current density and temperature. The blue data shows longer lifetimes and would result from either lower- temperature or lower-current-density stress conditions. After [11.59].",
+  "box": [
+   36.0,
+   279.8,
+   576.0,
+   484.2
+  ],
+  "file": "fig-11.40.png",
+  "w": 1350,
+  "h": 512
+ },
+ {
+  "num": "11.41",
+  "page": 568,
+  "caption": "Figure 11.41 Scaling the size of Cu interconnects. The diffusion barrier and liner do not scale.",
+  "box": [
+   113.4,
+   139.8,
+   504.9,
+   241.3
+  ],
+  "file": "fig-11.41.png",
+  "w": 980,
+  "h": 255
+ },
+ {
+  "num": "11.42",
+  "page": 570,
+  "caption": "Figure 11.42 Scattering mechanisms for electrons travelling through small metal lines. After [11.61].",
+  "box": [
+   106.5,
+   100.3,
+   506.2,
+   225.4
+  ],
+  "file": "fig-11.42.png",
+  "w": 1000,
+  "h": 314
+ },
+ {
+  "num": "11.43",
+  "page": 571,
+  "caption": "Figure 11.43 Experimental data from imec on small-geometry interconnects made from proposed new single metal interconnect materials © [2018] IEEE. Reprinted with permission from [11.60].",
+  "box": [
+   199.2,
+   184.8,
+   408.0,
+   348.0
+  ],
+  "file": "fig-11.43.png",
+  "w": 522,
+  "h": 408
+ },
+ {
+  "num": "11.44",
+  "page": 573,
+  "caption": "Figure 11.44 Simulation of the backend process steps from the CMOS process in Chapter 2. Each panel is described in the corresponding item in the list in the text.",
+  "box": [
+   36.0,
+   62.0,
+   576.0,
+   676.0
+  ],
+  "file": "fig-11.44.png",
+  "w": 1350,
+  "h": 1535
+ },
+ {
+  "num": "11.45",
+  "page": 576,
+  "caption": "Figure 11.45 Left: GaAs MESFET device structure. Right: GaAs pHEMT device structure.",
+  "box": [
+   86.9,
+   173.7,
+   524.0,
+   290.3
+  ],
+  "file": "fig-11.45.png",
+  "w": 1093,
+  "h": 292
+ },
+ {
+  "num": "11.46",
+  "page": 576,
+  "caption": "Figure 11.46 Photomicrograph of a 28 GHz power amplifier fabricated with GaAs pHEMT devices. Reprinted from [11.67] with permission from Compound Semiconductor.",
+  "box": [
+   230.4,
+   321.6,
+   394.6,
+   480.0
+  ],
+  "file": "fig-11.46.png",
+  "w": 411,
+  "h": 396
+ },
+ {
+  "num": "11.47",
+  "page": 577,
+  "caption": "Figure 11.47 Lift-off principle shown for a photoresist profile that does not achieve clean lift-off.",
+  "box": [
+   135.9,
+   206.7,
+   476.4,
+   368.4
+  ],
+  "file": "fig-11.47.png",
+  "w": 852,
+  "h": 406
+ },
+ {
+  "num": "11.48",
+  "page": 577,
+  "caption": "Figure 11.48 Two solutions to the lift-off problem. Left – use of a negative resist which is exposed more at the top than the bottom. Right – use of an underlayer that is undercut after photoresist patterning.",
+  "box": [
+   140.2,
+   409.7,
+   470.0,
+   629.6
+  ],
+  "file": "fig-11.48.png",
+  "w": 826,
+  "h": 551
+ },
+ {
+  "num": "11.49",
+  "page": 578,
+  "caption": "Figure 11.49 Printed circuit board containing silicon chips and other electronic components.",
+  "box": [
+   36.0,
+   475.2,
+   576.0,
+   667.8
+  ],
+  "file": "fig-11.49.png",
+  "w": 1350,
+  "h": 483
+ },
+ {
+  "num": "11.50",
+  "page": 579,
+  "caption": "Figure 11.50 Left System on Chip (SOC) – Apple M2. Copyright © Apple Corporation, reprinted with permission. Right – Complex system realized by packaging multiple chips, each more specialized than the SOC, in a package. This figure was briefly discussed in Chapter 1 (Figure 1.25).",
+  "box": [
+   67.2,
+   415.2,
+   540.0,
+   605.8
+  ],
+  "file": "fig-11.50.png",
+  "w": 1182,
+  "h": 477
+ },
+ {
+  "num": "11.51",
+  "page": 580,
+  "caption": "Figure 11.51 Partitioning of a multicore microprocessor SOC into chiplets (AMD EPYCTM processor architecture).",
+  "box": [
+   76.8,
+   453.6,
+   525.6,
+   615.4
+  ],
+  "file": "fig-11.51.png",
+  "w": 1122,
+  "h": 405
+ },
+ {
+  "num": "11.52",
+  "page": 581,
+  "caption": "Figure 11.52 expands on the concepts in Figure 11.50 to include stacked chiplets for complex system packaging. Lateral interconnects between chips are implemented with the interposer. Vertical interconnects between stacked chips are implemented by wafer-to-wafer",
+  "box": [
+   112.8,
+   261.6,
+   499.2,
+   463.2
+  ],
+  "file": "fig-11.52.png",
+  "w": 966,
+  "h": 504
+ },
+ {
+  "num": "11.53",
+  "page": 582,
+  "caption": "Figure 11.53 3D NAND structure showing the circuit arrangement and vertical stacking of devices on the left and a Samsung 32 layer NAND chip cross-section on the right. Photo from Chipworks (now TechInsights).",
+  "box": [
+   75.8,
+   114.9,
+   544.4,
+   298.9
+  ],
+  "file": "fig-11.53.png",
+  "w": 1172,
+  "h": 461
+ }
+]
