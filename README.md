@@ -1,43 +1,18 @@
-# 图书讲透（books）
+# 图书讲透
 
-把书做成交互式 HTML 学习站点的框架与书目。
+一些书和论文的中文导读与交互式讲解。
 
-## 目录
-- `framework/` —— 框架
-  - `app/`：React + Vite 应用；`app/src/kit/` 为组件库（`@kit`），`kit/math/` 为数理/定理组件
-  - `spec/`：编写规范（`KIT.md` 人文导读、`TEXTBOOK.md` 数理教科书、`PROOF.md` 定理–证明类、`NEW_BOOK.md` 新书接入、`DEPLOY.md` 路由与部署）与自检脚本（`check.sh`、`tb_check.py`、`unicode_math.py`）
-  - `tools/`：PDF 插图裁剪 `pdf_figures.py`、缩略图核查、Playwright 截图（`pw/`）
-  - `extract.py`（epub 章节 → 文本）、`serve.py`（静态服务）、`build-all.sh`（全部重建）
-- 每本书一个目录：`book.js`（书目清单、分部、可选 katexMacros / statements）、`chapters/*.jsx`（章节；`_` 开头为辅助文件）、`text/`（原文文字层，本地，不入库）、`public/`（静态资源；原书插图本地，不入库）
-
-| 目录 | 书 | 类型 | 书库路径 |
-|---|---|---|---|
-| oot | 福柯《词与物》 | 人文导读 | `oot/` |
-| mirror | 鲍德里亚《生产之镜》 | 人文导读 | `mirror/` |
-| grammatology | 德里达《论文字学》 | 人文导读 | `grammatology/` |
-| cosmo | Dodelson & Schmidt《Modern Cosmology》 | 数理教科书 | `cosmo/` |
-| antioedipus | 德勒兹–瓜塔里《反俄狄浦斯》 | 人文导读 | `antioedipus/` |
-| libidinal | 利奥塔《力比多经济》 | 人文导读 | `libidinal/` |
-| eth | "ETH is false" 论文讲解 | 定理–证明 | `eth/` |
-
-## 常用命令
-```bash
-export PATH=$HOME/.local/node/bin:$PATH
-cd framework/app && npm install                       # 首次
-BOOK=$PWD/../../cosmo npx vite build                  # 构建一本书 → cosmo/dist
-ONLY=ch02,ch03 BOOK=… npx vite build                  # 只打包部分章节
-framework/build-all.sh                                # 全部重建
-framework/spec/check.sh <章节id> <书目录>              # 单章构建 + 截图自检
-python3 -I framework/spec/tb_check.py <书目录> <章节id> # 教科书完整性检查
-```
-构建产物是多页静态站点（书架 `index.html`，每章 `<id>/index.html`，全部相对路径），可直接部署到 GitHub Pages，见 `framework/spec/DEPLOY.md`。
-所有书汇总在一个书库站点里发布：`framework/build-library.sh --build` 生成 `library/dist/`（书库首页 + 各书子目录），由 treer app `book-library` 提供服务（`/usr/bin/python3 -I framework/serve.py library 8848`）。书目与顺序见 `library/books.txt`。
-
-## 不在仓库中（可重新生成）
-`node_modules/`、`*/dist/`、`tools/`（Python 环境）、`*/src/`（epub 解包、PDF 页面图）、原书 PDF/EPUB。
-
-**原书内容不进仓库（版权）**：各书 `text/`（原文文字层）与 `public/figures/`（原书插图及图注）只保留在本地磁盘，由导入脚本生成（epub：`framework/extract.py`；PDF：`pdftotext` + `framework/tools/pdf_figures.py`）。
-
-## 自绘教科书插图
-
-宇宙学的128张、Nakahara的122张图均由本仓库的SVG、数值模型或Three.js组件绘制，章节通过 `Figure` 的 `illustration` 属性使用，不依赖本地原书图片。球谐函数及商空间支持三维旋转；没有WebGL时显示自绘SVG。观测图中缺少可再分发数据的部分明确使用教学示意模型，不能视作实测数据。自绘源文件位于两书的 `chapters/_redraw*.jsx` 等章节组件内。
+| 书目 | 作者 |
+| --- | --- |
+| [词与物](oot/) | 米歇尔·福柯 |
+| [论文字学](grammatology/) | 雅克·德里达 |
+| [生产之镜](mirror/) | 让·鲍德里亚 |
+| [反俄狄浦斯](antioedipus/) | 吉尔·德勒兹、费利克斯·加塔利 |
+| [力比多经济](libidinal/) | 让-弗朗索瓦·利奥塔 |
+| [大分流](divergence/) | 彭慕兰 |
+| [集成电路制造：科学与技术](icfab/) | James D. Plummer、Peter B. Griffin |
+| [现代宇宙学](cosmo/) | Scott Dodelson、Fabian Schmidt |
+| [几何、拓扑与物理](nakahara/) | Mikio Nakahara |
+| [ETH 为假：稀疏积和式讲透](eth/) | 论文讲解 |
+| [图解和声](harmony/) | 叶小胖 |
+| [量子力学（卷 I）](cohen/) | C. Cohen-Tannoudji、B. Diu、F. Laloë |
