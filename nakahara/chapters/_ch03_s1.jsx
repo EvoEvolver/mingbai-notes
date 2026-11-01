@@ -1,3 +1,4 @@
+import { FilledLoopFigure } from "./_redraw_ch03_simplices.jsx";
 // 引言 + §3.1 Abel 群 —— 式 (3.1)–(3.10)，例 3.1–3.3，引理 3.1–3.2，定理 3.1–3.2，定义 3.1，图 3.1
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Proof, Erratum, Details, Derivation, C } from "@kit";
 
@@ -15,7 +16,7 @@ export function Intro() {
 先看 \figref{3.1} 的两幅图。(a) 是**实心**三角形，内部包括在内；(b) 只是三角形的三条边，没有内部。怎样用数学语言刻画两者的差别？
 
 一个显然的观察：(a) 的三条边围成了内部区域的**边界**；(b) 的三条边则不是任何东西的边界——因为内部根本不属于 (b)。另一方面，两种情形下三条边都构成一条**闭路**（loop），它本身**没有边界**。换句话说：`}</Tx>
-      <Figure n="3.1" caption={R`(a) 实心三角形；(b) 没有内部的三角形三边。`} width="70%" />
+      <Figure n="3.1" illustration={<FilledLoopFigure />} caption={R`自绘对照：实心三角形与仅含三边的空间；切换右图的内部。`} width="100%" />
       <Box kind="key" title="本章的指导原则">{R`**存在一条不是任何区域边界的闭路，就意味着闭路之内有一个洞。**
 
 于是我们这样给空间分类：*寻找没有边界的区域，而它本身又不是某个区域的边界*。把这条原则精确化，就是同调群的理论。`}</Box>

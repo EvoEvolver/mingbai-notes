@@ -1,3 +1,4 @@
+import { SimplexOrientationFigure, BoundaryCancellationFigure } from "./_redraw_ch03_simplices.jsx";
 // §3.3 单纯复形的同调群（上）：3.3.1 定向单形、3.3.2 链群、闭链群与边缘群 —— 式 (3.13)–(3.27)，定义 3.2–3.4，引理 3.3，定理 3.3，图 3.6–3.7
 // 3.3.3 在 _ch03_s3b.jsx；3.3.4–3.3.5 在 _ch03_s3c.jsx
 import { Sec, Sub, Tx, Eq, Box, Figure, Derivation, Stmt, Proof, C } from "@kit";
@@ -36,7 +37,7 @@ function Sub331() {
 $$(p_0p_1p_2)=(p_2p_0p_1)=(p_1p_2p_0)=-(p_0p_2p_1)=-(p_2p_1p_0)=-(p_1p_0p_2).$$
 
 记 $P=\begin{pmatrix}0&1&2\\ i&j&k\end{pmatrix}$ 为 $0,1,2$ 的置换，上式可概括为 $(p_ip_jp_k)=\operatorname{sgn}(P)(p_0p_1p_2)$，其中 $P$ 为偶（奇）置换时 $\operatorname{sgn}(P)=+1\,(-1)$。定向 3 单形 $\sigma_3=(p_0p_1p_2p_3)$ 是四面体四个顶点的有序序列，对置换 $P=\begin{pmatrix}0&1&2&3\\ i&j&k&l\end{pmatrix}$ 同样定义 $(p_ip_jp_kp_l)=\operatorname{sgn}(P)(p_0p_1p_2p_3)$。`}</Tx>
-      <Figure n="3.6" caption={R`(a) 定向 1 单形；(b) 定向 2 单形。`} width="75%" />
+      <Figure n="3.6" illustration={<SimplexOrientationFigure />} caption={R`自绘定向：(a) 有向线段；(b) 三角形的边界绕行方向。交换两个顶点使定向反转。`} width="100%" />
       <Tx>{R`**一般定义。**取 $\mathbb{R}^m$ 中 $r+1$ 个几何独立的点 $p_0,\ldots,p_r$，$\{p_{i_0},\ldots,p_{i_r}\}$ 是它们的一个重排。若置换 $P=\begin{pmatrix}0&1&\ldots&r\\ i_0&i_1&\ldots&i_r\end{pmatrix}$ 是偶置换，就称 $\{p_0,\ldots,p_r\}$ 与 $\{p_{i_0},\ldots,p_{i_r}\}$ 等价。这显然是等价关系，其等价类称为**定向 $r$ 单形**（oriented $r$-simplex）。等价类恰有两个：偶置换一类、奇置换一类。含 $\{p_0,\ldots,p_r\}$ 的那一类记作 $\sigma_r=(p_0p_1\ldots p_r)$，另一类记作 $-\sigma_r=-(p_0p_1\ldots p_r)$。换言之，`}</Tx>
       <Eq n="3.14" keyEq title="定向与置换的符号" say="把顶点重新排序，定向单形只会乘上该排列的符号：偶排列不变，奇排列变号。">{R`(p_{i_0}p_{i_1}\ldots p_{i_r})=\operatorname{sgn}(P)\,(p_0p_1\ldots p_r).`}</Eq>
       <Tx>{R`对 $r=0$，形式上规定定向 0 单形就是一个点 $\sigma_0=p_0$。`}</Tx>
@@ -72,7 +73,7 @@ function Sub332() {
 $$\partial_1(p_0p_1)+\partial_1(p_1p_2)+\partial_1(p_2p_0)=p_1-p_0+p_2-p_1+p_0-p_2=0.$$
 
 总结成规则：**删去第一个顶点取正号，删去第二个顶点取负号**。把它推广到一般维数就是`}</Tx>
-      <Figure n="3.7" caption={R`(a) 带有一个虚假边界 $p_1$ 的定向 1 单形；(b) 没有边界的单纯复形。`} width="75%" />
+      <Figure n="3.7" illustration={<BoundaryCancellationFigure />} caption={R`自绘边界相消：(a) 细分线段的中间端点相消；(b) 三角闭路的全部端点相消。`} width="100%" />
       <Eq n="3.20" keyEq title="边界算子" say={R`单形的边界是依次删去每个顶点所得的面的交错和：删第 $i$ 个顶点，配符号 $(-1)^i$。`}>{R`\sym{bd}{\partial}_r\sigma_r\equiv\sum_{i=0}^{r}(-1)^i(p_0p_1\ldots\hat p_i\ldots p_r)`}</Eq>
       <Tx>{R`其中 $\sigma_r=(p_0\ldots p_r)$（$r>0$），记号 $\hat p_i$ 表示**删去**顶点 $p_i$。$\partial_r\sigma_r$ 是一个 $(r-1)$ 链。例如
 

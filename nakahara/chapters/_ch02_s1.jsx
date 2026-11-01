@@ -2,6 +2,8 @@
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Exercise, Erratum, Derivation, C } from "@kit";
 import { GluingLab } from "./_ch02_demos.jsx";
 
+import { CommutativeRedraw, CircleQuotientRedraw, BandRedraw, TorusRedraw, NonorientableRedraw, ProjectiveRedraw, GenusTwoRedraw, DiskSphereRedraw } from "./_redraw_ch02_quotients.jsx";
+
 const R = String.raw;
 
 export function Intro() {
@@ -67,7 +69,7 @@ $$\sin:[-\pi/2,\pi/2]\to[-1,1]$$
 ◆ **复合映射**（composite map）：给定 $f:X\to Y$ 与 $g:Y\to Z$，复合 $g\circ f:X\to Z$ 定义为 $g\circ f(x)=g(f(x))$。注意书写顺序："先做的写在右边"。
 
 ◆ **交换图**（commutative diagram）：若一张映射图中，任意两个集合之间的复合映射都不依赖于走哪条路径，就称这张图是交换的。例如在 \figref{2.1} 中，$f\circ g=h\circ j$，且 $f\circ g=k$，等等。`}</Tx>
-        <Figure n="2.1" caption="映射的交换图：从 $X$ 到 $W$ 的三条路径给出同一个映射。" width="45%" />
+        <Figure n="2.1" illustration={<CommutativeRedraw />} caption="映射的交换图：从 $X$ 到 $W$ 的三条路径给出同一个映射。" width="100%" />
         <Exercise n="2.2" title="复合的顺序" level="★"
           hint={R`$g\circ f$ 先做 $f$；$f\circ g$ 先做 $g$。`}
           solution={R`$g\circ f(x)=g(f(x))=g(x^2)=\exp(x^2)$；
@@ -143,7 +145,7 @@ $$(R,a)^{-1}=(R^{-1},\,-R^{-1}a).$$
 在习题 2.5 中，等价关系把整数分成两类：偶数与奇数。偶数类的代表元可取 0，奇数类取 1。这个商空间记作 $\mathbb{Z}/\sim$，它同构于 2 阶**循环群** $\mathbb{Z}_2$，其运算为 $0+0=0$、$0+1=1+0=1$、$1+1=0$。若按除以 $n$ 的余数把整数分类，商空间同构于 $n$ 阶循环群 $\mathbb{Z}_n$。（第 3 章 \eqref{3.5} 把它写成 $\mathbb{Z}/n\mathbb{Z}\cong\mathbb{Z}_n$。）
 
 **商空间可以是几何图形。**设 $X$ 是通常意义下的"空间"。（严格地说，这里需要 §2.3 定义的拓扑空间；暂时依靠直观。）此时商空间可以实现为几何图形。设 $x,y\in\mathbb{R}$，规定：若存在 $n\in\mathbb{Z}$ 使 $y=x+2\pi n$，则 $x\sim y$。容易验证这是等价关系。类 $[x]$ 是集合 $\{\ldots,x-2\pi,x,x+2\pi,\ldots\}$，可以用 $x\in[0,2\pi)$ 作为代表元，见 \figref{2.2}(a)。`}</Tx>
-        <Figure n="2.2" caption={R`(a) 所有点 $x+2n\pi$（$n\in\mathbb{Z}$）属于同一个等价类 $[x]$，可取 $x\in[0,2\pi)$ 为代表元。(b) 商空间 $\mathbb{R}/\sim$ 是圆周 $S^1$。`} width="55%" />
+        <Figure n="2.2" illustration={<CircleQuotientRedraw />} caption={R`周期相差 $2n\pi$ 的实数对应同一个圆周点。移动代表元，观察实线与圆周之间的对应关系。`} width="100%" />
         <Tx>{R`注意 $0$ 与 $2\pi$ 在 $\mathbb{R}$ 中是不同的点，但按照这个等价关系，它们在 $\mathbb{R}/\sim$ 中被视为同一元素。于是商空间 $\mathbb{R}/\sim$ 就是圆周 $S^1=\{\mathrm{e}^{\mathrm{i}\theta}\mid0\le\theta<2\pi\}$，见 \figref{2.2}(b)。
 
 请特别注意一件事：对无穷小的 $\varepsilon$，点 $\varepsilon$ 与点 $2\pi-\varepsilon$ **在 $S^1$ 上很接近**——角度 $\varepsilon$ 与角度 $2\pi-\varepsilon$ 确实很近——但在 $\mathbb{R}$ 中它们相距将近 $2\pi$。**商空间改变了"哪些点彼此接近"**。"点与点之间的接近"正是拓扑学的核心要素之一，§2.3 会把它精确化为"开集"。`}</Tx>
@@ -151,17 +153,17 @@ $$(R,a)^{-1}=(R^{-1},\,-R^{-1}a).$$
           <Tx>{R`**(a) 柱面与 Möbius 带。**设 $X$ 是正方形 $\{(x,y)\in\mathbb{R}^2\mid|x|\le1,\ |y|\le1\}$。把一对相对的边上的点粘合，例如 $(-1,y)\sim(1,y)$，就得到柱面，见 \figref{2.3}(a)。若粘合 $(-1,-y)\sim(1,y)$，得到的是 **Möbius 带**，见 \figref{2.3}(b)。
 
 [注：不熟悉 Möbius 带的读者可以取一条纸带，扭转 $\pi$ 后把两端粘起来。由于扭转，纸带的一面与另一面连在了一起，曲面只有一侧。Möbius 带是**不可定向**（non-orientable）曲面的例子，而柱面有确定的两侧，称为**可定向**（orientable）的。可定向性将在 §5.5 用微分形式讨论。]`}</Tx>
-          <Figure n="2.3" caption={R`(a) 把边 $|x|=1$ 沿箭头方向粘合，得到柱面。(b) 若按相反方向粘合，得到 Möbius 带。`} width="62%" />
+          <Figure n="2.3" illustration={<BandRedraw />} caption={R`切换一对边的粘合方向：同向得到柱面，反向得到 Möbius 带。下方三维曲面可以拖动旋转。`} width="100%" />
           <Tx>{R`**(b) 环面。**设 $(x_1,y_1)$、$(x_2,y_2)$ 是 $\mathbb{R}^2$ 中两点，规定：若 $x_2=x_1+2\pi n_x$ 且 $y_2=y_1+2\pi n_y$（$n_x,n_y\in\mathbb{Z}$），则 $(x_1,y_1)\sim(x_2,y_2)$。这是等价关系，商空间 $\mathbb{R}^2/\sim$ 就是**环面** $T^2$（甜甜圈的表面），见 \figref{2.4}(a)。等价地，$T^2$ 可以表示为一个对边按 \figref{2.4}(b) 粘合的矩形。`}</Tx>
-          <Figure n="2.4" caption={R`若把所有点 $(x+2\pi n_x,\,y+2\pi n_y)$（$n_x,n_y\in\mathbb{Z}$）如 (a) 那样认作相同，商空间可取为阴影区域，其边按 (b) 粘合。这样得到的商空间就是环面 $T^2$。`} width="90%" />
+          <Figure n="2.4" illustration={<TorusRedraw />} caption={R`左侧点阵表示平面中的周期等价类，右侧正方形显示对边粘合方向；下方是相应环面的可旋转三维视图。`} width="100%" />
           <Tx>{R`**(c) Klein 瓶与射影平面。**如果用其他方式粘合矩形的边呢？\figref{2.5} 给出两种可能。所得空间分别称为 **Klein 瓶**（\figref{2.5}(a)）与**射影平面**（\figref{2.5}(b)）。两者都无法在不自交的情况下实现（**嵌入**）到欧氏空间 $\mathbb{R}^3$ 中，且都是不可定向的。`}</Tx>
-          <Figure n="2.5" caption="Klein 瓶 (a) 与射影平面 (b)。" width="90%" />
+          <Figure n="2.5" illustration={<NonorientableRedraw />} caption="切换查看 Klein 瓶与射影平面的边粘合模型。箭头表示对应方向，顶点颜色表示同一等价类。" width="100%" />
           <Tx>{R`我们把射影平面记作 $\sym{RP}{\RP^2}$，可以这样想象它。考虑单位向量 $\boldsymbol{n}$，并把 $\boldsymbol{n}$ 与 $-\boldsymbol{n}$ 认作相同，见 \figref{2.6}。描述一根没有头尾之分的棒（例如向列相液晶分子）时，正需要这种认同。我们很想用 $S^2$ 上的一点来标记"向量" $\boldsymbol{n}$，但这差了一点：两个对径点 $\boldsymbol{n}=(\theta,\phi)$ 与 $-\boldsymbol{n}=(\pi-\theta,\pi+\phi)$ 代表同一个状态。于是可以取北半球作为陪集空间 $S^2/\sim$，因为只需要 $S^2$ 的一半。然而这个陪集空间并不只是普通的半球面：**赤道上的对径点被粘在一起**。把这个半球面连续地变形成正方形，就得到 \figref{2.5}(b) 中的正方形。`}</Tx>
-          <Figure n="2.6" caption={R`若 $\boldsymbol{n}$ 没有头尾，就无法区分 $\boldsymbol{n}$ 与 $-\boldsymbol{n}$，必须把它们粘合。由粘合 $\boldsymbol{n}\sim-\boldsymbol{n}$ 得到射影平面：$\sym{RP}{\RP^2}\simeq S^2/\sim$。只需取半个球面来描述这个陪集空间，但要注意赤道上的对径点被粘合。`} width="60%" />
+          <Figure n="2.6" illustration={<ProjectiveRedraw />} caption={R`若 $\boldsymbol{n}$ 没有头尾，就无法区分 $\boldsymbol{n}$ 与 $-\boldsymbol{n}$，必须把它们粘合。由粘合 $\boldsymbol{n}\sim-\boldsymbol{n}$ 得到射影平面：$\sym{RP}{\RP^2}\simeq S^2/\sim$。只需取半个球面来描述这个陪集空间，但要注意赤道上的对径点被粘合。`} width="100%" />
           <Tx>{R`**(d) 亏格 $g$ 的曲面。**把 \figref{2.7}(a) 中八边形的边成对粘合，商空间是带两个环柄的环面，记作 $\Sigma_2$，见 \figref{2.7}(b)。用类似的粘合可以得到带 $g$ 个环柄的环面 $\Sigma_g$，见章末习题 2.1。整数 $g$ 称为这个环面的**亏格**（genus）。`}</Tx>
-          <Figure n="2.7" caption="把 (a) 的边粘合，得到带两个洞（亏格为二）的环面。" width="80%" />
+          <Figure n="2.7" illustration={<GenusTwoRedraw />} caption="标准八边形的四组边按箭头配对粘合，得到有两个环柄的亏格二闭曲面。" width="100%" />
           <Tx>{R`**(e) 把圆盘边界粘成一点：球面。**设 $D^2=\{(x,y)\in\mathbb{R}^2\mid x^2+y^2\le1\}$ 是闭圆盘。把边界 $\{(x,y)\in\mathbb{R}^2\mid x^2+y^2=1\}$ 上的点全部粘合：若 $x_1^2+y_1^2=x_2^2+y_2^2=1$，则 $(x_1,y_1)\sim(x_2,y_2)$。商空间 $D^2/\sim$ 就是球面 $S^2$，也写作 $D^2/S^1$，见 \figref{2.8}。一般地，取 $n$ 维圆盘 $D^n=\{(x^1,\ldots,x^n)\in\mathbb{R}^n\mid(x^1)^2+\cdots+(x^n)^2\le1\}$，并把其边界 $S^{n-1}$ 上的点全部粘合，就得到 $n$ 维球面 $S^n$，即 $D^n/S^{n-1}=S^n$。`}</Tx>
-          <Figure n="2.8" caption={R`边界 $S^1$ 被粘成一点的圆盘 $D^2$ 就是球面 $S^2$。`} width="80%" />
+          <Figure n="2.8" illustration={<DiskSphereRedraw />} caption={R`边界 $S^1$ 被粘成一点的圆盘 $D^2$ 就是球面 $S^2$。`} width="100%" />
         </Box>
         <Erratum kind="erratum" loc="p.91–93 例 2.5" title="三处笔误">{R`**(1)** (a) 中原书把正方形写成 $\{(x,y)\in\mathbb{R}^2\mid|x|\ge1,\ |y|\ge1\}$——那是去掉一个"十字"后的四个无界角区，不是正方形。应为 $|x|\le1,\ |y|\le1$，与 \figref{2.3} 一致。
 

@@ -2,6 +2,8 @@
 // 注：能动张量 T^μ_ν 与温度 T 同字母，公式中用 \sym{ch02-Tmn}{T} 指定前者。
 import { Sec, Tx, Eq, Box, Derivation, Figure, Table, C } from "@kit";
 
+import { PhaseCellsRedraw } from "./_redraw_cosmo_basics.jsx";
+
 const R = String.raw;
 
 export function Sec23() {
@@ -95,9 +97,9 @@ export function Sec23() {
 
 **分布函数的含义。**在以 $\boldsymbol x$ 为中心、时刻 $t$ 的体积元 $d^3x$ 中，$f_s(\boldsymbol x,\boldsymbol p,t)$ 计数粒子 $\nosym{s}$ 落在动量体元 $d^3p$ 中的数目（$p$ 是 \eqref{2.32} 的**物理动量**，不是 \eqref{2.26} 的 $P$）。总能量密度就是把每个相空间单元中的能量按粒子数加权求和：$\sum f_s(\boldsymbol x,\boldsymbol p,t)E_s(p)$，其中 $E_s(p)=\sqrt{p^2+m_s^2}$。
 
-**相空间单元有多大？**由海森堡原理，粒子不能被定域在小于 $(2\pi\hbar)^3$ 的相空间区域内，这就是基本单元的大小。所以 $d^3x\,d^3p$ 中的单元数是 $d^3x\,d^3p/(2\pi\hbar)^3$（\figref{2.4}）。除以体积 $d^3x$，得到粒子 $\nosym{s}$ 的能量密度：`}</Tx>
+**相空间单元有多大？**半经典态计数中，每个内部态占据的相空间体积按 $(2\pi\hbar)^3$ 计数；这是量子态密度的归一化约定，不能直接等同于位置和动量标准差的不确定度下界。所以 $d^3x\,d^3p$ 中的单元数是 $d^3x\,d^3p/(2\pi\hbar)^3$（\figref{2.4}）。除以体积 $d^3x$，得到粒子 $\nosym{s}$ 的能量密度：`}</Tx>
       <Eq n="2.62" keyEq title="能量密度 = 分布函数的能量矩" say="能量密度 = 每个动量态的占据数乘以该态的能量，对所有动量态求和（再乘以内部自由度数）。">{R`\rho_s(\boldsymbol x,t) = g_s\int\frac{d^3p}{(2\pi)^3}f_s(\boldsymbol x,\boldsymbol p,t)E_s(p)`}</Eq>
-      <Figure n="2.4" caption={R`一维的位置–动量相空间。每个单元的体积为 $2\pi\hbar$，这是由于海森堡原理，粒子所能被限制在其中的最小区域。因此为了正确计数单元数，一维相空间积分必须是 $\int dx\,dp/(2\pi\hbar)$。`} width="70%" />
+      <Figure n="2.4" caption={R`自绘交互：一维相空间的半经典态计数网格。单元面积为 $h=2\pi\hbar$；改变宽高比不改变面积。该计数约定须与标准差不确定度下界 $\sigma_x\sigma_p\geq\hbar/2$ 区分。`} illustration={<PhaseCellsRedraw />} />
       <Tx>{R`其中 $g_s$ 是**简并度**（例如光子有两个自旋态，$g_s=2$），并且已回到 $\hbar=1$。
 
 **压强的微观来源。**宏观压强是粒子与一面假想墙做弹性碰撞时、单位面积受到的力。先看简单情形：体积 $V$ 中 $N$ 个非相对论性粒子，$x$ 方向的压强为`}</Tx>

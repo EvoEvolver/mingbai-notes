@@ -1,6 +1,8 @@
 // §2.1 Expanding space —— 式 (2.2)–(2.33)，Box 2.1，图 2.1–2.2
 import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, Details, C } from "@kit";
 
+import { ParametrizedPathRedraw } from "./_redraw_cosmo_basics.jsx";
+
 const R = String.raw;
 
 export function Sec21() {
@@ -104,7 +106,7 @@ $$\Gamma^r{}_{\theta\theta}=\cos\theta(-r\cos\theta)+\sin\theta(-r\sin\theta)=-r
 其余分量为零。这正是习题 2.2 的式 (2.93)。测地线方程于是给出 $\ddot r-r\dot\theta^2=0$ 与 $\ddot\theta+\frac{2}{r}\dot r\dot\theta=0$——前者说径向加速度只是"离心项"，后者即角动量守恒 $\frac{d}{dt}(r^2\dot\theta)=0$。`}</Box>
 
         <Tx>{R`**(ii) 推广到相对论。**只需两处改动。第一处平凡：让指标取 0 到 3，包括时间。第二处也不意外：时间已经是坐标之一，再用它当演化参数并不总是合适（尽管很多时候可以这样选）。我们改用一个沿粒子路径单调增加的参数 $\lambda$（\figref{2.2}）。测地线方程于是成为`}</Tx>
-        <Figure n="2.2" caption={R`粒子的路径 $x^\mu(\lambda)$ 由参数 $\lambda$ 参数化，$\lambda$ 从初值 $\lambda_1$ 单调增加到终值 $\lambda_2$。路径的切矢量为 $dx^\mu/d\lambda$（箭头）。`} width="70%" />
+        <Figure n="2.2" caption={R`自绘交互：沿参数曲线移动一点，观察局部切矢量 $dx^\mu/d\lambda$。线性改变参数刻度仅改变切矢量长度，不改变路径；图示一般曲线，不额外指定度规或测地线。`} illustration={<ParametrizedPathRedraw />} />
         <Eq n="2.20" keyEq title="测地线方程" say="自由下落粒子的运动方程：沿路径的“加速度”被 Christoffel 符号与速度的乘积抵消——引力全部藏在 $\Gamma^\mu{}_{\alpha\beta}$ 里。">{R`\frac{d^2x^\mu}{d\lambda^2} + \Gamma^\mu{}_{\alpha\beta}\frac{dx^\alpha}{d\lambda}\frac{dx^\beta}{d\lambda} = 0.`}</Eq>
         <Tx>{R`**(iii) 直接从度规算 Christoffel 符号。**我们是从笛卡尔基变换得到 \eqref{2.20} 的，所以 $\Gamma^\mu{}_{\alpha\beta}$ 原则上由 \eqref{2.19} 的方括号给出。但实际计算几乎总是直接用度规更方便：`}</Tx>
         <Eq n="2.21" keyEq title="Christoffel 符号" say="Christoffel 符号由度规的一阶导数组合而成：只要知道度规，就能算出自由粒子会怎样“拐弯”。">{R`\Gamma^\mu{}_{\alpha\beta} = \frac{g^{\mu\nu}}{2}\left[\frac{\partial g_{\alpha\nu}}{\partial x^\beta} + \frac{\partial g_{\beta\nu}}{\partial x^\alpha} - \frac{\partial g_{\alpha\beta}}{\partial x^\nu}\right].`}</Eq>

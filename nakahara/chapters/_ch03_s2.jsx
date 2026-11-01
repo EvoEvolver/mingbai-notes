@@ -1,3 +1,4 @@
+import { SimplexDimensionsFigure, SimplexFacesFigure, ComplexRulesFigure, CylinderTriangulationFigure } from "./_redraw_ch03_simplices.jsx";
 // §3.2 单形与单纯复形 —— 式 (3.11)–(3.12)，例 3.4–3.5，图 3.2–3.5
 import { Sec, Sub, Tx, Eq, Box, Figure, Derivation, Erratum, C } from "@kit";
 
@@ -14,13 +15,13 @@ export function Sec32() {
 
       <Sub n="3.2.1" title="Simplexes" zh="单形">
         <Tx>{R`单形是多面体的积木。0 单形 $\langle p_0\rangle$ 是一个点（顶点），1 单形 $\langle p_0p_1\rangle$ 是一条线段（棱），2 单形 $\langle p_0p_1p_2\rangle$ 是**连同内部**的三角形，3 单形 $\langle p_0p_1p_2p_3\rangle$ 是实心四面体（\figref{3.2}）。0 单形常省去括号，$\langle p_0\rangle$ 也写作 $p_0$。照此可以继续构造任意的 $r$ 单形 $\langle p_0p_1\ldots p_r\rangle$。`}</Tx>
-        <Figure n="3.2" caption={R`0 单形、1 单形、2 单形与 3 单形。`} width="80%" />
+        <Figure n="3.2" illustration={<SimplexDimensionsFigure />} caption={R`自绘单形：切换 0 到 3 维，观察顶点数与实心区域。`} width="100%" />
         <Tx>{R`要让 $r$ 单形真的是 $r$ 维的，顶点必须**几何独立**（geometrically independent）：没有任何 $(r-1)$ 维超平面能同时包含这 $r+1$ 个点（三点不共线、四点不共面……）。设 $p_0,\ldots,p_r$ 是 $\mathbb{R}^m$（$m\ge r$）中几何独立的点，$r$ 单形 $\sigma_r=\langle p_0,\ldots,p_r\rangle$ 就是它们的凸包：`}</Tx>
         <Eq n="3.11" keyEq title="r 单形" say={R`$r$ 单形就是 $r+1$ 个顶点的所有“加权平均”：权重非负、总和为 1。权重就是点的重心坐标。`}>{R`\sigma_r=\left\{x\in\mathbb{R}^m\ \middle|\ x=\sum_{i=0}^{r}c_ip_i,\ c_i\ge0,\ \sum_{i=0}^{r}c_i=1\right\}.`}</Eq>
         <Tx>{R`$(c_0,\ldots,c_r)$ 称为 $x$ 的**重心坐标**（barycentric coordinate）。想象在各顶点放上质量 $c_i$，$x$ 就是质心。由于 $\sigma_r$ 是 $\mathbb{R}^m$ 中的有界闭集，它是**紧致**的。`}</Tx>
         <Erratum kind="note" loc="p.118 式 (3.11)" title="上标与下标">{R`原书式 \eqref{3.11} 左边印作 $\sigma^r$（上标），而正文前后一律写 $\sigma_r$（下标）。两者指同一个 $r$ 单形，本站统一写作 $\sigma_r$。`}</Erratum>
         <Tx>{R`**面。**设 $0\le q\le r$。从 $p_0,\ldots,p_r$ 中挑出 $q+1$ 个点 $p_{i_0},\ldots,p_{i_q}$，它们张成一个 $q$ 单形 $\sigma_q=\langle p_{i_0},\ldots,p_{i_q}\rangle$，称为 $\sigma_r$ 的 **$q$ 面**（$q$-face），记作 $\sigma_q\le\sigma_r$。若 $\sigma_q\neq\sigma_r$，称为**真面**（proper face），记作 $\sigma_q<\sigma_r$。\figref{3.3} 画出了 3 单形 $\langle p_0p_1p_2p_3\rangle$ 的一个 0 面 $p_0$ 和一个 2 面 $\langle p_1p_2p_3\rangle$。3 单形共有一个 3 面、四个 2 面、六个 1 面、四个 0 面。0 单形规定没有真面。`}</Tx>
-        <Figure n="3.3" caption={R`3 单形 $\langle p_0p_1p_2p_3\rangle$ 的一个 0 面 $p_0$ 与一个 2 面 $\langle p_1p_2p_3\rangle$。`} width="45%" />
+        <Figure n="3.3" illustration={<SimplexFacesFigure />} caption={R`自绘四面体：高亮一个顶点、棱或三角形面。`} width="100%" />
         <Derivation title={R`$r$ 单形的 $q$ 面个数为 $\binom{r+1}{q+1}$（原书留给读者验证）`} collapsed steps={[
           { tex: R`\sigma_q\le\sigma_r\ \longleftrightarrow\ \{p_{i_0},\ldots,p_{i_q}\}\subset\{p_0,\ldots,p_r\}`, why: R`一个 $q$ 面由它的 $q+1$ 个顶点唯一确定（几何独立保证不同的顶点集给出不同的面）。` },
           { tex: R`\#\{q\text{ 面}\}=\binom{r+1}{q+1}`, why: R`从 $r+1$ 个顶点中选 $q+1$ 个。` },
@@ -35,8 +36,8 @@ export function Sec32() {
 
 (ii) $K$ 中任意两个单形 $\sigma,\sigma'$ 的交要么是空集，要么是两者的公共面：$\sigma\cap\sigma'=\emptyset$，或者 $\sigma\cap\sigma'\le\sigma$ 且 $\sigma\cap\sigma'\le\sigma'$。
 
-例如 \figref{3.4}(a) 是单纯复形，(b) 不是：(b) 中竖直的棱从上方三角形底边的**中间**伸出，二者之交不是任何一方的面；右下的线段与三角形的棱在棱的内部相交，也违反 (ii)。单纯复形 $K$ 的**维数**定义为其中单形的最大维数。`}</Tx>
-        <Figure n="3.4" caption={R`(a) 是单纯复形，(b) 不是。`} width="60%" />
+例如 \figref{3.4}(a) 是单纯复形，(b) 不是：(b) 中橙色的棱从三角形一条边的**中间**伸出，二者之交不是三角形的一个面，违反 (ii)。仅把交点标出来还不够：必须把原来的棱及相邻三角形也细分，才能得到一个合格的复形。单纯复形 $K$ 的**维数**定义为其中单形的最大维数。`}</Tx>
+        <Figure n="3.4" illustration={<ComplexRulesFigure />} caption={R`自绘拼接实验：(a) 沿公共面拼合；(b) 棱接在三角形边的内部，不构成单纯复形。`} width="100%" />
         <Box kind="example" n="3.4" title="一个单形的所有面构成单纯复形">
           <Tx>{R`设 $\sigma_r$ 是 $r$ 单形，$K=\{\sigma'\mid\sigma'\le\sigma_r\}$ 是它所有面的集合。$K$ 是 $r$ 维单纯复形（条件 (i) 显然；两个面之交是它们公共顶点张成的面，故 (ii) 成立）。例如取 $\sigma_3=\langle p_0p_1p_2p_3\rangle$（\figref{3.3}），则`}</Tx>
           <Eq n="3.12" say="实心四面体作为单纯复形：4 个顶点、6 条棱、4 个三角形和它自身，共 15 个单形。">{R`\begin{aligned}K=\{&p_0,\ p_1,\ p_2,\ p_3,\ \langle p_0p_1\rangle,\ \langle p_0p_2\rangle,\ \langle p_0p_3\rangle,\\ &\langle p_1p_2\rangle,\ \langle p_1p_3\rangle,\ \langle p_2p_3\rangle,\ \langle p_0p_1p_2\rangle,\ \langle p_0p_1p_3\rangle,\\ &\langle p_0p_2p_3\rangle,\ \langle p_1p_2p_3\rangle,\ \langle p_0p_1p_2p_3\rangle\}.\end{aligned}`}</Eq>
@@ -51,7 +52,7 @@ export function Sec32() {
 
 **教训**：粘合图（左右边、上下边等同）里，每个正方形必须切得足够细，才能保证没有两个单形"从两处相碰"。后面的 Möbius 带（\figref{3.8}）、射影平面（\figref{3.9}）、Klein 瓶（\figref{3.12}）都遵守这一点。`}</Tx>
         </Box>
-        <Figure n="3.5" caption={R`(a) 是圆柱面的三角剖分，(b) 不是。`} width="85%" />
+        <Figure n="3.5" illustration={<CylinderTriangulationFigure />} caption={R`自绘圆柱面粘合图：(a) 三格给出单纯剖分；(b) 两格在粘合后违反公共面条件。`} width="100%" />
       </Sub>
     </Sec>);
 }

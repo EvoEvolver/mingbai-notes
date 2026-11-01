@@ -2,6 +2,8 @@
 import { Sec, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
 import { ScaleFactorPlot, DensityPlot } from "./_ch01_plots.jsx";
 
+import { ExpansionRedraw } from "./_redraw_cosmo_basics.jsx";
+
 const R = String.raw;
 
 export function Sec10() {
@@ -47,7 +49,7 @@ export function Sec11() {
       <Tx>{R`**膨胀的网格。**我们有确凿的证据表明宇宙在膨胀：在它历史的早期，我们与遥远星系的距离比今天小。描述这件事最方便的办法是引入**标度因子**（scale factor）$a$，按约定今天 $a=1$，更早的时候 $a<1$。
 
 想象在空间中铺一张网格，随时间均匀膨胀（图 1.1）。网格上的点代表"静止"的观测者，它们的坐标保持不变。所以两点之间的**共动距离**（comoving distance）——只是坐标之差，可以靠数格子得到——是常数；但**物理距离**正比于标度因子，会随时间增长。`}</Tx>
-      <Figure n="1.1" caption={R`宇宙的膨胀。网格充当坐标系，网格点 $\boldsymbol x_1$、$\boldsymbol x_2$ 之间的共动距离在宇宙膨胀时保持不变，此例中 $|\boldsymbol x_2-\boldsymbol x_1|=1$。物理距离正比于共动距离乘以标度因子，因此随时间增长：$a(t_1)<a(t_2)<a(t_3)$。`} width="72%" />
+      <Figure n="1.1" caption={R`自绘交互：共动坐标固定的星系网格随标度因子伸缩。拖动滑块，比较不变的共动间隔 $\Delta x=2$ 与随 $a$ 改变的物理距离 $d=a\Delta x$；底部标尺保持固定物理长度。`} illustration={<ExpansionRedraw />} />
 
       <Tx>{R`**红移。**与此直接相关的效应是：遥远天体发出的光，其物理波长也按标度因子被拉长，所以观测到的波长比发射时更长。定义这个拉伸因子为**红移**（redshift）$z$：`}</Tx>
       <Eq n="1.1" keyEq title="红移的定义" say="光在途中被拉长的倍数（即 $1+z$）恰好等于宇宙从发射到观测时线尺度增大的倍数；今天观测时它就是发射时标度因子的倒数。">{R`1+z \equiv \frac{\lambda_{\rm obs}}{\lambda_{\rm emit}} = \frac{a_{\rm obs}}{a_{\rm emit}} = \frac{1}{a_{\rm emit}}.`}</Eq>

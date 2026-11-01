@@ -2,6 +2,8 @@
 import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
 import { PhaseSpacePlot } from "./_ch03_plots.jsx";
 
+import { CollisionRedraw } from "./_redraw_cosmo_basics.jsx";
+
 const R = String.raw;
 
 export function Sec32() {
@@ -125,7 +127,7 @@ export function Sec32() {
         <Tx>{R`其中 $E_s(p)=\sqrt{p^2+m_s^2}$ 是粒子 $s$ 的能量–动量关系 [\eqref{3.29}]。每类粒子有各自的分布函数 $f_s(\boldsymbol x,\boldsymbol p,t)$，$s=1,2,3,4$。宇宙学中，不同的态（如自旋）常常具有相同的分布函数；所以不必用不同的函数分别追踪，而是赋予恰当的统计权重 $g_s$。
 
 **反应怎样改变 $f_1$？**首先，我们处理的是空间和时间上的**局域**相互作用，所以所有分布函数都在同一 $(\boldsymbol x,t)$ 处取值，只需确定动量自变量。以 $f_1(\boldsymbol x,\boldsymbol p,t)$ 为例，\eqref{3.44} 意味着：要**减去**被正向反应从动量 $\boldsymbol p$ 散射走的类型 1 粒子，并**加上**被逆向反应散射到动量 $\boldsymbol p$ 的类型 1 粒子（\figref{3.3}）。因此必须对所有影响 $f_1(\boldsymbol p)$ 的其他动量 $(\boldsymbol q,\boldsymbol q',\boldsymbol p')$ 求和。示意地，碰撞项为`}</Tx>
-        <Figure n="3.3" caption={R`碰撞对粒子 (1) 相空间分布函数的影响——即碰撞项 $C[f_1(p,x,t)]$——的一维示意。考虑位于 $x,p$ 处的蓝色（深色）格子。\eqref{3.44} 中的正向反应按乘积 $f_1f_2$ 的比例从 $f_1(x,p,t)$ 中移走粒子，并把它们加到下方浅色格子中粒子 (3)、(4) 的分布函数上。另一方面，逆向反应按浅色格子中 (3)、(4) 粒子的丰度向 $f_1(x,p,t)$ 添加粒子。所有碰撞都是局域的，即发生在固定位置 $x$。这里假设所示动量在运动学上是允许的，并且为简单起见没有画出受激发射或泡利阻塞因子。`} width="60%" />
+        <Figure n="3.3" caption={R`自绘交互：固定位置的一组允许运动学态中，正向 $1+2\to3+4$ 反应减少粒子 1，逆向反应增加粒子 1。点击按钮按一次反应更新四种计数，比较增益和损失权重。这个 $2\leftrightarrow2$ 示例守恒总粒子数，不要求各物种数守恒；忽略量子统计因子。`} illustration={<CollisionRedraw />} />
         <Eq n="3.46" say="碰撞项的骨架：对所有满足守恒律的动量组合求和，权重是振幅平方；逆反应（3+4→1+2）加粒子，正反应（1+2→3+4）减粒子。">{R`\begin{aligned}C[f_1(\vp)] = \sum_{\boldsymbol q,\boldsymbol q',\vp'}^{\vp+\boldsymbol q=\vp'+\boldsymbol q'}&\delta_{\rm D}^{(1)}(E_1(p)+E_2(q)-E_3(p')-E_4(q'))\,|\mathcal M|^2\\ &\times\{f_3(\vp')f_4(\boldsymbol q') - f_1(\vp)f_2(\boldsymbol q)\},\end{aligned}`}</Eq>
         <Tx>{R`其中 Dirac $\delta_{\rm D}$ 函数强制能量守恒。散射振幅的平方 $|\mathcal M|^2$ 取决于相互作用的微观细节，可以用 Feynman 图计算。由于是两粒子相互作用，散射率取决于分布函数的乘积：正向反应 $\propto f_1f_2$，逆向反应 $\propto f_3f_4$。而且正、逆反应的振幅**相同**。此后我们不再写出分布函数的自变量 $\boldsymbol x$、$t$，因为它们都在同一 $\boldsymbol x$ 和 $t$ 处取值。
 
