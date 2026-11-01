@@ -1,3 +1,4 @@
+import {HomotopyRedraw} from "./_redraw_homotopy.jsx";
 // 引言 + §4.1 基本群 —— 式 (4.1)–(4.4)，定义 4.1–4.5，命题 4.1，引理 4.1，定理 4.1，图 4.1–4.5
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Proof, Derivation, C } from "@kit";
 
@@ -38,7 +39,7 @@ export function Sec41() {
         <Tx>{R`看 \figref{4.1} 的两个圆盘：一个中间挖了洞，一个没有。怎样刻画它们的区别？
 
 在 (b) 中，**任何**圈都能连续地收缩成一点。在 (a) 中则不然：绕洞的圈 $\alpha$ 因为洞的存在无法缩成一点；而不绕洞的圈（如 $\beta$）仍然可以。若圈 $\alpha$ 能通过连续形变从 $\beta$ 得到，就说 $\alpha$ 与 $\beta$ **同伦**（homotopic）。例如 $Y$ 中任何圈都同伦于一点。`}</Tx>
-        <Figure n="4.1" caption={R`有洞的圆盘 (a) 与无洞的圆盘 (b)。(a) 中的洞阻止圈 $\alpha$ 收缩为一点。`} width="78%" />
+        <Figure n="4.1" illustration={<HomotopyRedraw n="4.1"/>} caption={R`有洞的圆盘 (a) 与无洞的圆盘 (b)。(a) 中的洞阻止圈 $\alpha$ 收缩为一点。`} width="78%" />
         <Tx>{R`"同伦"是等价关系（\sref{P4.1}），等价类称为**同伦类**（homotopy class）。\figref{4.1} 中 $Y$ 只有一个同伦类；而 $X$ 的每个同伦类由一个整数 $n\in\mathbb{Z}$ 刻画——圈绕洞的**圈数**：逆时针为 $n>0$，顺时针为 $n<0$，不绕洞为 $n=0$。
 
 更进一步，$\mathbb{Z}$ 是加法群，而加法有几何意义：$n+m$ 对应"先绕洞 $n$ 圈，再绕 $m$ 圈"。于是同伦类的集合带有群结构，称为**基本群**（fundamental group）。本节的任务就是把这幅图像变成精确的定义；§4.3 再证明 $X$ 的基本群确实是 $\mathbb{Z}$（交互图 1 可以亲手验证）。`}</Tx>
@@ -50,7 +51,7 @@ export function Sec41() {
         <Stmt id="D4.2">
           <Eq n="4.1" keyEq title="道路的乘积" say={R`先用一半时间以两倍速度走完 $\alpha$，再用另一半时间走完 $\beta$；两段在 $\alpha(1)=\beta(0)$ 处接上。`}>{R`\alpha*\beta(s)=\begin{cases}\alpha(2s) & 0\le s\le\frac12\\ \beta(2s-1) & \frac12\le s\le1\end{cases}`}</Eq>
         </Stmt>
-        <Figure n="4.2" caption={R`有公共端点的道路 $\alpha$ 与 $\beta$ 的乘积 $\alpha*\beta$。`} width="60%" />
+        <Figure n="4.2" illustration={<HomotopyRedraw n="4.2"/>} caption={R`有公共端点的道路 $\alpha$ 与 $\beta$ 的乘积 $\alpha*\beta$。`} width="60%" />
         <Tx>{R`见 \figref{4.2}。由于 $\alpha(1)=\beta(0)$，$\alpha*\beta$ 是 $I$ 到 $X$ 的连续映射。几何上，$\alpha*\beta$ 在前一半时间里走完 $\alpha(I)$，后一半时间里走完 $\beta(I)$——注意速度加倍了。`}</Tx>
         <Stmt id="D4.3">
           <Eq n="4.2" say="逆道路就是倒着走同一条路：从终点出发回到起点。">{R`\alpha^{-1}(s)\equiv\alpha(1-s)\qquad s\in I.`}</Eq>
@@ -67,7 +68,7 @@ export function Sec41() {
           <Eq n="4.3" keyEq title="圈的同伦" say={R`同伦是一族随时间 $t$ 连续变化的圈：$t=0$ 时是 $\alpha$，$t=1$ 时是 $\beta$，而且每一时刻起点和终点都钉在基点 $x_0$ 上。`}>{R`\begin{aligned}&F(s,0)=\alpha(s),\qquad F(s,1)=\beta(s)\qquad\forall s\in I\\ &F(0,t)=F(1,t)=x_0\qquad\forall t\in I.\end{aligned}`}</Eq>
         </Stmt>
         <Tx>{R`把同伦画成 \figref{4.3}(a) 很有帮助：正方形 $I\times I$ 的两条竖边被映到 $x_0$，下边是 $\alpha(s)$，上边是 $\beta(s)$。在空间 $X$ 中，像按 \figref{4.3}(b) 那样连续变形。`}</Tx>
-        <Figure n="4.3" caption={R`(a) 正方形表示在圈 $\alpha$ 与 $\beta$ 之间插值的同伦 $F$。(b) 在实空间 $X$ 中，$\alpha$ 的像连续地变形为 $\beta$ 的像。`} width="85%" />
+        <Figure n="4.3" illustration={<HomotopyRedraw n="4.3"/>} caption={R`(a) 正方形表示在圈 $\alpha$ 与 $\beta$ 之间插值的同伦 $F$。(b) 在实空间 $X$ 中，$\alpha$ 的像连续地变形为 $\beta$ 的像。`} width="85%" />
         <Stmt id="P4.1">
           <Proof steps={[
             { claim: R`**自反性** $\alpha\sim\alpha$：取不随时间变化的同伦。`, tex: R`F(s,t)=\alpha(s)\quad\text{对任意 }t\in I`, why: R`显然满足 \eqref{4.3}：$F(0,t)=\alpha(0)=x_0$。` },
@@ -77,7 +78,7 @@ export function Sec41() {
             { claim: R`边界条件：$H(s,0)=\alpha(s)$，$H(s,1)=\gamma(s)$，$H(0,t)=H(1,t)=x_0$。故 $\alpha\sim\gamma$。`, fill: true },
           ]} />
         </Stmt>
-        <Figure n="4.4" caption={R`经由 $\beta$ 连接 $\alpha$ 与 $\gamma$ 的同伦 $H$。`} width="38%" />
+        <Figure n="4.4" illustration={<HomotopyRedraw n="4.4"/>} caption={R`经由 $\beta$ 连接 $\alpha$ 与 $\gamma$ 的同伦 $H$。`} width="38%" />
       </Sub>
 
       <Sub n="4.1.4" title="Fundamental groups" zh="基本群">
@@ -107,7 +108,7 @@ export function Sec41() {
             { claim: R`把同一公式用于 $\alpha^{-1}$（注意 $(\alpha^{-1})^{-1}=\alpha$）又得 $[\alpha^{-1}]*[\alpha]=[c_x]$。所以 $[\alpha^{-1}]=[\alpha]^{-1}$。`, fill: true },
           ]} />
         </Stmt>
-        <Figure n="4.5" caption={R`(a) $(\alpha*\beta)*\gamma$ 与 $\alpha*(\beta*\gamma)$ 之间的同伦。(b) $\alpha*c_x$ 与 $\alpha$ 之间的同伦。`} width="85%" />
+        <Figure n="4.5" illustration={<HomotopyRedraw n="4.5"/>} caption={R`(a) $(\alpha*\beta)*\gamma$ 与 $\alpha*(\beta*\gamma)$ 之间的同伦。(b) $\alpha*c_x$ 与 $\alpha$ 之间的同伦。`} width="85%" />
         <Box kind="physics" title="读图：同伦就是“重新安排时间表”">{R`\figref{4.5}(a) 的两条斜线标出了 $F(\cdot,t)$ 中三段的分界点 $s=\frac{1+t}4$ 与 $s=\frac{2+t}4$：随着 $t$ 从 0 增到 1，分界点向右平移，$\alpha$ 段被拉长、$\gamma$ 段被压短。像集合 $\alpha(I)\cup\beta(I)\cup\gamma(I)$ 自始至终没变，变的只是"什么时刻走到哪里"。结合律与单位元的同伦都是这一类；只有逆元的同伦真正改变了像（让圈越走越短）。`}</Box>
         <Tx>{R`**小结。**$\pi_1(X,x)$ 是群：单位元是常值圈 $c_x$ 的同伦类；乘积 $[\alpha]*[\beta]$ 良定义并满足群公理；$[\alpha]$ 的逆是 $[\alpha]^{-1}=[\alpha^{-1}]$。下一节研究基本群的一般性质，它们会大大简化实际计算。`}</Tx>
       </Sub>

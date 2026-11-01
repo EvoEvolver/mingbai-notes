@@ -37,3 +37,7 @@ python3 -I framework/spec/tb_check.py <书目录> <章节id> # 教科书完整�
 `node_modules/`、`*/dist/`、`tools/`（Python 环境）、`*/src/`（epub 解包、PDF 页面图）、原书 PDF/EPUB。
 
 **原书内容不进仓库（版权）**：各书 `text/`（原文文字层）与 `public/figures/`（原书插图及图注）只保留在本地磁盘，由导入脚本生成（epub：`framework/extract.py`；PDF：`pdftotext` + `framework/tools/pdf_figures.py`）。
+
+## 自绘教科书插图
+
+宇宙学的128张、Nakahara的122张图均由本仓库的SVG、数值模型或Three.js组件绘制，章节通过 `Figure` 的 `illustration` 属性使用，不依赖本地原书图片。球谐函数及商空间支持三维旋转；没有WebGL时显示自绘SVG。观测图中缺少可再分发数据的部分明确使用教学示意模型，不能视作实测数据。自绘源文件位于两书的 `chapters/_redraw*.jsx` 等章节组件内。

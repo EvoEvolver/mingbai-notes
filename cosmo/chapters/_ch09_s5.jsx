@@ -1,3 +1,5 @@
+import { SphericalHarmonicsRedraw } from "./_redraw_spherical_harmonics.jsx";
+import { AlmGaussian } from "./_ch14_redraw.jsx";
 // §9.5 Inhomogeneities to anisotropies —— 式 (9.45)–(9.75)，图 9.9–9.10
 import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
 import { VisibilityPlot } from "./_ch09_plots.jsx";
@@ -62,7 +64,7 @@ export function Sec95() {
         <Tx>{R`**两类项。**\eqref{9.58} 中有两类项。前两行的积分以可见度函数加权，它们是主导项。最后一行的积分则以 $e^{-\tau}$ 加权，所以只要 $\tau\lesssim1$——即复合之后的所有时刻——被积函数都有贡献。注意，若复合后势为常数（物质主导期正是如此），最后一行的项为零。
 
 **尖锐的可见度函数。**由于可见度函数峰值极其尖锐，前两项的积分变得非常简单。为看清这一点，考虑 \figref{9.9}：它画出 \eqref{9.58} 第一项（"单极"）被积函数的三个部分。可见度函数的变化比另两个函数快得多，所以可以把另两个函数在可见度函数的峰值处（$\eta=\eta_*$）取值、移出积分号。于是积分就是 $\int d\eta\,g(\eta)=1$。剩下`}</Tx>
-        <Figure n="9.9" interactive={<VisibilityPlot />}
+        <Figure n="9.9" illustration={<VisibilityPlot />}
           caption={R`可见度函数 $g(\eta)$（黑实线）与 \eqref{9.58} 第一行被积函数的另两个部分的比较。可见度函数峰值尖锐，相对于单极 $\Theta_0+\Psi$（任意单位）与 Bessel 函数 $j_l(k[\eta-\eta_0])$ 变化很快。图中 $l=220$、$k=0.02\,\mathrm{Mpc^{-1}}$，对应 CMB 各向异性谱的第一峰。`} />
         <Eq n="9.59" keyEq title="今天的光子多极矩" say={R`今天的第 $l$ 阶矩 = 最后散射面上的（单极+引力红移）乘 $j_l$ + Doppler 项 $3\Theta_1$ 乘 $j_l'$ + 势随时间变化的积分（ISW）。这是 CMB 半解析计算的基石。`}>{R`\begin{aligned}\Theta_l(k,\eta_0) &\simeq \left[\Theta_0(k,\eta_*) + \Psi(k,\eta_*)\right]j_l\left[k(\eta_0-\eta_*)\right]\\ &\quad+ 3\Theta_1(k,\eta_*)\left(j_{l-1}\left[k(\eta_0-\eta_*)\right] - (l+1)\frac{j_l\left[k(\eta_0-\eta_*)\right]}{k(\eta_0-\eta_*)}\right)\\ &\quad+ \int_0^{\eta_0}d\eta\,e^{-\tau}\left[\Psi'(k,\eta) - \Phi'(k,\eta)\right]j_l\left[k(\eta_0-\eta)\right].\end{aligned}`}</Eq>
         <Derivation title={R`\eqref{9.58} 第二行 ⇒ Doppler 项`} collapsed steps={[
@@ -93,6 +95,7 @@ export function Sec95() {
 
 **球谐展开：球面上的 Fourier 变换。**现在把温度扰动按球谐函数展开：`}</Tx>
         <Eq n="9.63" say={R`把天空上的温度图分解为球谐函数：$l$ 越大，对应的角尺度越小；$a_{lm}$ 是各个"球面 Fourier 模式"的振幅。`}>{R`\Theta(\boldsymbol x,\hat{\boldsymbol p},\eta) = \sum_{l=1}^\infty\sum_{m=-l}^{l}a_{lm}(\boldsymbol x,\eta)Y_{lm}(\hat{\boldsymbol p}).`}</Eq>
+        <Figure n="C.1" illustration={<SphericalHarmonicsRedraw />} width="100%" caption={R`附录 C 的球谐函数幅度：以 $|Y_{lm}|$ 为径向距离的三维曲面，覆盖 $l=1,m=0,1$ 与 $l=2,m=0,1,2$。负 $m$ 的幅度满足 $|Y_{l,-m}|=|Y_{lm}|$，因此无需重复绘制。`} />
         <Tx>{R`下标 $l$、$m$ 与实空间的单位矢量 $\hat{\boldsymbol p}$ 共轭，正如变量 $\boldsymbol k$ 与三维位置 $\boldsymbol x$ 共轭。我们已经熟悉 Fourier 变换，所以不妨把球谐展开看作一种二维 Fourier 变换：三维 Fourier 变换的完备本征函数组是 $e^{i\boldsymbol k\cdot\boldsymbol x}$，球面上展开的完备本征函数组则是 $Y_{lm}(\hat{\boldsymbol p})$（附录 C.2）。温度场 $T$ 中的全部信息也包含在依赖于 $(\boldsymbol x,\eta)$ 的振幅 $a_{lm}$ 中。
 
 **信息计数的例子。**考虑一个以 $7^\circ$ 角分辨率测绘全天的实验。全天有 $4\pi$ 球面度 $\simeq41\,000$ 平方度，所以面积为 $(7^\circ)^2$ 的像素有 840 个，这样的实验有 840 个独立的信息。若改用 $a_{lm}$ 而非像素温度来刻画这些信息，就会存在某个 $l_{\max}$，其上没有信息。确定 $l_{\max}$ 的一种方法是令可恢复的 $a_{lm}$ 总数 $\sum_{l=0}^{l_{\max}}(2l+1)=(l_{\max}+1)^2=840$。所以这些信息同样可以由 $l_{\max}=28$ 以内的所有 $a_{lm}$ 刻画。顺便说，这相当贴切地刻画了发现 CMB 各向异性的 COBE 实验（Smoot 等 1992；Bennett 等 1996）：他们给出的温度数据像素要多得多，但这些像素相互重叠，独立信息只包含在 $l\sim30$ 以内的多极矩中。当前一代实验能把多极矩一直测到几千的 $l$；在那里原初 CMB 各向异性已被光子扩散充分阻尼，观测到的辐射由天体物理前景源（以及引力透镜，\secref{13.3}）主导。
@@ -104,7 +107,7 @@ export function Sec95() {
         <Tx>{R`这里把右边写成了 Fourier 变换（$\Theta(\boldsymbol k)$ 而不是 $\Theta(\boldsymbol x)$），因为我们求出的正是它。
 
 **只能预言分布。**与密度扰动一样，我们无法对任何具体的 $a_{lm}$ 作出预言，只能预言它们所服从的分布——一个可追溯到暴胀期间量子涨落的高斯分布。\figref{9.10} 画出了这个高斯分布。$a_{lm}$ 的均值为零，但方差不为零。$a_{lm}$ 的方差称为 $C(l)$。于是`}</Tx>
-        <Figure n="9.10" width="60%" caption={R`$a_{lm}$ 所服从的分布：期望值为零、均方根宽度为 $[C(l)]^{1/2}$ 的高斯分布。`} />
+        <Figure n="9.10" illustration={<AlmGaussian />} width="100%" caption={R`球谐系数的零均值高斯分布，横轴以标准差归一化；图内说明实、复球谐的约定。`} />
         <Eq n="9.66" keyEq title="角功率谱的定义" say={R`$a_{lm}$ 均值为零；不同 $(l,m)$ 互不相关，同一 $l$ 的所有 $m$ 方差相同，记为 $C(l)$——统计各向同性的直接后果。`}>{R`\langle a_{lm}\rangle = 0;\qquad \langle a_{lm}a^*_{l'm'}\rangle = \delta_{ll'}\delta_{mm'}C(l),`}</Eq>
         <Tx>{R`其中 $\langle\cdot\rangle$ 现在表示系综平均，即在无穷大体积中测量的极限结果。
 

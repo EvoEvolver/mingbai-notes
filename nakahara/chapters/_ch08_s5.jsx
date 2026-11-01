@@ -1,3 +1,4 @@
+import { CurvatureLoopRedraw } from "./_redraw_ch06_08.jsx";
 // §8.5 Kähler 流形与 Kähler 微分几何 —— 式 (8.80)–(8.101)，定义 8.4，定理 8.5–8.7，例 8.6–8.8，习题 8.8，图 8.5
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Proof, Exercise, Derivation, C } from "@kit";
 
@@ -152,7 +153,7 @@ $$\sym{ricf}{\mathfrak{R}}=-\mathrm{i}\partial_{\bar\nu}\partial_\mu\log G\,\dd 
       <Sub n="8.5.3" title="The holonomy group of Kähler manifolds" zh="Kähler 流形的和乐群">
         <Tx>{R`本节结束之前，简要看一看 Kähler 流形的和乐群（和乐群的定义见 \sref{D7.3}）。设 $(M,g)$ 是 Hermite 流形，$\dim_\C M=m$。取向量 $X\in T_pM^+$，沿 $p$ 处的回路 $c$ 平行移动，回到 $p$ 时得到向量 $X'\in T_pM^+$，$X'^\mu=X^\nu h_\nu{}^\mu$。注意 $\nabla$ 不混合全纯指标与反全纯指标，所以 $X'$ 在 $T_pM^-$ 中没有分量。此外 $\nabla$ 保持向量的长度（度规相容；$h_p(X,X)=g_{\mu\bar\nu}X^\mu\overline{X}^\nu$ 不变）。这些事实告诉我们 $(h_\mu{}^\nu(c))$ 属于 $\mathrm{U}(m)\subset\mathrm{O}(2m)$。（对 Kähler 流形，这里的 $\nabla$ 就是 Levi-Civita 联络，所以这是 Riemann 和乐群。）`}</Tx>
         <Stmt id="T8.7">
-          <Figure n="8.5" caption={R`$X\in T_pM^+$ 沿 $pqrs$ 平行移动，回到 $p$ 时成为向量 $X'\in T_pM^+$。`} width="45%" />
+          <Figure illustration={<CurvatureLoopRedraw complex />} n="8.5" caption={R`$X\in T_pM^+$ 沿 $pqrs$ 平行移动，回到 $p$ 时成为向量 $X'\in T_pM^+$。`} width="100%" />
           <Proof title="定理 8.7 的证明（原书标明为概要）" steps={[
             { claim: R`若 $X=X^\mu\partial/\partial z^\mu\in T_pM^+$ 沿 \figref{8.5} 中的小平行四边形平行移动回到 $p$，得到 $X'\in T_pM^+$，其分量为（参看 \eqref{7.44}）`, tex: R`X'^\mu=X^\mu+X^\nu R^\mu{}_{\nu\kappa\bar\lambda}\varepsilon^\kappa\bar\delta^\lambda`, uses: ["8.99", "D7.3"], why: R`四边形两边为 $\varepsilon^\kappa$（全纯方向）与 $\bar\delta^\lambda$（反全纯方向）；由 \eqref{8.74}，只有一个全纯一个反全纯的曲率分量非零。` },
             { claim: R`由此读出和乐矩阵`, tex: R`h_\mu{}^\nu=\delta_\mu{}^\nu+R^\nu{}_{\mu\kappa\bar\lambda}\varepsilon^\kappa\bar\delta^\lambda`, uses: ["8.100"] },

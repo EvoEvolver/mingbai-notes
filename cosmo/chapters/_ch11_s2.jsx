@@ -37,8 +37,8 @@ export function Sec112() {
         { tex: R`\int d\Omega_k\,Y^*_{lm}(\hat{\boldsymbol k})Y_{l'm'}(\hat{\boldsymbol k})=\delta_{ll'}\delta_{mm'},\qquad i^{l-l'}\to1,\qquad\frac{16\pi^2}{8\pi^3}=\frac2\pi`, why: R`正交归一性（这里假设 $P_{\rm g,obs}$ 与 $\hat{\boldsymbol k}$ 无关，否则角积分不能直接分离）。` },
       ]} />
       <Tx>{R`**不等时功率谱。**注意星系的角功率谱 $C_{\rm g}(l)$ 一般涉及星系的**不等时**（unequal-time）功率谱，因为我们沿光锥做投影。不等时功率谱不为零，因为密度扰动在增长的同时停留在原地（线性理论中 $P(k,\eta,\eta')=P(k)D_+(\eta)D_+(\eta')/D_+^2$）。不过下面很快会看到，在小尺度即大 $l$ 上，只有等时、等距离 $\chi'=\chi$ 的贡献显著。`}</Tx>
-      <Figure n="11.8" interactive={<LimberKernel />}
-        caption={R`两个平面波扰动及其对角功率谱的贡献。右图是视向波数 $\mu_kk\gg\chi^{-1}$ 的扰动（$\hat{\boldsymbol e}_z$ 方向竖直）；左图是视向波数 $\mu_kk<\chi^{-1}$、基本横向的模式。右图模式产生的角关联可以忽略，因为沿视线有相消；左图的横向模式则没有这种相消。**交互版**：Limber 近似的数学核心——\eqref{11.45} 的被积核 $(k\chi)^2j_l(k\chi)j_l(k\chi')$（以 $\chi'=\chi$ 时的峰值归一）。$\chi'=\chi$ 时它在 $k\chi\approx l+\frac12$ 处取峰，宽度 $\Delta(k\chi)\propto l^{1/3}$，相对宽度随 $l$ 变窄（\exref{11.7}）；$\chi'\neq\chi$ 时两个 Bessel 函数在峰后很快失相，正负相消，积分迅速变小——这正是 \eqref{11.46} 中的 $\delta_{\rm D}(\chi-\chi')$。`} />
+      <Figure n="11.8" illustration={<LimberKernel />}
+        caption={R`原创计算图。Limber 近似的数学核心——\eqref{11.45} 的被积核 $(k\chi)^2j_l(k\chi)j_l(k\chi')$（以 $\chi'=\chi$ 时的峰值归一）。$\chi'=\chi$ 时它在 $k\chi\approx l+\frac12$ 处取峰，宽度 $\Delta(k\chi)\propto l^{1/3}$，相对宽度随 $l$ 变窄（\exref{11.7}）；$\chi'\neq\chi$ 时两个 Bessel 函数在峰后很快失相，正负相消，积分迅速变小——这正是 \eqref{11.46} 中的 $\delta_{\rm D}(\chi-\chi')$。`} />
       <Tx>{R`**精确但笨重。**\eqref{11.44} 是给定三维功率谱 $P_{\rm g,obs}(\boldsymbol k,\eta,\eta')$（允许各向异性）与选择函数 $W(\chi)$ 时星系角功率谱的精确结果。但它处理起来很麻烦：有三重嵌套积分，而且积分的是振荡函数 $j_l$；我们还需要给出完整的不等时星系功率谱。
 
 **小尺度简化。**为了继续，我们做一个类似上一节远距观测者近似的简化假设。小尺度上 $l\gg1$，贡献 $C_{\rm g}(l)$ 的星系对在天上张开的角度很小，约 $\theta\sim1/l$，所以预期会有简化。仔细看这一区域中的 \eqref{11.44}。对 $k$ 的积分是`}</Tx>
@@ -61,8 +61,8 @@ export function Sec112() {
       <Eq n="11.49" keyEq title="角关联函数" say={R`角关联函数是角功率谱的 Hankel 变换：每个多极 $l$ 以 $lC_{\rm g}(l)J_0(l\theta)$ 的形式贡献。`}>{R`w_{\rm g}(\theta)=\int_0^\infty\frac{dl}{2\pi}\,l\,C_{\rm g}(l)J_0(l\theta).`}</Eq>
       <Tx>{R`（中间一步：$\int_0^{2\pi}d\phi\,e^{il\theta\cos\phi}=2\pi J_0(l\theta)$，$d^2l=l\,dl\,d\phi$，于是 $\frac{1}{(2\pi)^2}\cdot2\pi=\frac{1}{2\pi}$。）
 
-**测量。**\figref{11.9} 是暗能量巡天（DES）测得的投影关联函数。由于可用的星系很多，测量的信噪比非常高。可惜，由于在较宽的红移片内投影，BAO 特征被抹平，很难探测。尽管如此，这种投影关联函数与弱引力透镜结合，可以做许多宇宙学检验——这是第 13 章的内容。`}</Tx>
-      <Figure n="11.9" interactive={<WthetaPlot />}
-        caption={R`测光暗能量巡天（DES）中星系的角关联函数（"3,3" 表示测光红移中心在 $z\simeq0.55$ 的红移区间内星系的自关联）。关联函数 $w(\theta)=w_{\rm g}(\theta)$ 乘了 $\theta$ 以压缩动态范围，因为 $w_{\rm g}$ 向小 $\theta$ 急剧增大。灰色区域涉及小于 $8\,h^{-1}\mathrm{Mpc}$ 的共动尺度，受非线性演化与偏袒的显著影响。曲线为基于线性偏袒的最佳拟合模型。引自 Elvin-Poole et al. (2018)。**交互版**：Gaussian 选择函数（中心 $\bar z$、红移弥散 $\sigma_z$）+ 线性 $P_{\rm L}$ + 线性偏袒，先用 Limber 公式 \eqref{11.47} 算 $C_{\rm g}(l)$，再用 \eqref{11.49} 变换到 $w_{\rm g}(\theta)$。默认 $\bar z=0.55$、$\sigma_z=0.05$、$b_1=1.65$ 时 $\theta w$ 在 $\theta\approx25'$ 处取峰约 $1.0$，$100'$ 处约 $0.4$，与原图量级与形状一致；竖线标出 $8\,h^{-1}\mathrm{Mpc}$ 对应的角度，其左侧线性理论低估了观测（非线性效应）。`} />
+**测量。**原书图 11.9 展示暗能量巡天（DES）测得的投影关联函数；本站\figref{11.9} 独立计算线性 Limber 预言，不含观测点。由于可用的星系很多，测量的信噪比非常高。可惜，由于在较宽的红移片内投影，BAO 特征被抹平，很难探测。尽管如此，这种投影关联函数与弱引力透镜结合，可以做许多宇宙学检验——这是第 13 章的内容。`}</Tx>
+      <Figure n="11.9" illustration={<WthetaPlot />}
+        caption={R`原创计算图。Gaussian 选择函数（中心 $\bar z$、红移弥散 $\sigma_z$）+ 线性 $P_{\rm L}$ + 线性偏袒，先用 Limber 公式 \eqref{11.47} 算 $C_{\rm g}(l)$，再用 \eqref{11.49} 变换到 $w_{\rm g}(\theta)$。默认 $\bar z=0.55$、$\sigma_z=0.05$、$b_1=1.65$ 时 $\theta w$ 在 $\theta\approx25'$ 处取峰约 $1.0$，$100'$ 处约 $0.4$，与原图量级与形状一致；竖线标出 $8\,h^{-1}\mathrm{Mpc}$ 对应的角度，其左侧线性理论低估了观测（非线性效应）。`} />
     </Sec>);
 }

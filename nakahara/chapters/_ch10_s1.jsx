@@ -1,3 +1,4 @@
+import { HorizontalEquivarianceRedraw, HorizontalLiftRedraw, SectionTrivializationRedraw } from "./_redraw_ch09_10.jsx";
 // 引言 + §10.1 主丛上的联络 —— 式 (10.1)–(10.20)，定义 10.1–10.3，命题 10.1，定理 10.1–10.2，引理 10.1，推论 10.1，
 // 例 10.1–10.2，习题 10.1–10.4，图 10.1–10.3
 import { Sec, Sub, Tx, Eq, Box, Stmt, Proof, Exercise, Derivation, Figure, Table, C } from "@kit";
@@ -84,7 +85,7 @@ $$[A^\#,B^\#]=\iota_{u*}X_{[A,B]}=[A,B]^\#$$
         <Eq n="10.2" say={R`基本向量场的括号还是基本向量场，对应的李代数元就是原来两个元素的括号：$\sharp$ 是李代数同态。`}>{R`[A^\#,B^\#]=[A,B]^\#.`}</Eq>
       </Exercise>
       <Stmt id="D10.1" />
-      <Figure n="10.1" caption={R`水平子空间 $H_{ug}P$ 由 $H_uP$ 经右作用得到。`} width="42%" />
+      <Figure illustration={<HorizontalEquivarianceRedraw />} n="10.1" caption={R`水平子空间 $H_{ug}P$ 由 $H_uP$ 经右作用得到。`} width="100%" />
       <Tx>{R`条件 (iii) 说：同一纤维上的水平子空间 $H_uP$ 与 $H_{ug}P$ 由右作用诱导的线性映射 $R_{g*}$ 联系。因此，$u$ 处的一个子空间 $H_uP$ 就生成了整根纤维上的全部水平子空间。这个条件保证：若点 $u$ 被平行移动，它的常数倍 $ug$（$g\in G$）也同样被平行移动（见后文推论 10.1）。
 
 读者此刻也许对这个定义感到不安：乍一看，它与规范势、场强毫无关系。引入联络一形式之后，这些问题就会清楚。我们再次强调：这个以 $T_uP=V_uP\oplus H_uP$ 为基础的定义是**纯几何**的，不依赖任何额外信息。下面联络会变得更易于计算，但几何图像与内禀性质往往随之模糊。`}</Tx>
@@ -129,7 +130,7 @@ function Sub1013() {
         <Tx>{R`**证明的思路。**在 $\pi^{-1}(U_i)$ 上定义 $${LG}$ 值一形式`}</Tx>
         <Eq n="10.7" say={R`由规范势重建联络一形式：第一项把底流形上的势搬到丛上并按纤维位置共轭，第二项是 Maurer–Cartan 形式，负责在竖直方向上读出李代数元。`}>{R`\omega_i\equiv g_i^{-1}\pi^*\mathcal{A}_ig_i+g_i^{-1}\dd_Pg_i`}</Eq>
         <Tx>{R`其中 $\dd_P$ 是 $P$ 上的外微分，$g_i$ 是由 $\phi_i^{-1}(u)=(p,g_i)$（$u=\sigma_i(p)g_i$）定义的**典范局部平凡化**（canonical local trivialization），见 \figref{10.2}。`}</Tx>
-        <Figure n="10.2" caption={R`由 $U_i$ 上的局部截面 $\sigma_i$ 定义的典范局部平凡化。`} width="55%" />
+        <Figure illustration={<SectionTrivializationRedraw />} n="10.2" caption={R`由 $U_i$ 上的局部截面 $\sigma_i$ 定义的典范局部平凡化。`} width="100%" />
         <Proof steps={[
           { claim: R`**$\sigma_i^*\omega_i=\mathcal{A}_i$。**对 $X\in T_pM$：`, tex: R`\sigma_i^*\omega_i(X)=\omega_i(\sigma_{i*}X)=\pi^*\mathcal{A}_i(\sigma_{i*}X)+\dd_Pg_i(\sigma_{i*}X)=\mathcal{A}_i(\pi_*\sigma_{i*}X)+\dd_Pg_i(\sigma_{i*}X)`, why: R`$\sigma_{i*}X\in T_{\sigma_i}P$，而在截面上 $g_i=e$，所以第一项的共轭消失。` },
           { claim: R`又 $\pi_*\sigma_{i*}=\mathrm{id}_{T_p(M)}$（因 $\pi\circ\sigma_i=\mathrm{id}$），且沿 $\sigma_{i*}X$ 有 $g\equiv e$，故 $\dd_Pg_i(\sigma_{i*}X)=0$。于是 $\sigma_i^*\omega_i(X)=\mathcal{A}_i(X)$。` },
@@ -251,7 +252,7 @@ $$0=\omega(X)=\frac{\dd x}{\dd t}\frac{y}{r^2}-\frac{\dd y}{\dd t}\frac{x}{r^2}+
         <Eq n="10.16" say={R`把起点沿纤维平移 $g$，整条水平提升也跟着平移 $g$：这正是推论 10.1。`}>{R`\tilde\gamma_g(t)=((\cos2\pi t,\sin2\pi t),2\pi t+g).`}</Eq>
         <Tx>{R`**值得注意：**这个丛是**平凡**的（$P\cong M\times\mathbb{R}$），联络也是**平坦**的（$\dd\omega=0$，下一节会看到曲率为零），但沿不可缩闭路的水平提升仍然闭不上。这与 Aharonov–Bohm 效应（\secref{10.5.3}）在数学上是同一件事。`}</Tx>
       </Box>
-      <Figure n="10.3" caption={R`$M$ 中的曲线 $\gamma(t)$ 及其水平提升 $\tilde\gamma(t)$ 与 $\tilde\gamma(t)g$。`} width="50%" />
+      <Figure illustration={<HorizontalLiftRedraw />} n="10.3" caption={R`自绘水平提升的横向展开：底曲线 $\gamma(t)$ 上方的 $\tilde\gamma(t)$ 与右平移 $\tilde\gamma(t)g$。`} width="100%" />
       <Tx>{R`**平行移动。**设 $\gamma:[0,1]\to M$ 是曲线，取 $u_0\in\pi^{-1}(\gamma(0))$。过 $u_0$ 有 $\gamma(t)$ 的唯一水平提升 $\tilde\gamma(t)$，因此有唯一点 $u_1=\tilde\gamma(1)\in\pi^{-1}(\gamma(1))$（\figref{10.3}）。点 $u_1$ 称为 $u_0$ 沿曲线 $\gamma$ 的**平行移动**（parallel transport）。这定义了映射 $\Gamma(\tilde\gamma):\pi^{-1}(\gamma(0))\to\pi^{-1}(\gamma(1))$，$u_0\mapsto u_1$。若用局部形式 \eqref{10.14}，`}</Tx>
       <Eq n="10.17" say={R`平行移动的终点：从截面上的点出发，乘上沿整条路径的路径排序指数（Wilson 线）。`}>{R`u_1=\sigma_i(1)\mathcal{P}\exp\Big(-\int_0^1\mathcal{A}_{i\mu}\frac{\dd x^\mu(\gamma(t))}{\dd t}\dd t\Big).`}</Eq>
       <Tx>{R`推论 10.1 保证 $\Gamma(\tilde\gamma)$ 与右作用 $R_g$ 对易。先注意 $R_g\Gamma(\tilde\gamma)(u_0)=u_1g$，而 $\Gamma(\tilde\gamma)R_g(u_0)=\Gamma(\tilde\gamma)(u_0g)$。$\tilde\gamma(t)g$ 是过 $u_0g$ 与 $u_1g$ 的水平提升；由过 $u_0g$ 的水平提升的唯一性，$u_1g=\Gamma(\tilde\gamma)(u_0g)$，即 $R_g\Gamma(\tilde\gamma)(u_0)=\Gamma(\tilde\gamma)R_g(u_0)$。这对任意 $u_0\in\pi^{-1}(\gamma(0))$ 成立，所以`}</Tx>

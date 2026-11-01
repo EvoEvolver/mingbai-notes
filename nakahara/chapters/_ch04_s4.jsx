@@ -1,3 +1,4 @@
+import {HomotopyRedraw} from "./_redraw_homotopy.jsx";
 // §4.4 多面体的基本群 —— 式 (4.14)–(4.34)，定理 4.7–4.9，引理 4.3，推论 4.2–4.3，例 4.4–4.11，习题 4.3–4.5，图 4.10–4.16，交互图 3（EdgeGroupLab）
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Proof, Erratum, Exercise, Table, Derivation, C } from "@kit";
 import { EdgeGroupLab } from "./_ch04_demos.jsx";
@@ -69,7 +70,7 @@ $$w^{-1}=x_n^{-i_n}\cdots x_2^{-i_2}x_1^{-i_1}.$$`}</Tx>
 (1) 若顶点 $u,v,w$ 张成 $K$ 中的一个 **2 单形**，棱道路 $uvw$ 可以换成 $uw$，反之亦然（\figref{4.10}(a)）。
 
 (2) 作为特例，若 (1) 中 $u=w$，棱道路 $uvw$ 意味着先沿 $uv$ 走、再从 $v$ 退回 $w=u$。这条棱道路 $uvu$ 可以换成 0 单形 $u$，反之亦然（\figref{4.10}(b)）。`}</Tx>
-        <Figure n="4.10" caption={R`棱圈可能的形变。(a) 中 $uvw$ 换成 $uw$；(b) 中 $uvu$ 换成 $u$。`} width="80%" />
+        <Figure n="4.10" illustration={<HomotopyRedraw n="4.10"/>} caption={R`棱圈可能的形变。(a) 中 $uvw$ 换成 $uw$；(b) 中 $uvu$ 换成 $u$。`} width="80%" />
         <Tx>{R`把 $vv_1\ldots v_{k-1}v$ 所在的 $v$ 处棱圈等价类记作 $\{vv_1\ldots v_{k-1}v\}$。等价类在如下乘积下构成群：`}</Tx>
         <Eq n="4.20" say="两个棱圈相乘，就是在基点处把顶点序列接起来——这是道路乘积的离散版本。">{R`\{vu_1\ldots u_{k-1}v\}*\{vv_1\ldots v_{i-1}v\}=\{vu_1\ldots u_{k-1}vv_1\ldots v_{i-1}v\}.`}</Eq>
         <Tx>{R`单位元是等价类 $\{v\}$，$\{vv_1\ldots v_{k-1}v\}$ 的逆是 $\{vv_{k-1}\ldots v_1v\}$。这个群称为 $K$ 在 $v$ 处的**边群**，记作 $E(K;v)$。`}</Tx>
@@ -115,7 +116,7 @@ $$w^{-1}=x_n^{-i_n}\cdots x_2^{-i_2}x_1^{-i_1}.$$`}</Tx>
           <Tx>{R`这在实际计算中很有用。例如 3 单形与它的边界有相同的 2 骨架。3 单形是实心球 $D^3$ 的多面体 $|K|$，它的边界 $|L|$ 是球面 $S^2$ 的多面体。$D^3$ 可缩，故 $\pi_1(|K|)\cong\{e\}$。由 \eqref{4.21} 得 $\pi_1(S^2)\cong\pi_1(|K|)\cong\{e\}$。一般地，对 $n\ge2$，$(n+1)$ 单形 $\sigma_{n+1}$ 与它的边界有相同的 2 骨架。注意 $\sigma_{n+1}$ 可缩，而它的边界是 $S^n$ 的多面体，于是得到公式`}</Tx>
           <Eq n="4.22" keyEq title={R`$n\ge2$ 的球面单连通`} say={R`二维及以上的球面上，任何圈都能缩成一点：一维的“套索”从球面上滑脱。`}>{R`\pi_1(S^n)\cong\{e\}\qquad n\ge2.`}</Eq>
         </Box>
-        <Figure n="4.11" caption={R`3-花束的三角剖分。粗线表示极大树 $L$。`} width="52%" />
+        <Figure n="4.11" illustration={<HomotopyRedraw n="4.11"/>} caption={R`3-花束的三角剖分。粗线表示极大树 $L$。`} width="52%" />
         <Box kind="example" n="4.6" title="圆周">
           <Tx>{R`设 $K\equiv\{v_1,v_2,v_3,\langle v_1v_2\rangle,\langle v_1v_3\rangle,\langle v_2v_3\rangle\}$ 是圆周 $S^1$ 的单纯复形，取 $v_1$ 为基点。极大树可取 $L=\{v_1,v_2,v_3,\langle v_1v_2\rangle,\langle v_1v_3\rangle\}$。只有一个生成元 $g_{23}$。$K$ 中没有 2 单形，关系为空。于是`}</Tx>
           <Eq n="4.23" say="三角形三条边构成的圆周：只剩一条不在树上的棱，它生成一个没有关系的群，即整数。">{R`\pi_1(S^1)\cong G(K;L)=(g_{23};\emptyset)\cong\mathbb{Z}`}</Eq>
@@ -129,7 +130,7 @@ $$w^{-1}=x_n^{-i_n}\cdots x_2^{-i_2}x_1^{-i_1}.$$`}</Tx>
           <Tx>{R`一般地，$n$-花束有 $n$ 个生成元 $g_{12},\ldots,g_{2n-1\,2n}$，基本群同构于 $n$ 个生成元、没有关系的自由群。`}</Tx>
         </Box>
         <Box kind="example" n="4.8" title="圆盘">{R`设 $D^2$ 是二维圆盘。$D^2$ 的一个三角剖分 $K$ 由包括内部的三角形给出。显然 $K$ 本身可以作为 $L$，$K-L$ 为空。于是 $\pi_1(K)\cong\{e\}$。`}</Box>
-        <Figure n="4.12" caption={R`环面的一个三角剖分。`} width="52%" />
+        <Figure n="4.12" illustration={<HomotopyRedraw n="4.12"/>} caption={R`环面的一个三角剖分。`} width="52%" />
         <Box kind="example" n="4.9" title="环面">
           <Tx>{R`\figref{4.12} 是环面 $T^2$ 的三角剖分，阴影区取为子复形 $L$。（验证它包含全部顶点，并且弧连通、单连通：它是左上 $2\times2$ 个方格拼成的一块圆盘，9 个顶点在其中两两不同。）共有 11 个生成元、10 个关系。令 $x=g_{02}$、$y=g_{04}$，写出关系（第二、三列标出已知的值，$L$ 中的棱记为 1）：`}</Tx>
           <Table head={["", "2 单形给出的关系", "已知值", "结论"]} rows={[
@@ -158,12 +159,12 @@ $$g_{02}=g_{07}=g_{37}=g_{38}=g_{48}=x,\qquad g_{04}=g_{06}=g_{16}=g_{18}=g_{28}
           <Eq n="4.28" say={R`沿正方形的四条边依次走 $\alpha$、$\beta$、$\alpha$ 的反向、$\beta$ 的反向，这条路可以在正方形内部缩成一点。`}>{R`\alpha*\beta*\alpha^{-1}*\beta^{-1}\sim c_v`}</Eq>
           <Tx>{R`其中 $c_v$ 是 $v$ 处的常值圈，见 \figref{4.13}。`}</Tx>
         </Box>
-        <Figure n="4.13" caption={R`圈 $\alpha$ 与 $\beta$ 满足关系 $\alpha*\beta*\alpha^{-1}*\beta^{-1}\sim c_v$。`} width="85%" />
+        <Figure n="4.13" illustration={<HomotopyRedraw n="4.13"/>} caption={R`圈 $\alpha$ 与 $\beta$ 满足关系 $\alpha*\beta*\alpha^{-1}*\beta^{-1}\sim c_v$。`} width="85%" />
         <Tx>{R`更一般地，设 $\Sigma_g$ 是亏格 $g$ 的环面。如第 2 章章末题 2.1 所示，$\Sigma_g$ 可以表示为 $\mathbb{R}^2$ 中的 $4g$ 边形，边界作适当粘合。$\Sigma_g$ 的基本群由 $2g$ 个圈 $\alpha_i,\beta_i$（$1\le i\le g$）生成。与 \eqref{4.28} 类似，可以验证`}</Tx>
         <Eq n="4.29" say={R`沿 $4g$ 边形的边界走一圈（依次经过每个环柄的 $\alpha_i,\beta_i,\alpha_i^{-1},\beta_i^{-1}$），这条路在多边形内部可以缩成一点。`}>{R`\prod_{i=1}^{g}(\alpha_i*\beta_i*\alpha_i^{-1}*\beta_i^{-1})\sim c_v`}</Eq>
         <Tx>{R`若把对应 $\alpha_i$ 的生成元记为 $x_i$、对应 $\beta_i$ 的记为 $y_i$，它们之间只有一个关系：`}</Tx>
         <Eq n="4.30" keyEq title={R`亏格 $g$ 曲面的基本群`} say={R`亏格 $g$ 的曲面：$2g$ 个生成元，只有一条关系——所有环柄的换位子之积为 1。$g\ge2$ 时这个群不交换。`}>{R`\prod_{i=1}^{g}(x_iy_ix_i^{-1}y_i^{-1})=1.`}</Eq>
-        <Figure n="4.14" caption={R`Klein 瓶的一个三角剖分。`} width="52%" />
+        <Figure n="4.14" illustration={<HomotopyRedraw n="4.14"/>} caption={R`Klein 瓶的一个三角剖分。`} width="52%" />
         <Exercise n="4.4" title="Klein 瓶的基本群" level="★★"
           hint={R`与例 4.9 的唯一区别在于最下一行顶点的顺序是 $0,2,1,0$（底边与顶边**反向**粘合）。阴影区 $L$ 与例 4.9 相同。逐个三角形写出 $g_{ij}g_{jk}=g_{ik}$，从 $x=g_{02}$、$y=g_{04}$ 出发依次求出其余生成元。`}
           solution={R`顶点排布：第一行 $0,1,2,0$；第二行 $3,5,7,3$；第三行 $4,6,8,4$；最下一行 $0,2,1,0$。每个小方格沿左下—右上对角线切开。$L$ 是左上 $2\times2$ 个方格（16 条棱、8 个三角形），$K$ 共 27 条棱、18 个三角形，故有 $27-16=11$ 个生成元、$18-8=10$ 个关系。$L$ 中的 16 条棱（记为 1）：横向 $01,12,35,57,46,68$，纵向 $03,15,27,34,56,78$，对角 $13,25,45,67$。
@@ -178,7 +179,7 @@ $$\pi_1(\text{Klein bottle})\cong(x,y;xyxy^{-1}).$$
           <Tx>{R`\figref{4.14} 是 Klein 瓶的三角剖分，阴影区是子复形 $L$。共有 11 个生成元、10 个关系。取 $x=g_{02}$、$y=g_{04}$，写出各 2 单形给出的关系，证明`}</Tx>
           <Eq n="4.31" title="Klein 瓶的基本群" say={R`Klein 瓶的两个基本圈满足 $yxy^{-1}=x^{-1}$：沿 $y$ 方向绕一圈，$x$ 方向被反转——这就是“不可定向”的代数签名。`}>{R`\pi_1(\text{Klein bottle})\cong(x,y;xyxy^{-1}).`}</Eq>
         </Exercise>
-        <Figure n="4.15" caption={R`射影平面的一个三角剖分。`} width="50%" />
+        <Figure n="4.15" illustration={<HomotopyRedraw n="4.15"/>} caption={R`射影平面的三角胞腔表示；绿色棱组成商空间的极大树。严格的单纯复形三角剖分见图3.9。`} width="50%" />
         <Box kind="example" n="4.10" title={R`射影平面 $\sym{RP}{\RP^2}$`}>
           <Tx>{R`\figref{4.15} 是射影平面 $\sym{RP}{\RP^2}$ 的三角剖分，阴影区是子复形 $L$。共有六个生成元、六个关系（见下面的勘误）。取 $x=g_{23}$，写出关系：`}</Tx>
           <Table head={["", "2 单形给出的关系", "已知值", "结论"]} rows={[
@@ -196,7 +197,7 @@ $$\pi_1(\text{Klein bottle})\cong(x,y;xyxy^{-1}).$$
         <Tx>{R`循环群的出现可以直观地这样理解。\figref{4.16}(a) 是 $\sym{RP}{\RP^2}$ 的示意图（圆盘，边界上的对径点粘合）。取圈 $\alpha$ 与 $\beta$。容易看出 $\alpha$ 可以连续地变形为一点，因而是 $\pi_1(\sym{RP}{\RP^2})$ 的平凡元。由于 $\sym{RP}{\RP^2}$ 中直径两端的点被等同，$\beta$ 实际上是一条闭合的圈；它不能缩成一点，是 $\pi_1(\sym{RP}{\RP^2})$ 的非平凡元。
 
 乘积呢？$\beta*\beta$ 是从 $P$ 到 $Q\sim P$ 走两遍的圈。从 \figref{4.16}(b) 可以读出 $\beta*\beta$ 能连续地缩成一点，因而属于平凡类：把第二段的端点沿边界转动，两段在对径点处的"接头"一起转动半圈后重合，整个圈就收进了一点。这说明对应于 $\beta$ 的同伦类的生成元 $x$ 满足 $x^2=1$，验证了上面的结果。`}</Tx>
-        <Figure n="4.16" caption={R`(a) $\alpha$ 是平凡圈，而圈 $\beta$ 不能缩成一点。(b) $\beta*\beta$ 可以连续地缩成一点。`} width="90%" />
+        <Figure n="4.16" illustration={<HomotopyRedraw n="4.16"/>} caption={R`非平凡闭路 $\beta$ 的球面提升连接对径点；$\beta*\beta$ 的提升闭合并可在球面上收缩。`} width="90%" />
         <Tx>{R`同样的图可以用来说明`}</Tx>
         <Eq n="4.33" say={R`三维实射影空间也有一个绕两次才能缩掉的圈；因为它就是三维转动群，这就是“转 360° 不能复原、转 720° 可以复原”的拓扑原因。`}>{R`\pi_1(\sym{RP}{\RP^3})\cong\mathbb{Z}_2`}</Eq>
         <Tx>{R`其中 $\sym{RP}{\RP^3}$ 是 $S^3$ 把直径两端的点粘合：$\sym{RP}{\RP^3}=S^3/(x\sim-x)$。取 $S^3$ 的半球作代表，$\sym{RP}{\RP^3}$ 可以表示为实心球 $D^3$，球面上的对径点粘合。把 \figref{4.16} 中的圆盘 $D^2$ 理解为实心球 $D^3$，同样的图就验证了 \eqref{4.33}。`}</Tx>

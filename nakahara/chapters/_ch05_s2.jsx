@@ -1,3 +1,4 @@
+import { ManifoldRedraw } from "./_redraw_manifolds.jsx";
 // §5.2 流形上的微积分 —— 式 (5.16)–(5.38)，定义 5.2–5.3，例 5.7–5.8，习题 5.2–5.6，图 5.6–5.11
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Exercise, Derivation, C } from "@kit";
 
@@ -15,7 +16,7 @@ export function Sec52() {
       <Sub n="5.2.1" title="Differentiable maps" zh="可微映射">
         <Tx>{R`设 $f:M\to N$ 是从 $m$ 维流形 $M$ 到 $n$ 维流形 $N$ 的映射，点 $p\in M$ 被映到 $f(p)\in N$，即 $f:p\mapsto f(p)$（\figref{5.6}）。取 $M$ 上的卡 $(U,\varphi)$ 与 $N$ 上的卡 $(V,\psi)$，使 $p\in U$、$f(p)\in V$。则 $f$ 有如下**坐标表示**：`}</Tx>
         <Eq n="5.16" title="映射的坐标表示" say={R`流形之间的映射本身没法求导；先用坐标把两头都"翻译"成欧氏空间，得到一个普通的多元向量值函数，再对它求导。`}>{R`\psi\circ f\circ\varphi^{-1}:\R^m\to\R^n.`}</Eq>
-        <Figure n="5.6" caption={R`映射 $f:M\to N$ 的坐标表示 $\psi\circ f\circ\varphi^{-1}:\R^m\to\R^n$。`} width="70%" />
+        <Figure n="5.6" illustration={<ManifoldRedraw n="5.6"/>} caption={R`映射 $f:M\to N$ 的坐标表示 $\psi\circ f\circ\varphi^{-1}:\R^m\to\R^n$。`} width="70%" />
         <Tx>{R`若记 $\varphi(p)=\{x^\mu\}$、$\psi(f(p))=\{y^\alpha\}$，则 $\psi\circ f\circ\varphi^{-1}$ 就是通常的 $m$ 元向量值函数 $y=\psi\circ f\circ\varphi^{-1}(x)$。在清楚用的是哪套坐标时，我们有时用（其实是滥用！）记号 $y=f(x)$ 或 $y^\alpha=f^\alpha(x^\mu)$。若 $y=\psi\circ f\circ\varphi^{-1}(x)$，或简写的 $y^\alpha=f^\alpha(x^\mu)$，对每个 $x^\mu$ 都是 $C^\infty$ 的，就称 $f$ 在 $p$（或在 $x=\varphi(p)$）**可微**。可微映射也称为**光滑映射**。注意我们要求无穷次（$C^\infty$）可微，与转移函数 $\psi_{ij}$ 的光滑性相协调。
 
 **可微性与坐标无关。**考虑两张重叠的卡 $(U_1,\varphi_1)$、$(U_2,\varphi_2)$，取 $p\in U_1\cap U_2$，它在 $\varphi_1$ 下的坐标为 $\{x_1^\mu\}$，在 $\varphi_2$ 下为 $\{x_2^\nu\}$。用 $\{x_1^\mu\}$ 表示时 $f$ 的形式是 $\psi\circ f\circ\varphi_1^{-1}$，用 $\{x_2^\nu\}$ 表示时是
@@ -42,8 +43,8 @@ $$\psi_2\circ f\circ\varphi^{-1}=(\psi_2\circ\psi_1^{-1})\circ(\psi_1\circ f\cir
 **曲线与函数。**下面看两类特殊的映射。$m$ 维流形 $M$ 中的**开曲线**是映射 $c:(a,b)\to M$，其中 $(a,b)$ 是满足 $a<0<b$ 的开区间；我们假定曲线不自交（\figref{5.7}）。$a$（$b$）可以是 $-\infty$（$+\infty$）；把 $0$ 包含在区间里是为了后面方便。若曲线是闭的，就看作映射 $c:S^1\to M$。两种情形下 $c$ 在局部都是从开区间到 $M$ 的映射。在卡 $(U,\varphi)$ 上，曲线 $c(t)$ 的坐标表示为 $x=\varphi\circ c:\R\to\R^m$。
 
 $M$ 上的**函数** $f$ 是光滑映射 $f:M\to\R$（\figref{5.8}）。在卡 $(U,\varphi)$ 上，$f$ 的坐标表示为 $f\circ\varphi^{-1}:\R^m\to\R$，即 $m$ 元实值函数。$M$ 上光滑函数的集合记作 $\mathcal{F}(M)$。`}</Tx>
-        <Figure n="5.7" caption={R`$M$ 中的曲线 $c$ 及其坐标表示 $\varphi\circ c$。`} width="50%" />
-        <Figure n="5.8" caption={R`函数 $f:M\to\R$ 及其坐标表示 $f\circ\varphi^{-1}$。`} width="60%" />
+        <Figure n="5.7" illustration={<ManifoldRedraw n="5.7"/>} caption={R`$M$ 中的曲线 $c$ 及其坐标表示 $\varphi\circ c$。`} width="50%" />
+        <Figure n="5.8" illustration={<ManifoldRedraw n="5.8"/>} caption={R`函数 $f:M\to\R$ 及其坐标表示 $f\circ\varphi^{-1}$。`} width="60%" />
       </Sub>
 
       <Sub n="5.2.2" title="Vectors" zh="向量">
@@ -60,7 +61,7 @@ $M$ 上的**函数** $f$ 是光滑映射 $f:M\to\R$（\figref{5.8}）。在卡 $
         <Tx>{R`即`}</Tx>
         <Eq n="5.21" title="向量作用在函数上" say={R`向量 $X$ 作用在函数 $f$ 上，得到 $f$ 沿 $X$ 方向的变化率 $X[f]$——左边与坐标无关，右边是它在某个坐标中的写法。`}>{R`\left.\frac{\dd f(c(t))}{\dd t}\right|_{t=0}=X^\mu\left(\frac{\partial f}{\partial x^\mu}\right)\equiv X[f].`}</Eq>
         <Tx>{R`最后一个等号定义了 $X[f]$。我们就把 $X=X^\mu\partial/\partial x^\mu$ 定义为 $M$ 在 $p=c(0)$ 处、沿曲线 $c(t)$ 所给方向的**切向量**。`}</Tx>
-        <Figure n="5.9" caption={R`曲线 $c$ 与函数 $f$ 通过方向导数确定沿曲线的切向量。`} width="70%" />
+        <Figure n="5.9" illustration={<ManifoldRedraw n="5.9"/>} caption={R`曲线 $c$ 与函数 $f$ 通过方向导数确定沿曲线的切向量。`} width="70%" />
         <Box kind="example" n="5.7" title="作用在坐标函数上">{R`若把 $X$ 作用在坐标函数 $\varphi(c(t))=x^\mu(t)$ 上，得到
 
 $$X[x^\mu]=\left(\frac{\dd x^\nu}{\dd t}\right)\left(\frac{\partial x^\mu}{\partial x^\nu}\right)=\left.\frac{\dd x^\mu(t)}{\dd t}\right|_{t=0}$$
@@ -137,7 +138,7 @@ $$\widetilde{T}^{\alpha_1\ldots\alpha_q}{}_{\beta_1\ldots\beta_r}=\frac{\partial
       <Sub n="5.2.6" title="Induced maps" zh="诱导映射">
         <Tx>{R`**推前。**光滑映射 $f:M\to N$ 自然诱导一个映射 $f_*$，称为**微分映射**（differential map）（\figref{5.10}）：`}</Tx>
         <Eq n="5.30" say={R`映射把点送到点，它的微分就把该点的切向量送到像点的切向量。`}>{R`f_*:T_pM\to T_{f(p)}N.`}</Eq>
-        <Figure n="5.10" caption={R`映射 $f:M\to N$ 诱导微分映射 $f_*:T_pM\to T_{f(p)}N$。`} width="75%" />
+        <Figure n="5.10" illustration={<ManifoldRedraw n="5.10"/>} caption={R`映射 $f:M\to N$ 诱导微分映射 $f_*:T_pM\to T_{f(p)}N$。`} width="75%" />
         <Tx>{R`$f_*$ 的显式形式由"切向量是沿曲线的方向导数"这一定义得到。若 $g\in\mathcal{F}(N)$，则 $g\circ f\in\mathcal{F}(M)$。向量 $V\in T_pM$ 作用在 $g\circ f$ 上给出一个数 $V[g\circ f]$。于是定义 $f_*V\in T_{f(p)}N$ 为`}</Tx>
         <Eq n="5.31" title="推前的定义" say={R`推前后的向量怎样对 $N$ 上的函数求导？把函数先拉回到 $M$（复合上 $f$），再让原向量去求导。`}>{R`(f_*V)[g]\equiv V[g\circ f]`}</Eq>
         <Tx>{R`或用 $M$ 上的卡 $(U,\varphi)$ 与 $N$ 上的卡 $(V,\psi)$ 写成`}</Tx>
@@ -226,7 +227,7 @@ $$f_*\left(T^\mu{}_\nu\frac{\partial}{\partial x^\mu}\otimes\dd x^\nu\right)=T^\
 
 例子能澄清这些相当技术性的要点。考虑\figref{5.11}(a) 中的映射 $f:S^1\to\R^2$。它是浸入，因为 $S^1$ 的一维切空间被 $f_*$ 映到 $T_{f(p)}\R^2$ 的子空间（曲线处处有非零的速度）。但像 $f(S^1)$ 不是 $\R^2$ 的子流形，因为 $f$ 不是单射（交叉点有两个原像）。\figref{5.11}(b) 中的映射 $g:S^1\to\R^2$ 是嵌入，$g(S^1)$ 是 $\R^2$ 的子流形。显然嵌入是浸入，但反过来不一定成立。前一节我们偶尔提到 $S^n$ 嵌入 $\R^{n+1}$，现在它的含义清楚了：若 $S^n$ 由 $f:S^n\to\R^{n+1}$ 嵌入，则 $S^n$ 与 $f(S^n)$ 微分同胚。`}</Tx>
         <Box kind="warning" title={R`勘误：$f_*$ 而非 $f^*$（p.208）`}>{R`原书在\sref{D5.3} 之后写 "If $f$ is an immersion, $f^*$ maps $T_pM$ isomorphically to an $m$-dimensional vector subspace of $T_{f(p)}N$"。作用在 $T_pM$ 上、映到 $T_{f(p)}N$ 的是微分映射 $f_*$；拉回 $f^*$ 作用在余切空间上且方向相反。正文已改为 $f_*$。`}</Box>
-        <Figure n="5.11" caption={R`(a) 不是嵌入的浸入 $f$；(b) 嵌入 $g$ 与子流形 $g(S^1)$。`} width="75%" />
+        <Figure n="5.11" illustration={<ManifoldRedraw n="5.11"/>} caption={R`(a) 不是嵌入的浸入 $f$；(b) 嵌入 $g$ 与子流形 $g(S^1)$。`} width="75%" />
         <Box kind="aside" title="浸入但不是嵌入的另一类例子">{R`单射的浸入也未必是嵌入（在严格的意义下）：把 $\R$ 映成"6 字形"，让 $t\to+\infty$ 时曲线趋向自身上的一点，这个映射是单射浸入，但像上的拓扑与 $\R$ 不同（像不是 $\R$ 的同胚像）。$T^2$ 上斜率为无理数的直线 $t\mapsto(t,\alpha t)\bmod2\pi$ 也是单射浸入，像在 $T^2$ 中稠密。严格的定义要求嵌入是到像的同胚，原书"实际上 $f(M)$ 与 $M$ 微分同胚"一句正是这个要求。`}</Box>
       </Sub>
     </Sec>);

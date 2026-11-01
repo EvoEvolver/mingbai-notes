@@ -1,3 +1,4 @@
+import {HomotopyRedraw} from "./_redraw_homotopy.jsx";
 // §4.5 高阶同伦群、§4.6 高阶同伦群的一般性质、§4.7 高阶同伦群的例子 —— 式 (4.35)–(4.56)（及原书误编号的 Bott 周期性公式），
 // 定义 4.10–4.12，定理 4.10，例 4.12–4.14，习题 4.6–4.8，图 4.17–4.19，表 4.1
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Proof, Erratum, Exercise, Table, Derivation, C } from "@kit";
@@ -41,7 +42,7 @@ export function Sec45() {
         <Tx>{R`它满足`}</Tx>
         <Eq n="4.40" say="一个 n 维圈与它的逆接起来，可以连续地收缩成常值映射。">{R`\alpha^{-1}*\alpha(s_1,\ldots,s_n)\sim\alpha*\alpha^{-1}(s_1,\ldots,s_n)\sim c_{x_0}(s_1,\ldots,s_n)`}</Eq>
         <Tx>{R`其中 $c_{x_0}$ 是 $x_0\in X$ 处的常值 $n$ 维圈，$c_{x_0}:(s_1,\ldots,s_n)\mapsto x_0$。请验证 $\alpha*\beta$ 与 $\alpha^{-1}$ 都是 $x_0$ 处的 $n$ 维圈：在 $s_1=0,1$ 与 $s_i=0,1$（$i\ge2$）处取值 $x_0$；$\alpha*\beta$ 在 $s_1=\frac12$ 处两段都是 $x_0$。`}</Tx>
-        <Figure n="4.17" caption={R`$n$ 维圈 $\alpha$ 与 $\beta$ 的乘积 $\alpha*\beta$。`} width="60%" />
+        <Figure n="4.17" illustration={<HomotopyRedraw n="4.17"/>} caption={R`$n$ 维圈 $\alpha$ 与 $\beta$ 的乘积 $\alpha*\beta$。`} width="60%" />
         <Stmt id="D4.11">
           <Eq n="4.41" say={R`同伦类的乘法：任取代表并按 \eqref{4.38} 拼接。`}>{R`[\alpha]*[\beta]\equiv[\alpha*\beta]`}</Eq>
         </Stmt>
@@ -87,7 +88,7 @@ export function Sec46() {
         <Tx>{R`高阶同伦群总是 Abel 群：对 $x_0\in X$ 处的任意 $n$ 维圈 $\alpha$ 与 $\beta$（$n\ge2$），$[\alpha]$ 与 $[\beta]$ 满足`}</Tx>
         <Eq n="4.42" keyEq title={R`$n\ge2$ 时 $\pi_n$ 交换`} say="在二维以上的立方体里，两块“地盘”可以互相绕开、交换位置：高阶同伦群总是交换的。">{R`[\alpha]*[\beta]=[\beta]*[\alpha].`}</Eq>
         <Tx>{R`验证这一断言只需看 \figref{4.18}：形变序列中的每一步显然都是同伦的。这表明 $\alpha*\beta\sim\beta*\alpha$，即 $[\alpha]*[\beta]=[\beta]*[\alpha]$。`}</Tx>
-        <Figure n="4.18" caption={R`高阶同伦群总是交换的：$\alpha*\beta\sim\beta*\alpha$。`} width="95%" />
+        <Figure n="4.18" illustration={<HomotopyRedraw n="4.18"/>} caption={R`高阶同伦群总是交换的：$\alpha*\beta\sim\beta*\alpha$。`} width="95%" />
         <Derivation title={R`读 \figref{4.18}：Eckmann–Hilton 式的"让位"`} collapsed steps={[
           { tex: R`\alpha*\beta:\ \alpha\text{ 占 }[0,\tfrac12]\times I^{n-1},\ \beta\text{ 占 }[\tfrac12,1]\times I^{n-1}`, why: R`其余区域（若有）映到 $x_0$。` },
           { tex: R`\text{把 }\alpha\text{ 的支撑收缩到左下角的小方块，}\beta\text{ 的收缩到右上角}`, why: R`在 $s_2$ 方向上重新参数化，小方块之外映到 $x_0$——这是同伦，因为边界始终映到 $x_0$。` },
@@ -196,7 +197,7 @@ export function Sec47() {
 
 例如取 $n=2$。由于 $I^2/\partial I^2\cong S^2$，$I^2$ 中的点可以用极坐标 $(\theta,\phi)$ 表示（\figref{4.19}：中心 $\theta=0$，边界 $\theta=\pi$ 缩成一点）。类似地，$X=S^2$ 可用极坐标 $(\theta',\phi')$ 表示。设 $\alpha:(\theta,\phi)\mapsto(\theta',\phi')$ 是 $X$ 中的 2 维圈。若 $\theta'=\theta$、$\phi'=\phi$，则当 $(\theta,\phi)$ 以相同定向扫过 $I^2$ 一次时，$(\theta',\phi')$ 扫过 $S^2$ 一次，这个 2 维圈属于类 $+1\in\pi_2(S^2,x_0)$。若 $\alpha:(\theta,\phi)\mapsto(\theta',\phi')$ 由 $\theta'=\theta$、$\phi'=2\phi$ 给出，则 $(\theta,\phi)$ 扫过 $I^2$ 一次时 $(\theta',\phi')$ 扫过 $S^2$ 两次，这个 2 维圈属于类 $2\in\pi_2(S^2,x_0)$。一般地，映射 $(\theta,\phi)\mapsto(\theta,k\phi)$（$k\in\mathbb{Z}$）对应 $\pi_2(S^2,x_0)$ 的类 $k$。类似的论证对一般的 $n>2$ 验证 \eqref{4.53}。`}</Tx>
       </Box>
-      <Figure n="4.19" caption={R`$I^2$ 中的点可以用极坐标 $(\theta,\phi)$ 表示。`} width="45%" />
+      <Figure n="4.19" illustration={<HomotopyRedraw n="4.19"/>} caption={R`$I^2$ 中的点可以用极坐标 $(\theta,\phi)$ 表示。`} width="45%" />
       <Box kind="physics" title="映射度的积分公式（§4.8 斯格明子要用）">{R`对光滑映射 $\boldsymbol{m}:S^2\to S^2$，类 $k$ 可以用"像覆盖的立体角"来数：
 
 $$k=\frac{1}{4\pi}\int\boldsymbol{m}\cdot\Big(\frac{\partial\boldsymbol{m}}{\partial x}\times\frac{\partial\boldsymbol{m}}{\partial y}\Big)\,\dd x\,\dd y.$$

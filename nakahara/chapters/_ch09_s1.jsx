@@ -1,3 +1,4 @@
+import { BandBundleRedraw, BundleMapRedraw, CircleCoverRedraw, PullbackBundleRedraw, TangentBundleRedraw, TransitionRedraw } from "./_redraw_ch09_10.jsx";
 // 引言 + §9.1 切丛 + §9.2 纤维丛 —— 式 (9.1)–(9.19)，定义 9.1，定理 9.1，推论 9.1，例 9.1–9.2，图 9.1–9.7；交互图 1、3
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Proof, Derivation, C } from "@kit";
 import { MobiusLab, CocycleLab } from "./_ch09_demos.jsx";
@@ -38,7 +39,7 @@ $$TU_i\equiv\bigcup_{p\in U_i}T_pM$$
 中的一个元素由一个点 $p\in M$ 与一个向量 $V=V^\mu(p)(\partial/\partial x^\mu)|_p\in T_pM$ 确定。$U_i$ 同胚于 $\R^m$ 的开子集 $\varphi(U_i)$，每个 $T_pM$ 同胚于 $\R^m$，所以 $TU_i$ 可以等同于直积 $\R^m\times\R^m$（\figref{9.1}）。若 $(p,V)\in TU_i$，等同的方式是 $(p,V)\mapsto(x^\mu(p),V^\mu(p))$。于是 $TU_i$ 是 $2m$ 维微分流形。
 
 不仅如此，$TU_i$ 还分解为直积 $U_i\times\R^m$：任取 $TU_i$ 中的一点 $u$，我们都能有系统地把 $u$ 所含的信息拆成一个点 $p\in M$ 和一个向量 $V\in T_pM$。这自然引出**投影**（projection）$\pi:TU_i\to U_i$ 的概念（\figref{9.1}）：对任意 $u\in TU_i$，$\pi(u)$ 是向量所在的那个点 $p\in U_i$。向量本身的信息在投影下完全丢失。注意 $\pi^{-1}(p)=T_pM$；在纤维丛理论中，$T_pM$ 称为 $p$ 处的**纤维**（fibre）。`}</Tx>
-      <Figure n="9.1" caption={R`切丛 $TM$ 的局部片 $TU_i\simeq\R^m\times\R^m$。投影 $\pi$ 把向量 $V\in T_pM$ 投到 $p$。`} width="55%" />
+      <Figure illustration={<TangentBundleRedraw />} n="9.1" caption={R`切丛 $TM$ 的局部片 $TU_i\simeq\R^m\times\R^m$。投影 $\pi$ 把向量 $V\in T_pM$ 投到 $p$。`} width="100%" />
       <Tx>{R`由构造显然，若 $M=\R^m$，切丛本身就可以写成直积 $\R^m\times\R^m$。但一般并非如此，**切丛的非平凡结构反映了 $M$ 的拓扑非平凡性**。要看清这一点，不能只看一张卡 $U_i$，还必须看其他的卡。设 $U_j$ 是满足 $U_i\cap U_j\neq\emptyset$ 的卡，$y^\mu=\psi(p)$ 是 $U_j$ 上的坐标。取向量 $V\in T_pM$，$p\in U_i\cap U_j$。$V$ 有两种坐标表示：`}</Tx>
       <Eq n="9.2" say={R`同一个切向量在两套坐标下各有一组分量——向量本身不变，变的是"读数"。`}>{R`V=V^\mu\frac{\partial}{\partial x^\mu}\Big|_p=\tilde V^\mu\frac{\partial}{\partial y^\mu}\Big|_p.`}</Eq>
       <Tx>{R`容易看出它们的关系是`}</Tx>
@@ -69,7 +70,7 @@ export function Sec92() {
         <Stmt id="D9.1">
           <Eq n="9.4" keyEq title="转移函数（定义）" say={R`同一个点 $u$ 在 $j$ 卡里的纤维坐标是 $f$，那么它在 $i$ 卡里的纤维坐标就是 $t_{ij}(p)f$：转移函数把 $j$ 卡的读数翻译成 $i$ 卡的读数。`}>{R`\phi_j(p,f)=\phi_i(p,t_{ij}(p)f).`}</Eq>
         </Stmt>
-        <Figure n="9.2" caption={R`在重叠区 $U_i\cap U_j$ 上，给 $u\in\pi^{-1}(p)$（$p\in U_i\cap U_j$）指定了 $F$ 的两个元素 $f_i,f_j$，二者由 $t_{ij}(p)$ 联系：$f_i=t_{ij}(p)f_j$。`} width="55%" />
+        <Figure illustration={<TransitionRedraw />} n="9.2" caption={R`在重叠区 $U_i\cap U_j$ 上，给 $u\in\pi^{-1}(p)$（$p\in U_i\cap U_j$）指定了 $F$ 的两个元素 $f_i,f_j$，二者由 $t_{ij}(p)$ 联系：$f_i=t_{ij}(p)f_j$。`} width="100%" />
         <Tx>{R`［**注：**我们常用简写 $E\xrightarrow{\pi}M$ 或干脆用 $E$ 表示纤维丛 $(E,\pi,M,F,G)$。
 
 严格地说，纤维丛的定义应当与 $M$ 的特定覆盖 $\{U_i\}$ 无关。在数学文献中，上面的定义用来定义一个**坐标丛**（coordinate bundle）$(E,\pi,M,F,G,\{U_i\},\{\phi_i\})$。两个坐标丛 $(E,\pi,M,F,G,\{U_i\},\{\phi_i\})$ 与 $(E,\pi,M,F,G,\{V_i\},\{\psi_i\})$ 称为等价的，若 $(E,\pi,M,F,G,\{U_i\}\cup\{V_j\},\{\phi_i\}\cup\{\psi_j\})$ 仍是一个坐标丛；纤维丛定义为坐标丛的等价类。不过在物理的实际应用中，我们总是使用某个确定的覆盖，不区分坐标丛与纤维丛。］
@@ -120,8 +121,8 @@ $$\phi_1^{-1}(u)=(\theta,t),\qquad\phi_2^{-1}(u)=(\theta,t),$$
 情形 (I) 中 $t_{12}(\theta)$ 处处是恒等映射，两个局部片粘成**圆柱**（\figref{9.4}(a)）。情形 (II) 中 $\theta\in B$ 时 $t_{12}(\theta):t\mapsto-t$，得到 **Möbius 带**（\figref{9.4}(b)）。因此圆柱的结构群是平凡群 $G=\{e\}$（$e$ 为 $F$ 到自身的恒等映射），而 Möbius 带的结构群是 $G=\{e,g\}$，$g:t\mapsto-t$。由于 $g^2=e$，$G\cong\Z_2$。圆柱是平凡丛 $S^1\times F$，Möbius 带则不是。［**注：**群 $\Z_2$ 不是李群。这是本书唯一一次用离散群作结构群。］（严格地说，离散群可以看作零维李群；原书的意思是它不连通、没有非零的李代数，第 10 章的联络在这样的丛上是平凡的。）`}</Tx>
           <Tx>{R`**为什么 Möbius 带不是平凡丛（补充论证）。**若它平凡，就能找到 $g_1:U_1\to\Z_2$、$g_2:U_2\to\Z_2$ 使 $t_{12}=g_1^{-1}g_2$（\eqref{9.10}）。但 $U_1$、$U_2$ 都连通，$\Z_2$ 离散，所以 $g_1,g_2$ 都是常数，$g_1^{-1}g_2$ 在 $A$ 与 $B$ 上取同一个值——与 $t_{12}|_A=e$、$t_{12}|_B=g$ 矛盾。交互图 1 用"沿底圆走一圈纤维是否翻转"把这一点做成可以看见的实验。`}</Tx>
         </Box>
-        <Figure n="9.3" caption={R`底空间 $S^1$ 与两张卡 $U_1$、$U_2$，丛在每张卡上是平凡的。`} width="40%" />
-        <Figure n="9.4" caption={R`$S^1$ 上的两个纤维丛：(a) 圆柱，是平凡丛 $S^1\times I$；(b) Möbius 带。`} width="65%" />
+        <Figure illustration={<CircleCoverRedraw />} n="9.3" caption={R`底空间 $S^1$ 与两张卡 $U_1$、$U_2$，丛在每张卡上是平凡的。`} width="100%" />
+        <Figure illustration={<BandBundleRedraw />} n="9.4" caption={R`$S^1$ 上的两个纤维丛：(a) 圆柱，是平凡丛 $S^1\times I$；(b) Möbius 带。`} width="100%" />
         <MobiusLab />
         <CocycleLab />
       </Sub>
@@ -153,7 +154,7 @@ $$\phi_1^{-1}(u)=(\theta,t),\qquad\phi_2^{-1}(u)=(\theta,t),$$
         <Tx>{R`设 $E\xrightarrow{\pi}M$ 与 $E'\xrightarrow{\pi'}M'$ 是纤维丛。*光滑*映射 $\bar f:E'\to E$ 若把 $E'$ 的每根纤维 $F'_p$ 映到 $E$ 的某根纤维 $F_q$ 上，就称为**丛映射**（bundle map）。这时 $\bar f$ 自然诱导出光滑映射 $f:M'\to M$，$f(p)=q$（\figref{9.5}）。注意下面的图交换：`}</Tx>
         <Eq n="9.15" say={R`丛映射的本质：先在全空间里映射再投影，与先投影再在底空间里映射，结果相同——它把纤维整根地送到纤维。`}>{cd(R`E'`, R`\bar f`, R`E`, R`\pi'`, R`\pi`, R`M'`, R`f`, R`M`) + R`\qquad\left(` + cd(R`u`, R`\bar f`, R`\bar f(u)`, R`\pi'`, R`\pi`, R`p`, R`f`, R`q`) + R`\right)`}</Eq>
         <Tx>{R`［**注意：**光滑映射 $\bar f:E'\to E$ 不一定是丛映射。它可能把 $u,v\in F'_p$ 映到 $E$ 的不同纤维上，使 $\pi(\bar f(u))\neq\pi(\bar f(v))$。］`}</Tx>
-        <Figure n="9.5" caption={R`丛映射 $\bar f:E'\to E$ 诱导映射 $f:M'\to M$。`} width="60%" />
+        <Figure illustration={<BundleMapRedraw />} n="9.5" caption={R`丛映射 $\bar f:E'\to E$ 诱导映射 $f:M'\to M$。`} width="100%" />
       </Sub>
 
       <Sub n="9.2.4" title="Equivalent bundles" zh="等价丛">
@@ -164,12 +165,12 @@ $$\phi_1^{-1}(u)=(\theta,t),\qquad\phi_2^{-1}(u)=(\theta,t),$$
 
       <Sub n="9.2.5" title="Pullback bundles" zh="拉回丛">
         <Tx>{R`设 $E\xrightarrow{\pi}M$ 是典型纤维为 $F$ 的纤维丛。若给定映射 $f:N\to M$，则对 $(E,f)$ 可以在 $N$ 上定义一个纤维仍为 $F$ 的新丛（\figref{9.6}）。令 $f^*E$ 是 $N\times E$ 的子空间，由满足 $f(p)=\pi(u)$ 的点 $(p,u)$ 组成：$f^*E\equiv\{(p,u)\in N\times E\mid f(p)=\pi(u)\}$ 称为 $E$ 被 $f$ 的**拉回**（pullback）。$f^*E$ 的纤维 $F_p$ 就是 $E$ 的纤维 $F_{f(p)}$ 的一个副本。若用 $\pi_1:(p,u)\mapsto p$ 定义 $f^*E\xrightarrow{\pi_1}N$，用 $(p,u)\mapsto u$ 定义 $f^*E\xrightarrow{\pi_2}E$，则拉回 $f^*E$ 可以被赋予纤维丛的结构，并得到下面的丛映射：`}</Tx>
-        <Figure n="9.6" caption={R`给定纤维丛 $E\xrightarrow{\pi}M$，映射 $f:N\to M$ 在 $N$ 上定义拉回丛 $f^*E$。`} width="60%" />
+        <Figure illustration={<PullbackBundleRedraw />} n="9.6" caption={R`给定纤维丛 $E\xrightarrow{\pi}M$，映射 $f:N\to M$ 在 $N$ 上定义拉回丛 $f^*E$。`} width="100%" />
         <Eq n="9.17" title="拉回丛" say={R`拉回丛：$N$ 的点 $p$ 上方放的就是 $f(p)$ 上方的那根纤维；$\pi_2$ 是把它"认回"原丛的丛映射。`}>{cd(R`f^*E`, R`\pi_2`, R`E`, R`\pi_1`, R`\pi`, R`N`, R`f`, R`M`) + R`\qquad\left(` + cd(R`(p,u)`, R`\pi_2`, R`u`, R`\pi_1`, R`\pi`, R`p`, R`f`, R`f(p)`) + R`\right).`}</Eq>
         <Tx>{R`图的交换性来自：对 $(p,u)\in f^*E$，$\pi(\pi_2(p,u))=\pi(u)=f(p)=f(\pi_1(p,u))$。特别地，若 $N=M$、$f=\mathrm{id}_M$，则两个纤维丛 $f^*E$ 与 $E$ 等价。
 
 **拉回丛的转移函数。**设 $\{U_i\}$ 是 $M$ 的覆盖，$\{\phi_i\}$ 是局部平凡化。$\{f^{-1}(U_i)\}$ 给出 $N$ 的覆盖，在其上 $f^*E$ 是局部平凡的。取 $u\in E$，使 $\pi(u)=f(p)\in U_i$（某个 $p\in N$）。若 $\phi_i^{-1}(u)=(f(p),f_i)$，则 $\psi_i^{-1}(p,u)=(p,f_i)$，其中 $\psi_i$ 是 $f^*E$ 的局部平凡化。$f(p)\in U_i\cap U_j$ 处的转移函数 $t_{ij}$ 把 $f_j$ 映到 $f_i=t_{ij}(f(p))f_j$；$f^*E$ 在 $p\in f^{-1}(U_i)\cap f^{-1}(U_j)$ 处相应的转移函数 $t^*_{ij}$ 也把 $f_j$ 映到 $f_i$（\figref{9.7}）。这说明`}</Tx>
-        <Figure n="9.7" caption={R`拉回丛 $f^*E$ 的转移函数 $t^*_{ij}$ 是 $E$ 的转移函数 $t_{ij}$ 的拉回。`} width="70%" />
+        <Figure illustration={<TransitionRedraw pullback />} n="9.7" caption={R`拉回丛 $f^*E$ 的转移函数 $t^*_{ij}$ 是 $E$ 的转移函数 $t_{ij}$ 的拉回。`} width="100%" />
         <Eq n="9.18" keyEq title="拉回丛的转移函数" say={R`拉回丛的粘合规则就是把原丛的粘合规则与 $f$ 复合：在 $p$ 处用 $f(p)$ 处的转移函数。`}>{R`t^*_{ij}(p)=t_{ij}(f(p)).`}</Eq>
         <Box kind="example" n="9.2" title={R`$TN$ 何时是 $TM$ 的拉回`}>
           <Tx>{R`设 $M$、$N$ 是微分流形，$\dim M=\dim N=m$，$f:N\to M$ 光滑。映射 $f$ 诱导映射 $\pi_2:TN\to TM$，使下图交换：`}</Tx>

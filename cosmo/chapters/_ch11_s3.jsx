@@ -1,3 +1,4 @@
+import { SZScatteringRedraw } from "./_ch14_redraw.jsx";
 // §11.3 The Sunyaev–Zel'dovich effect 与 §11.4 Summary —— 式 (11.50)–(11.63)，图 11.10–11.11
 import { Sec, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
 import { SZPlot } from "./_ch11_plots.jsx";
@@ -18,7 +19,7 @@ export function Sec113() {
 **又能散射了。**第 4 章与第 9 章讲过，红移 $z\sim6$ 以下宇宙中的气体大部分是电离的。这意味着 CMB 光子不再与气体完全退耦，而是能够被散射（\figref{11.10}；注意与上面两种效应不同，这里 CMB 光子的方向可以剧烈改变）。幸运的是，由于气体密度低得多，这种散射远不如复合前有效，光深远小于 1。第 9 章看到散射使 CMB 各向异性衰减，第 10 章看到它在很大角尺度上产生偏振。
 
 **这次电子更热。**除了气体密度低得多，这里的散射与复合前还有一个显著不同：气体现在比 CMB 光子**热得多**。$z\le6$ 时 CMB 温度为 20 K 且仍在下降，而气体温度从 $10^4\,\mathrm{K}$ 到大质量星系团中超过 $10^7\,\mathrm{K}$。这意味着电子的能量远高于 CMB 光子，于是在散射中倾向于**增加** CMB 光子的能量（称为**逆 Compton 散射**）。因此一部分光子被散射而获得能量后，CMB 谱就畸变了，不再是完美的黑体。在不同频率上观测 CMB，就能把这种谱畸变与本书至今研究的 CMB 温度扰动区分开。这种上散射的 **SZ 效应**最早由 Zel'dovich 与 Sunyaev (1969) 指出。`}</Tx>
-      <Figure n="11.10" caption={R`CMB 光子（红色细箭头）在热电离气体云（圆）中的 Compton 散射。一部分 CMB 光子被云中的电子（黑点）散射，到达观测者时通常获得一小份能量（蓝色粗箭头）。注意等离子体中电子的典型动量 $q\sim\sqrt{m_eT_e}$ 远大于 CMB 光子的动量 $p\sim T$。`} />
+      <Figure n="11.10" illustration={<SZScatteringRedraw />} caption={R`热电子对 CMB 光子的逆 Compton 散射：一部分光子增能，产生频率相关的 SZ 畸变。`} />
       <Tx>{R`**出发点：Boltzmann 方程。**不出所料，出发点是光子的 Boltzmann 方程，碰撞项来自 Compton 散射：`}</Tx>
       <Eq n="11.50" say={R`均匀膨胀宇宙中光子的 Boltzmann 方程：左边是分布函数随时间的变化加上宇宙学红移（$-Hp\,\partial_p$），右边是 Compton 散射。`}>{R`\left[\frac{\partial}{\partial t}-Hp\frac{\partial}{\partial p}\right]${f}(p,t)=C[${f}(p)],`}</Eq>
       <Tx>{R`碰撞项由 \eqref{5.13} 给出：`}</Tx>
@@ -60,8 +61,8 @@ export function Sec113() {
 $$\frac{1}{x^2}\frac{\partial}{\partial x}\Big[x^4\frac{\partial f^{(0)}}{\partial x}\Big]=4x\,\partial_xf^{(0)}+x^2\partial_x^2f^{(0)}=\frac{x\,e^x}{(e^x-1)^2}\left[x\coth\frac x2-4\right].$$
 Rayleigh–Jeans 区（$x\ll1$）：方括号 $\to2-4=-2$，前因子 $\to1/x$，所以 $\Delta f/f^{(0)}\to-2y$，即亮温度降低 $\Delta T/T=-2y$。Wien 区（$x\gg1$）：$\Delta f\simeq y\,x(x-4)e^{-x}>0$。零点在 $x\coth(x/2)=4$，即 $(4-x)e^x=4+x$，$x_0=3.830$（\exref{11.11}）。`}</Box>
       <Tx>{R`**解读。**也就是说，$y$ 是电离气体中动能密度（即压强）沿视线的积分。\eqref{11.58} 第二项所描述的散射畸变不同于化学势造成的畸变。事实上，这是本书第一次遇到**非黑体**的光子分布；它之所以出现，是因为气体温度 $T_e$ 与光子温度 $T$ 相差悬殊。这种"**$y$ 型谱畸变**"见 \figref{11.11}。穿过电离云之后，光子分布在高能（Wien）尾部的光子比平衡分布多，在低能（Rayleigh–Jeans）区的少。这正是预料之中的：CMB 光子被高能电子上散射，从分布的低能侧搬到高能侧。`}</Tx>
-      <Figure n="11.11" interactive={<SZPlot />}
-        caption={R`有与没有（$y=0$）SZ 谱畸变时观测到的 CMB 辐射强度谱 $I_\nu\propto\nu^3f(\nu)$。$y>0$ 时，观测到的 CMB 与未畸变的黑体谱相比，高能尾部的光子更多、低能尾部的光子更少。**交互版**：直接画 \eqref{11.58}，$I\propto x^3f$。$y=0$ 时峰在 $x=2.82$、高 $1.421$；$y=0.02$、$0.05$ 时峰高分别为 $1.354$、$1.271$，$x=10$ 处分别为 $0.100$、$0.182$——与原图三条曲线一致。绿色虚线是畸变本身 $\Delta I$，它在 $x_0=3.830$ 处变号，对应 $T_0=2.726\,\mathrm{K}$ 时 $\nu=217.5\,\mathrm{GHz}$（"SZ 零点"）。`} />
+      <Figure n="11.11" illustration={<SZPlot />}
+        caption={R`原创计算图。直接画 \eqref{11.58}，$I\propto x^3f$。$y=0$ 时峰在 $x=2.82$、高 $1.421$；$y=0.02$、$0.05$ 时峰高分别为 $1.354$、$1.271$，$x=10$ 处分别为 $0.100$、$0.182$——与原图三条曲线一致。绿色虚线是畸变本身 $\Delta I$，它在 $x_0=3.830$ 处变号，对应 $T_0=2.726\,\mathrm{K}$ 时 $\nu=217.5\,\mathrm{GHz}$（"SZ 零点"）。`} />
       <Tx>{R`**大 $y$ 时呢？**如果走一条更仔细、更长的路推导 \eqref{11.54}（不做"光子动量相对电子动量可忽略"的近似），会发现 \eqref{11.54} 中出现的是 $T_e-T$ 而不是 $T_e$。于是在多次散射（大 $y$）的极限下，光子分布趋于一个平衡分布，其温度由能量守恒决定：初始能量密度为 $\rho_\gamma(T_0/a)+\rho_e(T_e)$，它必须等于 $\rho_\gamma(T_f)+\rho_e(T_f)$，由此定出末温度 $T_f$。所以我们的结果 \eqref{11.58} 对应于趋向新温度 $T_f$ 的平衡过程（也称"**Compton 化**"，Comptonization）的第一步。
 
 **$y$ 图。**\eqref{11.58}–\eqref{11.59} 表明，观测穿过电离气体的 CMB 光子的谱畸变，就能测出压强沿视线的积分。设想画出整个天空的谱畸变图。这张 $y(\hat{\boldsymbol n})$ 图对应于再电离以来宇宙中电离气体积分压强的图。把宇宙中的气体压强写成随时间变化的背景加扰动：`}</Tx>

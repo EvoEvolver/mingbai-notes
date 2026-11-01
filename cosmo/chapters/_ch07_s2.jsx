@@ -49,8 +49,8 @@ export function Sec72() {
       <Tx>{R`**慢滚图像。**最流行的暴胀方案假设标量场正**缓慢地滚向**它真正的基态（Linde 1982；Albrecht & Steinhardt 1982）。只要势不太陡，这样的场的势能非常接近常数，很快就压倒动能（以及其他所有粒子的能量）而占据主导。图 7.5 是一个例子：当场到达势的极小值时暴胀结束，场将在那里振荡，并衰变为更轻的粒子（最终变成标准模型的粒子）。
 
 文献中提出过各种各样形式的势，Martin 等（2014）给出了一份详尽的清单。不知是幸还是不幸，许多不同的模型都可以被调得与观测相符。因此这里不详细讨论具体的方案。`}</Tx>
-      <Figure n="7.5" interactive={<SlowRollPlot />}
-        caption={R`标量场沿势 $V(\phi)$ 缓慢滚下。由于滚得很慢，它的动能很小；但势能不为零，所以压强为负。场到达势的极小值时，暴胀时期结束。交互版：可选 $m^2\phi^2$ 势或 Starobinsky 势，拖动滑块改变场值 $\phi$，实时显示该处的慢滚参数 $\epsilon_{\rm sr}$、$\delta_{\rm sr}$ 以及对应的谱指数 $n_s$ 与张标比 $r$（后两者的公式见 \secref{7.6}）。`} />
+      <Figure n="7.5" illustration={<SlowRollPlot />}
+        caption={R`标量场沿势 $V(\phi)$ 缓慢滚下。由于滚得很慢，它的动能很小；但势能不为零，所以压强为负。场到达势的极小值时，暴胀时期结束。自绘交互：可选 $m^2\phi^2$ 势或 Starobinsky 势，拖动滑块改变场值 $\phi$，实时显示该处的慢滚参数 $\epsilon_{\rm sr}$、$\delta_{\rm sr}$ 以及对应的谱指数 $n_s$ 与张标比 $r$（后两者的公式见 \secref{7.6}）。`} />
       <Tx>{R`**场的运动方程。**要确定 $\phi$ 在任意势中的演化，考虑能动张量的守恒：`}</Tx>
       <Eq n="7.11" say={R`能动张量的协变散度为零：在膨胀时空中，能量与动量守恒除了普通偏导外还要计入 Christoffel 符号带来的"膨胀修正"。`}>{R`\nabla_\mu T^\mu{}_\nu=\frac{\partial T^\mu{}_\nu}{\partial x^\mu}+\Gamma^\mu{}_{\alpha\mu}T^\alpha{}_\nu-\Gamma^\alpha{}_{\nu\mu}T^\mu{}_\alpha=0.`}</Eq>
       <Tx>{R`均匀背景场 $\phi(t)$ 的能动张量与 \eqref{2.44} 的理想流体形式相同（对角，$T^0{}_0=-\rho$，$T^i{}_j=\mathcal P\delta^i{}_j$），所以可以直接借用第 2 章的结果 \eqref{2.56}：`}</Tx>

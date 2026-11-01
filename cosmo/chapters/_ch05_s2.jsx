@@ -76,8 +76,8 @@ $$\frac{|p'-p|}{p}\lesssim\frac{2q}{m_e}\sim2\sqrt{\frac{2T}{m_e}}\ll1.$$
         { tex: R`C=\frac{n_e\sigma_{\rm T}}{p}\left[-p^2\frac{\partial f^{(0)}}{\partial p}(\Theta_0-\Theta)-(\boldsymbol p\cdot\boldsymbol u_{\rm b})\,p\frac{\partial f^{(0)}}{\partial p}\right]=-p\frac{\partial f^{(0)}}{\partial p}n_e\sigma_{\rm T}\left[\Theta_0-\Theta+\hat{\boldsymbol p}\cdot\boldsymbol u_{\rm b}\right]`, why: R`合并，并用 $\boldsymbol p\cdot\boldsymbol u_{\rm b}/p=\hat{\boldsymbol p}\cdot\boldsymbol u_{\rm b}$。` },
       ]} />
       <Tx>{R`**读出物理：散射把光子"搅匀"。**我们已经可以预见 Compton 散射对光子分布的作用。在电子没有整体速度（$\boldsymbol u_{\rm b}=0$）时，碰撞项驱使 $\Theta$ 趋向 $\Theta_0$。也就是说，当 Compton 散射非常有效时，只有单极扰动能存活下来，**每一点上的各向异性都被抹平**（图 5.2）。直观地说，强散射意味着光子的平均自由程很短。于是到达空间某点的光子，都是在附近最后一次被电子散射；而附近电子的温度与本地非常接近。因此所有方向来的光子温度都相同，任何方向的通量都等于角平均通量：$\Theta(\boldsymbol x,\hat{\boldsymbol p},t)=\Theta_0(\boldsymbol x,t)$。`}</Tx>
-      <Figure n="5.2" interactive={<PlaneWaveSky />}
-        caption={R`平面波温度扰动（$\boldsymbol k$ 水平）及其对紧耦合光子的影响。深色（白色）区域表示电子温度的热（冷）斑。若 Compton 散射非常有效，在给定点观测到的光子都在很近处最后一次被散射——即以观测点（黑点）为中心的圆内，这些圆就是对应观测点的最后散射面。圆上的温度非常接近均匀，所以分布几乎完全由单极描述；但不同的圆（对应不同观测者）因扰动而温度不同——**单极随空间变化**。交互版：拖动 $k\lambda_{\rm mfp}$ 看平均自由程变长时，偶极、四极如何出现；单极 $|\Theta_0|=|\cos kx_{\rm obs}|\,j_0(k\lambda)$。`} />
+      <Figure n="5.2" illustration={<PlaneWaveSky />}
+        caption={R`平面波温度扰动（$\boldsymbol k$ 水平）及其对紧耦合光子的影响。深色（白色）区域表示电子温度的热（冷）斑。若 Compton 散射非常有效，在给定点观测到的光子都在很近处最后一次被散射——即以观测点（黑点）为中心的圆内，这些圆就是对应观测点的最后散射面。圆上的温度非常接近均匀，所以分布几乎完全由单极描述；但不同的圆（对应不同观测者）因扰动而温度不同——**单极随空间变化**。自绘交互：拖动 $k\lambda_{\rm mfp}$ 看平均自由程变长时，偶极、四极如何出现；单极 $|\Theta_0|=|\cos kx_{\rm obs}|\,j_0(k\lambda)$。`} />
       <Tx>{R`**电子在运动时。**若电子有整体速度，情况略有改变：光子分布中会产生一个**偶极矩**，其大小与方向由电子速度决定（多普勒效应）。但四极及更高阶矩仍然为零。因此 Compton 散射产生的光子分布极其简单：**只有非零的单极和偶极**。这等价于说光子的行为像一种**流体**。事实上，强散射——**紧耦合**（tight coupling）——使光子与电子像**单一流体**一样运动。
 
 光子–重子退耦后 Compton 散射不再有效，复合之后光子也就不再像流体。但 Boltzmann 方法在退耦后依然有效，并且抓住了**自由流**的本质物理：那正是光子从退耦到我们探测器的漫长旅程。`}</Tx>

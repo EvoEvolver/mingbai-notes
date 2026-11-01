@@ -1,3 +1,4 @@
+import { ManifoldRedraw } from "./_redraw_manifolds.jsx";
 // §5.5 微分形式的积分 —— 式 (5.97)–(5.102)，定义 5.6–5.7，例 5.13，图 5.14
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Derivation, C } from "@kit";
 
@@ -20,7 +21,7 @@ export function Sec55() {
 
 **体积元。**若 $m$ 维流形 $M$ 可定向，则存在一个处处不为零的 $m$ 形式 $\omega$。这个 $m$ 形式 $\omega$ 称为**体积元**（volume element），在把函数 $f\in\mathcal{F}(M)$ 在 $M$ 上积分时起测度的作用。若存在严格为正的函数 $h\in\mathcal{F}(M)$ 使 $\omega=h\omega'$，称两个体积元 $\omega$ 与 $\omega'$ **等价**。负定的函数 $h'\in\mathcal{F}(M)$ 给出 $M$ 的不等价的定向。因此任何可定向流形都恰有**两个**不等价的定向，一个称为**右手的**（right handed），另一个称为**左手的**（left handed）。取 $m$ 形式`}</Tx>
         <Eq n="5.98" say={R`局部上，$m$ 形式只有一个分量：一个函数乘坐标的"体积楔积"。分量处处为正就代表一个定向。`}>{R`\omega=h(p)\,\dd x^1\wedge\ldots\wedge\dd x^m`}</Eq>
-        <Figure n="5.14" caption={R`(a) Möbius 带由第二条带子的 $\mathrm{B}'$ 部分扭转 $\pi$ 后，把 A 与 $\mathrm{A}'$、B 与 $\mathrm{B}'$ 粘合而成。B 上的坐标变换为 $y^1=x^1$，$y^2=-x^2$，Jacobi 行列式为 $-1$。(b) Möbius 带上的基标架。`} width="80%" />
+        <Figure n="5.14" illustration={<ManifoldRedraw n="5.14"/>} caption={R`Möbius带沿带方向绕行后，局部标架的横向基矢反转：转移矩阵行列式为 $-1$，因此不能全局定向。`} width="80%" />
         <Tx>{R`其中 $h(p)$ 在坐标为 $x=\varphi(p)$ 的卡 $(U,\varphi)$ 上正定。若 $M$ 可定向，就可以把 $\omega$ 延拓到整个 $M$，使它的分量 $h$ 在每张卡 $U_i$ 上都正定；这时 $\omega$ 是体积元。注意 $h$ 的正性与坐标的选取无关。事实上，设 $p\in U_i\cap U_j\neq\emptyset$，$x^\mu$ 与 $y^\alpha$ 分别是 $U_i$ 与 $U_j$ 的坐标，则 \eqref{5.98} 变成`}</Tx>
         <Eq n="5.99" title="m 形式的变换" say={R`换坐标时，$m$ 形式的分量乘上 Jacobi 行列式——与多重积分换元公式中的 Jacobi 因子相同，只是带符号。`}>{R`\omega=h(p)\frac{\partial x^1}{\partial y^{\mu_1}}\dd y^{\mu_1}\wedge\ldots\wedge\frac{\partial x^m}{\partial y^{\mu_m}}\dd y^{\mu_m}=h(p)\det\left(\frac{\partial x^\mu}{\partial y^\nu}\right)\dd y^1\wedge\ldots\wedge\dd y^m.`}</Eq>
         <Derivation title={R`为什么楔积给出的恰好是行列式`} collapsed steps={[

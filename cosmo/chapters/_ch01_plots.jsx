@@ -196,10 +196,10 @@ export function HistoryTimeline() {
   return (
     <div className="plot card">
       <div className="plot-params">
-        <span className="seg" style={{ marginBottom: 0 }}>{[["t", "按时间 t"], ["a", "按标度因子 a"], ["z", "按红移 z"], ["T", "按温度 T"]].map(([k, l]) =>
+        <span className="seg" style={{ marginBottom: 0, flexWrap: "wrap", maxWidth: "100%" }}>{[["t", "按时间 t"], ["a", "按标度因子 a"], ["z", "按红移 z"], ["T", "按温度 T"]].map(([k, l]) =>
           <button key={k} className={mode === k ? "on" : ""} onClick={() => setMode(k)}>{l}</button>)}</span>
-        <label className="plot-param"><span className="plot-plabel"><M>{slider.lab}</M></span>
-          <input type="range" min={slider.min} max={slider.max} step={0.01} value={Math.min(slider.max, Math.max(slider.min, slider.val))} onChange={e => slider.set(+e.target.value)} style={{ width: 260 }} /></label>
+        <label className="plot-param" style={{ flexWrap: "wrap", maxWidth: "100%" }}><span className="plot-plabel"><M>{slider.lab}</M></span>
+          <input type="range" min={slider.min} max={slider.max} step={0.01} value={Math.min(slider.max, Math.max(slider.min, slider.val))} onChange={e => slider.set(+e.target.value)} style={{ width: "min(260px, 100%)", maxWidth: "100%" }} /></label>
       </div>
       <svg viewBox={`0 0 ${W} ${H}`} className="plot-svg">
         <defs>
@@ -241,7 +241,7 @@ export function HistoryTimeline() {
         <span><M>{R`k_{\rm B}T=${fmtE(e.kT)}`}</M></span>
         <span><M>{R`H=${sci(e.H, 2)}\,\mathrm{km\,s^{-1}\,Mpc^{-1}}`}</M></span>
         <span><M>{R`g_*=${f2(P.gStar(e.kT * 1e-9))}`}</M></span>
-        <span style={{ color: DOMS[e.dom][1], fontWeight: 600, gridColumn: "1 / -1" }}>{DOMS[e.dom][0]}：<M>{R`\text{辐射 }${f2(100 * e.fr, 1)}\%,\ \text{物质 }${f2(100 * e.fm, 1)}\%,\ \Lambda\ ${f2(100 * e.fl, 1)}\%`}</M></span>
+        <span style={{ color: DOMS[e.dom][1], fontWeight: 600, gridColumn: "1 / -1", display: "flex", flexWrap: "wrap", gap: 8 }}>{DOMS[e.dom][0]}：<M>{R`\text{辐射 }${f2(100 * e.fr, 1)}\%`}</M><M>{R`\text{物质 }${f2(100 * e.fm, 1)}\%`}</M><M>{R`\Lambda\ ${f2(100 * e.fl, 1)}\%`}</M></span>
       </div>
       <p style={{ margin: "0.5em 0 0" }}><b>最近的里程碑：</b><TxI>{`${near.name}——${near.note}`}</TxI> {lk}</p>
     </div>);

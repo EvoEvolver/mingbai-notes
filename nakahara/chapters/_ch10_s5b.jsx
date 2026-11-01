@@ -1,3 +1,4 @@
+import { OnePointCompactRedraw } from "./_redraw_ch09_10.jsx";
 // §10.5.5 瞬子 —— 式 (10.110)–(10.128)，引理 10.3–10.4，定理 10.7，图 10.5，交互图 4（映射度）
 import { Sub, Tx, Eq, Box, Stmt, Proof, Derivation, Figure, C } from "@kit";
 import { InstantonLab } from "./_ch10_demos.jsx";
@@ -23,7 +24,7 @@ export function Sub1055() {
       <Tx>{R`其中 $L$ 是任意正数（理解为足够大）。由于 $|x|=L$ 是球面 $S^3$，\eqref{10.113} 定义了映射 $g:S^3\to\mathrm{SU}(2)$，它按 $\pi_3(\mathrm{SU}(2))\cong\mathbb{Z}$ 分类。这如何反映在转移函数上？把 $\mathbb{R}^4$ 加上无穷远点紧化。设 $S^4$ 的南极代表无穷远点、北极代表原点。在此紧化下，把 $\mathbb{R}^4$ 分成两块，并认同为 $S^4$ 的南半球 $U_{\rm S}$ 与北半球 $U_{\rm N}$：`}</Tx>
       <Eq n="10.114a" say={R`北半球坐标卡：半径略大于 $L$ 的四维球。`}>{R`U_{\rm N}=\{x\in\mathbb{R}^4\mid|x|\le L+\varepsilon\}`}</Eq>
       <Eq n="10.114b" say={R`南半球坐标卡：半径略小于 $L$ 的球的外部，连同无穷远点。`}>{R`U_{\rm S}=\{x\in\mathbb{R}^4\mid|x|\ge L-\varepsilon\}`}</Eq>
-      <Figure n="10.5" caption={R`$\mathbb{R}^4$ 到 $S^4$ 的一点紧化。`} width="80%" />
+      <Figure illustration={<OnePointCompactRedraw />} n="10.5" caption={R`自绘一点紧化的球面截面：$\R^4$ 的所有无穷远方向共同趋向 $S^4$ 上添加的一个点。`} width="100%" />
       <Tx>{R`见 \figref{10.5}。假设规范势在 $U_{\rm S}$ 上没有"扭曲"，选取`}</Tx>
       <Eq n="10.115" say={R`在南半球（无穷远附近）选一个规范使势恒为零。`}>{R`\mathcal{A}_{\rm S}(x)\equiv0\qquad x\in U_{\rm S}.`}</Eq>
       <Tx>{R`于是关于丛的所有拓扑信息都包含在 $\mathcal{A}_{\rm N}(x)$ 或"赤道" $S^3$（$=U_{\rm N}\cap U_{\rm S}$）上的转移函数 $t_{\rm NS}(x)$ 中。由于 $\mathcal{A}_{\rm S}=0$，对 $x\in U_{\rm N}\cap U_{\rm S}$，`}</Tx>

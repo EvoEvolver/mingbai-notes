@@ -1,3 +1,4 @@
+import { ConeSingularityRedraw, OrbifoldSectorRedraw, OrbifoldTorusRedraw } from "./_redraw_ch06_08.jsx";
 // §8.7 殆复流形 + §8.8 轨形 —— 式 (8.121)–(8.126)，定义 8.5–8.6，定理 8.12–8.13，图 8.6–8.8
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Proof, Derivation, C } from "@kit";
 
@@ -81,7 +82,7 @@ export function Sec88() {
 
       <Sub n="8.8.1" title="One-dimensional examples" zh="一维例子">
         <Tx>{R`为了得到具体的概念，考虑一个简单的例子。取 $M=\R^2$，把它等同于复平面 $\C$。取 $G=\Z_3$，把点 $z$、$\mathrm{e}^{2\pi\mathrm{i}/3}z$ 与 $\mathrm{e}^{4\pi\mathrm{i}/3}z$ 等同。轨形 $M/G$ 由复平面的三分之一构成，把边粘合后得到一个锥面，见 \figref{8.6}。`}</Tx>
-        <Figure n="8.6" caption={R`轨形 $\C/\Z_3$ 是复平面的三分之一，其两条边按图示粘合。$V$ 沿 $C$ 平行移动后成为 $\tilde V$，$V$ 与 $\tilde V$ 之间的夹角为 $2\pi/3$。`} width="45%" />
+        <Figure illustration={<OrbifoldSectorRedraw />} n="8.6" caption={R`轨形 $\C/\Z_3$ 是复平面的三分之一，其两条边按图示粘合。$V$ 沿 $C$ 平行移动后成为 $\tilde V$，$V$ 与 $\tilde V$ 之间的夹角为 $2\pi/3$。`} width="100%" />
         <Tx>{R`看看这个轨形的和乐群是有趣的。我们使用 $\C$ 的欧氏度规诱导的平直联络。沿回路 $C$（它确实是回路！两端在粘合后是同一点）平行移动向量 $V$ 后，得到向量 $\tilde V$，粘合后它与 $V$ 不同。可以看出 $V$ 与 $\tilde V$ 之间的夹角是 $2\pi/3$。容易验证和乐群是 $\Z_3$（绕原点 $k$ 圈转 $2\pi k/3$）。由于对不绕原点的回路 $C_0$ 和乐是平凡的，可知曲率在原点处是奇异的（回忆：曲率度量和乐的非平凡性，见 §7.3）——像 $\delta$ 函数一样集中在原点，其"积分"等于亏角 $2\pi-2\pi/3=4\pi/3$。一般地，不动点（这里是原点）是曲率的奇点。不过要注意，$\C/\Z_3$ *是*一个（拓扑）流形，因为它有同胚于 $\R^2$ 的开覆盖（锥面可以压平成平面；奇异的只是度规）。
 
 一个不那么平凡的例子取环面为流形。在复平面中把点 $z$ 与 $z+m+n\mathrm{e}^{\mathrm{i}\pi/3}$（$m,n\in\Z$）等同，见 \figref{8.7}(a)。粘合平行四边形 OPQR 的边，得到环面 $T^2$（这是例 8.2 中 $\tau=\mathrm{e}^{\mathrm{i}\pi/3}$ 的情形——基本区域的一个角点，它具有额外的 $\Z_6$ 对称性）。令 $\Z_3$ 以 $\alpha:z\mapsto\mathrm{e}^{2\pi\mathrm{i}/3}z$ 作用在 $T^2$ 上（因为 $\mathrm{e}^{2\pi\mathrm{i}/3}$ 把格映到自身，这在 $T^2$ 上是良定义的）。可以求出有三个不等价的不动点 $z=(n/\sqrt3)\mathrm{e}^{\pi\mathrm{i}/6}$，$n=0,1,2$。这个轨形 $\Gamma=T^2/\Z_3$ 由两个三角形围成一个空腔构成，见 \figref{8.7}(b)。若用环面平直度规诱导的平直联络定义向量的平行移动，可知绕每个不动点的和乐都是 $\Z_3$。`}</Tx>
@@ -90,7 +91,7 @@ export function Sec88() {
           { tex: R`1-\mathrm{e}^{2\pi\mathrm{i}/3}=\tfrac32-\tfrac{\sqrt3}2\mathrm{i}=\sqrt3\,\mathrm{e}^{-\mathrm{i}\pi/6}`, why: R`模长 $\sqrt{9/4+3/4}=\sqrt3$。` },
           { tex: R`z=\frac{\ell}{\sqrt3}\mathrm{e}^{\mathrm{i}\pi/6},\ \ell\in L\quad\Rightarrow\quad z\in\left\{0,\ \tfrac1{\sqrt3}\mathrm{e}^{\mathrm{i}\pi/6},\ \tfrac2{\sqrt3}\mathrm{e}^{\mathrm{i}\pi/6}\right\}\ (\mathrm{mod}\ L)`, why: R`$\frac{1}{\sqrt3}\mathrm{e}^{\mathrm{i}\pi/6}L$ 是包含 $L$ 的指数为 3 的格（行列式 $=1-\mathrm{e}^{2\pi i/3}$ 的模方 $=3$），所以模 $L$ 恰有 $3$ 个代表元；取 $\ell=0,1,2$ 即可，例如 $\ell=1$：$\frac1{\sqrt3}\mathrm{e}^{\mathrm{i}\pi/6}=\frac12+\frac{\mathrm{i}}{2\sqrt3}$，正是正三角形 $0,1,\mathrm{e}^{\mathrm{i}\pi/3}$ 的中心。` },
         ]} result={R`三个不动点 = 格点、两类正三角形的中心。由 Gauss–Bonnet，三个锥点各带曲率 $4\pi/3$，总和 $4\pi=2\pi\chi(S^2)$——与 $T^2/\Z_3$ 同胚于 $S^2$ 一致。`} />
-        <Figure n="8.7" caption={R`在 $\Z_3$ 作用下，环面 $T^2$ 上的点被等同。阴影区域是轨形 $\Gamma=T^2/\Z_3$。把轨形的边粘合，得到 \figref{8.7}(b) 中的对象，它同胚于球面 $S^2$。`} width="70%" />
+        <Figure illustration={<OrbifoldTorusRedraw />} n="8.7" caption={R`自绘 $T^2/\Z_3$：六角格环面上的三个不动点，以及两张三角形沿边界粘合得到的球面商空间。`} width="100%" />
         <Box kind="warning" title={R`勘误：$\Gamma=T^2/\Z_3$（p.365）`}>{R`原书写"这个轨形 $\Gamma=\C/\Z_3$ 由两个三角形围成一个空腔构成"，应为 $\Gamma=T^2/\Z_3$（图 8.7 的图注也是如此）；$\C/\Z_3$ 是前一个例子，是非紧的锥面。正文已改正。`}</Box>
       </Sub>
 
@@ -98,7 +99,7 @@ export function Sec88() {
         <Tx>{R`三维复轨形曾被提出作为超弦紧化的候选。这个题目的详细讨论超出了本书范围，读者可参阅 Dixon *et al* (1985, 1986) 与 Green *et al* (1987)。
 
 设 $T=\C^3/L$ 是三维复环面，$L$ 是 $\C^3$ 中的格。具体地，设 $(z_1,z_2,z_3)$ 是 $\C^3$ 的坐标，把 $z_i$ 与 $z_i+m+n\mathrm{e}^{\pi\mathrm{i}/3}$ 等同。在这一等同下，$T$ 等同于三个环面之积 $T=T_1\times T_2\times T_3$。像前面一样，$T$ 容许 $\Z_3$ 的作用 $\alpha:z_i\mapsto\mathrm{e}^{2\pi\mathrm{i}/3}z_i$。若每个 $z_i$ 取 $0$、$(1/\sqrt3)\mathrm{e}^{\mathrm{i}\pi/6}$、$(2/\sqrt3)\mathrm{e}^{\pi\mathrm{i}/6}$ 之一，$\alpha$ 的作用保持点 $(z_i)$ 不变。因此轨形中有 $3^3=27$ 个不动点。在这里，不动点是锥形奇点（\figref{8.8}），轨形不可能是流形。`}</Tx>
-        <Figure n="8.8" caption={R`锥形奇点。原点附近看起来不像 $\R^n$ 或 $\C^n$。`} width="35%" />
+        <Figure illustration={<ConeSingularityRedraw />} n="8.8" caption={R`自绘高维商锥奇点的实截面示意；$Y^2=XZ$ 的顶点揭示代数奇性，完整的拓扑判别需检查高维 link。`} width="100%" />
         <Tx>{R`［**注：**锥形奇点的出现可以从一个更简单的例子更容易地理解。设 $(x,y)\in\C^2$，令 $\Z_2$ 以 $(x,y)\mapsto\pm(x,y)$ 作用在 $\C^2$ 上。则轨形 $\Gamma=\C^2/\Z_2$ 在原点处有锥形奇点。事实上，令 $[(x,y)]\to(x^2,xy,y^2)\equiv(X,Y,Z)$ 为 $\Gamma$ 到 $\C^3$ 的嵌入（$\pm(x,y)$ 给出同一个像，且像能唯一确定 $\pm(x,y)$）。注意 $X$、$Y$、$Z$ 满足关系 $Y^2=XZ$。若把 $X$、$Y$、$Z$ 看作实变量，这正是锥面的方程（$Y^2=XZ$ 经 $X=u+v$、$Z=u-v$ 变成 $Y^2+v^2=u^2$）。］
 
 与一维情形不同，这里的商不再是拓扑流形：$\C^3/\Z_3$ 原点的"连接"（小球面 $S^5$ 模去 $\Z_3$）是透镜空间 $S^5/\Z_3$ 而不是 $S^5$，所以原点没有同胚于 $\R^6$ 的邻域。在弦论中，这些奇点可以"吹胀"（blow up）成光滑的 Calabi–Yau 流形：$T^6/\Z_3$ 的 27 个奇点吹胀后得到 $b^{1,1}=36$（$9$ 个来自环面、$27$ 个来自吹胀）、$b^{2,1}=0$ 的 Calabi–Yau 三维流形，$\chi=72$。`}</Tx>

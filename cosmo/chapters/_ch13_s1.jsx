@@ -1,3 +1,4 @@
+import { BulletClusterRedraw, ClusterArcsRedraw, IntegrationTriangleRedraw, LensingCoordinatesRedraw } from "./_ch14_redraw.jsx";
 // 本章引言、§13.1 Overview（图 13.1–13.3）、§13.2 Photon geodesics —— 式 (13.1)–(13.17)，图 13.4–13.5
 import { Sec, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
 import { PointLens, KernelPlot } from "./_ch13_plots.jsx";
@@ -32,14 +33,14 @@ export function Sec131() {
 - 1979 年，Walsh、Carswell 与 Weymann 观测到一个被多重成像的类星体，证实了 Einstein 早年的猜想：从类星体沿不同方向出发的光线，被中间的一个星系聚焦到同一点（我们）。可以证明，被透镜的类星体数目探测的是宇宙学体积随红移的变化，因而探测膨胀史（Kochanek, 1996）。
 - **时间延迟**：同一个源同时发出、因透镜而从不同方向到达我们的两条光线，一般在不同时刻到达。用有光变的源可以测出这一延迟；它依赖哈勃常数，天文学家已用这种方法测量 $H_0$（如 Wong et al., 2019）。
 - **微透镜**：一个透镜移入源与我们的连线时，像被放大，于是远处的源呈现特征性的光变。微透镜已被用来限制大质量致密晕天体（MACHO）对暗物质的贡献（如 Tisserand et al., 2007）。透镜也被用于寻找冷暗物质晕中应有的子结构（\secref{12.3}；Vegetti et al., 2012；Hezaveh et al., 2016）。`}</Tx>
-      <Figure n="13.1" width="70%" caption={R`Hubble 空间望远镜拍摄的大质量星系团 Abell 1689。星系团后方被透镜的星系表现为强烈畸变的弧。这些高红移星系常显蓝色，因为光谱中的一个断裂使它们在红色成像波段"消失"。（Credit: NASA, ESA, the Hubble Heritage Team (STScI/AURA), J. Blakeslee, H. Ford. CC-SA 4.0.）`} />
-      <Tx>{R`**为什么背景星系变成了弧？**\figref{13.1} 中央的大星系团（成员星系呈黄色）使背景中遥远星系的像发生畸变。考虑一个光线从大质量透镜附近经过、到达观测者的星系（\figref{13.2} 左图）。光线向透镜弯曲，所以星系的**视位置**被推向远离透镜的方向。右图显示了这对源星系的像的影响（为简单起见设透镜绕视线柱对称）：源的每个像素都沿径向向外移动，把规则的椭圆形无透镜像扭成一段弧。另一个畸变效应是：离透镜越近的光线偏折越大，所以弧在径向上比原来的像更窄。
+      <Figure n="13.1" illustration={<ClusterArcsRedraw />} width="100%" caption={R`SIS 透镜作用于四个高斯源的原创解析模型，展示切向弧与临界曲线；非 Abell 1689 观测图。`} />
+      <Tx>{R`**为什么背景星系变成了弧？**原书以 Abell 1689 星系团的照片展示背景星系的弧像；本站\figref{13.1} 用理想等温球透镜和高斯源独立演示这种畸变。考虑一个光线从大质量透镜附近经过、到达观测者的星系（\figref{13.2} 左图）。光线向透镜弯曲，所以星系的**视位置**被推向远离透镜的方向。右图显示了这对源星系的像的影响（为简单起见设透镜绕视线柱对称）：源的每个像素都沿径向向外移动，把规则的椭圆形无透镜像扭成一段弧。另一个畸变效应是：离透镜越近的光线偏折越大，所以弧在径向上比原来的像更窄。
 
 **放大。**下一节将证明透镜**保持像的面亮度**。由于透镜后的像面积比原来大，净效应是源星系像的总流量增加——这称为**放大**（magnification）。借助透镜，我们可以发现并研究那些位于大质量透镜后方、否则太暗而无法探测的星系。`}</Tx>
-      <Figure n="13.2" width="85%" interactive={<PointLens />}
-        caption={R`左图：透镜系统的俯视图。源（上）发出的光沿被透镜引力场偏折的轨迹到达下方的观测者。在观测者看来，源的视位置在虚线箭头方向，比真实源离透镜更远。右图：假设透镜绕视线柱对称时系统在天空上的样子。源的每一点都沿径向向外移动，把无透镜时会观测到的像扭曲成一段切向弧。**交互版**：点质量透镜，左为对每个像素反向追踪光线得到的天空图像，右为侧视几何（角度夸张）；拖动 $\beta$ 看弧如何变成 Einstein 环、又如何在 $\beta\gg\theta_E$ 时退化为弱透镜的轻微切向拉伸。`} />
+      <Figure n="13.2" width="100%" illustration={<PointLens />}
+        caption={R`原创计算图。点质量透镜，左为对每个像素反向追踪光线得到的天空图像，右为侧视几何（角度夸张）；拖动 $\beta$ 看弧如何变成 Einstein 环、又如何在 $\beta\gg\theta_E$ 时退化为弱透镜的轻微切向拉伸。`} />
       <Tx>{R`**子弹星系团。**\figref{13.3} 是另一个壮观的例子：前景中的大型双星系团——所谓"子弹星系团"——使背景星系的形状畸变，在星系团两个分离的暗物质核周围形成独特的椭圆弧图样。子弹星系团是两个大质量星系团正在进行的并合，为**无碰撞暗物质**的存在提供了醒目的证据。两个星系团中大部分重子是热的弥散气体，可在 X 射线中探测（\secref{12.5}；\figref{13.3} 中粉色）。它们的位置与通过引力透镜探测到的大部分物质（蓝色）明显不同。这种错位在物理上是预期之中的：弥散气体有碰撞，两团相撞时形成强激波；而暗物质无碰撞，两个暗物质晕自由地互相穿过，类似 \figref{12.5} 的示意。各星系团中的星系也是如此：与弥散重子相比它们几乎没有相互作用，所以位于大部分物质所在之处。本书中我们已遇到大量非常稳健的冷暗物质证据，子弹星系团之所以又是一个令人信服的证据，就在于它提供了如此清晰的可视化。`}</Tx>
-      <Figure n="13.3" width="75%" caption={R`子弹星系团 1E 0657-56。背景图像取自可见光波段（Magellan 与 Hubble 空间望远镜）。由背景星系畸变重建的质量分布以蓝色显示，它与 Chandra 空间望远镜记录的热气体 X 射线辐射（粉色叠加）明显错开。（Credit: NASA/CXC/M. Weiss—Chandra X-Ray Observatory: 1E 0657-56.）`} />
+      <Figure n="13.3" illustration={<BulletClusterRedraw />} width="100%" caption={R`碰撞星系团质量峰与热气体峰错开的原创教学示意；不是子弹星系团的图像或重建数据。`} />
       <Tx>{R`**弱透镜：本章的主角。**对宇宙学而言，引力透镜最重要的方面是**弱透镜**（weak lensing）：遥远星系的形状被中间的前景物质过密区**轻微**扭曲——与 \figref{13.2} 是同一个效应，只是幅度小得多。它的一个应用是利用背景星系推断单个星系团的质量（至少可追溯到 Tyson et al., 1990）。\secref{12.5} 说过，星系团丰度是灵敏的宇宙学探针，但前提是质量有精确的校准——弱透镜恰好能提供这一点（\secref{13.5.3} 简述）。
 
 本章主要关心的是**大尺度物质分布**造成的弱透镜，而不是像星系团那样单个可辨认的透镜。推断暗物质的分布、即绘制质量图，只是目标的一部分；我们最感兴趣的是统计量——相关函数或其 Fourier 变换，功率谱。我们将推导透镜图的功率谱如何测量背后的（非线性）物质功率谱，以及它与星系计数的交叉相关如何为偏袒提供宝贵的约束。`}</Tx>
@@ -59,7 +60,7 @@ export function Sec132() {
       <Tx>{R`其中 $dA_\perp$ 是垂直于光子流的探测器面积。辐射场的全部信息都包含在 $f(\boldsymbol x,\boldsymbol p,t)$ 中，所以应当能把它与 $I_\nu$ 联系起来。事实上我们第一次遇到 $I_\nu$ 时（\eqref{1.9}）已经瞥见了这一关系。精确的关系是（推导见 \exref{13.1}）`}</Tx>
       <Eq n="13.2" keyEq title="比强度与分布函数" say={R`比强度正比于 $\nu^3$ 乘以光子分布函数：分布函数守恒，所以比强度只能通过频率改变。`}>{R`I_\nu(\boldsymbol x,\hat{\boldsymbol p},t) = 4\pi\nu^3f(\boldsymbol x,p=2\pi\nu,\hat{\boldsymbol p},t),`}</Eq>
       <Tx>{R`其中 $\hat{\boldsymbol p}$ 是被探测光子的单位动量方向。要点是：比强度直接与光子分布函数相关，而后者是**守恒的**。我们测量的正是比强度，尽管常用导出量来刻画测量结果（例如提取 CMB 的温度，或星系像的流量）。`}</Tx>
-      <Figure n="13.4" width="55%" caption={R`与 \figref{13.2} 左图相似的透镜系统，标出源平面上的坐标定义。原点取为单位矢量 $\hat{\boldsymbol e}_z$ 与源平面的交点。真实源位置在 $\chi\boldsymbol\theta_S$，视位置由虚线箭头指向，定义为 $\chi\boldsymbol\theta$。源平面上的透镜偏折为 $\chi\Delta\boldsymbol\theta$。图中极大地夸张了偏折角。`} />
+      <Figure n="13.4" illustration={<LensingCoordinatesRedraw />} width="100%" caption={R`透镜源平面上的真实位置、表观位置和偏折位移；角度夸张的原创几何示意。`} />
       <Tx>{R`**面亮度守恒。**$f$ 守恒意味着：从光子发射到被观测，$I_\nu$ 只通过频率 $\nu$ 的变化而改变——来自宇宙学红移、引力红移与多普勒效应。频移只影响对源距离的估计，不改变星系的形状，这里忽略它。于是，在位置 $\boldsymbol\theta$ 观测到的 $I_\nu$，与没有透镜时（即在均匀宇宙中）从**真实**源方向 $\boldsymbol\theta_S$ 观测到的相同（参见 \figref{13.4}）：`}</Tx>
       <Eq n="13.3" keyEq title="透镜的基本关系：面亮度守恒" say={R`在方向 $\boldsymbol\theta$ 看到的强度，就是没有透镜时方向 $\boldsymbol\theta_S$ 上的强度：透镜只搬动光线的到达方向，不改变亮度。`}>{R`I_{\rm obs}(\boldsymbol\theta) = I_{\rm true}(\boldsymbol\theta_S).`}</Eq>
       <Tx>{R`天空上位置 $\boldsymbol\theta$ 处观测到的强度，实际上来自位于 $\boldsymbol\theta_S$ 的源，但强度本身不变。\eqref{13.3} 是我们推导一切透镜结果的出发点。
@@ -83,7 +84,7 @@ export function Sec132() {
       <Eq n="13.11" say={R`未扰动的光路：沿观测方向 $\boldsymbol\theta$ 的直线，势就在这条直线上取值（Born 近似）。`}>{R`\boldsymbol x(\boldsymbol\theta,\chi') = \left(\chi'\theta^1,\ \chi'\theta^2,\ \chi'\right)`}</Eq>
       <Tx>{R`是计算势时所用的**未扰动**光路。也就是说，我们沿零阶路径计算扰动，因为两者之差是偏折的二阶项（这称为 Born 近似）。常数 $C^i$ 稍后确定。把 \eqref{13.10} 代入 \eqref{13.7}，得`}</Tx>
       <Eq n="13.12" say={R`两次积分：先积出光线方向，再积出横向位移，最后除以距离。`}>{R`\theta_S^i = \frac2\chi\int_0^\chi d\chi''\int_0^{\chi''}d\chi'\,\Phi_{,i}(\boldsymbol x(\boldsymbol\theta,\chi'),\eta_0-\chi') - \sym{ch13-Ci}{C}^i.`}</Eq>
-      <Figure n="13.5" width="55%" caption={R`\eqref{13.13} 中二重积分的积分区域。阴影区可以写成 $0<\chi'<\chi''$、$0<\chi''<\chi$（沿竖线积分），也可以写成 $\chi'<\chi''<\chi$、$0<\chi'<\chi$（沿横线积分）。这里后者更方便，因为对 $\chi''$ 的积分变得平凡。`} />
+      <Figure n="13.5" illustration={<IntegrationTriangleRedraw />} width="100%" caption={R`同一个三角积分域的竖条与横条积分；换序后得到路径长度权重。`} />
       <Tx>{R`**定积分常数。**考虑无偏折极限 $\Phi_{,i}\to0$。此时 $\theta_S^i=-C^i$，而它必须化为 $\theta^i$——真实位置等于观测位置。所以 $-C^i=\theta^i$，于是`}</Tx>
       <Eq n="13.13" say={R`真实位置 = 观测位置 + 沿视线势梯度的二重积分。`}>{R`\theta_S^i = \theta^i + \frac2\chi\int_0^\chi d\chi''\int_0^{\chi''}d\chi'\,\Phi_{,i}(\boldsymbol x(\boldsymbol\theta,\chi'),\eta_0-\chi').`}</Eq>
       <Box kind="physics" title="符号检查：光线向过密区弯曲">{R`以 $\boldsymbol x_\perp=0$ 为中心的过密区那里 $\Phi>0$（本书约定，Poisson 方程 \eqref{8.5}）。于是在 $x>0$ 处 $\Phi$ 对 $x$ 的导数（$i=1$ 的 $\Phi_{,i}$）为负。所以从正 $x$ 轴一侧经过过密区的光线，其 $\theta_S-\theta<0$：真实源比视位置**更靠近**过密区——光线向过密区弯曲，视位置被推离透镜，正如 \figref{13.2} 所示。`}</Box>

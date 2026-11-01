@@ -1,3 +1,4 @@
+import { ManifoldRedraw } from "./_redraw_manifolds.jsx";
 // 引言 + §5.1 流形 —— 式 (5.1)–(5.15)，定义 5.1，例 5.1–5.6，习题 5.1，图 5.1–5.5；交互图 1（S² 的两张球极投影卡）
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Exercise, Derivation, C } from "@kit";
 import { StereoLab } from "./_ch05_demos.jsx";
@@ -32,7 +33,7 @@ export function Sec51() {
         <Eq n="5.1" say={R`极坐标把球面上的点写成两个角：$\theta$ 是与北极方向的夹角，$\phi$ 是绕 $z$ 轴转过的经度。`}>{R`x=\sin\theta\cos\phi\qquad y=\sin\theta\sin\phi\qquad z=\cos\theta,`}</Eq>
         <Tx>{R`其中 $\phi$ 取 $0$ 到 $2\pi$，$\theta$ 取 $0$ 到 $\pi$。在球面上可以反解出`}</Tx>
         <Eq n="5.2" say={R`反过来由直角坐标求出两个角——但 $\tan^{-1}$ 只确定到象限，在两极与 $\phi=0$ 处出麻烦。`}>{R`\theta=\tan^{-1}\frac{\sqrt{x^2+y^2}}{z}\qquad\phi=\tan^{-1}\frac{y}{x}.`}</Eq>
-        <Figure n="5.1" caption={R`球面 $S^2$ 上一点 $P$ 的极坐标 $(\theta,\phi)$ 与球极投影坐标 $(X,Y)$。`} width="55%" />
+        <Figure n="5.1" illustration={<ManifoldRedraw n="5.1"/>} caption={R`球面 $S^2$ 上一点 $P$ 的极坐标 $(\theta,\phi)$ 与球极投影坐标 $(X,Y)$。`} width="55%" />
         <Tx>{R`**球极投影坐标**（stereographic coordinates）则是从北极向赤道面投影得到的（\figref{5.1}）：连接北极 $(0,0,1)$ 与球面上的点 $P(x,y,z)$，延长这条直线直到与赤道面 $z=0$ 相交于 $Q(X,Y,0)$，$X$、$Y$ 就是 $P$ 的球极投影坐标。由相似三角形（直线上 $z$ 从 $1$ 降到 $z$ 时水平距离按比例 $1/(1-z)$ 放大）得到`}</Tx>
         <Eq n="5.3" keyEq title="北极球极投影" say={R`从北极看过去，球面上的点被"压"到赤道面：越靠近北极（$z\to1$），投影点跑得越远。`}>{R`X=\frac{x}{1-z}\qquad Y=\frac{y}{1-z}.`}</Eq>
         <Tx>{R`两套坐标的关系是`}</Tx>
@@ -68,7 +69,7 @@ export function Sec51() {
       <Sub n="5.1.2" title="Definitions" zh="定义">
         <Tx>{R`把上面三个条件写成公理，就是微分流形的定义。`}</Tx>
         <Stmt id="D5.1" />
-        <Figure n="5.2" caption={R`同胚 $\varphi_i$ 把 $U_i$ 映到开子集 $U_i'\subset\R^m$，给 $p\in U_i$ 指定坐标。若 $U_i\cap U_j\neq\emptyset$，从一个坐标系到另一个的转换是光滑的。`} width="55%" />
+        <Figure n="5.2" illustration={<ManifoldRedraw n="5.2"/>} caption={R`同胚 $\varphi_i$ 把 $U_i$ 映到开子集 $U_i'\subset\R^m$，给 $p\in U_i$ 指定坐标。若 $U_i\cap U_j\neq\emptyset$，从一个坐标系到另一个的转换是光滑的。`} width="55%" />
         <Tx>{R`**术语。**对子 $(U_i,\varphi_i)$ 称为**卡**（chart），整族 $\{(U_i,\varphi_i)\}$ 称为**图册**（atlas）——这两个名字的来由显而易见。子集 $U_i$ 称为**坐标邻域**（coordinate neighbourhood），$\varphi_i$ 称为**坐标函数**，或简称**坐标**。同胚 $\varphi_i$ 由 $m$ 个函数 $\{x^1(p),\ldots,x^m(p)\}$ 表示，集合 $\{x^\mu(p)\}$ 也称为坐标。点 $p\in M$ 独立于它的坐标而存在；怎样给点指定坐标由我们决定。在只用一套坐标时，我们有时会随意地用 $x$ 表示坐标为 $\{x^1,\ldots,x^m\}$ 的点。
 
 由 (ii)(iii)，$M$ **局部是欧氏的**：在每个坐标邻域 $U_i$ 中，$M$ 看起来像 $\R^m$ 的开子集，其元素为 $\{x^1,\ldots,x^m\}$。我们并不要求 $M$ 整体上就是 $\R^m$。我们生活在地球上，地表是 $S^2$，整体上不像 $\R^2$，局部却像 $\R^2$ 的开子集。只看伦敦地图，谁能说出我们住在球面上？［严格地说，城北两条经线之间的距离比城南略短，有人或许会怀疑自己住在弯曲的曲面上——住在南半球城市的人则情况相反。］
@@ -82,7 +83,7 @@ export function Sec51() {
 $$\mathbb{H}^m\equiv\{(x^1,\ldots,x^m)\in\R^m\mid x^m\ge0\}$$
 
 的开集，则称 $M$ 为**带边流形**（manifold with a boundary），见\figref{5.3}。被映到 $x^m=0$ 的点的集合称为 $M$ 的**边界**，记作 $\partial M$；$\partial M$ 的坐标可以用 $m-1$ 个数 $(x^1,\ldots,x^{m-1},0)$ 给出。定义光滑性时要小心：映射 $\psi_{ij}:\varphi_j(U_i\cap U_j)\to\varphi_i(U_i\cap U_j)$ 一般定义在 $\mathbb{H}^m$ 的开集上；若它能在 $\R^m$ 中某个包含 $\varphi_j(U_i\cap U_j)$ 的开集上延拓为 $C^\infty$ 映射，就称它光滑。这个定义与我们对"边界"的直观一致：实心球 $D^3$ 的边界是球面 $S^2$，而球面的边界是空集。`}</Tx>
-        <Figure n="5.3" caption={R`带边流形。点 $p$ 在边界上。`} width="50%" />
+        <Figure n="5.3" illustration={<ManifoldRedraw n="5.3"/>} caption={R`带边流形。点 $p$ 在边界上。`} width="50%" />
       </Sub>
 
       <Sub n="5.1.3" title="Examples" zh="例子">
@@ -102,7 +103,7 @@ $$\psi_{12}(\theta)=\varphi_1\circ\varphi_2^{-1}(\theta)=\begin{cases}\theta,&0<
 在每一段上都只是平移，所以 $C^\infty$；$\psi_{21}=\psi_{12}^{-1}$ 同理（上半弧上为 $\theta$，下半弧 $(\pi,2\pi)$ 上为 $\theta-2\pi$）。注意转移函数在两段上取不同的常数平移——这正是"$\phi$ 绕一圈跳 $2\pi$"的困难被两张卡化解的方式。`}</Tx>
         </Box>
         <Box kind="warning" title={R`勘误：例 5.2 的两处笔误（p.194）`}>{R`原书把圆写成 "$x^2+y^1=1$"，应为 $x^2+y^2=1$；第二张卡的引入句写作 "$\psi_2^{-1}:(-\pi,\pi)\to S^1$"，与紧接着的 \eqref{5.5b} 中的 $\varphi_2^{-1}$ 不一致，应为 $\varphi_2^{-1}$。正文已改正。`}</Box>
-        <Figure n="5.4" caption={R`圆周 $S^1$ 的两张卡。`} width="70%" />
+        <Figure n="5.4" illustration={<ManifoldRedraw n="5.4"/>} caption={R`圆周 $S^1$ 的两张卡。`} width="70%" />
         <Box kind="example" n="5.3" title={R`$n$ 维球面 $S^n$`}>
           <Tx>{R`$n$ 维球面 $S^n$ 是微分流形。它在 $\R^{n+1}$ 中实现为`}</Tx>
           <Eq n="5.6" say={R`$S^n$ 是 $\R^{n+1}$ 中到原点距离为 1 的点：$n+1$ 个坐标的平方和为 1，只剩 $n$ 个自由度。`}>{R`\sum_{i=0}^{n}(x^i)^2=1.`}</Eq>
@@ -138,7 +139,7 @@ $$U=\frac{x}{1+z}=\frac{X}{X^2+Y^2},\qquad V=-\frac{y}{1+z}=-\frac{Y}{X^2+Y^2}.$
 **复数写法与 Jacobi 行列式。**令 $Z=X+\mathrm{i}Y$、$W=U+\mathrm{i}V$，则 $W=\bar Z/|Z|^2=1/Z$——转移函数是全纯的（这正是第 8 章例 8.1 把 $S^2$ 看成复流形 $\CP^1$ 的出发点）。Jacobi 行列式 $\det\frac{\partial(U,V)}{\partial(X,Y)}=\left|\frac{\dd W}{\dd Z}\right|^2=\frac{1}{(X^2+Y^2)^2}>0$。若不把 $V$ 轴反向，而取 $V=+y/(1+z)$，转移函数是关于单位圆的反演，仍然 $C^\infty$（同样定义微分结构），但 Jacobi 行列式为 $-1/(X^2+Y^2)^2<0$——这两张卡的定向相反（见 \secref{5.5.1}）。交互图 1 让你拖动点逐一核对这些公式。`}>
           {R`本章开头引入了 $S^2$ 上的球极投影坐标。同样可以定义从北极以外的点出发的球极投影。例如，$S^2-\{\text{南极}\}$ 中一点从南极投影得到的坐标 $(U,V)$，以及 $S^2-\{\text{北极}\}$ 中一点从北极投影得到的坐标 $(X,Y)$，如\figref{5.5} 所示。证明 $(U,V)$ 与 $(X,Y)$ 之间的转移函数是 $C^\infty$ 的，并且它们在 $S^2$ 上定义一个微分结构。另见例 8.1。`}
         </Exercise>
-        <Figure n="5.5" caption={R`$S^2$ 上的两个球极投影坐标系。点 $P$ 可以从北极 N 投影得到 $(X,Y)$，或从南极 S 投影得到 $(U,V)$。`} width="55%" />
+        <Figure n="5.5" illustration={<ManifoldRedraw n="5.5"/>} caption={R`$S^2$ 上的两个球极投影坐标系。点 $P$ 可以从北极 N 投影得到 $(X,Y)$，或从南极 S 投影得到 $(U,V)$。`} width="55%" />
         <StereoLab />
         <Box kind="example" n="5.4" title={R`实射影空间 $\RP^n$`}>
           <Tx>{R`**实射影空间** $\RP^n$ 是 $\R^{n+1}$ 中过原点的直线的集合。若 $x=(x^0,\ldots,x^n)\neq0$，$x$ 确定一条过原点的直线。若存在实数 $a\neq0$ 使 $y=ax$，则 $y\in\R^{n+1}$ 与 $x$ 确定同一条直线。引入等价关系：$x\sim y$ 当且仅当存在 $a\in\R-\{0\}$ 使 $y=ax$。于是 $\RP^n=(\R^{n+1}-\{0\})/\sim$。$n+1$ 个数 $x^0,x^1,\ldots,x^n$ 称为**齐次坐标**（homogeneous coordinates）。齐次坐标不是好的坐标系，因为 $\RP^n$ 是 $n$ 维流形（$n+1$ 维空间去掉一个自由度）。

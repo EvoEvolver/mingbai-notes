@@ -1,3 +1,4 @@
+import { LensingSmoothingRedraw } from "./_ch14_redraw.jsx";
 // §13.3 CMB lensing —— 式 (13.18)–(13.23)，图 13.6；§13.4 Galaxy shapes —— 式 (13.24)–(13.40)
 import { Sec, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
 import { ShearDistortion } from "./_ch13_plots.jsx";
@@ -35,7 +36,7 @@ export function Sec133() {
 
 **两个效应。**\eqref{13.21} 中的 (13) 项对应功率的**阻尼**：可以写成 $C(l)+2C^{(13)}(l)=(1-l^2/l_{\rm lens}^2)C(l)$。因子 $l_{\rm lens}^{-2}$ 正比于方均位移的平方，所以可以把它理解为随机透镜偏折对观测温度分布的抹平。(22) 项则把未透镜谱与透镜偏折谱做卷积，实际效果是抹平 $C(l)$ 的峰。它还会给极小尺度上的 CMB 各向异性**增加**功率：第 9 章看到，当 $l\gg l_D$（角阻尼尺度）时原初 CMB 各向异性被指数压低；而 (22) 项中的积分把功率从大尺度转移到小尺度，于是在阻尼区透镜后的温度各向异性实际上比原初的更大。`}</Tx>
       <Box kind="physics" title={R`量级：方均根偏折与 $l_{\rm lens}$`}>{R`比较 \eqref{13.21} 与偏折场的方差：$\langle|\Delta\boldsymbol\theta|^2\rangle=\int\frac{d^2l}{(2\pi)^2}l^2C_{\phi_{\rm L}\phi_{\rm L}}(l)$，所以 $l_{\rm lens}^{-2}=\frac12\langle|\Delta\boldsymbol\theta|^2\rangle$。用基准宇宙学（Halofit 非线性谱、Limber 近似）数值计算得方均根偏折 $\approx2.4'$，于是 $l_{\rm lens}\approx2000$。偏折虽然只有几角分，但它的功率 $l^4C_{\phi_{\rm L}\phi_{\rm L}}$ 集中在 $l\sim40$–$60$，即**相干尺度达数度**：在比几度小得多的小块天区上，透镜近似是一个整体平移加一个均匀的会聚与剪切。这正是 \exref{13.7} 要你得出的结论。`}</Box>
-      <Figure n="13.6" width="65%" caption={R`透镜对 CMB 温度功率谱的影响。上图为透镜前（$C(l)$，虚线）与透镜后（$C^{\rm obs}(l)$，\eqref{13.21}，实线）的功率谱；下图为这两个非常相近的谱之间的相对差。透镜抹平了功率谱中的峰，并在极小尺度上增加功率。`} />
+      <Figure n="13.6" illustration={<LensingSmoothingRedraw />} width="100%" caption={R`原创一维高斯谱混合模型，解释峰谷被抹平及小尺度功率再分配；不是二维透镜积分的精算预言。`} />
       <Tx>{R`两种效应在 \figref{13.6} 中都可见，它同时画出透镜后与原初的温度功率谱（CMB 透镜已纳入 CAMB 与 CLASS 等 Boltzmann 程序）。但只有看相对差（下图）才真正明显：峰被抹平导致一个与 $C(l)$ 本身**反号**的振荡图样，$C^{\rm obs}(l)$ 小尺度功率的增加也清晰可见。尽管效应很小，它已大于当今 $C(l)$ 测量的误差棒，必须计入。
 
 **更有力的用法：非对角相关。**\figref{13.6} 所示对功率谱的效应很重要，但并不是 CMB 透镜最激动人心的方面——特别是，它不便于提取我们想要的透镜势功率谱。有一种强大得多的方式利用 \eqref{13.18} 达到这一目的。在 \eqref{13.21} 中我们只考虑了 $\boldsymbol l'=\boldsymbol l$ 时的 $\langle\Theta_{\rm obs}(\boldsymbol l)\Theta_{\rm obs}^*(\boldsymbol l')\rangle$。第 9 章论证过，对未透镜 CMB 这是唯一不为零的相关。对透镜后的 CMB 这不再成立：\eqref{13.18} 导致非对角模（$\boldsymbol l'\neq\boldsymbol l$）之间出现非零相关。用 \eqref{13.20} 的第一行，`}</Tx>

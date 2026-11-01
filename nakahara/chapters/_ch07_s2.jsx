@@ -1,3 +1,4 @@
+import { PolarTransportRedraw } from "./_redraw_ch06_08.jsx";
 // §7.2 平行移动、联络与协变导数 —— 式 (7.8a)–(7.35)，定义 7.2，例 7.1，习题 7.3–7.6，图 7.1
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Exercise, Derivation, C } from "@kit";
 
@@ -52,7 +53,7 @@ $$\widetilde V^\phi=V\frac{\sin(\theta-\Delta\phi)}{r}\simeq V\frac{\sin\theta}{
           <Eq n="7.12b" say={R`沿角向搬运时，径向与角向分量互相混合：$\Gamma^r{}_{\phi\phi}=-r$ 是"向心"修正，$\Gamma^\phi{}_{\phi r}=1/r$ 与 \eqref{7.12a} 中的 $\Gamma^\phi{}_{r\phi}$ 相等。`}>{R`\Gamma^r{}_{\phi r}=0\qquad\Gamma^r{}_{\phi\phi}=-r\qquad\Gamma^\phi{}_{\phi r}=\frac1r\qquad\Gamma^\phi{}_{\phi\phi}=0.`}</Eq>
           <Tx>{R`注意这些 $\Gamma$ 满足对称性 $\Gamma^\lambda{}_{\mu\nu}=\Gamma^\lambda{}_{\nu\mu}$。我们还暗中假定了平行移动下向量的长度不变（夹角与 $V$ 都保持）。满足这两个条件的平行移动规则称为 **Levi-Civita 联络**，见 §7.4。这个直观的处理引向仿射联络的正式定义。`}</Tx>
         </Box>
-        <Figure n="7.1" caption={R`$\widetilde{\boldsymbol V}$ 是向量 $\boldsymbol V$ 平行移动到 (a) $(r+\Delta r,\phi)$ 与 (b) $(r,\phi+\Delta\phi)$ 所得的向量。`} width="80%" />
+        <Figure illustration={<PolarTransportRedraw />} n="7.1" caption={R`自绘极坐标平行移动：笛卡尔向量保持不变，沿径向或角向改变底点时，比较极坐标基及分量。`} width="100%" />
       </Sub>
 
       <Sub n="7.2.2" title="Affine connections" zh="仿射联络">

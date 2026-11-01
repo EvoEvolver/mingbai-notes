@@ -1,3 +1,4 @@
+import { FoundationsRedraw } from "./_redraw_foundations.jsx";
 // §3.3.4 H0 的计算、§3.3.5 更多同调计算 —— 式 (3.43)–(3.51)，定理 3.5，例 3.10–3.13，图 3.8–3.12
 import { Sub, Tx, Eq, Box, Figure, Stmt, Proof, Erratum, Details, Table, C } from "@kit";
 import { ChainLab } from "./_ch03_demos.jsx";
@@ -61,7 +62,7 @@ $$\begin{aligned}2z-z''&=2(p_0p_1)+(p_1p_4)+(p_4p_5)+(p_5p_0)-(p_0p_2)-(p_2p_3)-
 
 **解读**：Möbius 带的边界只有**一条**闭曲线，它沿长条走了两遍，同调于 $2z$。若是普通圆柱面，上下两条边界各同调于 $\pm z$。这个"2"是不可定向性的第一个代数痕迹。`}</Tx>
       </Box>
-      <Figure n="3.8" caption={R`Möbius 带的三角剖分。`} width="75%" />
+      <Figure n="3.8" illustration={<FoundationsRedraw n="3.8"/>} caption={R`Möbius 带的三角剖分。`} width="75%" />
       <Details summary={R`"所有闭路都同调于 $nz$"的严格验证（本站补充）`}>{R`原书说"容易验证"。分两步。
 
 **(1) $H_1\cong\mathbb{Z}$。**用秩来数：$I_0=6$、$I_1=12$、$I_2=6$。$K$ 连通，$\operatorname{rank}\partial_1=I_0-1=5$，所以 $\operatorname{rank}Z_1=12-5=7$。$Z_2=0$ 说明 $\partial_2$ 是单射，$\operatorname{rank}B_1=6$。因此 $H_1$ 的秩为 $7-6=1$。$\partial_2$ 的 Smith 标准形对角元全是 $1$（见 \secref{3.4.3} 的交互计算器），所以没有挠：$H_1\cong\mathbb{Z}$。
@@ -97,7 +98,7 @@ $$z=(p_3p_5)+(p_5p_4)+(p_4p_3).$$
 
 **为什么 $z$ 本身不是边缘？**若 $z=\partial_2c$，$c=\sum m_i\sigma_{2,i}$，那么内部棱的系数为零迫使所有 $m_i$ 相等（同上面的论证），于是 $\partial_2c=2m\,z\neq z$——方程 $2m=1$ 没有**整数**解。这就是挠的来源：在有理数里 $z=\partial_2(\tfrac12\sum\sigma_{2,i})$ 是边缘，在整数里不是。`}</Tx>
       </Box>
-      <Figure n="3.9" caption={R`射影平面的三角剖分。`} width="55%" />
+      <Figure n="3.9" illustration={<FoundationsRedraw n="3.9"/>} caption={R`射影平面的三角剖分。`} width="55%" />
 
       <Tx>{R`把例 3.11 与下面两个例子比较很有意思。在这两个例子中，我们用本节培养的"边界与闭链"的直觉来得到结果，而不做直截了当但繁琐的计算（本站的交互计算器会替你把繁琐计算做完）。`}</Tx>
       <Box kind="example" n="3.12" title={R`环面 $T^2$ 与亏格 $g$ 的曲面 $\Sigma_g$`}>
@@ -111,8 +112,8 @@ $$z=(p_3p_5)+(p_5p_4)+(p_4p_3).$$
         <Eq n="3.49" keyEq title={R`$H_1(\Sigma_g)$`} say={R`亏格 $g$ 的曲面上，每个环柄贡献两条独立的、不是边界的闭路（绕柄与穿柄），一维同调群是 $2g$ 份整数。`}>{R`\begin{aligned}H_1(\Sigma_g)&=\{i_1[a_1]+j_1[b_1]+\cdots+i_g[a_g]+j_g[b_g]\}\\ &\cong\underbrace{\mathbb{Z}\oplus\mathbb{Z}\oplus\cdots\oplus\mathbb{Z}}_{2g}.\end{aligned}`}</Eq>
         <Tx>{R`$\Sigma_g$ 连通，$H_0(\Sigma_g)\cong\mathbb{Z}$。$a_i$（$b_i$）同调于第 2 章 \figref{2.12} 中多边形的棱 $a_i$（$b_i$）。这 $2g$ 条曲线 $\{a_i,b_i\}$ 称为 $\Sigma_g$ 上的**典范曲线组**（canonical system of curves）。`}</Tx>
       </Box>
-      <Figure n="3.10" caption={R`$a'$ 与 $a$ 同调，但 $b$ 与 $a$ 不同调。$a$ 与 $b$ 生成 $H_1(T^2)$。`} width="45%" />
-      <Figure n="3.11" caption={R`$a_i$ 与 $b_i$（$1\le i\le g$）生成 $H_1(\Sigma_g)$。`} width="90%" />
+      <Figure n="3.10" illustration={<FoundationsRedraw n="3.10"/>} caption={R`$a'$ 与 $a$ 同调，但 $b$ 与 $a$ 不同调。$a$ 与 $b$ 生成 $H_1(T^2)$。`} width="45%" />
+      <Figure n="3.11" illustration={<FoundationsRedraw n="3.11"/>} caption={R`$a_i$ 与 $b_i$（$1\le i\le g$）生成 $H_1(\Sigma_g)$。`} width="90%" />
       <Erratum kind="erratum" loc="p.135 第 2 段" title={R`"$H_2(T^2)\cong\mathbb{Z}$" 应为 $H_2(\Sigma_g)\cong\mathbb{Z}$`}>{R`原书在讨论亏格 $g$ 的曲面时写"the surface $\Sigma_g$ itself freely generates $H_2(T^2)\cong\mathbb{Z}$"。这里讨论的是 $\Sigma_g$，结论应为 $H_2(\Sigma_g)\cong\mathbb{Z}$（$T^2$ 只是 $g=1$ 的特例）。本站正文已改正。交互计算器中"球面 + $h$ 个环柄"的构造对 $h=1,2,3,4$ 实际算出 $H_2\cong\mathbb{Z}$、$H_1\cong\mathbb{Z}^{2h}$。`}</Erratum>
 
       <Box kind="example" n="3.13" title="Klein 瓶">
@@ -128,7 +129,7 @@ $$\partial_2z=-2ma,\qquad a=(p_0p_1)+(p_1p_2)+(p_2p_0).$$
         <Eq n="3.51" title={R`Klein 瓶的 $H_1$`} say={R`Klein 瓶有一条自由的闭路 $b$，还有一条绕两次才成为边界的闭路 $a$：一维同调群是整数加二元循环群。`}>{R`H_1(K)=\{i[a]+j[b]\mid i,j\in\mathbb{Z}\}\cong\mathbb{Z}_2\oplus\mathbb{Z}.`}</Eq>
         <Tx>{R`$K$ 连通，$H_0(K)\cong\mathbb{Z}$。`}</Tx>
       </Box>
-      <Figure n="3.12" caption={R`Klein 瓶的三角剖分。`} width="55%" />
+      <Figure n="3.12" illustration={<FoundationsRedraw n="3.12"/>} caption={R`Klein 瓶的三角剖分。`} width="55%" />
       <Erratum kind="note" loc="p.135–136 例 3.13" title={R`$\partial_2z=-2ma$ 与 "$\partial z=2ma$" 的符号`}>{R`原书先写 $\partial_2z=-2ma$，几行后又写 $\partial z=2ma$。按图中三角形的统一绕向（逆时针），外圈下边 $p_0\to p_2\to p_1\to p_0$ 与上边（从右往左）$p_0\to p_2\to p_1\to p_0$ 都是 $-a$，正确的是 $\partial_2z=-2ma$（本站交互计算器给出 $-2(p_0p_1)-2(p_1p_2)-2(p_2p_0)$）。符号对结论 $2a\sim0$ 无影响：$-2ma$ 与 $2ma$ 同为边缘。`}</Erratum>
       <Table head={["闭曲面", R`$H_0$`, R`$H_1$`, R`$H_2$`, "全部三角形（统一绕向）之和的边界", "可定向？"]} rows={[
         [R`$S^2$（习题 3.3）`, R`$\mathbb{Z}$`, R`$\{0\}$`, R`$\mathbb{Z}$`, R`$0$`, "是"],

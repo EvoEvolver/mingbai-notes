@@ -26,7 +26,7 @@ export function Sec22() {
 
       <Tx>{R`**第二步：用"看起来多大"定义距离——角直径距离。**天文学的经典测距法之一，是测量已知物理尺度 $l$ 的天体（**标准尺**，standard ruler）所张的角 $\sym{ch02-thang}{\theta}$。角度很小（天文学中几乎总是如此）时，距离定义为`}</Tx>
       <Eq n="2.36" say="角直径距离的定义：已知物理尺寸的物体张开的角越小，就说它越远。">{R`d_A = \frac{l}{\sym{ch02-thang}{\theta}}.`}</Eq>
-      <Figure n="2.3" caption={R`协调宇宙学模型中欧氏膨胀宇宙的三种距离量度：共动距离 $\chi$、角直径距离 $d_A$ 与光度距离 $d_L$（单位 $h^{-1}\,\mathrm{Mpc}$）。交互版可调节 $\Omega_{\rm m}$、暗能量密度 $\Omega_{\rm DE}$ 与其物态方程 $w$；若 $\Omega_{\rm m}+\Omega_{\rm DE}\neq1$ 则按式 (2.39) 计入曲率。默认参数 $\Omega_{\rm m}=0.3,\ \Omega_\Lambda=0.7$ 下 $d_A$ 在 $z\simeq1.6$ 处取极大值约 $1220\,h^{-1}\mathrm{Mpc}$，$\chi(z=10)\simeq6600\,h^{-1}\mathrm{Mpc}$，与原书图一致。`} interactive={<DistancePlot />} />
+      <Figure n="2.3" caption={R`协调宇宙学模型中欧氏膨胀宇宙的三种距离量度：共动距离 $\chi$、角直径距离 $d_A$ 与光度距离 $d_L$（单位 $h^{-1}\,\mathrm{Mpc}$）。交互版可调节 $\Omega_{\rm m}$、暗能量密度 $\Omega_{\rm DE}$ 与其物态方程 $w$；若 $\Omega_{\rm m}+\Omega_{\rm DE}\neq1$ 则按式 (2.39) 计入曲率。默认参数 $\Omega_{\rm m}=0.3,\ \Omega_\Lambda=0.7$ 下 $d_A$ 在 $z\simeq1.6$ 处取极大值约 $1220\,h^{-1}\mathrm{Mpc}$，$\chi(z=10)\simeq6600\,h^{-1}\mathrm{Mpc}$，与原书图一致。`} illustration={<DistancePlot />} />
       <Tx>{R`在膨胀宇宙中怎么算它？关键是在共动网格上算角度：天体的**共动**尺度是 $l/a$（$a$ 为发光时的标度因子），到它的共动距离是 $\chi(a)$，所以在欧氏宇宙中它所张的角是 $\sym{ch02-thang}{\theta}=(l/a)/\chi(a)$。与 \eqref{2.36} 比较：`}</Tx>
       <Eq n="2.37" say="欧氏宇宙中，角直径距离等于共动距离再乘以发光时的标度因子：光出发时宇宙更小，物体离我们在物理上更近。">{R`d_A^{\rm Euc} = a\,\chi = \frac{\chi}{1+z}.`}</Eq>
       <Tx>{R`**解读：越远反而越"大"。**低红移处 $d_A\approx\chi$；但在很高红移处 $d_A$ 反而**减小**（\figref{2.3}）。也就是说，至少在欧氏宇宙中，极高红移的天体看起来比中等红移的**更大**！原因在于：光发出时整个宇宙更小（图 1.1 中每个网格单元都更小），发光星系与我们在物理上近得多。`}</Tx>

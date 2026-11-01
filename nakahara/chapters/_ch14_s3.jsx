@@ -1,3 +1,4 @@
+import { LatticeRedraw } from "./_redraw_ch06_08.jsx";
 // §14.3 单圈振幅 —— 式 (14.121)–(14.147)，习题 14.7，图 14.8，交互图 1、3、4
 import { Sec, Sub, Tx, Eq, Box, Stmt, Exercise, Derivation, Figure, C } from "@kit";
 import { Mod, CKV, Teich } from "./_ch14_s2a.jsx";
@@ -33,7 +34,7 @@ $$${Mod}(\Sigma_1)=\mathcal{M}_1/G=${Teich}(\Sigma_1)/\mathrm{SL}(2,\Z)=H/\mathr
 
 其中 $H$ 是上半平面。取由 Teichmüller 参数 $\tau=\tau_1+\mathrm{i}\tau_2$（$\tau_2>0$）确定的环面 $T_\tau$，代表元取 \figref{14.8} 中的平行四边形（对边粘合）。$\C$ 中的度规自然诱导出一个平坦度规（单值化定理保证了这一点）：`}</Tx>
       <Eq n="14.122" say={R`环面上的平坦度规，直接从复平面继承：$\sigma=0$。`}>{R`\gamma=\tfrac12[\dd z\otimes\dd\bar z+\dd\bar z\otimes\dd z].`}</Eq>
-      <Figure n="14.8" caption={R`复结构由 $\tau$ 参数化的平行四边形。`} width="45%" />
+      <Figure illustration={<LatticeRedraw tau />} n="14.8" caption={R`复结构由 $\tau$ 参数化的平行四边形。`} width="100%" />
       <Tx>{R`**CKV 及其体积。**CKV 是整体定义的全纯向量场。在环面上，全纯函数只能是常数（\sref{X:max-principle}），所以 CKV 是常向量场 $\Phi=\alpha\partial/\partial z$。取它作为归一化的 CKV 基：条件 $(\Phi,\Phi)=1$ 给出 $\int\dd^2z|\alpha|^2=\tau_2|\alpha|^2=1$，即 $\alpha=\tau_2^{-1/2}$（略去了相位）。向量 $\Phi$ 生成复平面中的平移`}</Tx>
       <Eq n="14.123" say={R`环面的 CKV 就是整体平移；参数 $(v^1,v^2)$ 是平移量（按归一化的 CKV 计）。`}>{R`z\to z'=z+\tau_2^{-1/2}(v^1+\mathrm{i}v^2).`}</Eq>
       <Tx>{R`然而必须注意，平移是模格定义的：$\tau_2^{-1/2}(v^1+\mathrm{i}v^2)$ 与 $\tau_2^{-1/2}(v^1+\mathrm{i}v^2)+(m+\tau n)$ 给出同一个平移。这迫使 $\tau_2^{-1/2}(v^1+\mathrm{i}v^2)$ 位于 \figref{14.8} 的平行四边形之内。由于

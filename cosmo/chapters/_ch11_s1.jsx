@@ -1,3 +1,4 @@
+import { ObservedPositionRedraw, SurveyWedgeRedraw } from "./_ch14_redraw.jsx";
 // 引言与 §11.1（含 11.1.1 Galaxy statistics）—— 式 (11.1)–(11.15)，图 11.1–11.2
 import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
 import { Sub112 } from "./_ch11_s12.jsx";
@@ -29,8 +30,8 @@ export function Sec111() {
       why={R`我们想把观测到的星系功率谱与理论的 $P_{\rm L}$ 比较，就必须精确知道"观测坐标中的过密度"与"真实坐标中的过密度"之间的关系。`}
       gives={["11.1", "11.3", "11.4", "11.5", "11.10", "11.14", "11.15", "11.17", "11.22", "11.23", "11.31", "11.37"]}>
       <p className="muted">本节概念：<C id="tracer" /> · <C id="jacobian" /> · <C id="rsd" /> · <C id="kaiser" /> · <C id="fsigma8" /> · <C id="ap" /> · <C id="bao" /></p>
-      <Tx>{R`**最简单的统计量。**\figref{11.1} 是 Sloan 数字巡天（SDSS）所测体积中一个切片里的星系位置。这样一个总共含近百万个星系的红移巡天，能算出什么统计量与理论比较？与 CMB 类似，最简单的统计量是功率谱——不过现在是三维的 $P_{\rm g,obs}(\boldsymbol k)$。`}</Tx>
-      <Figure n="11.1" caption={R`SDSS 巡天测得的星系分布（更准确地说，天赤道 $\pm3^\circ$ 切片内的星系）。颜色代表不同的星系样本：星等极限主样本（黑色，即图 1.8 所示）与亮红星系样本（LRG，红色）。LRG 样本覆盖的体积大得多，因为它由能在更远距离上观测到的亮星系组成。图片来源：Michael Blanton 与 SDSS 合作组。`} />
+      <Tx>{R`**最简单的统计量。**原书以 Sloan 数字巡天（SDSS）的真实星系切片为例；本站\figref{11.1} 用合成点演示巡天切片、聚集与选择效应，不含巡天星系位置。这样一个总共含近百万个星系的红移巡天，能算出什么统计量与理论比较？与 CMB 类似，最简单的统计量是功率谱——不过现在是三维的 $P_{\rm g,obs}(\boldsymbol k)$。`}</Tx>
+      <Figure n="11.1" illustration={<SurveyWedgeRedraw />} caption={R`巡天样本深度的原创示意：高光度 LRG 可覆盖比星等极限主样本更远的体积。点位为教学抽样，非 SDSS 数据。`} />
       <Tx>{R`**记号。**\figref{11.2} 画出了几何关系：一个星系与我们的共动距离为 $\chi(z)$（\eqref{2.34}）。于是三维位置矢量的分量为`}</Tx>
       <Eq n="11.1" keyEq title="观测位置" say={R`观测者把星系放在"方向 $\hat{\boldsymbol n}$、距离 $\chi(z)$"处：角位置决定方向，红移通过距离–红移关系决定远近。`}>{R`\boldsymbol x_{\rm obs}(z,\theta,\phi)=\chi(z)\,\hat{\boldsymbol n}(\theta,\phi);\qquad\hat{\boldsymbol n}=\frac{\boldsymbol x_{\rm obs}}{|\boldsymbol x_{\rm obs}|}.`}</Eq>
       <Tx>{R`单位矢量 $\hat{\boldsymbol n}$ 与星系在天球上的位置（由两个角 $\theta,\phi$ 给定）一一对应。在未扰动的宇宙中，星系的距离 $\chi$ 与观测红移 $z$ 由 $\chi(z)$ 直接相联（\secref{2.2}）。
@@ -42,7 +43,7 @@ export function Sec111() {
       <Tx>{R`其中 $a_{\rm em}$ 是星系发光时的标度因子，因子 $1/a_{\rm em}$ 就是宇宙学红移；第二项是星系本动速度 $\boldsymbol u_{\rm g}$ 造成的多普勒位移，取 $u_{\rm g}$ 的线性阶。注意 $1/a_{\rm em}$ 同时乘在宇宙学项与多普勒项上：给定本动速度对红移的**相对**影响与星系的距离无关。这里假设了星系速度远小于光速（见 \secref{12.1} 的讨论），所以可以停在 $u_{\rm g}$ 的线性阶。
 
 **两个简化。**下文令星系速度等于物质速度，$\boldsymbol u_{\rm g}=\boldsymbol u_{\rm m}$；\secref{12.6} 会看到这在**大尺度上**确实成立。\eqref{11.3} 还忽略了 Sachs–Wolfe 与积分 Sachs–Wolfe 对红移的贡献，它们小得多，只在极大尺度上才重要。`}</Tx>
-      <Figure n="11.2" caption={R`测量三维星系密度场时的复杂性示意。星系从以 $\bar z$（点线弧）为中心的窄红移片（实线弧）中选出。一个星系在天球上的方向为 $\hat{\boldsymbol n}$、红移为 $z$。我们赋予它表观位置 $\boldsymbol x_{\rm obs}$，它与真实位置 $\boldsymbol x$ 不同，原因有二（见 \eqref{11.5}）：假设的距离–红移关系不是真实的；红移中含有星系视向速度 $u_\parallel$ 的多普勒贡献。`} />
+      <Figure n="11.2" illustration={<ObservedPositionRedraw />} caption={R`视向速度与距离–红移关系误差如何改变真实与表观的星系径向位置。滑块位移采用任意单位。`} />
       <Tx>{R`**速度造成的位移。**若 $\boldsymbol u_{\rm m}=0$ 且基准宇宙学恰好是真实的，距离估计 $|\boldsymbol x|=\chi(z)$ 就是准确的。现在计算速度在 \eqref{11.1} 中造成的误差：`}</Tx>
       <Eq n="11.4" keyEq title="红移空间位移" say={R`视向速度 $u_\parallel$ 把星系沿视线推出 $u_\parallel/aH$ 的共动距离：速度越大、哈勃率越小，看错得越多。`}>{R`\sym{ch11-dxrsd}{\Delta\boldsymbol x_{\rm RSD}}=\frac{\partial\boldsymbol x_{\rm obs}}{\partial u_\parallel}\bigg|_{u_\parallel=0}u_\parallel=\frac{1}{aH}u_\parallel\hat{\boldsymbol n}`}</Eq>
       <Derivation title={R`\eqref{11.4} 中的 $1/aH$ 从哪来`} collapsed steps={[

@@ -1,3 +1,4 @@
+import { TangentProjectionRedraw, TorsionRedraw } from "./_redraw_ch06_08.jsx";
 // §7.4 Levi-Civita 联络 —— 式 (7.52)–(7.89)，定理 7.1–7.2，例 7.3–7.6，习题 7.8–7.13，图 7.6–7.8；交互图 2（测地线）、交互图 3（曲率计算器）
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Proof, Exercise, Derivation, C } from "@kit";
 import { GeodesicLab, CurvatureLab } from "./_ch07_demos.jsx";
@@ -60,8 +61,8 @@ $$g(\nabla_XU,V)+g(U,\nabla_XV)=\langle\nabla_X\omega,V\rangle+\langle\omega,\na
         <Tx>{R`在嵌入 $\R^3$ 的曲面的经典微分几何中，Levi-Civita 这样定义相邻两点 $p$、$q$ 处向量的平行性（\figref{7.6}）：先取 $p$ 点的切平面与其中的向量 $V_p$；若 $q$ 点的向量 $V_q$ 投影到 $p$ 点切平面后与 $V_p$ 按通常意义平行，就说 $V_q$ 平行于 $V_p$。
 
 再取 $p$ 附近的两点 $q$、$s$（\figref{7.7}），把位移向量 $pq$ 沿 $ps$ 平行移动、把 $ps$ 沿 $pq$ 平行移动。若平行性按 Levi-Civita 的意义定义，投影到 $p$ 点切平面上的位移向量组成一个闭合的平行四边形，所以这种平行性的挠率为零。\sref{T7.1} 已证明存在唯一的无挠（度规）联络，它把这里定义的平行性推广到任意流形。（交互图 1 中的"外在法"正是这样实现平行移动的：每走一小步，把向量"不打转地"转到新的切平面上。）`}</Tx>
-        <Figure n="7.6" caption={R`在曲面 $M$ 上，若 $V_q$ 在 $T_pM$ 上的投影按 $\R^3$ 中通常意义与 $V_p$ 平行，就定义 $V_p\in T_pM$ 平行于 $V_q\in T_qM$。`} width="60%" />
-        <Figure n="7.7" caption={R`若平行性按 Levi-Civita 的意义定义，挠率恒为零。`} width="60%" />
+        <Figure illustration={<TangentProjectionRedraw />} n="7.6" caption={R`在曲面 $M$ 上，若 $V_q$ 在 $T_pM$ 上的投影按 $\R^3$ 中通常意义与 $V_p$ 平行，就定义 $V_p\in T_pM$ 平行于 $V_q\in T_qM$。`} width="100%" />
+        <Figure illustration={<TorsionRedraw levi />} n="7.7" caption={R`若平行性按 Levi-Civita 的意义定义，挠率恒为零。`} width="100%" />
       </Sub>
 
       <Sub n="7.4.3" title="Geodesics" zh="测地线">
@@ -143,7 +144,7 @@ $$I=\int\dd s=\int_{0+\varepsilon}^{\pi-\varepsilon}\frac{\dd s}{\dd t}\dd t=\in
 
 实轴 $y=0$ 因而在"无穷远"：沿测地线永远走不到。`}</Tx>
         </Box>
-        <Figure n="7.8" caption={R`Poincaré 度规在上半平面中定义的测地线。测地线的长度为无穷大。`} width="60%" interactive={<GeodesicLab />} />
+        <Figure illustration={<GeodesicLab />} n="7.8" caption={R`Poincaré 度规在上半平面中定义的测地线。测地线的长度为无穷大。`} width="100%" />
       </Sub>
 
       <Sub n="7.4.4" title="The normal coordinate system" zh="正规坐标系">

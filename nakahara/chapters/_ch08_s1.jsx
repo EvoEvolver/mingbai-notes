@@ -1,3 +1,4 @@
+import { DehnRedraw, LatticeRedraw, TorusLiftRedraw } from "./_redraw_ch06_08.jsx";
 // 引言 + §8.1 复流形 —— 式 (8.1)–(8.7)，定义 8.1，例 8.1–8.5，图 8.1–8.4；交互图 1（模参数 τ 与 SL(2,Z)）、交互图 2（CP¹ 的两张卡）
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Proof, Derivation, C } from "@kit";
 import { ModularLab, CP1Lab } from "./_ch08_demos.jsx";
@@ -66,7 +67,7 @@ $$W=\frac{x-\mathrm{i}y}{1+z}=\frac{1-z}{1+z}(X-\mathrm{i}Y)=\frac{X-\mathrm{i}Y
 （第二个等号用 $x-\mathrm{i}y=(1-z)(X-\mathrm{i}Y)$；第三个等号用球面上 $x^2+y^2=1-z^2$，故 $X^2+Y^2=\frac{1+z}{1-z}$。）因此 $S^2$ 是复流形，并可等同于 **Riemann 球面** $\C\cup\{\infty\}$。`}</Tx>
           <Tx>{R`**为什么要反转 $V$ 的符号。**若取 $V=+y/(1+z)$，则 $U+\mathrm{i}V=(x+\mathrm{i}y)/(1+z)=1/\overline Z$——这是**反全纯**函数，两张卡之间的转移函数不满足 Cauchy–Riemann 方程，也就不构成复图册。翻转一张卡的定向（$V\to-V$）恰好把 $1/\overline Z$ 变成 $1/Z$。这与 §8.4 的结论（复流形总是可定向的，\sref{T8.3}）一致：全纯转移函数的实 Jacobi 行列式 $=|\partial W/\partial Z|^2>0$。`}</Tx>
         </Box>
-        <Figure n="8.1" caption={R`两个复数 $\omega_1$、$\omega_2$ 在复平面上定义格 $L(\omega_1,\omega_2)$。$\C/L(\omega_1,\omega_2)$ 同胚于环面（阴影区域）。`} width="55%" />
+        <Figure illustration={<LatticeRedraw />} n="8.1" caption={R`两个复数 $\omega_1$、$\omega_2$ 在复平面上定义格 $L(\omega_1,\omega_2)$。$\C/L(\omega_1,\omega_2)$ 同胚于环面（阴影区域）。`} width="100%" />
         <Box kind="example" n="8.2" title={R`复环面与模参数 $\tau$`}>
           <Tx>{R`取复平面 $\C$，定义**格** $L(\omega_1,\omega_2)\equiv\{\omega_1m+\omega_2n\mid m,n\in\Z\}$，其中 $\omega_1$、$\omega_2$ 是两个非零复数，满足 $\omega_2/\omega_1\notin\R$（\figref{8.1}）。不失一般性可取 $\mathrm{Im}(\omega_2/\omega_1)>0$。把 $z_1,z_2\in\C$ 中满足 $z_1-z_2=\omega_1m+\omega_2n$（某 $m,n\in\Z$）的点等同，得到流形 $\C/L(\omega_1,\omega_2)$。由于 \figref{8.1} 中阴影区域的对边被粘合，$\C/L(\omega_1,\omega_2)$ 同胚于环面 $T^2$。$\C$ 的复结构自然诱导 $\C/L(\omega_1,\omega_2)$ 的复结构（平移 $z\mapsto z+\omega$ 是全纯的，所以以 $\C$ 中小圆盘为卡时，转移函数都是平移）。我们说 $(\omega_1,\omega_2)$ 在 $T^2$ 上定义了一个复结构。许多不同的 $(\omega_1,\omega_2)$ 给出 $T^2$ 上同一个复结构。
 
@@ -89,7 +90,7 @@ $$\mathrm{Im}\Big(\frac{\omega_2'}{\omega_1'}\Big)=\mathrm{Im}\Big(\frac{b\omega
 右端的 $\mathrm{Im}(\omega_2'/\omega_1')$ 应为 $\mathrm{Im}(\omega_2/\omega_1)$（否则等式两边是同一个量，推不出任何东西）。正文按 \eqref{8.2} 的约定改写为 $\frac{ad-bc}{|a+b\tau|^2}\mathrm{Im}\,\tau$。两种写法只差矩阵的重新标记 $\begin{pmatrix}a&b\\ c&d\end{pmatrix}\leftrightarrow\begin{pmatrix}d&c\\ b&a\end{pmatrix}$，它是 $\mathrm{SL}(2,\Z)$ 到自身的双射，结论不变。`}</Box>
           <Tx>{R`**第二步：复结构何时相同。**设存在 $\C/L(\omega_1,\omega_2)$ 到 $\C/L(\tilde\omega_1,\tilde\omega_2)$ 上的一一全纯映射 $h$（$\mathrm{Im}(\omega_2/\omega_1)>0$，$\mathrm{Im}(\tilde\omega_2/\tilde\omega_1)>0$）。设 $p:\C\to\C/L(\omega_1,\omega_2)$、$\tilde p:\C\to\C/L(\tilde\omega_1,\tilde\omega_2)$ 是自然投影（例如 $p$ 把 $\C$ 中的点映到它在 $\C/L(\omega_1,\omega_2)$ 中的等价类）。选原点 $0$，并取 $h_*(0)$ 为满足 $\tilde p\circ h_*(0)=h\circ p(0)$ 的一点（\figref{8.2}）：`}</Tx>
           <Eq n="8.3" say={R`交换图：先投影到环面再用 $h$ 映过去，与先在复平面上用 $h_*$ 映过去再投影，结果相同——$h_*$ 是 $h$ 在覆叠空间 $\C$ 上的"提升"。`}>{R`\begin{matrix}\C&\xrightarrow{\ \ h_*\ \ }&\C\\ {\scriptstyle p}\Big\downarrow&&\Big\downarrow{\scriptstyle\tilde p}\\ \C/L(\omega_1,\omega_2)&\xrightarrow{\ \ h\ \ }&\C/L(\tilde\omega_1,\tilde\omega_2).\end{matrix}`}</Eq>
-          <Figure n="8.2" caption={R`全纯双射 $h:\C/L(\omega_1,\omega_2)\to\C/L(\tilde\omega_1,\tilde\omega_2)$ 与自然投影 $p:\C\to\C/L(\omega_1,\omega_2)$、$\tilde p:\C\to\C/L(\tilde\omega_1,\tilde\omega_2)$ 定义了全纯双射 $h_*:\C\to\C$。`} width="65%" />
+          <Figure illustration={<TorusLiftRedraw />} n="8.2" caption={R`全纯双射 $h:\C/L(\omega_1,\omega_2)\to\C/L(\tilde\omega_1,\tilde\omega_2)$ 与自然投影 $p:\C\to\C/L(\omega_1,\omega_2)$、$\tilde p:\C\to\C/L(\tilde\omega_1,\tilde\omega_2)$ 定义了全纯双射 $h_*:\C\to\C$。`} width="100%" />
           <Tx>{R`从原点出发作解析延拓，得到 $\C$ 到自身上的一一全纯映射 $h_*$，满足`}</Tx>
           <Eq n="8.4" say={R`提升条件对复平面上每一点都成立，所以图 \eqref{8.3} 交换。`}>{R`\tilde p\circ h_*(z)=h\circ p(z)\qquad\text{对一切 }z\in\C`}</Eq>
           <Tx>{R`于是图 \eqref{8.3} 交换。（严格地说，这是覆叠空间理论中的提升定理：$\C$ 单连通，$h\circ p$ 可以唯一提升到覆叠 $\tilde p$；提升在局部是 $\tilde p$ 的局部逆与 $h\circ p$ 的复合，因而全纯。）已知 $\C$ 到自身的一一全纯映射必形如 $z\mapsto h_*(z)=az+b$，$a,b\in\C$，$a\neq0$。于是 $h_*(\omega_1)-h_*(0)=a\omega_1$、$h_*(\omega_2)-h_*(0)=a\omega_2$。要使 $h$ 作为 $\C/L(\omega_1,\omega_2)\to\C/L(\tilde\omega_1,\tilde\omega_2)$ 的映射是良定义的，必须 $a\omega_1,a\omega_2\in L(\tilde\omega_1,\tilde\omega_2)$（\figref{8.2}）。交换 $(\omega_1,\omega_2)$ 与 $(\tilde\omega_1,\tilde\omega_2)$ 的角色（对 $h^{-1}$ 作同样论证），得到 $\tilde a\tilde\omega_1,\tilde a\tilde\omega_2\in L(\omega_1,\omega_2)$，$\tilde a\neq0$ 为复数（且 $\tilde a=a^{-1}$，因为 $h^{-1}$ 的提升是 $h_*$ 的逆）。所以 $aL(\omega_1,\omega_2)=L(\tilde\omega_1,\tilde\omega_2)$，再由第一步得结论：若 $\C/L(\omega_1,\omega_2)$ 与 $\C/L(\tilde\omega_1,\tilde\omega_2)$ 有相同的复结构，则存在矩阵 $M\in\mathrm{SL}(2,\Z)$ 与复数 $\lambda\ (=\tilde a^{-1})$ 使得`}</Tx>
@@ -105,9 +106,9 @@ $$\tau\equiv\omega_2/\omega_1\in\mathrm{H}\equiv\{z\in\C\mid\mathrm{Im}\,z>0\}$$
 $$\tau'=\frac{a\tau+b}{c\tau+d}$$
 
 定义同一个复结构（取 $M=\begin{pmatrix}d&c\\ b&a\end{pmatrix}$ 作用在 $(1,\tau)$ 上，得 $(c\tau+d,\ a\tau+b)=(c\tau+d)(1,\tau')$，即 $\lambda=c\tau+d$）。商空间 $\mathrm{H}/\mathrm{PSL}(2,\Z)$ 如 \figref{8.3} 所示（推导见 Koblitz (1984) p 100 与 Gunning (1962) p 4）：**基本区域**是 $|\mathrm{Re}\,\tau|\le\frac12$、$|\tau|\ge1$ 的区域，边界按 $\tau\sim\tau+1$（左右两条竖线）与 $\tau\sim-1/\tau$（单位圆弧左右两半）粘合。`}</Tx>
-          <Figure n="8.3" caption={R`商空间 $\mathrm{H}/\mathrm{PSL}(2,\Z)$。`} width="45%" interactive={<ModularLab />} />
+          <Figure illustration={<ModularLab />} n="8.3" caption={R`商空间 $\mathrm{H}/\mathrm{PSL}(2,\Z)$。`} width="100%" />
           <Tx>{R`变换 $\tau\to\tau'$ 称为**模变换**（modular transformation），由 $\tau\to\tau+1$ 与 $\tau\to-1/\tau$ 生成。$\tau\to\tau+1$ 产生沿经线 $m$ 的 **Dehn 扭转**（\figref{8.4}(a)）：(i) 先沿 $m$ 把环面切开；(ii) 保持切口一侧不动，把另一侧转 $2\pi$；(iii) 再把切口粘回。另一个变换 $\tau\to-1/\tau$ 对应于交换纬线 $l$ 与经线 $m$ 的角色（\figref{8.4}(b)）。`}</Tx>
-          <Figure n="8.4" caption={R`(a) Dehn 扭转生成模变换。(b) $\tau\to-1/\tau$ 交换 $l$ 与 $m$ 的角色。`} width="70%" />
+          <Figure illustration={<DehnRedraw />} n="8.4" caption={R`(a) Dehn 扭转生成模变换。(b) $\tau\to-1/\tau$ 交换 $l$ 与 $m$ 的角色。`} width="100%" />
           <Derivation title={R`为什么任意 $\tau$ 都能送进基本区域（约化算法）`} collapsed steps={[
             { tex: R`\mathrm{Im}\left(\frac{a\tau+b}{c\tau+d}\right)=\frac{\mathrm{Im}\,\tau}{|c\tau+d|^2}`, why: R`与上面 \eqref{8.2} 证明中的计算相同（$ad-bc=1$）。` },
             { tex: R`T:\tau\mapsto\tau+1\ \text{把 }\mathrm{Re}\,\tau\text{ 移到 }[-\tfrac12,\tfrac12];\qquad S:\tau\mapsto-1/\tau\ \text{满足}\ \mathrm{Im}(S\tau)=\mathrm{Im}\,\tau/|\tau|^2`, why: R`若 $|\tau|<1$，作用 $S$ 严格增大 $\mathrm{Im}\,\tau$。` },

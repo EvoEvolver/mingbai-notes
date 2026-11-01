@@ -1,3 +1,4 @@
+import { AharonovBohmRedraw } from "./_redraw_ch09_10.jsx";
 // §10.5.1–10.5.4 规范理论：U(1)、Dirac 单极子、Aharonov–Bohm 效应、Yang–Mills 理论 —— 式 (10.81)–(10.109)，
 // 习题 10.12，图 10.4，交互图 2（单极子）
 import { Sec, Sub, Tx, Eq, Box, Exercise, Derivation, Figure, C } from "@kit";
@@ -132,7 +133,7 @@ function Sub1053() {
       <Tx>{R`**势比场更基本？**在电磁学的初等学习中，电场与磁场（即 $F_{\mu\nu}$）是中心对象，矢势 $\boldsymbol A$ 与标势 $\varphi=A_0$ 被认为是次要的。但在量子力学中，有许多情形 $F_{\mu\nu}$ 不足以描述现象，必须用 $A_\mu=(\boldsymbol A,A_0)$。**Aharonov–Bohm 效应**就是其中之一。
 
 Aharonov–Bohm（AB）实验如 \figref{10.4} 所示。电荷为 $${EC}$ 的电子束从左边远处入射，在屏 C 上形成干涉图样。束流中间放一个无限长的螺线管；屏障 S 阻止电子进入螺线管。因此电子完全感受不到磁场。那么规范场 $A_\mu$ 呢？`}</Tx>
-      <Figure n="10.4" caption={R`Aharonov–Bohm 实验。螺线管外 $\boldsymbol B=0$。`} width="55%" />
+      <Figure illustration={<AharonovBohmRedraw />} n="10.4" caption={R`Aharonov–Bohm 实验。螺线管外 $\boldsymbol B=0$。`} width="100%" />
       <Tx>{R`为简单起见，让螺线管半径趋于无穷小，同时保持总通量 $\Phi=\int_S\boldsymbol B\cdot\dd\boldsymbol S$ 不变。容易验证`}</Tx>
       <Eq n="10.95" say={R`无限细螺线管外的矢势：绕螺线管旋转、按 $1/r$ 衰减；它的旋度为零，但绕一圈的环量等于管内磁通。`}>{R`\boldsymbol A(\boldsymbol r)=\Big(-\frac{y\Phi}{2\pi r^2},\frac{x\Phi}{2\pi r^2},0\Big)\qquad A_0=0`}</Eq>
       <Tx>{R`满足 $\int(\nabla\times\boldsymbol A)\cdot\dd\boldsymbol S=\Phi$ 且对 $r\neq0$ 有 $\nabla\times\boldsymbol A=\boldsymbol0$。（$\boldsymbol A=\frac{\Phi}{2\pi}\nabla\theta$ 局部是梯度，但 $\theta$ 不是单值函数——这正是第 6 章习题 6.3 的角形式。）螺线管外矢势不为零。经典地，螺线管对电子没有任何影响，因为 Lorentz 力 $${EC}(\boldsymbol v\times\boldsymbol B)$ 在电子束经过的路径上为零。

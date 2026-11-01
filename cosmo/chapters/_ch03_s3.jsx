@@ -1,3 +1,4 @@
+import { LensingRedraw } from "./_redraw_early.jsx";
 // §3.3 Beyond the homogeneous universe —— 式 (3.49)–(3.76)，图 3.4
 import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, Details, C } from "@kit";
 import { PhotonPlot, DeflectionPlot } from "./_ch03_plots.jsx";
@@ -107,7 +108,7 @@ export function Sec33() {
 ◆ 第一项描述哈勃膨胀造成的动量损失（等价于宇宙学红移和本动速度的衰减）。回忆 $\Phi$ 可以理解为局域标度因子的相对扰动，而 $H=\dot a/a$，所以 $H+\dot\Phi$ 就是**局域膨胀率**。于是前两部分包含了宇宙学红移及其局域扰动。
 
 ◆ 最后一项描述：粒子进入势阱（$\hat p^i\partial\Psi/\partial x^i<0$）时获得能量；反之离开势阱时失去能量。对非相对论粒子，这是牛顿物理中熟悉的事；它对光子同样成立，此时对应**引力红移**效应——它可以在地球上用精密原子物理实验观测到（Pound–Rebka 实验）。`}</Tx>
-        <Figure n="3.4" caption={R`示意图：大质量星系团造成的时空弯曲如何使途经的光线偏折。同样的弯曲也使星系束缚在星系团内绕转。两种效应都由 \eqref{3.72} 描述。图片来源：www.cfhtlens.org。`} width="70%" />
+        <Figure n="3.4" caption={R`原创薄透镜弱场模型：平行光线经过点质量时向中心偏折，偏折角与质量成正比、与冲量参数成反比。滑块改变透镜强度。示意折线不是星系团照片或强场光线追迹；同一引力场也影响星系运动。`} illustration={<LensingRedraw />} />
         <Tx>{R`下面的玩具模型直接对 \eqref{3.71}（取 $m=0$，局域 $a=1$）沿光子路径积分，展示两个关键物理：静态势阱里光子"进去得到的能量，出来时如数还回去"；而如果光子穿越期间势阱在**变化**，就会留下净的能量变化——这就是 CMB 中的**积分 Sachs–Wolfe 效应**的雏形。`}</Tx>
         <PhotonPlot />
         <Box kind="data" title="读图与数值核对">{R`把 $\Phi=-\Psi$ 代入 \eqref{3.71}（$a=1$，$E=p$）：$d\ln p/dt=\dot\Psi-\partial_x\Psi$。沿光线 $d\Psi/dt|_{\rm path}=\dot\Psi+\partial_x\Psi$，所以 $\Delta\ln p=-[\Psi_{\rm end}-\Psi_{\rm start}]+2\int\dot\Psi\,dt$。**静态**势阱（$\varepsilon=0$）：井心处 $\delta\ln p=+\Psi_0$（掉进深度为 $\Psi_0$ 的势阱获得的蓝移），出来后精确回到 0——数值积分给出 1.0000 和 0.0000。**变浅的**势阱（$\varepsilon=0.3$，$\tau=3\sigma$）：最终 $\delta\ln p=2\int\dot\Psi\,dt=+0.455\,\Psi_0$，与解析积分 0.4552 一致；若只保留 $\Psi$（$\Phi=0$），净效应减半为 0.228——因子 2 来自 $\dot\Phi$ 项。`}</Box>

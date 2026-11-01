@@ -1,3 +1,4 @@
+import { StandardSimplexRedraw } from "./_redraw_ch06_08.jsx";
 // 引言 + §6.1 Stokes 定理 —— 式 (6.1)–(6.10)，定理 6.1，习题 6.1，图 6.1，交互图 1
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Proof, Exercise, Derivation, Erratum, C } from "@kit";
 import { StokesLab } from "./_ch06_demos.jsx";
@@ -36,7 +37,7 @@ export function Sec61() {
 
 它们张成的定向单形 $\bar\sigma_r=(p_0p_1\ldots p_r)$ 称为**标准 $r$ 单形**（standard $r$-simplex），见 \figref{6.1}。若 $\{x^\mu\}$ 是 $\mathbb{R}^r$ 的坐标，则`}</Tx>
         <Eq n="6.1" say={R`标准 $r$ 单形就是第一卦限里被超平面 $\sum x^\mu=1$ 切下的那一角：所有坐标非负、坐标和不超过 1。`}>{R`\bar\sigma_r=\left\{(x^1,\ldots,x^r)\in\mathbb{R}^r\ \middle|\ x^\mu\ge0,\ \sum_{\mu=1}^rx^\mu\le1\right\}.`}</Eq>
-        <Figure n="6.1" caption={R`标准 2 单形 $\bar\sigma_2=(p_0p_1p_2)$ 与标准 3 单形 $\bar\sigma_3=(p_0p_1p_2p_3)$。`} width="72%" />
+        <Figure illustration={<StandardSimplexRedraw />} n="6.1" caption={R`标准 2 单形 $\bar\sigma_2=(p_0p_1p_2)$ 与标准 3 单形 $\bar\sigma_3=(p_0p_1p_2p_3)$。`} width="100%" />
         <Erratum kind="erratum" loc="p.246 §6.1.1" title={R`"standard $n$-simplex" 应为 "standard $r$-simplex"`}>{R`原书在定义 $\bar\sigma_r$ 时把它称为 "standard $n$-simplex"，而符号与 \eqref{6.1} 都是 $r$ 维的。正文已统一为"标准 $r$ 单形"。`}</Erratum>
         <Tx>{R`$\mathbb{R}^r$ 中的 $r$ 形式只有一个分量（它就是"体积元"的倍数）：
 

@@ -1,0 +1,39 @@
+import {useState} from 'react';
+import {StereoLab,BracketLab} from './_ch05_demos.jsx';
+import {Diagram,Label,Arrow,Dot,Curve,Range,Choices,Sphere,blue,red,green,gold} from './_redraw_primitives.jsx';
+const R=String.raw;
+function Charts({boundary=false}){return <Diagram title={boundary?'边界点的半空间坐标卡':'重叠坐标卡与转移函数'} height={330} note={boundary?R`内部点的邻域对应欧氏空间中的开集；边界点的邻域对应半空间中的相对开集。边界并不是坐标卡“画到一半”的缺陷。`:R`同一点 $p$ 有两套坐标。重叠区上的转移函数 $\varphi_j\circ\varphi_i^{-1}$ 必须光滑，并有光滑逆。图中的平面圆盘表示开集，不包括所画的辅助边线。`}>
+ <path d="M95 105 C55 20 220 10 310 45 C390 10 570 15 595 105 C620 180 490 190 340 175 C180 190 80 170 95 105Z" fill="#e8f0f7" stroke={blue} strokeWidth={2}/><Label x={600} y={45}>M</Label>
+ <ellipse cx={255} cy={100} rx={85} ry={55} fill="#d0e8de" stroke={green}/><ellipse cx={375} cy={100} rx={85} ry={55} fill="#d2e4f3" stroke={blue}/><Dot x={boundary?215:310} y={boundary?173:100} label="p"/>
+ <Label x={225} y={75}>Ui</Label><Label x={400} y={75}>Uj</Label><Arrow a={[235,165]} b={[180,235]} label="φi"/><Arrow a={[400,165]} b={[500,235]} label="φj"/>
+ {boundary?<><path d="M100 290 A75 65 0 0 1 250 290Z" fill="#e2eee8" stroke={green}/><Dot x={175} y={290} label="φi(p)"/><Label x={175} y={325}>半空间中的邻域</Label></>:<ellipse cx={175} cy={270} rx={75} ry={45} fill="#e2eee8" stroke={green}/>}
+ <ellipse cx={500} cy={270} rx={75} ry={45} fill="#e3edf4" stroke={blue}/><Arrow a={[270,270]} b={[405,270]} label="φj ∘ φi⁻¹" color={red}/>
+ </Diagram>;}
+function BoundaryChart(){return <Diagram title="带边流形在边界点附近的半空间坐标" height={310} note={R`边界点 $p$ 的坐标邻域与半空间 $\mathbb H^m$ 的相对开集同胚。图中粗线表示真正的流形边界；虚线只划出坐标邻域，虚线端点不属于该邻域的边缘。`}>
+ <path d="M75 225 V105 C150 10 280 25 300 125 V225Z" fill="#e2eee8" stroke={green}/><line x1={75} y1={225} x2={300} y2={225} stroke={red} strokeWidth={5}/><path d="M125 225 A65 85 0 0 1 255 225" fill="#cbdedb" stroke={blue} strokeDasharray="5 4"/><Dot x={190} y={225} label="p ∈ ∂M"/><Label x={190} y={100}>U ⊂ M</Label><Arrow a={[320,160]} b={[390,160]} label="φ"/>
+ <path d="M430 225 A85 100 0 0 1 600 225" fill="#e3edf4" stroke={blue} strokeDasharray="5 4"/><line x1={410} y1={225} x2={625} y2={225} stroke={red} strokeWidth={5}/><Dot x={515} y={225} label="φ(p)"/><Label x={515} y={90}>半空间：xᵐ ≥ 0</Label><Label x={515} y={285}>真正的边界：xᵐ = 0</Label>
+ </Diagram>;}
+function CircleAtlas(){const[t,setT]=useState(.6),a=2*Math.PI*t;return <Diagram title="圆周的两张坐标卡" controls={<Range label="移动圆周上的点" value={t} onChange={setT}/>} height={310} note={R`第一张卡排除 $(1,0)$，用角度 $\theta_1\in(0,2\pi)$；第二张卡排除 $(-1,0)$，用 $\theta_2\in(-\pi,\pi)$。重叠区域有两个连通分支，转移函数分别为 $\theta_2=\theta_1$ 或 $\theta_1-2\pi$。极限端点不属于对应坐标卡。`}>
+ {[175,505].map((x,i)=><g key={i}><circle cx={x} cy={175} r={75} fill="none" stroke={i?green:blue} strokeWidth={4}/><circle cx={x+(i?-75:75)} cy={175} r={6} fill="#faf8f3" stroke={red}/><Dot x={x+75*Math.cos(a)} y={175-75*Math.sin(a)} label="p"/><Arrow a={[x-100,50]} b={[x+100,50]} label={i?'−π < θ₂ < π':'0 < θ₁ < 2π'}/><Arrow a={[x,95]} b={[x,65]} color={gold}/><Label x={x} y={285}>{i?'卡二：切开左端':'卡一：切开右端'}</Label></g>)}
+ </Diagram>;}
+function CoordinateMap(){return <Diagram title="映射的坐标表达构成交换图" note={R`上方是流形间的映射 $f$，下方才是可以求偏导的欧氏空间函数 $\psi\circ f\circ\varphi^{-1}$。沿任一路径都把 $p$ 送到 $\psi(f(p))$。`}>
+ <ellipse cx={150} cy={80} rx={95} ry={45} fill="#e2eee8" stroke={green}/><ellipse cx={525} cy={80} rx={95} ry={45} fill="#e6edf7" stroke={blue}/><Label x={150} y={85}>M：p</Label><Label x={525} y={85}>N：f(p)</Label><Arrow a={[255,80]} b={[420,80]} label="f"/><Arrow a={[150,135]} b={[150,205]} label="φ"/><Arrow a={[525,135]} b={[525,205]} label="ψ"/><Label x={150} y={245}>φ(p) ∈ Rᵐ</Label><Label x={525} y={245}>ψ(f(p)) ∈ Rⁿ</Label><Arrow a={[245,235]} b={[425,235]} label="ψ ∘ f ∘ φ⁻¹" color={red}/>
+ </Diagram>;}
+function CurveChart({fn=false,derivative=false}){const[t,setT]=useState(.45);const point=u=>[95+200*u,135-45*Math.sin(Math.PI*u)],p=point(t);return <Diagram title={derivative?'曲线确定作用在函数上的方向导数':fn?'函数与它的坐标表达':'曲线与它的坐标表达'} controls={<Range label={`曲线参数 t = ${t.toFixed(2)}`} value={t} onChange={setT}/>} height={330} note={derivative?R`取局部曲线 $c(t)=(t,t^2)$、函数 $f(x,y)=x+2y$。切向量是 $X=(1,2t)$，因而 $Xf=1+4t$。点、切矢量和函数值随着同一个参数移动。`:fn?R`函数 $f$ 作用在流形上的点，坐标表达 $f\circ\varphi^{-1}$ 作用在坐标元组上。两者输出相同的实数；坐标卡改变不会改变函数在点上的值。`:R`同一条曲线既可看成流形上的 $c(t)$，也可看成坐标空间中的 $\varphi(c(t))$。参数区间不是流形本身。`}>
+ <ellipse cx={195} cy={125} rx={140} ry={85} fill="#e2eee8" stroke={green}/><Curve f={point}/><Dot x={p[0]} y={p[1]} label="c(t)"/>{derivative&&<Arrow a={p} b={[p[0]+65,p[1]-35]} color={red} label="X"/>}
+ <Arrow a={[210,215]} b={[210,260]} label="φ"/><Curve f={u=>[95+200*u,315-35*u*u]} color={green}/><Dot x={95+200*t} y={315-35*t*t} label="φ(c(t))"/>
+ <Arrow a={[350,125]} b={[480,125]} label="f"/><line x1={535} y1={45} x2={535} y2={260} stroke={blue} strokeWidth={2}/><Dot x={535} y={220-50*(t+2*t*t)} label={derivative?`Xf = ${(1+4*t).toFixed(2)}`:'f(c(t))'}/><Arrow a={[340,280]} b={[510,230]} color={red} label="f ∘ φ⁻¹"/>
+ </Diagram>;}
+function Pushforward(){const[t,setT]=useState(.5);return <Diagram title="微分映射把切向量推向目标切空间" controls={<Range label={`位置 x = ${t.toFixed(2)}`} min={.1} max={1} value={t} onChange={setT}/>} note={R`一维例子 $f(x)=x^2$，在 $x$ 处有 $f_*X=2xX$。图中两边各是一张切空间示意，蓝色向量取 $X=1$；右边向量长度由真实导数计算。`}>
+ <Arrow a={[70,215]} b={[285,215]} label="TpM"/><Arrow a={[425,215]} b={[640,215]} label="Tf(p)N"/><Arrow a={[110,205]} b={[195,120]} label="X = 1"/><Arrow a={[450,205]} b={[450+170*t,205-170*t]} label={`f*X = ${(2*t).toFixed(2)}`} color={red}/><Arrow a={[280,115]} b={[400,115]} label="f*" color={green}/>
+ </Diagram>;}
+function Immersion(){return <Diagram title="正则浸入与嵌入的区别" height={300} note={R`左图 $f(t)=(\sin t,\sin2t)$ 的导数从不同时为零，是浸入，但有自交所以不是嵌入。右图 $g(t)=(\cos t,\sin t)$ 是圆周的嵌入。交叉点两条分支来自不同的圆周点。`}>
+ <Curve f={t=>[175+105*Math.sin(2*Math.PI*t),135-75*Math.sin(4*Math.PI*t)]} color={red}/><circle cx={175} cy={135} r={10} fill="none" stroke={gold} strokeWidth={2}/><Curve f={t=>[510+100*Math.cos(2*Math.PI*t),135-75*Math.sin(2*Math.PI*t)]} color={green}/><Label x={175} y={265}>浸入：导数满秩，但不单射</Label><Label x={510} y={265}>嵌入：保持原空间的拓扑</Label>
+ </Diagram>;}
+function Transport(){const[e,setE]=useState(.5);return <Diagram title="比较不同点的向量前，先沿流推回" controls={<Range label={`流参数 ε = ${e.toFixed(2)}`} value={e} onChange={setE}/>} note={R`模型取 $X=\partial_x$ 的平移流 $\sigma_\varepsilon(x,y)=(x+\varepsilon,y)$，$Y=x\partial_y$。推回不改变向量分量，但会把向量放回同一基点；差商为 $\partial_y=[X,Y]$。`}>
+ <Arrow a={[85,245]} b={[600,245]} label="x"/><Dot x={170} y={245} label="x"/><Dot x={170+300*e} y={245} label="σε(x)"/><Arrow a={[170,235]} b={[170,180]} label="Y|x"/><Arrow a={[170+300*e,235]} b={[170+300*e,180-55*e]} label="Y|σε(x)" color={red}/><Arrow a={[170,235]} b={[170,180-55*e]} color={red} dash/><Arrow a={[160+300*e,100]} b={[185,100]} label="(σ−ε)*" color={green}/>
+ </Diagram>;}
+function OrientationCharts(){return <Diagram title="反向粘合使局部标架无法全局定向" note={R`沿Möbius带绕一圈后，局部坐标变为 $(u,v)\mapsto(u+L,-v)$。转移矩阵 $\mathrm{diag}(1,-1)$ 的行列式为 $-1$：沿带方向不变，横向基矢反转。这是不可定向性的局部坐标判据。`}>
+ {[0,1].map(i=><g key={i}><rect x={80+350*i} y={65} width={160} height={160} fill="#e1edf2" stroke={blue}/><Arrow a={[120+350*i,145]} b={[210+350*i,145]} label="e₁"/><Arrow a={[120+350*i,145]} b={[120+350*i,i?210:80]} label="e₂" color={red}/><Label x={160+350*i} y={270}>{i?'绕行后的坐标卡':'出发时的坐标卡'}</Label></g>)}<Arrow a={[270,145]} b={[400,145]} label="det J = −1" color={green}/>
+ </Diagram>;}
+export function ManifoldRedraw({n}){switch(n){case'5.1':case'5.5':return <StereoLab/>;case'5.2':return <Charts/>;case'5.3':return <BoundaryChart/>;case'5.4':return <CircleAtlas/>;case'5.6':return <CoordinateMap/>;case'5.7':return <CurveChart/>;case'5.8':return <CurveChart fn/>;case'5.9':return <CurveChart derivative/>;case'5.10':return <Pushforward/>;case'5.11':return <Immersion/>;case'5.12':return <Transport/>;case'5.13':return <BracketLab/>;case'5.14':return <OrientationCharts/>;default:throw Error(`Unknown manifold figure ${n}`);}}

@@ -1,3 +1,4 @@
+import { HaloPairsRedraw, HaloPowerRedraw } from "./_ch14_redraw.jsx";
 // §12.7 The halo model —— 式 (12.90)–(12.97)，图 12.11–12.12；§12.8 Summary —— 式 (12.98)–(12.104)
 import { Sec, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
 
@@ -31,14 +32,14 @@ export function Sec127() {
       <Tx>{R`这个方程表明，晕模型中的非线性物质功率谱可以由晕的质量函数（$dn/d\ln M$）、晕轮廓（$y(x,M)$）与晕的成团（通过 $\delta_{\rm h}$ 的功率谱）算出。细节可以在 \exref{12.13} 中完成。
 
 **一晕项与二晕项。**结果是，晕模型中的物质功率谱自然分解为两部分：$P^{\rm HM}(k)=P_{2{\rm h}}(k)+P_{1{\rm h}}(k)$。第一部分"**二晕项**"来自晕本身的大尺度成团，涉及**不同**晕中的两个质量元（\figref{12.11}）。第二部分"**一晕项**" $P_{1{\rm h}}$ 本质上是晕的散粒噪声与其轮廓的卷积；即使晕完全不成团它也存在，只涉及**同一个**晕内的质量元。由 \figref{12.11} 可以猜到，它在小尺度上占主导。`}</Tx>
-      <Figure n="12.11" width="64%" caption={R`晕模型功率谱各项贡献的示意。所有物质都在各种质量的晕中（阴影圆）。大尺度上，功率谱由涉及两个晕的贡献主导（$P_{2{\rm h}}(k)$）；小尺度上，由单个晕内部的贡献主导（$P_{1{\rm h}}(k)$）。`} />
+      <Figure n="12.11" illustration={<HaloPairsRedraw />} width="100%" caption={R`晕内点对贡献一晕项，不同晕中的点对贡献二晕项；点击切换两种点对。`} />
       <Derivation title={R`\exref{12.13} 的结果：$P_{2{\rm h}}$ 与 $P_{1{\rm h}}$（依据附录 A）`} collapsed steps={[
         { tex: R`P^{\rm HM}(k)=\frac1{\rho_{\rm m}^2}\int d\ln M\frac{dn}{d\ln M}M\int d\ln M'\frac{dn}{d\ln M'}M'\,y(k,M)y(k,M')P_{\rm h}(k,M,M')`, why: R`对 \eqref{12.97} 做 Fourier 变换：卷积变乘积；$\langle\delta_{\rm h}(\boldsymbol k,M)\delta_{\rm h}(\boldsymbol k',M')\rangle=(2\pi)^3\delta_{\rm D}^{(3)}(\boldsymbol k+\boldsymbol k')P_{\rm h}(k,M,M')$。` },
         { tex: R`P_{\rm h}(k,M,M')=b_1(M)b_1(M')P_{\rm L}(k)+\frac{\delta_{\rm D}^{(1)}(\ln M-\ln M')}{dn/d\ln M}`, why: R`线性偏袒 + 不同质量独立的 Poisson 噪声（\eqref{12.117}）。` },
         { tex: R`P_{2{\rm h}}(k)=\Big[\frac1{\rho_{\rm m}}\int d\ln M\frac{dn}{d\ln M}Mb_1(M)y(k,M)\Big]^2P_{\rm L}(k),\qquad P_{1{\rm h}}(k)=\frac1{\rho_{\rm m}^2}\int d\ln M\frac{dn}{d\ln M}M^2[y(k,M)]^2`, why: R`两项分别来自偏袒项与噪声项。$k\to0$ 时 $y\to1$，二晕项要回到 $P_{\rm L}$ 就要求偏袒一致性条件 $\int d\ln M\frac{dn}{d\ln M}\frac{M}{\rho_{\rm m}}b_1=1$。` },
       ]} result={R`一晕项在 $k\to0$ 时趋于常数 $\rho_{\rm m}^{-2}\int d\ln M\,\frac{dn}{d\ln M}M^2$——这是非物理的（物质功率谱不可能有常数噪声），根源是 \eqref{12.117} 假设的不相关 Poisson 噪声与"总质量固定"相矛盾；在晕模型适用的尺度上它在数值上很小。`} />
       <Tx>{R`**与模拟比较。**\figref{12.12} 给出所得功率谱的数值计算。大尺度上它与线性功率谱一致，正如所要求的；那里二晕项占主导。小尺度上一晕项占主导：这时我们探测的是晕的内部，功率谱由晕轮廓的形状与质量函数共同决定。\figref{12.12} 下图把这个简单计算与完整 N 体模拟测得的非线性物质功率谱作比较。考虑到它如此简单，晕模型表现得相当好：在很宽的尺度范围内预言功率谱的误差在 25% 以内，最显著的偏离是在小尺度上低估功率（可以通过调整假设的晕浓度–质量关系来改进）。对于精密应用这不够，但它能近似描述如此宽的尺度范围，说明晕模型可以是一个有用的唯象框架。在与物质功率谱相同的假设下，还可以算出其他统计量，例如物质与晕的互关联、或物质双谱。`}</Tx>
-      <Figure n="12.12" width="64%" caption={R`上图：$z=0$ 晕模型中的非线性物质功率谱（黑实线）。这里采用 \figref{12.9} 所示的 $f(\nu)$ 处方及由 \eqref{12.80} 导出的相应偏袒，以及截断的 NFW 轮廓（细节见 \exref{12.13}）。图中也画出一晕项（$P_{1{\rm h}}$）与二晕项（$P_{2{\rm h}}$）的贡献，以及线性功率谱。注意 $P_{1{\rm h}}(k)$ 在大尺度上趋于一个小的常数，这是非物理的，但在数值上不重要。下图：晕模型功率谱与 N 体模拟测得的功率谱之比，后者用 CosmicEmu 程序（Heitmann et al., 2014）插值到基准宇宙学。晕模型把物质功率谱预言到 25% 以内，直到非常小的尺度；在大尺度上则好得多。`} />
+      <Figure n="12.12" illustration={<HaloPowerRedraw />} width="100%" caption={R`原创简化晕模型计算：一晕项、二晕项、总谱与线性谱。未使用 CosmicEmu，不绘制模拟比值。`} />
     </Sec>);
 }
 

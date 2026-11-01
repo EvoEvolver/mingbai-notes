@@ -1,3 +1,4 @@
+import { EinsteinStructureRedraw } from "./_redraw_early.jsx";
 // §3.1 Einstein equations —— 式 (3.1)–(3.14)，图 3.1
 import { Sec, Tx, Eq, Box, Derivation, Figure, Details, C } from "@kit";
 import { FriedmannPlot, FractionPlot } from "./_ch03_plots.jsx";
@@ -14,7 +15,7 @@ export function Sec31() {
       <Tx>{R`**我们要解决的问题。**上一章我们只用度规描述引力：度规告诉我们"距离"是什么、"直线"（测地线）是什么，这些都只依赖**广义协变性**这一条原则。现在转向广义相对论的另一半：时空的几何**由什么决定**？答案浓缩在 **Einstein 方程**（Einstein equations）里——它把描述几何的 **Einstein 张量**和描述物质的**能动张量**（energy-momentum tensor）等同起来：`}</Tx>
       <Eq n="3.1" keyEq title="Einstein 方程" say="时空怎样弯曲（左边，只由度规决定）等于其中装了多少能量和动量（右边）：物质告诉时空如何弯曲。宇宙学常数 $\Lambda$ 作为一个与度规成正比的项也可以放在左边。">{R`G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G\,T_{\mu\nu}.`}</Eq>
       <Box kind="note" title="术语提醒：相对论者口中的“物质”">{R`研究相对论的人常把 Einstein 方程右边出现的**任何东西**都叫作"物质"（matter），尽管它一般也包括辐射等其他成分。本书偶尔也沿用这种说法——要留心上下文：在 Friedmann 方程里，"物质"（$\Omega_{\rm m}$）则专指非相对论成分。`}</Box>
-      <Figure n="3.1" caption={R`荷兰莱顿一栋建筑外墙上画着的 Einstein 方程。画面描绘的是引力透镜（参见 \figref{3.4}）。画作：Jan-Willem Bruins（TegenBeeld）；照片：Vysotsky，CC BY-SA 4.0。`} width="70%" />
+      <Figure n="3.1" caption={R`原创方程结构图：物质的能动张量与时空曲率相联系，度规进一步决定粒子与光的测地线。替代原书 Einstein 方程墙画照片，以概念关系引入本章计算，不复刻墙画。`} illustration={<EinsteinStructureRedraw />} />
       <Tx>{R`式中 $G_{\mu\nu}$ 是 **Einstein 张量**，定义为`}</Tx>
       <Eq n="3.2" keyEq title="Einstein 张量" say="Einstein 张量 = Ricci 张量减去一半的“度规 $\times$ Ricci 标量”：这是由曲率构造出的、天然满足守恒律的组合。">{R`G_{\mu\nu} \equiv R_{\mu\nu} - \frac12 g_{\mu\nu}R.`}</Eq>
       <Tx>{R`逐项认识一下：

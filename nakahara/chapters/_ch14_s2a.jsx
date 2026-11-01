@@ -1,3 +1,4 @@
+import { GaugeSliceRedraw, GaugeTangentRedraw, GenusSumRedraw, MappingClassCurvesRedraw, OperatorSplitRedraw } from "./_redraw_ch12_14.jsx";
 // §14.2.1–14.2.2 玻色弦的量子理论：真空振幅、积分测度 —— 式 (14.30)–(14.96)，例 14.2，习题 14.3–14.4，图 14.1–14.5
 import { Sec, Sub, Tx, Eq, Box, Stmt, Proof, Exercise, Derivation, Figure, C } from "@kit";
 
@@ -26,7 +27,7 @@ function Sub1421() {
       <p className="muted">本小节概念：<C id="polyakov" /> · <C id="gauge_slice" /> · <C id="moduli" /></p>
       <Tx>{R`**对所有曲面求和。**按路径积分的一般规则，弦理论的配分函数（真空到真空的振幅）为`}</Tx>
       <Eq n="14.30" title="弦的配分函数" say={R`弦的真空振幅：对所有亏格（拓扑）求和，每个亏格内再对所有嵌入与所有度规积分——"对粒子路径求和"的二维推广。`}>{R`Z=\sum_{g=0}^\infty Z_g=\sum_{g=0}^\infty\int\mathcal{D}X\mathcal{D}\gamma\,\mathrm{e}^{-S[X,\gamma]}`}</Eq>
-      <Figure n="14.1" caption={R`总真空振幅由 $g$ 圈振幅求和给出。`} width="70%" />
+      <Figure illustration={<GenusSumRedraw />} n="14.1" caption={R`总真空振幅由 $g$ 圈振幅求和给出。`} width="100%" />
       <Tx>{R`见 \figref{14.1}。为避免混淆，**亏格记作 $g$，度规记作 $\gamma$**。对亏格求和就是对拓扑求和。$Z_g$ 是 $g$ 圈振幅，由对所有度规 $\gamma$ 与所有嵌入 $X$ 积分得到。后面会看到，测度 $\mathcal{D}X\mathcal{D}\gamma$ 并没有良好定义，需要修改。弦的作用量 $S[X,\gamma]$ 取为`}</Tx>
       <Eq n="14.31" title="弦的作用量" say={R`第一项是 Polyakov 作用量；第二项 $=-\lambda\chi$ 是拓扑不变量，只给亏格 $g$ 的曲面一个权重 $\mathrm{e}^{-2\lambda g}$（弦耦合），不影响动力学。`}>{R`S[X,\gamma]\equiv\frac12\int\dd^2\xi\,\sqrt\gamma\gamma^{\alpha\beta}\partial_\alpha X^\mu\partial_\beta X_\mu-\frac{\lambda}{4\pi}\int\dd^2\xi\,\sqrt\gamma\mathcal{R}.`}</Eq>
       <Tx>{R`第一项是 Polyakov 作用量。第二项正比于 Euler 示性数
@@ -47,7 +48,7 @@ $$\chi=\frac1{4\pi}\int\dd^2\xi\,\sqrt\gamma\mathcal{R}=2-2g,$$
       <Eq n="14.35" say={R`Weyl 重标度：度规在每一点乘上一个任意的正函数。`}>{R`\gamma_{\alpha\beta}\to\hat\gamma_{\alpha\beta}\equiv\mathrm{e}^\phi\gamma_{\alpha\beta}`}</Eq>
       <Tx>{R`其中 $\phi\in\mathcal{F}${SG}$。$S$ 的共形不变性写成`}</Tx>
       <Eq n="14.36" say={R`二维特有：$\sqrt\gamma\gamma^{\alpha\beta}$ 在 Weyl 变换下不变，所以 Polyakov 作用量不在乎度规的"尺度"。`}>{R`S[X,\gamma]=S[X,\hat\gamma].`}</Eq>
-      <Figure n="14.2" caption={R`$\mathcal{E}\times\mathcal{M}_g$ 中的元素由 $\mathrm{Diff}(\Sigma_g)*\mathrm{Weyl}(\Sigma_g)$ 作用在规范切片中的元素 $(X,\gamma)$ 上得到。`} width="45%" />
+      <Figure illustration={<GaugeSliceRedraw />} n="14.2" caption={R`$\mathcal{E}\times\mathcal{M}_g$ 中的元素由 $\mathrm{Diff}(\Sigma_g)*\mathrm{Weyl}(\Sigma_g)$ 作用在规范切片中的元素 $(X,\gamma)$ 上得到。`} width="100%" />
       <Tx>{R`对称性 (A)、(B) 在量子化后必须保留，否则理论有**反常**（anomaly）。
 
 **Faddeev–Popov 的想法。**按标准的 Faddeev–Popov 方法，定义 $Z_g$ 时必须略去与这些对称性对应的自由度。例如，若 $(X_1,\gamma_1)$ 与 $(X_2,\gamma_2)$ 由 $\mathrm{Diff}${SG}$ 的一个元素相联系，就不应把它们当作独立的几何分别计数；同样 $(X,\gamma)$ 与 $(X,\mathrm{e}^\phi\gamma)$ 也不应独立计数。不加注意，我们会把同一组态数无穷多次，导致灾难性的发散。可以把所有几何 $(X,\gamma)$ 的空间分成等价类，并取一个**规范切片**（gauge slice）：切片上任何两点都不能由这些对称性相连（\figref{14.2}）。
@@ -56,7 +57,7 @@ $$\chi=\frac1{4\pi}\int\dd^2\xi\,\sqrt\gamma\mathcal{R}=2-2g,$$
       <Eq n="14.37" say={R`规范群的元素（微分同胚 + Weyl 因子）同时作用在嵌入与度规上。`}>{R`(f,\mathrm{e}^\phi)(X,\gamma)=(f^*X,\mathrm{e}^\phi f^*\gamma).`}</Eq>
       <Tx>{R`商 $\mathcal{M}_g/G$ 称为 $\Sigma_g$ 的**模空间**（moduli space），记作 $${Mod}${SG}$。我们也关心 $\mathrm{Diff}${SG}$ 的子群 $${Diff0}${SG}$——恒等映射所在的连通分支。商空间 $${Teich}${SG}\equiv\mathcal{M}_g/${Diff0}${SG}*${Weyl}${SG}$ 称为 $\Sigma_g$ 的 **Teichmüller 空间**。Riemann 面的一般理论表明，$${Teich}${SG}$ 是 $${Mod}${SG}$ 的有限维万有覆叠空间。具体地：`}</Tx>
       <Eq n="14.38" keyEq title="Teichmüller 空间的维数" say={R`真正的度规自由度（模参数）是有限个：球面没有，环面 2 个实参数（即 $\tau$），亏格 $g\ge2$ 有 $6g-6$ 个。`}>{R`\dim_{\R}${Teich}${SG}=\begin{cases}0&g=0\\2&g=1\\6g-6&g\ge2.\end{cases}`}</Eq>
-      <Figure n="14.3" caption={R`映射类群（MCG）由绕 $a_i$、$b_i$、$c_i$（$1\le i\le g$）的 Dehn 扭转生成。`} width="80%" />
+      <Figure illustration={<MappingClassCurvesRedraw />} n="14.3" caption={R`自绘亏格 $3$ 的生成曲线示意：$a_1,a_2,a_3$、$b_1,b_2,b_3$ 与连接相邻环柄的 $c_1,c_2$；每条曲线定义一个 Dehn 扭转。`} width="100%" />
       <Tx>{R`群 $\mathrm{Diff}${SG}/${Diff0}${SG}$ 称为**模群**（modular group，MG）或**映射类群**（mapping class group，MCG）。MCG 由例 8.2 中定义的 **Dehn 扭转**生成：对亏格 $g$ 的曲面，MCG 由绕 \figref{14.3} 中 $a_i$、$b_i$、$c_i$ 的 $3g-1$ 个 Dehn 扭转生成（Lickorish）。遗憾的是这 $3g-1$ 个 Dehn 扭转不是最小生成元组；$g\ge2$ 时 MCG 的一般形式还不清楚。（$g=1$ 时 MCG $=\mathrm{SL}(2,\Z)$，就是第 8 章的模群，见交互图 1。）
 
 由这些论证，有意义的配分函数是`}</Tx>
@@ -213,7 +214,7 @@ $$\begin{aligned}(P_1\delta v,\delta h)&=\int\dd^2\xi\,\sqrt\gamma G^{\alpha\bet
       <Eq n="14.76" keyEq title={R`$P_1$ 的伴随`} say={R`$P_1^\dagger$ 是无迹张量的散度：它的核——无散的无迹对称张量——就是全纯二次微分，对应模参数。`}>{R`(P_1^\dagger\delta h)_\alpha=-2\nabla^\beta\delta h_{\alpha\beta}.`}</Eq>
       <Box kind="warning" title={R`注：一个常数因子（p.565）`}>{R`按 \eqref{14.55}，$G^{\alpha\beta\gamma\delta}(P_1\delta v)_{\alpha\beta}\delta h_{\gamma\delta}=2(P_1\delta v)^{\gamma\delta}\delta h_{\gamma\delta}$（$\delta h$ 无迹），上面第二行严格说应多一个因子 2，从而 $P_1^\dagger\delta h=-4\nabla^\beta\delta h_{\alpha\beta}$。这只相当于给无迹张量的内积换一个常数归一化，不改变 $\ker P_1^\dagger$，对行列式也只贡献常数，原书（与本站）在后面一律略去这类常数。`}</Box>
       <Tx>{R`**正交分解。**设 $\delta h$ 与所有 $P_1\delta v$ 正交。由上，$(P_1\delta v,\delta h)=(\delta v,P_1^\dagger\delta h)=0$；由于 $\delta v$ 任意，$\delta h$ 必属于 $\ker P_1^\dagger$（\figref{14.4}）。于是 $T_i$ 可以分解为`}</Tx>
-      <Figure n="14.4" caption={R`映射 $P_1$ 及其伴随 $P_1^\dagger$。`} width="55%" />
+      <Figure illustration={<OperatorSplitRedraw />} n="14.4" caption={R`映射 $P_1$ 及其伴随 $P_1^\dagger$。`} width="100%" />
       <Eq n="14.77a" say={R`Teichmüller 形变 = 与规范方向正交的部分 + 落在规范方向（$\operatorname{im}P_1$）中的部分。`}>{R`T_i=\mathcal{P}_0T_i+\mathcal{P}_\perp T_i`}</Eq>
       <Tx>{R`其中投影算子 $\mathcal{P}_0$ 与 $\mathcal{P}_\perp$ 定义为`}</Tx>
       <Eq n="14.77b" say={R`$\mathcal{P}_\perp$ 投影到 $P_1$ 的像（规范方向），$\mathcal{P}_0$ 投影到 $\ker P_1^\dagger$（物理方向）。`}>{R`\mathcal{P}_0\equiv1-P_1\frac{1}{P_1^\dagger P_1}P_1^\dagger\qquad\mathcal{P}_\perp\equiv P_1\frac{1}{P_1^\dagger P_1}P_1^\dagger.`}</Eq>
@@ -222,7 +223,7 @@ $$\begin{aligned}(P_1\delta v,\delta h)&=\int\dd^2\xi\,\sqrt\gamma G^{\alpha\bet
 $$u_i=\frac{1}{P_1^\dagger P_1}P_1^\dagger T_i.$$
 
 设 $\{\psi_r\}$（$1\le r\le n$）是 $\ker P_1^\dagger$ 的一组实基（不必正交归一）。于是 $T_i$ 可展开为（\figref{14.5}）`}</Tx>
-      <Figure n="14.5" caption={R`$\{T_i\}$ 张成与规范切片相切的形变，$\{\psi_r\}$ 张成 $\ker P_1^\dagger$。`} width="50%" />
+      <Figure illustration={<GaugeTangentRedraw />} n="14.5" caption={R`$\{T_i\}$ 张成与规范切片相切的形变，$\{\psi_r\}$ 张成 $\ker P_1^\dagger$。`} width="100%" />
       <Eq n="14.78" say={R`把 Teichmüller 形变写成"物理基 $\psi_r$ 的组合 + 规范方向 $P_1u_i$"。`}>{R`T_i=\sum_r\psi_rQ_{ri}+P_1u_i.`}</Eq>
       <Tx>{R`用 $\psi_r$ 与 $T_i$ 作内积（$\psi$ 与 $P_1u_i$ 正交），得`}</Tx>
       <Eq n="14.79" say={R`展开系数：$T_i$ 在非正交基 $\psi_r$ 上的投影要乘以 Gram 矩阵的逆。`}>{R`Q_{ri}=\sum_s[(\psi,\psi)^{-1}]_{rs}(\psi_s,T_i).`}</Eq>

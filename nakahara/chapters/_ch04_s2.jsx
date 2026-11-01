@@ -1,3 +1,4 @@
+import {HomotopyRedraw} from "./_redraw_homotopy.jsx";
 // §4.2 基本群的一般性质、§4.3 基本群的例子 —— 式 (4.5)–(4.13)，定义 4.6–4.9，命题 4.2，定理 4.2–4.6，推论 4.1，引理 4.2，
 // 例 4.1–4.3，习题 4.1–4.2，图 4.6–4.9，交互图 1（WindingLab）
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Proof, Erratum, Exercise, Derivation, C } from "@kit";
@@ -21,7 +22,7 @@ export function Sec42() {
             { claim: R`于是 $P_\eta^{-1}\circ P_\eta=\mathrm{id}_{\pi_1(X,x_0)}$；对称地 $P_\eta\circ P_\eta^{-1}=\mathrm{id}_{\pi_1(X,x_1)}$。由第 2 章习题 2.3（$g\circ f=\mathrm{id}$ ⇒ $f$ 单、$g$ 满），$P_\eta$ 是双射，从而是同构。` },
           ]} />
         </Stmt>
-        <Figure n="4.6" caption={R`由 $x_0$ 处的圈 $\alpha$ 构造出 $x_1$ 处的圈 $\eta^{-1}*\alpha*\eta$。`} width="45%" />
+        <Figure n="4.6" illustration={<HomotopyRedraw n="4.6"/>} caption={R`由 $x_0$ 处的圈 $\alpha$ 构造出 $x_1$ 处的圈 $\eta^{-1}*\alpha*\eta$。`} width="45%" />
         <Tx>{R`因此，若 $X$ 弧连通，就不必指明基点：对任意 $x_0,x_1\in X$ 都有 $\pi_1(X,x_0)\cong\pi_1(X,x_1)$，可以简写为 $\pi_1(X)$。`}</Tx>
         <Exercise n="4.1" title={R`$P_\eta$ 只依赖于 $\eta$ 的同伦类，并满足复合律`} level="★"
           hint={R`(1) 设 $\eta\sim\zeta$（端点固定的道路同伦），由 \sref{L4.1} 的论证（对道路同样成立）得 $\eta^{-1}*\alpha*\eta\sim\zeta^{-1}*\alpha*\zeta$。注意 $\eta\sim\zeta\Rightarrow\eta^{-1}\sim\zeta^{-1}$。(2) 直接展开 $(\eta*\zeta)^{-1}=\zeta^{-1}*\eta^{-1}$。`}
@@ -63,7 +64,7 @@ $$P_{\eta*\zeta}([\alpha])=[\zeta^{-1}*\eta^{-1}*\alpha*\eta*\zeta]=P_\zeta\big(
 对任意一对 $X$、$Y$，"同伦型相同"不太好直观把握。实践中常见的情形是 $Y$ 是 $X$ 的子空间。这时若 $Y$ 可以由 $X$ 连续地变形而来，就有 $X\simeq Y$。`}</Tx>
         <Stmt id="D4.7" />
         <Tx>{R`注意整个 $X$ 被映到 $R$ 上，而 $R$ 中的点保持不动。\figref{4.7} 是收缩核与收缩的一个例子。`}</Tx>
-        <Figure n="4.7" caption={R`圆周 $R$ 是圆环 $X$ 的收缩核。箭头表示收缩的作用。`} width="40%" />
+        <Figure n="4.7" illustration={<HomotopyRedraw n="4.7"/>} caption={R`圆周 $R$ 是圆环 $X$ 的收缩核。箭头表示收缩的作用。`} width="40%" />
         <Stmt id="D4.8">
           <Eq n="4.5" say={R`形变从恒等映射出发（$t=0$ 时每点不动），到 $t=1$ 时把整个空间压到子空间 $R$ 上。`}>{R`H(x,0)=x\qquad H(x,1)\in R\qquad\text{for any }x\in X`}</Eq>
           <Eq n="4.6" say={R`形变的全过程中，$R$ 里的点始终一动不动。`}>{R`H(x,t)=x\qquad\text{for any }x\in R\text{ and any }t\in I.`}</Eq>
@@ -74,7 +75,7 @@ $$P_{\eta*\zeta}([\alpha])=[\zeta^{-1}*\eta^{-1}*\alpha*\eta*\zeta]=P_\zeta\big(
 
 当 $R$ 是 $X$ 的形变收缩核时，$X$ 与 $R$ 同伦型相同（收缩 $f=H(\cdot,1)$ 与包含映射 $i:R\hookrightarrow X$ 互为同伦逆：$f\circ i=\mathrm{id}_R$，$i\circ f\sim\mathrm{id}_X$ 由 $H$ 给出），于是`}</Tx>
         <Eq n="4.7" keyEq title="形变收缩保持基本群" say={R`把空间形变收缩到子空间上，基本群不变：可以放心地用更简单的“骨架”代替原空间计算 $\pi_1$。`}>{R`\pi_1(X,a)\cong\pi_1(R,a)\qquad a\in R.`}</Eq>
-        <Figure n="4.8" caption={R`圆周 $R$ 不是 $X$ 的形变收缩核。`} width="40%" />
+        <Figure n="4.8" illustration={<HomotopyRedraw n="4.8"/>} caption={R`圆周 $R$ 不是 $X$ 的形变收缩核。`} width="40%" />
         <Erratum kind="note" loc={R`p.150，式 (4.7) 前一句`} title={R`(4.7) 适用于形变收缩核，不适用于图 4.8`}>{R`原书在讨论完 \figref{4.8} 之后紧接着写"由于 $X$ 与 $R$ 同伦型相同，有 (4.7)"，读起来像是在说图 4.8。但图 4.8 中的 $R$ 恰恰**不是**形变收缩核，(4.7) 在那里不成立：$X$ 是挖去两个洞的圆盘，$\pi_1(X)$ 是两个生成元的自由群（与 2-花束同伦型相同，例 4.7），而 $\pi_1(R)\cong\mathbb{Z}$。本站把 (4.7) 明确放在"$R$ 是形变收缩核"的前提下。`}</Erratum>
         <Box kind="example" n="4.1" title="圆周是圆环的形变收缩核">
           <Tx>{R`设 $X$ 为单位圆周，$Y$ 为圆环：`}</Tx>
@@ -131,7 +132,7 @@ export function Sec43() {
         { tex: R`\tilde f(x)-\tilde f(y)=\tilde f(y+2\pi m)-\tilde f(y)`, why: R`$x=y+2\pi m$。` },
         { tex: R`=\tilde f(y)+2\pi mn-\tilde f(y)=2\pi mn`, why: R`反复使用 $\tilde f(x+2\pi)=\tilde f(x)+2n\pi$（$m<0$ 时向反方向用）。` },
       ]} result={R`$\tilde f(x)\sim\tilde f(y)$`} />
-      <Figure n="4.9" caption={R`由 $x\mapsto\exp(ix)$ 定义的映射 $p:\mathbb{R}\to S^1$ 把 $x+2m\pi$ 投影到 $S^1$ 上的同一点；而满足 $\tilde f(0)=0$、$\tilde f(x+2\pi)=\tilde f(x)+2n\pi$（$n$ 固定）的 $\tilde f:\mathbb{R}\to\mathbb{R}$ 定义了映射 $f:S^1\to S^1$。整数 $n$ 指定了 $f$ 所属的同伦类。`} width="70%" interactive={<WindingLab />} />
+      <Figure n="4.9" caption={R`由 $x\mapsto\exp(ix)$ 定义的映射 $p:\mathbb{R}\to S^1$ 把 $x+2m\pi$ 投影到 $S^1$ 上的同一点；而满足 $\tilde f(0)=0$、$\tilde f(x+2\pi)=\tilde f(x)+2n\pi$（$n$ 固定）的 $\tilde f:\mathbb{R}\to\mathbb{R}$ 定义了映射 $f:S^1\to S^1$。整数 $n$ 指定了 $f$ 所属的同伦类。`} width="70%" illustration={<WindingLab />} />
       <Tx>{R`因此 $\tilde f:\mathbb{R}\to\mathbb{R}$ 唯一地定义了连续映射 $f:\mathbb{R}/2\pi\mathbb{Z}\to\mathbb{R}/2\pi\mathbb{Z}$，$f([x])=p\circ\tilde f(x)$（\figref{4.9}）。注意 $f$ 保持基点 $1\in S^1$ 不动。反过来，给定保持 $1\in S^1$ 不动的映射 $f:S^1\to S^1$，可以定义 $\tilde f:\mathbb{R}\to\mathbb{R}$，使 $\tilde f(0)=0$ 且 $\tilde f(x+2\pi)=\tilde f(x)+2\pi n$（**提升**：从 $\tilde f(0)=0$ 出发，沿着 $x$ 连续地追踪角度，这个连续选择是唯一的）。
 
 总之，满足 $f(1)=1$ 的映射 $f:S^1\to S^1$ 的集合，与满足 $\tilde f(0)=0$、$\tilde f(x+2\pi)=\tilde f(x)+2\pi n$ 的映射 $\tilde f:\mathbb{R}\to\mathbb{R}$ 的集合一一对应。整数 $n$ 称为 $f$ 的**映射度**（degree），记作 $\deg(f)$：$x$ 绕 $S^1$ 一圈时，$f(x)$ 绕 $S^1$ 转 $n$ 圈。`}</Tx>

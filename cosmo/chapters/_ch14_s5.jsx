@@ -44,7 +44,7 @@ $\chi^2$ 的二阶导数包含两项：`}</Tx>
         { tex: R`\big\langle\hat C_l-C_l(\bar\lambda)\big\rangle=0\ \Rightarrow\ F_{\alpha\beta}=\sum_l\frac{1}{V_l}\frac{\partial C_l}{\partial\bar\lambda_\alpha}\frac{\partial C_l}{\partial\bar\lambda_\beta}`, why: R`在真值处取期望，第二项消失。单参数时即 $F=\langle\mathcal F\rangle$（\eqref{14.67}）。` },
       ]} />
       <Tx>{R`**两个参数：条件误差与边缘化误差。**对高斯分布与单个参数 $\lambda$，预测的 $1\sigma$ 不确定度是 $1/\sqrt F$。若有不止一个参数可变呢？\figref{14.4} 画出了二维情形。若参数 $\lambda_2$ 已知，$\lambda_1$ 的误差为 $1/\sqrt{F_{11}}$。但若 $\lambda_2$ 可变，$\lambda_1$ 的正确误差要在对 $\lambda_2$ 的所有可能值积分之后得到，结果是 $\sqrt{(F^{-1})_{11}}$。`}</Tx>
-      <Figure n="14.4" interactive={<FisherEllipse />} caption={R`二维参数空间中的误差椭圆。似然的极大值 $(\bar\lambda_1,\bar\lambda_2)$ 用星号标出。图中给出 $\lambda_1$ 的两种可能误差：若 $\lambda_2$ 完全已知（先验无限窄），$\lambda_1$ 的误差对应椭圆在 $\lambda_2=\bar\lambda_2$ 处的宽度，等于 $1/\sqrt{F_{11}}$；若对 $\lambda_2$ 没有任何先验信息，应报告的误差是对 $\lambda_2$ 边缘化之后分布的宽度，即更大的 $\sqrt{(F^{-1})_{11}}$。**交互版**：调节 Fisher 矩阵三个独立元，看两种误差如何随参数相关性变化。`} />
+      <Figure n="14.4" illustration={<FisherEllipse />} caption={R`二维参数空间中的误差椭圆。似然的极大值 $(\bar\lambda_1,\bar\lambda_2)$ 用星号标出。图中给出 $\lambda_1$ 的两种可能误差：若 $\lambda_2$ 完全已知（先验无限窄），$\lambda_1$ 的误差对应椭圆在 $\lambda_2=\bar\lambda_2$ 处的宽度，等于 $1/\sqrt{F_{11}}$；若对 $\lambda_2$ 没有任何先验信息，应报告的误差是对 $\lambda_2$ 边缘化之后分布的宽度，即更大的 $\sqrt{(F^{-1})_{11}}$。**交互版**：调节 Fisher 矩阵三个独立元，看两种误差如何随参数相关性变化。`} />
       <Tx>{R`明确地证明这一点很有启发。先利用 Fisher 矩阵描述似然（以 $\lambda_\alpha$ 表示）在极大处曲率这一事实，把两参数的联合后验写成`}</Tx>
       <Eq n="14.70" say={R`真值附近，联合后验是由 Fisher 矩阵给出"逆协方差"的二维高斯。`}>{R`P(\lambda_1,\lambda_2)\propto\exp\left\{-\frac12\lambda_\alpha F_{\alpha\beta}\lambda_\beta\right\}`}</Eq>
       <Tx>{R`这里简单起见假设真值为 $(\lambda_1,\lambda_2)=(0,0)$（对重复指标求和）。让 $\lambda_2$ 可变，等价于像 \eqref{14.22} 那样对 $\lambda_2$ 的所有可能值积分（边缘化）这个概率分布。于是`}</Tx>
@@ -77,7 +77,7 @@ export function Sec146() {
 
 假设我们有一个算法：给定任意后验——似然与先验之积——它返回参数空间中的点（"样本"）$\{\lambda_\alpha^i\}_{i=1}^{m_{\rm sample}}$，这些点彼此统计独立，且其分布服从后验。\figref{14.5} 是一个一维例子。那么问题就解决了：所需的最佳拟合参数 $\lambda_\alpha$ 由样本均值给出，`}</Tx>
       <Eq n="14.72" keyEq title="样本均值" say={R`参数的估计 = 链中样本的算术平均。`}>{R`\bar\lambda_\alpha=\frac{1}{m_{\rm sample}}\sum_{i=1}^{m_{\rm sample}}\lambda_\alpha^i,`}</Eq>
-      <Figure n="14.5" interactive={<MCMCDemo />} caption={R`参数 $\lambda$ 的后验分布（实线）。圆点是从该分布抽取的样本，所以后验大的 $\lambda$ 值被选中得更频繁。样本足够多时，样本点的均值与方差接近分布的真值。图中后验的真实均值与标准差为 0.5 与 0.22，而所抽 20 个点的均值为 0.46、标准差为 0.18；抽更多点时，均值与标准差会继续趋向真值。**交互版**：用 Metropolis–Hastings 在浏览器里真跑一条链；目标后验取均值 0.5、标准差 0.22 的 Gamma 分布（峰值约在 0.40，与原书图形相符）。`} />
+      <Figure n="14.5" illustration={<MCMCDemo />} caption={R`原创计算图。用 Metropolis–Hastings 在浏览器里真跑一条链；目标后验取均值 0.5、标准差 0.22 的 Gamma 分布（峰值约在 0.40，与原书图形相符）。`} />
       <Tx>{R`其中求和遍历全部 $m_{\rm sample}$ 个样本；而边缘化误差可以用 $\lambda_\alpha^i$ 的样本方差估计：`}</Tx>
       <Eq n="14.73" keyEq title="样本方差" say={R`参数的边缘化误差 = 链中该参数样本的方差（$m_{\rm sample}-1$ 归一化）——其他参数自动被积掉了。`}>{R`\mathrm{Var}[\lambda_\alpha]=\frac{1}{m_{\rm sample}-1}\sum_{i=1}^{m_{\rm sample}}\left(\lambda_\alpha^i-\bar\lambda_\alpha\right)^2.`}</Eq>
       <Tx>{R`样本数很大时，$\bar\lambda_\alpha$ 与 $\mathrm{Var}[\lambda_\alpha]$ 收敛到与样本数无关的中心值。事实上还能做得更多：给定足够大的 $m_{\rm sample}$，$\lambda_\alpha^i$ 的归一化直方图就给出 $\lambda_\alpha$ 的**边缘化**概率分布。由于这是一维函数，找到其全局极大值、推出正确的置信区间都很容易。类似地，可以得到两个参数 $(\lambda_\alpha,\lambda_\beta)$ 的联合概率分布，例如看它们是否简并。显然，如果数值上高效，这个方法就能解决我们的问题。`}</Tx>

@@ -1,3 +1,4 @@
+import { TensorBBRedraw } from "./_ch14_redraw.jsx";
 // §10.6 Detecting gravitational waves —— 式 (10.47)–(10.50)，图 10.11
 // §10.7 Summary
 import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
@@ -34,8 +35,8 @@ B 模则不同。**它没有来自标量扰动的污染**，所以若在偏振�
         <Eq n="10.50" keyEq title="张量模产生 U（即 B 模）" say={R`$h_\times$ 引力波在投影沿 $x$ 的配置下产生 $U$，振幅 $\propto\cos\alpha$：这就是 B 模。波矢完全躺在天空平面内（$\alpha=\pi/2$）时消失。`}>{R`\begin{aligned}U(\hat{\boldsymbol e}_z) &\propto h_\times\cos\alpha\int_{-1}^1d\cos\theta'\sin^4\theta'\int_0^{2\pi}d\phi'\sin^2(2\phi')\\ &= h_\times\cos\alpha\left(\frac{16}{15}\right)\pi.\end{aligned}`}</Eq>
         <Box kind="warning" title={R`勘误：\eqref{10.50} 中的 $\phi'$ 积分`}>{R`原书第二行印作 $h_\times\cos\alpha\left(\frac{16}{15}\right)\left(\frac\pi2\right)$；正确为 $h_\times\cos\alpha\left(\frac{16}{15}\right)\pi$（上式已改）。依据：$\int_0^{2\pi}\sin^2(2\phi')\,d\phi'=\pi$（$\sin^2$ 在整周期上的平均为 $\frac12$，乘以 $2\pi$），而非 $\pi/2$；$\theta'$ 积分 $\int_{-1}^1(1-x^2)^2dx=\frac{16}{15}$ 无误。由于第一行本身只是比例关系（"$\propto$"），这不影响"张量模产生 B 模"的结论。（同段原书还写 $\hat{\boldsymbol n}'_x\hat{\boldsymbol n}'_y=\sin^2\theta'\sin(2\phi')$，实际应为 $\frac12\sin^2\theta'\sin(2\phi')$，上文已改；在比例式中同样不影响结论。）按 \eqref{10.20} 的归一化并取 $\sym{ThT}{\Theta}^{\rm T}=2\hat{\boldsymbol n}'_x\hat{\boldsymbol n}'_y$ 严格计算：$U=-A\cdot\frac{16\pi}{15}\cos\alpha$。\figref{10.11} 上方的交互版（\figref{10.5} 中选"张量 $h_\times$"）在浏览器中数值积分，$\alpha=0$ 时给出 $U=-3.351=-16\pi/15$。`}</Box>
         <Tx>{R`**这就是 B 模。**结果摆在眼前：天空投影沿 $x$ 轴的张量模产生了 $U$ 偏振，这意味着它是 B 模的源。为了更直观地理解，回到 \figref{10.8}，它的中图画出了标量扰动的温度四极。张量模产生的四极图样绕指出纸面的 $z$ 轴**转了 $45^\circ$**（见 \figref{6.1} 中 $h_\times$ 的图样，其形式基本就是 \eqref{10.48}）；注意只有当 $\hat{\boldsymbol k}$ 有非零的 $z$ 分量（$\alpha\neq\pi/2$），即不完全躺在天空平面内时，这一图样才出现——这解释了 \eqref{10.50} 中的 $\cos\alpha$ 因子。这一温度四极图样意味着 \figref{10.8} 下图的偏振图样同样转了 $45^\circ$。与 \figref{10.3} 比较，显然这是 B 模。`}</Tx>
-        <Figure n="10.11" interactive={<ScatterWidget mode0="hx" />}
-          caption={R`张量模（引力波，GW）产生的 B 模 CMB 偏振各向异性谱，分别取张量–标量比 $r=0.001$ 与 $r=0.05$（如图所标）。对目前允许的 $r$ 值，B 模谱甚至远小于 E 模偏振谱。在小尺度上，B 模偏振由中间结构的引力透镜效应作用在原初 CMB E 模偏振上产生。实验测量（带误差棒的点：BK14、POLARBEAR、SPTPol）已清楚地探测到这一预期的透镜信号。大尺度上还有超出这一信号的部分，已被证明来自银河系偏振的前景尘埃辐射。取自 Abazajian et al.（2016）。**交互版**（单个张量平面波的散射几何，即 \eqref{10.47}–\eqref{10.50} 与 \exref{10.6}）：对 $h_\times$，调 $\alpha$ 看 $U=-\frac{16\pi}{15}\cos\alpha$ 的数值积分结果；切换到 $h_+$ 则 $U\equiv0$。`} />
+        <Figure n="10.11" illustration={<TensorBBRedraw />}
+          caption={R`原初张量与透镜产生的 B 模功率之尺度、振幅比较。原创形状模型，不包含实验数据或尘埃前景。`} />
       </Sub>
       <Sub n="10.6.3" title="The B-mode power spectrum" zh="B 模功率谱与透镜 B 模">
         <Tx>{R`**谱的形状。**\figref{10.11} 给出两个不同张量–标量比 $r$（\eqref{7.103}）下暴胀引力波产生的 B 模功率谱。实际上，固定 $\mathcal A_s$ 时，$C_{BB}(l)$ 与 $r$ 成**线性**正比。峰值在 $l\approx100$ 附近的信号来自我们一直研究的复合时期。此外，在非常大的尺度上还有一个峰值在 $l<10$ 的贡献，由再电离后电子的散射产生。如前所述，E 模功率谱中也出现类似的特征（只是来自标量扰动），使我们能约束 $\tau_{\rm rei}$。目前的上限大约为 $r<0.05$，已经把 $C_{BB}(l)$ 约束到明显小于 E 模偏振谱。由于**没有信号就没有宇宙方差**，上限由实验灵敏度与前景扣除决定，所以未来更雄心勃勃的实验可以把这个上限继续往下推。
@@ -56,7 +57,7 @@ export function Sec107() {
 
 **E 与 B。**CMB 偏振的威力源于这样一个事实：它由天空上的对称、无迹 $2\times2$ 矩阵描述，可以分解为两个独立自由度——E 模（梯度模）与 B 模（旋度模），名字来自它们的图样与静电场、磁场的类比（\figref{10.4}）。线性标量扰动**只产生 E 模**。我们已证明 CMB 偏振（由局部四极温度场的 Compton 散射诱导）确实如此。在第 13 章我们会发现星系形状的关联也是如此，那里会大量使用 \secref{10.1} 的结果。
 
-**E 模的信息。**CMB 的 E 模偏振含有宝贵的宇宙学信息，如今已被非常精确地测量（\figref{10.10}）。大尺度上与温度的**负互相关**是暴胀图景的又一稳健预言，现已被证实。此外，最低 $l$ 处的 E 模偏振直接探测再电离之后 CMB 光子的晚期散射，因而可以打破仅凭温度时存在的标量扰动振幅与晚期散射光深 $\tau_{\rm rei}$ 之间的简并。
+**E 模的信息。**CMB 的 E 模偏振含有宝贵的宇宙学信息，如今已被非常精确地测量（原书引用 Planck 测量；本站\figref{10.10} 仅演示声学相位）。大尺度上与温度的**负互相关**是暴胀图景的又一稳健预言，现已被证实。此外，最低 $l$ 处的 E 模偏振直接探测再电离之后 CMB 光子的晚期散射，因而可以打破仅凭温度时存在的标量扰动振幅与晚期散射光深 $\tau_{\rm rei}$ 之间的简并。
 
 **B 模的使命。**另一方面，B 模偏振可以用来搜寻非标量扰动。正如第 7 章所学，有很强的动机去寻找这类扰动，因为暴胀会产生引力波背景。\secref{10.6} 中我们证明了这些张量模确实在 CMB 中产生 B 模偏振。事实上，B 模是目前探测暴胀这一"确凿证据"的最有希望的途径，相应地也有大量实验力量投入对它的搜寻。`}</Tx>
     </Sec>);

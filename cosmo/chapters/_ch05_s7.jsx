@@ -18,8 +18,8 @@ export function Sec57() {
 **多极矩。**我们发现定义光子分布的单极 \eqref{5.20} 与偶极 \eqref{5.59} 很有用。但这两个矩 $\Theta_0(k,\eta)$、$\Theta_1(k,\eta)$ 并不能完全刻画光子分布。我们需要温度场的一般第 $l$ 阶**多极矩**：`}</Tx>
       <Eq n="5.66" keyEq title="多极矩" say="第 l 阶多极矩：温度扰动在 l 阶 Legendre 多项式上的投影（前置的 1/(−i)^l 是约定）。l 越大，描述的角度结构越精细。">{R`\Theta_l(k,\eta) \equiv \frac{1}{(-i)^l}\int_{-1}^1\frac{d\mu}{2}\mathcal P_l(\mu)\Theta(\mu,k,\eta),`}</Eq>
       <Tx>{R`其中 $\mathcal P_l$ 是 $l$ 阶 Legendre 多项式（\eqref{C.2}）。四极对应 $l=2$，八极对应 $l=3$，依此类推。高阶 Legendre 多项式在更小的尺度上有结构（图 5.3），所以高阶矩捕捉辐射场在小尺度上的各向异性信息。光子扰动既可以用 $\Theta(k,\mu,\eta)$ 描述，也可以用一串矩 $\Theta_l(k,\eta)$ 描述。同样的多极展开也适用于中微子分布。`}</Tx>
-      <Figure n="5.3" interactive={<LegendrePlot />}
-        caption={R`若干 Legendre 多项式（原书：$l=0,1,3,40$）。高阶多项式比低阶的在更小的尺度上变化。一般地，$\mathcal P_l$ 在 $-1$ 与 $1$ 之间穿过零点 $l$ 次。交互版：拖动 $l$，图例中的"零点数"是数值计数的结果，始终等于 $l$。`} />
+      <Figure n="5.3" illustration={<LegendrePlot />}
+        caption={R`若干 Legendre 多项式（原书：$l=0,1,3,40$）。高阶多项式比低阶的在更小的尺度上变化。一般地，$\mathcal P_l$ 在 $-1$ 与 $1$ 之间穿过零点 $l$ 次。自绘交互：拖动 $l$，图例中的"零点数"是数值计数的结果，始终等于 $l$。`} />
       <Box kind="key" title="多极矩的两个常用性质">{R`**正交性与反演。**Legendre 多项式满足 $\int_{-1}^1\frac{d\mu}{2}\mathcal P_l(\mu)\mathcal P_{l'}(\mu)=\frac{\delta_{ll'}}{2l+1}$，所以 \eqref{5.66} 可以反演为
 $$\Theta(\mu)=\sum_{l=0}^\infty(-i)^l(2l+1)\Theta_l\mathcal P_l(\mu).$$
 $l=0$ 时 \eqref{5.66} 就是 \eqref{5.20}（$\mathcal P_0=1$，Fourier 空间中方向平均只需对 $\mu$ 积分）；$l=1$ 时 $\mathcal P_1=\mu$、$1/(-i)=i$，就是 \eqref{5.59}。

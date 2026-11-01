@@ -1,3 +1,4 @@
+import { ScalarPolarizationRedraw, ScatteringBasisRedraw } from "./_ch14_redraw.jsx";
 // §10.2 Generating polarization from Compton scattering（图 10.5–10.6）
 // §10.3 Polarization from a single plane wave —— 式 (10.13)–(10.29)，图 10.7–10.8
 import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
@@ -14,12 +15,12 @@ export function Sec102() {
       <Tx>{R`**非偏振是默认情形。**沿 $z$ 方向传播的光，对应在 $x$–$y$ 平面内（即横向于传播方向）振荡的电场与磁场。若两个横向方向上的强度相等，光就是非偏振的。到目前为止讨论 CMB 时，我们一直隐含地研究这种情形。现在必须考虑两个横向方向强度不等的可能——即辐射是偏振的。
 
 **单向入射：完全偏振。**Compton 散射能够产生偏振光（与第 5 章一样，这里只考虑光子在电子上的弹性散射，即 Compton 散射的特例——**Thomson 散射**）。看 \figref{10.5} 左图：一束从 $+x$ 方向入射的（非偏振）光，在 $y$ 与 $z$ 方向上强度相等。它在原点被电子散射，偏转到 $+z$ 方向（我们的视线）。由于出射方向沿 $z$ 轴，入射光沿 $z$ 轴的强度**完全传不出去**；而沿 $y$ 轴（同时垂直于入射与出射方向）的强度全部传出。净结果是偏振的出射光：两个垂直于 $\hat{\boldsymbol e}_z$ 的方向上的出射强度之差（$y$：全部传出；$x$：零）达到最大。`}</Tx>
-      <Figure n="10.5" interactive={<ScatterWidget mode0="beam" />}
-        caption={R`**左图**：沿 $x$ 轴向原点运动的非偏振平面波辐射被电子散射到 $+z$ 方向。散射后只剩辐射的 $y$ 分量；由于没有入射的 $x$ 偏振，出射辐射沿 $y$ 方向偏振。**右图**：各向同性（单极）入射辐射不产生偏振：来自 $x$ 与 $y$ 方向的入射振幅相等，两方向上的出射强度相等，出射光不偏振（另见 Hu & White 1997）。**交互版**（同时对应 \figref{10.6} 与 \secref{10.3}、\secref{10.6} 的计算）：选择入射辐射场，浏览器按 \eqref{10.19}–\eqref{10.20} 对全部入射方向做立体角积分，给出出射（沿 $z$）的 $Q$、$U$、偏振度与偏振方向，并与解析式对照。核对：单向光束 $\beta=0$ 给 $Q=-1$、偏振度 100%、沿 $y$；各向同性与偶极给 $Q=U=0$。`} />
+      <Figure n="10.5" illustration={<ScatterWidget mode0="beam" />}
+        caption={R`原创计算图。（同时对应 \figref{10.6} 与 \secref{10.3}、\secref{10.6} 的计算）：选择入射辐射场，浏览器按 \eqref{10.19}–\eqref{10.20} 对全部入射方向做立体角积分，给出出射（沿 $z$）的 $Q$、$U$、偏振度与偏振方向，并与解析式对照。核对：单向光束 $\beta=0$ 给 $Q=-1$、偏振度 100%、沿 $y$；各向同性与偶极给 $Q=U=0$。`} />
       <Tx>{R`**各向同性入射：不偏振。**当然不能只研究一条入射线，而要推广到从所有方向入射到电子上的辐射。这样做时，我们开始意识到产生偏振并不像 \figref{10.5} 左图那样容易。看右图，它是一个更相关情形的**漫画**：各向同性辐射从所有方向入射。说"漫画"，是因为图中只画了来自 $+x$ 与 $+y$ 两个方向的入射线——这对论证已经足够。出射光强度的 $I_{xx}$ 分量来自沿 $y$ 方向入射的辐射，而出射的 $I_{yy}$ 来自沿 $x$ 轴入射的辐射。由于两个方向的入射强度相等（各向同性），出射波沿两个轴的强度相等，$I_{xx}=I_{yy}$：**不偏振**。
 
 **偶极入射：仍不偏振。**各向异性的辐射能否产生偏振？最简单的各向异性是偶极，其漫画见 \figref{10.6} 左图。此时出射光沿 $x$ 轴的强度来自 $\pm y$ 方向的入射，它具有平均温度（图中未画）。出射光沿 $y$ 轴的强度也是平均值，因为它是冷斑（$-x$ 方向）与热斑（$+x$ 方向）的叠加。所以偶极图样只产生非偏振的出射光。`}</Tx>
-      <Figure n="10.6" caption={R`**左图**：偶极图样的入射辐射不产生偏振。粗蓝（细红）线表示较热（较冷）的辐射。此处 $+x$ 方向入射的辐射比平均热，$-x$ 方向的比平均冷（$\pm y$ 方向入射的为平均温度，同 \figref{10.5} 右图），平均线用中等粗细的黑线表示。来自 $\pm x$ 的两条射线使沿 $y$ 方向的出射强度为平均值；沿 $x$ 方向的出射强度来自 $\pm y$ 入射，它们是平均强度，所以 $x$ 方向的出射强度也是平均值。净结果是非偏振的出射光。**右图**：四极图样的入射辐射产生偏振的出射光。出射辐射沿 $y$ 轴的强度大于沿 $x$ 方向的，这直接源于 $\pm x$ 方向入射的辐射比 $\pm y$ 方向的更热。（交互演示见 \figref{10.5}：选"偶极"或"标量平面波四极"。）`} />
+      <Figure n="10.6" illustration={<ScatterWidget mode0="dip" />} caption={R`Thomson 散射的原创角积分：偶极模式不产生净偏振；切换标量四极，观察非零偏振。`} />
       <Tx>{R`**四极入射：偏振！**要产生偏振光，入射辐射必须有**非零的四极矩**，如 \figref{10.6} 右图。从 $x$（$y$）方向入射的较热（较冷）辐射，使出射波沿 $y$（$x$）轴的强度较高（较低）。所以出射波沿 $y$ 轴的强度大于沿 $x$ 轴的：出射辐射是偏振的。\figref{10.6} 描绘的是 $x$–$y$ 平面内、偏好 $y$ 方向的偏振；对照 \figref{10.2}，这对应 $Q<0$、$U=0$。反之，若入射线在 $x$–$y$ 平面内转 $45^\circ$，出射偏振就沿与 $x$、$y$ 轴成 $45^\circ$ 的轴，相应地产生 $U$ 分量。
 
 **宇宙学后果。**Compton 散射只在入射场有四极矩时才产生偏振，这对宇宙学有重要影响。复合之前电子与光子紧耦合，辐射场的四极很小（\eqref{9.36}：$\Theta_2\sim(k/\tau')\Theta_1$）。因此可以预期，CMB 偏振比温度各向异性**小**。`}</Tx>
@@ -39,7 +40,7 @@ export function Sec103() {
         <Tx>{R`**设定。**上一节的图像对定性理解 Compton 散射如何在 CMB 中产生偏振很重要。要定量研究，必须求解 Boltzmann 方程，并在碰撞项中计入两个光子偏振态以及 Compton 散射的偏振依赖。我们先考虑光子分布的单个平面波扰动。
 
 首先要在最一般的情形下定义偏振轴：入射光子来自方向 $\hat{\boldsymbol n}'$（\figref{10.7}）。上一节入射方向是 $\hat{\boldsymbol e}_x$ 时，偏振显然定义为两个垂直方向 $y$、$z$ 上的强度之差。现在把垂直于入射方向、张成入射光偏振平面的两个轴记为 $\hat{\boldsymbol\epsilon}'_1$ 与 $\hat{\boldsymbol\epsilon}'_2$。我们仍只关注沿 $z$ 方向出射的光子，于是两个出射偏振轴可取 $\hat{\boldsymbol\epsilon}_1=\hat{\boldsymbol e}_x$、$\hat{\boldsymbol\epsilon}_2=\hat{\boldsymbol e}_y$。简言之：入射偏振矢量带撇 $\hat{\boldsymbol\epsilon}'_i$，出射的不带撇 $\hat{\boldsymbol\epsilon}_i$。`}</Tx>
-        <Figure n="10.7" caption={R`来自方向 $\hat{\boldsymbol n}'$ 的入射光子被原点处的电子散射，出射光子沿 $\hat{\boldsymbol n}=\hat{\boldsymbol e}_z$。垂直于入射方向的平面由两个偏振矢量 $\hat{\boldsymbol\epsilon}'_1=\hat{\boldsymbol e}'_\theta$ 与 $\hat{\boldsymbol\epsilon}'_2=\hat{\boldsymbol e}'_\phi$ 张成；出射光子沿 $\hat{\boldsymbol e}_z$，其偏振矢量为 $\hat{\boldsymbol\epsilon}_1=\hat{\boldsymbol e}_x$、$\hat{\boldsymbol\epsilon}_2=\hat{\boldsymbol e}_y$。`} />
+        <Figure n="10.7" illustration={<ScatteringBasisRedraw />} caption={R`入射与出射方向的横向偏振基底。改变入射角，检查入射基矢始终垂直于传播方向。`} />
         <Tx>{R`**偏振依赖的截面。**上一节讨论的 Compton 散射的偏振依赖，可以简洁地表示为出射光子沿 $\hat{\boldsymbol\epsilon}_i$ 偏振时振幅平方中多出的一个因子。对两个（无关的）电子自旋以及**入射**光子偏振求和后，\eqref{5.18} 中的振幅平方——现在对出射偏振 $i=1,2$ 分别写——多出因子`}</Tx>
         <Eq n="10.13" title="Thomson 散射的偏振因子" say={R`出射光沿 $\hat{\boldsymbol\epsilon}_i$ 偏振的概率，正比于它与入射两个偏振方向的投影平方之和：电子只"转发"与出射方向垂直的那部分振动。`}>{R`\sum_{3\ \rm spins}|\mathcal M|^2 \propto \sum_{j=1}^2|\hat{\boldsymbol\epsilon}_i(\hat{\boldsymbol n})\cdot\hat{\boldsymbol\epsilon}'_j(\hat{\boldsymbol n}')|^2.`}</Eq>
         <Tx>{R`**Q 的积分式。**先计算 $Q$ 偏振。由 \eqref{10.2}，它的源是 $i=1$ 与 $i=2$ 的截面之差，即沿 $\hat{\boldsymbol e}_x$ 与 $\hat{\boldsymbol e}_y$ 方向的场强之差：`}</Tx>
@@ -105,7 +106,7 @@ export function Sec103() {
         <Tx>{R`此时应当记住，我们的结果全部在平直天空近似下推出；全天上的表达式会复杂不少，但不带来任何新物理。
 
 **根本原因：对称性。**从根本上说，标量扰动只产生 E 模是由于**对称性**（见 \figref{10.8}）：若考虑沿 $x$ 轴的单个平面波标量扰动，体系绕这个轴有方位对称。四极于是对应辐射在 $\pm\hat{\boldsymbol e}_x$ 方向较热（比如说），在垂直于 $x$ 轴的方向较冷（这恰由我们遇到的 $Y_{2,\pm2}$ 组合描述；另见 \figref{C.1}）。如 \figref{10.8} 所示，这一方位对称要求 Compton 散射产生的偏振图样与 $x$ 轴对齐，如 \figref{10.3}——即纯 E 模。我们下面会看到这一点为何如此重要。Hu & White（1997）的综述对 E、B 模偏振产生的几何有更多详细的解释与图示，并超越了这里的平直天空近似。`}</Tx>
-        <Figure n="10.8" caption={R`沿 $x$ 轴的标量扰动（上图）产生的偏振图样。这个标量扰动在温度中产生随空间变化的四极，中图画出了电子（以点表示）所看到的温度图样。在三维中（$z$ 轴指出纸面），应把这一温度图样想象成绕 $\hat{\boldsymbol k}$（即 $x$ 轴）方位对称的，如左边的圆箭头所示。现在设想我们沿 $z$ 方向（指出纸面）观测被电子散射的光。按 \secref{10.2}，观测到的偏振图样如下图所示。与 \figref{10.3} 比较，可以毫不含糊地判断这是 E 模。（交互验证见 \figref{10.5}："标量平面波四极"，$\theta_k=90^\circ$、$\phi_k=0$ 时数值积分给 $Q=4\pi=12.566$、$U=0$。）`} />
+        <Figure n="10.8" illustration={<ScalarPolarizationRedraw />} caption={R`沿 x 轴的标量平面波：空间四极振幅、局部入射图样与沿 z 方向的纯 E 出射偏振。`} />
         <Box kind="warning" title="符号约定提示">{R`\eqref{10.25}–\eqref{10.29} 中 $A$ 的符号与第 5 章光深的约定有关：下一节会看到 $A\propto-\tau'$，而 $\tau'<0$，所以 $A>0$。另外 $E(\hat{\boldsymbol n},\boldsymbol k)$ 在 \eqref{10.29} 中是对单个三维 Fourier 模式而言的，它与 \eqref{10.7} 中二维的 $E(\boldsymbol l)$ 通过投影 $k\eta_0\to l$ 相连（\secref{10.4}）。`}</Box>
       </Sub>
     </Sec>);

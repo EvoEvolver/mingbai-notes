@@ -272,7 +272,9 @@ export function ClParamPlot({ focus = ["obh2"], lmax = 2000 }) {
   const series = useMemo(() => () => [
     { label: R`\text{基准（Planck 2018）}`, data: fid, color: "#999", width: 1.6 },
     { label: R`\text{当前参数}`, data: cur.D, color: "#c0392b", width: 2.4 },
-    { label: R`\text{峰：}${cur.pk.map(([l, v]) => `${l}\\,(${f2(v)})`).join(",\\ ")};\ r_s=${f0(cur.r.rsStar)}\,\mathrm{Mpc},\ D_A=${f0(cur.r.DA)}\,\mathrm{Mpc}`, f: () => NaN },
+    ...cur.pk.map(([l,v],i)=>({label:R`\text{峰}${i+1}:\ l=${l},\ D_l=${f2(v)}`,f:()=>NaN})),
+    {label:R`r_s=${f0(cur.r.rsStar)}\,\mathrm{Mpc}`,f:()=>NaN},
+    {label:R`D_A=${f0(cur.r.DA)}\,\mathrm{Mpc}`,f:()=>NaN},
   ], [cur]);
   return <div>
     <div className="plot-params">

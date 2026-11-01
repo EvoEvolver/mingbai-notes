@@ -1,3 +1,4 @@
+import { BeamRedraw } from "./_ch14_redraw.jsx";
 // §14.4 Two-point functions —— 式 (14.35)–(14.62)，图 14.3
 import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
 import { CosmicVariancePlot, GalaxyErrPlot } from "./_ch14_plots.jsx";
@@ -23,8 +24,8 @@ export function Sec144() {
         <Eq n="14.35" say={R`观测到的温度图向球谐函数投影，得到观测多极系数。`}>{R`a_{lm}^{\rm obs} = \int d\Omega\,Y^*_{lm}(${n})\Delta(${n}).`}</Eq>
         <Tx>{R`$a_{lm}$ 上的"obs"表示这是观测量，被实验的波束平滑过、并经过其他处理。简单起见只考虑波束效应。在射电天文术语中，波束描述仪器有限角分辨率造成的平滑；光学望远镜中则称为点扩散函数。二者本质上等价。计入波束平滑后，天空位置 $${n}$ 处像素中报告的分数温度涨落 $\Delta=(T-T_0)/T_0$ 为`}</Tx>
         <Eq n="14.36" say={R`观测图 = 真实温度扰动与波束的卷积 + 噪声。`}>{R`\Delta(${n}) = \int d\Omega'\,\Theta(${n}')B(${n},${n}')+\eta(${n})`}</Eq>
-        <Tx>{R`其中 $B(${n},${n}')$ 是位置 $${n}$ 处的波束形状，$\Theta$ 是真实的温度扰动，$\eta(${n})$ 是该处的地图噪声。作为例子，\figref{14.3} 给出 Planck 仪器 30 GHz 的波束：图中是固定位置 $${n}$（星号）周围、作为 $${n}'$ 的函数的波束形状。`}</Tx>
-        <Figure n="14.3" width="60%" caption={R`Planck 仪器 30 GHz 的波束形状。等高线依次表示波束从最大值下降到 50%、10%、1% 与 0.1% 的区域。50% 下降大约发生在 $30'$。来源：Planck wiki（另见 Aghanim et al., 2014）。`} />
+        <Tx>{R`其中 $B(${n},${n}')$ 是位置 $${n}$ 处的波束形状，$\Theta$ 是真实的温度扰动，$\eta(${n})$ 是该处的地图噪声。原书以 Planck 仪器 30 GHz 的实测波束为例；本站\figref{14.3} 则用独立的椭圆高斯模型解释同一概念，不含实测数据。图中是固定位置 $${n}$（星号）周围、作为 $${n}'$ 的函数的波束形状。`}</Tx>
+        <Figure n="14.3" illustration={<BeamRedraw />} width="100%" caption={R`原创椭圆高斯波束：50%、10%、1% 和 0.1% 响应等高线，非 Planck 仪器标定图。`} />
         <Tx>{R`把 \eqref{14.36} 代入 \eqref{14.35}，得到`}</Tx>
         <Eq n="14.37" say={R`一般波束把不同的 $(l',m')$ 混合进观测的 $(l,m)$；噪声直接相加。`}>{R`a_{lm}^{\rm obs} = \sum_{l'm'}B_{lm,l'm'}a_{l'm'}+\eta_{lm},`}</Eq>
         <Tx>{R`其中 $a_{l'm'}$ 是真实的 CMB 多极矩（没有波束平滑与噪声时会观测到的），$\eta_{lm}$ 是噪声的多极矩，$B_{lm,l'm'}$ 是波束形状在其两个自变量 $${n},${n}'$ 上的多极展开。第二项是显然的：$\eta(${n})$ 直接加在 $\Delta(${n})$ 上。波束的效应可以在 \exref{14.4} 中推导。

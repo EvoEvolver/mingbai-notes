@@ -108,7 +108,7 @@ export function TensorModePlot() {
     params={[
       { id: "k", label: R`k/H_0`, min: 0.3, max: 3000, value: 30, log: true },
       { id: "Om", label: R`\Omega_{\rm m}`, min: 0.05, max: 1, step: 0.01, value: 0.3 },
-      { id: "ref", label: R`\text{解析解对照（0 关 / 1 开）}`, min: 0, max: 1, step: 1, value: 1 },
+      { id: "ref", label: R`\text{解析对照（0/1）}`, min: 0, max: 1, step: 1, value: 1 },
     ]}
     series={p => {
       const c = P.cosmo(Math.min(p.Om, 0.9999));

@@ -1,3 +1,4 @@
+import { FoundationsRedraw } from "./_redraw_foundations.jsx";
 // §2.2 向量空间 —— 式 (2.6)–(2.24)，定理 2.1–2.2，习题 2.8–2.12，图 2.9
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Proof, Exercise, Erratum, Derivation, C } from "@kit";
 
@@ -92,7 +93,7 @@ $f$ 的**像**是 $f(V)\subset W$，**核**是 $\{\boldsymbol{v}\in V\mid f(\bol
 **拉回。**设 $V$、$W$ 是向量空间，$f:V\to W$ 是线性映射，$g:W\to K$ 是 $W$ 上的线性函数（$g\in W^*$）。易见复合 $g\circ f$ 是 $V$ 上的线性函数。于是 $f$ 与 $g$ 给出一个元素 $h\in V^*$：`}</Tx>
         <Eq n="2.13" keyEq title="拉回" say={R`要在 $V$ 上得到一个线性函数，先用 $f$ 把向量送到 $W$，再用 $W$ 上的函数 $g$ 求值——方向与 $f$ 相反。`}>{R`h(\boldsymbol{v})\equiv g(f(\boldsymbol{v}))\qquad\boldsymbol{v}\in V.`}</Eq>
         <Tx>{R`给定 $g\in W^*$，映射 $f:V\to W$ 诱导出 $h\in V^*$。相应地，我们得到诱导映射 $f^*:W^*\to V^*$，$f^*:g\mapsto h=f^*(g)$，见 \figref{2.9}。$h$ 称为 $g$ 被 $f^*$ 的**拉回**（pullback）。`}</Tx>
-        <Figure n="2.9" caption={R`函数 $g$ 的拉回是函数 $f^*(g)=g\circ f$。`} width="45%" />
+        <Figure n="2.9" illustration={<FoundationsRedraw n="2.9"/>} caption={R`函数 $g$ 的拉回是函数 $f^*(g)=g\circ f$。`} width="45%" />
         <Tx>{R`注意箭头方向：$f$ 从 $V$ 指向 $W$，$f^*$ 却从 $W^*$ 指回 $V^*$。函数是"被动"的东西，只能沿着映射**往回拉**。分量形式：若 $f(\boldsymbol{e}_i)=f^\alpha{}_i\boldsymbol{f}_\alpha$（$\{\boldsymbol{f}_\alpha\}$ 为 $W$ 的基），则 $(f^*g)_i=(f^*g)(\boldsymbol{e}_i)=g(f(\boldsymbol{e}_i))=g_\alpha f^\alpha{}_i$——拉回就是用 $f$ 的矩阵从右边去乘行向量 $g_\alpha$。
 
 **向量空间与其对偶空间的同构不是典范的。**由于 $\dim V^*=\dim V$，$V$ 与 $V^*$ 之间存在同构。然而这个同构**不是典范的**（not canonical）：必须先在 $V$ 中指定一个内积，才能定义 $V$ 与 $V^*$ 之间的同构，反之亦然（见下一小节）。（例如把基 $\boldsymbol{e}_i\mapsto e^{*i}$ 定义成同构，换一组基后得到的是另一个同构。）向量空间与其对偶空间的这种"等价"会在后文中反复出现。`}</Tx>

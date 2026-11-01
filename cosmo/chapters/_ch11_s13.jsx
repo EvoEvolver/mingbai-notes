@@ -10,8 +10,8 @@ export function Sub113() {
       <Tx>{R`**错误的宇宙学。**现在转向"错误宇宙学"的效应：用 \eqref{11.1} 赋予星系三维位置时，所用的距离–红移关系与真实宇宙的不同。除非有更高的力量告诉我们宇宙的真相，这种情况是**必然**的！幸运的是，观测到的星系功率谱可以帮我们弄清真实的距离–红移关系。
 
 这其实比红移空间畸变更容易推导，大部分工作我们已经做完了。基本效应见 \figref{11.6}：星系被从真实位置移开 $\sym{ch11-dchi}{\delta\chi}(z)$。最低阶下这对所有星系都相同；但由于不同宇宙学中距离–红移关系的演化不同，不同宇宙学红移处的星系位移也不同，于是 \figref{11.6} 中的虚线圆被畸变成椭圆。`}</Tx>
-      <Figure n="11.6" interactive={<BAOAP view="ring" />}
-        caption={R`赋予星系三维位置时使用不同宇宙学所造成的 Alcock–Paczyński 畸变示意。最低阶下，所有星系都从真实位置（虚线圆）沿视线（虚线箭头）移动同样的距离 $\sym{ch11-dchi}{\delta\chi}(\bar z)$。但 $\sym{ch11-dchi}{\delta\chi}$ 一般随红移演化，所以较近（$z_{\rm low}$，下半部）与较远（$z_{\rm high}$，上半部）的星系位移略有不同。结果是表示星系表观位置的实线椭圆。**交互版**：由真实宇宙学（$\Omega_{\rm m}^{\rm true}$、$w^{\rm true}$）与基准宇宙学（$\Omega_{\rm m}^{\rm fid}$，$w=-1$）在 $\bar z$ 处直接计算 \eqref{11.31} 的 $\alpha_\perp$、$\alpha_\parallel$，画出半径 $r_s$ 的 BAO 环在观测坐标中的形状（形变放大 4 倍以便看清）。例：真实 $\Omega_{\rm m}=0.3106$、基准 $0.25$、$\bar z=0.57$ 时 $\alpha_\perp=0.024$、$\alpha_\parallel=0.049$。`} />
+      <Figure n="11.6" illustration={<BAOAP view="ring" />}
+        caption={R`原创计算图。由真实宇宙学（$\Omega_{\rm m}^{\rm true}$、$w^{\rm true}$）与基准宇宙学（$\Omega_{\rm m}^{\rm fid}$，$w=-1$）在 $\bar z$ 处直接计算 \eqref{11.31} 的 $\alpha_\perp$、$\alpha_\parallel$，画出半径 $r_s$ 的 BAO 环在观测坐标中的形状（形变放大 4 倍以便看清）。例：真实 $\Omega_{\rm m}=0.3106$、基准 $0.25$、$\bar z=0.57$ 时 $\alpha_\perp=0.024$、$\alpha_\parallel=0.049$。`} />
       <Tx>{R`**设定坐标。**作为观测者，我们把星系的观测位置 $(\theta,\phi)$ 与红移 $z$ 变成一个"观测"三维位置 $\boldsymbol x_{\rm obs}$：使用基准距离–红移关系 $\chi_{\rm fid}(z)$，并选一个方便的三维坐标原点。再次利用平空近似，使天球位置变为二维矢量 $\boldsymbol\theta$，并选原点使得`}</Tx>
       <Eq n="11.25" say={R`坐标原点取在天区中心方向、红移片中心红移处。`}>{R`\boldsymbol x_{\rm obs}=\boldsymbol 0\quad\Leftrightarrow\quad\boldsymbol\theta=\boldsymbol 0,\ z=\bar z,`}</Eq>
       <Tx>{R`其中 $\boldsymbol\theta=0$ 对应巡天覆盖区中心附近的一点，$\bar z$ 是所考虑红移片的中心值。
@@ -68,8 +68,8 @@ export function Sub113() {
       <Tx>{R`**BAO 标准尺。**最后，\eqref{11.37} 也是当前与未来星系红移巡天首要科学目标之一的基础：把重子声学振荡特征当作**标准尺**，通常简称"BAO"（\figref{11.7}）。回想物质功率谱含有一个小的振荡调制（\secref{8.6.1}），大致形如 $\cos(kr_s)$，其中 $r_s\approx105\,h^{-1}\mathrm{Mpc}$ 是复合时的声视界。早期宇宙中这一特征只印在物质的重子成分上，但重子与暗物质通过引力耦合，这一振荡图样被传递到晚期的物质功率谱中，只是振幅变小。
 
 这意味着功率谱中有一个位于**真实**共动尺度 $k\sim\pi/r_s$ 的明确特征。\eqref{11.37} 告诉我们，在星系功率谱中会看到同一特征，但在表观尺度 $k_{\rm obs}[k]$ 处。由于 $r_s$ 被 CMB 极其精确地确定（事实上，声视界主要依赖重子密度 $\Omega_{\rm b}h^2$，所以 BBN 与氘丰度的约束也足够），在红移 $\bar z$ 处的星系功率谱中测量这一特征，就能精确测出 $\alpha_\perp$ 与 $\alpha_\parallel$（\figref{11.7}）。`}</Tx>
-      <Figure n="11.7" interactive={<BAOAP />}
-        caption={R`BOSS 巡天 CMASS 样本角平均（单极）三维星系功率谱中的 BAO 特征。数据（点）与最佳拟合模型（线）都除以了一个不含 BAO 特征的平滑模型功率谱，以突出这一特征。拟合参数包括 $\alpha_\perp$ 与 $\alpha_\parallel$，它们使模型沿 $k$ 轴平移（见 \eqref{11.37}）。改编自 Beutler et al. (2017)。**交互版**：EH98 含重子转移函数除以其无振荡（no-wiggle）版本，代入 \eqref{11.37}（$b_1=2$）后取单极。$\alpha=0$ 时振荡的谷在 $k\approx0.05$、$0.11$，峰在 $0.08$、$0.14\,h\,\mathrm{Mpc^{-1}}$，幅度约 $\pm5\%$，与原图一致；线性理论在高 $k$ 处振幅偏大，可用 $\Sigma_{\rm nl}\approx6$–$8\,h^{-1}\mathrm{Mpc}$ 的非线性阻尼（第 12 章）把它压到原图水平。上图是对应的关联函数单极 $r^2\xi_0$：真实宇宙学中 BAO 峰在 $r\approx101\,h^{-1}\mathrm{Mpc}$（EH98 声视界 $s=150\,\mathrm{Mpc}$），在基准宇宙学中被测到的位置按 $1+\alpha_{\rm iso}$ 平移。`} />
+      <Figure n="11.7" illustration={<BAOAP />}
+        caption={R`原创计算图。EH98 含重子转移函数除以其无振荡（no-wiggle）版本，代入 \eqref{11.37}（$b_1=2$）后取单极。$\alpha=0$ 时振荡的谷在 $k\approx0.05$、$0.11$，峰在 $0.08$、$0.14\,h\,\mathrm{Mpc^{-1}}$，幅度约 $\pm5\%$，与原图一致；线性理论在高 $k$ 处振幅偏大，可用 $\Sigma_{\rm nl}\approx6$–$8\,h^{-1}\mathrm{Mpc}$ 的非线性阻尼（第 12 章）把它压到原图水平。上图是对应的关联函数单极 $r^2\xi_0$：真实宇宙学中 BAO 峰在 $r\approx101\,h^{-1}\mathrm{Mpc}$（EH98 声视界 $s=150\,\mathrm{Mpc}$），在基准宇宙学中被测到的位置按 $1+\alpha_{\rm iso}$ 平移。`} />
       <Tx>{R`**直观理解。**\eqref{11.37} 严格描述的东西，直观上简单得多：BAO 振荡是印在星系成团图样中的一个**已知大小**的特征；测量它在红移 $\bar z$ 处星系中的表观大小，就能测量到那个红移的距离。具体地说，BAO 特征直接测出距离 $\chi(\bar z)$（经由 $\alpha_\perp$；更准确地说是角直径距离 $d_A(\bar z)$，在我们一直假设的平直宇宙中二者等价）与哈勃率 $H(\bar z)$（经由 $\alpha_\parallel$）。由于 BAO 特征有扎实的理论基础与特征性的形状，这种测距方法极为稳健。
 
 **本节小结。**星系红移巡天测得的大尺度三维星系功率谱含有两个重要的宇宙学信息来源：**(1)** RSD 通过功率谱的振幅与各向异性给出增长率 $f\sigma_8(\bar z)$；**(2)** BAO 特征与 AP 畸变利用基准与真实距离–红移关系之差，测量 $d_A(\bar z)$ 与 $H(\bar z)$。

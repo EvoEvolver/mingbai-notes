@@ -1,3 +1,4 @@
+import { BRSVerticalRedraw } from "./_redraw_ch12_14.jsx";
 // §13.4 Wess–Zumino 一致性条件 —— 式 (13.58)–(13.83)，习题 13.1，图 13.1，命题 13.1；交互图 2（DescentLab）
 import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, Exercise, Stmt, Proof, C } from "@kit";
 import { DescentLab } from "./_ch13_demos.jsx";
@@ -84,7 +85,7 @@ $$-(\mathcal{S}\boldsymbol A)\omega=\boldsymbol A\omega^2+\omega\boldsymbol A\om
         <Eq n="13.68" say={R`模空间按赤道上的转移函数 $S^3\to G$ 分类；它的连通分支由 $\pi_3(G)$（瞬子数）标记。`}>{R`${FA}/${FG}\simeq\Omega^3(G).`}</Eq>
         <Tx>{R`于是 $\mathfrak{A}/\mathfrak{G}$ 的每个连通分支由瞬子数 $k$ 标记，这个分支记为 $\Omega^4_k(G)$。`}</Tx>
         <Box kind="note" title={R`注记：如何读 \eqref{13.68}`}>{R`\eqref{13.68} 应理解为"分类意义上的"等同：$\mathfrak{A}/\mathfrak{G}$ 的**连通分支**与 $\pi_0(\Omega^3(G))=\pi_3(G)\cong\Z$（瞬子数）一一对应。它并不是说模空间作为空间同胚于映射空间 $\Omega^3(G)$。严格地说，$\mathfrak{A}$ 本身可缩，不同瞬子数对应 $S^4$ 上不同的 $G$ 丛，各自有自己的联络空间 $\mathfrak{A}_k$；"$\mathfrak{A}$" 应理解为这些仿射空间的并。下面只用到"$\mathfrak{A}\to\mathfrak{A}/\mathfrak{G}$ 是以 $\mathfrak{G}$ 为纤维的丛"这一结构。`}</Box>
-        <Figure n="13.1" caption={R`BRS 算子 $\mathcal{S}$ 是 $\delta$ 沿纤维方向的限制。`} width="42%" />
+        <Figure illustration={<BRSVerticalRedraw />} n="13.1" caption={R`BRS 算子 $\mathcal{S}$ 是 $\delta$ 沿纤维方向的限制。`} width="100%" />
         <Tx>{R`空间 $\mathfrak{A}$ 有自然的投影 $\pi:\mathfrak{A}\to\mathfrak{A}/\mathfrak{G}$，可以做成以 $\mathfrak{G}$ 为纤维的纤维丛，见图 13.1。设 $a\in\mathfrak{A}$ 是类 $[a]\in\mathfrak{A}/\mathfrak{G}$ 的代表元，`}</Tx>
         <Eq n="13.69" say={R`$\mathfrak{A}$ 中的点 = 模空间中的代表元 $a$ + 纤维中的规范变换 $g$：这是 $\mathfrak{A}$ 的"局部平凡化"。`}>{R`\mathcal{A}(x)=g^{-1}(x)(a(x)+\dd)g(x)`}</Eq>
         <Tx>{R`是 $\mathfrak{A}$ 中属于 $[a]$ 的元素。我们用 $\delta$ 表示 $\mathfrak{A}$ 中的外微分算子，它是一个**泛函**变分，不要与通常的微分 $\dd$ 混淆（见 Leinaas 与 Olaussen 1982）。把 $\delta$ 作用到 \eqref{13.69} 上（$\delta$ 越过一形式时变号，与 $\dd$ 反对易），得`}</Tx>

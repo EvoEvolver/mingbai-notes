@@ -1,3 +1,4 @@
+import { FoundationsRedraw } from "./_redraw_foundations.jsx";
 // 章末习题（Problems 2.1–2.4）与图 2.13
 import { Sec, Tx, Exercise, Figure, Erratum } from "@kit";
 
@@ -8,7 +9,7 @@ export function Problems() {
     <Sec n="2.P" title="Problems" zh="章末习题"
       gist={R`四道题分别练习：用连通和 \eqref{2.34} 识别多边形粘合（$4g$ 边形 = $\Sigma_g$）；用定理 2.3 判断紧致；区分"同胚"与"在环境空间中能否移动"；用 Euler 定理 $v-e+f=2$ 给正多面体分类。`}>
       <Tx>{R`§2.1 的粘合交互图可以直接验证习题 2.1 中 $4g$ 边形的顶点数与 Euler 示性数；§2.4.4 的计算器下半部分可以逐一检验习题 2.4 的每一对 $(p,q)$。`}</Tx>
-      <Figure n="2.13" caption={R`边被粘合的多边形 (a) 是亏格为 $g$ 的环面 $\Sigma_g$。`} width="80%" />
+      <Figure n="2.13" illustration={<FoundationsRedraw n="2.13"/>} caption={R`边被粘合的多边形 (a) 是亏格为 $g$ 的环面 $\Sigma_g$。`} width="80%" />
       <Exercise n="P2.1" title={R`$4g$ 边形与亏格 $g$ 的曲面`} level="★★"
         hint={R`对 $g$ 归纳。沿一条对角线 $c$ 把 $4g$ 边形切成两块：一块是带边 $a_1b_1a_1^{-1}b_1^{-1}$ 的五边形，另一块是 $4(g-1)+1$ 边形。分别粘合后各是什么？再沿 $c$ 粘回去，对照连通和的定义与 \eqref{2.34}。`}
         solution={R`记 \figref{2.13}(a) 的边界字为 $w_g=a_1b_1a_1^{-1}b_1^{-1}\,a_2b_2a_2^{-1}b_2^{-1}\cdots a_gb_ga_g^{-1}b_g^{-1}$。

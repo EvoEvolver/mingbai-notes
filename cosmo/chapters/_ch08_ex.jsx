@@ -1,3 +1,4 @@
+import { GrowthPlot } from "./_ch08_plots.jsx";
 // 习题 8.1–8.13 —— 式 (8.87)–(8.91)。解答：8.4、8.8、8.13 依据原书附录 A；其余为编者给出（数值由本章 _ch08_phys.jsx 计算）。
 import { Sec, Tx, Eq, Box, Exercise, Table, Figure } from "@kit";
 
@@ -105,7 +106,7 @@ $$\frac{du}{da}\propto(aH)^{-3}.\tag{A.108}$$
 $$D_+(a)\propto H(a)\int^a\frac{da'}{(a'H(a'))^3},\tag{A.109}$$
 这就是 \eqref{8.77} 的结果。`}</Tx>
           <Tx>{R`**(c)** 在 (a) 中看到，得到的解只适用于物质、宇宙学常数与曲率的情形；若暗能量物态方程 $w\neq-1$ 就不成立（\eqref{A.106} 要求 $p=0$ 即 $w=-1$，或 $p=-2$ 即 $w=-1/3$——后者与曲率的标度相同，所以严格说 $w=-1/3$ 的常数物态暗能量也可以）。图 A.1 给出近似积分式 \eqref{A.109} 与微分方程解的对比：$w\neq-1$ 时明显不符。（\figref{8.15} 交互版的蓝色虚线即为此积分式。）`}</Tx>
-          <Figure n="A.1" width="70%" caption={R`同图 8.15，但另画出积分解 \eqref{A.109}（点线）。$w\neq-1$ 时明显不符。`} />
+          <Figure n="A.1" illustration={<GrowthPlot />} width="100%" caption={R`增长微分方程数值解与积分表达式的原创计算对比。调节 w，检查积分式仅在满足条件的背景中成立。`} />
         </>}>
         <Tx>{R`在只有物质、曲率与宇宙学常数相关的假设下求解 \eqref{8.75}：`}</Tx>
         <Eq n="8.89" say={R`物质 + 宇宙学常数 + 曲率宇宙的膨胀率；曲率项 $1-\Omega_{\rm m}-\Omega_\Lambda$ 按 $a^{-2}$ 标度。`}>{R`H^2(a) = H_0^2\left[\Omega_{\rm m}a^{-3}+\Omega_\Lambda+(1-\Omega_{\rm m}-\Omega_\Lambda)a^{-2}\right].`}</Eq>

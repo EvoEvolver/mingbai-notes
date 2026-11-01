@@ -72,8 +72,8 @@ $$k_D^{-2}=\frac{4}{27}\,\frac{1}{2.3\times10^{-5}\,\Omega_{\rm b}h^2(1-Y_P/2)}\
 系数为 $\frac{4}{27}\cdot\frac{2}{5}/(7.66\times10^{-9})\approx7.7\times10^6\,\mathrm{Mpc^2}$；原书的 $3.1\times10^6$ 恰为它的 $2/5$，像是 $\int da/H$ 中的 $\frac25$ 被多乘了一次。（$\int_0^a da'/H=\frac{2}{5}\frac{a^{5/2}}{H_0\sqrt{\Omega_{\rm m}}}f_D$ 正是 $f_D$ 的定义方式，见 \exref{9.8} 的解答。）原书 \figref{9.8} 的虚线在 $a=10^{-4}$ 处约为 $0.13\,h^{-1}\mathrm{Mpc}$、在 $a=10^{-3}$ 处约为 $3.3\,h^{-1}\mathrm{Mpc}$，与系数 $7.7\times10^6$（$0.144$、$3.5$）或直接数值积分 \eqref{9.42}（$0.141$、$3.2$）相符，而 $3.1\times10^6$ 只给出 $0.091$、$2.2$。交互图中两种系数都画出，以作对比。`}</Tx>
       </Box>
       <Tx>{R`**复合的影响。**\figref{9.8} 给出复合前阻尼尺度的演化。忽略复合在早期是很好的近似，但正如预期，用 \eqref{9.43} 在 $\eta_*$ 附近会导致定量误差：此时自由电子密度没有正确计入被中性氢"扫走"的电子。忽略复合时 $k_D$ 按 $\Omega_{\rm b}^{1/2}$ 标度；复合的细节改变了这一简单标度。`}</Tx>
-      <Figure n="9.8" interactive={<DampingPlot />}
-        caption={R`阻尼尺度随标度因子的变化。实线由标准复合历史数值积分得到，虚线用 \eqref{9.44} 的近似（假设电子保持电离）。右轴为相应的 $k_D\eta_0$；阻尼发生在 $l>k_D\eta_0$ 的角尺度上。**交互版**：黑线为 \eqref{9.42} 配合 tanh 型电离分数 $x_e(z)$（可见度峰 $z\approx1090$、宽 $\Delta z\approx200$）的数值积分，复合时 $k_D^{-1}$ 迅速上翘；红虚线为全电离、含 $R$ 的数值积分；绿线为改正后的 \eqref{9.44}（系数 $7.7\times10^6$）。图注读数给出复合（可见度峰）时的 $k_D$；按 Planck 2018，$k_D(z_*)\approx0.14\,\mathrm{Mpc^{-1}}$（含偏振的 16/15 因子）。`} />
+      <Figure n="9.8" illustration={<DampingPlot />}
+        caption={R`原创计算图。黑线为 \eqref{9.42} 配合 tanh 型电离分数 $x_e(z)$（可见度峰 $z\approx1090$、宽 $\Delta z\approx200$）的数值积分，复合时 $k_D^{-1}$ 迅速上翘；红虚线为全电离、含 $R$ 的数值积分；绿线为改正后的 \eqref{9.44}（系数 $7.7\times10^6$）。图注读数给出复合（可见度峰）时的 $k_D$；按 Planck 2018，$k_D(z_*)\approx0.14\,\mathrm{Mpc^{-1}}$（含偏振的 16/15 因子）。`} />
       <Box kind="physics" title="阻尼在天空上的位置">
         <Tx>{R`基准宇宙学中复合时 $k_D\approx0.15\,\mathrm{Mpc^{-1}}$，乘以 $\eta_0\approx1.4\times10^4\,\mathrm{Mpc}$ 得 $k_D\eta_0\approx2200$。由于 $e^{-k^2/k_D^2}$ 进入的是振幅、$C(l)$ 中是它的平方，功率在 $l\approx k_D\eta_0/\sqrt2\approx1500$ 处已被压低到 $1/e$。这正是 $C(l)$ 在第五、六峰处迅速衰减的原因（\figref{9.17}）。`}</Tx>
       </Box>

@@ -1,3 +1,4 @@
+import { FoundationsRedraw } from "./_redraw_foundations.jsx";
 // §1.3 玻色粒子的路径积分量子化 —— 式 (1.79)–(1.129)，引理 1.2，命题 1.2，例 1.5，图 1.1–1.2
 import { Sec, Sub, Tx, Eq, Box, Stmt, Proof, Derivation, Figure, Details, C } from "@kit";
 
@@ -43,7 +44,7 @@ $$\hat x[\mathrm{e}^{-\mathrm{i}\hat Ht_i}|x_i,t_i\rangle]=x_i[\mathrm{e}^{-\mat
         <Tx>{R`**无穷小时间段的振幅。**现在把 \eqref{1.87} 写成路径积分。为此先考虑 $t_f-t_i=\varepsilon$ 为无穷小正数的情形。为简化记号令 $x_i=x$、$x_f=y$，并设 Hamilton 量的形式为`}</Tx>
         <Eq n="1.90" say={R`标准的"动能 + 势能"型 Hamilton 量。`}>{R`\hat H=\frac{\hat p^2}{2m}+V(\hat x).`}</Eq>
         <Tx>{R`我们需要一个 Gauss 积分的"振荡版本"。`}</Tx>
-        <Figure n="1.1" caption={R`积分围道。路径 1 沿实轴从 $0$ 到 $R$，路径 2 是半径 $R$ 的八分之一圆弧，路径 3 沿直线 $y=-x$ 回到原点并继续到左上方，路径 4 是左侧的圆弧回到 $-R$。`} width="55%" />
+        <Figure n="1.1" illustration={<FoundationsRedraw n="1.1"/>} caption={R`积分围道。路径 1 沿实轴从 $0$ 到 $R$，路径 2 是半径 $R$ 的八分之一圆弧，路径 3 沿直线 $y=-x$ 回到原点并继续到左上方，路径 4 是左侧的圆弧回到 $-R$。`} width="55%" />
         <Stmt id="L1.2">
           <Eq n="1.91" title="Fresnel 积分" say={R`系数为纯虚数的 Gauss 积分：结果与普通 Gauss 积分同形，只是 $a$ 换成 $\mathrm{i}a$（相位 $\mathrm{e}^{-\mathrm{i}\pi/4}$）。`}>{R`\int_{-\infty}^{\infty}\mathrm{e}^{-\mathrm{i}ap^2}\,\dd p=\sqrt{\frac{\pi}{\mathrm{i}a}}.`}</Eq>
           <Proof steps={[
@@ -92,7 +93,7 @@ $$\langle x_k,t_k|x_{k-1},t_{k-1}\rangle\simeq\sqrt{\frac{m}{2\pi\mathrm{i}\vare
         <Eq n="1.97" keyEq title="路径积分" say={R`路径积分：跃迁振幅等于对连接两端点的所有路径，以相位 $\mathrm{e}^{\mathrm{i}S}$ 为权重求和。`}>{R`\begin{aligned}\langle x_f,t_f|x_i,t_i\rangle&=\int\mathcal{D}x\,\exp\left[\mathrm{i}\int_{t_i}^{t_f}\dd t\left(\frac{m}{2}v^2-V(x)\right)\right]\\&=\int\mathcal{D}x\,\exp\left[\mathrm{i}\int_{t_i}^{t_f}\dd t\,L(x,\dot x)\right]\end{aligned}`}</Eq>
         <Tx>{R`称为跃迁振幅的**路径积分**（path integral）表示。再强调一次："$v$" 没有良好定义，这个表达式只是极限 \eqref{1.95} 的符号表示。积分测度理解为`}</Tx>
         <Eq n="1.98" say={R`路径积分测度的含义：对所有端点固定的路径求和。`}>{R`\int\mathcal{D}x=\text{对所有满足 }x(t_i)=x_i,\ x(t_f)=x_f\text{ 的路径 }x(t)\text{ 求和}`}</Eq>
-        <Figure n="1.2" caption={R`路径积分要考虑所有端点固定的路径，被积函数 $\exp[\mathrm{i}S(\{x_k\})]$ 对这些路径积分。`} width="55%" />
+        <Figure n="1.2" illustration={<FoundationsRedraw n="1.2"/>} caption={R`路径积分要考虑所有端点固定的路径，被积函数 $\exp[\mathrm{i}S(\{x_k\})]$ 对这些路径积分。`} width="55%" />
         <Tx>{R`见 \figref{1.2}。尽管在 $n\to\infty$ 时 $\mathcal{D}x$ 与 $S(\{x_k\})$ 各自都没有良好定义，由它们**合起来**构成的振幅 $\langle x_f,t_f|x_i,t_i\rangle$ 却是良定义的，因而有意义。下面的例子说明这一点。`}</Tx>
         <Box kind="physics" title="稳相：经典轨道从哪里来">{R`恢复 $\hbar$，权重是 $\mathrm{e}^{\mathrm{i}S/\hbar}$。$\hbar\to0$ 时相位变化极快，相邻路径的贡献相互抵消；只有在 $S$ 取**稳定值**的路径附近，相位才不随路径变化、贡献同相叠加。于是经典轨道 $\delta S=0$（\eqref{1.4}）作为路径积分的稳相点自然出现——这正是 §1.1 末尾说"作用量对任意轨道都有定义"之所以重要的原因。`}</Box>
         <Box kind="example" n="1.5" title="自由粒子：两种方法算同一个振幅">

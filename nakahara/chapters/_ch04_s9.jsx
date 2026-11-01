@@ -1,3 +1,4 @@
+import {TextureRedraw} from "./_redraw_textures.jsx";
 // §4.9 向列相液晶中的缺陷、§4.10 超流 3He-A 中的织构 —— 式 (4.68)–(4.75)，习题 4.9–4.11，图 4.23–4.32，交互图 2（DefectLab）
 import { Sec, Sub, Tx, Eq, Box, Figure, Erratum, Exercise, Derivation, C } from "@kit";
 import { DefectLab } from "./_ch04_demos.jsx";
@@ -19,11 +20,11 @@ $$\mathrm{N{\equiv}C{-}C_6H_4{-}C_6H_4{-}O{-}C_8H_{17}}$$
 （两个苯环相连，一端是氰基，另一端是辛氧基链）。向列相液晶的分子很像一根棒，序参量称为**指向矢**（director），由棒的平均方向给出。虽然分子本身有头有尾，指向矢却有反演对称性：区分 $\boldsymbol{n}=\rightarrow$ 与 $-\boldsymbol{n}=\leftarrow$ 没有意义。我们想用 $S^2$ 上的一点来指定指向矢，这几乎可以——只差一点：两个对径点 $\boldsymbol{n}=(\theta,\phi)$ 与 $-\boldsymbol{n}=(\pi-\theta,\pi+\phi)$ 代表同一个状态（\figref{4.23}）。因此向列相液晶的序参量空间是**射影平面** $\sym{RP}{\RP^2}$。
 
 指向矢场一般依赖于位置 $\boldsymbol{r}$。于是可以定义映射 $f:\mathbb{R}^3\to\sym{RP}{\RP^2}$，这个映射称为**织构**（texture）；$\mathbb{R}^3$ 中实际的序参量位形也称为织构。`}</Tx>
-        <Figure n="4.23" caption={R`指向矢 $\boldsymbol{n}$ 没有头尾，无法区分 $\boldsymbol{n}$ 与 $-\boldsymbol{n}$。因此这两幅图对应同一个序参量位形。`} width="72%" />
+        <Figure n="4.23" illustration={<TextureRedraw n="4.23"/>} caption={R`指向矢 $\boldsymbol{n}$ 没有头尾，无法区分 $\boldsymbol{n}$ 与 $-\boldsymbol{n}$。因此这两幅图对应同一个序参量位形。`} width="72%" />
       </Sub>
       <Sub n="4.9.2" title="Line defects in nematic liquid crystals" zh="向列相液晶中的线缺陷">
         <Tx>{R`由例 4.10，$\pi_1(\sym{RP}{\RP^2})\cong\mathbb{Z}_2=\{0,1\}$。向列相液晶中有两种线缺陷：一种能连续地变形为均匀位形，另一种不能。后者代表稳定的涡旋（**向错**，disclination），织构示于 \figref{4.24}。读者应当观察这个织构怎样把圈 $\alpha$ 映到 $\sym{RP}{\RP^2}$：沿 $\alpha$ 走一圈，指向矢只转了**半圈**（$\pi$），在 $S^2$ 上是从 $\boldsymbol{n}$ 到 $-\boldsymbol{n}$ 的一条道路——在 $\sym{RP}{\RP^2}$ 中闭合，正是 \figref{4.16} 中那条不可收缩的 $\beta$。`}</Tx>
-        <Figure n="4.24" caption={R`向列相液晶中的涡旋，对应 $\pi_1(\sym{RP}{\RP^2})=\mathbb{Z}_2$ 的非平凡元。交互版：亲手放置 $\pm1$、$\pm\frac12$ 缺陷并测量卷绕数。`} width="50%" interactive={<DefectLab />} />
+        <Figure n="4.24" caption={R`向列相液晶中的涡旋，对应 $\pi_1(\sym{RP}{\RP^2})=\mathbb{Z}_2$ 的非平凡元。交互版：亲手放置 $\pm1$、$\pm\frac12$ 缺陷并测量卷绕数。`} width="50%" illustration={<DefectLab />} />
         <Exercise n="4.9" title={R`"$1+1=0$"：整数向错是假的`} level="★★"
           hint={R`把平面内的径向指向矢 $\boldsymbol{n}=(\cos\phi,\sin\phi,0)$ 在芯附近逐渐"立起来"：$\boldsymbol{n}=(\sin\chi\cos\phi,\sin\chi\sin\phi,\cos\chi)$，$\chi$ 只依赖于离中心的距离 $\rho$。`}
           solution={R`设 \figref{4.25} 的织构在柱坐标 $(\rho,\phi,z)$ 下为径向：$\boldsymbol{n}_0=(\cos\phi,\sin\phi,0)$，在 $\rho=0$ 处奇异。沿包围芯的圆周，指向矢转了一整圈，$k=1$；作为 $\sym{RP}{\RP^1}\subset\sym{RP}{\RP^2}$ 中的圈，它绕"半圈单位"两次，对应 $1+1\in\mathbb{Z}_2$。
@@ -35,13 +36,13 @@ $$\boldsymbol{n}_t(\rho,\phi)=\big(\sin\chi_t(\rho)\cos\phi,\ \sin\chi_t(\rho)\s
 **同伦的语言。**包围芯的圆周上的指向矢给出 $\sym{RP}{\RP^2}$ 中的圈 $\beta*\beta$（$\beta$ 是 \figref{4.16} 中从 $\boldsymbol{n}$ 到 $-\boldsymbol{n}$ 的半圈）。$\pi_1(\sym{RP}{\RP^2})=\mathbb{Z}_2$ 中 $[\beta]^2=1$，所以这个圈可缩，相应的线缺陷可以消除：$1+1=0$。上面的显式形变正是把 $\beta*\beta$ 在 $S^2$ 上沿经线收缩到北极的过程（\figref{4.16}(b) 的三维版本）。在交互图 2 中选"图 4.25：$+1$ 径向"可以看到 $\pi_1(\sym{RP}{\RP^2})$ 中的类为 0。`}>
           {R`证明 \figref{4.25} 中的线"缺陷"是虚假的：在保持边界上指向矢不动的前提下，通过指向矢的连续形变可以消除中心的奇点。这对应运算 $1+1=0$。`}
         </Exercise>
-        <Figure n="4.25" caption={R`一个可以连续地变形为均匀位形的线缺陷。`} width="45%" />
+        <Figure n="4.25" illustration={<TextureRedraw n="4.25"/>} caption={R`一个可以连续地变形为均匀位形的线缺陷。`} width="45%" />
       </Sub>
       <Sub n="4.9.3" title="Point defects in nematic liquid crystals" zh="向列相液晶中的点缺陷">
         <Tx>{R`由例 4.14，$\pi_2(\sym{RP}{\RP^2})=\mathbb{Z}$。因此向列相液晶中存在稳定的点缺陷。\figref{4.26} 是属于类 $1\in\mathbb{Z}$ 的点缺陷（"刺猬"，hedgehog）的织构：指向矢沿径向，$\boldsymbol{n}(\boldsymbol{r})=\hat{\boldsymbol{r}}$，包围它的球面恰好一次覆盖 $S^2$（再投影到 $\sym{RP}{\RP^2}$）。`}</Tx>
-        <Figure n="4.26" caption={R`向列相液晶中点缺陷的织构。`} width="48%" />
+        <Figure n="4.26" illustration={<TextureRedraw n="4.26"/>} caption={R`向列相液晶中点缺陷的织构。`} width="48%" />
         <Tx>{R`有趣的是，线缺陷与点缺陷可以结合成一个**环缺陷**（ring defect），它同时由 $\pi_1(\sym{RP}{\RP^2})$ 与 $\pi_2(\sym{RP}{\RP^2})$ 刻画，见 Mineev (1980)。从远处看，环缺陷像一个点缺陷；而沿环的局部结构由 $\pi_1(\sym{RP}{\RP^2})$ 刻画。\figref{4.27} 是这种环缺陷的一个例子：圈 $\alpha$ 分类 $\pi_1(\sym{RP}{\RP^2})\cong\mathbb{Z}_2$，球面（2 维圈）$\beta$ 分类 $\pi_2(\sym{RP}{\RP^2})=\mathbb{Z}$。`}</Tx>
-        <Figure n="4.27" caption={R`向列相液晶中环缺陷的织构。圈 $\alpha$ 分类 $\pi_1(\sym{RP}{\RP^2})$，而球面（2 维圈）$\beta$ 分类 $\pi_2(\sym{RP}{\RP^2})$。`} width="48%" />
+        <Figure n="4.27" illustration={<TextureRedraw n="4.27"/>} caption={R`向列相液晶中环缺陷的织构。圈 $\alpha$ 分类 $\pi_1(\sym{RP}{\RP^2})$，而球面（2 维圈）$\beta$ 分类 $\pi_2(\sym{RP}{\RP^2})$。`} width="48%" />
         <Box kind="warning" title={R`$\pi_1$ 非平凡时，$\pi_2$ 的“荷”只定义到正负号`}>{R`在 $\sym{RP}{\RP^2}$ 中，沿一条不可收缩的圈（$+\frac12$ 向错）把一个刺猬"带着绕一圈"回来，它的荷会变号：$+1\to-1$。这是 $\pi_1$ 对 $\pi_2$ 的作用（$\mathbb{Z}_2$ 作用在 $\mathbb{Z}$ 上取负号）。因此在有向错的向列相中，点缺陷的荷只有绝对值有确定意义——这是 Mermin (1979) 强调的一点，原书未提，作为补充。`}</Box>
       </Sub>
       <Sub n="4.9.4" title="Higher dimensional texture" zh="更高维的织构">
@@ -57,7 +58,7 @@ $$\sym{fprof}{f}(r)=\begin{cases}0 & r=0\\ 2\pi & r\to\infty.\end{cases}$$
         <Erratum kind="erratum" loc="p.183，(4.68) 之后 $f(r)$ 的边界值与图 4.28 图注" title={R`勘误：$f(\infty)$ 应为 $2\pi$，不是 $\pi$`}>{R`原书取 $\sym{fprof}{f}(0)=0$、$\sym{fprof}{f}(r\to\infty)=\pi$，图注也说"$\sym{alrot}{\alpha}$ 在 $|\boldsymbol{r}|\to\infty$ 时趋于 $\pi$"。这样的织构在无穷远处**不均匀**：绕轴 $\hat{\boldsymbol{r}}$ 转 $\pi$ 的矩阵是 $2\hat{\boldsymbol{r}}\hat{\boldsymbol{r}}^{\mathrm t}-\sym{Id}{I}$，作用于 $\boldsymbol{n}_0$ 得 $2(\hat{\boldsymbol{r}}\cdot\boldsymbol{n}_0)\hat{\boldsymbol{r}}-\boldsymbol{n}_0$，随方向变化——例如沿 $\hat{\boldsymbol{r}}=(1,1,0)/\sqrt2$ 方向得 $\boldsymbol{n}=(0,1,0)$，与 $\pm\boldsymbol{n}_0$ 都不同（沿三个坐标轴恰好得 $\pm\boldsymbol{n}_0$，所以只沿坐标轴画的 \figref{4.28} 看不出问题）。拓扑上，$r\to\infty$ 的球面被映到 $\sym{RP}{\RP^3}$ 中半径 $\pi$ 的边界球面（即 $\sym{RP}{\RP^2}$），而不是一点，$\mathbb{R}^3$ 并没有被紧化成 $S^3$。
 
 取 $\sym{fprof}{f}(\infty)=2\pi$（与 §4.10.3 Shankar 单极子的 \eqref{4.74} 同样的约定："转角模 $2\pi$"）则无穷远处的转动是恒等元，$\boldsymbol{n}\to\boldsymbol{n}_0$。把它提升到 $\mathrm{SU}(2)$：$U(\boldsymbol{r})=\exp[-\frac i2\sym{fprof}{f}(r)\hat{\boldsymbol{r}}\cdot\boldsymbol{\sigma}]$ 在原点为 $\sym{Id}{I}$、在无穷远为 $-\sym{Id}{I}$，恰好一次覆盖 $\mathrm{SU}(2)=S^3$，是 $\pi_3(\mathrm{SU}(2))\cong\pi_3(\mathrm{SO}(3))$ 的生成元；再经 $\sym{Rrot}{R}\mapsto \sym{Rrot}{R}\boldsymbol{n}_0$（即 Hopf 映射 $S^3\to S^2$）与 $S^2\to\sym{RP}{\RP^2}$，得到 $\pi_3(\sym{RP}{\RP^2})\cong\mathbb{Z}$ 的生成元。`}</Erratum>
-        <Figure n="4.28" caption={R`$\pi_3(\sym{RP}{\RP^2})\cong\mathbb{Z}$ 非平凡元的织构。(a) 转动"矢量" $\sym{alrot}{\alpha}\boldsymbol{e}$；按本站勘误，长度 $\sym{alrot}{\alpha}$ 在 $|\boldsymbol{r}|\to\infty$ 时趋于 $2\pi$（原图注作 $\pi$）。(b) 相应的指向矢场。`} width="85%" />
+        <Figure n="4.28" illustration={<TextureRedraw n="4.28"/>} caption={R`取旋转角 $f(r)=2\pi r/(1+r)$，将固定向量 $\hat x$ 绕 $\hat r$ 旋转所得指向矢场的切片。中心和无穷远均趋向同一序参量，采用本站勘误的 $2\pi$ 边界。`} width="85%" />
       </Sub>
     </Sec>);
 }
@@ -71,7 +72,7 @@ export function Sec410() {
       <Sub n="4.10.1" title={R`Superfluid $^3$He-A`} zh={R`超流 $^3$He-A`}>
         <Tx>{R`最后一个、也是最有趣的例子。1972 年以前，BCS 超流的唯一例子是常规超导体（中子星中超流中子的间接观测除外）。\figref{4.29} 是无外磁场时超流 $^3$He 的相图。NMR 及其他观测表明，超流体处于**自旋三重态 $p$ 波**态。这里不用场算符（参见 \eqref{4.65b}），而用产生、湮灭算符定义序参量。三重态超流序参量的最一般形式是`}</Tx>
         <Eq n="4.69a" say={R`Cooper 对的自旋结构由三个分量 $d_\mu(\boldsymbol{k})$ 描述（三重态），它们一般依赖于对的相对动量。`}>{R`\langle \sym{cop}{c}_{\alpha,\boldsymbol{k}}\sym{cop}{c}_{\beta,-\boldsymbol{k}}\rangle\propto\sum_{\mu=1}^{3}(i\sigma_2\sigma_\mu)_{\alpha\beta}\,d_\mu(\boldsymbol{k})`}</Eq>
-        <Figure n="4.29" caption={R`超流 $^3$He 的相图。`} width="62%" />
+        <Figure n="4.29" illustration={<TextureRedraw n="4.29"/>} caption={R`超流 $^3$He 的定性相区示意；轴与相界不代表测量值。`} width="62%" />
         <Tx>{R`其中 $\alpha,\beta$ 是自旋指标。Cooper 对处于 $p$ 波态，因此 $d_\mu(\boldsymbol{k})$ 正比于 $Y_{1m}\sim k_i$：`}</Tx>
         <Eq n="4.69b" say={R`$p$ 波：$d_\mu$ 对动量方向是线性的；$3\times3$ 复矩阵 $A_{\mu i}$ 一边连着自旋（$\mu$），一边连着轨道（$i$）。`}>{R`d_\mu(\boldsymbol{k})=\sum_{i=1}^{3}\Delta_0A_{\mu i}k_i.`}</Eq>
         <Tx>{R`体能量有若干个极小，绝对极小依赖于压强与温度。我们特别关心 \figref{4.29} 中的 A 相。A 相的序参量形如`}</Tx>
@@ -90,9 +91,9 @@ export function Sec410() {
       </Sub>
       <Sub n="4.10.2" title={R`Line defects and non-singular vortices in $^3$He-A`} zh={R`$^3$He-A 中的线缺陷与无奇点涡旋`}>
         <Tx>{R`$\mathrm{SO}(3)\cong\sym{RP}{\RP^3}$ 的基本群是 $\pi_1(\sym{RP}{\RP^3})\cong\mathbb{Z}_2\cong\{0,1\}$（\eqref{4.33}）。属于类 0 的织构能连续地变形为均匀位形。类 1 的位形称为 **disgyration**，Maki and Tsuneto (1977) 与 Buchholtz and Fetter (1977) 分析过它们。\figref{4.30} 画出了处于最低自由能位形的 disgyration。`}</Tx>
-        <Figure n="4.30" caption={R`$^3$He-A 中的 disgyration。`} width="90%" />
+        <Figure n="4.30" illustration={<TextureRedraw n="4.30"/>} caption={R`围绕线核心旋转的三标架：分别选 $x,y,z$ 为固定旋转轴，展示 $SO(3)$ 中同一非平凡同伦类的代表。`} width="90%" />
         <Tx>{R`$\mathbb{Z}_2$ 的一个显著性质是加法 $1+1=0$：两个 disgyration 合并产生平凡织构。把两个 disgyration 合并，可以构造一个看起来像双倍涡度（同伦类"2"）的涡旋、却**没有奇异芯**的织构（\figref{4.31}(a)）。容易验证，圈 $\alpha$ 的像在 $\sym{RP}{\RP^3}$ 中走了两遍，而较小的圈 $\beta$ 的像可以缩成一点。这个织构称为 **Anderson–Toulouse 涡旋**（Anderson and Toulouse 1977）。Mermin and Ho (1976) 指出，若介质在圆柱中，边界施加条件 $\hat{\boldsymbol{l}}\perp$（边界），涡旋在表面处被截断（\figref{4.31}(b)，**Mermin–Ho 涡旋**）。`}</Tx>
-        <Figure n="4.31" caption={R`Anderson–Toulouse 涡旋 (a) 与 Mermin–Ho 涡旋 (b)。(b) 中边界迫使 $\hat{\boldsymbol{l}}$ 垂直于器壁。`} width="90%" />
+        <Figure n="4.31" illustration={<TextureRedraw n="4.31"/>} caption={R`Anderson–Toulouse（左）与 Mermin–Ho（右）无奇点涡旋的 $\hat l$ 截面模型。MH边界的 $\hat l$ 径向、垂直圆柱壁；图未显示完整三标架。`} width="90%" />
         <Box kind="physics" title="为什么“双倍涡旋”可以没有芯">{R`在超导体里，$\pi_1(\mathrm{U}(1))=\mathbb{Z}$，涡度为 2 的涡旋永远有奇异芯。$^3$He-A 的序参量空间更大：相位转动只是 $\mathrm{SO}(3)$ 中的一个 $\mathrm{U}(1)$ 子群（绕 $\hat{\boldsymbol{l}}$ 转）。在 $\mathrm{SO}(3)$ 里，绕一根轴转 $4\pi$ 的圈可以收缩（Dirac 皮带，\eqref{4.33}）——收缩的办法正是让转轴 $\hat{\boldsymbol{l}}$ 在芯附近翻转过来（\figref{4.31}(a) 中心处 $\hat{\boldsymbol{l}}$ 从向上逐渐转为水平再到向下）。于是"两个量子的环流"可以由一个处处光滑的织构承载。`}</Box>
         <Tx>{R`由于 $\pi_2(\sym{RP}{\RP^3})\cong\{e\}$，$^3$He-A 中没有点缺陷。但 $\pi_3(\sym{RP}{\RP^3})\cong\mathbb{Z}$ 引出一种新的点状结构，称为 Shankar 单极子，下面就来研究它。`}</Tx>
       </Sub>
@@ -100,7 +101,7 @@ export function Sec410() {
         <p className="muted">本小节概念：<C id="texture" /></p>
         <Tx>{R`Shankar (1977) 指出 $^3$He-A 中存在一种点状的无奇点客体。考虑 $^3$He-A 的无限介质，假定介质渐近均匀，即 $|x|\to\infty$ 时 $(\hat{\boldsymbol{\Delta}}_1,\hat{\boldsymbol{\Delta}}_2,\hat{\boldsymbol{l}})$ 趋于标准正交标架 $(\boldsymbol{e}_1,\boldsymbol{e}_2,\boldsymbol{e}_3)$。由于远离原点的所有点都映到同一点，我们把 $\mathbb{R}^3$ 紧化成了 $S^3$。于是织构按 $\pi_3(\sym{RP}{\RP^3})=\mathbb{Z}$ 分类。像前面那样（例 4.12），用 $\sym{RP}{\RP^3}$ 中的"矢量" $\boldsymbol{\Omega}=\theta\boldsymbol{n}$ 指定 $\mathrm{SO}(3)$ 的元素。Shankar (1977) 提出的织构是`}</Tx>
         <Eq n="4.73" keyEq title="Shankar 单极子" say={R`转动轴处处沿径向，转角只随半径变化——与 \eqref{4.68} 同一个构造。`}>{R`\boldsymbol{\Omega}(\boldsymbol{r})=\frac{\boldsymbol{r}}{r}\cdot \sym{fprof}{f}(r)`}</Eq>
-        <Figure n="4.32" caption={R`Shankar 单极子：(a) "矢量" $\boldsymbol{\Omega}(\boldsymbol{r})$；(b) 三元组 $(\hat{\boldsymbol{\Delta}}_1,\hat{\boldsymbol{\Delta}}_2,\hat{\boldsymbol{l}})$。注意 $|\boldsymbol{r}|\to\infty$ 时三元组趋于同一个位形。`} width="90%" />
+        <Figure n="4.32" illustration={<TextureRedraw n="4.32"/>} caption={R`Shankar纹理中整个正交三标架的空间切片。三根轴同时按 $R(\hat r,2\pi/(1+r))$ 旋转，中心和无穷远的标架均趋于标准标架。`} width="90%" />
         <Tx>{R`其中 $\sym{fprof}{f}(r)$ 是单调递减函数，满足`}</Tx>
         <Eq n="4.74" say={R`中心处转 $2\pi$（等于不转），无穷远处转 0（也是不转）：两端都是恒等元，中间转角扫过 $2\pi$。`}>{R`\sym{fprof}{f}(r)=\begin{cases}2\pi & r=0\\ 0 & r=\infty.\end{cases}`}</Eq>
         <Tx>{R`我们形式上把 $\sym{RP}{\RP^3}$ 的半径扩展到 $2\pi$，转角模 $2\pi$ 定义。这个织构称为 **Shankar 单极子**（\figref{4.32}(a)）。初看起来原点处似乎有奇点。但注意那里 $\boldsymbol{\Omega}$ 的长度是 $2\pi$，等价于 $\mathrm{SO}(3)$ 的单位元。\figref{4.32}(b) 描绘了三元组场。由于无论沿什么方向，$r\to\infty$ 时都有 $\boldsymbol{\Omega}(\boldsymbol{r})=0$，空间 $\mathbb{R}^3$ 被紧化成 $S^3$。扫过整个空间时，$\boldsymbol{\Omega}(\boldsymbol{r})$ 扫过 $\mathrm{SO}(3)$ 两遍，这个织构对应 $\pi_3(\mathrm{SO}(3))\cong\mathbb{Z}$ 的类 1。`}</Tx>

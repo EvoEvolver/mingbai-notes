@@ -1,3 +1,4 @@
+import { AnomalyWindingRedraw, HemisphereGlueRedraw, SmashProductRedraw } from "./_redraw_ch12_14.jsx";
 // §13.5 阿贝尔反常与非阿贝尔反常 —— 式 (13.84)–(13.105)，习题 13.2，图 13.2–13.4
 import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, Exercise, Stmt, C } from "@kit";
 import { DN, TR, CH, IND, FG, CHI } from "./_ch13_tex.js";
@@ -19,7 +20,7 @@ export function Sec135() {
       <Eq n="13.84" say={R`规范变换的一个闭合圈：从恒等变换出发，沿 $\theta$ 走一圈回到恒等变换。`}>{R`g(0,x)=g(2\pi,x)=e.`}</Eq>
       <Tx>{R`不失一般性，可以把 $g$ 归一化为在某点 $x_0\in S^m$ 处 $g(\theta,x_0)=e$。映射 $g:S^1\times S^m\to G$ 按同伦类 $\pi_{m+1}(G)$ 分类。为说明这一点，定义拓扑空间 $X$ 与 $Y$ 的 **smash 积** $X\wedge Y$：它是直积 $X\times Y$ 把 $X\vee Y\equiv(x_0\times X)\cup(X\times y_0)$ 收缩成一点所得的空间。由图 13.2 容易看出 $S^1\wedge S^m=S^m\wedge S^1=S^{m+1}$（读者可以自己画出 $S^1\wedge S^1=S^2$ 来说服自己：环面 $S^1\times S^1$ 把一条经线和一条纬线捏成一点，就是球面）。反复应用得到`}</Tx>
       <Eq n="13.85" say={R`球面的 smash 积仍是球面，维数相加。`}>{R`S^m\wedge S^n=S^{m+n}.`}</Eq>
-      <Figure n="13.2" caption={R`smash 积 $S^1\wedge S^m\simeq S^{m+1}$。`} width="48%" />
+      <Figure illustration={<SmashProductRedraw />} n="13.2" caption={R`自绘 smash 积：以 $m=1$ 的方形压边界模型说明 $S^1\wedge S^m\cong S^{m+1}$。`} width="100%" />
       <Tx>{R`在我们关心的情形，条件 \eqref{13.84}（以及 $g(\theta,x_0)=e$）使直积 $S^1\times S^m$ 在拓扑上看起来像 $S^1\wedge S^m=S^{m+1}$：$X\vee Y$ 上 $g\equiv e$，可以把它捏成一点。于是 $g$ 可以看作从 $S^{m+1}$ 到 $G$ 的映射，按 $\pi_{m+1}(G)$ 分类。由于这是空间 $\mathfrak{G}=\Omega^m(G)$ 中的一个单参数族（一个圈），我们也有 $\pi_{m+1}(G)=\pi_1(\mathfrak{G})$。实际上我们取 $G=\mathrm{SU}(N)$，对它有`}</Tx>
       <Eq n="13.86" title={R`$\pi_{m+1}(\mathrm{SU}(N))$`} say={R`秩足够大时（稳定范围），$\mathrm{SU}(N)$ 的奇数阶同伦群 $\pi_{2l+1}$ 都是整数群：规范变换的圈有整数个"拓扑类"。`}>{R`\pi_{m+1}(\mathrm{SU}(N))=\Z\qquad N\ge\tfrac12m+1.`}</Eq>
       <Tx>{R`（例如 $m=2$：$\pi_3(\mathrm{SU}(2))=\Z$；$m=4$：$\pi_5(\mathrm{SU}(3))=\Z$，但 $\pi_5(\mathrm{SU}(2))=\Z_2$，所以四维时要 $N\ge3$。）
@@ -33,7 +34,7 @@ export function Sec135() {
 接下来考虑一个**双**参数规范场族 $\mathcal{A}^{t,\theta}$（$0\le t\le1$），它在 $\mathcal{A}=0$ 与 $\mathcal{A}^{g(\theta)}$ 之间插值：`}</Tx>
       <Eq n="13.89" say={R`把规范轨道上的圈"填"成一个圆盘：径向参数 $t$ 把每个 $\mathcal{A}^{g(\theta)}$ 线性缩到零。圆盘内部的构型一般不再规范等价。`}>{R`\mathcal{A}^{t,\theta}\equiv t${Ag}\qquad(0\le t\le1).`}</Eq>
       <Tx>{R`由 $(t,\theta)$ 给定的参数空间看作以 $(t,\theta)$ 为极坐标的二维单位圆盘 $D^2$。在圆盘边界 $\partial D^2=S^1$ 上，$\det\mathrm{i}\hat D(\mathcal{A}^{1,\theta})$ 的模是不为零的常数。于是相位 $\mathrm{e}^{\mathrm{i}w(\mathcal{A},\theta)}$ 定义了一个映射 $S^1(=\partial D^2)\to S^1(=\mathrm{U}(1))$；见图 13.3。`}</Tx>
-      <Figure n="13.3" caption={R`有效作用量 $W[\mathcal{A}^{g(\theta)}]$ 的相位定义了映射 $S^1\to\mathrm{U}(1)$，$\theta\mapsto\mathrm{e}^{\mathrm{i}w(\mathcal{A},\theta)}$。圆盘上有若干点 $\{p_i\}$ 使 $\det\mathrm{i}\hat D(\mathcal{A}^{t,\theta})$ 为零。映射 $S^1\to\mathrm{U}(1)$ 的卷绕数等于沿各小回路 $C_i$ 的卷绕数之和。`} width="80%" />
+      <Figure illustration={<AnomalyWindingRedraw />} n="13.3" caption={R`自绘相位卷绕：简单零点周围的小回路卷绕数之和等于外边界相位映射 $S^1\to\mathrm U(1)$ 的卷绕数。`} width="100%" />
       <Tx>{R`沿圆盘边界走一圈，相位在单位圆上绕圈。这个映射的卷绕数是整数`}</Tx>
       <Eq n="13.90" title="相位卷绕数" say={R`沿规范变换的圈走一圈，手征行列式的相位绕单位圆 $\mathcal{N}$ 圈；$\mathcal{N}\neq0$ 就意味着反常不可能被局部抵消项消除。`}>{R`${NN}=\frac1{2\pi}\int_0^{2\pi}\frac{\partial w(\mathcal{A},\theta)}{\partial\theta}\dd\theta.`}</Eq>
       <Tx>{R`下面会看到，$\mathcal{N}$ 由 $(m+2)$ 维的阿贝尔反常导出。`}</Tx>
@@ -57,7 +58,7 @@ $$W[\mathcal{A}^{g(2\pi)}]-W[\mathcal{A}^{g(0)}]=-\mathrm{i}[w(\mathcal{A},2\pi)
       <Sub n="13.5.1" title="m dimensions versus m + 2 dimensions" zh="m 维与 m+2 维">
         <Tx>{R`回忆：参考规范场 $\mathcal{A}$ 不支持算子 $\mathrm{i}\hat D(\mathcal{A})$ 的零模。由于 $|\det\mathrm{i}\hat D(\mathcal{A}^{g(\theta)})|=|\det\mathrm{i}\hat D(\mathcal{A})|\neq0$，算子 $\mathrm{i}\hat D(\mathcal{A}^{g(\theta)})$ 也没有零模。当然，$\mathrm{i}\hat D(\mathcal{A}^{t,\theta})$ 可能有零模，因为 $\mathcal{A}^{t,\theta}$ 一般**不能**由 $\mathcal{A}$ 经规范变换得到。设它在 $p_i=(t_i,\theta_i)$ 处有零模，并假定这些是孤立点。由于 $\det\mathrm{i}\hat D(\mathcal{A}^{t,\theta})$ 是本征值的正规化乘积，它在 $p_i$ 处为零。$\det\mathrm{i}\hat D(\mathcal{A}^{t,\theta})$ 的相位只可能在这些点附近同伦非平凡（在不含零点的区域里相位是连续函数，任何闭回路都可以收缩）。此外，$p_i$ 处的卷绕数由在 $p_i$ 处为零的那个本征值决定。例如，若 $\lambda_n(t,\theta)$ 在 $p_i$ 处为零，它应有形式`}</Tx>
       <Eq n="13.92" say={R`在零点 $p_i$ 附近，消失的本征值写成模乘以相位；整个行列式的相位卷绕全来自这一个本征值。`}>{R`\lambda_n(t,\theta)=f(t,\theta)\mathrm{e}^{\mathrm{i}w_i(t,\theta)}`}</Eq>
-      <Figure n="13.4" caption={R`把圆盘 $D^2\times S^m$（坐标 $(t,\theta,x)$，北半球 $U_{\rm N}$）与另一块 $D^2\times S^m$（坐标 $(s,\theta,x)$，南半球 $U_{\rm S}$）沿 $t=s=1$ 粘合，得到无边界的 $S^2\times S^m$。`} width="40%" />
+      <Figure illustration={<HemisphereGlueRedraw />} n="13.4" caption={R`把圆盘 $D^2\times S^m$（坐标 $(t,\theta,x)$，北半球 $U_{\rm N}$）与另一块 $D^2\times S^m$（坐标 $(s,\theta,x)$，南半球 $U_{\rm S}$）沿 $t=s=1$ 粘合，得到无边界的 $S^2\times S^m$。`} width="100%" />
       <Tx>{R`其中 $f(t_i,\theta_i)=0$。$p_i$ 处的卷绕数为`}</Tx>
       <Eq n="13.93" say={R`零点 $p_i$ 的局部卷绕数：消失的本征值沿小回路 $C_i$ 绕原点的圈数。`}>{R`m_i=\frac1{2\pi}\int_{C_i}\frac{\dd}{\dd s}w_i(t,\theta)\,\dd s`}</Eq>
       <Tx>{R`其中 $C_i$ 是包围 $p_i$ 的小回路，见图 13.3。把回路 $S^1=\partial D^2$ 连续形变成包围各 $p_i$ 的小圆 $C_i$ 之和（就像复分析中的辐角原理），得到总卷绕数`}</Tx>

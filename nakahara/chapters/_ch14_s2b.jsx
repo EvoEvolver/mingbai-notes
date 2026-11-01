@@ -1,3 +1,4 @@
+import { GaugeTangentRedraw, OperatorSplitRedraw } from "./_redraw_ch12_14.jsx";
 // §14.2.3–14.2.4 复张量演算与弦测度、Riemann 面的模空间 —— 式 (14.97)–(14.120)，习题 14.5–14.6，定理 14.2（单值化），图 14.6–14.7，交互图 2
 import { Sub, Tx, Eq, Box, Stmt, Exercise, Derivation, Figure, Table, C } from "@kit";
 import { DL, DU } from "./_ch14_s1.jsx";
@@ -69,10 +70,10 @@ $$\Delta^+_{(1)}w=-2\mathrm{e}^{-4\sigma}\partial_z\mathrm{e}^{2\sigma}\partial_
 $$0=(${DL("-1")}\delta v_z,${QD}_{izz})=\int\dd^2z\,\sqrt\gamma\,\sym{conj}{\overline{\delta v_z}}(-${DU("-2")}${QD}_{izz})$$
 
 这里用了 $(${DL("-1")})^\dagger=-${DU("-2")}$（\eqref{14.23b}）。由于 $\delta v_z$ 任意，得（\figref{14.6}）`}</Tx>
-      <Figure n="14.6" caption={R`映射 $\nabla_z^{(-1)}$ 及其伴随 $\nabla^z_{(-2)}$。`} width="55%" />
+      <Figure illustration={<OperatorSplitRedraw complex />} n="14.6" caption={R`映射 $\nabla_z^{(-1)}$ 及其伴随 $\nabla^z_{(-2)}$。`} width="100%" />
       <Eq n="14.111" say={R`与所有规范变形正交的无迹变形，被 $\nabla^z_{(-2)}$（即 $\partial_{\bar z}$）零化：它是全纯的。`}>{R`${QD}_{izz}\in\ker${DU("-2")}.`}</Eq>
       <Tx>{R`由 $${DU("-2")}=2\mathrm{e}^{-2\sigma}\partial_{\bar z}$ 的显式形式，$\partial_{\bar z}${QD}_{izz}=0$，即 $\ker${DU("-2")}$ 是螺旋度 $-2$ 的**全纯**张量的集合。张量 $${QD}_i=${QD}_{izz}\dd z\otimes\dd z$ 称为**二次微分**（quadratic differential），而 $\mu_i=\mu_{izz}\dd z\otimes\dd z$（更常见的写法是 $\mu_{i\bar z}{}^z\,\dd\bar z\otimes\partial_z$，二者由度规互换）称为 **Beltrami 微分**（\figref{14.7}）。实际计算中，常常用 Beltrami 微分指定规范切片，见后文。现在我们证明了`}</Tx>
-      <Figure n="14.7" caption={R`Beltrami 微分 $\{\mu_i\}$ 张成与规范切片相切的形变，$\{\phi_i\}$ 张成 $\ker\nabla^z_{(-2)}$。`} width="50%" />
+      <Figure illustration={<GaugeTangentRedraw complex />} n="14.7" caption={R`Beltrami 微分 $\{\mu_i\}$ 张成与规范切片相切的形变，$\{\phi_i\}$ 张成 $\ker\nabla^z_{(-2)}$。`} width="100%" />
       <Eq n="14.112" title="模方向 = 全纯二次微分" say={R`真正的物理（模）方向就是全纯二次微分：它们与所有微分同胚正交，且不能被 Weyl 变换吸收。`}>{R`\{\ker P_1^\dagger\}=\{\text{Quadratic differential}\}=\{\ker${DU("-2")}\}.`}</Eq>
       <Tx>{R`Riemann–Roch 定理 \eqref{14.27}（取 $n=-1$：$(2n-1)(g-1)=-3(g-1)$）成为`}</Tx>
       <Eq n="14.113" keyEq title="Riemann–Roch：CKV 与二次微分的计数" say={R`共形 Killing 向量的复维数减去二次微分的复维数恒等于 $3-3g=\frac32\chi$：$g\ge2$ 时没有 CKV，于是有 $3g-3$ 个复模参数。`}>{R`\dim_{\C}\ker${DL("-1")}-\dim_{\C}\ker${DU("-2")}=3-3g.`}</Eq>

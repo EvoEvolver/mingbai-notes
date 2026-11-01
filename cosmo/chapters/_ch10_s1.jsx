@@ -1,3 +1,4 @@
+import { StokesBasisRedraw } from "./_ch14_redraw.jsx";
 // §10.0 引言 + §10.1 Polarization —— 式 (10.1)–(10.12)，图 10.1–10.4
 import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
 import { StokesWidget, EBWidget } from "./_ch10_plots.jsx";
@@ -30,11 +31,11 @@ export function Sec101() {
 
 **由此推出的形式。**记偏振片方向为单位矢量 $\hat{\boldsymbol m}$（$\hat{\boldsymbol m}\cdot\hat{\boldsymbol p}=0$，$\hat{\boldsymbol p}$ 是辐射的波矢方向）。探测到的通量不能依赖 $\hat{\boldsymbol m}$ 的符号，所以它必须是 $\hat{\boldsymbol m}$ 的**二次**函数：`}</Tx>
         <Eq n="10.1" title="偏振片后的探测强度" say={R`偏振片转 $180^\circ$ 读数不变，所以探测强度只能是偏振片方向的二次型；系数矩阵 $I_{ij}$ 就完整地刻画了偏振。`}>{R`I_{\rm det}(\hat{\boldsymbol m}) = I_{ij}\hat{\boldsymbol m}^i\hat{\boldsymbol m}^j,`}</Eq>
-        <Figure n="10.1" interactive={<StokesWidget />}
-          caption={R`测量偏振光。沿 $\hat{\boldsymbol p}$（此处 $\hat{\boldsymbol p}=\hat{\boldsymbol e}_z$）传来的光子在垂直于 $\hat{\boldsymbol p}$ 的平面内偏振；让光通过只透过某一线偏振的偏振片，并绕 $\hat{\boldsymbol p}$ 轴旋转偏振片，就能测出偏振的程度与方向。偏振是无头矢量，可用它在 $x$–$y$ 平面内相对 $x$ 轴的方位角 $\phi$ 描述。**交互版**（同时对应 \figref{10.2} 与 \exref{10.1}）：调偏振方向 $\psi$、偏振度 $p$，右图实时画出 $I_{\rm det}(\phi)=I+Q\cos2\phi+U\sin2\phi$（由 \eqref{10.1}–\eqref{10.2}，$\hat{\boldsymbol m}=(\cos\phi,\sin\phi)$）；再转动坐标轴 $\alpha$，看 $Q$、$U$ 如何按 $2\alpha$ 混合而探测强度不变。核对：$\psi=0$ 给 $Q=p$、$U=0$（椭圆沿 $x$，即图 10.2 的"$Q>0,U=0$"）；$\psi=45^\circ$ 给 $Q=0$、$U=p$。`} />
+        <Figure n="10.1" illustration={<StokesWidget />}
+          caption={R`原创计算图。（同时对应 \figref{10.2} 与 \exref{10.1}）：调偏振方向 $\psi$、偏振度 $p$，右图实时画出 $I_{\rm det}(\phi)=I+Q\cos2\phi+U\sin2\phi$（由 \eqref{10.1}–\eqref{10.2}，$\hat{\boldsymbol m}=(\cos\phi,\sin\phi)$）；再转动坐标轴 $\alpha$，看 $Q$、$U$ 如何按 $2\alpha$ 混合而探测强度不变。核对：$\psi=0$ 给 $Q=p$、$U=0$（椭圆沿 $x$，即图 10.2 的"$Q>0,U=0$"）；$\psi=45^\circ$ 给 $Q=0$、$U=p$。`} />
         <Tx>{R`其中 $I_{ij}$ 描述辐射的偏振，称为**偏振张量**（polarization tensor）。注意它是 $2\times2$ 矩阵，因为 $\hat{\boldsymbol m}$ 被限制在垂直于 $\hat{\boldsymbol p}$ 的平面内。显然可以取 $I_{ij}$ 对称（一般地 $I_{ij}$ 是 Hermite 矩阵，其虚部描述圆偏振；宇宙学扰动不产生圆偏振，所以本书始终取它为实对称矩阵）。此外，对非偏振光，沿 $\hat{\boldsymbol m}_x$ 与 $\hat{\boldsymbol m}_y$ 方向测到的强度相同，所以 $I_{ij}\propto\delta_{ij}$。于是写成`}</Tx>
         <Eq n="10.2" keyEq title="偏振张量与 Stokes 参数" say={R`偏振张量的对角平均是强度 $I$；$Q$ 衡量"$x$ 方向比 $y$ 方向亮多少"，$U$ 衡量"$45^\circ$ 方向比 $-45^\circ$ 方向亮多少"。非偏振光 $Q=U=0$。`}>{R`I_{ij} = \begin{pmatrix} I+Q & U\\ U & I-Q\end{pmatrix}.`}</Eq>
-        <Figure n="10.2" caption={R`偏振分量 $Q$ 与 $U$ 的定义（在垂直于入射光的平面内）：$Q>0,U=0$ 沿 $x$；$Q<0,U=0$ 沿 $y$；$Q=0,U>0$ 沿 $45^\circ$；$Q=0,U<0$ 沿 $-45^\circ$。非偏振光 $Q=U=0$。（交互演示见 \figref{10.1}。）`} />
+        <Figure n="10.2" illustration={<StokesBasisRedraw />} caption={R`四个线偏振方向对应的 Stokes 分量符号；椭圆表示偏振方向，不表示光线轨迹。`} />
         <Tx>{R`**三个 Stokes 参数。**对角元的平均 $I$ 就是强度，即第 9 章研究的对象（以温度 $T$ 表示：一个均匀部分加扰动 $\Theta$）。两个新变量 $Q$、$U$ 描述偏振，如 \figref{10.2} 所示。学过电磁学的读者会认出 $I$、$Q$、$U$ 是描述偏振的四个 **Stokes 参数**中的三个；第四个 $V$ 描述圆偏振，这里忽略。所以，除了单一的分布函数 $f(\boldsymbol x,\hat{\boldsymbol p},\eta)$，我们现在还要考虑另外两个分布函数 $f_Q$ 与 $f_U$。事实上我们马上会看到，比 $Q$、$U$ 更有用的是另一种参数化。
 
 **本章目标与障碍。**我们的目标是推出 CMB 中 $Q$、$U$ 应有的统计性质。为此要再次借助第 9 章推出的 Boltzmann 方程的解。但在那之前，要先处理与偏振本性有关的一些微妙之处。温度的统计很容易推出，因为温度是**坐标不变量**。偏振不是：若沿 $x$ 轴测偏振（对应 $I_{xx}$），再转动坐标系，$I_{xx}$ 的值就变了，$Q$、$U$ 也随之改变（\figref{10.1} 的交互图中转动 $\alpha$ 即可看到）。幸运的是，我们在 \secref{6.1} 已经发展了处理这类问题的工具，现在只需从三维空间换到二维。`}</Tx>
@@ -79,12 +80,12 @@ $$I_{\rm det}=(I+Q)\cos^2\phi+2U\sin\phi\cos\phi+(I-Q)\sin^2\phi=I+Q\cos2\phi+U\
 
 **一个例子。**取单个模式，波矢沿 $x$ 轴：$\boldsymbol l=l_0\hat{\boldsymbol e}_x$（$\phi_l=0$）。实空间中的偏振图样为`}</Tx>
         <Eq n="10.12" title="沿 x 轴的单个模式" say={R`波矢沿 $x$ 时：只有 $Q$（对角）的模式是纯 E，只有 $U$（非对角）的模式是纯 B。这给了一个判别 E/B 的便捷坐标系。`}>{R`\sym{IT}{I}^{\rm T}_{ij}(\boldsymbol\theta) = \begin{pmatrix}1&0\\0&-1\end{pmatrix}e^{il_0\theta_x}E_0 + \begin{pmatrix}0&1\\1&0\end{pmatrix}e^{il_0\theta_x}B_0.`}</Eq>
-        <Figure n="10.3" interactive={<EBWidget />}
-          caption={R`沿 $x$ 轴的单个平面波扰动（$\boldsymbol k=k\hat{\boldsymbol e}_x$）产生的偏振：E 模（上）与 B 模（下）。每根无头箭头的长度表示偏振强度。两种图样可以由偏振角与模式波矢（偏振强度变化的方向）的对齐方式区分。这里与 \figref{10.4} 中画的都是朝纸面外（沿 $z$ 轴）传播的光子的偏振。**交互版**（也对应 \figref{10.4}）：在浏览器中按 \eqref{10.11} 计算每点的 $Q$、$U$ 并画偏振棒；可改变波矢方向 $\phi_l$、相位、E/B 混合，或切换到径向波（各方向平面波叠加）。核对：$\phi_l=0$ 的纯 E 在波峰为水平棒、波谷为竖直棒、零点处消失；纯 B 在波峰为 $45^\circ$（"/"）、波谷为 $-45^\circ$（"\"），与原图一致。`} />
+        <Figure n="10.3" illustration={<EBWidget />}
+          caption={R`原创计算图。（也对应 \figref{10.4}）：在浏览器中按 \eqref{10.11} 计算每点的 $Q$、$U$ 并画偏振棒；可改变波矢方向 $\phi_l$、相位、E/B 混合，或切换到径向波（各方向平面波叠加）。核对：$\phi_l=0$ 的纯 E 在波峰为水平棒、波谷为竖直棒、零点处消失；纯 B 在波峰为 $45^\circ$（"/"）、波谷为 $-45^\circ$（"\"），与原图一致。`} />
         <Tx>{R`**E 像电场，B 像磁场。**结果见 \figref{10.3}。E 模的强度变化方向与其取向相同或垂直，令人联想到电场：点电荷的场 $\boldsymbol E=q\hat{\boldsymbol r}/\nosym{r}^2$ 随离开源的距离改变强度，却始终指向同一方向——径向向外；沿场的方向移动，场强减小。B 模则在与其指向不同（相差 $45^\circ$）的方向上改变强度，就像磁场。注意：把 E 模图样中的每个偏振方向转 $45^\circ$，就得到 B 模图样（交互图中把 $\chi_{EB}$ 拨到 $90^\circ$ 即可看到）。
 
 **径向波。**受这个类比启发，考虑 $x$–$y$ 平面内一组平面波的叠加：它们波长相同、在原点同相、振幅相同，只是方位角 $\phi_l$ 不同。E 与 B 模的偏振图样（不妨自己推一推！）如 \figref{10.4} 所示。两者截然不同，B 模呈现特征性的"**旋涡**"状。从图中还能看出 E 与 B 的**宇称**不同：E 是宇称偶的（设想把纸面翻过来，它保持不变），B 是宇称奇的（变号）。所以我们能在观测的偏振图中区分 E 与 B 分量，也就不奇怪了。`}</Tx>
-        <Figure n="10.4" caption={R`与 \figref{10.3} 类似，但这里画的是 $x$–$y$ 平面中径向波（左图，即各方位角 $\phi_l$ 的等相位、等振幅平面波之和）产生的偏振。这一配置把 E 与 B 图样的差别展示得非常清楚（中图与右图；仍是朝纸面外传播的光）。各图分别画出径向波的一个波峰（红色，内圈）与一个波谷（蓝色，外圈）。（交互版见 \figref{10.3}，切换到"径向波"。）`} />
+        <Figure n="10.4" illustration={<EBWidget geo0="radial" />} caption={R`径向平面波叠加的原创数值偏振图：调节 E/B 混合，比较径向、切向与旋转图样。`} />
         <Tx>{R`**这一步的收获。**除了好看的图，我们完成了一个重要目标：$E(\boldsymbol l)$ 现在像温度一样是天空上的**标量**（而 $B(\boldsymbol l)$ 是**赝标量**；这一点以及 $Q$、$U$ 不具备这一性质，可在 \exref{10.1} 中证明）。这意味着可以直接计算功率谱。\eqref{10.11} 的另一层意义是：我们可以用一个方便的坐标系来判断某个物理过程产生的是 E 还是 B。由 \eqref{10.12}，波矢 $\boldsymbol l$ 沿 $x$ 轴、只有 $Q$ 而没有 $U$ 的模式对应纯 E 模——由于 E、B 坐标无关，这个结论对任何波矢方向都成立。`}</Tx>
         <Box kind="warning" title="E/B 是非局域的">{R`单独一根偏振棒无所谓 E 或 B——同一根"沿 $x$"的棒，若周围强度沿 $x$ 变化就是 E，若沿 $45^\circ$ 变化就是 B。E/B 的定义依赖于 Fourier 模式的方向 $\boldsymbol l$，因此在实空间中是**非局域**的；在有边界、有遮挡的真实天图上分离 E 与 B 会出现"E→B 泄漏"，这是实际 B 模实验的一个技术难点。`}</Box>
       </Sub>

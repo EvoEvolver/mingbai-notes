@@ -1,3 +1,4 @@
+import { EtaJumpRedraw } from "./_redraw_ch12_14.jsx";
 // §12.7 热核与广义 $\zeta$ 函数 + §12.8 Atiyah–Patodi–Singer 指标定理 —— 式 (12.91)–(12.129)，例 12.7–12.8，习题 12.4–12.7，定理 12.3，图 12.1–12.2
 import { Sec, Sub, Tx, Eq, Box, Stmt, Exercise, Derivation, Figure, C } from "@kit";
 import { HeatKernelS1, SpectralFlowLab } from "./_ch12_demos.jsx";
@@ -196,7 +197,7 @@ $$\frac12${GF}\Big(\frac{s+1}{2}\Big)a^{-(s+1)/2}=\int_0^\infty\dd x\,x^s\mathrm
           <Eq n="12.120" say={R`$\eta$ 函数可以由"Dirac 算子乘以它自己的高斯热核"的迹做 Mellin 变换得到。`}>{R`\eta(s)=\frac{2}{${GF}(\frac12(s+1))}\int_0^\infty\dd x\,x^s\,\mathrm{tr}\,\mathrm{i}${NB}\mathrm{e}^{-x^2(\mathrm{i}${NB})^2}.`}</Eq></>
         </Exercise>
         <Tx>{R`**谱流。**设 Dirac 场与外规范势 $\mathcal{A}_t$（$t\in[0,1]$）相互作用。Dirac 算子 $\mathrm{i}${NB}(\mathcal{A}_t)$ 的本征值问题依赖于 $t$。若 $\mathrm{i}${NB}(\mathcal{A}_t)$ 的某个本征值穿过零，$\eta$ 不变量就跳变 $\pm2$。这一跳变标志着从 $\lambda\gtrless0$ 模式到 $\lambda\lessgtr0$ 模式的**谱流**（spectral flow）：若 $\eta$ 跳 $+2$（$-2$），就有一个态从 $\lambda<0$ 流到 $\lambda>0$（从 $\lambda>0$ 流到 $\lambda<0$），见图 12.1。除了与谱流相关的不连续变化外，$\mathrm{i}${NB}$ 还有连续变化 $\eta_c$。我们有`}</Tx>
-        <Figure n="12.1" caption={R`每当本征值 $\lambda$ 穿过零（a），$\eta$ 不变量就跳变 $\pm2$（b）。符号取决于 $\lambda$ 穿过零的方式。`} width="75%" />
+        <Figure illustration={<EtaJumpRedraw />} n="12.1" caption={R`自绘谱穿零：连续本征值从正到负、从负到正时，其对 $\eta$ 的贡献分别跳变 $-2$、$+2$。`} width="100%" />
         <Eq n="12.121" title="$\eta$ 的变化 = 连续部分 + 2 $\times$ 谱流" say={R`$\eta$ 不变量的总变化分成两部分：随本征值连续移动的部分，以及每次有本征值从负穿到正时的 $+2$ 跳变。`}>{R`\eta(t=1)-\eta(t=0)=\int_0^1\dd t\frac{\dd\eta_c}{\dd t}+2\times(\text{谱流}).`}</Eq>
       </Sub>
 
@@ -238,7 +239,7 @@ $$\mathrm{i}\nabla_{t+1}=\mathrm{e}^{\mathrm{i}\theta}\,\mathrm{i}\nabla_t\,\mat
           <Eq n="12.127b" say={R`二维 Dirac 算子的两个非对角块。`}>{R`D\equiv\mathrm{i}\partial_t+\partial_\theta-\mathrm{i}t\qquad D^\dagger\equiv\mathrm{i}\partial_t-\partial_\theta+\mathrm{i}t.`}</Eq>
           <Tx>{R`这些算子作用在满足下列边界条件的函数上：`}</Tx>
           <Eq n="12.128" say={R`$\theta$ 方向周期；$t$ 方向走一个周期后差一个规范变换 $\mathrm{e}^{\mathrm{i}\theta}$——这使 $(\theta,t)$ 环面上的线丛具有单位陈数。`}>{R`\phi(\theta+2\pi,t)=\phi(\theta,t)\qquad\phi(\theta,t+1)=\mathrm{e}^{\mathrm{i}\theta}\phi(\theta,t).`}</Eq>
-          <Figure n="12.2" caption={R`$\mathrm{i}\nabla_t$ 本征值随时间的演化。$\mathrm{Spec}\,\mathrm{i}\nabla_t$ 以 1 为周期。第 $i$ 个本征值在 $t=0$ 处穿过零，因此有一个单位的谱流。交互版：拖动 $t$，看本征值 $n+t$ 的运动、$\eta$ 不变量的锯齿（用 \eqref{12.120} 数值积分）以及 $\ker D^\dagger$ 中的 $\theta$ 函数零模。`} width="40%" interactive={<SpectralFlowLab />} />
+          <Figure illustration={<SpectralFlowLab />} n="12.2" caption={R`$\mathrm{i}\nabla_t$ 本征值随时间的演化。$\mathrm{Spec}\,\mathrm{i}\nabla_t$ 以 1 为周期。第 $i$ 个本征值在 $t=0$ 处穿过零，因此有一个单位的谱流。交互版：拖动 $t$，看本征值 $n+t$ 的运动、$\eta$ 不变量的锯齿（用 \eqref{12.120} 数值积分）以及 $\ker D^\dagger$ 中的 $\theta$ 函数零模。`} width="100%" />
           <Tx>{R`**$\ker D^\dagger$。**设 $\phi_0\in\ker D^\dagger$，作 Fourier 展开
 
 $$\phi_0(\theta,t)=\sum a_n(t)\mathrm{e}^{-\mathrm{i}n\theta}.$$

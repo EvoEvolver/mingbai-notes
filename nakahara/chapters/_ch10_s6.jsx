@@ -1,3 +1,4 @@
+import { BerryLiftRedraw, QuantumFibreRedraw } from "./_redraw_ch09_10.jsx";
 // §10.6 Berry 相位 + 章末习题 —— 式 (10.129)–(10.170)，例 10.7–10.8，习题 10.13–10.15，Problem 10.1，图 10.6–10.7，交互图 5
 import { Sec, Sub, Tx, Eq, Box, Stmt, Exercise, Derivation, Figure, C } from "@kit";
 import { BerryLab } from "./_ch10_demos.jsx";
@@ -69,7 +70,7 @@ function Sub10_6_2() {
       <Tx>{R`**丛。**设 $M$ 是描述参数空间的流形，$${bR}=(R_1,\ldots,R_k)$ 是局部坐标。在 $M$ 的每一点 $${bR}$，考虑哈密顿量 $H(${bR})$ 归一化的第 $n$ 个本征态。由于量子态 $|n;${bR}\rangle$ 与 $e^{\mathrm{i}\phi}|n;${bR}\rangle$ 无法区分，物理态由等价类表示：`}</Tx>
       <Eq n="10.137" say={R`物理态是"相差一个相位的本征矢"构成的等价类：这根纤维就是一个 U(1)。`}>{R`[|${bR}\rangle]\equiv\{g|${bR}\rangle\mid g\in\mathrm{U}(1)\}`}</Eq>
       <Tx>{R`其中省去了指标 $n$，因为只关心第 $n$ 个本征矢（\figref{10.6}）。在 $M$ 的每一点 $${bR}$ 有一个 U(1) 自由度，于是得到参数空间 $M$ 上的 U(1) 丛 $P(M,\mathrm{U}(1))$。投影为 $\pi(g|${bR}\rangle)=${bR}$。`}</Tx>
-      <Figure n="10.6" caption={R`依赖于绝热参数 $\boldsymbol R$ 的量子力学体系的纤维。`} width="45%" />
+      <Figure illustration={<QuantumFibreRedraw />} n="10.6" caption={R`依赖于绝热参数 $\boldsymbol R$ 的量子力学体系的纤维。`} width="100%" />
       <Tx>{R`在每一点 $${bR}\in M$ 固定 $|${bR}\rangle$ 的相位，就是选取一个截面。设 $\sigma(${bR})=|${bR}\rangle$ 是 $M$ 的坐标卡 $U$ 上的局部截面。典范局部平凡化为`}</Tx>
       <Eq n="10.138" say={R`选定相位约定（截面）后，选定的那个本征矢对应纤维上的单位元。`}>{R`\phi^{-1}(|${bR}\rangle)=(${bR},e).`}</Eq>
       <Tx>{R`"右"作用给出`}</Tx>
@@ -144,7 +145,7 @@ $$\mathrm{i}\frac{\dd\eta(t)}{\dd t}=-\langle${bR}(t)|\frac{\dd}{\dd t}|${bR}(t)
       <Tx>{R`注意 $${bR}(0)=${bR}(1)$，所以 $|${bR}(0)\rangle=|${bR}(1)\rangle$。于是 $\exp[\mathrm{i}\eta(1)]$ 被视为和乐（\figref{10.7}）：`}</Tx>
       <Eq n="10.159a" title="Berry 和乐" say={R`绕参数闭路一周，水平提升回到同一根纤维上的另一点：差一个相位 $e^{-\oint\mathcal{A}}=e^{\mathrm{i}\eta}$。`}>{R`\tilde{\boldsymbol{R}}(1)=\exp\Big(-\oint\langle${bR}|\dd|${bR}\rangle\Big)\cdot|${bR}(0)\rangle.`}</Eq>
       <Stmt id="F:berry" />
-      <Figure n="10.7" caption={R`若参数沿闭路 $\boldsymbol R(t)$ 绝热变化，初始条件为 $|\boldsymbol R(0)\rangle$ 的态变为 $|\tilde{\boldsymbol R}(1)\rangle$，一般与 $|\boldsymbol R(0)\rangle$ 不同。差别就是和乐，即 Berry 相位。`} width="50%" />
+      <Figure illustration={<BerryLiftRedraw />} n="10.7" caption={R`自绘 Berry 水平提升：自旋 $1/2$ 正能态沿纬圈绝热演化后，得到相位 $-\Omega/2$，一般不回到同一个代表矢。`} width="100%" />
       <Exercise n="10.14" title="Berry 相位 = Berry 曲率的通量" level="★"
         hint={R`U(1) 阿贝尔，路径排序可以去掉；对 $\oint\mathcal{A}$ 用 Stokes 定理。`}
         solution={R`U(1) 是阿贝尔群，\eqref{10.159a} 中的指数就是普通指数。设闭路 $\boldsymbol R(t)$ 与它所围的曲面 $S$ 都在截面 $\sigma$ 有定义的坐标卡 $U$ 内，由 Stokes 定理 \sref{T6.1}：

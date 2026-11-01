@@ -1,3 +1,4 @@
+import { LastScatterRedraw } from "./_ch14_redraw.jsx";
 // §9.2 Large-scale anisotropies（式 9.5–9.9）与 §9.3 Acoustic oscillations（式 9.10–9.28，图 9.6–9.7）
 import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
 import { ToyAcousticPlot, RecSpectrumPlot } from "./_ch09_plots.jsx";
@@ -65,7 +66,7 @@ export function Sec93() {
         <Tx>{R`回忆平均自由程 $\lambda_{\rm MFP}=-1/\tau'$，前置因子就是 $k\lambda_{\rm MFP}$。因此对所有波长远大于平均自由程的模式，$\Theta_l\ll\Theta_{l-1}$。这也说明了刚才扔掉 $\Theta_{l+1}$ 项是合理的：$\Theta_{l+1}$ 与 $\Theta_l$ 之间有类似的关系。容易验证，若忽略偏振的多极矩，$\Theta_2$ 同样被压低；下一章会看到这种压低也适用于偏振。总之，所有 $l>1$ 的矩都远小于单极和偶极。
 
 **为什么高阶矩被阻尼：物理图像。**在利用这一事实、推导只保留单极与偶极（流体近似）的紧耦合方程之前，我们想理解**为什么**紧耦合环境中高阶矩被阻尼。这一观察极其重要，不仅在宇宙学中，而且在所有使用流体近似的场合。考虑 \figref{9.6} 所示的平面波扰动。坐在扰动中心的观测者看到的光子来自约一个平均自由程 $-1/\tau'$ 的距离。对大尺度扰动（$k/|\tau'|\ll1$，如图所示）来说，光子来源区域内温度几乎不变，所以诱导出的各向异性极小。对波长极短（$k/|\tau'|\sim1$）的扰动这就不成立了——但事实上，这些模式的波长远小于阻尼尺度，已经被光子扩散强烈阻尼。`}</Tx>
-        <Figure n="9.6" width="75%" caption={R`紧耦合时期的各向异性：扰动尺度远大于光子平均自由程 $1/|\tau'|$。观测者（圆点）测到的光子来自 $1/|\tau'|$ 以内，远小于模式的波长。因此她看到来自各个方向的光子温度几乎完全相同；更准确地说，她测到一个单极和一个很小的偶极，更高阶的矩都可忽略。`} />
+        <Figure n="9.6" illustration={<LastScatterRedraw tight />} width="100%" caption={R`紧耦合教学示意：最后一次散射区域远小于温度扰动的空间尺度，高阶各向异性受到压低。`} />
         <Tx>{R`**单极与偶极方程。**有了这些认识，转向前两个矩的方程。扔掉 $\Theta_2$ 后它们为`}</Tx>
         <Eq n="9.13" title="单极（连续性）方程" say={R`光子单极（密度）的变化 = 偶极（速度）的散度 + 空间曲率扰动随时间变化带来的"拉伸"。`}>{R`\Theta_0' + k\Theta_1 = -\Phi',`}</Eq>
         <Eq n="9.14" title="偶极（Euler）方程" say={R`光子偶极（动量）由压强梯度 $k\Theta_0/3$ 与引力 $k\Psi/3$ 驱动，并通过散射项被拖向重子速度。`}>{R`\Theta_1' - \frac{k\Theta_0}{3} = \frac{k\Psi}{3} + \tau'\left[\Theta_1 - \frac{iu_{\rm b}}{3}\right].`}</Eq>
@@ -139,8 +140,8 @@ export function Sec93() {
           { tex: R`\frac{d}{d\eta}\int_0^\eta d\tilde\eta\,(\Phi-\Psi)\sin[k(r_s-r'_s)]=0+\int_0^\eta d\tilde\eta\,(\Phi-\Psi)\,kc_s\cos[k(r_s-r'_s)]`, why: R`上限处的边界项含 $\sin0=0$。乘以 $-\frac1k\cdot\frac{k}{\sqrt3}$ 并取 $c_s\to1/\sqrt3$，得 $-\frac k3\int(\Phi-\Psi)\cos[\cdots]$。` },
         ]} />
         <Tx>{R`第一项与单极**完全反相**（$\sin(kr_s)$ 对 $\cos(kr_s)$）。\figref{9.7} 显示，即使计入积分项，这一特征依然存在。这种相位错开将对最终的各向异性谱产生重要影响（\secref{9.6.2}）。`}</Tx>
-        <Figure n="9.7" interactive={<RecSpectrumPlot dipole />}
-          caption={R`基准协调宇宙学中复合时的单极 $\Theta_0+\Psi$ 与偶极 $3\Theta_1$。竖虚线为 \eqref{9.27} 的粗略解析峰位。偶极与单极完全反相，并且对复合时尚未进入视界的最长波模式为零。**交互版**：本页简化 Boltzmann 解；竖线 $n\pi\eta_0/r_s$ 用同一模型的 $r_s(\eta_*)\approx144\,\mathrm{Mpc}$、$\eta_0\approx1.42\times10^4\,\mathrm{Mpc}$ 计算，第一条在 $k\eta_0\approx309$。原书图中竖线约在 457、910、1367，比 $\pi\eta_0/r_s$ 大约 $1/h$ 倍——与 \figref{9.2} 一样，横轴疑为 $k$ 以 $h\,\mathrm{Mpc^{-1}}$ 计、$\eta_0$ 以 $\mathrm{Mpc}$ 计的混合单位。`} />
+        <Figure n="9.7" illustration={<RecSpectrumPlot dipole />}
+          caption={R`原创计算图。本页简化 Boltzmann 解；竖线 $n\pi\eta_0/r_s$ 用同一模型的 $r_s(\eta_*)\approx144\,\mathrm{Mpc}$、$\eta_0\approx1.42\times10^4\,\mathrm{Mpc}$ 计算，第一条在 $k\eta_0\approx309$。原书图中竖线约在 457、910、1367，比 $\pi\eta_0/r_s$ 大约 $1/h$ 倍——与 \figref{9.2} 一样，横轴疑为 $k$ 以 $h\,\mathrm{Mpc^{-1}}$ 计、$\eta_0$ 以 $\mathrm{Mpc}$ 计的混合单位。`} />
       </Sub>
     </Sec>);
 }

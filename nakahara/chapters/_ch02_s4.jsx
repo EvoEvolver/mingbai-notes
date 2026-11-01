@@ -1,3 +1,4 @@
+import { FoundationsRedraw } from "./_redraw_foundations.jsx";
 // §2.4 同胚与拓扑不变量 —— 式 (2.28)–(2.34)，定义 2.9–2.10，定理 2.4–2.6，例 2.13–2.16，习题 2.18–2.19，图 2.10–2.12
 // 交互图：拓扑不变量判别器、Euler 示性数计算器
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Proof, Exercise, Erratum, Derivation, Table, C } from "@kit";
@@ -22,7 +23,7 @@ export function Sec24() {
 **同胚是等价关系。**自反：取 $f=\mathrm{id}_X$。对称：若 $f:X_1\to X_2$ 是同胚，按定义 $f^{-1}:X_2\to X_1$ 也是同胚。传递：若 $f:X_1\to X_2$ 与 $g:X_2\to X_3$ 是同胚，则 $g\circ f:X_1\to X_3$ 也是（连续映射的复合连续：$(g\circ f)^{-1}(U)=f^{-1}(g^{-1}(U))$；逆为 $f^{-1}\circ g^{-1}$，同理连续）。于是我们可以按"能否用同胚把一个空间变成另一个"把所有拓扑空间分成等价类。
 
 直观地说，设想拓扑空间是用理想的橡皮做成的，可以随意变形。两个拓扑空间同胚，就是能把一个连续地变形成另一个——**不撕开，也不粘上**。`}</Tx>
-        <Figure n="2.10" caption="(a) 咖啡杯与甜甜圈同胚。(b) 相扣的两个环与分开的两个环同胚。" width="80%" />
+        <Figure n="2.10" illustration={<FoundationsRedraw n="2.10"/>} caption="(a) 咖啡杯与甜甜圈同胚。(b) 相扣的两个环与分开的两个环同胚。" width="80%" />
         <Tx>{R`\figref{2.10} 给出几个同胚的例子。在 \figref{2.10}(b) 中，似乎不可能通过连续变形把左图变成右图。然而这只是这些对象**嵌入** $\mathbb{R}^3$ 的方式造成的假象：作为拓扑空间，两者都只是"两个不交的圆周"，当然同胚；事实上它们在 $\mathbb{R}^4$ 中可以连续地互相变形（章末习题 2.3）。要区分两者，必须把它们嵌入（比如）$S^3$，再比较它们在 $S^3$ 中的**补集**——这是纽结理论的思路，超出了本书范围，我们满足于同胚。`}</Tx>
         <Box kind="warning" title="同胚是空间本身的性质，不是“怎么放”的性质">{R`同胚 $f:X_1\to X_2$ 只涉及 $X_1$、$X_2$ 自身的拓扑，不涉及外面的环境空间。"能否在 $\mathbb{R}^3$ 中连续地移动一个变成另一个"（合痕 isotopy）是更强的要求。相扣与分开的两个环同胚，但在 $\mathbb{R}^3$ 中不合痕。`}</Box>
       </Sub>
@@ -106,7 +107,7 @@ $$v-e+f=2.$$
 如例 2.5(b) 所见，$T^2$ 等价于对边粘合的矩形（\figref{2.4}）。注意这种粘合，就得到一个由矩形面构成的多面体，如 \figref{2.11}(b)，同样得到 $\chi(T^2)=0$：粘合后只剩 4 个顶点 $A,B,C,D$、8 条棱、4 个面，$4-8+4=0$。
 
 当图形无法实现（嵌入）在 $\mathbb{R}^3$ 中时，这种方法相当有用。例如 Klein 瓶（\figref{2.5}(a)）无法不自交地实现在 $\mathbb{R}^3$ 中，由 \figref{2.5}(a) 的矩形得 $\chi(\text{Klein 瓶})=0$。类似地有 $\chi(\text{射影平面})=1$。`}</Box>
-        <Figure n="2.11" caption="与环面同胚的多面体的例子。" width="80%" />
+        <Figure n="2.11" illustration={<FoundationsRedraw n="2.11"/>} caption="与环面同胚的多面体的例子。" width="80%" />
         <Box kind="note" title="带粘合的矩形怎样数（本站补充）">
           <Tx>{R`以单个矩形计（1 个面），粘合后只把重合的顶点、棱数一次：`}</Tx>
           <Table head={["曲面", "粘合后的顶点", "粘合后的棱", "面", R`$\chi$`]} rows={[
@@ -135,7 +136,7 @@ $$\chi(\Sigma_2)=1-4+1=-2.$$
         </Exercise>
         <Erratum kind="erratum" loc="p.110 习题 2.19(b)" title={R`八边形在图 2.7(a)，不在图 2.6(a)`}>{R`原书写 "make use of the octagon in figure 2.6(a)"。图 2.6 是射影平面的半球示意图；八边形是 \figref{2.7}(a)。本站已改正。`}</Erratum>
         <Tx>{R`**连通和。**两个曲面 $X$、$Y$ 的**连通和**（connected sum）$X\sharp Y$ 是这样得到的曲面：从 $X$ 与 $Y$ 上各挖去一个小圆盘，再用一个圆柱面把两个洞连起来，见 \figref{2.12}。设 $X$ 是任意曲面，易见`}</Tx>
-        <Figure n="2.12" caption={R`连通和。(a) $S^2\sharp S^2=S^2$，(b) $T^2\sharp T^2=\Sigma_2$。`} width="80%" />
+        <Figure n="2.12" illustration={<FoundationsRedraw n="2.12"/>} caption={R`连通和。(a) $S^2\sharp S^2=S^2$，(b) $T^2\sharp T^2=\Sigma_2$。`} width="80%" />
         <Eq n="2.32" say={R`球面是连通和的“单位元”：接上一个球面，等于用一顶帽子把洞补上，什么也没变。`}>{R`S^2\sharp X=X`}</Eq>
         <Tx>{R`因为 $S^2$ 与圆柱面可以变形去填补 $X$ 上的洞，见 \figref{2.12}(a)。两个环面的连通和是（\figref{2.12}(b)）`}</Tx>
         <Eq n="2.33" keyEq title="两个环面的连通和" say="把两个甜甜圈用一根管子接起来，就是有两个洞的甜甜圈。">{R`T^2\sharp T^2=\Sigma_2.`}</Eq>

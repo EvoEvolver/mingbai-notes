@@ -1,3 +1,4 @@
+import { RightActionRedraw, StereoChartsRedraw } from "./_redraw_ch09_10.jsx";
 // §9.4 主丛 —— 式 (9.41)–(9.73)，定理 9.2，推论 9.2，例 9.7–9.12，图 9.8–9.9；交互图 2（Hopf 纤维化）
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Proof, Derivation, C } from "@kit";
 import { HopfLab } from "./_ch09_demos.jsx";
@@ -22,7 +23,7 @@ export function Sec94() {
 $$ua=\phi_j(p,g_ja)=\phi_j(p,t_{ji}(p)g_ia)=\phi_i(p,g_ia).$$
 
 （第二个等号用 $g_j=t_{ji}(p)g_i$；第三个等号用 \eqref{9.4} 与 \eqref{9.6b}：$\phi_j(p,f)=\phi_i(p,t_{ij}f)$，$t_{ij}t_{ji}=e$。）因此右乘无需借助局部平凡化即有定义，记作 $P\times G\to P$ 或 $(u,a)\mapsto ua$。注意 $\pi(ua)=\pi(u)$。`}</Tx>
-        <Figure n="9.8" caption={R`$G$ 在 $P$ 上的右作用。`} width="45%" />
+        <Figure illustration={<RightActionRedraw />} n="9.8" caption={R`$G$ 在 $P$ 上的右作用。`} width="100%" />
         <Tx>{R`**可迁与自由。**$G$ 在 $\pi^{-1}(p)$ 上的右作用是*可迁的*，因为 $G$ 从右边可迁地作用在 $G$ 上，而 $F_p=\pi^{-1}(p)$ 微分同胚于 $G$。所以对任意 $u_1,u_2\in\pi^{-1}(p)$，存在 $a\in G$ 使 $u_1=u_2a$。于是若 $\pi(u)=p$，整根纤维可以写成 $\pi^{-1}(p)=\{ua\mid a\in G\}$。这个作用还是*自由的*：若对某个 $u\in P$ 有 $ua=u$，则 $a$ 必是 $G$ 的单位元 $e$。事实上，若 $u=\phi_i(p,g_i)$，就有 $\phi_i(p,g_ia)=\phi_i(p,g_i)a=ua=u=\phi_i(p,g_i)$。由于 $\phi_i$ 是双射，必有 $g_ia=g_i$，即 $a=e$。（参见\sref{D5.15}。）
 
 **典范局部平凡化。**给定 $U_i$ 上的截面 $s_i(p)$，按如下方式定义一个优选的局部平凡化 $\phi_i:U_i\times G\to\pi^{-1}(U_i)$：对 $u\in\pi^{-1}(p)$，$p\in U_i$，存在*唯一*的 $g_u\in G$ 使 $u=s_i(p)g_u$（由右作用的自由与可迁）。令 $\phi_i^{-1}(u)=(p,g_u)$。在这个局部平凡化下，截面 $s_i(p)$ 表示为`}</Tx>
@@ -104,7 +105,7 @@ $$(\xi^1)^2+(\xi^2)^2+(\xi^3)^2=[(x^1)^2+(x^2)^2+(x^3)^2+(x^4)^2]^2=1.$$`}</Tx>
             { tex: R`(z^0,z^1)\mapsto(\lambda z^0,\lambda z^1),\ |\lambda|=1\ \Rightarrow\ \xi\ \text{不变}`, why: R`$(\lambda z^0)(\bar\lambda\bar z^1)=|\lambda|^2z^0\bar z^1$，$|\lambda z^\alpha|=|z^\alpha|$。所以每根纤维至少含一个圆；反之若 $\pi(z)=\pi(w)$，比值 $z^0/z^1=w^0/w^1$（或同为北极），加上归一化即得 $w=\lambda z$。` },
           ]} />
           <Tx>{R`设 $(X,Y)$ 是 $S^2$ 南半球 $U_{\rm S}$ 中一点从北极出发的球极投影坐标。若取包含 $S^2$ 赤道的复平面，$Z=X+\mathrm{i}Y$ 位于单位圆内。在例 8.1 中求得（\figref{9.9}）`}</Tx>
-          <Figure n="9.9" caption={R`球面 $S^2$ 的球极坐标。$(X,Y)$ 相对于从北极出发的投影定义，$(U,V)$ 相对于从南极出发的投影定义。`} width="55%" />
+          <Figure illustration={<StereoChartsRedraw />} n="9.9" caption={R`自绘双球极投影的子午截面：连接球面点 $P$ 与北极、南极，在赤道平面上得到两张卡的坐标。`} width="100%" />
           <Eq n="9.54a" say={R`南半球用北极投影的复坐标 $Z$，它恰好是两个复分量之比 $z^0/z^1$——与纤维上的相位 $\lambda$ 无关。`}>{R`Z=\frac{\xi^1+\mathrm{i}\xi^2}{1-\xi^3}=\frac{x^1+\mathrm{i}x^2}{x^3+\mathrm{i}x^4}=\frac{z^0}{z^1}\qquad(\xi\in U_{\rm S}).`}</Eq>
           <Tx>{R`（验证：$1-\xi^3=(|z^0|^2+|z^1|^2)-(|z^0|^2-|z^1|^2)=2|z^1|^2$，所以 $Z=2z^0\bar z^1/(2|z^1|^2)=z^0/z^1$。）注意 $Z$ 在
 

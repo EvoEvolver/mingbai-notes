@@ -276,7 +276,8 @@ export function WthetaPlot() {
       const ths = Array.from({ length: 50 }, (_, i) => 2.5 * Math.pow(100, i / 49));
       const w = P.wTheta(ths.map(t => t / 60 * Math.PI / 180), LG, Cl);
       return [
-        { label: R`\text{线性 Limber 预言（}W\text{ 为 Gaussian，中心 }\chi=${f2(win.c0)}\,h^{-1}\mathrm{Mpc}\text{）}`, data: ths.map((t, i) => [t, t * w[i]]), color: "#c0392b", width: 2.6 },
+        { label: R`\text{线性 Limber 预言}`, data: ths.map((t, i) => [t, t * w[i]]), color: "#c0392b", width: 2.6 },
+        {label:R`\bar\chi=${win.c0.toFixed(0)}\,h^{-1}\mathrm{Mpc}`,f:()=>NaN},
         { label: R`\text{峰值 }\theta w=${f3(Math.max(...ths.map((t, i) => t * w[i])))}`, f: () => NaN },
       ];
     }}

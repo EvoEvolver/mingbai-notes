@@ -1,3 +1,4 @@
+import { FoundationsRedraw } from "./_redraw_foundations.jsx";
 // 章末习题（Problems 3.1–3.2）与图 3.13
 import { Sec, Tx, Exercise, Figure } from "@kit";
 
@@ -35,7 +36,7 @@ $$q\ge1:\quad H_0\cong\mathbb{Z},\quad H_1\cong\mathbb{Z}^{2h+q-1},\quad H_2\con
 交互计算器对 $0\le h\le4$、$0\le q\le4$ 实际构造三角剖分并用 Smith 标准形算出的结果与此完全一致（例如 $h=2,q=3$：$I=27/87/55$，$H_1\cong\mathbb{Z}^6$，$\chi=-5$）。`}>
         {R`最一般的可定向二维曲面是带有 $h$ 个环柄、$q$ 个洞的 2 维球面。计算这个曲面的同调群与 Euler 示性数。`}
       </Exercise>
-      <Figure n="3.13" caption={R`$S^2$ 上的一个洞，其边按图示方式粘合（交叉帽）。可以考虑带 $q$ 个这种洞的 $S^2$。`} width="40%" />
+      <Figure n="3.13" illustration={<FoundationsRedraw n="3.13"/>} caption={R`$S^2$ 上的一个洞，其边按图示方式粘合（交叉帽）。可以考虑带 $q$ 个这种洞的 $S^2$。`} width="40%" />
       <Exercise n="P3.2" title="带交叉帽的球面" level="★★"
         hint={R`按 \figref{3.13} 粘合洞的边，相当于与 $\sym{RP}{\mathbb{R}P^2}$ 做连通和；$\chi(\sym{RP}{\mathbb{R}P^2})=1$。仿照例 3.11 与 3.13：把所有三角形以相同系数相加，边界是什么？`}
         solution={R`记曲面为 $N_q$（$q\ge1$ 个交叉帽）。按图 3.13 粘合一个洞的边，就是把一个 Möbius 带的边界缝到洞上；结果与 $\sym{RP}{\mathbb{R}P^2}$ 做了一次连通和（题中已指出 $q=1$ 时得到 $\sym{RP}{\mathbb{R}P^2}$）。

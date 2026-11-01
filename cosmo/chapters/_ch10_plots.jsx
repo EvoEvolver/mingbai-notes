@@ -168,8 +168,8 @@ export function ScatterWidget({ mode0 = "scal" }) {
 // =====================================================================
 // 3. 图 10.3 / 10.4 交互版：E 模与 B 模的偏振棒图样
 // =====================================================================
-export function EBWidget() {
-  const [geo, setGeo] = useState("plane"), [mix, setMix] = useState(0), [phl, setPhl] = useState(0), [chi, setChi] = useState(0);
+export function EBWidget({ geo0 = "plane" }) {
+  const [geo, setGeo] = useState(geo0), [mix, setMix] = useState(0), [phl, setPhl] = useState(0), [chi, setChi] = useState(0);
   const Eamp = Math.cos(mix * DEG), Bamp = Math.sin(mix * DEG);
   const W = 680, H = 360, N = geo === "plane" ? 24 : 21, L = geo === "plane" ? 2 * Math.PI : 9, size = 330, ox = 175, oy = 15, cell = size / N;
   const pts = useMemo(() => {

@@ -1,3 +1,4 @@
+import { AntipodalTransportRedraw, CurvatureLoopRedraw, TorsionRedraw } from "./_redraw_ch06_08.jsx";
 // §7.3 曲率与挠率 —— 式 (7.36)–(7.51)，例 7.2，习题 7.7，图 7.2–7.5
 import { Sec, Sub, Tx, Eq, Box, Figure, Exercise, Derivation, C } from "@kit";
 
@@ -48,8 +49,8 @@ $T$ 与 $R$ 既然是张量，只要知道它们在基向量上的作用，就�
 
       <Sub n="7.3.2" title="Geometrical meaning of the Riemann tensor and the torsion tensor" zh="Riemann 张量与挠率张量的几何意义">
         <Tx>{R`在继续之前，先看这两个张量的几何意义。先看 Riemann 张量。关键的观察是：若把 $p$ 点的向量 $V$ 沿两条不同曲线 $C$ 与 $C'$ 平行移动到 $q$，一般会在 $q$ 得到不同的向量（\figref{7.2}）。而在欧氏空间里按通常意义平行移动，结果与路径无关。我们预期平行移动的这种**不可积性**刻画了内禀的曲率概念，它不依赖于特别选取的坐标。`}</Tx>
-        <Figure n="7.2" caption={R`把 $V$ 沿大圆平行移动时，自然的定义是保持 $V$ 与大圆的夹角不变。若 $p$ 点的 $V$ 分别沿大圆 $C$ 与 $C'$ 平行移动，到达 $q$ 时两个向量方向相反。`} width="55%" />
-        <Figure n="7.3" caption={R`$p$ 点的向量 $V_0$ 沿 $C$ 与 $C'$ 平行移动，在 $r$ 点得到 $V_C(r)$ 与 $V_{C'}(r)$。曲率度量两者之差。`} width="55%" />
+        <Figure illustration={<AntipodalTransportRedraw />} n="7.2" caption={R`自绘球面大圆运输：同一初始向量沿两条互相垂直的经线到达对极点，结果方向相反。`} width="100%" />
+        <Figure illustration={<CurvatureLoopRedraw />} n="7.3" caption={R`$p$ 点的向量 $V_0$ 沿 $C$ 与 $C'$ 平行移动，在 $r$ 点得到 $V_C(r)$ 与 $V_{C'}(r)$。曲率度量两者之差。`} width="100%" />
         <Tx>{R`取一个无穷小平行四边形 $pqrs$，四个顶点的坐标为 $\{x^\mu\}$、$\{x^\mu+\varepsilon^\mu\}$、$\{x^\mu+\varepsilon^\mu+\delta^\mu\}$、$\{x^\mu+\delta^\mu\}$，$\varepsilon^\mu$ 与 $\delta^\mu$ 为无穷小（\figref{7.3}）。把 $V_0\in T_pM$ 沿 $C=pqr$ 平行移动，得到 $V_C(r)\in T_rM$。由 \eqref{7.9}，$V_0$ 沿 $C$ 平行移动到 $q$ 为
 
 $$V_C^\mu(q)=V_0^\mu-V_0^\kappa\Gamma^\mu{}_{\nu\kappa}(p)\varepsilon^\nu.$$
@@ -76,7 +77,7 @@ $$pr_2=pq+qr_2=\varepsilon^\mu+\delta^\mu-\Gamma^\mu{}_{\lambda\nu}\varepsilon^\
 
 一般 $r_1$ 与 $r_2$ 不重合，从 $r_1$ 指向 $r_2$ 的差为`}</Tx>
         <Eq n="7.45" title="挠率 = 平行四边形不闭合" say={R`用平行移动搭一个无穷小"平行四边形"，两条边走完到达的终点不重合，缺口正比于面积元，比例系数是挠率。`}>{R`\overrightarrow{r_1r_2}=pr_2-pr_1=(\Gamma^\mu{}_{\nu\lambda}-\Gamma^\mu{}_{\lambda\nu})\varepsilon^\lambda\delta^\nu=T^\mu{}_{\nu\lambda}\varepsilon^\lambda\delta^\nu.`}</Eq>
-        <Figure n="7.4" caption={R`向量 $qr_2$（$sr_1$）是向量 $ps$（$pq$）平行移动到 $q$（$s$）的结果。一般 $r_1\neq r_2$，挠率度量两者之差。`} width="55%" />
+        <Figure illustration={<TorsionRedraw />} n="7.4" caption={R`向量 $qr_2$（$sr_1$）是向量 $ps$（$pq$）平行移动到 $q$（$s$）的结果。一般 $r_1\neq r_2$，挠率度量两者之差。`} width="100%" />
         <Tx>{R`所以，挠率张量度量的是"由小位移向量及其平行移动构成的平行四边形"不闭合的程度。（原书把这个差记作 $r_2r_1$；按 $pr_2-pr_1$ 的定义它是从 $r_1$ 指向 $r_2$ 的向量。）`}</Tx>
         <Box kind="example" n="7.2" title={R`保持与纬线夹角的"航海"联络：有挠无曲`}>
           <Tx>{R`设想在地球表面航行。我们规定：若向量与纬线的夹角在航行中保持不变，就说它被平行移动。［注：这不是通常的平行移动定义。例如这时的测地线不是大圆，而是 Mercator 投影上的直线（恒向线）。参看例 7.5。］设沿经线与纬线组成的小四边形 $pqrs$ 航行（\figref{7.5}(a)），把 $p$ 点的向量分别沿 $pqr$ 与 $psr$ 平行移动。按定义，两个向量在 $r$ 点必然一致，所以曲率张量为零。
@@ -90,7 +91,7 @@ $$T^\phi{}_{\theta\phi}=\cot\theta\qquad(T^\phi{}_{\phi\theta}=-\cot\theta).$$`}
         <Box kind="warning" title={R`勘误：例 7.2 中 $T^\phi{}_{\theta\phi}$ 的符号（p.278）`}>{R`原书结论为 $T^\phi{}_{\theta\phi}=-\cot\theta$，漏掉了 $s$ 在 $\theta-\dd\theta$ 处这一事实，即 $\delta^\theta=-\dd\theta$。改正后为 $T^\phi{}_{\theta\phi}=+\cot\theta$。
 
 **独立核对（不用图）：**这个联络的定义是"正交归一标架 $\hat e_\theta=R^{-1}\partial_\theta$、$\hat e_\phi=(R\sin\theta)^{-1}\partial_\phi$ 是平行的"，即 $\nabla\hat e_\theta=\nabla\hat e_\phi=0$。于是 $\nabla_{\partial_\theta}\partial_\phi=\nabla_{\partial_\theta}(R\sin\theta\,\hat e_\phi)=R\cos\theta\,\hat e_\phi=\cot\theta\,\partial_\phi$，$\nabla_{\partial_\phi}\partial_\theta=\nabla_{\partial_\phi}(R\hat e_\theta)=0$，所以 $\Gamma^\phi{}_{\theta\phi}=\cot\theta$、$\Gamma^\phi{}_{\phi\theta}=0$，由 \eqref{7.41}，$T^\phi{}_{\theta\phi}=\cot\theta$。正文已按此改正。`}</Box>
-        <Figure n="7.5" caption={R`(a) 若向量在 $p$ 点与经线成角 $\alpha$，平行移动中保持这个角不变。(b) 向量 $sr_1$（$qr_2$）是向量 $pq$（$ps$）平行移动到 $s$（$q$）的结果。挠率不为零。`} width="70%" />
+        <Figure illustration={<TorsionRedraw marine />} n="7.5" caption={R`自绘局部展开示意：保持与经纬线夹角不变的航海联络产生小平行四边形缺口，挠率不为零。`} width="100%" />
         <Tx>{R`注意基 $\{\partial/\partial\theta,\partial/\partial\phi\}$ 在两极没有定义。已知 $S^2$ 上不存在两个处处线性无关的向量场：$S^2$ 上任何向量场必在某处为零（"毛球定理"），在那里不可能与另一个向量场线性无关。若 $m$ 维流形 $M$ 上存在 $m$ 个处处线性无关的向量场，就说 $M$ 是**可平行化的**（parallelizable）。在可平行化流形上，可以用这 $m$ 个向量场在每点给出切空间的基。若 $V_p\in T_pM$ 在这组基下的全部分量等于 $V_q\in T_qM$ 的分量，就定义 $V_p$ 平行于 $V_q$。由于这些向量场在整个 $M$ 上有定义，这种平行性与连接 $p$、$q$ 的路径无关，因而 Riemann 曲率张量为零，但挠率一般不为零。对 $S^m$，这只在 $m=1,3,7$ 时可能，这与复数、四元数、八元数的存在密切相关。具体地，考虑嵌入 $(\R^4,\delta)$ 的
 
 $$S^3=\Big\{(x^1,x^2,x^3,x^4)\ \Big|\ \sum_{i=1}^4(x^i)^2=1\Big\}.$$

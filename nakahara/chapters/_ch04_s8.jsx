@@ -1,3 +1,4 @@
+import {TextureRedraw} from "./_redraw_textures.jsx";
 // §4.8 凝聚态系统中的序 —— 式 (4.57)–(4.67)，图 4.20–4.22，交互图 4（SkyrmionLab）
 import { Sec, Sub, Tx, Eq, Box, Figure, Erratum, Derivation, Table, C } from "@kit";
 import { SkyrmionLab } from "./_ch04_demos.jsx";
@@ -32,7 +33,7 @@ $$\frac{\partial \sym{Ffree}{F}}{\partial\boldsymbol{h}}=-\frac{1}{\sym{betaT}{\
 若系统温度均匀，$|\boldsymbol{m}|$ 与位置无关，$\boldsymbol{m}$ 只由方向确定。在基态中 $\boldsymbol{m}$ 本身也应与位置无关。用极坐标 $(\theta,\phi)$ 表示 $\boldsymbol{m}$ 的方向很方便：$\boldsymbol{m}$ 与球面 $S^2$ 上的点一一对应。设 $\boldsymbol{m}$ 随位置变化：$\boldsymbol{m}=\boldsymbol{m}(\boldsymbol{x})$。空间每一点 $\boldsymbol{x}$ 都被指定 $S^2$ 上的一点 $(\theta,\phi)$，得到从空间到 $S^2$ 的映射 $(\theta(\boldsymbol{x}),\phi(\boldsymbol{x}))$。
 
 除了基态（以及由基态附近的小振荡——**自旋波**——描述的激发态）之外，系统还可能存在各种**不能**由基态经小扰动得到的激发态。哪些激发可能存在，取决于空间维数与序参量。例如若空间是二维的，Heisenberg 铁磁体可能有一种称为 **Belavin–Polyakov 单极子**的激发（\figref{4.20}，Belavin and Polyakov 1975）。注意 $\boldsymbol{m}$ 在远处趋于常矢量（这里是 $\hat{\boldsymbol{z}}$），所以能量不发散。这一条件保证了激发的稳定性：在远处 $\boldsymbol{m}$ 保持不变的前提下，不可能把这个位形连续地变形为均匀位形。这类稳定性由拓扑论证保证的激发称为**拓扑激发**（topological excitations）。注意场 $\boldsymbol{m}(\boldsymbol{x})$ 定义了映射 $\boldsymbol{m}:S^2\to S^2$（平面加上无穷远点就是 $S^2$），因而按同伦群 $\pi_2(S^2)=\mathbb{Z}$ 分类。`}</Tx>
-        <Figure n="4.20" caption={R`Belavin–Polyakov 单极子的示意图。$|\boldsymbol{x}|\to\infty$ 时矢量 $\boldsymbol{m}$ 趋于 $\hat{\boldsymbol{z}}$。交互版：选择拓扑荷，实时数值积分 $\frac1{4\pi}\int\boldsymbol{m}\cdot(\partial_x\boldsymbol{m}\times\partial_y\boldsymbol{m})$，验证它等于 $\pi_2(S^2)$ 中的类（习题 4.11）。`} width="60%" interactive={<SkyrmionLab />} />
+        <Figure n="4.20" caption={R`Belavin–Polyakov 单极子的示意图。$|\boldsymbol{x}|\to\infty$ 时矢量 $\boldsymbol{m}$ 趋于 $\hat{\boldsymbol{z}}$。交互版：选择拓扑荷，实时数值积分 $\frac1{4\pi}\int\boldsymbol{m}\cdot(\partial_x\boldsymbol{m}\times\partial_y\boldsymbol{m})$，验证它等于 $\pi_2(S^2)$ 中的类（习题 4.11）。`} width="60%" illustration={<SkyrmionLab />} />
       </Sub>
 
       <Sub n="4.8.2" title={R`Superfluid $^4$He and superconductors`} zh={R`超流 $^4$He 与超导体`}>
@@ -56,7 +57,7 @@ $$\phi(\boldsymbol{x})\sim(\text{产生算符})+(\text{湮灭算符}),$$
           { tex: R`|\Psi|^2=-\frac{6\sym{alphaGL}{\alpha}}{\sym{betaGL}{\beta}}\quad(\sym{alphaGL}{\alpha}<0,\ \sym{betaGL}{\beta}>0)`, why: R`$T<T_{\rm c}$ 时才有非零实根；此时 $\Psi=0$ 是极大。` },
         ]} result={R`$\Delta_0=[-(6\sym{alphaGL}{\alpha}/\sym{betaGL}{\beta})]^{1/2}$；极小构成圆周 $\{\Delta_0e^{i\sym{alphaph}{\alpha}}\}\cong S^1$`} />
         <Erratum kind="erratum" loc="p.175，式 (4.63a) 之后" title={R`勘误：$^4$He 的临界温度约为 $2.17\ \mathrm{K}$，不是"$\sim4\ \mathrm{K}$"`}>{R`原书写"$T\sim4\ \mathrm{K}$"。$^4$He 的超流转变（$\lambda$ 点）在饱和蒸气压下为 $T_\lambda\approx2.17\ \mathrm{K}$；$4.2\ \mathrm{K}$ 是 $^4$He 在一个大气压下的沸点。`}</Erratum>
-        <Figure n="4.21" caption={R`$T>T_{\rm c}$ 时自由能在 $|\Psi|=0$ 处取极小，$T<T_{\rm c}$ 时在 $|\Psi|=\Delta_0$ 处取极小。`} width="40%" />
+        <Figure n="4.21" illustration={<TextureRedraw n="4.21"/>} caption={R`$T>T_{\rm c}$ 时自由能在 $|\Psi|=0$ 处取极小，$T<T_{\rm c}$ 时在 $|\Psi|=\Delta_0$ 处取极小。`} width="40%" />
         <Tx>{R`若 $\Psi(\boldsymbol{x})$ 依赖于 $\boldsymbol{x}$，还有一项称为**梯度能**（gradient energy）的附加贡献`}</Tx>
         <Eq n="4.63b" say="序参量在空间中变化要付出代价：梯度能正比于序参量梯度的模方。">{R`\mathcal{F}_{\rm grad}\equiv\tfrac12\sym{Kgrad}{K}\,\overline{\nabla\Psi(\boldsymbol{x})}\cdot\nabla\Psi(\boldsymbol{x})`}</Eq>
         <Tx>{R`$\sym{Kgrad}{K}$ 是正常数。若 $\Psi(\boldsymbol{x})$ 的空间变化足够缓和，可以假定 $\Delta_0$ 为常数（**London 极限**）。
@@ -97,7 +98,7 @@ $\sigma_\mu$ 是 Pauli 矩阵。由于 $\psi_\alpha$ 按 $\psi_\alpha\to \sym{Rr
 若系统处于非均匀态，梯度自由能不可忽略，$\psi$ 可能不在 $M$ 中。但若序参量变化的特征尺度远大于**相干长度**，仍可假定序参量取值于 $M$，只是这时它的值是位置的函数。在这种情况下，介质中可能存在序参量没有唯一定义的点、线或面，称为**缺陷**（defects）。按维数分为**点缺陷**（**单极子**）、**线缺陷**（**涡旋**）与**面缺陷**（**畴壁**）。这些缺陷由同伦群分类。
 
 用更数学的语言：设 $X$ 是充满所考虑介质的空间。序参量是经典场 $\psi(x)$，也可以看成**映射** $\psi:X\to M$。设介质中有一个缺陷，为具体起见，考虑超导体三维介质中的一条线缺陷。想象一个包围线缺陷的圆周 $S^1$。若 $S^1$ 上每一处都远离线缺陷（远大于相干长度 $\xi$），可以假定沿 $S^1$ 的序参量取值于序参量空间 $M=\mathrm{U}(1)$（\figref{4.22}）。基本群就是这样进入问题的：我们讨论拓扑空间 $\mathrm{U}(1)$ 中的圈。映射 $S^1\to\mathrm{U}(1)$ 按同伦类分类。取一点 $r_0\in S^1$，要求它映到 $x_0\in M$。注意 $\pi_1(\mathrm{U}(1),x_0)=\mathbb{Z}$，就可以给线缺陷指定一个整数。这个整数称为**卷绕数**（winding number），因为它数的是 $S^1$ 的像绕空间 $\mathrm{U}(1)$ 几圈。`}</Tx>
-        <Figure n="4.22" caption={R`包围线缺陷（涡旋）的圆周 $S^1$ 被映到 $\mathrm{U}(1)=S^1$。这个映射由基本群 $\pi_1(\mathrm{U}(1))$ 分类。`} width="80%" />
+        <Figure n="4.22" illustration={<TextureRedraw n="4.22"/>} caption={R`包围线缺陷（涡旋）的圆周 $S^1$ 被映到 $\mathrm{U}(1)=S^1$。这个映射由基本群 $\pi_1(\mathrm{U}(1))$ 分类。`} width="80%" />
         <Tx>{R`若两条线缺陷的卷绕数相同，一条可以连续地变形为另一条。若两条线缺陷 $A$ 与 $B$ 合并，新线缺陷属于 $A$、$B$ 合并前所属同伦类的乘积类。由于 $\mathbb{Z}$ 中的群运算是加法，新卷绕数是原卷绕数之和。序参量的均匀分布对应常值映射 $\psi(x)=x_0\in M$，属于单位元 $0\in\mathbb{Z}$。若两条卷绕数相反的线缺陷合并，新线缺陷可以连续地变形为无缺陷的位形。`}</Tx>
         <Box kind="physics" title="磁通量子化">{R`在超导体中，远离涡旋芯处超流的规范协变梯度为零，$\nabla\varphi=2e\boldsymbol{A}$（取 $\hbar=1$）。沿包围涡旋的圆周积分：$2e\oint\boldsymbol{A}\cdot\dd\boldsymbol{l}=\oint\nabla\varphi\cdot\dd\boldsymbol{l}=2\pi n$，即穿过涡旋的磁通是 $\Phi_0=\pi/e=h/2e$ 的整数倍。整数 $n$ 正是 $\pi_1(\mathrm{U}(1))=\mathbb{Z}$ 中的卷绕数——**磁通量子化是基本群的直接物理体现**。`}</Box>
         <Tx>{R`其他同伦群呢？先考虑缺陷的维数与**包围**它的球面 $S^n$。例如三维介质中的点缺陷可以被 $S^2$ 包围，缺陷由 $\pi_2(M,x_0)$ 分类。若 $M$ 有多个分支，$\pi_0(M)$ 非平凡。考虑三维 Ising 模型，$M=\{\downarrow\}\cup\{\uparrow\}$。这时存在序参量没有定义的畴壁：例如 $x<0$ 处 $\boldsymbol{S}=\uparrow$、$x>0$ 处 $\boldsymbol{S}=\downarrow$，在 $x=0$ 的 $yz$ 平面上就有一个畴壁。一般地，$d$ 维介质中的 $m$ 维缺陷由同伦群 $\pi_n(M,x_0)$ 分类，其中`}</Tx>

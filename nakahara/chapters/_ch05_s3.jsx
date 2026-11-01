@@ -1,3 +1,4 @@
+import { ManifoldRedraw } from "./_redraw_manifolds.jsx";
 // §5.3 流与李导数 —— 式 (5.39)–(5.58)，定理 5.1，命题 5.1，例 5.9，习题 5.7–5.12，图 5.12–5.13；交互图 2（李括号 = 平行四边形缺口）
 import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Proof, Exercise, Derivation, C } from "@kit";
 import { BracketLab } from "./_ch05_demos.jsx";
@@ -96,7 +97,7 @@ $$\exp(tX)x=x-ty-\frac{t^2}{2!}x+\frac{t^3}{3!}y+\cdots=x\cos t-y\sin t,$$
 
 为了得到有意义的导数，先用 $(\sigma_{-\varepsilon})_*:T_{\sigma_\varepsilon(x)}M\to T_xM$ 把 $Y|_{\sigma_\varepsilon(x)}$ 搬到 $T_xM$，再求两个向量 $(\sigma_{-\varepsilon})_*Y|_{\sigma_\varepsilon(x)}$ 与 $Y|_x$ 之差——二者都是 $T_xM$ 中的向量。向量场 $Y$ 沿 $X$ 的流 $\sigma$ 的**李导数**（Lie derivative）定义为`}</Tx>
         <Eq n="5.47" keyEq title="李导数的定义" say={R`把邻点 $\sigma_\varepsilon(x)$ 处的 $Y$ 用流"倒推"回 $x$，与 $x$ 处原有的 $Y$ 相减，再除以 $\varepsilon$：这是同一切空间里的差商，所以有意义。`}>{R`\mathcal{L}_XY=\lim_{\varepsilon\to0}\frac{1}{\varepsilon}\left[(\sigma_{-\varepsilon})_*Y|_{\sigma_\varepsilon(x)}-Y|_x\right].`}</Eq>
-        <Figure n="5.12" caption={R`要比较向量 $Y|_x$ 与 $Y|_{\sigma_\varepsilon(x)}$，后者必须用微分映射 $(\sigma_{-\varepsilon})_*$ 搬回到 $x$。`} width="60%" />
+        <Figure n="5.12" illustration={<ManifoldRedraw n="5.12"/>} caption={R`要比较向量 $Y|_x$ 与 $Y|_{\sigma_\varepsilon(x)}$，后者必须用微分映射 $(\sigma_{-\varepsilon})_*$ 搬回到 $x$。`} width="60%" />
         <Exercise n="5.8" title="李导数的另两种写法" level="★★"
           hint={R`第一种：在 \eqref{5.47} 中把 $\varepsilon$ 换成 $-\varepsilon$。第二种：用 $(\sigma_\varepsilon)_*$ 作用在 \eqref{5.47} 的方括号上，并用坐标验证到 $O(\varepsilon)$。`}
           solution={R`**第一种写法。**在 \eqref{5.47} 中作替换 $\varepsilon\to-\varepsilon$（极限 $\varepsilon\to0$ 不变）：
@@ -193,7 +194,7 @@ $$\tau^\mu(\delta,\sigma(\varepsilon,x))-\sigma^\mu(\varepsilon,\tau(\delta,x))=
 
 （略去的是 $\varepsilon^2$、$\delta^2$ 与更高阶项。$\varepsilon^2$ 项 $\frac12\varepsilon^2X^\nu\partial_\nu X^\mu$ 与 $\delta^2$ 项在两条路径中相同，相减后抵消，所以差的领头项确实是 $\varepsilon\delta$ 阶。）`}</Tx>
         <Box kind="warning" title={R`勘误：指标 $\partial_\nu Y^\mu$（p.213）`}>{R`原书第一条路径的最后一行印作 "$\varepsilon\delta X^\nu(x)\partial_\nu Y^\nu(x)$"，被求导的分量指标应为自由指标 $\mu$：$\varepsilon\delta X^\nu(x)\partial_\nu Y^\mu(x)$（与第二条路径中的 $\varepsilon\delta Y^\nu\partial_\nu X^\mu$ 对应）。否则 $\nu$ 出现三次，表达式无意义。正文已改正；交互图 2 用数值积分验证了改正后的式子。`}</Box>
-        <Figure n="5.13" caption={R`李括号 $[X,Y]$ 度量平行四边形不闭合的程度。`} width="55%" />
+        <Figure n="5.13" illustration={<ManifoldRedraw n="5.13"/>} caption={R`李括号 $[X,Y]$ 度量平行四边形不闭合的程度。`} width="55%" />
         <Tx>{R`$X$ 与 $Y$ 的李括号度量\figref{5.13} 中平行四边形**不闭合**的程度。容易看出 $\mathcal{L}_XY=[X,Y]=0$ 当且仅当`}</Tx>
         <Eq n="5.53" title="流可交换的判据" say={R`两个流可以交换次序（四边形处处闭合），当且仅当两个向量场的李括号为零。`}>{R`\sigma(s,\tau(t,x))=\tau(t,\sigma(s,x)).`}</Eq>
         <Derivation title={R`\eqref{5.53} 的证明（原书说"容易看出"，本站补全两个方向）`} collapsed steps={[

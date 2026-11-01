@@ -1,3 +1,4 @@
+import { WorldsheetRedraw } from "./_redraw_ch06_08.jsx";
 // §7.11 玻色弦理论 —— 式 (7.230)–(7.243)，习题 7.26–7.29，图 7.9
 import { Sec, Sub, Tx, Eq, Box, Figure, Exercise, C } from "@kit";
 
@@ -17,7 +18,7 @@ export function Sec711() {
 如今超对称已被纳入弦论，形成**超弦理论**，它没有快子，在十维时空中自洽。有几个自洽超弦理论的候选者。有时有人提出，完全的数学自洽性将挑出唯一的"万物理论"（TOE）。
 
 本书在最后一章研究玻色弦理论的初等方面，也研究一些与超弦有关的数学工具。经典的综述是 Scherk（1975）。第 14 章给出更多文献。`}</Tx>
-      <Figure n="7.9" caption={R`开弦 (a) 与闭弦 (b) 的轨迹。图中也画出了固定参数 $\tau_0$ 的截面。`} width="55%" />
+      <Figure illustration={<WorldsheetRedraw />} n="7.9" caption={R`开弦 (a) 与闭弦 (b) 的轨迹。图中也画出了固定参数 $\tau_0$ 的截面。`} width="100%" />
       <Sub n="7.11.1" title="The string action" zh="弦的作用量">
         <Tx>{R`$D$ 维 Minkowski 时空中粒子的轨迹由 $D$ 个函数 $X^\mu(\tau)$（$1\le\mu\le D$）给出，$\tau$ 是轨迹的参数。弦是一维对象，其位形由两个数 $(\sigma,\tau)$ 参数化，$\sigma$ 类空、$\tau$ 类时。它在 $D$ 维 Minkowski 时空中的位置由 $X^\mu(\sigma,\tau)$ 给出，见\figref{7.9}。参数 $\sigma$ 可以归一化为 $\sigma\in[0,\pi]$。弦可以是开的或闭的。我们要找支配弦动力学的作用量。
 
