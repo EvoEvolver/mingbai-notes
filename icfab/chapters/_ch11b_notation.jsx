@@ -1,0 +1,107 @@
+// 第 11 章（下）符号词典。同一字母多义时用 \sym{ch11b-<id>}{…} 指定：
+// R（Richardson 常数 / 气体常数 Rgas / 晶界反射系数 Rgb）、A（Deal–Grove A / Black 方程前因子 Abl）、
+// D（扩散系数 / 晶粒尺寸 Dg）、F（法拉第常数 / 原子通量 Fflux）、n（转移电子数 / 电流密度指数 nbl）。
+const R = String.raw;
+
+export const NOTATION = [
+  // ---------- 通用常数 ----------
+  { sym: R`q`, name: "元电荷", en: "elementary charge", def: R`$q=1.602\times10^{-19}\,\mathrm C$`, unit: "C" },
+  { sym: R`k`, name: "玻尔兹曼常数", en: "Boltzmann constant", def: R`$k=8.617\times10^{-5}\,\mathrm{eV/K}$（原书例题取 $8.63\times10^{-5}$）；$kT/q\approx25.9\,\mathrm{mV}$（300 K）`, unit: "eV/K" },
+  { sym: R`T`, name: "绝对温度", en: "temperature", def: R`器件、退火或测试温度（K）`, unit: "K" },
+  { sym: R`h`, name: "普朗克常数", en: "Planck constant", def: R`$h=6.626\times10^{-34}\,\mathrm{J\,s}$`, unit: "J s", eq: "11.10" },
+  { sym: R`t`, name: "时间", def: R`退火 / 电镀时间`, unit: "s 或 min" },
+
+  // ---------- §11.4.1 接触 ----------
+  { sym: R`J_S`, name: "通过肖特基结的电流密度", en: "current density", def: R`式 \eqref{11.9} 左端：外加电压 $V_{MS}$ 下流过金属–半导体结的电流密度；式 \eqref{11.13} 中为隧穿电流密度`, unit: R`$\mathrm{A\,cm^{-2}}$`, eq: "11.9" },
+  { sym: R`J_0`, name: "饱和电流密度", en: "saturation current density", def: R`$J_0\equiv RT^2\exp(-q\phi_B/kT)$，即式 \eqref{11.9} 的前因子；热电子发射接触的 $\rho_c=kT/qJ_0$`, unit: R`$\mathrm{A\,cm^{-2}}$`, eq: "11.11" },
+  { sym: R`R`, name: "Richardson 常数", en: "Richardson constant", def: R`$R=4\pi qm_ek^2/h^3$；用有效质量时称有效 Richardson 常数，Si 约 $120$、SiC 约 $400\ \mathrm{A\,cm^{-2}K^{-2}}$`, unit: R`$\mathrm{A\,cm^{-2}K^{-2}}$`, eq: "11.10" },
+  { id: "Rgas", sym: R`R`, name: "气体常数", en: "gas constant", def: R`$R=8.314\ \mathrm{J\,mol^{-1}K^{-1}}$；Tafel 方程中 $F/RT=q/kT$`, unit: R`$\mathrm{J\,mol^{-1}K^{-1}}$`, eq: "11.23" },
+  { id: "Rgb", sym: R`R`, name: "晶界反射系数", en: "grain-boundary reflection coefficient", def: R`电子撞到晶界被反射的概率，$0\le R<1$；孪晶界 $\approx0.01$，随机晶界 $\approx0.6$–$0.7$`, unit: "无量纲", eq: "11.31" },
+  { sym: R`\phi_B`, name: "肖特基势垒高度", en: "Schottky barrier height", def: R`金属（或硅化物）与半导体界面的能量势垒（以伏特计，$q\phi_B$ 为能量）；受费米能级钉扎，几乎与金属功函数无关（表 11.3）；对 P 型用 $\phi_{BP}$`, unit: "V", eq: "11.9" },
+  { sym: R`\phi_{BP}`, name: "对 P 型硅的势垒高度", def: R`空穴看到的势垒；对同一硅化物 $\phi_{BN}+\phi_{BP}\approx E_g/q\approx1.1\,\mathrm V$`, unit: "V" },
+  { sym: R`V_{MS}`, name: "加在肖特基结上的电压", def: R`金属相对半导体为正时为正偏，降低半导体一侧的势垒`, unit: "V", eq: "11.9" },
+  { sym: R`m_e`, name: "电子质量（有效质量）", def: R`Richardson 常数中的电子质量；对实际半导体应换成有效质量 $m^*$`, unit: "kg", eq: "11.10" },
+  { sym: R`m^*`, name: "有效质量", en: "effective mass", def: R`交互图中隧穿有效质量，以自由电子质量 $m_0$ 为单位`, unit: R`$m_0$` },
+  { sym: R`m_0`, name: "自由电子质量", def: R`$9.109\times10^{-31}\,\mathrm{kg}$`, unit: "kg" },
+  { sym: R`m_n`, name: "电子隧穿有效质量", def: R`式 \eqref{11.14} 中的电子有效质量；P 型时换为空穴有效质量 $m_p$`, unit: "kg", eq: "11.14" },
+  { sym: R`\rho_c`, name: "比接触电阻率", en: "specific contact resistivity", def: R`单位面积接触的电阻，$\rho_c=[\partial V_{MS}/\partial J_S]_{V_{MS}=0}$；接触电阻 $R_c=\rho_c/\text{面积}$`, unit: R`$\mathrm{\Omega\,cm^2}$`, eq: "11.11" },
+  { sym: R`\rho_{co}`, name: "隧穿接触的前因子", def: R`$\rho_{co}=2/(qv_{th}H\sqrt{N_D})$，式 \eqref{11.15}`, unit: R`$\mathrm{\Omega\,cm^2}$`, eq: "11.15" },
+  { sym: R`x_D`, name: "耗尽区宽度", en: "depletion width", def: R`$x_D=\sqrt{2\varepsilon_S\phi_B/qN_D}$；小于约 2.5 nm 时隧穿占主导`, unit: "nm", eq: "11.12" },
+  { sym: R`\varepsilon_S`, name: "半导体介电常数", en: "permittivity", def: R`Si：$11.7\varepsilon_0=1.04\times10^{-12}\,\mathrm{F/cm}$`, unit: "F/cm", eq: "11.12" },
+  { sym: R`\varepsilon_0`, name: "真空介电常数", def: R`$8.854\times10^{-14}\,\mathrm{F/cm}$`, unit: "F/cm" },
+  { sym: R`N_D`, name: "施主掺杂浓度", en: "donor concentration", def: R`接触下方半导体的掺杂；要形成隧穿欧姆接触需 $N_D\gtrsim5\times10^{19}\,\mathrm{cm^{-3}}$`, unit: R`$\mathrm{cm^{-3}}$`, eq: "11.12" },
+  { sym: R`N_A`, name: "受主掺杂浓度", def: R`P 型接触时代替 $N_D$`, unit: R`$\mathrm{cm^{-3}}$` },
+  { sym: R`v_{th}`, name: "热速度", en: "thermal velocity", def: R`载流子的热运动速度，约 $10^7\,\mathrm{cm/s}$`, unit: "cm/s", eq: "11.13" },
+  { sym: R`H`, name: "隧穿指数常数", def: R`$H=(4\pi/h)\sqrt{\varepsilon_S m_n}$（SI，$\phi_B$ 以伏特计）；$H\phi_B/\sqrt{N_D}$ 就是隧穿概率指数（见勘误）`, unit: R`$\mathrm{V^{-1}m^{-3/2}}$`, eq: "11.14" },
+  { sym: R`E_F`, name: "费米能级", en: "Fermi level", def: R`平衡时金属与半导体的费米能级对齐` },
+  { sym: R`E_c`, name: "导带底", def: R`半导体导带底能量；在耗尽区内向界面弯曲` },
+  { sym: R`E_g`, name: "禁带宽度", def: R`Si：1.12 eV`, unit: "eV" },
+  { sym: R`R_c`, name: "接触电阻", def: R`$R_c=\rho_c/A_{\rm contact}$`, unit: R`$\Omega$` },
+
+  // ---------- §11.4.2 硅化物 ----------
+  { sym: R`x_s`, name: "硅化物厚度", en: "silicide thickness", def: R`线性–抛物线模型 \eqref{11.16} 中的生长厚度`, unit: R`$\mathrm{\mu m}$`, eq: "11.16" },
+  { sym: R`B`, name: "抛物线速率常数", en: "parabolic rate constant", def: R`$B=2DC^*/N_1$，由扩散物种（$\mathrm{TiSi_{2}}$ 中为 Si）穿过硅化物的扩散决定；$\mathrm{TiSi_{2}}$ on (100) Si：$1.85\times10^{11}\exp(-2.5\,\mathrm{eV}/kT)\ \mathrm{\mu m^2/min}$`, unit: R`$\mathrm{\mu m^2/min}$`, eq: "11.16" },
+  { sym: R`B/A`, name: "线性速率常数", def: R`由界面反应速率决定；$\mathrm{TiSi_{2}}$ on (111) Si：$8.9\times10^{11}\exp(-2.5\,\mathrm{eV}/kT)\ \mathrm{\mu m/min}$` },
+  { sym: R`A`, name: "Deal–Grove 参数 A", def: R`$A=B/(B/A)$，具有长度量纲；$x_s\ll A$ 时线性、$x_s\gg A$ 时抛物线`, unit: R`$\mathrm{\mu m}$`, eq: "11.16" },
+  { sym: R`\tau`, name: "初始时间偏移", def: R`起始厚度不为零时引入的等效时间（第 6 章）；本章例题取 0`, unit: "min", eq: "11.16" },
+  { sym: R`D`, name: "扩散系数", en: "diffusivity", def: R`§11.4.2：Si 在 $\mathrm{TiSi_{2}}$ 中的扩散系数；§11.4.4：金属原子的扩散系数 $D=D_o\exp(-E_A/kT)$`, unit: R`$\mathrm{cm^2/s}$`, eq: "11.29" },
+  { sym: R`P`, name: "静水压力", en: "hydrostatic pressure", def: R`生长中硅化物内的静水压力，压应力为正`, unit: "Pa", eq: "11.19" },
+  { sym: R`V_D`, name: "激活体积", en: "activation volume", def: R`扩散系数对压力的敏感度；Si 在 $\mathrm{TiSi_{2}}$ 中取 $1.3\,\mathrm{nm^3}$`, unit: R`$\mathrm{nm^3}$`, eq: "11.19" },
+  { sym: R`C^*`, name: "扩散物种的平衡（表面）浓度", def: R`Deal–Grove 模型中界面处可供扩散的物种浓度`, unit: R`$\mathrm{cm^{-3}}$` },
+  { sym: R`N_1`, name: "单位体积产物所含扩散物种数", def: R`Deal–Grove 模型中把扩散通量换算成厚度增长的因子`, unit: R`$\mathrm{cm^{-3}}$` },
+
+  // ---------- §11.4.3 电镀 ----------
+  { sym: R`W`, name: "沉积质量", def: R`法拉第定律 \eqref{11.22} 中沉积金属的质量`, unit: "g", eq: "11.22" },
+  { sym: R`I`, name: "电流", def: R`电镀电流（通常用恒流源驱动）`, unit: "A", eq: "11.22" },
+  { sym: R`I_o`, name: "交换电流（密度）", en: "exchange current density", def: R`平衡电位下正、逆反应各自的电流（密度）；Tafel 方程的前因子`, unit: R`A 或 $\mathrm{A/cm^2}$`, eq: "11.23" },
+  { sym: R`A_W`, name: "原子量", en: "atomic weight", def: R`Cu：63.55 g/mol`, unit: "g/mol", eq: "11.22" },
+  { sym: R`n`, name: "每个原子转移的电子数", def: R`$\mathrm{Cu^{2+}}+2e^-\to\mathrm{Cu}$ 中 $n=2$`, unit: "无量纲", eq: "11.22" },
+  { id: "nbl", sym: R`n`, name: "电流密度指数", def: R`Black 方程中 $J^{-n}$ 的指数；Al 常取 2，Cu 取 1.1–1.3`, unit: "无量纲", eq: "11.30" },
+  { sym: R`F`, name: "法拉第常数", en: "Faraday constant", def: R`1 mol 电子的电量，$96\,485\ \mathrm{C/mol}$（原书取 96 500）`, unit: "C/mol", eq: "11.22" },
+  { id: "Fflux", sym: R`F`, name: "原子通量", en: "atomic flux", def: R`电子风驱动的金属原子通量（沿电子流方向）`, unit: R`$\mathrm{cm^{-2}s^{-1}}$`, eq: "11.28" },
+  { sym: R`\alpha`, name: "电荷转移系数", en: "charge-transfer coefficient", def: R`Tafel 方程中外加过电位用于降低反应势垒的比例，0–1`, unit: "无量纲", eq: "11.23" },
+  { sym: R`V`, name: "外加（过）电位", def: R`Tafel 方程中相对平衡（静止）电位的电压`, unit: "V", eq: "11.23" },
+  { sym: R`E^o`, name: "标准还原电位", def: R`相对标准氢电极；Cu 为 +0.345 V（表 11.6）`, unit: "V" },
+
+  // ---------- §11.4.4 电迁移 ----------
+  { sym: R`F_{\rm wind}`, name: "电子风力", en: "electron wind force", def: R`载流电子与晶格离子碰撞传递动量产生的力，方向与电子流相同（指向阳极）`, unit: "N", eq: "11.27" },
+  { sym: R`Z^*`, name: "有效价", en: "effective valence", def: R`把电子风力写成"等效电荷 $\times$ 电场"的形式所用的经验参数；电子导体为负，Al 约 −4 到 −8`, unit: "无量纲", eq: "11.27" },
+  { sym: R`\mathcal{E}`, name: "电场", def: R`导线内驱动电流的电场，$\mathcal E=\rho J$`, unit: "V/cm", eq: "11.27" },
+  { sym: R`\rho`, name: "电阻率", en: "resistivity", def: R`金属的电阻率`, unit: R`$\mathrm{\Omega\,cm}$`, eq: "11.27" },
+  { sym: R`J`, name: "电流密度", def: R`导线中的电流密度；互连中可达 $10^6$–$10^7\,\mathrm{A/cm^2}$`, unit: R`$\mathrm{A/cm^2}$`, eq: "11.27" },
+  { sym: R`C`, name: "原子浓度", def: R`可迁移金属原子的体浓度`, unit: R`$\mathrm{cm^{-3}}$`, eq: "11.28" },
+  { sym: R`\mu`, name: "原子迁移率", def: R`Einstein 关系 $\mu=D/kT$：单位力下的漂移速度` },
+  { sym: R`D_o`, name: "扩散系数前因子", def: R`Arrhenius 形式 $D=D_o\exp(-E_A/kT)$ 的前因子`, unit: R`$\mathrm{cm^2/s}$`, eq: "11.29" },
+  { sym: R`E_A`, name: "激活能", en: "activation energy", def: R`扩散或电迁移失效的激活能：Al 0.5–0.8 eV（晶界扩散），Cu 约 0.9 eV（表面扩散）`, unit: "eV", eq: "11.29" },
+  { id: "Abl", sym: R`A`, name: "Black 方程前因子", def: R`取决于薄膜结构（晶粒大小等）与工艺的经验常数`, eq: "11.30" },
+
+  // ---------- §11.5 尺寸效应 ----------
+  { sym: R`\rho_{\rm eff}`, name: "有效电阻率", en: "effective resistivity", def: R`计入表面与晶界散射后细导线的电阻率`, unit: R`$\mathrm{\mu\Omega\,cm}$`, eq: "11.31" },
+  { sym: R`\rho_o`, name: "体电阻率", en: "bulk resistivity", def: R`块体金属电阻率：Cu 1.67、Co 6.25、Ru 7.59 $\mathrm{\mu\Omega\,cm}$（表 11.7）`, unit: R`$\mathrm{\mu\Omega\,cm}$`, eq: "11.31" },
+  { sym: R`\lambda`, name: "电子平均自由程", en: "mean free path", def: R`Cu 39.3 nm、Co 11.8 nm、Ru 10.2 nm（表 11.7）；$\rho_o\lambda$ 是尺寸效应的材料优值（表 11.8）`, unit: "nm", eq: "11.31" },
+  { sym: R`d`, name: "线宽", def: R`导线的特征尺寸`, unit: "nm", eq: "11.31" },
+  { sym: R`p`, name: "表面镜面反射率", en: "specularity", def: R`$p=1$ 全镜面（不增加电阻），$p=0$ 全漫散`, unit: "无量纲", eq: "11.31" },
+  { id: "Dg", sym: R`D`, name: "晶粒尺寸", en: "grain size", def: R`细导线中通常随线宽缩小；约 $10\lambda$ 以上时晶界散射可忽略`, unit: "nm", eq: "11.31" },
+  { sym: R`t_b`, name: "阻挡层 + 衬垫厚度", def: R`TaN/Ta 合计 2–4 nm，不随线宽缩小（图 11.41）`, unit: "nm" },
+  { sym: R`w`, name: "线宽（交互图）", def: R`交互图中导线截面宽度`, unit: "nm" },
+
+  // ---------- 正文估算、小练习与旁注中的符号 ----------
+  { sym: R`\phi_{BN}`, name: "对 N 型硅的势垒高度", def: R`即 $\phi_B$（N 型），表 11.3 第一行`, unit: "V" },
+  { sym: R`\epsilon_S`, name: "半导体介电常数（原书记号）", def: R`原书式 (11.14) 写作 $\epsilon_S$，与 $\varepsilon_S$ 同义`, unit: "F/cm" },
+  { sym: R`\epsilon`, name: "小量", def: R`泰勒展开 $\sqrt{1+\epsilon}\approx1+\epsilon/2$ 中的小量`, unit: "无量纲" },
+  { sym: R`\hbar`, name: "约化普朗克常数", def: R`$\hbar=h/2\pi$`, unit: "J s" },
+  { sym: R`\Omega`, name: "欧姆", def: "电阻单位" },
+  { sym: R`\Delta`, name: "变化量", def: R`$\Delta G$ 表示反应的吉布斯自由能变化` },
+  { sym: R`G`, name: "吉布斯自由能", def: R`$\Delta G=-nFE$：还原电位为正的反应自发进行`, unit: "J/mol" },
+  { sym: R`\sigma`, name: "对数正态分布的形状参数", def: R`$\ln t_f$ 的标准差；越小，失效分布越陡`, unit: "无量纲" },
+  { sym: R`\Phi`, name: "标准正态累积分布函数", def: "标准正态分布的累积分布函数；其反函数给出对数正态坐标纸的纵轴刻度" },
+  { sym: R`\mathcal{N}`, name: "正态分布", def: R`$\mathcal N(\mu,\sigma^2)$：均值、方差给定的正态分布` },
+  { sym: R`L`, name: "导线长度", def: R`小练习中互连线的长度`, unit: "mm" },
+  { sym: R`K`, name: "介电常数（相对）", en: "dielectric constant", def: R`后道介质的相对介电常数，空气为 1，$\mathrm{SiO_2}$ 约 3.9`, unit: "无量纲" },
+  { sym: R`s`, name: "尺寸放大倍数", def: R`小练习中所有尺寸同时放大的倍数`, unit: "无量纲" },
+  { sym: R`u`, name: "钻蚀量", def: R`剥离工艺中屋檐伸出的水平距离`, unit: "µm" },
+  { sym: R`\theta`, name: "入射角", def: R`沉积原子流相对衬底法线的角度；$(\cos\theta)^n$ 角分布`, unit: "度" },
+  { sym: R`\theta_{\max}`, name: "最大入射角", def: R`沉积原子流的最大入射角`, unit: "度" },
+  { sym: R`Y`, name: "良率", en: "yield", def: R`Poisson 模型 $Y=e^{-AD_0}$（第 4 章）`, unit: "无量纲" },
+  { sym: R`D_0`, name: "缺陷密度", def: R`单位面积致命缺陷数`, unit: R`$\mathrm{cm^{-2}}$` },
+];

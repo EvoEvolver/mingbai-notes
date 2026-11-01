@@ -1,0 +1,114 @@
+[
+ {
+  "id": "ch01",
+  "title_zh": "历史回顾、摩尔定律与技术前景",
+  "title_en": "Historical Perspective, Moore's Law and Future Technology Prospects",
+  "pdf_from": 13,
+  "pdf_to": 45
+ },
+ {
+  "id": "ch02",
+  "title_zh": "现代 CMOS 工艺",
+  "title_en": "Modern CMOS Technology",
+  "pdf_from": 46,
+  "pdf_to": 76
+ },
+ {
+  "id": "ch03",
+  "title_zh": "半导体材料：晶体生长、晶圆制备与材料性质",
+  "title_en": "Semiconductor Materials: Crystal Growth, Wafer Preparation and Material Properties",
+  "pdf_from": 77,
+  "pdf_to": 115
+ },
+ {
+  "id": "ch04",
+  "title_zh": "半导体制造：洁净室、晶圆清洗、吸杂与芯片良率",
+  "title_en": "Semiconductor Manufacturing: Clean Rooms, Wafer Cleaning, Gettering and Chip Yield",
+  "pdf_from": 116,
+  "pdf_to": 161
+ },
+ {
+  "id": "ch05",
+  "title_zh": "光刻（上）：发展、光学基础与光刻胶",
+  "title_en": "Lithography (I): History, Optics and Photoresists (§5.1–5.4)",
+  "pdf_from": 162,
+  "pdf_to": 199
+ },
+ {
+  "id": "ch05b",
+  "title_zh": "光刻（下）：曝光与光刻胶建模、分辨率增强、纳米压印",
+  "title_en": "Lithography (II): Modeling, Resolution Enhancement, Nanoimprint (§5.5–5.11)",
+  "pdf_from": 200,
+  "pdf_to": 253
+ },
+ {
+  "id": "ch06",
+  "title_zh": "半导体/绝缘体界面：热氧化",
+  "title_en": "Semiconductor/Insulator Interfaces",
+  "pdf_from": 254,
+  "pdf_to": 303
+ },
+ {
+  "id": "ch07",
+  "title_zh": "半导体掺杂（上）：宏观扩散",
+  "title_en": "Doping in Semiconductors (I): Macroscopic Diffusion (§7.1–7.11)",
+  "pdf_from": 304,
+  "pdf_to": 336
+ },
+ {
+  "id": "ch07b",
+  "title_zh": "半导体掺杂（下）：原子尺度机制与点缺陷",
+  "title_en": "Doping in Semiconductors (II): Atomic-Scale Mechanisms (§7.12–7.21)",
+  "pdf_from": 337,
+  "pdf_to": 363
+ },
+ {
+  "id": "ch08",
+  "title_zh": "离子注入（上）：射程分布与阻止本领",
+  "title_en": "Ion Implantation (I): Profiles and Stopping (§8.1–8.7)",
+  "pdf_from": 364,
+  "pdf_to": 389
+ },
+ {
+  "id": "ch08b",
+  "title_zh": "离子注入（下）：损伤、退火与瞬态增强扩散",
+  "title_en": "Ion Implantation (II): Damage, Annealing and TED (§8.8–8.16)",
+  "pdf_from": 390,
+  "pdf_to": 423
+ },
+ {
+  "id": "ch09",
+  "title_zh": "刻蚀技术与化学机械抛光",
+  "title_en": "Etching Technologies and Chemical-Mechanical Polishing",
+  "pdf_from": 424,
+  "pdf_to": 475
+ },
+ {
+  "id": "ch10",
+  "title_zh": "薄膜沉积技术",
+  "title_en": "Deposition Technologies",
+  "pdf_from": 476,
+  "pdf_to": 519
+ },
+ {
+  "id": "ch11",
+  "title_zh": "后道互连工艺（上）：RC 限制与发展历程",
+  "title_en": "Back-End (Interconnect) Processing (I): RC Limits and Historical Development (§11.1–11.3)",
+  "pdf_from": 520,
+  "pdf_to": 544
+ },
+ {
+  "id": "ch11b",
+  "title_zh": "后道互连工艺（下）：关键工艺、未来结构与三维集成",
+  "title_en": "Back-End (Interconnect) Processing (II): Key Processes, Future Structures, 3D Integration (§11.4–11.11)",
+  "pdf_from": 545,
+  "pdf_to": 587
+ },
+ {
+  "id": "appA",
+  "title_zh": "附录：常数、材料性质与常用图表",
+  "title_en": "Appendices",
+  "pdf_from": 588,
+  "pdf_to": 627
+ }
+]

@@ -1,0 +1,70 @@
+// 第 8 章（下）符号词典。sym 只写符号本身；同一基底+下标有多种含义时用 id，在公式中写 \sym{ch08b-<id>}{…}。
+const R = String.raw;
+
+export const NOTATION = [
+  // ---------- 损伤产生 ----------
+  { sym: R`n`, name: "位移原子数", en: "number of displaced atoms", def: R`一个入射离子产生的位移（Frenkel 对）数目，Kinchin–Pease 估计 $n=E_{\rm n}/2E_{\rm d}$；在 $\mathrm{CI}_n$ 中作下标表示团簇所含间隙原子数`, unit: "无量纲", eq: "8.32" },
+  { sym: R`E_{\rm n}`, name: "核碰撞能量损失", en: "nuclear energy loss", def: R`入射离子在整个射程中通过核碰撞交给晶格原子的总能量；重离子（As）几乎等于入射能量，轻离子（B）只占一小部分`, unit: "eV", eq: "8.32" },
+  { sym: R`E_{\rm d}`, name: "位移能", en: "displacement energy", def: R`把一个 Si 原子从格点打出、形成稳定分离的间隙–空位对所需的最小能量，Si 中约 15 eV`, unit: "eV", eq: "8.32" },
+  { sym: R`E`, name: "离子能量", en: "ion energy", def: R`离子的（瞬时）动能；式 (8.33) 中为入射能量，$S_{\rm n}(E)$ 表示核阻止随能量变化`, unit: "eV 或 keV", eq: "8.33" },
+  { sym: R`m`, name: "离子质量", en: "ion mass", def: R`入射离子的质量；$\sqrt{2E/m}$ 是离子速度`, unit: "g", eq: "8.33" },
+  { sym: R`t`, name: "时间", en: "time", def: R`式 (8.33) 中为离子从入射到停止所经历的时间（约 $10^{-13}$ s）；在 TED 部分为退火时间`, unit: "s", eq: "8.33" },
+  { sym: R`t_{\rm eff}`, name: "有效增强时间", en: "effective time", def: R`TED 稳态持续的时间，在式 (8.48) 中即 $\tau_{\rm enh}$；在热预算比较中也指把温度曲线折算到峰值温度的 Arrhenius 等效时间`, unit: "s", eq: "8.48" },
+  { sym: R`R_{\rm p}`, name: "投影射程", en: "projected range", def: R`注入离子沿入射方向的平均深度（与 $R_{\rm P}$ 同义，式 (8.33) 原书用小写下标）；数值见表 8.1`, unit: "cm 或 nm", eq: "8.33" },
+  { sym: R`R_{\rm P}`, name: "投影射程", en: "projected range", def: R`注入分布的峰值深度，也是 +1 间隙原子到表面的典型扩散距离（式 8.45–8.47）；100 keV P 为 127 nm（表 8.1）`, unit: "cm 或 nm", eq: "8.45" },
+  { sym: R`\Delta R_{\rm P}`, name: "投影射程标准差", en: "straggle", def: R`高斯近似下注入分布的标准差 $\Delta R_{\rm P}$（表 8.1）`, unit: "nm" },
+  { sym: R`E_{\rm cr}`, name: "非晶化临界能量密度", en: "critical energy density", def: R`单位体积沉积的核碰撞能量超过此值时晶格转变为非晶；Si 中约 $5\times10^{23}\,\mathrm{eV/cm^3}$`, unit: R`$\mathrm{eV\,cm^{-3}}$`, eq: "8.34" },
+  { sym: R`\Phi`, name: "非晶化剂量", en: "amorphization dose", def: R`使衬底非晶化所需的注入剂量 $\Phi=E_{\rm cr}/NS_{\rm n}(E)$`, unit: R`$\mathrm{cm^{-2}}$`, eq: "8.34" },
+  { sym: R`N`, name: "Si 原子密度", en: "atomic density", def: R`单晶 Si 的原子数密度，$5\times10^{22}\,\mathrm{cm^{-3}}$；$NS_{\rm n}$ 是单位路程的核能量损失`, unit: R`$\mathrm{cm^{-3}}$`, eq: "8.34" },
+  { sym: R`S_{\rm n}`, name: "核阻止截面", en: "nuclear stopping power", def: R`单个靶原子对离子的核阻止截面；$NS_{\rm n}(E)$ 为单位路程沉积到核碰撞（即损伤）中的能量。100 keV As 约 $1200\,\mathrm{keV/\mu m}$`, unit: R`$\mathrm{eV\,cm^2}$`, eq: "8.34" },
+  { sym: R`S_{\rm e}`, name: "电子阻止截面", en: "electronic stopping power", def: R`离子与靶电子作用的能量损失截面，近似 $\propto\sqrt E$（第 8 章上半式 8.30–8.31）；不产生位移损伤`, unit: R`$\mathrm{eV\,cm^2}$` },
+
+  // ---------- SPE ----------
+  { sym: R`v`, name: "SPE 再生长速率", en: "regrowth velocity", def: R`非晶/晶体界面向表面推进的速度；600 °C 未掺杂 Si：$\langle100\rangle$ 50 nm/min、$\langle110\rangle$ 20 nm/min、$\langle111\rangle$ 2 nm/min`, unit: "nm/min", eq: "8.35" },
+  { sym: R`A`, name: "SPE 指前因子", en: "pre-exponential factor", def: R`式 (8.35) 中由实验确定的常数，依赖晶向与掺杂；由 600 °C $\langle100\rangle$ 的 50 nm/min 反推约 $9.4\times10^{14}\,\mathrm{nm/min}$`, unit: "nm/min", eq: "8.35" },
+  { sym: R`k`, name: "玻尔兹曼常数", en: "Boltzmann constant", def: R`$k=8.617\times10^{-5}\,\mathrm{eV/K}$；$kT$ 是热能，1000 °C 时约 0.11 eV`, unit: "eV/K", eq: "8.35" },
+  { sym: R`T`, name: "温度", en: "temperature", def: R`绝对温度（Arrhenius 式中必须用 K）；图与文字中常用 °C`, unit: "K", eq: "8.35" },
+
+  // ---------- {311} 团簇与点缺陷 ----------
+  { id: "CI", sym: R`\mathrm{CI}`, name: "团簇中的间隙原子浓度", en: "clustered interstitials", def: R`束缚在 {311} 团簇中的间隙原子浓度；$\mathrm{CI}_n$ 表示含 $n$ 个间隙原子的团簇。与自由间隙浓度 $C_{\rm I}$ 不同（原书用正体 CI 与带下标的 $C_{\rm I}$ 区分）`, unit: R`$\mathrm{cm^{-3}}$`, eq: "8.36" },
+  { sym: R`C_{\rm I}`, name: "自由间隙原子浓度", en: "free interstitial concentration", def: R`晶格中可移动的自填隙 Si 原子浓度；TED 期间远高于平衡值 $C_{\rm I}^*$`, unit: R`$\mathrm{cm^{-3}}$`, eq: "8.37" },
+  { id: "CImax", sym: R`C_{\rm I}^{\max}`, name: "稳态间隙浓度", en: "steady-state interstitial concentration", def: R`{311} 团簇生长与蒸发平衡时的自由间隙浓度 $k_{\rm r}/k_{\rm f}$；只依赖温度和结合能，与剂量无关`, unit: R`$\mathrm{cm^{-3}}$`, eq: "8.42" },
+  { id: "CIstar", sym: R`C_{\rm I}^*`, name: "平衡间隙原子浓度", en: "equilibrium interstitial concentration", def: R`无损伤时的热平衡自填隙浓度；原书例题参数 $C_{\rm I}^*=33\times10^{22}\exp(-2.96\,\mathrm{eV}/kT)\,\mathrm{cm^{-3}}$`, unit: R`$\mathrm{cm^{-3}}$`, eq: "8.43" },
+  { id: "CI0", sym: R`C_{\rm I}^0`, name: "平衡间隙浓度的指前因子", en: "pre-factor", def: R`$C_{\rm I}^0=N_{\rm Si}\exp(S^{\rm f}/k)$，例题中取 $33\times10^{22}\,\mathrm{cm^{-3}}$`, unit: R`$\mathrm{cm^{-3}}$`, eq: "8.44" },
+  { sym: R`C_{\rm I^0}`, name: "中性间隙原子的平衡浓度", en: "neutral interstitial", def: R`上标 * 表示平衡；下标 $\mathrm I^0$ 表示中性荷电态的自填隙（第 3 章式 3.3）`, unit: R`$\mathrm{cm^{-3}}$`, eq: "8.44" },
+  { sym: R`k_{\rm f}`, name: "团簇生长速率常数", en: "forward rate constant", def: R`自由间隙被团簇俘获的速率常数，扩散限制下 $k_{\rm f}=4\pi a d_{\rm I}$`, unit: R`$\mathrm{cm^3\,s^{-1}}$`, eq: "8.38" },
+  { sym: R`k_{\rm r}`, name: "团簇蒸发速率常数", en: "reverse rate constant", def: R`束缚间隙原子脱离团簇的频率：跳跃尝试频率 $d_{\rm I}/a^2$ 乘以 Boltzmann 因子 $e^{-E_{\rm b}/kT}$`, unit: R`$\mathrm{s^{-1}}$`, eq: "8.39" },
+  { sym: R`a`, name: "俘获距离 / 跳跃距离", en: "capture (jump) distance", def: R`间隙原子被团簇俘获的相遇距离，取 Si 晶格常数的一半 $a=2.7\times10^{-8}\,\mathrm{cm}$`, unit: "cm", eq: "8.38" },
+  { sym: R`d_{\rm I}`, name: "间隙原子扩散系数", en: "interstitial diffusivity", def: R`自填隙 Si 原子本身的扩散系数，例题取 $d_{\rm I}=51\exp(-1.8\,\mathrm{eV}/kT)\,\mathrm{cm^2/s}$`, unit: R`$\mathrm{cm^2\,s^{-1}}$`, eq: "8.38" },
+  { id: "dI0", sym: R`d_{\rm I}^0`, name: "间隙扩散系数指前因子", en: "pre-factor", def: R`$d_{\rm I}=d_{\rm I}^0e^{-E_{\rm m}/kT}$ 中的常数，取 $51\,\mathrm{cm^2/s}$`, unit: R`$\mathrm{cm^2\,s^{-1}}$`, eq: "8.47" },
+  { sym: R`E_{\rm b}`, name: "间隙原子与 {311} 团簇的结合能", en: "binding energy", def: R`拟合图 8.37 的 {311} 溶解动力学得到 $E_{\rm b}=1.77\,\mathrm{eV}$`, unit: "eV", eq: "8.39" },
+  { sym: R`E_{\rm F}`, name: "间隙原子形成能", en: "formation energy", def: R`$C_{\rm I}^*=C_{\rm I}^0e^{-E_{\rm F}/kT}$ 中的激活能（即形成焓 $H^{\rm f}$），例题中 2.96 eV`, unit: "eV", eq: "8.43" },
+  { sym: R`E_{\rm m}`, name: "间隙原子迁移能", en: "migration energy", def: R`$d_{\rm I}$ 的激活能，取 1.8 eV`, unit: "eV", eq: "8.47" },
+  { sym: R`N_{\rm Si}`, name: "Si 格点密度", en: "lattice site density", def: R`$5\times10^{22}\,\mathrm{cm^{-3}}$`, unit: R`$\mathrm{cm^{-3}}$`, eq: "8.44" },
+  { sym: R`S`, name: "形成熵", en: "formation entropy", def: R`$S^{\rm f}$：生成一个间隙原子的熵变（以 $k$ 为单位进入 $e^{S^{\rm f}/k}$）`, unit: "eV/K", eq: "8.44" },
+  { sym: R`H`, name: "形成焓", en: "formation enthalpy", def: R`$H^{\rm f}$：生成一个间隙原子所需的焓，等于 $E_{\rm F}$`, unit: "eV", eq: "8.44" },
+
+  { sym: R`r`, name: "径向距离", en: "radial distance", def: R`推导 $k_{\rm f}$ 时以团簇为中心的球坐标径向距离；$r=a$ 为俘获半径`, unit: "cm", eq: "8.38" },
+  { sym: R`J_{\rm tot}`, name: "流入团簇的总流量", en: "total capture flux", def: R`单位时间扩散进入半径 $a$ 的吸收球的间隙原子数，$J_{\rm tot}=4\pi ad_{\rm I}C_{\rm I}$`, unit: R`$\mathrm{s^{-1}}$`, eq: "8.38" },
+  { sym: R`G`, name: "形成自由能", en: "formation free energy", def: R`$G^{\rm f}=H^{\rm f}-TS^{\rm f}$；平衡缺陷浓度 $\propto e^{-G^{\rm f}/kT}$`, unit: "eV", eq: "8.44" },
+
+  // ---------- TED ----------
+  { sym: R`D`, name: "扩散系数", en: "diffusivity", def: R`Fick 第一定律中的扩散系数；式 (8.45) 中指间隙原子的 $d_{\rm I}$`, unit: R`$\mathrm{cm^2\,s^{-1}}$`, eq: "8.45" },
+  { sym: R`C`, name: "浓度", en: "concentration", def: R`Fick 定律中的浓度（此处为自由间隙原子）`, unit: R`$\mathrm{cm^{-3}}$`, eq: "8.45" },
+  { sym: R`x`, name: "深度", en: "depth", def: R`离开晶圆表面的距离`, unit: "cm 或 nm", eq: "8.45" },
+  { sym: R`\tau_{\rm enh}`, name: "TED 持续时间", en: "enhancement duration", def: R`+1 间隙原子全部经表面复合耗尽（{311} 溶解完）所需的时间 = 剂量 / 通量`, unit: "s", eq: "8.46" },
+  { sym: R`Q`, name: "注入剂量（+1 剂量）", en: "dose", def: R`单位面积注入的离子数；按 +1 模型，也是多余间隙原子的面密度。非晶化注入时只计 a/c 界面以下的尾部（有效 +1 剂量）`, unit: R`$\mathrm{cm^{-2}}$`, eq: "8.46" },
+  { sym: R`D_{\rm A}`, name: "杂质的正常扩散系数", en: "dopant diffusivity", def: R`杂质 A 在平衡点缺陷浓度下的本征扩散系数（表 7.3）`, unit: R`$\mathrm{cm^2\,s^{-1}}$`, eq: "8.48" },
+  { id: "DAeff", sym: R`D_{\rm A}^{\rm eff}`, name: "TED 期间的有效扩散系数", en: "enhanced diffusivity", def: R`$D_{\rm A}^{\rm eff}=D_{\rm A}C_{\rm I}^{\max}/C_{\rm I}^*$（假设杂质完全靠间隙机制扩散，$f_{\rm I}=1$）`, unit: R`$\mathrm{cm^2\,s^{-1}}$`, eq: "8.48" },
+  { sym: R`f_{\rm I}`, name: "间隙机制分数", en: "interstitial fraction", def: R`扩散中经由间隙机制的比例（表 7.4）：Si 自扩散 0.6，B、P 1.0，As 0.4，Sb 0.02；$f_{\rm I}^{\rm self}$ 指 Si 自扩散`, unit: "无量纲", eq: "8.48" },
+  { sym: R`f_{\rm V}`, name: "空位机制分数", en: "vacancy fraction", def: R`$f_{\rm V}=1-f_{\rm I}$（表 7.4）`, unit: "无量纲" },
+  { id: "Dself", sym: R`D^{\rm self}`, name: "Si 自扩散系数", en: "self-diffusion coefficient", def: R`$D^{\rm self}=560\exp(-4.76\,\mathrm{eV}/kT)\,\mathrm{cm^2/s}$（表 7.3）；$f_{\rm I}^{\rm self}D^{\rm self}C_{\rm Si}=d_{\rm I}C_{\rm I}^*$`, unit: R`$\mathrm{cm^2\,s^{-1}}$`, eq: "8.48" },
+  { sym: R`D_{\rm Self}`, name: "Si 自扩散系数", en: "self-diffusion coefficient", def: R`同 $D^{\rm self}$：$560\exp(-4.76\,\mathrm{eV}/kT)\,\mathrm{cm^2/s}$`, unit: R`$\mathrm{cm^2\,s^{-1}}$` },
+  { sym: R`C_{\rm Si}`, name: "Si 原子密度", en: "silicon atom density", def: R`$5\times10^{22}\,\mathrm{cm^{-3}}$`, unit: R`$\mathrm{cm^{-3}}$`, eq: "8.48" },
+  { sym: R`L`, name: "扩散距离", en: "diffusion distance", def: R`+1 间隙原子到表面的距离：低于非晶化阈值取 $R_{\rm P}$；非晶化时取 SPE 层深度（a/c 界面深度）`, unit: "cm" },
+  { sym: R`Q_{\rm eff}`, name: "有效 +1 剂量", en: "effective +1 dose", def: R`非晶化注入中位于 a/c 界面以下、会形成 {311} 的那部分剂量`, unit: R`$\mathrm{cm^{-2}}$` },
+  { sym: R`x_{\rm ac}`, name: "a/c 界面深度", en: "amorphous/crystalline interface depth", def: R`非晶层的下边界，也是 EOR 位错环所在深度`, unit: "nm" },
+  { sym: R`\nu`, name: "核能量沉积密度", en: "deposited nuclear energy", def: R`每个离子在深度 $x$ 处单位深度沉积到核碰撞中的能量；剂量为 $\Phi$ 时能量密度为 $\Phi\nu(x)$`, unit: R`$\mathrm{eV\,cm^{-1}}$` },
+  { sym: R`\sigma`, name: "展宽后的标准差", en: "standard deviation", def: R`退火后高斯分布的标准差，$\sigma^2=\Delta R_{\rm P}^2+2Dt$`, unit: "nm" },
+  { sym: R`T_{\rm p}`, name: "峰值温度", en: "peak temperature", def: R`退火温度曲线的最高温度`, unit: "°C" },
+];
