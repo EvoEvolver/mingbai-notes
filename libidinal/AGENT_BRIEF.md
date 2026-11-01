@@ -1,6 +1,6 @@
 # 《力比多经济》章节制作通用说明（给每个章节 subagent）
 
-你负责用「图书讲透」框架把利奥塔《力比多经济》(Jean-François Lyotard, *Économie libidinale*, 1974；英译 Iain Hamilton Grant, 1993) 的**一章**做成生动易懂的 React 页面。
+你负责用「图书讲明白」框架把利奥塔《力比多经济》(Jean-François Lyotard, *Économie libidinale*, 1974；英译 Iain Hamilton Grant, 1993) 的**一章**做成生动易懂的 React 页面。
 
 ## 必读（先完整读）
 1. `/home/zijian/books/framework/spec/KIT.md`（编写指南、组件、版权约束、自检流程）

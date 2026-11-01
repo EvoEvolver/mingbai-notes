@@ -7,7 +7,7 @@ export default {
   kind: "textbook",
   // 定理/引理/命题登记表（框架 proof 组件的数据源：Stmt、SRef、\sref{}、DepGraph、StudyTable）
   statements: STMTS,
-  title: "ETH 为假：稀疏积和式讲透",
+  title: "ETH 为假：稀疏积和式讲明白",
   title_en: "Some exposition of “The Exponential Time Hypothesis Is False”",
   author: "Exposition (odonnell@cs.cmu.edu, with LLMs) of [OAI26]",
   subtitle: "October 29, 2026 · 20 pp.",
