@@ -16,6 +16,6 @@ export default {
   katexMacros: { "\\R": "\\mathbb{R}", "\\dd": "\\mathrm{d}", "\\Tr": "\\operatorname{Tr}", "\\E": "\\mathbb{E}" },
   chapters: [
     { id: "paper", no: 0, label: "速读与导读", title_zh: "速读与导读", title_en: "The paper at a glance" },
-    { id: "method", no: 0, label: "方法深读", title_zh: "方法深读：ACES、性能指标与实验设计", title_en: "Method in depth" },
+    { id: "method", no: 0, eqs: true, label: "方法深读", title_zh: "方法深读：ACES、性能指标与实验设计", title_en: "Method in depth" },
   ],
 };
