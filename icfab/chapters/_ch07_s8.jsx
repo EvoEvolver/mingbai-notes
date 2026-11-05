@@ -1,5 +1,6 @@
 // §7.8 模型与数值模拟、§7.9 电场效应、§7.10 浓度依赖扩散——式 (7.32)–(7.46)，图 7.16–7.19，表 7.3，例题
-import { Sec, Tx, Eq, Box, Derivation, Figure, Table, C } from "@kit";
+import { Sec, Tx, Eq, Box, Derivation, Figure, Table, C, FormulaMap } from "@kit";
+import { FM_7_33 } from "./_ch07_fmaps.jsx";
 import { Fig716, Fig717 } from "./_ch07_figs.jsx";
 import { FDSolver, HFieldPlot, ConcDepPlot } from "./_ch07_plots.jsx";
 
@@ -21,7 +22,7 @@ export function Sec78() {
       <Box kind="warning" title={R`勘误：$C_i=N_i/\Delta x$`}>{R`原书正文印作 "$C_i=N_i\,\Delta x\ \mathrm{cm^{-3}}$"。$N_i$ 是面密度（$\mathrm{cm^{-2}}$），要得到体浓度（$\mathrm{cm^{-3}}$）应除以平面间距：$C_i=N_i/\Delta x$。原书 \eqref{7.33} 中 $N_2-N_1=\Delta x\,(C_2-C_1)$ 用的也正是这个关系。`}</Box>
       <Figure n="7.16" caption={R`间距 $\Delta x$ 的原子平面，第 $i$ 个平面上有 $N_i$ 个原子；平面上的原子向左、向右跳的概率相等（自绘）。`} illustration={<Fig716 />} />
       <Tx>{R`$\nu_d$ 为德拜频率，$E_b$ 为势垒高度。任一原子向左、向右跳的概率相同，所以单位时间内某平面上有 $(\nu_b/2)N$ 个原子向右跳、$(\nu_b/2)N$ 个向左跳。穿过平面 1 与 2 之间那个界面的净原子数（右行减左行）为`}</Tx>
-      <Eq n="7.33" say="相邻两平面各有一半原子跳向对方，净流量正比于两平面原子数之差；改写成浓度梯度，就是 Fick 第一定律。">{R`F = -\frac{\nu_b}{2}(N_2-N_1) = -\frac{\nu_b}{2}\Delta x\,(C_2-C_1) = -\frac{\nu_b}{2}\Delta x^2\,\frac{\Delta C}{\Delta x} = -D\,\frac{\Delta C}{\Delta x}`}</Eq>
+      <FormulaMap n="7.33" say="相邻两平面各有一半原子跳向对方，净流量正比于两平面原子数之差；改写成浓度梯度，就是 Fick 第一定律。" tree={FM_7_33} start="dN" />
       <Tx>{R`其中定义了`}</Tx>
       <Eq n="7.34" keyEq title="扩散系数的微观表达" say="扩散系数等于跳跃频率的一半乘以跳距的平方：跳得越勤、每步越远，扩散越快；它的温度依赖完全来自跳跃频率。">{R`D = \frac{\nu_b}{2}\,\Delta x^2`}</Eq>
       <Tx>{R`这让我们第一次从原子尺度看到 Fick 第一定律的来源：扩散源于原子的跳跃（本章下还会回到这一点）。乍看之下颇为意外——在稀薄混合物中，每个原子都独立地、左右等概率地跳，竟然会产生顺着浓度梯度下降的宏观流动。原因只是"数量不对等"：浓的一侧跳过来的原子多，淡的一侧跳回去的少。顺带，把 $D=\tfrac{\nu_b}{2}\Delta x^2$ 与 $\nu_b=\nu_de^{-E_b/kT}$ 合起来，就得到 \eqref{7.28} 的 Arrhenius 形式，$D^0\sim\tfrac12\nu_d\Delta x^2$。`}</Tx>

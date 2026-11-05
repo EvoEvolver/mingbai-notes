@@ -1,5 +1,6 @@
 // §11.4 引言、§11.4.1 金属–半导体接触、§11.4.2 硅化物 —— 式 (11.9)–(11.19)，图 11.25–11.33，表 11.3–11.5
-import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, Table, Details, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, Table, Details, C, FormulaMap } from "@kit";
+import { FM_11_15 } from "./_ch11b_fmaps.jsx";
 import { ResistanceFig, BandFig, SalicideFlowFig, DiffuserFig, Reaction1DFig } from "./_ch11b_svg.jsx";
 import { ContactPlot, SilicidePlot } from "./_ch11b_plots.jsx";
 
@@ -70,7 +71,7 @@ export function Sec114({ children }) {
         <Eq n="11.14" say="隧穿常数 $H$ 只含材料参数（介电常数与隧穿有效质量）：质量越重、介电常数越大，隧穿越难。">{R`H = \frac{4\pi}{h}\sqrt{\varepsilon_S m_n}`}</Eq>
         <Box kind="warning" title={R`勘误：式 (11.14) 中多了 $/q$`}>{R`原书印作 $H=\frac{4\pi}{h}\sqrt{\epsilon_S m_n/q}$。检验量纲：指数 $H\phi_B/\sqrt{N_D}$ 必须无量纲。取 SI 单位、$\phi_B$ 以伏特计，$\frac{4\pi}{h}\phi_B\sqrt{\varepsilon_S m_n/N_D}$ 的单位是 $\mathrm{V}\cdot\sqrt{\mathrm{(C/V)\,kg\,m^2}}/(\mathrm{J\,s})=1$，恰好无量纲；多出的 $1/\sqrt q$ 会留下 $\mathrm{C^{-1/2}}$。它与 Sze 教材中隧穿特征能 $E_{00}=\frac{q\hbar}{2}\sqrt{N_D/\varepsilon_S m^*}$ 给出的指数 $q\phi_B/E_{00}=\frac{4\pi}{h}\phi_B\sqrt{\varepsilon_Sm^*/N_D}$ 一致。数值上，用改正后的 $H$（$m_n=0.26m_0$、$v_{th}=10^7\,\mathrm{cm/s}$）由 \eqref{11.15} 算得 $N_D=10^{20}\,\mathrm{cm^{-3}}$、$\phi_B=0.3\,\mathrm V$ 时 $\rho_c=2.2\times10^{-8}\,\mathrm{\Omega\,cm^2}$，与图 11.27 的读数 $\approx2.3\times10^{-8}$ 吻合；若保留 $/q$，指数会大十个数量级，毫无意义。`}</Box>
         <Tx>{R`同样在零偏处对 \eqref{11.13} 求导取倒数，得到隧穿接触的比接触电阻率：`}</Tx>
-        <Eq n="11.15" keyEq title="隧穿接触的比接触电阻率" say="隧穿接触的比接触电阻率随 $\phi_B/\sqrt{N_D}$ 指数变化：降低势垒或提高掺杂都能让它指数下降，而掺杂进入的是平方根。">{R`\rho_c = \left[\frac{\partial V_{MS}}{\partial J_S}\right]_{V_{MS}=0} = \frac{2\exp\left(H\phi_B/\sqrt{N_D}\right)}{qv_{th}H\sqrt{N_D}}\ \mathrm{\Omega\,cm^2} = \rho_{co}\exp\left(H\phi_B/\sqrt{N_D}\right)\ \mathrm{\Omega\,cm^2}`}</Eq>
+        <FormulaMap n="11.15" keyEq title="隧穿接触的比接触电阻率" say="隧穿接触的比接触电阻率随 $\phi_B/\sqrt{N_D}$ 指数变化：降低势垒或提高掺杂都能让它指数下降，而掺杂进入的是平方根。" tree={FM_11_15} start="phi" />
         <Tx>{R`**解读。**$\rho_c$ 随 $N_D$ 增大而下降。要让 $x_D$ 小于约 2.5 nm、隧穿真正起作用，一般需要 $N_D>5\times10^{19}\,\mathrm{cm^{-3}}$（由 \eqref{11.12}，$\phi_B=0.3\,\mathrm V$ 时 $x_D=2.8\,\mathrm{nm}$，$\phi_B=0.6\,\mathrm V$ 时 $3.9\,\mathrm{nm}$，量级相符）。对 P 型半导体只需换成 $\phi_{BP}$、$m_p$、$N_A$。图 11.27 是用比 \eqref{11.15} 稍精细的模型算出的 $\rho_c$。下面的交互图直接用 \eqref{11.15} 计算，并叠加原书图上的读数：在 $\phi_B=0.3\,\mathrm V$ 两者几乎重合，在 $\phi_B=0.6\,\mathrm V$ 简单模型低估约 2 倍——指数里的任何近似都会被放大。`}</Tx>
         <Figure n="11.27" caption={R`不同 $\phi_B$ 与硅掺杂浓度下计算的比接触电阻（原书据 [11.24, 11.25]）。"交互版"按式 (11.15) 实时计算，可调隧穿有效质量与热速度，金色点为原书图读数。`} interactive={<ContactPlot />} />
         <Box kind="example" title="25 nm $\times$ 25 nm 的接触有多大电阻？">{R`取图 11.27 中的代表值 $\rho_c=1\times10^{-8}\,\mathrm{\Omega\,cm^2}$，接触面积 $A=(25\times10^{-7}\,\mathrm{cm})^2=6.25\times10^{-12}\,\mathrm{cm^2}$：

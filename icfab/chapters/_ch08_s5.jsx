@@ -1,5 +1,6 @@
 // §8.5 二维与三维注入：点扩展函数、掩模边缘下的 erfc 分布、倾斜注入。
-import { Sec, Tx, Eq, Box, Figure, Derivation } from "@kit";
+import { Sec, Tx, Eq, Box, Figure, Derivation, FormulaMap } from "@kit";
+import { FM_8_21 } from "./_ch08_fmaps.jsx";
 import { LateralPlot, TiltMap2D } from "./_ch08_plots.jsx";
 import { dRlat, dRlat2, erfc } from "./_ch08_tex.jsx";
 
@@ -19,7 +20,7 @@ export function Sec85() {
       <Tx>{R`这叫**点扩展函数**（point spread function）。式中 $C_{\rm ver}(x)$ 就是一维纵向分布（如 \eqref{8.4}），横向因子已归一化，所以对 $y$ 积分回到 $C_{\rm ver}(x)$。
 
 **对开口叠加。**实际的束覆盖整个开口，每一个入射点 $y'$ 都贡献一个以 $y'$ 为中心的点扩展函数，总分布是它们的和（积分）。第 7 章和 \eqref{8.19} 已经告诉我们：高斯函数的"和"是 erfc。对从 $y=-a$ 到 $y=+a$ 的开口：`}</Tx>
-      <Eq n="8.21" keyEq title="掩模边缘下的横向分布" say="开口内每个入射点贡献一个横向高斯，叠加起来是两个余误差函数之差：开口中心接近一维分布，掩模边缘处恰为一半，向掩模下方按横向离散的尺度衰减。">{R`C(x,y)=C_{\rm ver}(x)\int_{-${aa}}^{+${aa}}\frac{1}{\sqrt{2\pi}\,${dRlat}}\exp\left(-\frac{(y-y')^2}{2${dRlat2}}\right)dy'=\frac{C_{\rm ver}(x)}{2}\left[${erfc}\left(\frac{y-${aa}}{\sqrt2\,${dRlat}}\right)-${erfc}\left(\frac{y+${aa}}{\sqrt2\,${dRlat}}\right)\right]`}</Eq>
+      <FormulaMap n="8.21" keyEq title="掩模边缘下的横向分布" say="开口内每个入射点贡献一个横向高斯，叠加起来是两个余误差函数之差：开口中心接近一维分布，掩模边缘处恰为一半，向掩模下方按横向离散的尺度衰减。" tree={FM_8_21} start="scale" />
       <Box kind="warning" title={R`勘误：式 (8.21)`}>{R`原书 \eqref{8.21} 印作
 $C(x,y)=C_{\rm ver}(x)\int_{-a}^{+a}\exp\left(\frac{y-y'}{2\Delta R_{\rm lat}}\right)dy=C_{\rm ver}(x)\left[\operatorname{erfc}\left(\frac{y-a}{\sqrt{2\Delta R_{\rm lat}}}\right)-\operatorname{erfc}\left(\frac{y+a}{\sqrt{2\Delta R_{\rm lat}}}\right)\right]$，有四处问题：
 

@@ -1,9 +1,10 @@
 // A.1 平衡态半导体材料基础（下）：温度效应、不完全电离、补偿例题、SRH 复合。
 import { useMemo } from "react";
-import { Sub, Tx, Eq, Box, Figure, Derivation, Table } from "@kit";
+import { Sub, Tx, Eq, Box, Figure, Derivation, Table, FormulaMap } from "@kit";
 import { FigA1_15, FigA1_16, FigA1_17 } from "./_appA_figs.jsx";
 import { FreezeoutPlot, FermiTPlot, FermiCalc, IonizationPlot, SrhPlot } from "./_appA_plots.jsx";
 import { solveNeutral } from "./_appA_phys.jsx";
+import { FM_A1_16 } from "./_appA_fmaps.jsx";
 
 const R = String.raw;
 
@@ -34,7 +35,7 @@ export function A1Ionization() {
     <Tx>{R`$g_D$、$g_A$ 是**简并因子**（degeneracy factor）：施主能级可以被自旋向上或向下的电子占据（但不能同时两个），所以 $g_D=2$；受主还要计入价带顶的简并，一般取 $g_A=4$。
 
 只有施主时，电中性给出 $n=N_D^+$。把 $E_F$ 用 $n$ 表示，就得到一个只含 $n$ 的方程：`}</Tx>
-    <Eq n="A1.16" say="只有施主时，电子浓度等于电离施主浓度；把 E_F 换成 n 后，n 出现在等式两边，构成关于 n 的二次方程。">{R`n=N_D^+=\frac{N_D}{1+g_De^{(E_F-E_D)/kT}}=\frac{N_D}{1+g_De^{(E_F-E_D+E_C-E_C)/kT}}=\frac{N_D}{1+g_D\left(\frac{n}{N_C}\right)e^{(E_C-E_D)/kT}}`}</Eq>
+    <FormulaMap n="A1.16" say="只有施主时，电子浓度等于电离施主浓度；把 E_F 换成 n 后，n 出现在等式两边，构成关于 n 的二次方程。" tree={FM_A1_16} start="nr" />
     <Tx>{R`最后一步用了 \eqref{A1.8}：$e^{(E_F-E_C)/kT}=n/N_C$。记 $\gamma_n=\dfrac{N_C}{g_D}e^{-(E_C-E_D)/kT}$，上式化为 $n^2+\gamma_nn-\gamma_nN_D=0$，取正根：`}</Tx>
     <Eq n="A1.17" keyEq title="施主部分电离的解" say="电离施主浓度只由 $N_D$ 与参数 $\gamma_n$ 决定：$N_D\ll\gamma_n$ 时几乎全电离，$N_D\gg\gamma_n$ 时只电离约 $\sqrt{\gamma_nN_D}$。">{R`n=N_D^+=\frac{\gamma_n}{2}\left(\sqrt{1+\frac{4N_D}{\gamma_n}}-1\right)`}</Eq>
     <Tx>{R`受主完全对称：`}</Tx>

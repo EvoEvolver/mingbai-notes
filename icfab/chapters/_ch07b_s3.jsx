@@ -1,6 +1,7 @@
 // §7.16 多晶硅中的扩散 —— 式 (7.61)–(7.63)
 import { useEffect, useState } from "react";
-import { Sec, Tx, Eq, Box, Details, C } from "@kit";
+import { Sec, Tx, Eq, Box, Details, C, FormulaMap } from "@kit";
+import { FM_7_61, FM_7_62 } from "./_ch07b_fmaps.jsx";
 import { PolyPlot } from "./_ch07b_plots.jsx";
 
 const R = String.raw;
@@ -59,8 +60,8 @@ export function Sec716() {
 **一个具体过程。**设把 As 注入多晶硅后在 800 °C 氮气中退火。注入后 As 主要在晶粒内部；退火时它从晶粒内扩散到晶界并优先偏析在那里——不同取向晶粒之间的弱键或不规则成键为掺杂提供了天然的"汇"，晶界又是快速扩散的通道。能到达晶界的掺杂量受晶粒内慢扩散的限制；晶粒内部是规则晶格，其扩散就是体硅中常见的浓度依赖扩散。因此**晶粒越大**，掺杂在晶粒内要走得越远才能偏析到晶界，表面附近的峰越高、向深处扩散得越少。
 
 晶界扩散率大约是单晶晶粒中的 10 000 倍。由于晶粒内与晶界扩散的相互制约，最简单的模型干脆把体扩散率乘以 100。更精细的模型追踪两股掺杂流：`}</Tx>
-      <Eq n="7.61" keyEq title="多晶硅：晶粒内的掺杂" say="晶粒内的掺杂一方面按晶粒内（慢）扩散率扩散，另一方面以速率 k_eff 向晶界转移，直到晶界浓度与 s 倍晶粒浓度相等。">{R`\frac{\partial ${Cgr}}{\partial t}=\frac{\partial}{\partial x}\left(${Dgr}\frac{\partial ${Cgr}}{\partial x}\right)-k_{\rm eff}\left(${Cgr}-\frac{${Cgb}}{s}\right)`}</Eq>
-      <Eq n="7.62" keyEq title="多晶硅：晶界上的掺杂" say="晶界上的掺杂按晶界（快）扩散率扩散，并获得晶粒内转移过来的那一份——交换项与 (7.61) 大小相等、符号相反，掺杂总量守恒。">{R`\frac{\partial ${Cgb}}{\partial t}=\frac{\partial}{\partial x}\left(${Dgb}\frac{\partial ${Cgb}}{\partial x}\right)+k_{\rm eff}\left(${Cgr}-\frac{${Cgb}}{s}\right)`}</Eq>
+      <FormulaMap n="7.61" keyEq title="多晶硅：晶粒内的掺杂" say="晶粒内的掺杂一方面按晶粒内（慢）扩散率扩散，另一方面以速率 k_eff 向晶界转移，直到晶界浓度与 s 倍晶粒浓度相等。" tree={FM_7_61} start="k" />
+      <FormulaMap n="7.62" keyEq title="多晶硅：晶界上的掺杂" say="晶界上的掺杂按晶界（快）扩散率扩散，并获得晶粒内转移过来的那一份——交换项与 (7.61) 大小相等、符号相反，掺杂总量守恒。" tree={FM_7_62} start="D" />
       <Tx>{R`其中 $k_{\rm eff}$ 是晶粒与晶界之间的有效转移速率，$s$ 是两者之间的有效偏析系数：交换停止时 $${Cgb}=s\,${Cgr}$。把两式相加，交换项抵消，总浓度 $${Cgr}+${Cgb}$ 只随扩散改变——两股流之间只是"换手"，不产生也不消灭掺杂。
 
 晶粒被假定通过硅原子向能量有利的晶粒扩散而长大，晶粒尺寸随时间变化为`}</Tx>

@@ -1,7 +1,8 @@
 import { LoopDiagramRedraw, NLOPowerRedraw, PerturbationTreeRedraw } from "./_ch14_redraw.jsx";
 // §12.2 Perturbation theory —— 式 (12.10)–(12.53)，图 12.2–12.4，Box 12.1
-import { Sec, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
+import { Sec, Tx, Eq, FormulaMap, Box, Derivation, Figure, C } from "@kit";
 import { KernelPlot } from "./_ch12_plots.jsx";
+import { FM_12_13, FM_12_15, FM_12_16, FM_12_18, FM_12_19, FM_12_51 } from "./_ch12_fmaps.jsx";
 
 const R = String.raw;
 
@@ -19,15 +20,15 @@ export function Sec122() {
       <Tx>{R`等价地，$\langle m\rangle_{f_{\rm m}}$ 给出质量密度 $\rho_{\rm m}(\boldsymbol x,t)$，实践中更有用。类似地，定义**整体（流体）速度**为 $p^i$ 的动量平均除以密度：`}</Tx>
       <Eq n="12.12" say={R`流体速度 = 单位体积的总动量除以质量密度：粒子的平均速度。`}>{R`u^i_{\rm m}(\boldsymbol x,t) \equiv \frac{\langle p^i\rangle_{f_{\rm m}}}{\langle m\rangle_{f_{\rm m}}}.`}</Eq>
       <Tx>{R`**零阶矩：连续性方程。**把 Vlasov 方程 \eqref{12.8} 乘以 $m$ 再做动量平均 $\int d^3p/(2\pi)^3$。对 $t$、$\boldsymbol x$ 的导数总可以提到动量积分之外，得到`}</Tx>
-      <Eq n="12.13" say={R`Vlasov 方程的零阶矩：密度的时间变化 + 质量流的散度 + 一个动量导数项；后者分部积分即可算出。`}>{R`\frac{\partial}{\partial t}\rho_{\rm m}(\boldsymbol x,t) + \frac1a\frac{\partial}{\partial x^j}\left[\rho_{\rm m}(\boldsymbol x,t)u^j_{\rm m}(\boldsymbol x,t)\right] - \int\frac{d^3p}{(2\pi)^3}m\left[Hp^j + \frac ma\frac{\partial\Psi}{\partial x^j}\right]\frac{\partial}{\partial p^j}f_{\rm m}(\boldsymbol x,\boldsymbol p,t) = 0,`}</Eq>
+      <FormulaMap n="12.13" say={R`Vlasov 方程的零阶矩：密度的时间变化 + 质量流的散度 + 一个动量导数项；后者分部积分即可算出。`} tree={FM_12_13} start="hub" />
       <Tx>{R`这里用了 $\langle p^j\rangle_{f_{\rm m}}=\rho_{\rm m}u^j_{\rm m}$。最后一项分部积分，把对 $p^j$ 的导数从 $f_{\rm m}$ 移到方括号上（边界项为零：任何性质良好的分布函数在无穷大动量处都没有粒子）。计算这个导数：$-\partial/\partial p^j(Hp^j)=-3H$，而 $\partial/\partial p^j(\partial\Psi/\partial x^j)=0$，因为势只是 $t$ 与 $\boldsymbol x$ 的函数。于是 \eqref{12.13} 变为`}</Tx>
       <Eq n="12.14" keyEq title="非线性连续性方程" say={R`完全非线性的质量守恒：密度的变化来自质量流的汇聚，再加上膨胀带来的稀释 $3H\rho_{\rm m}$。`}>{R`\frac{\partial}{\partial t}\rho_{\rm m}(\boldsymbol x,t) + \frac1a\frac{\partial}{\partial x^j}\left[\rho_{\rm m}(\boldsymbol x,t)u^j_{\rm m}(\boldsymbol x,t)\right] + 3H\rho_{\rm m}(\boldsymbol x,t) = 0.`}</Eq>
       <Tx>{R`除了整体因子 $m$，这正是连续性方程——其线性版本是 \eqref{5.41}——只是现在在完全非线性阶成立（限于视界内）。
 
 **一阶矩：Euler 方程。**与线性情形一样，\eqref{12.14} 还不够，还需要速度 $u^i_{\rm m}$ 的方程。把 Vlasov 方程 \eqref{12.8} 乘以 $p^i$ 再对 $\boldsymbol p$ 积分，取一阶矩：`}</Tx>
-      <Eq n="12.15" say={R`Vlasov 方程的一阶矩：动量密度的变化 + 动量流（二阶矩）的散度 + 力项。`}>{R`\frac{\partial}{\partial t}\left[\rho_{\rm m}u^i_{\rm m}(\boldsymbol x,t)\right] + \frac{1}{ma}\frac{\partial}{\partial x^j}\left\langle p^ip^j\right\rangle_{f_{\rm m}} - \int\frac{d^3p}{(2\pi)^3}p^i\left[Hp^j + \frac ma\frac{\partial\Psi}{\partial x^j}\right]\frac{\partial}{\partial p^j}f_{\rm m}(\boldsymbol x,\boldsymbol p,t) = 0.`}</Eq>
+      <FormulaMap n="12.15" say={R`Vlasov 方程的一阶矩：动量密度的变化 + 动量流（二阶矩）的散度 + 力项。`} tree={FM_12_15} start="second" />
       <Tx>{R`最后一项再次分部积分，得到`}</Tx>
-      <Eq n="12.16" say={R`动量守恒的一般形式：动量密度被膨胀阻尼（$4H$）、被引力推动，并受到二阶矩 $\langle p^ip^j\rangle$ 的“动量流”影响。`}>{R`\frac{\partial}{\partial t}\left[\rho_{\rm m}u^i_{\rm m}(\boldsymbol x,t)\right] + \frac{1}{ma}\frac{\partial}{\partial x^j}\left\langle p^ip^j\right\rangle_{f_{\rm m}} + 4H\rho_{\rm m}u^i_{\rm m}(\boldsymbol x,t) + \frac1a\rho_{\rm m}(\boldsymbol x,t)\frac{\partial\Psi(\boldsymbol x,t)}{\partial x^i} = 0.`}</Eq>
+      <FormulaMap n="12.16" say={R`动量守恒的一般形式：动量密度被膨胀阻尼（$4H$）、被引力推动，并受到二阶矩 $\langle p^ip^j\rangle$ 的“动量流”影响。`} tree={FM_12_16} start="coef" />
       <Derivation title={R`分部积分得到 $4H$ 与引力项`} collapsed steps={[
         { tex: R`-\int\frac{d^3p}{(2\pi)^3}p^i\Big[Hp^j+\frac ma\Psi_{,j}\Big]\partial_{p^j}f_{\rm m}=\int\frac{d^3p}{(2\pi)^3}f_{\rm m}\,\partial_{p^j}\Big\{p^i\Big[Hp^j+\frac ma\Psi_{,j}\Big]\Big\}`, why: R`分部积分，边界项为零。` },
         { tex: R`\partial_{p^j}\big(p^iHp^j\big)=H(\delta^{ij}p^j+3p^i)=4Hp^i,\qquad\partial_{p^j}\Big(p^i\frac ma\Psi_{,j}\Big)=\frac ma\Psi_{,i}`, why: R`$\partial p^i/\partial p^j=\delta^{ij}$，$\partial p^j/\partial p^j=3$。` },
@@ -36,9 +37,9 @@ export function Sec122() {
       <Tx>{R`**应力张量。**这是我们想要的 $u^i_{\rm m}$ 方程，但出现了一个新量：分布的二阶矩 $\langle p^ip^j\rangle_{f_{\rm m}}$。引入**应力张量** $\sigma^{ij}_{\rm m}(\boldsymbol x,t)$ 把它写成`}</Tx>
       <Eq n="12.17" title="应力张量的定义" say={R`二阶矩 = 整体流动的动量流 $\rho u^iu^j$ + 相对于平均速度的弥散（应力张量）。对冷物质后者为零。`}>{R`\frac1m\left\langle p^ip^j\right\rangle_{f_{\rm m}} = \rho_{\rm m}u^i_{\rm m}u^j_{\rm m} + \sigma^{ij}_{\rm m}.`}</Eq>
       <Tx>{R`与 $u^i_{\rm m}$、$p^i$ 一样，$\sigma^{ij}_{\rm m}$ 也不必区分上下拉丁指标。此刻它只是 $\sigma^{ij}_{\rm m}$ 的定义，这种分解的意义马上就会看到。代入 \eqref{12.16}：`}</Tx>
-      <Eq n="12.18" say={R`把二阶矩拆成整体流与应力后的动量方程。`}>{R`\frac{\partial}{\partial t}\left[\rho_{\rm m}u^i_{\rm m}(\boldsymbol x,t)\right] + \frac1a\frac{\partial}{\partial x^j}\left[\rho_{\rm m}u^i_{\rm m}u^j_{\rm m} + \sigma^{ij}_{\rm m}\right] + 4H\rho_{\rm m}u^i_{\rm m}(\boldsymbol x,t) + \frac1a\rho_{\rm m}(\boldsymbol x,t)\frac{\partial\Psi(\boldsymbol x,t)}{\partial x^i} = 0.`}</Eq>
+      <FormulaMap n="12.18" say={R`把二阶矩拆成整体流与应力后的动量方程。`} tree={FM_12_18} start="stress" />
       <Tx>{R`减去乘以 $u^i_{\rm m}$ 的连续性方程 \eqref{12.14}，它就变得熟悉得多：`}</Tx>
-      <Eq n="12.19" say={R`减去连续性方程后，左边变成“密度 $\times$ 速度的物质导数”加上 Hubble 阻尼、引力和应力。`}>{R`\rho_{\rm m}\frac{\partial}{\partial t}u^i_{\rm m} + \frac1a\rho_{\rm m}u^j_{\rm m}\frac{\partial}{\partial x^j}u^i_{\rm m} + H\rho_{\rm m}u^i_{\rm m} + \frac1a\rho_{\rm m}\frac{\partial\Psi}{\partial x^i} + \frac1a\frac{\partial}{\partial x^j}\sigma^{ij}_{\rm m} = 0.`}</Eq>
+      <FormulaMap n="12.19" say={R`减去连续性方程后，左边变成“密度 $\times$ 速度的物质导数”加上 Hubble 阻尼、引力和应力。`} tree={FM_12_19} start="H" />
       <Tx>{R`最后除以 $\rho_{\rm m}$，得到膨胀宇宙中的 **Euler 方程**：`}</Tx>
       <Eq n="12.20" keyEq title="非线性 Euler 方程" say={R`膨胀宇宙中的 Euler 方程：速度的物质导数 = Hubble 阻尼 + 引力 + 应力（广义压强）。这是 \eqref{5.50} 的非线性推广。`}>{R`\frac{\partial}{\partial t}u^i_{\rm m} + \frac1au^j_{\rm m}\frac{\partial}{\partial x^j}u^i_{\rm m} + Hu^i_{\rm m} + \frac1a\frac{\partial\Psi}{\partial x^i} + \frac{1}{\rho_{\rm m}a}\frac{\partial}{\partial x^j}\sigma^{ij}_{\rm m} = 0.`}</Eq>
       <Tx>{R`**逐项解读。**这把之前的 \eqref{5.50} 推广到非线性阶（限于视界内）。前两项是作用在速度 $u^i_{\rm m}$ 上的**对流（物质）导数** $\partial/\partial t+u^j_{\rm m}\partial/\partial x^j$——注意它包含一个非线性项。第三项是 **Hubble 拖曳**：没有扰动时它让速度按 $1/a$ 衰减。第四项是引力，与线性阶相同，换成物理距离间隔 $dr^i=a\,dx^i$ 后与牛顿引力完全一样。这些都很熟悉，限于线性阶时就是 \secref{5.4} 的结果。
@@ -146,7 +147,7 @@ $\partial\delta^{(1)}/\partial\ln D_+=\delta^{(1)}$ 很简单，我们的目标�
       <Tx>{R`它对应在空间尺度 $R\sim1/k$ 上平滑的线性密度场方差（比较 \eqref{12.4}）。也许你会问：为什么把 $p$ 的积分截断在 $k$？数学上的原因是 \eqref{12.48} 中的微扰论核在 $p\gg k$ 时被压低。物理上的原因是：很小尺度的密度扰动不影响大尺度扰动——一团物质在远处产生的引力只依赖它的总质量，与质量在内部如何分布无关。所以粗略地说，对线性功率谱的 NLO 相对修正由 $\sigma^2_{R=k^{-1}}$ 给出。当 $k\simeq k_{\rm NL}$ 时它变为 1 的量级——回忆非线性波数 $k_{\rm NL}$ 定义为无量纲线性功率谱等于 1 的尺度（\secref{8.1.1}）。\figref{12.4} 证实了这个估计。注意 $z=1$ 时微扰论适用的范围比 $z=0$ 时延伸到显著更小的尺度。
 
 **双谱。**非线性演化的另一个重要效应是：含**奇数**个物质密度场的统计量不再为零。领头的例子是 Fourier 空间的三点关联函数，即**双谱**（bispectrum）：`}</Tx>
-      <Eq n="12.51" keyEq title="树图双谱" say={R`非线性引力产生非零的三点关联：只有三个波矢构成闭合三角形时才非零，幅度由 $F_2$ 决定——它对三角形形状的特征依赖是引力演化的“指纹”。`}>{R`\left\langle\delta_{\rm m}(\boldsymbol k_1,\eta)\delta_{\rm m}(\boldsymbol k_2,\eta)\delta_{\rm m}(\boldsymbol k_3,\eta)\right\rangle = (2\pi)^3\delta_{\rm D}^{(3)}(\boldsymbol k_1+\boldsymbol k_2+\boldsymbol k_3)\times\left[2F_2(\boldsymbol k_1,\boldsymbol k_2)P_{\rm L}(k_1,\eta)P_{\rm L}(k_2,\eta) + 2\ \text{perm.}\right].`}</Eq>
+      <FormulaMap n="12.51" keyEq title="树图双谱" say={R`非线性引力产生非零的三点关联：只有三个波矢构成闭合三角形时才非零，幅度由 $F_2$ 决定——它对三角形形状的特征依赖是引力演化的“指纹”。`} tree={FM_12_51} start="F" />
       <Tx>{R`这同样由 \eqref{12.40} 加 Wick 定理 \eqref{12.47} 得到（\exref{12.6}）。注意双谱是三个波数的函数，只有当它们矢量相加为零——在 Fourier 空间构成**闭合三角形**——时才非零。\eqref{12.51} 中双谱的幅度对三角形形状有特定的依赖，这是非线性引力演化的特征。\eqref{12.51} 只是大尺度上成立的领头阶结果，微扰论同样可以算出它的 NLO 修正。
 
 **我们其实解错了方程。**现在已经有了用微扰论计算演化后物质密度场统计量的全部工具。但在继续之前要记住：到目前为止，我们做的其实是**错误方程**的微扰论——把物质当作理想流体，而真实的物理系统是一群由 Vlasov 方程支配的无碰撞粒子。特别地，我们丢掉了 \eqref{12.20} 中的应力张量 $\sigma^{ij}_{\rm m}$。幸好并非全盘皆输：办法是把物质当作**有效流体**（effective fluid；Baumann et al., 2012）。实践中，就是把 $\sigma^{ij}_{\rm m}$ 用物质密度场本身展开。由于无法在微扰论内部预言 $\sigma^{ij}_{\rm m}$，必须允许一些自由系数，由其他手段确定。$\boldsymbol u_{\rm m}$ 的方程只含 $\sigma^{ij}_{\rm m}$ 的梯度，所以应力张量的均匀部分无关紧要。于是领头的相关项正比于 $\delta_{\rm m}$：`}</Tx>

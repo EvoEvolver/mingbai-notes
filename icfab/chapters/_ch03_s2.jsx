@@ -1,7 +1,8 @@
 // §3.4 Point Defects —— 式 (3.3)–(3.13)，图 3.9–3.12
-import { Sec, Sub, Tx, Eq, Box, Figure, Derivation, Details, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Figure, Derivation, Details, C, FormulaMap } from "@kit";
 import { DefectConcPlot, DiffusivityPlot, ChargedVacancyPlot } from "./_ch03_plots.jsx";
 import { VacancyLevels, CompoundDefectsFig } from "./_ch03_figs.jsx";
+import { FM_3_11 } from "./_ch03_fmaps.jsx";
 
 const R = String.raw;
 
@@ -63,7 +64,7 @@ export function Sec34() {
         <Eq n="3.9" say={R`$E_F$ 每高出受主能级 $kT$，负电空位相对中性空位就多 e 倍：N 型越重，$\mathrm{V}^-$ 越多。`}>{R`C_{V^-}^*=C_{V^0}^*\exp\left(\frac{E_F-E_{V^-}}{kT}\right)`}</Eq>
         <Eq n="3.10" say={R`$\mathrm{V}^=$ 要连续俘获两个电子，指数里的 $E_F$ 出现两次，所以它随 $E_F$ 上移增长得更快。`}>{R`C_{V^=}^*=C_{V^0}^*\exp\left(\frac{2E_F-E_{V^-}-E_{V^=}}{kT}\right)`}</Eq>
         <Tx>{R`把 $E_F$ 换成载流子浓度更便于后面使用。由附录 A 式 A1.13，$n=n_i\exp[(E_F-E_i)/kT]$；在指数中加减 $E_i$：`}</Tx>
-        <Eq n="3.11" keyEq title="负电空位与 $n/n_i$" say={R`负电空位浓度正比于 $n/n_i$：本征时它是中性空位的一个固定小分数，N 型掺杂超过 $n_i$ 后按电子浓度线性增长。`}>{R`C_{V^-}^*=C_{V^0}^*\exp\left(\frac{E_F-E_i}{kT}\right)\exp\left(-\frac{E_{V^-}-E_i}{kT}\right)=\frac{n}{n_i}C_{V^0}^*\exp\left(-\frac{E_{V^-}-E_i}{kT}\right)`}</Eq>
+        <FormulaMap n="3.11" keyEq title="负电空位与 $n/n_i$" say={R`负电空位浓度正比于 $n/n_i$：本征时它是中性空位的一个固定小分数，N 型掺杂超过 $n_i$ 后按电子浓度线性增长。`} tree={FM_3_11} start="n" />
         <Tx>{R`同理，用 $p=n_i\exp[(E_i-E_F)/kT]$（式 A1.14）处理式 (3.8)，并把式 (3.10) 中的两个 $E_F$ 各配一个 $E_i$：`}</Tx>
         <Eq n="3.12" keyEq title="正电空位与 $p/n_i$" say={R`正电空位浓度正比于 $p/n_i$：P 型越重，$\mathrm{V}^+$ 越多。`}>{R`C_{V^+}^*=\frac{p}{n_i}C_{V^0}^*\exp\left(-\frac{E_i-E_{V^+}}{kT}\right)`}</Eq>
         <Eq n="3.13" keyEq title="双负电空位与 $(n/n_i)^2$" say={R`双负电空位浓度正比于 $(n/n_i)^2$：电子浓度增加 10 倍，它增加 100 倍。`}>{R`C_{V^=}^*=\left(\frac{n}{n_i}\right)^2C_{V^0}^*\exp\left(-\frac{E_{V^-}-E_i}{kT}\right)\exp\left(-\frac{E_{V^=}-E_i}{kT}\right)`}</Eq>

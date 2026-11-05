@@ -1,6 +1,7 @@
 // §4.6 芯片制造的良率建模 —— 式 (4.17)–(4.26)，图 4.23
-import { Sec, Tx, Eq, Box, Figure, Derivation, C } from "@kit";
+import { Sec, Tx, Eq, Box, Figure, Derivation, C, FormulaMap } from "@kit";
 import { YieldModelsPlot, CumYieldPlot, WaferMC } from "./_ch04_plots.jsx";
+import { FM_4_26 } from "./_ch04_fmaps.jsx";
 
 const R = String.raw;
 
@@ -57,7 +58,7 @@ export function Sec46() {
       <Box kind="aside" title="小练习：Monte Carlo 的统计误差">{R`一片晶圆上若有 $n$ 颗芯片、真实良率为 $Y$，单片测得的良率的标准差约为 $\sqrt{Y(1-Y)/n}$（二项分布）。对 $A_C=1.5\,\mathrm{cm^2}$（约 430 颗）、$Y\approx0.64$，单片误差约 2.3 个百分点；累计 10 片约 0.7 个百分点。在成团模式下误差还会更大——为什么？（提示：同一块区域内的芯片"同生共死"，有效独立样本数变少了。）`}</Box>
 
       <Tx>{R`**真正的难点：几百道工序相乘。**看了 \figref{4.23}，也许会觉得 $0.1\,\mathrm{cm^{-2}}$ 的缺陷密度就能得到不错的良率。但还要考虑一个非常重要的因素：芯片制造包含几十上百道串行工序，任何一道引入的缺陷都会**累积**。所以总良率应写成各步良率之积，以负二项模型为例：`}</Tx>
-      <Eq n="4.26" keyEq title="多工序累积良率" say="总良率是每道关键工序良率的乘积；若各道的聚集因子相同，可近似合并为“总的平均缺陷数”代入一次负二项公式。">{R`Y = \prod_{i=1}^{\rm levels}\left(1+\frac{A_{{\rm C}i}D_{{\rm O}i}}{C_i}\right)^{-C_i} \cong \left\{1+\left(\sum_{i=1}^{\rm levels}A_{{\rm C}i}D_{{\rm O}i}\right)\Big/C_i\right\}^{-C_i}`}</Eq>
+      <FormulaMap n="4.26" keyEq title="多工序累积良率" say="总良率是每道关键工序良率的乘积；若各道的聚集因子相同，可近似合并为“总的平均缺陷数”代入一次负二项公式。" tree={FM_4_26} start="lv" />
       <Tx>{R`于是若一个工艺有 50 道（关键）工序、每道良率 99%，总良率约 $(0.99)^{50}\approx60\%$；若每道只有 95%，总良率只剩百分之几。表 4.1 中单步 $0.01\,\mathrm{cm^{-2}}$ 这样的苛刻指标，在这个算术下就容易理解了。当然每道工序各不相同，实际产线建模的难点之一就是确定每一道的 $A_C$ 与 $D_{\rm O}$（更多内容见 [4.44]）。`}</Tx>
       <Box kind="note" title={R`关于 (4.26) 中的 $\cong$`}>{R`右端的"合并"形式要求各道的 $C_i$ 取同一个值 $C$，并且只在一阶上与左端一致：两边展开都是 $1-\sum_iA_{{\rm C}i}D_{{\rm O}i}+\cdots$，二阶项不同。物理上，左端假设各层缺陷的"成团"彼此独立；右端相当于所有层的缺陷密度一起涨落（完全相关）——后者聚集更强，给出的良率更高。下面的交互图对比了两者：当总缺陷数 $nA_CD_{\rm O}$ 与 $C$ 相当时，差别已经可观。`}</Box>
       <CumYieldPlot />

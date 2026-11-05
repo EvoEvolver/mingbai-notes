@@ -1,5 +1,6 @@
 // §9.6 The CMB power spectrum（式 9.76–9.81，图 9.11–9.13）、§9.7 Cosmological parameters（式 9.82，图 9.14–9.18）、§9.8 Summary
-import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, C, FormulaMap } from "@kit";
+import { FM_9_79 } from "./_ch09_fmaps.jsx";
 import { SWPlot, ClContribPlot, BesselPlot, ClParamPlot, CurvatureGeometry } from "./_ch09_plots.jsx";
 
 const R = String.raw;
@@ -20,7 +21,7 @@ export function Sec96() {
         <Tx>{R`**解析积分。**这个积分可以解析算出。先利用 $\eta_*\ll\eta_0$，定义积分变量 $x\equiv k\eta_0$，\eqref{9.77} 改写为`}</Tx>
         <Eq n="9.78" say={R`换成无量纲变量 $x=k\eta_0$：距离只通过 $(\eta_0k_{\rm p})^{1-n_s}$ 进入，剩下一个纯数学积分。`}>{R`C(l)^{\rm SW} \simeq \frac{4\pi}{25}\mathcal A_s(\eta_0k_{\rm p})^{1-n_s}\int_0^\infty dx\,x^{n_s-2}j_l^2(x).`}</Eq>
         <Tx>{R`球 Bessel 函数的积分可以用 $\Gamma$ 函数解析表示（\eqref{C.18}），于是`}</Tx>
-        <Eq n="9.79" say={R`SW 谱的闭式解：$l$ 依赖全在第一个 $\Gamma$ 函数比值里，大 $l$ 时 $\approx l^{n_s-3}$，即 $l(l+1)C(l)\propto l^{n_s-1}$。`}>{R`C(l)^{\rm SW} \simeq 2^{n_s-2}\frac{\pi^2}{25}\mathcal A_s(\eta_0k_{\rm p})^{1-n_s}\frac{\Gamma\left(l+\frac{n_s}{2}-\frac12\right)}{\Gamma\left(l+\frac52-\frac{n_s}{2}\right)}\frac{\Gamma(3-n_s)}{\Gamma^2\left(2-\frac{n_s}{2}\right)}.`}</Eq>
+        <FormulaMap n="9.79" say={R`SW 谱的闭式解：$l$ 依赖全在第一个 $\Gamma$ 函数比值里，大 $l$ 时 $\approx l^{n_s-3}$，即 $l(l+1)C(l)\propto l^{n_s-1}$。`} tree={FM_9_79} start="top" />
         <Tx>{R`**尺度不变情形。**若谱是尺度不变的，$n_s=1$，则第一个 $\Gamma$ 函数比值 $\Gamma(l)/\Gamma(l+2)$ 由 \eqref{C.27} 等于 $[l(l+1)]^{-1}$。剩下的比值由 \eqref{C.28} 为 $\Gamma(2)/\Gamma^2(3/2)=4/\pi$，所以`}</Tx>
         <Eq n="9.80" keyEq title="Sachs–Wolfe 高原" say={R`尺度不变谱下 $l(l+1)C(l)$ 在大角度上是常数——SW 高原，其高度直接量出原初振幅 $\mathcal A_s$：$\frac{l(l+1)}{2\pi}C(l)=\mathcal A_s/25$。`}>{R`l(l+1)C(l)^{\rm SW} = \frac{2\pi}{25}\mathcal A_s`}</Eq>
         <Box kind="warning" title={R`勘误：\eqref{9.80} 的系数`}>

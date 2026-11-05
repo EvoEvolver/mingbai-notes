@@ -1,6 +1,7 @@
 import { BulletClusterRedraw, ClusterArcsRedraw, IntegrationTriangleRedraw, LensingCoordinatesRedraw } from "./_ch14_redraw.jsx";
 // 本章引言、§13.1 Overview（图 13.1–13.3）、§13.2 Photon geodesics —— 式 (13.1)–(13.17)，图 13.4–13.5
-import { Sec, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
+import { Sec, Tx, Eq, Box, Derivation, Figure, C, FormulaMap } from "@kit";
+import { FM_13_17 } from "./_ch13_fmaps.jsx";
 import { PointLens, KernelPlot } from "./_ch13_plots.jsx";
 
 const R = String.raw;
@@ -101,7 +102,7 @@ export function Sec132() {
       <Tx>{R`透镜势是沿光路对 $2\Phi$ 的加权积分；在我们所做的阶数上，光路可以取未扰动路径 \eqref{13.11}。注意：靠近源的过密区与欠密区对透镜的贡献被压低，因为当 $\chi'$ 趋近 $\chi$ 时 $1-\chi'/\chi$ 趋于零。
 
 **畸变张量。**对星系形状，我们还需要偏折角的一阶导数，等价地说，透镜势的二阶导数矩阵（**畸变张量**，distortion tensor）：`}</Tx>
-      <Eq n="13.17" keyEq title="畸变张量" say={R`畸变张量是透镜势的二阶导数，等于沿视线对势的横向二阶导数的加权积分，权重 $2\chi'(1-\chi'/\chi)$——它在源与观测者的中点附近最大。`}>{R`\psi_{ij} \equiv \frac{\partial\Delta\theta^i}{\partial\theta^j} = \frac{\partial^2}{\partial\theta^i\partial\theta^j}\phi_{\rm L}(\boldsymbol\theta) = 2\int_0^\chi d\chi'\,\Phi_{,ij}(\boldsymbol x(\boldsymbol\theta,\chi'))\,\chi'\left(1-\frac{\chi'}{\chi}\right),`}</Eq>
+      <FormulaMap n="13.17" keyEq title="畸变张量" say={R`畸变张量是透镜势的二阶导数，等于沿视线对势的横向二阶导数的加权积分，权重 $2\chi'(1-\chi'/\chi)$——它在源与观测者的中点附近最大。`} tree={FM_13_17} start="Phi" />
       <Tx>{R`这里又一次把对 $\boldsymbol\theta$ 的导数换成积分号下对 $\boldsymbol x$ 的导数（每换一次多一个因子 $\chi'$）。最后一个等号在把透镜与物质分布联系起来时会很有用：由 Poisson 方程，$\Phi_{,ij}$ 的迹正比于物质过密度。
 
 **权重的形状。**\eqref{13.17} 的权重 $\chi'(1-\chi'/\chi)$ 在 $\chi'=\chi/2$ 处最大、两端为零：离观测者太近的结构张角太大（同样的物理梯度对应很小的角梯度），离源太近的结构没有杠杆臂。下图把这一权重（推广到源有分布的情形，\eqref{13.49}）画了出来。`}</Tx>

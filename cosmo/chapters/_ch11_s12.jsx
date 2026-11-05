@@ -1,5 +1,6 @@
 // §11.1.2 Redshift-space distortions —— 式 (11.16)–(11.24)，图 11.3–11.5
-import { Sub, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
+import { Sub, Tx, Eq, FormulaMap, Box, Derivation, Figure, C } from "@kit";
+import { FM_11_21 } from "./_ch11_fmaps.jsx";
 import { KaiserPlot, KaiserMuPlot, RSDSketch, FSigma8Plot } from "./_ch11_plots.jsx";
 
 const R = String.raw;
@@ -40,7 +41,7 @@ export function Sub112() {
 **做 Fourier 变换。**在远距观测者近似下，可以直接计算红移空间过密度的 Fourier 变换：`}</Tx>
       <Eq n="11.20" say={R`对 \eqref{11.19} 做 Fourier 变换，并把速度用 \eqref{11.17} 写成密度的 Fourier 积分。`}>{R`\begin{aligned}\delta_{\rm g,RSD}(\boldsymbol k)&=\int d^3x\,e^{-i\boldsymbol k\cdot\boldsymbol x}\left[b_1\delta_{\rm m}(\boldsymbol x)-\frac{\partial}{\partial x}\left[\frac{\boldsymbol u_{\rm m}(\boldsymbol x)\cdot\hat{\boldsymbol e}_z}{aH}\right]\right]\\ &=b_1\delta_{\rm m}(\boldsymbol k)-if\int d^3x\,e^{-i\boldsymbol k\cdot\boldsymbol x}\frac{\partial}{\partial x}\left[\int\frac{d^3k'}{(2\pi)^3}e^{i\boldsymbol k'\cdot\boldsymbol x}\delta_{\rm m}(\boldsymbol k')\frac{\boldsymbol k'}{k'^2}\cdot\hat{\boldsymbol e}_z\right],\end{aligned}`}</Eq>
       <Tx>{R`第一个等号来自我们的 Fourier 约定与 \eqref{11.19}，第二个来自 \eqref{11.17}（$aH$ 相消，留下 $f$）。对 $x$ 的导数作用在指数上，拉下一个因子 $i\boldsymbol k'\cdot\hat{\boldsymbol x}$，我们再次把它取为 $i\boldsymbol k'\cdot\hat{\boldsymbol e}_z$，于是`}</Tx>
-      <Eq n="11.21" say={R`$-if\times i(\boldsymbol k'\cdot\hat{\boldsymbol e}_z)\times(\boldsymbol k'\cdot\hat{\boldsymbol e}_z)/k'^2=f(\hat{\boldsymbol k}'\cdot\hat{\boldsymbol e}_z)^2$：速度项变成密度乘以方向余弦的平方。`}>{R`\delta_{\rm g,RSD}(\boldsymbol k)=b_1\delta_{\rm m}(\boldsymbol k)+f\int\frac{d^3k'}{(2\pi)^3}\delta_{\rm m}(\boldsymbol k')\left(\hat{\boldsymbol k}'\cdot\hat{\boldsymbol e}_z\right)^2\int d^3x\,e^{i(\boldsymbol k'-\boldsymbol k)\cdot\boldsymbol x}.`}</Eq>
+      <FormulaMap n="11.21" say={R`$-if\times i(\boldsymbol k'\cdot\hat{\boldsymbol e}_z)\times(\boldsymbol k'\cdot\hat{\boldsymbol e}_z)/k'^2=f(\hat{\boldsymbol k}'\cdot\hat{\boldsymbol e}_z)^2$：速度项变成密度乘以方向余弦的平方。`} tree={FM_11_21} start="mu" />
       <Tx>{R`对 $\boldsymbol x$ 的积分给出 $(2\pi)^3\delta_{\rm D}^{(3)}(\boldsymbol k'-\boldsymbol k)$。因此在远距观测者近似下，`}</Tx>
       <Eq n="11.22" keyEq title="Kaiser 公式（过密度）" say={R`红移空间中每个 Fourier 模式被放大 $(b_1+f\mu_k^2)$ 倍：沿视线的模式增强最多，垂直视线的不受影响。`}>{R`\delta_{\rm g,RSD}(\boldsymbol k)=\left[b_1+f\mu_k^2\right]\delta_{\rm m}(\boldsymbol k).`}</Eq>
       <Tx>{R`这里 $\mu_k\equiv\hat{\boldsymbol e}_z\cdot\hat{\boldsymbol k}$，是视线与波矢 $\hat{\boldsymbol k}$ 夹角的余弦。

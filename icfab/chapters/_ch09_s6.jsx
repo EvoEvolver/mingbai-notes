@@ -1,5 +1,6 @@
 // §9.10 原子层刻蚀（§9.10.1–9.10.2）、§9.11 化学机械抛光（§9.11.1）——式 (9.19)–(9.24)，图 9.37–9.52
-import { Sec, Sub, Tx, Eq, Box, Figure, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Figure, C, FormulaMap } from "@kit";
+import { FM_9_24 } from "./_ch09_fmaps.jsx";
 import { Fig937, Fig940, Fig942, Fig943, Fig944 } from "./_ch09_figs.jsx";
 import { LangmuirPlot, AleCyclePlot } from "./_ch09_plots.jsx";
 import { CmpSim } from "./_ch09_sim.jsx";
@@ -103,7 +104,7 @@ $$K_{\rm p}=\frac{\sym{ch09-RR}{\mathrm{RR}}}{P\sym{ch09-vel}{V}}=\frac{3.3\time
         <Box kind="warning" title="勘误：图号引用">{R`原书正文在介绍 5 µm 柱与间隔的结构时写作"图 9.51"，但该结构是图 9.50（图 9.51 是硬抛光模型的例子）。正文已改为引用 \figref{9.50}。`}</Box>
         <Figure n="9.50" caption={R`左：$\mathrm{SiO_2}$ 结构 CMP 的 Athena 模拟，初始结构为 $\mathrm{SiO_2}$ 衬底上 5 µm 的 $\mathrm{SiO_2}$ 柱与间隔，参数同 \figref{9.48}；右：Warnock 的实验与模拟结果。经 IOP Publishing Ltd. 许可，引自 [9.27]。`} />
         <Tx>{R`**硬抛光模型。**Athena 等商用工具通常包含多种可选模型，其中还有一个比上述模型更简单的"硬抛光模型"。它更像磨削过程，使用非常简单的抛光速率模型：`}</Tx>
-        <Eq n="9.24" say="硬抛光模型在两个速率之间按图形因子插值：凸起处（图形因子小）按最大速率磨，平坦处（图形因子为 1）按最小速率磨，于是表面最终被磨成完全平坦。">{R`\sym{ch09-RR}{\mathrm{RR}}=\sym{ch09-MAXH}{\mathrm{MAX.HARD}}\,(1-\sym{ch09-Pf}{\mathrm{Pf}})+\sym{ch09-MINH}{\mathrm{MIN.HARD}}\,(\sym{ch09-Pf}{\mathrm{Pf}})`}</Eq>
+        <FormulaMap n="9.24" say="硬抛光模型在两个速率之间按图形因子插值：凸起处（图形因子小）按最大速率磨，平坦处（图形因子为 1）按最小速率磨，于是表面最终被磨成完全平坦。" tree={FM_9_24} start="pfA" />
         <Box kind="warning" title="勘误：式号 (11.26) → (9.24)">{R`原书把这个式子编为 "(11.26)"，显然是从第 11 章旧稿沿用的编号；它位于式 (9.23) 之后，按顺序应为 (9.24)。本页编为 (9.24)。`}</Box>
         <Tx>{R`其中 Pf 是**图形因子**（pattern factor）：平坦表面上为 1，高出平面的区域更小。\figref{9.51} 是用这个简单"磨削模型"做的 CMP 模拟，得到完全平坦的结构。`}</Tx>
         <Figure n="9.51" caption={R`Al 金属线与 CVD 沉积 $\mathrm{SiO_2}$ 构成的简单后道结构的 Athena CMP 模拟。采用硬抛光模型，抛光 7.5 s 后结构被完全平坦化。`} />

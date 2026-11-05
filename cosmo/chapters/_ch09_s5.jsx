@@ -1,7 +1,8 @@
 import { SphericalHarmonicsRedraw } from "./_redraw_spherical_harmonics.jsx";
 import { AlmGaussian } from "./_ch14_redraw.jsx";
 // §9.5 Inhomogeneities to anisotropies —— 式 (9.45)–(9.75)，图 9.9–9.10
-import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, C, FormulaMap } from "@kit";
+import { FM_9_71, FM_9_75 } from "./_ch09_fmaps.jsx";
 import { VisibilityPlot } from "./_ch09_plots.jsx";
 
 const R = String.raw;
@@ -128,7 +129,7 @@ export function Sec95() {
         <Tx>{R`第二个等号用了曲率扰动功率谱 $P_{\mathcal R}(k)$ 的定义。现在再利用一个专门对我们关注的标量扰动成立的简化：比值（或转移函数）$\mathcal T$ 只通过 $\hat{\boldsymbol p}$ 与 $\hat{\boldsymbol k}$ 的夹角 $\mu=\hat{\boldsymbol k}\cdot\hat{\boldsymbol p}$ 依赖于 $\hat{\boldsymbol p}$：`}</Tx>
         <Eq n="9.70" say={R`标量扰动关于波矢方向轴对称：转移函数只依赖光子方向与 $\hat{\boldsymbol k}$ 的夹角。`}>{R`\mathcal T(\boldsymbol k,\hat{\boldsymbol p}) = \mathcal T(k,\hat{\boldsymbol k}\cdot\hat{\boldsymbol p}).`}</Eq>
         <Tx>{R`这有助于下面做角积分。把 \eqref{9.65} 平方后，各向异性谱变为`}</Tx>
-        <Eq n="9.71" say={R`$C(l)$ = 对所有 Fourier 模式求和：每个模式的功率乘以它的转移函数在 $Y_{lm}$ 上投影的模方。`}>{R`C(l) = \int\frac{d^3k}{(2\pi)^3}P_{\mathcal R}(k)\int d\Omega\,Y^*_{lm}(\hat{\boldsymbol p})\mathcal T(k,\hat{\boldsymbol k}\cdot\hat{\boldsymbol p})\int d\Omega'\,Y_{lm}(\hat{\boldsymbol p}')\mathcal T^*(k,\hat{\boldsymbol k}\cdot\hat{\boldsymbol p}').`}</Eq>
+        <FormulaMap n="9.71" say={R`$C(l)$ = 对所有 Fourier 模式求和：每个模式的功率乘以它的转移函数在 $Y_{lm}$ 上投影的模方。`} tree={FM_9_71} start="Tf" />
         <Tx>{R`现在用 \eqref{5.66} 的逆，把 $\mathcal T(k,\hat{\boldsymbol k}\cdot\hat{\boldsymbol p})$ 与 $\mathcal T(k,\hat{\boldsymbol k}\cdot\hat{\boldsymbol p}')$ 展开为 Legendre 多项式：`}</Tx>
         <Eq n="9.72" say={R`把转移函数按 Legendre 多项式展开，系数就是今天的多极矩 $\mathcal T_l=\Theta_l/\mathcal R$。`}>{R`\mathcal T(k,\hat{\boldsymbol k}\cdot\hat{\boldsymbol p}) = \sum_l(-i)^l(2l+1)\mathcal P_l(\hat{\boldsymbol k}\cdot\hat{\boldsymbol p})\mathcal T_l(k).`}</Eq>
         <Tx>{R`所以 $\mathcal T_l(k)=\Theta_l(k,\eta_0)/\mathcal R(\boldsymbol k)$。于是`}</Tx>
@@ -143,7 +144,7 @@ export function Sec95() {
         <Tx>{R`于是对给定的 $l$，方差 $C(l)$ 是对所有 Fourier 模式的 $\Theta_l(\boldsymbol k)$ 方差的积分，后者等于 $|\mathcal T_l(k)|^2$ 乘以曲率扰动的方差。用 \eqref{9.59} 与 \eqref{9.74} 就可以计算今天的各向异性谱。
 
 **一个例子：把阻尼放进紧耦合解。**作为例子，可以把紧耦合解 \eqref{9.26} 改写为`}</Tx>
-        <Eq n="9.75" say={R`以原初曲率扰动为单位的复合前单极：势的直接贡献 + 余弦振荡 + 势驱动的声波积分，整体再乘上扩散阻尼因子。`}>{R`\Theta_0(\boldsymbol k,\eta) = \mathcal R(\boldsymbol k)\left[-\frac23\frac{\Phi(\boldsymbol k,\eta)}{\Phi(\boldsymbol k,0)} + \cos(kr_s) + \frac43\frac{k}{\sqrt3}\int_0^\eta d\tilde\eta\frac{\Phi(\boldsymbol k,\tilde\eta)}{\Phi(\boldsymbol k,0)}\sin[k(r_s(\eta)-r_s(\tilde\eta))]\right]e^{-k^2/k_D^2(\eta)}.`}</Eq>
+        <FormulaMap n="9.75" say={R`以原初曲率扰动为单位的复合前单极：势的直接贡献 + 余弦振荡 + 势驱动的声波积分，整体再乘上扩散阻尼因子。`} tree={FM_9_75} start="cos" />
         <Derivation title={R`\eqref{9.26} ⇒ \eqref{9.75}`} collapsed steps={[
           { tex: R`\Theta_0(0)+\Phi(0)=\tfrac12\Phi(0)+\Phi(0)=\tfrac32\Phi(0)=\mathcal R`, why: R`绝热初条件与 $\Phi(0)=\frac23\mathcal R$。` },
           { tex: R`\Phi-\Psi=2\Phi=\tfrac43\mathcal R\,\frac{\Phi}{\Phi(0)},\qquad -\Phi=-\tfrac23\mathcal R\,\frac{\Phi}{\Phi(0)}`, why: R`$\Psi=-\Phi$；把 \eqref{9.26} 左边的 $\Phi$ 移到右边。` },

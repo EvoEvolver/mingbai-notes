@@ -1,8 +1,9 @@
 // §5.5 曝光系统的建模与仿真（计算空间像）——式 (5.17)–(5.32)，图 5.31–5.46
-import { Sec, Sub, Tx, Eq, Box, Figure, Derivation, Details, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Figure, Derivation, Details, C, FormulaMap } from "@kit";
 import { Fig531, Fig532, Fig534, Fig535, Fig540, Fig541, Fig546 } from "./_ch05b_figs.jsx";
 import { AerialCalc, FraunhoferPatterns, FresnelPlot } from "./_ch05b_sim.jsx";
 import { AerialSurface } from "./_ch05b_three.jsx";
+import { FM_5_31, FM_5_32 } from "./_ch05b_fmaps.jsx";
 
 const R = String.raw;
 const E = R`\mathcal{E}`, F = R`\mathcal{F}`, T = R`\sym{tm}{t}`;
@@ -85,7 +86,7 @@ export function Sec55() {
         <Eq n="5.29" keyEq title="斜入射：频谱平移" say="斜着照明等于把整个衍射频谱在光瞳里挪动 $\sin\theta/\lambda$：原本落在光瞳外的一级衍射可能被挪进来。">{R`${E}(x,y,f'_x,f'_y)=${F}^{-1}\big\{${E}(f_x-f'_x,\,f_y-f'_y)\,P(f_x,f_y)\big\}`}</Eq>
         <Eq n="5.30" say="对每一个照明方向，空间像仍是该方向下像面电场的模平方。">{R`I_{\rm i}(x,y,f'_x,f'_y)=\big|${E}(x,y,f'_x,f'_y)\big|^2`}</Eq>
         <Tx>{R`*部分相干。*部分相干光源从许多角度同时照射掩模。处理方法是叠加：把光源分成许多点源，每个点源是相干的、给出一幅 \eqb{5.30} 的空间像；不同点源之间不相干，所以把它们的**光强**（而不是电场）相加。设 $S(f'_x,f'_y)$ 描述光源强度随位置（等价于照明角度）的分布，则`}</Tx>
-        <Eq n="5.31" keyEq title="部分相干照明下的空间像" say="部分相干的空间像 = 每个照明方向各自成像后的光强、按光源强度加权的平均；分母只是归一化。">{R`I_{\rm total}(x,y)=\frac{\displaystyle\iint_{\rm source}I(x,y,f'_x,f'_y)\,S(f'_x,f'_y)\,df'_x\,df'_y}{\displaystyle\iint_{\rm source}S(f'_x,f'_y)\,df'_x\,df'_y}`}</Eq>
+        <FormulaMap n="5.31" keyEq title="部分相干照明下的空间像" say="部分相干的空间像 = 每个照明方向各自成像后的光强、按光源强度加权的平均；分母只是归一化。" tree={FM_5_31} height={720} start="Iv" />
         <Tx>{R`$I_{\rm total}$ 即落在胶面上的总光强分布。有了 \eqb{5.31}，任意形状的照明光源都能计算。（原书式中微元写作 "$df'_x,\,df'_y$"，逗号只是排版笔误，应为二重积分的 $df'_x\,df'_y$。）
 
 *像差与离焦。*实际镜头总有像差：制造公差、使用中的机械变化（镜片失准）、以及根本不可能设计出完全无像差的镜头。像差已知时可以纳入模型。胶不在物镜焦平面上时像也会变差；离焦同样可以看成物镜出射波前上的相位误差，因此和像差一样处理——在光瞳上乘一个相位因子。下面的计算器就是这样处理离焦的。`}</Tx>
@@ -132,7 +133,7 @@ export function Sec55() {
 \figb{5.31} 说过，掩模后的光场可以分区近似。投影系统用的是 Fraunhofer 远场；接触/接近式系统则视特征尺寸与间隙大小，可以用 **Fresnel 衍射**近似。商用仿真器一般在 Fraunhofer 模块之外也提供 Fresnel 模块。
 
 看 \figb{5.41}：$g$ 为掩模与晶圆之间的间隙，接触式中 $g\to0$。若 $g$ 与特征尺寸满足 \figb{5.31} 的条件，掩模后的光场由 **Fresnel 衍射积分**描述——它是 \eqb{5.21} 的近场版本：`}</Tx>
-        <Eq n="5.32" keyEq title="Fresnel 衍射积分" say="近场中每一点的电场，是掩模上各点子波以“二次相位”叠加的结果：把相位按到观察点距离的平方展开，就从球面波过渡到了可计算的卷积。">{R`${E}(x,y,z)=\frac{1}{j\lambda z}\exp\Big\{2\pi j\frac{z}{\lambda}\Big\}\int_{-\infty}^{\infty}\!\!\int_{-\infty}^{\infty}${T}(x_1,y_1)\exp\Big\{-\pi j\frac{(x-x_1)^2+(y-y_1)^2}{\lambda z}\Big\}\,dx_1\,dy_1`}</Eq>
+        <FormulaMap n="5.32" keyEq title="Fresnel 衍射积分" say="近场中每一点的电场，是掩模上各点子波以“二次相位”叠加的结果：把相位按到观察点距离的平方展开，就从球面波过渡到了可计算的卷积。" tree={FM_5_32} start="r2" />
         <Tx>{R`$${T}(x_1,y_1)$ 与 \eqb{5.20} 的定义完全相同，$j$ 仍为虚数单位。（原书积分微元写作 $dx\,dy$，同 \eqb{5.21} 一样应理解为对掩模坐标 $dx_1\,dy_1$ 积分。）`}</Tx>
         <Figure n="5.41" caption={R`通用接近式光刻系统。掩模右侧的阴影表示照到胶上的衍射光；$g$ 为间隙。（重绘）`} illustration={<Fig541 />} />
         <Derivation title="Fresnel 积分从哪里来，为什么它是「卷积」" collapsed steps={[

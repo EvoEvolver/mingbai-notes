@@ -1,5 +1,6 @@
 // §6.3 干氧薄氧 · §6.4 压强 · §6.5 晶向 · §6.6 掺杂 · §6.7 点缺陷 ——式 (6.15)–(6.21)，图 6.12–6.15
-import { Sec, Tx, Eq, Box, Figure, C, Derivation } from "@kit";
+import { Sec, Tx, Eq, Box, Figure, C, Derivation, FormulaMap } from "@kit";
+import { FM_6_21 } from "./_ch06_fmaps.jsx";
 import { ThinOxidePlot, DopingPlot } from "./_ch06_plots.jsx";
 import { CS } from "./_ch06_s1.jsx";
 
@@ -77,7 +78,7 @@ export function Sec66() {
       <Tx>{R`**现象。**重掺杂衬底比轻掺杂衬底氧化得快，低温与薄层时最明显，此时两者速率可差 3–4 倍 [6.4]；N$^+$ 比 P$^+$ 更显著。分析表明加速发生在界面，即作用在 $B/A$ 上；$B$ 不受影响——这不奇怪，氧化剂穿过氧化层的扩散不应在乎硅里掺了多少杂质。
 
 **模型。**最被接受的解释抓住了体积膨胀（\figref{6.4}）：容纳膨胀的一种途径是在生长中的界面上**消耗空位**。第 3 章讲过，空位有多种荷电态（$\sym{ch06-vacd}{V}^0,\sym{ch06-vacd}{V}^+,\sym{ch06-vacd}{V}^-,\sym{ch06-vacd}{V}^=$），其总平衡数目依赖费米能级，在非本征的重掺杂区远多于本征区；而且各荷电态的能级位置恰好使 N$^+$ 区的空位多于同浓度的 P$^+$ 区——这就解释了 N$^+$ 加速更明显。既然改变的是线性常数，它也解释了为什么薄层与低温（线性区）受影响最大。模型写成对本征 $B/A$ 的乘法修正：`}</Tx>
-      <Eq n="6.21" keyEq title="重掺杂对 B/A 的增强" say={R`重掺杂区的线性速率常数等于本征值乘以“1 加上经验温度因子与（总空位浓度比减 1）之积”；空位越多、界面反应越快。`}>{R`\left(\frac{B}{A}\right)_{\rm doping}=\left(\frac{B}{A}\right)_{i}\left(1+2.6\times10^{3}\exp\left(-\frac{1.1\,\mathrm{eV}}{kT}\right)\left(\frac{\sym{ch06-vac}{V}^*}{V_i^*}-1\right)\right)`}</Eq>
+      <FormulaMap n="6.21" keyEq title="重掺杂对 B/A 的增强" say={R`重掺杂区的线性速率常数等于本征值乘以“1 加上经验温度因子与（总空位浓度比减 1）之积”；空位越多、界面反应越快。`} tree={FM_6_21} start="V" />
       <Tx>{R`$\sym{ch06-vac}{V}^*/V_i^*$ 是掺杂区总空位浓度与轻掺杂（本征）区总空位浓度之比；$2.6\times10^{3}\exp(-1.1\,\mathrm{eV}/kT)$ 是经验拟合，大概代表空位机制与 $B/A$ 其他成分之间的相互作用。
 
 **示例。**\figref{6.14} 中，右侧做了大剂量磷注入，表面浓度超过 $10^{20}\ \mathrm{cm^{-3}}$；1000 °C 湿氧 5 min 后，右侧氧化层是左侧未掺杂区的两倍多。N$^+$ 区的 $\sym{ch06-vacd}{V}^-$、$\sym{ch06-vacd}{V}^=$ 浓度远高于本征区（第 3 章式 3.11、3.13），\eqref{6.21} 因而预言右侧 $B/A$ 大得多。图中色阶表示磷浓度。`}</Tx>

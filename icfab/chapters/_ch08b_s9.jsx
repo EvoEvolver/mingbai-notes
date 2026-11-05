@@ -1,5 +1,6 @@
 // §8.9 Transient Enhanced Diffusion —— 式 (8.36)–(8.48)，图 8.35–8.47
-import { Sec, Tx, Eq, Box, Derivation, Figure, C, Details, Table } from "@kit";
+import { Sec, Tx, Eq, Box, Derivation, Figure, C, Details, Table, FormulaMap } from "@kit";
+import { FM_8_48 } from "./_ch08b_fmaps.jsx";
 import { MarkerLayer, SurfaceFlux, TEDSchematic } from "./_ch08b_figs.jsx";
 import { SupersatPlot, ClusterPlot, TauPlot, TEDCalc } from "./_ch08b_plots.jsx";
 
@@ -118,7 +119,7 @@ $$\tau_{\rm enh}=\frac{4\pi(2.7\times10^{-8}\,\mathrm{cm})^3(127\times10^{-7}\,\
 
       <h3>四、TED 的总量：为什么低温更糟</h3>
       <Tx>{R`把以上结果合起来：TED 造成的分布移动量，可以用"杂质扩散系数 $\times$ 稳态过饱和度 $\times$ 稳态持续时间"来估计：`}</Tx>
-      <Eq n="8.48" keyEq title="TED 的总扩散量" say="TED 期间的有效 Dt 等于杂质正常扩散系数乘以剂量与射程、再除以间隙原子的自扩散通量：分母的激活能比分子大，所以温度越低 TED 越大。">{R`${DAeff}t_{\rm eff}=\left(D_{\rm A}\frac{${CImax}}{${CIs}}\right)\tau_{\rm enh}=D_{\rm A}\left(\frac{QR_{\rm P}}{d_{\rm I}${CIs}}\right)=\frac{D_{\rm A}}{f_{\rm I}^{\rm self}${Dself}C_{\rm Si}}QR_{\rm P}`}</Eq>
+      <FormulaMap n="8.48" keyEq title="TED 的总扩散量" say="TED 期间的有效 Dt 等于杂质正常扩散系数乘以剂量与射程、再除以间隙原子的自扩散通量：分母的激活能比分子大，所以温度越低 TED 越大。" tree={FM_8_48} start="Ds" />
       <Derivation title="(8.48) 的三步" steps={[
         { tex: R`\frac{${CImax}}{${CIs}}\,\tau_{\rm enh}=\frac{${CImax}}{${CIs}}\cdot\frac{QR_{\rm P}}{d_{\rm I}${CImax}}=\frac{QR_{\rm P}}{d_{\rm I}${CIs}}`, why: R`$C_{\rm I}^{\max}$ 消掉了——**结合能 $E_{\rm b}$ 完全不出现**：团簇越稳定，过饱和度越低但持续越久，两者恰好抵消。` },
         { tex: R`d_{\rm I}${CIs}=f_{\rm I}^{\rm self}${Dself}C_{\rm Si}`, why: R`例题第一步：间隙原子扩散通量就是 Si 自扩散中经由间隙机制的那一部分。` },

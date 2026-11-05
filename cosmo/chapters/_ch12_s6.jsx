@@ -1,6 +1,7 @@
 // §12.6 Galaxy clustering and bias —— 式 (12.77)–(12.89)
-import { Sec, Tx, Eq, Box, Derivation, C } from "@kit";
+import { Sec, Tx, Eq, FormulaMap, Box, Derivation, C } from "@kit";
 import { BiasPlot } from "./_ch12_plots.jsx";
+import { FM_12_86, FM_12_88 } from "./_ch12_fmaps.jsx";
 
 const R = String.raw;
 
@@ -50,13 +51,13 @@ export function Sec126() {
       <Tx>{R`其中，如我们现在所知，$\delta^{(1)}_{\rm g}=b_1\delta^{(1)}$。与物质密度场的关键区别在于：必须确定在 $\delta^{(n)}_{\rm g}$ 中——即微扰论的给定阶上——需要包含**哪些**偏袒项，才能描述一般的星系密度场。Desjacques et al. (2018) 第 2 节详细描述了背后的严格理论，这里不展开。在二阶 $\delta^{(2)}_{\rm g}$ 中有两个偏袒项：上面遇到的 $b_2$ 项，以及一个含潮汐场平方、正比于 $b_{K^2}(\partial_i\partial_j\Psi)(\partial^i\partial^j\Psi)$ 的项（\exref{12.12}）。阈值玩具模型中没有出现潮汐场，因为我们假设晕的密度只依赖物质密度的**局域**值。实际上晕与星系的形成受大尺度潮汐场影响，所以偏袒关系中必须包含它们。
 
 仿照基于 \eqref{12.29} 处理物质密度场的方式，可以用 \eqref{12.85} 在 Fourier 空间展开星系密度场，类比物质的 $F_n$（\eqref{12.40}）定义核 $F_{{\rm g},n}$：`}</Tx>
-      <Eq n="12.86" say={R`星系的第 $n$ 阶场与物质的 \eqref{12.40} 结构相同，只是核换成含偏袒参数（且依赖时间）的 $F_{{\rm g},n}$。`}>{R`\delta^{(n)}_{\rm g}(\boldsymbol k,\eta) = D_+^n(\eta)\left[\prod_{i=1}^n\int\frac{d^3k_i}{(2\pi)^3}\right](2\pi)^3\delta_{\rm D}^{(3)}\Big(\boldsymbol k-\sum_{i=1}^n\boldsymbol k_i\Big)\times F_{{\rm g},n}(\boldsymbol k_1,\cdots,\boldsymbol k_n;\eta)\delta_0(\boldsymbol k_1)\cdots\delta_0(\boldsymbol k_n).`}</Eq>
+      <FormulaMap n="12.86" say={R`星系的第 $n$ 阶场与物质的 \eqref{12.40} 结构相同，只是核换成含偏袒参数（且依赖时间）的 $F_{{\rm g},n}$。`} tree={FM_12_86} start="F" />
       <Tx>{R`例如，\exref{12.12} 中可以证明二阶核为`}</Tx>
       <Eq n="12.87" keyEq title="星系二阶核" say={R`星系的二阶核 = $b_1\times$ 物质的 $F_2$（物质本身的非线性）+ $\frac12b_2$（对局域密度的二次响应）+ $b_{K^2}\times$ 潮汐项（对大尺度潮汐场的响应）。`}>{R`F_{{\rm g},2}(\boldsymbol k_1,\boldsymbol k_2;\eta) = b_1(\eta)F_2(\boldsymbol k_1,\boldsymbol k_2) + \frac12b_2(\eta) + b_{K^2}(\eta)\left[\frac{(\boldsymbol k_1\cdot\boldsymbol k_2)^2}{k_1^2k_2^2} - \frac13\right].`}</Eq>
       <Tx>{R`由于偏袒参数 $b_1$ 乘的是本身含非线性贡献的物质密度场，$F_{{\rm g},2}$ 中出现 $b_1F_2$ 项。此外，$b_2$ 如预期出现，另外还有**潮汐偏袒**参数 $b_{K^2}$。对给定质量的晕，$b_1$ 与 $b_2$ 可以由上面的峰–背景分离得到；对观测到的星系，这些系数需要由数据确定，即测量星系功率谱等统计量。
 
 **星系双谱。**基于 \eqref{12.85}–\eqref{12.86}，\secref{12.2} 中为物质发展的所有计算技术（包括图示）都可以移植到星系。例如星系双谱可以仿照 \eqref{12.51} 推出：`}</Tx>
-      <Eq n="12.88" say={R`星系的树图双谱：形式与物质的 \eqref{12.51} 相同，核换成 $F_{{\rm g},2}$（外线带 $b_1$），另加噪声项。`}>{R`\left\langle\delta_{\rm g}(\boldsymbol k_1,\eta)\delta_{\rm g}(\boldsymbol k_2,\eta)\delta_{\rm g}(\boldsymbol k_3,\eta)\right\rangle = (2\pi)^3\delta_{\rm D}^{(3)}(\boldsymbol k_1+\boldsymbol k_2+\boldsymbol k_3)\times\left[2b_1^2F_{{\rm g},2}(\boldsymbol k_1,\boldsymbol k_2;\eta)P_{\rm L}(k_1,\eta)P_{\rm L}(k_2,\eta) + B_N(k_1,\eta) + 2\ \text{perm.}\right],`}</Eq>
+      <FormulaMap n="12.88" say={R`星系的树图双谱：形式与物质的 \eqref{12.51} 相同，核换成 $F_{{\rm g},2}$（外线带 $b_1$），另加噪声项。`} tree={FM_12_88} start="F" />
       <Box kind="warning" title={R`勘误：\eqref{12.88} 中的 $b_1^2$`}>{R`原书方括号内第一项印作 $2F_{{\rm g},2}(\boldsymbol k_1,\boldsymbol k_2;\eta)P_{\rm L}(k_1,\eta)P_{\rm L}(k_2,\eta)$。由 \eqref{12.86} 与 $\delta^{(1)}_{\rm g}=b_1\delta^{(1)}$，树图贡献 $\langle\delta^{(1)}_{\rm g}(\boldsymbol k_1)\delta^{(1)}_{\rm g}(\boldsymbol k_2)\delta^{(2)}_{\rm g}(\boldsymbol k_3)\rangle$ 中两条外线各带一个 $b_1$，应为 $2b_1^2F_{{\rm g},2}P_{\rm L}P_{\rm L}$（与 Desjacques et al. 2018 一致），上式已补上。`}</Box>
       <Tx>{R`其中`}</Tx>
       <Eq n="12.89" say={R`星系双谱的噪声：一个常数 $B_{N0}$，加上一个与功率谱成正比、可理解为“线性偏袒中的噪声”的项。`}>{R`B_N(k,\eta) = \frac13B_{N0}(\eta) + b_1(\eta)P_{N,\delta}(\eta)P_{\rm L}(k,\eta)`}</Eq>

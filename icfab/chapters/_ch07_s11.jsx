@@ -1,6 +1,7 @@
 // §7.11 分凝与界面杂质堆积——式 (7.47)–(7.51)，图 7.20–7.23
 // 注：图 7.23 与式 (7.51) 印在 PDF 第 337 页（拆分给 ch07b 的页面），但内容属于 §7.11，按小节归属放在本章。
-import { Sec, Tx, Eq, Box, Figure, Derivation, C } from "@kit";
+import { Sec, Tx, Eq, Box, Figure, Derivation, C, FormulaMap } from "@kit";
+import { FM_7_51 } from "./_ch07_fmaps.jsx";
 import { Fig722 } from "./_ch07_figs.jsx";
 import { SegregationSim } from "./_ch07_plots.jsx";
 
@@ -41,7 +42,7 @@ $$\Delta Q = C_{\rm Si}\,\Delta x_{\rm ox}\left(0.44-\frac1m\right)$$
       <Tx>{R`界面剂量损失可能占小尺寸 MOS 管源漏延伸区（tip）所用剂量的相当一部分，因此会主导这些器件的电学特性。注入杂质的瞬态增强扩散（第 8 章）能让大量杂质原子到达界面而被俘获；后续退火中一部分又可能回到硅中。`}</Tx>
       <Figure n="7.23" caption={R`左：模拟显示 1050˚C、30 s RTA 后约 25% 的砷剂量损失（两条曲线下面积相差 25%：$1\times10^{15}\to7.5\times10^{14}\,\mathrm{cm^{-2}}$）。右：同样退火条件下实测 SIMS 数据显示了相近的剂量损失。引自 [7.9, 7.10]（原书图）。`} />
       <Tx>{R`这种剂量损失之所以重要，是因为它与激活注入所用的快速热退火发生在同一时间尺度上；理解它对设计 MOS 管的源漏分布十分重要 [7.9, 7.10]。目前 Athena 一类程序中的陷阱模型考虑杂质流向未填满界面陷阱的通量，取陷阱俘获通量为`}</Tx>
-      <Eq n="7.51" say="界面陷阱的净俘获通量：一项正比于界面附近的杂质浓度（与陷阱占据状况有关），减去一项正比于已俘获量的脱陷。">{R`F = \sym{ch07-htr}{h}\left(C\left(f + r\,\frac{\sym{ch07-sigtrap}{\sigma}}{\sigma_{\max}}\right) - \sym{ch07-kdt}{k}\,\sym{ch07-sigtrap}{\sigma}\right)`}</Eq>
+      <FormulaMap n="7.51" say="界面陷阱的净俘获通量：一项正比于界面附近的杂质浓度（与陷阱占据状况有关），减去一项正比于已俘获量的脱陷。" tree={FM_7_51} start="f" />
       <Tx>{R`其中 $h$ 是传输系数，$C$ 是界面附近的杂质浓度，$f$ 是未填满的界面陷阱比例，$\sigma$ 与 $\sigma_{\max}$ 分别为可用陷阱密度与最大陷阱密度，$r$ 与 $k$ 是俘获与脱陷的速率常数。总的来说，这种剂量损失效应还了解得很少，模拟器里只有初步的模型。它看似细微，却可以显著增大现代 MOS 管超浅源漏延伸区的方块电阻。`}</Tx>
       <Box kind="note" title={R`存疑：式 (7.51) 的具体形式`}>{R`本页按原书转写 \eqref{7.51}。按原书对符号的解释（$f$ 为未占据陷阱比例、$\sigma$ 为陷阱密度），通常的俘获–脱陷模型会写成"俘获 $\propto$ $C\times$ 空陷阱、脱陷 $\propto$ 已占陷阱"；括号中 $r\,\sigma/\sigma_{\max}$ 这一项的物理含义原书未作说明，可能对应模拟器中某种占据依赖的俘获项。读者使用时应以所用模拟器的文档为准。`}</Box>
     </Sec>);

@@ -1,7 +1,8 @@
 import { ScalarPolarizationRedraw, ScatteringBasisRedraw } from "./_ch14_redraw.jsx";
 // §10.2 Generating polarization from Compton scattering（图 10.5–10.6）
 // §10.3 Polarization from a single plane wave —— 式 (10.13)–(10.29)，图 10.7–10.8
-import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
+import { Sec, Sub, Tx, Eq, FormulaMap, Box, Derivation, Figure, C } from "@kit";
+import { FM_10_14, FM_10_15 } from "./_ch10_fmaps.jsx";
 import { ScatterWidget } from "./_ch10_plots.jsx";
 
 const R = String.raw;
@@ -44,9 +45,9 @@ export function Sec103() {
         <Tx>{R`**偏振依赖的截面。**上一节讨论的 Compton 散射的偏振依赖，可以简洁地表示为出射光子沿 $\hat{\boldsymbol\epsilon}_i$ 偏振时振幅平方中多出的一个因子。对两个（无关的）电子自旋以及**入射**光子偏振求和后，\eqref{5.18} 中的振幅平方——现在对出射偏振 $i=1,2$ 分别写——多出因子`}</Tx>
         <Eq n="10.13" title="Thomson 散射的偏振因子" say={R`出射光沿 $\hat{\boldsymbol\epsilon}_i$ 偏振的概率，正比于它与入射两个偏振方向的投影平方之和：电子只"转发"与出射方向垂直的那部分振动。`}>{R`\sum_{3\ \rm spins}|\mathcal M|^2 \propto \sum_{j=1}^2|\hat{\boldsymbol\epsilon}_i(\hat{\boldsymbol n})\cdot\hat{\boldsymbol\epsilon}'_j(\hat{\boldsymbol n}')|^2.`}</Eq>
         <Tx>{R`**Q 的积分式。**先计算 $Q$ 偏振。由 \eqref{10.2}，它的源是 $i=1$ 与 $i=2$ 的截面之差，即沿 $\hat{\boldsymbol e}_x$ 与 $\hat{\boldsymbol e}_y$ 方向的场强之差：`}</Tx>
-        <Eq n="10.14" title="Q 型组合" say={R`$Q$ 的源 = 出射 $x$ 向截面减 $y$ 向截面；对每个入射偏振方向分别算投影平方之差再相加。`}>{R`\sum_{j=1}^2|\hat{\boldsymbol\epsilon}_1(\hat{\boldsymbol n})\cdot\hat{\boldsymbol\epsilon}'_j(\hat{\boldsymbol n}')|^2-\sum_{j=1}^2|\hat{\boldsymbol\epsilon}_2(\hat{\boldsymbol n})\cdot\hat{\boldsymbol\epsilon}'_j(\hat{\boldsymbol n}')|^2 = \sum_{j=1}^2\left(|\hat{\boldsymbol e}_x\cdot\hat{\boldsymbol\epsilon}'_j(\hat{\boldsymbol n}')|^2-|\hat{\boldsymbol e}_y\cdot\hat{\boldsymbol\epsilon}'_j(\hat{\boldsymbol n}')|^2\right).`}</Eq>
+        <FormulaMap n="10.14" title="Q 型组合" say={R`$Q$ 的源 = 出射 $x$ 向截面减 $y$ 向截面；对每个入射偏振方向分别算投影平方之差再相加。`} tree={FM_10_14} start="ax" />
         <Tx>{R`对所有入射方向 $\hat{\boldsymbol n}'$ 积分，得`}</Tx>
-        <Eq n="10.15" title="出射 Q：对入射方向积分" say={R`沿 $z$ 出射的 $Q$ = 各方向入射强度 $f(\hat{\boldsymbol n}')$ 乘以该方向对"$x$ 减 $y$"的贡献，再对全天积分。`}>{R`Q(\hat{\boldsymbol e}_z) = A\int d\Omega' f(\hat{\boldsymbol n}')\sum_{j=1}^2\left(|\hat{\boldsymbol e}_x\cdot\hat{\boldsymbol\epsilon}'_j(\hat{\boldsymbol n}')|^2-|\hat{\boldsymbol e}_y\cdot\hat{\boldsymbol\epsilon}'_j(\hat{\boldsymbol n}')|^2\right).`}</Eq>
+        <FormulaMap n="10.15" title="出射 Q：对入射方向积分" say={R`沿 $z$ 出射的 $Q$ = 各方向入射强度 $f(\hat{\boldsymbol n}')$ 乘以该方向对"$x$ 减 $y$"的贡献，再对全天积分。`} tree={FM_10_15} start="f" />
         <Tx>{R`这里 $A$ 是归一化常数（下一节再关心它），$f(\hat{\boldsymbol n}')$ 是从 $\hat{\boldsymbol n}'$ 方向入射的辐射强度，对所有这样的方向积分。注意 $f$ 只依赖 $\hat{\boldsymbol n}'$ 而不依赖 $j$：这对应**入射辐射非偏振**的假设（\secref{10.4} 中会修正）。
 
 **入射偏振基矢。**要算 \eqref{10.15} 中的点积，需要 $\hat{\boldsymbol\epsilon}'_1$、$\hat{\boldsymbol\epsilon}'_2$ 的笛卡儿分量。它们与 $\hat{\boldsymbol n}'$ 正交，而`}</Tx>

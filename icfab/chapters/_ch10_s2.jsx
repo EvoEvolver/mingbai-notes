@@ -1,5 +1,6 @@
 // §10.2.2 异质外延、§10.2.3 外延横向过生长 —— 式 (10.14)–(10.15)，图 10.9–10.16
-import { Sec, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
+import { Sec, Tx, Eq, Box, Derivation, Figure, C, FormulaMap } from "@kit";
+import { FM_10_14 } from "./_ch10_fmaps.jsx";
 import { K } from "./_ch10_svg.jsx";
 import { Fig1012, Fig1014, Fig1015, Fig1016 } from "./_ch10_figs1.jsx";
 import { HcPlot } from "./_ch10_plots.jsx";
@@ -24,7 +25,7 @@ export function Sec1022() {
       <Tx>{R`应变随层厚与 Ge 含量增加；生长温度越高、时间越长，应变越快通过形成位错而弛豫。Ge 含量很高时，可以在生长中途退火，**有意**让下层弛豫，再长的上层缺陷就少——用缓冲层并退火把缺陷“关”在下层，正是 GaN-on-Si 的常用技巧。整个过程很大程度上是经验性的。类似地，在 Si 中掺 C 的外延层可产生张应变以提高 NMOS 迁移率，但 C 在 Si 中的固溶度很低，用途有限。
 
 **临界厚度的模型。**文献中估算 $h_c$ 的模型很多（综述见 [10.7]），大多基于**力学平衡**或**能量平衡**，结果都具有如下形式：`}</Tx>
-      <Eq n="10.14" keyEq title="临界厚度" say={K`临界厚度与失配度近似成反比（再乘一个随 h_c 缓慢变化的对数因子）：失配越大，能保持无位错的应变层越薄。其余因子由位错的几何（$\theta$、$\phi$）与材料的泊松比决定。`}>{R`h_c=\frac{r_0}{8\pi f\sin(\sym{ch10-thd}{\theta})\cos(\phi)}\left[\frac{1-\nu\cos^2(\sym{ch10-thd}{\theta})}{1+\nu}\right]\ln\left(\frac{h_c}{r_0}-1\right)`}</Eq>
+      <FormulaMap n="10.14" keyEq title="临界厚度" say={K`临界厚度与失配度近似成反比（再乘一个随 h_c 缓慢变化的对数因子）：失配越大，能保持无位错的应变层越薄。其余因子由位错的几何（$\theta$、$\phi$）与材料的泊松比决定。`} tree={FM_10_14} start="f" />
       <Tx>{R`其中 $\sym{ch10-thd}{\theta}$ 是位错线与其 Burgers 矢量的夹角，$\phi$ 是位错滑移面相对薄膜平面的倾角，$\nu$ 是泊松比，$r_0$ 是位错核半径，$f$ 是失配度：`}</Tx>
       <Eq n="10.15" keyEq title="晶格失配度" say="失配度 = 薄膜与衬底的本征晶格常数之差除以衬底晶格常数；Ge 对 Si 约 +4.2%，正号表示薄膜受压。">{R`f=\frac{a_f-a_s}{a_s}`}</Eq>
       <Tx>{R`$a_f$、$a_s$ 分别是薄膜与衬底的晶格常数。注意 \eqref{10.14} 是隐式方程，$h_c$ 同时出现在两边，需要迭代求解；对数因子随 $h_c$ 变化很慢，所以 $h_c$ 近似反比于 $f$。`}</Tx>
