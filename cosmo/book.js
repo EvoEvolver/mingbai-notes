@@ -1,5 +1,8 @@
 // Modern Cosmology (2nd ed.) — 数理教科书。章节内容在 chapters/<id>.jsx；插图在 public/figures/。
+import { FEEDBACK_EMAIL } from "../feedback.js";
+
 export default {
+  feedbackEmail: FEEDBACK_EMAIL,
   kind: "textbook",
   title: "现代宇宙学", title_en: "Modern Cosmology (2nd ed.)", author: "Scott Dodelson · Fabian Schmidt", subtitle: "Academic Press, 2021",
   intro: "从膨胀的均匀宇宙到 CMB 各向异性与大尺度结构：广义相对论 + 玻尔兹曼方程 + 线性/非线性扰动论，构成现代精确宇宙学的标准框架。本站为原书的中文学习版：公式编号、插图与章节结构依原书。",

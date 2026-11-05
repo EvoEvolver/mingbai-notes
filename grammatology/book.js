@@ -1,5 +1,8 @@
 // 书目清单：章节顺序、标题与分部。章节内容在 chapters/<id>.jsx。
+import { FEEDBACK_EMAIL } from "../feedback.js";
+
 export default {
+  feedbackEmail: FEEDBACK_EMAIL,
   title: "论文字学", title_en: "Of Grammatology", author: "雅克·德里达", subtitle: "文字先于字母：解构逻各斯中心主义",
   intro: "西方思想两千年来把「说话」当作意义的亲身在场，把「文字」当作可有可无、甚至危险的补充。德里达追问：如果所谓的「在场」本身就由差异、踪迹与延迟构成——也就是说，言语本身早已是一种「文字」——那会怎样？第一部分搭建理论框架（原文字、延异、踪迹），第二部分细读列维-斯特劳斯与卢梭，揭示「增补」的逻辑。",
   parts: [{ no: 0, label: "译者序" }, { no: 1, label: "第一部分 · 字母之前的文字" }, { no: 2, label: "第二部分 · 自然、文化、文字" }],

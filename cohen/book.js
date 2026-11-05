@@ -1,7 +1,10 @@
 // Cohen-Tannoudji, Diu, Laloë, Quantum Mechanics, Volume I (2nd ed.) —— 物理教科书（中文学习版）。
 // 章节内容在 chapters/<id>.jsx。正文页 id 为 chNN，补充材料（Complements）单独成页：chNNc、chNNd。
 // 公式编号：正文沿用原书 (C-7) → <Eq n="C-7">；补充材料加补充材料名前缀 → <Eq n="AI-12">。
+import { FEEDBACK_EMAIL } from "../feedback.js";
+
 export default {
+  feedbackEmail: FEEDBACK_EMAIL,
   kind: "textbook",
   title: "量子力学（卷 I）", title_en: "Quantum Mechanics, Volume I (2nd ed.)", author: "C. Cohen-Tannoudji, B. Diu, F. Laloë", subtitle: "Wiley-VCH, 2020",
   intro: String.raw`经典的量子力学教科书：从波粒二象性与波包出发，建立 Hilbert 空间与 Dirac 记号的数学工具，再陈述量子力学的基本假设及其物理诠释。本站为前三章及其补充材料的中文学习版：用自己的话讲清概念与推导，保留原书公式编号，配交互图。`,

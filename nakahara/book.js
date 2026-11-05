@@ -15,7 +15,10 @@ import { S as S12 } from "./chapters/_ch12_stmts.js";
 import { S as S13 } from "./chapters/_ch13_stmts.js";
 import { S as S14 } from "./chapters/_ch14_stmts.js";
 
+import { FEEDBACK_EMAIL } from "../feedback.js";
+
 export default {
+  feedbackEmail: FEEDBACK_EMAIL,
   kind: "textbook",
   title: "几何、拓扑与物理", title_en: "Geometry, Topology and Physics (2nd ed.)", author: "Mikio Nakahara", subtitle: "Institute of Physics Publishing, 2003",
   intro: String.raw`把现代物理用到的几何与拓扑讲给物理学家：同调与同伦、流形与微分形式、黎曼几何与复几何、纤维丛与联络、示性类与指标定理，最后落到规范场论的反常与弦论。本站为原书的中文学习版：定义、定理、例子、公式编号与插图依原书。`,

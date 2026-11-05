@@ -3,7 +3,10 @@
 // 定理/证明组件来自框架（@kit，见 framework/spec/PROOF.md）；本书特有工具（参数账本、有理数与积和式算法）在 chapters/_ledger.jsx、_rat.js 等下划线文件中。
 import { STMTS } from "./chapters/_stmts.js";
 
+import { FEEDBACK_EMAIL } from "../feedback.js";
+
 export default {
+  feedbackEmail: FEEDBACK_EMAIL,
   kind: "textbook",
   // 定理/引理/命题登记表（框架 proof 组件的数据源：Stmt、SRef、\sref{}、DepGraph、StudyTable）
   statements: STMTS,

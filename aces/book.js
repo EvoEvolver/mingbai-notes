@@ -1,6 +1,9 @@
 // Hockings, Doherty, Harper — Scalable noise characterization of syndrome-extraction circuits with averaged circuit eigenvalue sampling (arXiv:2404.06545)
 // 论文导读（kind: "paper"），组件见 framework/spec/PAPER.md。
+import { FEEDBACK_EMAIL } from "../feedback.js";
+
 export default {
+  feedbackEmail: FEEDBACK_EMAIL,
   kind: "paper",
   title: "用 ACES 给纠错电路做「体检」",
   title_en: "Scalable noise characterization of syndrome-extraction circuits with averaged circuit eigenvalue sampling",

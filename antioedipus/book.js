@@ -1,5 +1,8 @@
 // 书目清单：章节顺序、标题与分部。章节内容在 chapters/<id>.jsx。
+import { FEEDBACK_EMAIL } from "../feedback.js";
+
 export default {
+  feedbackEmail: FEEDBACK_EMAIL,
   title: "反俄狄浦斯", title_en: "Anti-Oedipus", author: "吉尔·德勒兹 & 费利克斯·加塔利", subtitle: "资本主义与精神分裂（卷一）",
   intro: "精神分析说：欲望源于匮乏，一切无意识都绕着「爸爸-妈妈-我」的俄狄浦斯三角打转。德勒兹与加塔利反问：如果欲望不是匮乏，而是生产——像工厂一样连接、切断、流动——那会怎样？他们把无意识从家庭剧场拉回社会与历史：从原始的领土机器、专制的帝国机器到资本主义机器，追问欲望如何被编码、超编码、解码，又如何被俄狄浦斯重新关进家庭。全书以「精神分裂分析」收尾：一种解放欲望流动的政治与临床实践。",
   parts: [

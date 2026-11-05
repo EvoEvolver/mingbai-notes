@@ -1,6 +1,9 @@
 // 书目清单：章节顺序、标题与分部。章节内容在 chapters/<id>.jsx。
 // 本书为「可听」试点：章节使用 @kit/audio 的发声组件（见 framework/spec/AUDIO.md）。
+import { FEEDBACK_EMAIL } from "../feedback.js";
+
 export default {
+  feedbackEmail: FEEDBACK_EMAIL,
   title: "图解和声", title_en: "Harmony Illustrated", author: "叶小胖", subtitle: "用网格图听懂和声",
   intro: "这本书不靠五线谱和键盘图，而是用一张「网格图」（Tonnetz）讲和声：十二个音怎样循环，三和弦为什么是三角形，调、功能与和声进行又在图上走出什么形状。本站把书里的每一张图都做成了能点、能听的乐器——看见和弦的同时，也听见它。",
   parts: [{ no: 1, label: "基础篇 · 音与和弦" }, { no: 2, label: "基础篇 · 调与功能" }, { no: 3, label: "进阶篇 · 声部与结构" }],

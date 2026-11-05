@@ -1,5 +1,8 @@
 // Integrated Circuit Fabrication: Science and Technology (Plummer & Griffin) — 数理教科书。章节内容在 chapters/<id>.jsx；插图在 public/figures/。
+import { FEEDBACK_EMAIL } from "../feedback.js";
+
 export default {
+  feedbackEmail: FEEDBACK_EMAIL,
   kind: "textbook",
   title: "集成电路制造：科学与技术", title_en: "Integrated Circuit Fabrication: Science and Technology", author: "James D. Plummer · Peter B. Griffin", subtitle: "Cambridge University Press, 2023（预印版）",
   intro: "从一块硅锭到数十亿晶体管的芯片：晶体生长、洁净与良率、光刻、氧化与界面、扩散、离子注入、刻蚀与 CMP、薄膜沉积、互连。每一步都有物理与化学的模型（Deal–Grove、Fick 定律、LSS 射程理论、成像光学……），也都有工艺工程师的取舍。本站为原书的中文学习版：公式编号、插图与章节结构依原书，并配以可交互的模型与三维工艺结构。",

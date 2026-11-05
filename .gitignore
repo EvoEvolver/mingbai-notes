@@ -1,7 +1,6 @@
 # 依赖与构建产物
 node_modules
 */dist/
-framework/app/dist/
 # Python 环境（PyMuPDF/Pillow）
 tools/
 # 原书解包 / 渲染的页面图（可由脚本重新生成，体积大）
@@ -17,4 +16,3 @@ __pycache__/
 # 原书内容（版权）：文字层与原书插图只保留在本地，不进仓库
 */text/
 */public/figures/
-framework/app/.pages/

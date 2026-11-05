@@ -6,7 +6,7 @@
 
 用交互式网页读哲学、推公式、看三维模型、听和声。
 
-[在线阅读](https://evoevolver.github.io/mingbai-notes/) · [接入一本书](framework/spec/NEW_BOOK.md) · [组件指南](framework/spec/KIT.md)
+[在线阅读](https://evoevolver.github.io/mingbai-notes/) · [接入一本书](https://github.com/EvoEvolver/mingbai/blob/main/spec/NEW_BOOK.md) · [组件指南](https://github.com/EvoEvolver/mingbai/blob/main/spec/KIT.md)
 
 [![GitHub Pages](https://github.com/EvoEvolver/mingbai-notes/actions/workflows/pages.yml/badge.svg)](https://github.com/EvoEvolver/mingbai-notes/actions/workflows/pages.yml)
 ![React](https://img.shields.io/badge/React-19-149eca)
@@ -15,7 +15,7 @@
 
 </div>
 
-明白.js 是一个把书和论文做成交互式学习站点的框架。这里也有用它制作的「图书讲明白」书库：从福柯、德里达到量子力学、芯片制造和音乐和声。
+这里是用 [明白.js](https://github.com/EvoEvolver/mingbai) 制作的「图书讲明白」书库：从福柯、德里达到量子力学、芯片制造和音乐和声。框架是单独的仓库，以子模块的形式放在 `framework/`。
 
 ## 不只是把文字搬到网页
 
@@ -47,6 +47,8 @@
 需要 Node.js 24 和 Python 3。
 
 ```bash
+git clone --recurse-submodules https://github.com/EvoEvolver/mingbai-notes.git
+cd mingbai-notes
 npm ci --prefix framework/app
 framework/build-library.sh --build
 python3 -I framework/serve.py library 8848
@@ -56,6 +58,8 @@ python3 -I framework/serve.py library 8848
 
 ## 做一本你想读懂的书
 
-每本书由 `book.js` 书目配置和 `chapters/*.jsx` 章节组成，共用 React 组件库。先看[新书接入指南](framework/spec/NEW_BOOK.md)，数理类内容另见[教科书规范](framework/spec/TEXTBOOK.md)。
+每本书由 `book.js` 书目配置和 `chapters/*.jsx` 章节组成，共用 React 组件库。先看[新书接入指南](https://github.com/EvoEvolver/mingbai/blob/main/spec/NEW_BOOK.md)，数理类内容另见[教科书规范](https://github.com/EvoEvolver/mingbai/blob/main/spec/TEXTBOOK.md)。
 
 欢迎通过 [Issue](https://github.com/EvoEvolver/mingbai-notes/issues) 提出勘误、想读的书或交互点子，也欢迎提交改进。
+
+要更新框架：`git submodule update --remote framework`，构建验证后提交 `framework` 的新版本。

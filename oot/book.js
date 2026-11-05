@@ -1,5 +1,8 @@
 // 书目清单：章节顺序、标题与分部。章节内容在 chapters/<id>.jsx。
+import { FEEDBACK_EMAIL } from "../feedback.js";
+
 export default {
+  feedbackEmail: FEEDBACK_EMAIL,
   title: "词与物", title_en: "The Order of Things", author: "米歇尔·福柯", subtitle: "人文科学考古学",
   intro: "福柯追问：不同时代的人，凭什么规则来决定「什么算知识」？他把 16 世纪以来的西方思想划分为几个「知识型」——文艺复兴、古典时代、现代——本书逐层挖掘。",
   parts: [{ no: 0, label: "前言" }, { no: 1, label: "第一部分 · 文艺复兴与古典时代" }, { no: 2, label: "第二部分 · 现代" }],
