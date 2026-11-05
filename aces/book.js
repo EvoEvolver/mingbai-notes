@@ -17,7 +17,6 @@ export default {
   chapters: [
     { id: "paper", no: 0, label: "速读与导读", title_zh: "速读与导读", title_en: "The paper at a glance" },
     { id: "fmap", no: 0, label: "公式树图样例", title_zh: "公式树图：面积按重要性分配", title_en: "Formula treemap — a sample" },
-    { id: "lens", no: 0, label: "公式透镜样例", title_zh: "公式透镜：让公式内部的重要性看得见", title_en: "Formula lens — a sample" },
     { id: "method", no: 0, eqs: true, label: "方法深读", title_zh: "方法深读：ACES、性能指标与实验设计", title_en: "Method in depth" },
   ],
 };
