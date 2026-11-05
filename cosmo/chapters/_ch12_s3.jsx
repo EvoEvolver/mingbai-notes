@@ -1,6 +1,7 @@
 import { HierarchyRedraw, PhaseSheetRedraw } from "./_ch14_redraw.jsx";
 // §12.3 Simulations —— 式 (12.54)–(12.60)，图 12.5–12.6
-import { Sec, Tx, Eq, Box, Figure, C } from "@kit";
+import { Sec, Tx, Eq, FormulaMap, Box, Figure, C } from "@kit";
+import { FM_12_55 } from "./_ch12_fmaps.jsx";
 
 const R = String.raw;
 
@@ -19,7 +20,7 @@ export function Sec123() {
       <Eq n="12.54" title="Vlasov–Poisson 方程组" say={R`完整的待解问题：分布函数沿粒子轨道守恒，势由“分布函数积分得到的密度减去平均密度”产生。`}>{R`\begin{aligned}\frac{\partial f_{\rm m}}{\partial t} + \frac{\partial f_{\rm m}}{\partial x^j}\frac{p^j}{ma} - \frac{\partial f_{\rm m}}{\partial p^j}\left[Hp^j + \frac ma\frac{\partial\Psi}{\partial x^j}\right] &= 0,\\ \nabla^2\Psi &= 4\pi Ga^2\left[m\int\frac{d^3p}{(2\pi)^3}f_{\rm m}(\boldsymbol x,\boldsymbol p,t) - \rho_{\rm m}(t)\right].\end{aligned}`}</Eq>
       <Box kind="warning" title={R`勘误：\eqref{12.54} 中的质量因子`}>{R`原书第二行方括号内印作 $\int\frac{d^3p}{(2\pi)^3}f_{\rm m}-\rho_{\rm m}(t)$。按 \eqref{12.11} 的归一化，$\int\frac{d^3p}{(2\pi)^3}f_{\rm m}=n=\rho_{\rm m}(\boldsymbol x,t)/m$ 是**数**密度，所以与质量密度 $\rho_{\rm m}(t)$ 相减前应乘以 $m$（即 $\langle m\rangle_{f_{\rm m}}$），上式已补上。`}</Box>
       <Tx>{R`我们的目标是求出 $f_{\rm m}$，初条件是 \eqref{12.9} 所给的冷初条件：`}</Tx>
-      <Eq n="12.55" say={R`冷初条件：早期每一点只有一个速度，物质在相空间中是一张没有厚度的“薄片”。`}>{R`f_{\rm m}(\boldsymbol x,\boldsymbol p,t) \xrightarrow{t\to0} \frac{\rho_{\rm m}}{m}\left[1+\delta_{\rm m}(\boldsymbol x,t)\right](2\pi)^3\delta_{\rm D}^{(3)}\left(\boldsymbol p - m\boldsymbol u_{\rm m}(\boldsymbol x,t)\right).`}</Eq>
+      <FormulaMap n="12.55" say={R`冷初条件：早期每一点只有一个速度，物质在相空间中是一张没有厚度的“薄片”。`} tree={FM_12_55} start="mu" />
       <Tx>{R`**相空间薄片。**这个初条件说的是：物质在相空间中占据一张薄片，空间每一点有唯一的单值速度 $\boldsymbol u_{\rm m}(\boldsymbol x,t)$。$f_{\rm m}$ 在引力下演化时，速度不再保持单值（如上所述），但物质仍被限制在相空间中的一张**薄片**上——这是 \secref{3.2.1} 讨论的相空间体积守恒的结果（见 \figref{12.5} 下排）。两团物质在物理空间中彼此穿过，就对应相空间薄片的一次**卷绕**。
 
 **N 体模拟的思想。**N 体模拟把这张相空间薄片离散化并数值跟踪其演化。薄片的一个小单元有确定的位置 $\boldsymbol x$ 与动量 $\boldsymbol p$。由于这一小块相空间中暗物质粒子的运动由测地线方程描述，薄片单元本身的运动也一样：`}</Tx>

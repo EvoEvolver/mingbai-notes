@@ -1,6 +1,7 @@
 import { BerryLiftRedraw, QuantumFibreRedraw } from "./_redraw_ch09_10.jsx";
 // §10.6 Berry 相位 + 章末习题 —— 式 (10.129)–(10.170)，例 10.7–10.8，习题 10.13–10.15，Problem 10.1，图 10.6–10.7，交互图 5
-import { Sec, Sub, Tx, Eq, Box, Stmt, Exercise, Derivation, Figure, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Stmt, Exercise, Derivation, Figure, C, FormulaMap } from "@kit";
+import { FM_10_147 } from "./_ch10_fmaps.jsx";
 import { BerryLab } from "./_ch10_demos.jsx";
 
 const R = String.raw;
@@ -104,7 +105,7 @@ $\mathcal{A}$ 的场强 $\mathcal{F}$ 称为 **Berry 曲率**（Berry's curvatur
 $$\begin{aligned}H\Psi(\boldsymbol r;${bR})=&-\frac1{2M}[\nabla^2_{${bR}}\Phi(${bR})|${bR}\rangle+2\nabla_{${bR}}\Phi(${bR})\cdot\nabla_{${bR}}|${bR}\rangle+\Phi(${bR})\nabla^2_{${bR}}|${bR}\rangle]\\&-\Phi(${bR})\frac1{2m}\nabla^2_{\boldsymbol r}|${bR}\rangle+\Phi(${bR})V(\boldsymbol r;${bR})|${bR}\rangle=E_n(${bR})\Phi(${bR})|${bR}\rangle.\end{aligned}$$
 
 左乘 $\langle${bR}|$ 并用 Schrödinger 方程 \eqref{10.145}，这个方程成为`}</Tx>
-        <Eq n="10.147" say={R`投影到快自由度本征态后，慢波函数满足的方程：梯度项与二阶项中出现了 Berry 联络（含散度项，见勘误）。`}>{R`-\frac1{2M}[\nabla^2_{${bR}}\Phi(${bR})+2\nabla_{${bR}}\Phi(${bR})\cdot\langle${bR}|\nabla_{${bR}}|${bR}\rangle+\Phi(${bR})\nabla_{${bR}}\cdot\langle${bR}|\nabla_{${bR}}|${bR}\rangle+\Phi(${bR})(\langle${bR}|\nabla_{${bR}}|${bR}\rangle)^2]+\epsilon_n(${bR})\Phi(${bR})=E_n(${bR})\Phi(${bR})`}</Eq>
+        <FormulaMap n="10.147" say={R`投影到快自由度本征态后，慢波函数满足的方程：梯度项与二阶项中出现了 Berry 联络（含散度项，见勘误）。`} tree={FM_10_147} start="berry" />
         <Tx>{R`这里采用了 **Born–Oppenheimer 近似**：除对角元外，所有矩阵元都被略去，`}</Tx>
         <Eq n="10.148" say={R`Born–Oppenheimer 近似：慢参数的变化不引起快自由度的能级之间的跃迁。`}>{R`\langle n;${bR}|\nabla_{${bR}}|n';${bR}\rangle=0\qquad n'\neq n.`}</Eq>
         <Box kind="warning" title={R`勘误：\eqref{10.147} 漏了散度项（p.433）`}>{R`原书 \eqref{10.147} 方括号内只有 $\nabla^2\Phi+2\nabla\Phi\cdot\langle\boldsymbol R|\nabla|\boldsymbol R\rangle+\Phi(\langle\boldsymbol R|\nabla|\boldsymbol R\rangle)^2$。但 $\langle\boldsymbol R|\nabla^2_{\boldsymbol R}|\boldsymbol R\rangle$ 应这样处理：

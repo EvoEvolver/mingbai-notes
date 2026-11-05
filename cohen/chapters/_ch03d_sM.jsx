@@ -1,5 +1,6 @@
 // 补充材料 M_III：任意形状"势阱"中的束缚态（式 MIII-1 … MIII-18）
-import { Sec, Sub, Tx, Eq, Box, Derivation, C } from "@kit";
+import { Sec, Sub, Tx, Eq, FormulaMap, Box, Derivation, C } from "@kit";
+import { FM_MIII_9, FM_MIII_11 } from "./_ch03d_fmaps.jsx";
 import { ShootingPlot } from "./_ch03d_plots.jsx";
 import { BarrierWellFig } from "./_ch03d_figs.jsx";
 
@@ -71,11 +72,11 @@ export function SecM() {
         <Tx>{R`**要证明的事。**能级 $E_1,E_2,\dots$ 都高于势能的最小值 $-V_0$；并且用不确定关系理解它。
 
 **把方程变成能量的平均值。**用 $\varphi^*(x)$ 乘 \eqref{MIII-1} 两边再积分：`}</Tx>
-        <Eq n="MIII-9" say={R`本征方程两边乘以 $\varphi^*$ 并积分：左边是动能项与势能项的积分，右边是能量乘归一化积分。`}>{R`-\frac{\hbar^2}{2m}\int_{-\infty}^{+\infty}\mathrm dx\,\varphi^*(x)\frac{\mathrm d^2}{\mathrm dx^2}\varphi(x)+\int_{-\infty}^{+\infty}\mathrm dx\,V(x)\,|\varphi(x)|^2=E\int_{-\infty}^{+\infty}\mathrm dx\,|\varphi(x)|^2`}</Eq>
+        <FormulaMap n="MIII-9" say={R`本征方程两边乘以 $\varphi^*$ 并积分：左边是动能项与势能项的积分，右边是能量乘归一化积分。`} tree={FM_MIII_9} start="E" />
         <Tx>{R`束缚态可以归一化，于是 \eqref{MIII-9} 简单地写成`}</Tx>
         <Eq n="MIII-10" keyEq title="能量 = 动能 + 势能的平均" say={R`束缚态的能量等于平均动能与平均势能之和。`}>{R`E=\langle T\rangle+\langle V\rangle`}</Eq>
         <Tx>{R`其中（第二个等号是分部积分，并利用 $|x|\to\infty$ 时 $\varphi\to0$）`}</Tx>
-        <Eq n="MIII-11" say={R`平均动能可以写成波函数斜率平方的积分，所以它永远不小于零。`}>{R`\langle T\rangle=-\frac{\hbar^2}{2m}\int_{-\infty}^{+\infty}\mathrm dx\,\varphi^*(x)\frac{\mathrm d^2}{\mathrm dx^2}\varphi(x)=\frac{\hbar^2}{2m}\int_{-\infty}^{+\infty}\mathrm dx\,\Big|\frac{\mathrm d}{\mathrm dx}\varphi(x)\Big|^2`}</Eq>
+        <FormulaMap n="MIII-11" say={R`平均动能可以写成波函数斜率平方的积分，所以它永远不小于零。`} tree={FM_MIII_11} start="sq" />
         <Eq n="MIII-12" say={R`平均势能是势能按概率密度加权的平均。`}>{R`\langle V\rangle=\int_{-\infty}^{+\infty}\mathrm dx\,V(x)|\varphi(x)|^2`}</Eq>
         <Tx>{R`\eqref{MIII-10} 无非是说 $E$ 是动能与势能平均值之和：`}</Tx>
         <Eq n="MIII-13" say={R`平均动能就是 $P^2/2m$ 在该态中的平均值。`}>{R`\langle T\rangle=\langle\varphi|\frac{P^2}{2m}|\varphi\rangle`}</Eq>

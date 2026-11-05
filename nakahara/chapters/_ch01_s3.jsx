@@ -1,6 +1,7 @@
 import { FoundationsRedraw } from "./_redraw_foundations.jsx";
 // §1.3 玻色粒子的路径积分量子化 —— 式 (1.79)–(1.129)，引理 1.2，命题 1.2，例 1.5，图 1.1–1.2
-import { Sec, Sub, Tx, Eq, Box, Stmt, Proof, Derivation, Figure, Details, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Stmt, Proof, Derivation, Figure, Details, C, FormulaMap } from "@kit";
+import { FM_1_92, FM_1_102, FM_1_103 } from "./_ch01_fmaps.jsx";
 
 const R = String.raw;
 
@@ -57,7 +58,7 @@ $$\hat x[\mathrm{e}^{-\mathrm{i}\hat Ht_i}|x_i,t_i\rangle]=x_i[\mathrm{e}^{-\mat
         </Stmt>
         <Tx>{R`下面用这个引理求出无穷小时间间隔的热核。`}</Tx>
         <Stmt id="P1.2">
-          <Eq n="1.92" title="短时传播子" say={R`无穷小时间 $\varepsilon$ 内的跃迁振幅 = 归一化因子乘 $\mathrm{e}^{\mathrm{i}\Delta S}$，其中 $\Delta S$ 是沿直线路径的作用量（势能取在中点，即 Weyl 排序）。`}>{R`\langle x|\mathrm{e}^{-\mathrm{i}\hat H\varepsilon}|y\rangle=\sqrt{\frac{m}{2\pi\mathrm{i}\varepsilon}}\exp\left[\mathrm{i}\varepsilon\left\{\frac{m}{2}\left(\frac{(x-y)}{\varepsilon}\right)^2-V\left(\frac{x+y}{2}\right)\right\}+\mathcal{O}(\varepsilon^2)+\mathcal{O}(\varepsilon(x-y)^2)\right].`}</Eq>
+          <FormulaMap n="1.92" title="短时传播子" say={R`无穷小时间 $\varepsilon$ 内的跃迁振幅 = 归一化因子乘 $\mathrm{e}^{\mathrm{i}\Delta S}$，其中 $\Delta S$ 是沿直线路径的作用量（势能取在中点，即 Weyl 排序）。`} tree={FM_1_92} start="pot" />
           <Proof steps={[
             { claim: R`在左边插入动量本征矢的完备性关系（用 \eqref{1.55}）：`, tex: R`\langle x|\mathrm{e}^{-\mathrm{i}\hat H\varepsilon}|y\rangle=\int\dd k\,\langle x|\mathrm{e}^{-\mathrm{i}\varepsilon\hat H}|k\rangle\langle k|y\rangle=\int\frac{\dd k}{2\pi}\mathrm{e}^{-\mathrm{i}ky}\mathrm{e}^{-\mathrm{i}\varepsilon\hat H_x}\mathrm{e}^{\mathrm{i}kx}`, why: R`其中 $\hat H_x=-\dfrac{1}{2m}\dfrac{\dd^2}{\dd x^2}+V(x)$ 是坐标表象中的 Hamilton 算符。`, uses: ["1.36", "1.55", "1.56"] },
             { claim: R`由 $\partial_x\equiv\dd/\dd x$ 与 $\mathrm{e}^{\mathrm{i}kx}$ 的对易关系 $\partial_x\mathrm{e}^{\mathrm{i}kx}=\mathrm{i}k\mathrm{e}^{\mathrm{i}kx}+\mathrm{e}^{\mathrm{i}kx}\partial_x=\mathrm{e}^{\mathrm{i}kx}(\mathrm{i}k+\partial_x)$，反复使用得 $\partial_x^n\mathrm{e}^{\mathrm{i}kx}=\mathrm{e}^{\mathrm{i}kx}(\mathrm{i}k+\partial_x)^n$，因而`, tex: R`\mathrm{e}^{-\mathrm{i}\varepsilon[-\partial_x^2/2m+V(x)]}\mathrm{e}^{\mathrm{i}kx}=\mathrm{e}^{\mathrm{i}kx}\mathrm{e}^{-\mathrm{i}\varepsilon[-(\mathrm{i}k+\partial_x)^2/2m+V(x)]}` },
@@ -106,9 +107,9 @@ $$\langle x_k,t_k|x_{k-1},t_{k-1}\rangle\simeq\sqrt{\frac{m}{2\pi\mathrm{i}\vare
           <Tx>{R`（最后一步对 $p$ 配方后用 \eqref{1.91}，$a=T/2m$。）
 
 **路径积分的算法**：振幅表示为`}</Tx>
-          <Eq n="1.102" say={R`自由粒子的离散路径积分：$n-1$ 个中间位置上的 Gauss 积分。`}>{R`\langle x_f,t_f|x_i,t_i\rangle=\lim_{n\to\infty}\left(\frac{m}{2\pi\mathrm{i}\varepsilon}\right)^{n/2}\int\dd x_1\ldots\dd x_{n-1}\exp\left[\mathrm{i}\varepsilon\sum_{k=1}^n\frac{m}{2}\left(\frac{x_k-x_{k-1}}{\varepsilon}\right)^2\right]`}</Eq>
+          <FormulaMap n="1.102" say={R`自由粒子的离散路径积分：$n-1$ 个中间位置上的 Gauss 积分。`} tree={FM_1_102} start="vel" />
           <Tx>{R`其中 $\varepsilon=T/n$。把坐标标度为 $y_k=(m/2\varepsilon)^{1/2}x_k$，振幅变为`}</Tx>
-          <Eq n="1.103" say={R`无量纲化后，指数只剩相邻点差的平方和；前因子记录了测度的标度。`}>{R`\langle x_f,t_f|x_i,t_i\rangle=\lim_{n\to\infty}\left(\frac{m}{2\pi\mathrm{i}\varepsilon}\right)^{n/2}\left(\frac{2\varepsilon}{m}\right)^{(n-1)/2}\int\dd y_1\ldots\dd y_{n-1}\exp\left[\mathrm{i}\sum_{k=1}^n(y_k-y_{k-1})^2\right].`}</Eq>
+          <FormulaMap n="1.103" say={R`无量纲化后，指数只剩相邻点差的平方和；前因子记录了测度的标度。`} tree={FM_1_103} start="phase" />
           <Tx>{R`可以用归纳法证明（原书留作习题）`}</Tx>
           <Derivation title={R`归纳法：$\int\dd y_1\ldots\dd y_{n-1}\exp[\mathrm{i}\sum_{k=1}^n(y_k-y_{k-1})^2]=[(\mathrm{i}\pi)^{n-1}/n]^{1/2}\mathrm{e}^{\mathrm{i}(y_n-y_0)^2/n}$`} collapsed steps={[
             { tex: R`n=1:\quad\text{没有积分，左边}=\mathrm{e}^{\mathrm{i}(y_1-y_0)^2}=\text{右边}`, why: "归纳起点。" },

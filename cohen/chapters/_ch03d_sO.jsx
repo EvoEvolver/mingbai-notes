@@ -1,5 +1,6 @@
 // 补充材料 O_III：一维周期结构中粒子的量子性质（式 OIII-1 … OIII-59）
-import { Sec, Sub, Tx, Eq, Box, Derivation, C } from "@kit";
+import { Sec, Sub, Tx, Eq, FormulaMap, Box, Derivation, C } from "@kit";
+import { FM_OIII_44, FM_OIII_57 } from "./_ch03d_fmaps.jsx";
 import { BandPlot } from "./_ch03d_plots.jsx";
 import { PeriodicFig, CrystalFig } from "./_ch03d_figs.jsx";
 
@@ -177,7 +178,7 @@ export function SecO() {
         <Tx>{R`（对 $A_n^*$ 取共轭后 $\mathrm e^{\pm i(n-1)kl}$ 互换，与 $A_n'$ 逐项比较即得。）于是条件 \eqref{OIII-38b} 写成`}</Tx>
         <Eq n="OIII-43" say={R`右边界条件在允许带中的形式：一个关于 $\alpha$ 的相位方程，$N$ 通过 $\mathrm e^{2iNkl}$ 进入。`}>{R`\frac{f_1(\alpha)\,\mathrm e^{2iN${ka}l}+f_2(\alpha)}{f_2^*(\alpha)\,\mathrm e^{2iN${ka}l}+f_1^*(\alpha)}=\mathrm e^{i\chi'(\alpha)}`}</Eq>
         <Tx>{R`这个关于 $\alpha$ 的方程给出能级的量子化。解出 $\mathrm e^{2iNkl}$，令`}</Tx>
-        <Eq n="OIII-44" say={R`把边缘的影响全部收进一个相位 $\Theta(\alpha)$（分子分母互为共轭，所以比值的模为 1）。`}>{R`\Theta(\alpha)=\operatorname{Arg}\Big\{\frac{f_1^*(\alpha)\,\mathrm e^{i\chi'(\alpha)/2}-f_2(\alpha)\,\mathrm e^{-i\chi'(\alpha)/2}}{f_1(\alpha)\,\mathrm e^{-i\chi'(\alpha)/2}-f_2^*(\alpha)\,\mathrm e^{i\chi'(\alpha)/2}}\Big\}`}</Eq>
+        <FormulaMap n="OIII-44" say={R`把边缘的影响全部收进一个相位 $\Theta(\alpha)$（分子分母互为共轭，所以比值的模为 1）。`} tree={FM_OIII_44} start="p1" />
         <Tx>{R`（原则上 $\Theta$ 可由 $\chi(\alpha)$、$\chi'(\alpha)$ 与 $Q(\alpha)$ 算出。）\eqref{OIII-43} 简化为`}</Tx>
         <Eq n="OIII-45" say={R`量子化条件化为两个相位因子相等。`}>{R`\mathrm e^{2iN${ka}l}=\mathrm e^{i\Theta(\alpha)}`}</Eq>
         <Tx>{R`所以能级由下式给出：`}</Tx>
@@ -219,7 +220,7 @@ export function SecO() {
         <Tx>{R`即（解出 $\mathrm e^{-2N\rho l}$ 并上下同乘 $\mathrm e^{-i\chi'/2}$）`}</Tx>
         <Eq n="OIII-56" say={R`禁带能级的方程：左边是随 $N$ 指数变小的数，右边是只与边缘有关的实函数。`}>{R`\mathrm e^{-2N\rho(\alpha)l}=${LA}(\alpha)`}</Eq>
         <Tx>{R`其中实函数 $${LA}(\alpha)$ 定义为`}</Tx>
-        <Eq n="OIII-57" say={R`只依赖于边缘相位与本征分量的实函数（分子、分母都是纯虚数）。`}>{R`${LA}(\alpha)=-\frac{f_1^*(\alpha)\,\mathrm e^{i\chi'(\alpha)/2}-f_1(\alpha)\,\mathrm e^{-i\chi'(\alpha)/2}}{f_2^*(\alpha)\,\mathrm e^{i\chi'(\alpha)/2}-f_2(\alpha)\,\mathrm e^{-i\chi'(\alpha)/2}}`}</Eq>
+        <FormulaMap n="OIII-57" say={R`只依赖于边缘相位与本征分量的实函数（分子、分母都是纯虚数）。`} tree={FM_OIII_57} start="f1" />
         <Tx>{R`$N\gg1$ 时 $\mathrm e^{-2N\rho l}\simeq0$，\eqref{OIII-56} 化为`}</Tx>
         <Eq n="OIII-58" keyEq title="边缘态的能级" say={R`禁带中的能级由 $L(\alpha)$ 的零点给出，与晶体长度 $N$ 无关。`}>{R`${LA}(\alpha)=0`}</Eq>
         <Tx>{R`所以禁带中的能级是 $${LA}(\alpha)$ 的零点。$N$ 既不出现在 \eqref{OIII-57} 中也不出现在 \eqref{OIII-58} 中，这类能级的数目与 $N$ 无关（不像允许带中的能级数）。因此 $N\gg1$ 时可以说：几乎所有能级都聚在允许带里。

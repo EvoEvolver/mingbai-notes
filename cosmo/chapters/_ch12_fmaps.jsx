@@ -235,3 +235,87 @@ export const FM_12_88 = {
       ] },
   ],
 };
+
+// §12.2 非线性 Euler 方程
+export const FM_12_20 = {
+  id: "eq", tex: R`#dt+#adv+#hub+#grav+#stress=0.`, name: "euler == 0", label: "流体速度的收支：五项之和为零", role: "const",
+  note: R`\eqref{12.19} 除以 $\rho_{\rm m}$ 的结果。和线性的 \eqref{5.50} 相比多了对流项和应力项。丢掉应力后，它和连续性、Poisson 方程一起对 $\rho_{\rm m}$、$u^i_{\rm m}$、$\Psi$ 封闭。`,
+  kids: [
+    { id: "dt", tex: R`\frac{\partial}{\partial t}u^i_{\rm m}`, w: 2.5, name: "d_dt(velocity)", label: "固定共动位置上的速度变化", role: "unknown",
+      note: R`这里盯着共动坐标中的一个固定点，而不是跟着流体走。跟着流体元看到的变化，要再加上下一项对流。` },
+    { id: "adv", tex: R`#uj#grad`, glyph: R`\times`, name: "advection", label: "对流：速度场搬运自身", role: "const",
+      note: R`和前一项合起来是作用在 $u^i_{\rm m}$ 上的物质导数。它是速度的二次项，所以线性的 \eqref{5.50} 里没有它。`,
+      kids: [
+        { id: "uj", tex: R`\frac1au^j_{\rm m}`, w: 7, name: "carrier_velocity / a", label: "速度充当搬运者：非线性从这里进入", role: "unknown",
+          note: R`**这一项让方程成为非线性的。**速度既是被搬运的量，又是搬运者，所以这一项是速度的二次式。$1/a$ 把共动梯度换算成物理梯度。` },
+        { id: "grad", tex: R`\frac{\partial}{\partial x^j}u^i_{\rm m}`, w: 3, name: "grad(velocity)", label: "沿途看到的速度变化", role: "unknown",
+          note: R`流体元沿 $u^j_{\rm m}$ 移动时经过的速度梯度。速度场均匀时这一项为零。` },
+      ] },
+    { id: "hub", tex: R`Hu^i_{\rm m}`, w: 3.5, name: "hubble_drag", label: "Hubble 拖曳：速度按 $1/a$ 衰减", role: "known",
+      note: R`没有扰动时，它让速度按 $1/a$ 衰减。系数是 $H$ 而不是 $4H$，因为 $3H$ 已由连续性方程负责（\eqref{12.19}）。` },
+    { id: "grav", tex: R`\frac1a\frac{\partial\Psi}{\partial x^i}`, w: 3.5, name: "gravity / a", label: "引力：线性阶也有的驱动力", role: "unknown",
+      note: R`形式和线性阶相同。用物理间隔 $dr^i=a\,dx^i$ 写，它就是牛顿引力。除以密度后这是单位质量受的力，和粒子多少无关。$\Psi$ 由 Poisson 方程决定。` },
+    { id: "stress", tex: R`#pre\frac{\partial}{\partial x^j}#sig`, glyph: R`\times`, name: "div(stress)", label: "应力项：广义的压强力", role: "const",
+      note: R`若 $\sigma^{ij}_{\rm m}$ 是对角的，等于 $\mathcal P_{\rm m}\delta_{ij}$，这一项就是压强梯度力 $(\partial\mathcal P_{\rm m}/\partial x^i)/(\rho_{\rm m}a)$。`,
+      kids: [
+        { id: "pre", tex: R`\frac{1}{\rho_{\rm m}a}`, w: 1.6, name: "1 / (density * a)", label: "除以密度，换算到物理梯度", role: "unknown",
+          note: R`这一项在 \eqref{12.19} 中不带 $\rho_{\rm m}$，除过之后 $\rho_{\rm m}$ 留在了分母。这里的 $\rho_{\rm m}$ 是含涨落的完整密度。` },
+        { id: "sig", tex: R`\sigma^{ij}_{\rm m}`, w: 5.5, name: "stress_tensor", label: "冷物质为零，丢掉后方程组封闭", role: "unknown",
+          note: R`把冷分布函数 \eqref{12.9} 代入 \eqref{12.17} 得到 $\sigma^{ij}_{\rm m}=0$，所以标准做法是丢掉它，让连续性、Euler、Poisson 三个方程封闭。真的能忽略它吗？这个问题留到后面的有效流体 \eqref{12.52} 再回答。` },
+      ] },
+  ],
+};
+
+// §12.2 功率谱按阶展开
+export const FM_12_41 = {
+  id: "eq", tex: R`#lhs=#rhs.`, name: "equals", label: "非线性功率谱 = 各阶场两两关联之和", role: "const",
+  note: R`把两个 $\delta_{\rm m}$ 都按阶展开再相乘。每一项都能用线性场的统计性质算出来，但一共有无穷多项，只有能在有限项后截断时才有用。`,
+  kids: [
+    { id: "lhs", tex: R`\left\langle#d#dp\right\rangle`, name: "two_point", label: "完整密度场的两点关联", role: "result",
+      note: R`同一时刻 $\eta$、两个波数上的系综平均。功率谱就由它给出。`,
+      kids: [
+        { id: "d", tex: R`\delta_{\rm m}(\boldsymbol k,\eta)`, w: 2, name: "density(k)", label: "第一个完整密度场", role: "result", note: R`包含所有阶的非线性演化，不只是线性部分。` },
+        { id: "dp", tex: R`\delta_{\rm m}(\boldsymbol k',\eta)`, w: 2, name: "density(k')", label: "第二个完整密度场", role: "result", note: R`同一时刻，波数换成 $\boldsymbol k'$。` },
+      ] },
+    { id: "rhs", tex: R`\sum_{#range}^{#parity}\left\langle#dn#dl\right\rangle`, name: "sum over (n, l)", label: "对各阶组合求和", role: "const",
+      note: R`一个组合就是一对阶数 $(n,l)$，它的贡献是这两阶场的关联。`,
+      kids: [
+        { id: "range", tex: R`n,l=1,2,\cdots`, w: 2.5, name: "for n, l in orders", label: "阶数不封顶：无穷多项", role: "const",
+          note: R`展开从线性阶开始，没有上限。微扰论要有意义，求和必须能在有限项后截断，而且丢掉的项要比保留的小，所以下一式 \eqref{12.42} 只看前几项。` },
+        { id: "parity", tex: R`n+l\ \text{even}`, w: 7, name: "if (n + l) % 2 == 0", label: "奇数项为零：只留偶数个 Gauss 场", role: "known",
+          note: R`**这个条件消掉了所有奇数项。**$\delta^{(n)}$ 含 $n$ 个 $\delta_0$（\eqref{12.40}），所以每项含 $n+l$ 个 Gauss 场，而奇数个 Gauss 场的期望值为零（\eqref{12.44}）。例如 $(1,2)$ 消失，第一个非线性修正要到 $(2,2)$ 和 $(1,3)$ 才出现。` },
+        { id: "dn", tex: R`\delta^{(n)}(\boldsymbol k,\eta)`, w: 3, name: "order_n(k)", label: R`第 $n$ 阶场：含 $n$ 个 $\delta_0$`, role: "known",
+          note: R`由 \eqref{12.40} 给出：$D_+^n$ 乘上 $n$ 个线性场经核 $F_n$ 的卷积。` },
+        { id: "dl", tex: R`\delta^{(l)}(\boldsymbol k',\eta)`, w: 3, name: "order_l(k')", label: R`第 $l$ 阶场：含 $l$ 个 $\delta_0$`, role: "known",
+          note: R`同样由 \eqref{12.40} 给出。两阶不必相同，例如 $(1,3)$ 项就是一个线性场和一个三阶场的关联。` },
+      ] },
+  ],
+};
+
+// §12.3 冷初条件
+export const FM_12_55 = {
+  id: "eq", tex: R`#lhs\xrightarrow{t\to0}#rhs.`, name: "initial_condition", label: "早期：分布函数趋于一张冷薄片", role: "const",
+  note: R`求解 Vlasov–Poisson 方程组的初条件。箭头表示这只在 $t\to0$ 时成立：之后速度不再保持单值，但物质仍留在一张薄片上。`,
+  kids: [
+    { id: "lhs", tex: R`f_{\rm m}(\boldsymbol x,\boldsymbol p,t)`, w: 3, name: "f(x, p, t)", label: "要解的量：相空间分布函数", role: "unknown",
+      note: R`Vlasov–Poisson 方程组 \eqref{12.54} 的求解目标，同时依赖位置和动量。这里给出它在早期的形式。` },
+    { id: "rhs", tex: R`#nbar\left[#over\right]#norm#dirac`, glyph: R`\times`, name: "number_density × momentum_peak", label: "每点的粒子数 × 动量空间的尖峰", role: "const",
+      note: R`形式和冷流体的 \eqref{12.9} 相同，只是把完整密度拆成了背景乘 $1+\delta_{\rm m}$。对动量积分后 $\delta_{\rm D}$ 和 $(2\pi)^3$ 消失，只剩下数密度。`,
+      kids: [
+        { id: "nbar", tex: R`\frac{\rho_{\rm m}}{m}`, w: 1.5, name: "mean_n", label: "平均数密度", role: "known",
+          note: R`这里的 $\rho_{\rm m}$ 不带 $\boldsymbol x$，是背景密度。除以 $m$ 后是单位体积的平均粒子数。` },
+        { id: "over", tex: R`1+\delta_{\rm m}(\boldsymbol x,t)`, w: 3, name: "1 + overdensity", label: "当地的密度涨落", role: "known",
+          note: R`和前一个因子相乘就是当地的完整数密度。` },
+        { id: "norm", tex: R`(2\pi)^3`, w: 0.8, name: "momentum_measure_norm", label: "与动量积分测度配套", role: "const",
+          note: R`和积分测度 $\frac{d^3p}{(2\pi)^3}$ 中的因子相消。` },
+        { id: "dirac", tex: R`\delta_{\rm D}^{(3)}\left(#p-#mu\right)`, name: "only_if p == m u", label: "动量必须等于当地流体动量", role: "const",
+          note: R`除了 $\boldsymbol p=m\boldsymbol u_{\rm m}$ 之外处处为零，也就是没有速度弥散。动量空间里没有宽度，所以物质在相空间中是一张没有厚度的薄片。`,
+          kids: [
+            { id: "p", tex: R`\boldsymbol p`, w: 2.2, name: "momentum", label: "相空间的动量坐标", role: "const",
+              note: R`和 $\boldsymbol x$ 一样是 $f_{\rm m}$ 的自变量。` },
+            { id: "mu", tex: R`m\boldsymbol u_{\rm m}(\boldsymbol x,t)`, w: 7, name: "one_momentum_per_point", label: "每点只有一个动量：薄片由此而来", role: "known",
+              note: R`**这是“冷”的全部含义。**空间每一点只对应一个动量，物质就落在相空间的一张薄片上。壳层交叉后速度不再单值，流体描述失效，N 体模拟离散并跟踪的正是这张薄片。` },
+          ] },
+      ] },
+  ],
+};

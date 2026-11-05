@@ -1,5 +1,6 @@
 // §11.1.3 BAO and Alcock–Paczyński —— 式 (11.25)–(11.37)，图 11.6–11.7
-import { Sub, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
+import { Sub, Tx, Eq, Box, Derivation, Figure, C, FormulaMap } from "@kit";
+import { FM_11_36, FM_11_37 } from "./_ch11_fmaps.jsx";
 import { BAOAP } from "./_ch11_plots.jsx";
 
 const R = String.raw;
@@ -54,9 +55,9 @@ export function Sub113() {
         { tex: R`\bar J(1+\alpha_\perp)^2(1+\alpha_\parallel)=1`, why: R`$\bar J=|d^3x/d^3x_{\rm obs}|=(1-\alpha_\perp)^2(1-\alpha_\parallel)$ 正是这个体积因子的倒数（见 \eqref{11.13} 下方的勘误：按原书 \eqref{11.14} 的符号则不能相消）。` },
       ]} />
       <Tx>{R`\eqref{11.34} 中的前置因子借助 \eqref{11.14} 简单地化为 1。这不是奇迹，而是因为给定体积中的星系数与我们用来描述它们的坐标无关：$N_{\rm g}=n_{\rm g}\Delta x^3=n_{\rm g,obs}\Delta x^3_{\rm obs}$。对 $d^3x$ 的积分给出 $\delta_{\rm g,RSD}$，即在 $\boldsymbol k[\boldsymbol k_{\rm obs}]$ 处取值的 \eqref{11.22}。也就是说，基准宇宙学与真实宇宙学之差在 Fourier 空间星系密度中表现为波矢的一个简单缩放：`}</Tx>
-      <Eq n="11.36" say={R`观测坐标中的星系 Fourier 模式 = Kaiser 公式在缩放后的真实波矢处取值。`}>{R`\delta_{\rm g,obs}(\boldsymbol k_{\rm obs})=[b_1+f\mu_k^2]\delta_{\rm m}(\boldsymbol k)\Big|_{\boldsymbol k=\left([1+\alpha_\perp]k^1_{\rm obs},\ [1+\alpha_\perp]k^2_{\rm obs},\ [1+\alpha_\parallel]k^3_{\rm obs}\right)}.`}</Eq>
+      <FormulaMap n="11.36" say={R`观测坐标中的星系 Fourier 模式 = Kaiser 公式在缩放后的真实波矢处取值。`} tree={FM_11_36} start="para" />
       <Tx>{R`最后，用 \eqref{11.23} 可把观测星系功率谱写成`}</Tx>
-      <Eq n="11.37" keyEq title="观测星系功率谱" say={R`观测功率谱 = Kaiser 公式（RSD）在 AP 缩放后的波矢处取值 + 噪声：一个式子同时包含速度与错误宇宙学两种效应。`}>{R`P_{\rm g,obs}(\boldsymbol k_{\rm obs},\bar z)=\left(P_{\rm L}(k,\bar z)\left[b_1+f\mu_k^2\right]^2\right)\Big|_{\boldsymbol k=\left([1+\alpha_\perp]k^1_{\rm obs},\ [1+\alpha_\perp]k^2_{\rm obs},\ [1+\alpha_\parallel]k^3_{\rm obs}\right)}+P_N.`}</Eq>
+      <FormulaMap n="11.37" keyEq title="观测星系功率谱" say={R`观测功率谱 = Kaiser 公式（RSD）在 AP 缩放后的波矢处取值 + 噪声：一个式子同时包含速度与错误宇宙学两种效应。`} tree={FM_11_37} start="para" />
       <Tx>{R`这个方程包含两种效应：上一小节推出的本动速度造成的红移空间畸变；以及我们赋予星系的坐标基于假设的、而非真实的距离–红移关系这一事实。常数噪声项 $P_N$ 不受两者影响。
 
 **AP 效应。**注意，即使星系没有速度，错误的距离–红移关系也会使星系功率谱各向异性：设想令 $f=0$（形式上等价于让所有速度为零），$\boldsymbol k_{\rm obs}$ 与 $\boldsymbol k$ 的关系仍依赖 $\boldsymbol k_{\rm obs}$ 与视线的夹角，因为 $\alpha_\parallel$ 与 $\alpha_\perp$ 不同。因此**错误的假设宇宙学会在星系功率谱中引入各向异性**。这一点最早由 Alcock 与 Paczyński (1979) 指出，故称 **Alcock–Paczyński（AP）效应**。与 RSD 不同，AP 效应的幅度依赖功率谱的**形状**——把 \eqref{11.37} 对 $\alpha_\parallel$、$\alpha_\perp$ 展开到线性阶就能看出。正因如此，AP 与 RSD 可以分开。`}</Tx>

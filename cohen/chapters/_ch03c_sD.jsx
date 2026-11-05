@@ -1,6 +1,7 @@
 // 补充材料 D_III：只涉及体系一部分的测量（式 DIII-1 … DIII-16）
 // 讲法：用"只看两个电子中的一个"这个具体问题引入；先给出算概率、算测后态的一般公式，再分别读出"积态"与"非积态"的物理含义，最后落到关联与 EPR。
-import { Sec, Sub, Tx, Eq, Box, C } from "@kit";
+import { Sec, Sub, Tx, Eq, FormulaMap, Box, C } from "@kit";
+import { FM_DIII_9 } from "./_ch03c_fmaps.jsx";
 
 const R = String.raw;
 const X2 = R`\sym{chi2}{\chi}`;   // 子体系 (2) 的态 |χ(2)⟩（与 H_III 的规范函数 χ 区分）
@@ -37,7 +38,7 @@ export function SecD() {
 
 **(b) 测后态。**按 \mainref{B-31}（第五假设），测量后的态是投影后再归一化：`}</Tx>
         <Eq n="DIII-8" say="测得 $a_n$ 后，整体的态是测量前的态经延拓投影算符投影再归一化。">{R`\ket{\psi'}=\frac{\tilde P_n(1)\ket\psi}{\sqrt{\braket{\psi|\tilde P_n(1)|\psi}}}`}</Eq>
-        <Eq n="DIII-9" say="把延拓投影算符展开后，测后态是若干积态的叠加，系数取自测量前的态，分母保证归一化。">{R`\ket{\psi'}=\frac{\displaystyle\sum_{i=1}^{g_n}\sum_k\ket{u_n^i(1)v_k(2)}\braket{u_n^i(1)v_k(2)|\psi}}{\sqrt{\displaystyle\sum_{i=1}^{g_n}\sum_k\left|\braket{u_n^i(1)v_k(2)|\psi}\right|^2}}`}</Eq>
+        <FormulaMap n="DIII-9" say="把延拓投影算符展开后，测后态是若干积态的叠加，系数取自测量前的态，分母保证归一化。" tree={FM_DIII_9} start="psi" />
         <Tx>{R`**三点观察。**
 
 *(i) 与 (2) 的基无关。*\eqref{DIII-3}、\eqref{DIII-6}、\eqref{DIII-8} 中根本没有出现 $\{\ket{v_k(2)}\}$——它只是计算时的脚手架。物理上也应如此：不对 (2) 做测量，(2) 的任何一组态都不该有特殊地位。

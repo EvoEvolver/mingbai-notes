@@ -1,5 +1,6 @@
 // §8.4 Hermite 流形与 Hermite 微分几何 —— 式 (8.47)–(8.79)，定理 8.2–8.4，引理 8.1，命题 8.2，习题 8.7
-import { Sec, Sub, Tx, Eq, Box, Stmt, Proof, Exercise, Derivation, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Stmt, Proof, Exercise, Derivation, C, FormulaMap } from "@kit";
+import { FM_8_76b } from "./_ch08_fmaps.jsx";
 
 const R = String.raw;
 
@@ -174,7 +175,7 @@ $$R_{\lambda\bar\kappa\bar\mu\nu}=-R_{\lambda\bar\kappa\nu\bar\mu}=-\big(\partia
           <>
             <Tx>{R`证明`}</Tx>
             <Eq n="8.76a" say={R`降指标后的曲率：度规的混合二阶导数，减去一阶导数的二次项。`}>{R`R_{\bar\kappa\lambda\bar\mu\nu}\equiv g_{\bar\kappa\xi}R^\xi{}_{\lambda\bar\mu\nu}=\partial_{\bar\mu}\partial_\nu g_{\lambda\bar\kappa}-g^{\bar\eta\xi}\partial_{\bar\mu}g_{\bar\kappa\xi}\partial_\nu g_{\lambda\bar\eta}`}</Eq>
-            <Eq n="8.76b" say={R`上式的复共轭版本。`}>{R`R_{\kappa\bar\lambda\mu\bar\nu}\equiv g_{\kappa\bar\xi}R^{\bar\xi}{}_{\bar\lambda\mu\bar\nu}=\partial_\mu\partial_{\bar\nu}g_{\bar\lambda\kappa}-g^{\eta\bar\xi}\partial_\mu g_{\kappa\bar\xi}\partial_{\bar\nu}g_{\bar\lambda\eta}`}</Eq>
+            <FormulaMap n="8.76b" say={R`上式的复共轭版本。`} tree={FM_8_76b} start="second" />
             <Eq n="8.76c" say={R`曲率对后两个指标反对称。`}>{R`R_{\bar\kappa\lambda\mu\bar\nu}\equiv g_{\bar\kappa\xi}R^\xi{}_{\lambda\mu\bar\nu}=-R_{\bar\kappa\lambda\bar\nu\mu}`}</Eq>
             <Eq n="8.76d" say={R`同上，共轭类型的分量。`}>{R`R_{\kappa\bar\lambda\bar\mu\nu}\equiv g_{\kappa\bar\xi}R^{\bar\xi}{}_{\bar\lambda\bar\mu\nu}=-R_{\kappa\bar\lambda\nu\bar\mu}.`}</Eq>
             <Tx>{R`验证对称性`}</Tx>

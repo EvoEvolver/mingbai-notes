@@ -1,5 +1,6 @@
 // §7.4 Scalar perturbations —— 式 (7.43)–(7.79)，图 7.6（原书 pp. 173–183）
-import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, C, FormulaMap } from "@kit";
+import { FM_7_52, FM_7_68 } from "./_ch07_fmaps.jsx";
 import { CurvatureFreezePlot } from "./_ch07_plots.jsx";
 
 const R = String.raw;
@@ -64,7 +65,7 @@ export function Sec74() {
           { tex: R`\delta T^i{}_j=\delta_{ij}\left(\bar\phi_{,0}\delta\phi_{,0}-V_{,\phi}\delta\phi\right)=\delta_{ij}\left(\frac{\bar\phi'\delta\phi'}{a^2}-V_{,\phi}\delta\phi\right)`, why: R`取一阶部分，用 $\bar\phi_{,0}=\bar\phi'/a$、$\delta\phi_{,0}=\delta\phi'/a$。` },
         ]} />
         <Tx>{R`**代回守恒方程。**把 \eqref{7.47}、\eqref{7.50}、\eqref{7.51} 代入 \eqref{7.45}，并用 $\partial/\partial t=a^{-1}\partial/\partial\eta$：`}</Tx>
-        <Eq n="7.52" say={R`用 $\delta\phi$ 写出的扰动能量守恒：第一项是能量密度扰动的变化与稀释，第二项是能流散度，第三项是压强扰动的做功。`}>{R`\left(\frac1a\frac{\partial}{\partial\eta}+3H\right)\left(\frac{-\bar\phi'\delta\phi'}{a^2}-V_{,\phi}\delta\phi\right)-\frac{k^2}{a^3}\bar\phi'\delta\phi-3H\left(\frac{\bar\phi'\delta\phi'}{a^2}-V_{,\phi}\delta\phi\right)=0.`}</Eq>
+        <FormulaMap n="7.52" say={R`用 $\delta\phi$ 写出的扰动能量守恒：第一项是能量密度扰动的变化与稀释，第二项是能流散度，第三项是压强扰动的做功。`} tree={FM_7_52} start="kin" />
         <Tx>{R`完成时间求导（唯一需要小心的是 $\partial V_{,\phi}/\partial\eta=V_{,\phi\phi}\bar\phi'$——$V_{,\phi}$ 在随时间变化的 $\bar\phi$ 处取值），两边乘以 $a^3$，整理得`}</Tx>
         <Eq n="7.53" say={R`$\delta\phi$ 的完整线性方程：二阶导、一阶导（摩擦）与 $\delta\phi$ 本身（含有效质量 $V_{,\phi\phi}$ 与梯度 $k^2$）三类项。`}>{R`-\bar\phi'\delta\phi''+\delta\phi'\left(-\bar\phi''-4aH\bar\phi'-a^2V_{,\phi}\right)+\delta\phi\left(-a^2V_{,\phi\phi}\bar\phi'-k^2\bar\phi'\right)=0.`}</Eq>
         <Derivation title={R`补全：\eqref{7.52} $\to$ \eqref{7.53} 的代数`} collapsed steps={[
@@ -161,7 +162,7 @@ export function Sec74() {
         <Tx>{R`于是在大尺度上，\eqref{7.57} 变为`}</Tx>
         <Eq n="7.67" say={R`超视界时，曲率扰动 $=-\Psi$ 减去按 $3(\rho+\mathcal P)$ 归一的能量密度扰动（$-\delta T^0{}_0=\delta\rho$）。`}>{R`\mathcal R=-\Psi-\frac13\frac{\delta T^0{}_0}{\rho+\mathcal P}.`}</Eq>
         <Tx>{R`在守恒方程中用 $\mathcal R$ 消去 $\Psi$（$\Psi=-\mathcal R-\frac13\delta T^0{}_0/(\rho+\mathcal P)$，求时间导数后乘以 $-3(\rho+\mathcal P)$），得`}</Tx>
-        <Eq n="7.68" say={R`把 $\dot\Psi$ 换成 $\dot{\mathcal R}$ 后的超视界能量守恒：右边出现了 $\mathcal R$ 的变化率。`}>{R`\frac{\partial}{\partial t}\delta T^0{}_0+3H\delta T^0{}_0-H\delta T^i{}_i=3(\rho+\mathcal P)\frac{\partial\mathcal R}{\partial t}+(\rho+\mathcal P)\frac{\partial}{\partial t}\left[\frac{\delta T^0{}_0}{\rho+\mathcal P}\right].`}</Eq>
+        <FormulaMap n="7.68" say={R`把 $\dot\Psi$ 换成 $\dot{\mathcal R}$ 后的超视界能量守恒：右边出现了 $\mathcal R$ 的变化率。`} tree={FM_7_68} start="dR" />
         <Tx>{R`右边作用在 $\delta T^0{}_0$ 上的那部分偏导数，正好抵消左边第一项，剩下`}</Tx>
         <Eq n="7.69" say={R`消去 $\partial_t\delta T^0{}_0$ 后：$\mathcal R$ 的变化率只由 $\delta T^0{}_0$ 与 $\delta T^i{}_i$ 的某种组合驱动。`}>{R`\delta T^0{}_0\left[3H+\frac{1}{\rho+\mathcal P}\left(\frac{d\rho}{dt}+\frac{d\mathcal P}{dt}\right)\right]-H\delta T^i{}_i=3(\rho+\mathcal P)\frac{\partial\mathcal R}{\partial t}.`}</Eq>
         <Tx>{R`由 \eqref{2.56} 有 $d\rho/dt=-3H(\rho+\mathcal P)$，所以方括号中 $3H$ 与 $\dot\rho/(\rho+\mathcal P)$ 相消，只剩 $\dot{\mathcal P}/(\rho+\mathcal P)=-3H\dot{\mathcal P}/\dot\rho$。再注意 $-\delta T^0{}_0$ 是能量密度的扰动 $\delta\rho$，而 $\delta T^i{}_i/3$ 是压强的扰动 $\delta\mathcal P$，左边可以改写为`}</Tx>

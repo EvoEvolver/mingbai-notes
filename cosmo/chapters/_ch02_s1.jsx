@@ -1,6 +1,7 @@
 import { ProjectionRedraw } from "./_redraw_early.jsx";
 // §2.1 Expanding space —— 式 (2.2)–(2.33)，Box 2.1，图 2.1–2.2
-import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, Details, C } from "@kit";
+import { Sec, Sub, Tx, Eq, FormulaMap, Box, Derivation, Figure, Details, C } from "@kit";
+import { FM_2_18 } from "./_ch02_fmaps.jsx";
 
 import { ParametrizedPathRedraw } from "./_redraw_cosmo_basics.jsx";
 
@@ -94,7 +95,7 @@ export function Sec21() {
         <Eq n="2.16" say="把笛卡尔方程改用新坐标的速度表示：对“变换矩阵乘以新速度”整体求时间导数为零。">{R`\frac{d}{dt}\left[\frac{dx^i}{dt}\right] = \frac{d}{dt}\left[\frac{\partial x^i}{\partial x'^j}\frac{dx'^j}{dt}\right] = 0.`}</Eq>
         <Tx>{R`关键就在这里：时间导数要同时作用在方括号里的两个因子上。如果变换矩阵是常数，新坐标里的方程仍是 $d^2x'^i/dt^2=0$；但极坐标的变换矩阵随位置变，而粒子在移动，所以它的时间导数不为零：`}</Tx>
         <Eq n="2.17" say="变换矩阵随粒子位置而变，它的时间导数等于二阶偏导乘以新坐标的速度。">{R`\frac{d}{dt}\left(\frac{\partial x^i}{\partial x'^j}\right) = \frac{\partial^2x^i}{\partial x'^j\partial x'^k}\frac{dx'^k}{dt}.`}</Eq>
-        <Eq n="2.18" say="新坐标中的自由粒子方程：除了加速度项，还多出一项由坐标“弯曲”带来的速度平方项。">{R`\frac{d}{dt}\left[\frac{\partial x^i}{\partial x'^j}\frac{dx'^j}{dt}\right] = \frac{\partial x^i}{\partial x'^j}\frac{d^2x'^j}{dt^2} + \frac{\partial^2x^i}{\partial x'^j\partial x'^k}\frac{dx'^k}{dt}\frac{dx'^j}{dt} = 0.`}</Eq>
+        <FormulaMap n="2.18" say="新坐标中的自由粒子方程：除了加速度项，还多出一项由坐标“弯曲”带来的速度平方项。" tree={FM_2_18} start="hess" />
         <Tx>{R`二阶导数 $d^2x'^j/dt^2$ 前面乘的正是变换矩阵。把整个方程左乘它的逆，加速度项就单独出来了：`}</Tx>
         <Eq n="2.19" say="非笛卡尔坐标中的测地线方程：加速度 + （方括号系数）乘以两个速度 = 0；方括号就是 Christoffel 符号。">{R`\frac{d^2x'^l}{dt^2} + \left[\left(\left\{\frac{\partial x}{\partial x'}\right\}^{-1}\right)^{l}{}_{i}\,\frac{\partial^2x^i}{\partial x'^j\partial x'^k}\right]\frac{dx'^k}{dt}\frac{dx'^j}{dt} = 0.`}</Eq>
         <Tx>{R`**解读。**这个略显笨重的式子就是**非笛卡尔坐标中的测地线方程**（你可以在 \exref{2.2} 中验证它给出极坐标中正确的运动方程）。方括号里的系数值得起个名字：**Christoffel 符号** $\Gamma^l{}_{jk}$。由于偏导数可交换，它对两个下指标 $\nosym{j,k}$ **对称**。在欧氏空间的笛卡尔坐标中它为零，方程回到 $d^2x^i/dt^2=0$；换了坐标它就出现——它记录的是"坐标本身在弯"所造成的表观加速度。

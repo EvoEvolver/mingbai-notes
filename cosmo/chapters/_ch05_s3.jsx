@@ -1,5 +1,6 @@
 // §5.3 The Boltzmann equation for photons —— 式 (5.23)–(5.35)，Box 5.1
-import { Sec, Tx, Eq, Box, Derivation, C } from "@kit";
+import { Sec, Tx, Eq, FormulaMap, Box, Derivation, C } from "@kit";
+import { FM_5_23 } from "./_ch05_fmaps.jsx";
 
 const R = String.raw;
 
@@ -11,7 +12,7 @@ export function Sec53() {
       gives={["5.23", "5.24", "5.26", "5.28", "5.31", "5.32", "5.33", "5.34", "5.35"]}>
       <p className="muted">本节概念：<C id="fourier" /> · <C id="tau" /></p>
       <Tx>{R`**拼起左右两边。**现在把前两节的左边和右边合起来，再做几个定义，就完成了本章的第一个目标——光子分布扰动的线性方程。令 \eqref{5.9} 等于 \eqref{5.22}（两边公共因子 $-p\,\partial f^{(0)}/\partial p$ 约去）：`}</Tx>
-      <Eq n="5.23" say={R`温度扰动的完整方程（宇宙时、实空间）：左边是自由流与引力红移，右边是 Compton 散射把 $\Theta$ 拉向 $\Theta_0$ 并加上多普勒项。`}>{R`\dot\Theta + \frac{\hat p^i}{a}\frac{\partial\Theta}{\partial x^i} + \dot\Phi + \frac{\hat p^i}{a}\frac{\partial\Psi}{\partial x^i} = n_e\sigma_{\rm T}\left[\Theta_0-\Theta+\hat{\boldsymbol p}\cdot\boldsymbol u_{\rm b}\right].`}</Eq>
+      <FormulaMap n="5.23" say={R`温度扰动的完整方程（宇宙时、实空间）：左边是自由流与引力红移，右边是 Compton 散射把 $\Theta$ 拉向 $\Theta_0$ 并加上多普勒项。`} tree={FM_5_23} start="rate" />
       <Tx>{R`**换用共形时间。**此时引入 \eqref{2.35} 定义的共形时间 $\eta$（$d\eta=dt/a$）作为时间变量很方便：$\partial/\partial t=a^{-1}\partial/\partial\eta$，于是把整个方程乘以 $a$，所有 $1/a$ 都消失了：`}</Tx>
       <Eq n="5.24" say={R`同一个方程改用共形时间：空间导数前不再有 $1/a$（光在共动坐标中每单位共形时间走一个单位距离），散射率变成 $n_e\sigma_{\rm T}a$。`}>{R`\Theta' + \hat p^i\frac{\partial\Theta}{\partial x^i} + \Phi' + \hat p^i\frac{\partial\Psi}{\partial x^i} = n_e\sigma_{\rm T}a\left[\Theta_0-\Theta+\hat{\boldsymbol p}\cdot\boldsymbol u_{\rm b}\right].`}</Eq>
       <Box kind="warning" title="记号约定：撇号与点">{R`从这里开始，**撇号**表示对共形时间 $\eta$ 的导数（$\Theta'=\partial\Theta/\partial\eta$），**点**仍表示对物理时间 $t$ 的导数。两者的关系是 $X'=a\dot X$；特别地 $a'/a=a\dot a/a=aH\equiv\mathcal H$。`}</Box>

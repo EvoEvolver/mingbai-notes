@@ -1,5 +1,6 @@
 // §5.1 The collisionless Boltzmann equation for photons —— 式 (5.1)–(5.9)
-import { Sec, Tx, Eq, Box, Derivation, C } from "@kit";
+import { Sec, Tx, Eq, FormulaMap, Box, Derivation, C } from "@kit";
+import { FM_5_9 } from "./_ch05_fmaps.jsx";
 
 const R = String.raw;
 
@@ -47,7 +48,7 @@ export function Sec51() {
         { tex: R`p\Theta\frac{dT/dt}{T}\frac{\partial}{\partial p}\left[p\frac{\partial f^{(0)}}{\partial p}\right]+H\Theta p\frac{\partial}{\partial p}\left[p\frac{\partial f^{(0)}}{\partial p}\right]=p\Theta\left[\frac{dT/dt}{T}+H\right]\frac{\partial}{\partial p}\left[p\frac{\partial f^{(0)}}{\partial p}\right]=0`, why: R`与 \eqref{5.7} 的第三项相加：由零阶结果 \eqref{5.6}，$\frac{dT/dt}{T}=-H$，两者恰好相消。物理上：背景红移让整条黑体谱一起平移，不改变"温度扰动"。` },
       ]} result={R`\eqref{5.7} 中只剩 $\partial\Theta/\partial t$、自由流项和两个引力项，即 \eqref{5.9}。`} />
       <Tx>{R`第二行的第二项与 \eqref{5.7} 右边的第三项抵消。于是我们终于写出了 $\Theta$ 的 Boltzmann 方程的**左边**：`}</Tx>
-      <Eq n="5.9" keyEq title={R`$\Theta$ 方程的左边`} say={R`温度扰动沿光线的变化：前两项是光子带着温度沿直线自由流动，后两项是度规扰动造成的红移——局域膨胀（$\dot\Phi$）与引力势梯度（$\Psi$）。`}>{R`\left.\frac{df}{dt}\right|_{\text{first order}} = -p\frac{\partial f^{(0)}}{\partial p}\left[\dot\Theta + \frac{\hat p^i}{a}\frac{\partial\Theta}{\partial x^i} + \dot\Phi + \frac{\hat p^i}{a}\frac{\partial\Psi}{\partial x^i}\right].`}</Eq>
+      <FormulaMap n="5.9" keyEq title={R`$\Theta$ 方程的左边`} say={R`温度扰动沿光线的变化：前两项是光子带着温度沿直线自由流动，后两项是度规扰动造成的红移——局域膨胀（$\dot\Phi$）与引力势梯度（$\Psi$）。`} tree={FM_5_9} start="adv" />
       <Box kind="physics" title="读懂 (5.9) 的四项">{R`**前两项**是沿（均匀宇宙中的）光线——零测地线——的全导数 $d\Theta/dt$：它们描述无碰撞时分布函数如何演化，称为**自由流**（free streaming）。若只有这两项，$\Theta$ 沿光线守恒：光子带着出发处的温度一路传播。
 
 **后两项**是扰动的引力效应。$\dot\Phi$：空间度规扰动的变化就像局域多了一点膨胀，使光子额外红移；$\hat p^i\partial_i\Psi/a$：光子沿 $\Psi$ 的梯度运动，爬出势阱损失能量、落入势阱获得能量。

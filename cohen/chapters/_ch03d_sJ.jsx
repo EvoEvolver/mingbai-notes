@@ -1,5 +1,6 @@
 // 补充材料 J_III：Schrödinger 方程的传播子（式 JIII-1 … JIII-30）
-import { Sec, Sub, Tx, Eq, Box, Derivation, C } from "@kit";
+import { Sec, Sub, Tx, Eq, FormulaMap, Box, Derivation, C } from "@kit";
+import { FM_JIII_21, FM_JIII_22, FM_JIII_27 } from "./_ch03d_fmaps.jsx";
 import { PropagatorPlot, CornuPlot } from "./_ch03d_plots.jsx";
 import { HuygensFig, PathFig } from "./_ch03d_figs.jsx";
 
@@ -85,9 +86,9 @@ export function SecJ() {
         <Tx>{R`这里 $\boldsymbol\nabla_2$ 是 $\partial/\partial x_2,\partial/\partial y_2,\partial/\partial z_2$ 三个算符的简写。把同一个算符（只作用于 $\mathbf r_2$ 与 $t_2$）作用到 \eqref{JIII-18} 两边。对时间求导时，阶跃函数的导数是 $\delta$ 函数（附录 II 式 (44)）：`}</Tx>
         <Eq n="JIII-20" say={R`阶跃函数的导数是 Dirac $\delta$ 函数：它只在跳变的那一瞬间有贡献。`}>{R`\frac{\partial}{\partial t_2}\,${TH}(t_2-t_1)=${DL}(t_2-t_1)`}</Eq>
         <Tx>{R`其余部分按 \eqref{JIII-19} 全部消去，只剩`}</Tx>
-        <Eq n="JIII-21" say={R`Schrödinger 算符作用到传播子上，只剩阶跃函数求导产生的那一项。`}>{R`\Big[i\hbar\frac{\partial}{\partial t_2}-H\Big(\mathbf r_2,\frac{\hbar}{i}\boldsymbol\nabla_2\Big)\Big]K(\mathbf r_2,t_2;\mathbf r_1,t_1)=i\hbar\,${DL}(t_2-t_1)\sum_n\varphi_n^*(\mathbf r_1)\,\varphi_n(\mathbf r_2)\,\mathrm e^{-iE_n(t_2-t_1)/\hbar}`}</Eq>
+        <FormulaMap n="JIII-21" say={R`Schrödinger 算符作用到传播子上，只剩阶跃函数求导产生的那一项。`} tree={FM_JIII_21} start="delta" />
         <Tx>{R`有了 $${DL}(t_2-t_1)$，求和中的 $t_2-t_1$ 可以直接换成 0，指数因子变成 1；剩下的 $\sum_n\varphi_n(\mathbf r_2)\varphi_n^*(\mathbf r_1)$ 正是封闭关系 \eqref{JIII-13} 夹在 $\langle\mathbf r_2|$ 与 $|\mathbf r_1\rangle$ 之间（配合 \eqref{JIII-16}、\eqref{JIII-17}），等于 $${DL}(\mathbf r_2-\mathbf r_1)$。最终`}</Tx>
-        <Eq n="JIII-22" keyEq title="传播子是 Green 函数" say={R`传播子满足右边为四维 $\delta$ 函数（时间 $\delta$ 乘空间 $\delta$）的 Schrödinger 方程：它就是 Schrödinger 算符的 Green 函数。`}>{R`\Big[i\hbar\frac{\partial}{\partial t_2}-H\Big(\mathbf r_2,\frac{\hbar}{i}\boldsymbol\nabla_2\Big)\Big]K(\mathbf r_2,t_2;\mathbf r_1,t_1)=i\hbar\,${DL}(t_2-t_1)\,${DL}(\mathbf r_2-\mathbf r_1)`}</Eq>
+        <FormulaMap n="JIII-22" keyEq title="传播子是 Green 函数" say={R`传播子满足右边为四维 $\delta$ 函数（时间 $\delta$ 乘空间 $\delta$）的 Schrödinger 方程：它就是 Schrödinger 算符的 Green 函数。`} tree={FM_JIII_22} start="K" />
         <Tx>{R`右边正比于一个四维"$\delta$ 函数"的方程，其解称为 **Green 函数**。光有 \eqref{JIII-22} 还不能唯一确定 $K$（可以加上任意一个齐次解）；可以证明，补上边界条件`}</Tx>
         <Eq n="JIII-23" say={R`因果条件：$t_2$ 早于 $t_1$ 时传播子为零。它挑出 \eqref{JIII-22} 的唯一解——推迟 Green 函数。`}>{R`K(\mathbf r_2,t_2;\mathbf r_1,t_1)=0\qquad\text{若}\ t_2<t_1`}</Eq>
         <Tx>{R`就把 $K(2,1)$ 完全确定了。\eqref{JIII-22}–\eqref{JIII-23} 在第 XI 章的微扰论中会派上大用场。`}</Tx>
@@ -108,7 +109,7 @@ export function SecJ() {
         <Tx>{R`先让 $N$ 有限。演化算符有"分段"性质（\IIIcref{FIII-10}）：从 $t_1$ 到 $t_2$ 的演化等于依次经过各中间时刻的演化之积，`}</Tx>
         <Eq n="JIII-26" say={R`整段演化 = 各小段演化的乘积（从右往左按时间先后排列）。`}>{R`U(t_2,t_1)=U(t_2,t_{\alpha_N})\,U(t_{\alpha_N},t_{\alpha_{N-1}})\dots U(t_{\alpha_2},t_{\alpha_1})\,U(t_{\alpha_1},t_1)`}</Eq>
         <Tx>{R`两边取 $\langle\mathbf r_2|\cdots|\mathbf r_1\rangle$，并在每个中间时刻插入位置表象的封闭关系。由 \eqref{JIII-6} 与 \eqref{JIII-24}（各段时间差都为正，阶跃函数都等于 1）得到`}</Tx>
-        <Eq n="JIII-27" keyEq title="传播子的复合律" say={R`从 1 到 2 的传播子，等于先传到每个中间时刻的每一个可能位置、再一段段接下去，并对所有中间位置积分。`}>{R`K(2,1)=\int\mathrm d^3r_{\alpha_N}\int\mathrm d^3r_{\alpha_{N-1}}\dots\int\mathrm d^3r_{\alpha_2}\int\mathrm d^3r_{\alpha_1}\;K(2,\alpha_N)\,K(\alpha_N,\alpha_{N-1})\dots K(\alpha_2,\alpha_1)\,K(\alpha_1,1)`}</Eq>
+        <FormulaMap n="JIII-27" keyEq title="传播子的复合律" say={R`从 1 到 2 的传播子，等于先传到每个中间时刻的每一个可能位置、再一段段接下去，并对所有中间位置积分。`} tree={FM_JIII_27} start="ints" />
         <Tx>{R`被积函数中的乘积`}</Tx>
         <Eq n="JIII-28" say={R`沿一串指定的中间点依次传播的振幅：粒子从 1 出发，依次经过各个 $(\mathbf r_{\alpha_i},t_{\alpha_i})$，最后到达 2。`}>{R`K(2,\alpha_N)\,K(\alpha_N,\alpha_{N-1})\dots K(\alpha_2,\alpha_1)\,K(\alpha_1,1)`}</Eq>
         <Tx>{R`把 2-b 的解释推广一步：\eqref{JIII-28} 是粒子从点 1 出发、依次经过图上所有点 $\alpha_i(\mathbf r_{\alpha_i},t_{\alpha_i})$、最后到达点 2 的概率振幅；\eqref{JIII-27} 则对每个中间时刻的一切可能位置求和。

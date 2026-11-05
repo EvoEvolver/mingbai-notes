@@ -1,5 +1,6 @@
 // §5.4 微分形式 —— 式 (5.59)–(5.96)，定义 5.4–5.5，例 5.10–5.12，习题 5.13–5.18，表 5.1；交互图 3（外微分与 d²=0、Stokes 数值验证）
-import { Sec, Sub, Tx, Eq, Box, Stmt, Exercise, Derivation, Table, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Stmt, Exercise, Derivation, Table, C, FormulaMap } from "@kit";
+import { FM_5_87 } from "./_ch05_fmaps.jsx";
 import { FormsLab } from "./_ch05_demos.jsx";
 
 const R = String.raw;
@@ -284,7 +285,7 @@ $$\big(\mathrm{i}_Y\mathcal{L}_X\omega\big)(X_1,\ldots,X_{r-1})=X[\omega(Y,X_1,\
 相加即得 (5.87)。下指标有 $m$ 个、上指标有 $n$ 个，所以两个求和的上限分别是 $m$ 与 $n$。特例：$n=1,m=0$ 回到 \eqref{5.49a}；$n=0,m=1$ 回到 \eqref{5.55}。`}>
           <>
             <Tx>{R`设 $t\in\mathcal{T}^n_m(M)$。证明`}</Tx>
-            <Eq n="5.87" title="张量场的李导数" say={R`一般张量场的李导数：分量的方向导数，每个下指标加一项 $+\partial X$，每个上指标减一项 $\partial X$。`}>{R`(\mathcal{L}_Xt)^{\mu_1\ldots\mu_n}{}_{\nu_1\ldots\nu_m}=X^\lambda\partial_\lambda t^{\mu_1\ldots\mu_n}{}_{\nu_1\ldots\nu_m}+\sum_{s=1}^{m}\partial_{\nu_s}X^\lambda t^{\mu_1\ldots\mu_n}{}_{\nu_1\ldots\lambda\ldots\nu_m}-\sum_{s=1}^{n}\partial_\lambda X^{\mu_s}t^{\mu_1\ldots\lambda\ldots\mu_n}{}_{\nu_1\ldots\nu_m}.`}</Eq>
+            <FormulaMap n="5.87" title="张量场的李导数" say={R`一般张量场的李导数：分量的方向导数，每个下指标加一项 $+\partial X$，每个上指标减一项 $\partial X$。`} tree={FM_5_87} start="dxl" />
           </>
         </Exercise>
         <Box kind="warning" title={R`勘误：\eqref{5.87} 第一个求和的上限是 $m$（p.223）`}>{R`$t\in\mathcal{T}^n_m(M)$ 有 $n$ 个上指标、$m$ 个下指标。原书 \eqref{5.87} 中对下指标 $\nu_s$ 的求和印作 $\sum_{s=1}^{n}$，应为 $\sum_{s=1}^{m}$。正文已改正。`}</Box>

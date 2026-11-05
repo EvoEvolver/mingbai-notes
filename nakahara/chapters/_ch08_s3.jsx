@@ -1,5 +1,6 @@
 // §8.3 复微分形式 —— 式 (8.30)–(8.46)，命题 8.1，定义 8.2–8.3，定理 8.1，习题 8.4–8.6
-import { Sec, Sub, Tx, Eq, Box, Stmt, Proof, Exercise, Derivation, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Stmt, Proof, Exercise, Derivation, C, FormulaMap } from "@kit";
+import { FM_8_38 } from "./_ch08_fmaps.jsx";
 
 const R = String.raw;
 
@@ -71,7 +72,7 @@ $$\overline\omega(V_1,\ldots,V_q)=\alpha(V)-\mathrm{i}\beta(V)=\nosym{\overline{
         <Tx>{R`任何 $q$ 形式 $\omega$ 分解为`}</Tx>
         <Eq n="8.37" say={R`把双次分解与坐标展开 \eqref{8.35} 合在一起写出。`}>{R`\begin{aligned}\omega&=\sum_{r+s=q}\omega^{(r,s)}\\&=\sum_{r+s=q}\frac{1}{r!s!}\omega_{\mu_1\ldots\mu_r\bar\nu_1\ldots\bar\nu_s}\dd z^{\mu_1}\wedge\ldots\wedge\dd z^{\mu_r}\wedge\dd\bar z^{\nu_1}\wedge\ldots\wedge\dd\bar z^{\nu_s}\end{aligned}`}</Eq>
         <Tx>{R`其中`}</Tx>
-        <Eq n="8.38" say={R`分量就是把形式喂上 $r$ 个全纯基向量与 $s$ 个反全纯基向量得到的值。`}>{R`\omega_{\mu_1\ldots\mu_r\bar\nu_1\ldots\bar\nu_s}=\omega\left(\frac{\partial}{\partial z^{\mu_1}},\ldots,\frac{\partial}{\partial z^{\mu_r}},\frac{\partial}{\partial\bar z^{\nu_1}},\ldots,\frac{\partial}{\partial\bar z^{\nu_s}}\right).`}</Eq>
+        <FormulaMap n="8.38" say={R`分量就是把形式喂上 $r$ 个全纯基向量与 $s$ 个反全纯基向量得到的值。`} tree={FM_8_38} start="hol" />
         <Exercise n="8.6" title={R`$\Omega^{r,s}_p(M)$ 的维数`} level="★"
           hint={R`从 $m$ 个 $\dd z$ 中选 $r$ 个、从 $m$ 个 $\dd\bar z$ 中选 $s$ 个。求和用 Vandermonde 恒等式：从 $2m$ 个元素中选 $q$ 个，按其中有几个来自前 $m$ 个分类。`}
           solution={R`**$\Omega^{r,s}_p(M)$。**基元素 $\dd z^{\mu_1}\wedge\cdots\wedge\dd z^{\mu_r}\wedge\dd\bar z^{\nu_1}\wedge\cdots\wedge\dd\bar z^{\nu_s}$ 由（无序的）指标集 $\{\mu_1<\cdots<\mu_r\}\subset\{1,\ldots,m\}$ 与 $\{\nu_1<\cdots<\nu_s\}\subset\{1,\ldots,m\}$ 决定（次序只影响符号；重复指标给零）。所以当 $0\le r,s\le m$ 时

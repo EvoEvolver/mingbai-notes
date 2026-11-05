@@ -1,5 +1,6 @@
 // §11.5 陈–Simons 形式 —— 式 (11.100)–(11.128)，例 11.9–11.10，习题 11.4
-import { Sec, Sub, Tx, Eq, Box, Stmt, Proof, Derivation, Exercise, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Stmt, Proof, Derivation, Exercise, C, FormulaMap } from "@kit";
+import { FM_11_106b, FM_11_106c, FM_11_107 } from "./_ch11_fmaps.jsx";
 
 const R = String.raw;
 
@@ -36,8 +37,8 @@ $$\int_MP_{m/2}=\int_M\dd Q_{m-1}=\int_{\partial M}Q_{m-1}=0$$
         <Eq n="11.105" title="陈特征的 CS 形式" say={R`陈特征的陈–Simons 形式：一个 $\mathcal{A}$ 配 $j-1$ 个插值曲率，做对称化迹再对 $t$ 积分。`}>{R`Q_{2j-1}(\mathcal{A},\mathcal{F})=\frac1{(j-1)!}\Big(\frac{\mathrm{i}}{2\pi}\Big)^j\int_0^1\dd t\,\mathrm{str}(\mathcal{A},\mathcal{F}_t^{j-1}).`}</Eq>
         <Tx>{R`例如，`}</Tx>
         <Eq n="11.106a" say={R`一维 CS 形式：规范势的迹本身（U(1) 时就是 $\frac{\mathrm{i}}{2\pi}\mathcal{A}$，其环路积分是 Wilson 圈的相位）。`}>{R`Q_1(\mathcal{A},\mathcal{F})=\frac{\mathrm{i}}{2\pi}\int_0^1\dd t\,\Tr\mathcal{A}=\frac{\mathrm{i}}{2\pi}\Tr\mathcal{A}`}</Eq>
-        <Eq n="11.106b" keyEq title={R`三维 CS 形式 $Q_3$`} say={R`著名的三维陈–Simons 形式：$\mathcal{A}\dd\mathcal{A}+\frac23\mathcal{A}^3$ 的迹——它的外微分是 $\mathrm{ch}_2$。`}>{R`Q_3(\mathcal{A},\mathcal{F})=\Big(\frac{\mathrm{i}}{2\pi}\Big)^2\int_0^1\dd t\,\mathrm{str}(\mathcal{A},t\,\dd\mathcal{A}+t^2\mathcal{A}^2)=\frac12\Big(\frac{\mathrm{i}}{2\pi}\Big)^2\Tr\Big(\mathcal{A}\,\dd\mathcal{A}+\frac23\mathcal{A}^3\Big).`}</Eq>
-        <Eq n="11.106c" say={R`五维 CS 形式：三项，系数 $1,\frac32,\frac35$ 来自 $t$ 积分 $\int t^2,\int t^3,\int t^4$。`}>{R`Q_5(\mathcal{A},\mathcal{F})=\frac12\Big(\frac{\mathrm{i}}{2\pi}\Big)^3\int_0^1\dd t\,\mathrm{str}[\mathcal{A},(t\,\dd\mathcal{A}+t^2\mathcal{A}^2)^2]=\frac16\Big(\frac{\mathrm{i}}{2\pi}\Big)^3\Tr\Big[\mathcal{A}(\dd\mathcal{A})^2+\frac32\mathcal{A}^3\dd\mathcal{A}+\frac35\mathcal{A}^5\Big].`}</Eq>
+        <FormulaMap n="11.106b" keyEq title={R`三维 CS 形式 $Q_3$`} say={R`著名的三维陈–Simons 形式：$\mathcal{A}\dd\mathcal{A}+\frac23\mathcal{A}^3$ 的迹——它的外微分是 $\mathrm{ch}_2$。`} tree={FM_11_106b} start="cubic" />
+        <FormulaMap n="11.106c" say={R`五维 CS 形式：三项，系数 $1,\frac32,\frac35$ 来自 $t$ 积分 $\int t^2,\int t^3,\int t^4$。`} tree={FM_11_106c} start="Ft" />
         <Derivation title={R`\eqref{11.106b}、\eqref{11.106c} 的 $t$ 积分（补充）`} collapsed steps={[
           { tex: R`\mathrm{str}(\mathcal{A},X)=\Tr(\mathcal{A}X),\qquad\mathrm{str}(\mathcal{A},X,X)=\Tr(\mathcal{A}X^2)\quad(X\text{ 为偶次形式})`, why: R`偶次形式在迹中可以自由循环移动，所以对称化后每一项都等于 $\Tr(\mathcal{A}X\cdots)$。` },
           { tex: R`\int_0^1\Tr[\mathcal{A}(t\,\dd\mathcal{A}+t^2\mathcal{A}^2)]\dd t=\tfrac12\Tr(\mathcal{A}\,\dd\mathcal{A})+\tfrac13\Tr\mathcal{A}^3=\tfrac12\Tr(\mathcal{A}\,\dd\mathcal{A}+\tfrac23\mathcal{A}^3)`, why: R`得 \eqref{11.106b}。` },
@@ -62,7 +63,7 @@ $$\Tr[\epsilon^{\kappa\lambda\mu\nu}\mathcal{F}_{\kappa\lambda}\mathcal{F}_{\mu\
 **直接验证非阿贝尔部分（概要）。**代入 $\mathcal{F}_{\kappa\lambda}=\partial_\kappa\mathcal{A}_\lambda-\partial_\lambda\mathcal{A}_\kappa+[\mathcal{A}_\kappa,\mathcal{A}_\lambda]$：$\epsilon\Tr\mathcal{F}\mathcal{F}=4\epsilon\Tr(\partial_\kappa\mathcal{A}_\lambda\partial_\mu\mathcal{A}_\nu)+8\epsilon\Tr(\partial_\kappa\mathcal{A}_\lambda\mathcal{A}_\mu\mathcal{A}_\nu)+\epsilon\Tr([\mathcal{A}_\kappa,\mathcal{A}_\lambda][\mathcal{A}_\mu,\mathcal{A}_\nu])$，最后一项 $=4\epsilon\Tr(\mathcal{A}_\kappa\mathcal{A}_\lambda\mathcal{A}_\mu\mathcal{A}_\nu)=0$（循环一位是奇置换）。右边 $4\partial_\kappa[\epsilon\Tr\mathcal{A}_\lambda\partial_\mu\mathcal{A}_\nu]=4\epsilon\Tr(\partial_\kappa\mathcal{A}_\lambda\partial_\mu\mathcal{A}_\nu)$，$\frac83\partial_\kappa[\epsilon\Tr\mathcal{A}_\lambda\mathcal{A}_\mu\mathcal{A}_\nu]=\frac83\cdot3\,\epsilon\Tr(\partial_\kappa\mathcal{A}_\lambda\mathcal{A}_\mu\mathcal{A}_\nu)=8\epsilon\Tr(\partial_\kappa\mathcal{A}_\lambda\mathcal{A}_\mu\mathcal{A}_\nu)$（三项由循环性与 $\epsilon$ 的反对称性相等）。两边一致。`}>
           {R`设 $\mathcal{F}$ 是 $\mathrm{SU}(2)$ 规范理论的场强。写出恒等式 $\mathrm{ch}_2(\mathcal{F})=\dd Q_3(\mathcal{A},\mathcal{F})$ 的分量表达式，验证（参见引理 10.3）\eqref{11.107}。`}
         </Exercise>
-        <Eq n="11.107" say={R`$\mathrm{ch}_2=\dd Q_3$ 的分量形式：瞬子密度 $\epsilon\Tr\mathcal{F}\mathcal{F}$ 是一个流的散度（系数见勘误）。`}>{R`\Tr[\epsilon^{\kappa\lambda\mu\nu}\mathcal{F}_{\kappa\lambda}\mathcal{F}_{\mu\nu}]=\partial_\kappa\big[4\epsilon^{\kappa\lambda\mu\nu}\Tr\big(\mathcal{A}_\lambda\partial_\mu\mathcal{A}_\nu+\tfrac23\mathcal{A}_\lambda\mathcal{A}_\mu\mathcal{A}_\nu\big)\big].`}</Eq>
+        <FormulaMap n="11.107" say={R`$\mathrm{ch}_2=\dd Q_3$ 的分量形式：瞬子密度 $\epsilon\Tr\mathcal{F}\mathcal{F}$ 是一个流的散度（系数见勘误）。`} tree={FM_11_107} start="div" />
         <Box kind="warning" title={R`勘误：\eqref{11.107} 的系数（p.464）`}>{R`原书右边方括号内的系数印作 $2$，应为 $4$。来源：$\mathcal{F}=\frac12\mathcal{F}_{\kappa\lambda}\dd x^\kappa\wedge\dd x^\lambda$ 使 $\Tr\mathcal{F}^2=\frac14\epsilon\Tr\mathcal{F}\mathcal{F}\,\dd^4x$，而 $\dd Q$ 的分量没有这个 $\frac14$。阿贝尔情形 $\epsilon^{\kappa\lambda\mu\nu}F_{\kappa\lambda}F_{\mu\nu}=4\partial_\kappa(\epsilon^{\kappa\lambda\mu\nu}A_\lambda\partial_\mu A_\nu)$ 是熟知的结果（$F\tilde F$ 是 Chern–Simons 流的散度）。本站已改正。`}</Box>
       </Sub>
 

@@ -1,5 +1,6 @@
 // 引言 + §11.1 不变多项式与 Chern–Weil 同态 —— 式 (11.1)–(11.24)，定理 11.1–11.2，推论 11.1
-import { Sec, Sub, Tx, Eq, Box, Stmt, Proof, Derivation, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Stmt, Proof, Derivation, C, FormulaMap } from "@kit";
+import { FM_11_18 } from "./_ch11_fmaps.jsx";
 
 const R = String.raw;
 
@@ -118,7 +119,7 @@ $$\begin{aligned}\tilde P_r(\Omega_1,\ldots,[\Omega_i,A],\ldots,\Omega_r)&=\eta_
         <Tx>{R`其中 $\mathcal{D}\theta=\dd\theta+[\mathcal{A},\theta]=\dd\theta+\mathcal{A}\wedge\theta+\theta\wedge\mathcal{A}$（$\theta$ 是一形式，分次对易子取"+"号）。首先注意`}</Tx>
         <Eq n="11.17" say={R`两端之差 = 对 $t$ 的导数的积分；由多线性与对称性，导数只落在 $r$ 个变元之一上，乘以 $r$。`}>{R`P_r(\mathcal{F}')-P_r(\mathcal{F})=P_r(\mathcal{F}_1)-P_r(\mathcal{F}_0)=\int_0^1\dd t\,\frac{\dd}{\dd t}P_r(\mathcal{F}_t)=r\int_0^1\dd t\,\tilde P_r\Big(\frac{\dd}{\dd t}\mathcal{F}_t,\mathcal{F}_t,\ldots,\mathcal{F}_t\Big).`}</Eq>
         <Tx>{R`由 \eqref{11.16}，`}</Tx>
-        <Eq n="11.18" say={R`代入 $\frac{\dd}{\dd t}\mathcal{F}_t=\mathcal{D}\theta+2t\theta^2$：导数分成"协变导数项"和"平方项"两部分。`}>{R`\frac{\dd}{\dd t}P_r(\mathcal{F}_t)=r\tilde P_r(\mathcal{D}\theta+2t\theta^2,\mathcal{F}_t,\ldots,\mathcal{F}_t)=r\tilde P_r(\mathcal{D}\theta,\mathcal{F}_t,\ldots,\mathcal{F}_t)+2rt\tilde P_r(\theta^2,\mathcal{F}_t,\ldots,\mathcal{F}_t).`}</Eq>
+        <FormulaMap n="11.18" say={R`代入 $\frac{\dd}{\dd t}\mathcal{F}_t=\mathcal{D}\theta+2t\theta^2$：导数分成"协变导数项"和"平方项"两部分。`} tree={FM_11_18} start="covD" />
         <Tx>{R`还要注意
 
 $$\mathcal{D}\mathcal{F}_t=\dd\mathcal{F}_t+[\mathcal{A},\mathcal{F}_t]=-[\mathcal{A}_t,\mathcal{F}_t]+[\mathcal{A},\mathcal{F}_t]=t[\mathcal{F}_t,\theta]$$

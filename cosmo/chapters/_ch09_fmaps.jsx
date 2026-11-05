@@ -103,3 +103,27 @@ export const FM_9_79 = {
       ] },
   ],
 };
+
+// 习题 9.16：张量模的角功率谱
+export const FM_9_94 = {
+  id: "eq", tex: R`#lhs = #rhs,`, name: "equals", label: "张量的 $C(l)$：三个相邻矩的混合再平方", role: "const",
+  note: R`和标量的 \eqref{9.74} 同样是对 $k$ 积分一个模方，差别在模方里：标量只有一个 $l$，张量是 $l-2$、$l$、$l+2$ 三个矩的线性组合。`,
+  kids: [
+    { id: "lhs", tex: R`C^{\rm T}(l;t)`, w: 3, name: "tensor_power[l, pol]", label: "偏振 $t$ 的张量模贡献", role: "result",
+      note: R`$t=+,\times$ 标记两种张量偏振。两种偏振给出相同的形式；\exref{9.17} 把它们的分量求和，换算成张量功率谱 $P_{\rm T}$。` },
+    { id: "rhs", tex: R`#pre\int_0^\infty#meas\times\left|#lo + #mid + #hi\right|^2`, name: "for k in modes", label: "前因子 × 对 k 积分 × 模方", role: "const",
+      note: R`这里没有单独的功率谱因子，因为 $\Theta^{\rm T}$ 本身含初始振幅：\exref{9.17} 中它正比于 $h_t(k,0)$，代入后才出现 $P_{\rm T}$。$l$ 很大时三个分母都接近 $4l^2$，三项的权重趋于 $1:2:1$。`,
+      kids: [
+        { id: "pre", tex: R`\frac{(l-1)l(l+1)(l+2)}{\pi}`, w: 3.5, name: "spin2_prefactor", label: "$l=0,1$ 时为零", role: "const",
+          note: R`耦合系数 $c_{-2},c_0,c_2$ 都含 $[(l-1)l(l+1)(l+2)]^{1/2}$，模方之后成了这个多项式。它在 $l=0,1$ 时为零，所以张量模的贡献从四极矩开始。` },
+        { id: "meas", tex: R`dk\,k^2`, w: 1, name: "dk k^2", label: "对波数积分", role: "const",
+          note: R`和标量情形 \eqref{9.74} 相同的测度。不同 $k$ 的贡献直接相加。` },
+        { id: "lo", tex: R`\frac{\Theta^{\rm T}_{l-2,t}}{(2l-1)(2l+1)}`, w: 4, name: "moment[l-2]", label: "来自低两阶的温度矩", role: "unknown",
+          note: R`$\sin^2\theta\cos2\phi$ 正比于 $Y_{22}+Y_{2-2}$，它和 $Y_{l'0}$ 相乘只能产生 $l'-2$ 到 $l'+2$ 的角动量，宇称又排除了奇数差，所以只有三项。分母来自耦合系数 $c_{-2}$，其中的 $(2l-3)$ 和 Legendre 展开带来的 $2l'+1$ 约去了。` },
+        { id: "mid", tex: R`2\frac{\Theta^{\rm T}_{l,t}}{(2l-1)(2l+3)}`, w: 5.5, name: "2 * moment[l]", label: "来自同阶的温度矩，权重加倍", role: "unknown",
+          note: R`**和标量情形最接近的一项。**标量的 $C(l)$ 只含 $\mathcal T_l$，张量多了 $\sin^2\theta\cos2\phi$ 这个角向因子，所以同阶矩旁边还要带上相邻的两个。系数 2 就是耦合系数 $c_0$ 表达式中的因子 2。` },
+        { id: "hi", tex: R`\frac{\Theta^{\rm T}_{l+2,t}}{(2l+1)(2l+3)}`, w: 4, name: "moment[l+2]", label: "来自高两阶的温度矩", role: "unknown",
+          note: R`和 $l-2$ 那项对称。分母来自耦合系数 $c_2$，其中的 $(2l+5)$ 同样被 $2l'+1$ 约去。` },
+      ] },
+  ],
+};

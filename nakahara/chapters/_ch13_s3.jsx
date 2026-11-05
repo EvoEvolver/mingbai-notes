@@ -1,5 +1,6 @@
 // §13.3 非阿贝尔反常 —— 式 (13.36)–(13.57)；交互图 4（AnomalyCancelLab：标准模型的反常相消）
-import { Sec, Tx, Eq, Box, Derivation, Stmt, C } from "@kit";
+import { Sec, Tx, Eq, FormulaMap, Box, Derivation, Stmt, C } from "@kit";
+import { FM_13_57 } from "./_ch13_fmaps.jsx";
 import { AnomalyCancelLab } from "./_ch13_demos.jsx";
 import { DN, PD, TR, MR } from "./_ch13_tex.js";
 
@@ -79,7 +80,7 @@ $$\exp(-W_{\boldsymbol r}[\mathcal{A}])\exp(-\overline{\sym{W}{W_{\boldsymbol r}
       <Tx>{R`\eqref{13.55} 可以在平面波基下计算，直接但冗长（例如见 Gross 与 Jackiw 1972）。下一节我们从拓扑观点推出非阿贝尔反常。对 $m=4$，反常变分为`}</Tx>
       <Eq n="13.56" title="四维非阿贝尔反常（Bardeen 形式）" say={R`有效作用量的反常规范变分：被积式是 $v$ 乘以一个四形式 $\dd(\mathcal{A}\dd\mathcal{A}+\frac12\mathcal{A}^3)$，系数 $\frac1{24\pi^2}$。`}>{R`\begin{aligned}W_r[\mathcal{A}-\mathcal{D}v]-W_r[\mathcal{A}]&=\int\dd x\,v^\alpha\mathcal{D}_\mu\langle j^\mu\rangle_\alpha\\&=\frac1{24\pi^2}\int\dd x\ ${TR}\{v^\alpha T_\alpha\epsilon^{\kappa\lambda\mu\nu}\partial_\kappa[\mathcal{A}_\lambda\partial_\mu\mathcal{A}_\nu+\tfrac12\mathcal{A}_\lambda\mathcal{A}_\mu\mathcal{A}_\nu]\}\\&=\frac1{24\pi^2}\int${TR}\{v\,\dd[\mathcal{A}\dd\mathcal{A}+\tfrac12\mathcal{A}^3]\}.\end{aligned}`}</Eq>
       <Tx>{R`规范流的反常散度为`}</Tx>
-      <Eq n="13.57" keyEq title="规范流的反常散度" say={R`手征费米子的规范流不守恒；在欧氏约定下右边是纯虚的（只有 $\mathrm{Im}\,W$ 变化），系数 $\frac1{24\pi^2}$、三次项 $\frac12$。`}>{R`\mathcal{D}_\mu\langle j^\mu\rangle_\alpha=\frac1{24\pi^2}${TR}\{T_\alpha\epsilon^{\kappa\lambda\mu\nu}\partial_\kappa[\mathcal{A}_\lambda\partial_\mu\mathcal{A}_\nu+\tfrac12\mathcal{A}_\lambda\mathcal{A}_\mu\mathcal{A}_\nu]\}.`}</Eq>
+      <FormulaMap n="13.57" keyEq title="规范流的反常散度" say={R`手征费米子的规范流不守恒；在欧氏约定下右边是纯虚的（只有 $\mathrm{Im}\,W$ 变化），系数 $\frac1{24\pi^2}$、三次项 $\frac12$。`} tree={FM_13_57} start="prim" />
       <Tx>{R`这应与 \eqref{13.33} 对比。两者有两处不同：$\mathcal{A}^3$ 前的三分之二换成了二分之一，以及整体因子不同。
 
 **为什么右边只改变 $\mathrm{Im}\,W$？**对反 Hermite 生成元，$\Tr(T_\alpha\{T_\beta,T_\gamma\})$ 是纯虚数（取复共轭等于 $(-1)^3$ 乘自身）。$\Tr\{v\,\dd\mathcal{A}\,\dd\mathcal{A}\}$ 中两个 $\dd\mathcal{A}$ 对称地出现，只挑出 $\Tr(T_\alpha\{T_\beta,T_\gamma\})$，所以 \eqref{13.56} 的主项是纯虚的——与 \sref{F:absdet13} 一致。`}</Tx>

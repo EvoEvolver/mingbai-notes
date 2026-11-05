@@ -1,5 +1,6 @@
 // 习题 9.1–9.17 —— 式 (9.83)–(9.95)。解答：9.2、9.9、9.16、9.17 依据原书附录 A；其余为编者给出（数值由本章 _ch09_phys.jsx 计算）。
-import { Sec, Tx, Eq, Exercise, Table } from "@kit";
+import { Sec, Tx, Eq, Exercise, Table, FormulaMap } from "@kit";
+import { FM_9_94 } from "./_ch09_fmaps.jsx";
 
 const R = String.raw;
 
@@ -185,7 +186,7 @@ $$I_{lml'}=\sqrt{\frac{8\pi}{3}}(2l+1)i^{-l}(\delta_{m,2}+\delta_{m,-2})[c_{-2}\
 $$c_{-2}=\frac{\sqrt6}{4}\frac{[(l-1)l(l+1)(l+2)]^{1/2}}{(2l-3)(2l-1)(2l+1)},\quad c_0=-2\frac{\sqrt6}{4}\frac{[(l-1)l(l+1)(l+2)]^{1/2}}{(2l-1)(2l+1)(2l+3)},\quad c_2=\frac{\sqrt6}{4}\frac{[(l-1)l(l+1)(l+2)]^{1/2}}{(2l+1)(2l+3)(2l+5)}.\tag{A.123}$$
 于是得到 \eqref{9.94}。（原书 \eqref{9.94} 中三项的分母与 $c_{\pm2},c_0$ 的分母在形式上不同，是因为 $\Theta^{\rm T}_{l\pm2}$ 的系数还要乘以 $(2l'+1)$，例如 $(2l-3)$ 与 $c_{-2}$ 的分母约去。）`}>
         <Tx>{R`利用 \eqref{6.85} 给出的张量模分解，求 $\Theta^{\rm T}_l(k,\eta_0)$ 对 $C(l)$ 的贡献。即证明 \eqref{9.74} 在张量情形的对应式为`}</Tx>
-        <Eq n="9.94" say={R`张量的 $C(l)$：$\sin^2\theta\cos2\phi$ 的角向结构把第 $l$ 阶球谐与 $l-2$、$l$、$l+2$ 阶温度矩耦合起来，前因子 $(l-1)l(l+1)(l+2)$ 来自自旋 2。`}>{R`C^{\rm T}(l;t) = \frac{(l-1)l(l+1)(l+2)}{\pi}\int_0^\infty dk\,k^2\times\left|\frac{\Theta^{\rm T}_{l-2,t}}{(2l-1)(2l+1)} + 2\frac{\Theta^{\rm T}_{l,t}}{(2l-1)(2l+3)} + \frac{\Theta^{\rm T}_{l+2,t}}{(2l+1)(2l+3)}\right|^2,`}</Eq>
+        <FormulaMap n="9.94" say={R`张量的 $C(l)$：$\sin^2\theta\cos2\phi$ 的角向结构把第 $l$ 阶球谐与 $l-2$、$l$、$l+2$ 阶温度矩耦合起来，前因子 $(l-1)l(l+1)(l+2)$ 来自自旋 2。`} tree={FM_9_94} start="mid" />
         <Tx>{R`其中 $t=+,\times$ 表示两种张量模偏振。`}</Tx>
       </Exercise>
 

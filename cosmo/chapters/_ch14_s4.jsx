@@ -1,6 +1,7 @@
 import { BeamRedraw } from "./_ch14_redraw.jsx";
 // §14.4 Two-point functions —— 式 (14.35)–(14.62)，图 14.3
-import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
+import { Sec, Sub, Tx, Eq, FormulaMap, Box, Derivation, Figure, C } from "@kit";
+import { FM_14_42 } from "./_ch14_fmaps.jsx";
 import { CosmicVariancePlot, GalaxyErrPlot } from "./_ch14_plots.jsx";
 
 const R = String.raw;
@@ -43,7 +44,7 @@ export function Sec144() {
         <Tx>{R`右边的被积函数可以看作 $P(a_{lm}^{\rm obs},a_{lm}|C(l))$——给定 $C(l)$ 时得到真实 $a_{lm}$ 与观测 $a_{lm}^{\rm obs}$ 的联合概率。由于无法知道真实的 $a_{lm}$，必须对它们边缘化（\eqref{14.22}）。
 
 $P(a_{lm}|C(l))$ 是均值为零、方差为 $C(l)$ 的高斯，所以积分可以做出来，得到`}</Tx>
-        <Eq n="14.42" keyEq title="C(l) 的似然" say={R`边缘化后，每个观测 $a_{lm}$ 是方差为"信号 + 噪声" $C B_l^2+N$ 的零均值高斯；$2l+1$ 个相乘就是 $C(l)$ 的似然。`}>{R`\mathcal L\equiv P\left(\{a_{lm}^{\rm obs}\}|C(l)\right) = \left(2\pi\left[C(l)B_l^2+N(l)\right]\right)^{-(2l+1)/2}\exp\left\{-\frac12\sum_{m=-l}^{l}\frac{\left|a_{lm}^{\rm obs}\right|^2}{C(l)B_l^2+N(l)}\right\}.`}</Eq>
+        <FormulaMap n="14.42" keyEq title="C(l) 的似然" say={R`边缘化后，每个观测 $a_{lm}$ 是方差为"信号 + 噪声" $C B_l^2+N$ 的零均值高斯；$2l+1$ 个相乘就是 $C(l)$ 的似然。`} tree={FM_14_42} start="CC" />
         <Derivation title={R`从 \eqref{14.41} 到 \eqref{14.42}：两个高斯的卷积`} collapsed steps={[
           { tex: R`\int da\,\frac{e^{-(a^{\rm obs}-B_la)^2/2N}}{\sqrt{2\pi N}}\frac{e^{-a^2/2C}}{\sqrt{2\pi C}}`, why: R`单个 $m$ 的积分（与原书 \eqref{14.40} 的约定一致，把每个 $a_{lm}$ 当作一个实高斯变量）。` },
           { tex: R`a^{\rm obs}=B_la+\eta,\quad a\sim\nosym{\mathcal{N}}(0,C),\ \eta\sim\nosym{\mathcal{N}}(0,N)\ \Rightarrow\ a^{\rm obs}\sim\nosym{\mathcal{N}}(0,\,CB_l^2+N)`, why: R`独立高斯变量的线性组合仍是高斯，方差相加：$\mathrm{Var}(B_la)=B_l^2C$。` },

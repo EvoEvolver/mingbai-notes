@@ -1,5 +1,6 @@
 // 引言 + §14.1 Riemann 面上的微分几何 —— 式 (14.1)–(14.29)，例 14.1，习题 14.1–14.2，定理 14.1（Riemann–Roch）
-import { Sec, Sub, Tx, Eq, Box, Stmt, Proof, Exercise, Derivation, Table, C } from "@kit";
+import { Sec, Sub, Tx, Eq, FormulaMap, Box, Stmt, Proof, Exercise, Derivation, Table, C } from "@kit";
+import { FM_14_14 } from "./_ch14_fmaps.jsx";
 
 const R = String.raw;
 // 两种协变导数（多字母符号整体标注）：∇_z^{(n)}: 𝒯ⁿ→𝒯ⁿ⁻¹，∇^z_{(n)}: 𝒯ⁿ→𝒯ⁿ⁺¹；以及对 $\bar z$ 的版本
@@ -87,7 +88,7 @@ function Sub1412() {
       <Tx>{R`同理 $TM^-$ 同构于 $\Omega^{1,0}(M)$：`}</Tx>
       <Eq n="14.13" say={R`同理，反全纯向量与 $(1,0)$ 形式通过度规相互转换。`}>{R`\omega_z=g_{z\bar z}V^{\bar z},\qquad V^{\bar z}=g^{\bar zz}\omega_z.`}</Eq>
       <Tx>{R`**只需要纯 $z$ 指标。**一般地，给定任意张量，可以用度规把所有 $\bar z$ 指标换成 $z$ 指标：上 $\bar z$ 指标降为下 $z$ 指标，下 $\bar z$ 指标升为上 $z$ 指标。容易看出`}</Tx>
-      <Eq n="14.14" say={R`$q_2$ 个上 $\bar z$ 指标用 $g_{z\bar z}$ 降成下 $z$ 指标，$p_2$ 个下 $\bar z$ 指标用 $g^{z\bar z}$ 升成上 $z$ 指标：任何张量都等价于只带 $z$ 指标的张量。`}>{R`T^{\overbrace{z\ldots z}^{q_1}\overbrace{\bar z\ldots\bar z}^{q_2}}{}_{\underbrace{z\ldots z}_{p_1}\underbrace{\bar z\ldots\bar z}_{p_2}}\to T^{\overbrace{z\ldots z}^{q_1+p_2}}{}_{\underbrace{z\ldots z}_{p_1+q_2}}=(g_{z\bar z})^{q_2}(g^{z\bar z})^{p_2}\,T^{\overbrace{z\ldots z}^{q_1}\overbrace{\bar z\ldots\bar z}^{q_2}}{}_{\underbrace{z\ldots z}_{p_1}\underbrace{\bar z\ldots\bar z}_{p_2}}.`}</Eq>
+      <FormulaMap n="14.14" say={R`$q_2$ 个上 $\bar z$ 指标用 $g_{z\bar z}$ 降成下 $z$ 指标，$p_2$ 个下 $\bar z$ 指标用 $g^{z\bar z}$ 升成上 $z$ 指标：任何张量都等价于只带 $z$ 指标的张量。`} tree={FM_14_14} start="up" />
       <Tx>{R`这个对应是同构。例如 $T_{z\bar z}{}^{\bar z}\to g^{z\bar z}g_{z\bar z}T_{z\bar z}{}^{\bar z}=T_z{}^z{}_z$。因此只需考虑纯 $z$ 指标的张量，并为它们指定**螺旋度**（helicity）。由于 $T$ 只有 $z$ 指标，在 $z\to w$ 下它按下式变换：`}</Tx>
       <Eq n="14.15" keyEq title="螺旋度 n 的变换律" say={R`纯 $z$ 指标张量在全纯坐标变换下只乘以 $(\partial w/\partial z)$ 的 $n$ 次方：它是线丛 $K^{-n}$ 的截面，$n$ = 上指标数 − 下指标数。`}>{R`T\to\Big(\frac{\partial w}{\partial z}\Big)^nT`}</Eq>
       <Tx>{R`其中 $n\in\Z$ 等于上 $z$ 指标的个数减去下 $z$ 指标的个数。例如 $T^{zz}{}_z\to T^{ww}{}_w=\big(\frac{\partial w}{\partial z}\big)T^{zz}{}_z$。要紧的只是上、下指标个数之**差**：$T^z{}_z$ 在 $z\to w$ 下不变，被视为标量。数 $n$ 称为**螺旋度**。螺旋度为 $n$ 的张量的集合记作 $${TT}^n$：`}</Tx>

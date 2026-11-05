@@ -1,5 +1,6 @@
 // 补充材料 H_I：一维方势中的定态（式 HI-1 … HI-58）
-import { Sec, Sub, Tx, Eq, Box, Derivation, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Derivation, C, FormulaMap } from "@kit";
+import { FM_HI_7 } from "./_ch01c_fmaps.jsx";
 import { BarrierPlot, StepRTPlot, WellGraphic } from "./_ch01c_plots.jsx";
 import { PotentialSketch } from "./_ch01c_figs.jsx";
 
@@ -42,7 +43,7 @@ export function SecH() {
 理由可以这样看出来。真实世界没有严格的阶跃，方势应当理解为一个光滑势 $V_\varepsilon(x)$ 的极限：它在 $[x_1-\varepsilon,x_1+\varepsilon]$ 之外与 $V(x)$ 相同，在区间内连续地从一个值过渡到另一个值（正文 \mainsec{D-2-a}）。对这个光滑势，方程是`}</Tx>
         <Eq n="HI-6" say={R`把方势换成光滑的近似势 $V_\varepsilon$ 后写出的定态方程；方势的解应理解为 $\varepsilon\to0$ 时它的解的极限。`}>{R`\frac{\mathrm d^2}{\mathrm dx^2}\varphi_\varepsilon(x)+\frac{2m}{\hbar^2}[E-V_\varepsilon(x)]\varphi_\varepsilon(x)=0`}</Eq>
         <Tx>{R`这里要求 $V_\varepsilon$ 在过渡区内有界，且界不随 $\varepsilon$ 变化。从左侧某个给定解出发向右积分，得到 $\varphi_\varepsilon$；我们想知道 $\varepsilon\to0$ 时它趋于什么。假定 $\varphi_\varepsilon$ 在 $x_1$ 附近保持有界（物理上：概率密度不会在一点爆掉；数学上可以从方程本身证明）。把方程在跳变点周围宽 $2\eta$ 的小区间上积分，二阶导数积成了一阶导数之差：`}</Tx>
-        <Eq n="HI-7" say={R`导数在一个小区间两端的差，等于“势能减能量”乘波函数在该区间上的积分。`}>{R`\frac{\mathrm d\varphi_\varepsilon}{\mathrm dx}(x_1+\eta)-\frac{\mathrm d\varphi_\varepsilon}{\mathrm dx}(x_1-\eta)=\frac{2m}{\hbar^2}\int_{x_1-\eta}^{x_1+\eta}[V_\varepsilon(x)-E]\,\varphi_\varepsilon(x)\,\mathrm dx`}</Eq>
+        <FormulaMap n="HI-7" say={R`导数在一个小区间两端的差，等于“势能减能量”乘波函数在该区间上的积分。`} tree={FM_HI_7} start="V" />
         <Tx>{R`$\varepsilon\to0$ 时右边的被积函数仍有界，所以 $\eta\to0$ 时积分趋于零：`}</Tx>
         <Eq n="HI-8" keyEq title="导数连续" say={R`只要势能有界，跨过跳变点时波函数的斜率没有跃变：$\varphi'$ 连续，从而 $\varphi$ 也连续。`}>{R`\frac{\mathrm d\varphi}{\mathrm dx}(x_1+\eta)-\frac{\mathrm d\varphi}{\mathrm dx}(x_1-\eta)\underset{\eta\to0}{\longrightarrow}0`}</Eq>
         <Tx>{R`一阶导数不跳，$\varphi$ 作为它的积分当然也不跳。跳的只是二阶导数：从 \eqref{HI-1} 直接读出，跨过 $x_1$ 时 $\varphi''$ 跃变 $\frac{2m}{\hbar^2}\varphi(x_1)\,\sigma_V$（$\sigma_V$ 为势的跳变量）。所以波函数在跳变点处是光滑接上的，只是"弯曲程度"突然改变。`}</Tx>

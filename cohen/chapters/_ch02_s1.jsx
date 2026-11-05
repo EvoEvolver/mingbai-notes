@@ -1,5 +1,6 @@
 // §A 单粒子波函数空间 —— 式 (A-1)–(A-68)，表 (II-1)–(II-4)
-import { Sec, Sub, Tx, Eq, Box, Derivation, Table, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Derivation, Table, C, FormulaMap } from "@kit";
+import { FM_A_3 } from "./_ch02_fmaps.jsx";
 import { BoxBasisPlot, IFig } from "./_ch02_plots.jsx";
 
 const R = String.raw;
@@ -28,7 +29,7 @@ export function SecA() {
           <Tx>{R`**本小节要检查的只有一件事：叠加不会"溢出"空间。**矢量空间的其余公理（交换律、零元、数乘……）对函数显然成立；唯一不显然的是，两个平方可积函数的线性组合是否仍平方可积——这正是叠加原理能在数学上站住的前提。要证的命题是：`}</Tx>
           <Eq n="A-2" say="平方可积函数的任意复线性组合仍平方可积：叠加原理在数学上能成立的前提。">{R`\psi(\mathbf r)=\lambda_1\psi_1(\mathbf r)+\lambda_2\psi_2(\mathbf r)\in\mathscr F`}</Eq>
           <Tx>{R`（$\lambda_1,\lambda_2$ 为任意复数。）策略是把组合的模方展开，看每一项能否被可积的东西压住：`}</Tx>
-          <Eq n="A-3" say="叠加态的模方 = 两个分量各自的模方 + 两个干涉项；干涉项互为复共轭，其和为实数。">{R`|\psi(\mathbf r)|^2=|\lambda_1|^2|\psi_1(\mathbf r)|^2+|\lambda_2|^2|\psi_2(\mathbf r)|^2+\lambda_1^*\lambda_2\,\psi_1^*(\mathbf r)\psi_2(\mathbf r)+\lambda_1\lambda_2^*\,\psi_1(\mathbf r)\psi_2^*(\mathbf r)`}</Eq>
+          <FormulaMap n="A-3" say="叠加态的模方 = 两个分量各自的模方 + 两个干涉项；干涉项互为复共轭，其和为实数。" tree={FM_A_3} start="f3" />
           <Tx>{R`前两项本来就可积；麻烦只在交叉项（干涉项），它可正可负，需要一个上界：`}</Tx>
           <Derivation title="干涉项的上界" steps={[
             { tex: R`0\le\big|\,|\psi_1(\mathbf r)|-|\psi_2(\mathbf r)|\,\big|^2=|\psi_1|^2+|\psi_2|^2-2|\psi_1||\psi_2|`, why: R`任何实数的平方非负。（原书写法是：对任意实数 $\alpha$，$|\psi_1+e^{i\alpha}\psi_2|^2\ge0$，取适当的 $\alpha$ 即得同一结论。）` },

@@ -1,6 +1,7 @@
 // 补充材料 A_III：无限深势阱中的粒子（式 AIII-1 … AIII-32）
 // 讲法：把势阱当作第 III 章各条假设的"试验台"，围绕三个问题展开——测动量得到什么？叠加态怎样动？测位置之后能量怎样分布？
-import { Sec, Sub, Tx, Eq, Box, Derivation, C } from "@kit";
+import { Sec, Sub, Tx, Eq, FormulaMap, Box, Derivation, C } from "@kit";
+import { FM_AIII_6 } from "./_ch03c_fmaps.jsx";
 import { MomentumDistPlot, WellPacketLab, PositionKickPlot } from "./_ch03c_plots.jsx";
 
 const R = String.raw;
@@ -40,7 +41,7 @@ export function SecA() {
           { tex: R`\frac{\sin(u_-a/2)}{u_-a/2}=F\!\left(p-\frac{n\pi\hbar}a\right),\qquad \frac{\sin(u_+a/2)}{u_+a/2}=F\!\left(p+\frac{n\pi\hbar}a\right)`, why: R`$F$ 是偶函数，记号见 \eqref{AIII-7}。` },
           { tex: R`\mathrm e^{-iu_+a/2}=\mathrm e^{-in\pi}\,\mathrm e^{i\left(\frac{n\pi}2-\frac{pa}{2\hbar}\right)}=(-1)^n\,\mathrm e^{i\left(\frac{n\pi}2-\frac{pa}{2\hbar}\right)}`, why: R`两项的相位因子只差 $(-1)^n$；与第二项前的负号合起来就是 $(-1)^{n+1}$。` },
         ]} />
-        <Eq n="AIII-6" keyEq title="定态的动量振幅" say="动量振幅是两条以 $\pm n\pi\hbar/a$ 为中心的衍射曲线之和（$n$ 奇）或之差（$n$ 偶），前面只差一个整体相位。">{R`\overline\varphi_n(p)=\frac1{2i}\sqrt{\frac a{\pi\hbar}}\,\mathrm e^{i\left(\frac{n\pi}2-\frac{pa}{2\hbar}\right)}\left[F\!\left(p-\frac{n\pi\hbar}a\right)+(-1)^{n+1}F\!\left(p+\frac{n\pi\hbar}a\right)\right]`}</Eq>
+        <FormulaMap n="AIII-6" keyEq title="定态的动量振幅" say="动量振幅是两条以 $\pm n\pi\hbar/a$ 为中心的衍射曲线之和（$n$ 奇）或之差（$n$ 偶），前面只差一个整体相位。" tree={FM_AIII_6} start="Fm" />
         <Eq n="AIII-7" say="$F$ 是单缝衍射振幅的形状：中央主峰加逐渐衰减的旁瓣，主峰两侧第一对零点相距 $4\pi\hbar/a$。">{R`F(p)=\frac{\sin(pa/2\hbar)}{pa/2\hbar}`}</Eq>
         <Tx>{R`**怎么读这个结果？**$\varphi_n$ 在阱内恰好是两列反向平面波（动量 $\pm n\pi\hbar/a$）的叠加，但它们只存在于宽 $a$ 的"窗口"里。把一列平面波截断到有限窗口，它的动量就不再是单一值，而被抹成一条宽度 $\sim h/a$ 的曲线——和光通过宽 $a$ 的单缝时角分布被抹开是同一个数学。于是：
 

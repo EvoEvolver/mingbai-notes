@@ -2,7 +2,7 @@ import { LoopDiagramRedraw, NLOPowerRedraw, PerturbationTreeRedraw } from "./_ch
 // §12.2 Perturbation theory —— 式 (12.10)–(12.53)，图 12.2–12.4，Box 12.1
 import { Sec, Tx, Eq, FormulaMap, Box, Derivation, Figure, C } from "@kit";
 import { KernelPlot } from "./_ch12_plots.jsx";
-import { FM_12_13, FM_12_15, FM_12_16, FM_12_18, FM_12_19, FM_12_51 } from "./_ch12_fmaps.jsx";
+import { FM_12_13, FM_12_15, FM_12_16, FM_12_18, FM_12_19, FM_12_20, FM_12_41, FM_12_51 } from "./_ch12_fmaps.jsx";
 
 const R = String.raw;
 
@@ -41,7 +41,7 @@ export function Sec122() {
       <Tx>{R`减去乘以 $u^i_{\rm m}$ 的连续性方程 \eqref{12.14}，它就变得熟悉得多：`}</Tx>
       <FormulaMap n="12.19" say={R`减去连续性方程后，左边变成“密度 $\times$ 速度的物质导数”加上 Hubble 阻尼、引力和应力。`} tree={FM_12_19} start="H" />
       <Tx>{R`最后除以 $\rho_{\rm m}$，得到膨胀宇宙中的 **Euler 方程**：`}</Tx>
-      <Eq n="12.20" keyEq title="非线性 Euler 方程" say={R`膨胀宇宙中的 Euler 方程：速度的物质导数 = Hubble 阻尼 + 引力 + 应力（广义压强）。这是 \eqref{5.50} 的非线性推广。`}>{R`\frac{\partial}{\partial t}u^i_{\rm m} + \frac1au^j_{\rm m}\frac{\partial}{\partial x^j}u^i_{\rm m} + Hu^i_{\rm m} + \frac1a\frac{\partial\Psi}{\partial x^i} + \frac{1}{\rho_{\rm m}a}\frac{\partial}{\partial x^j}\sigma^{ij}_{\rm m} = 0.`}</Eq>
+      <FormulaMap n="12.20" keyEq title="非线性 Euler 方程" say={R`膨胀宇宙中的 Euler 方程：速度的物质导数 = Hubble 阻尼 + 引力 + 应力（广义压强）。这是 \eqref{5.50} 的非线性推广。`} tree={FM_12_20} start="uj" />
       <Tx>{R`**逐项解读。**这把之前的 \eqref{5.50} 推广到非线性阶（限于视界内）。前两项是作用在速度 $u^i_{\rm m}$ 上的**对流（物质）导数** $\partial/\partial t+u^j_{\rm m}\partial/\partial x^j$——注意它包含一个非线性项。第三项是 **Hubble 拖曳**：没有扰动时它让速度按 $1/a$ 衰减。第四项是引力，与线性阶相同，换成物理距离间隔 $dr^i=a\,dx^i$ 后与牛顿引力完全一样。这些都很熟悉，限于线性阶时就是 \secref{5.4} 的结果。
 
 最后是应力张量的贡献。暂时假设它是对角的，$\sigma^{ij}_{\rm m}(\boldsymbol x,t)=\mathcal P_{\rm m}(\boldsymbol x,t)\delta_{ij}$，最后一项就变成 $(\partial\mathcal P_{\rm m}/\partial x^i)/(\rho_{\rm m}a)$——正是压强对 Euler 方程的贡献。所以 $\sigma^{ij}_{\rm m}$ 编码的是**广义的压强力**。冷物质不是应该没有压强吗？确实，容易验证（\exref{12.1}）：把"冷"分布函数 \eqref{12.9} 代入 \eqref{12.17}，得到 $\sigma^{ij}_{\rm m}=0$。因此标准做法是从 Euler 方程中丢掉应力张量，剩下三个方程——连续性、Euler、Poisson——对三个未知量 $\rho_{\rm m}$、$u^i_{\rm m}$、$\Psi$ 构成封闭系统。我们先解它，最后再回来问：真的能忽略 $\sigma^{ij}_{\rm m}$ 吗？
@@ -118,7 +118,7 @@ $\partial\delta^{(1)}/\partial\ln D_+=\delta^{(1)}$ 很简单，我们的目标�
 **图示法。**这个漂亮的结果让我们能显式计算宇宙结构如何非线性地演化。微扰展开有一种直观的图示表示（\figref{12.2}），与量子场论的 Feynman 图十分相似：二阶密度场 $\delta^{(2)}$ 由两个初始（线性）密度场经 $F_2$ 核连接而成；第 $n$ 阶场则由 $n$ 个初始场经 $F_n$ 核连接。速度散度的展开有类似的规则。`}</Tx>
       <Figure n="12.2" illustration={<PerturbationTreeRedraw />} width="100%" caption={R`n 个初始线性模通过核 Fₙ 耦合为 n 阶密度场，输出波矢等于全部输入波矢之和。`} />
       <Tx>{R`**统计量。**最重要的是，微扰论预言 \eqref{12.40} 让我们能用线性场 $\delta_0(\boldsymbol k)$ 的统计性质计算非线性演化后密度场的统计性质。$\delta_{\rm m}(\boldsymbol k)$ 的功率谱可以写成`}</Tx>
-      <Eq n="12.41" say={R`非线性功率谱是各阶场两两关联之和；$n+l$ 为奇数的项含奇数个 Gauss 场，期望值为零。`}>{R`\left\langle\delta_{\rm m}(\boldsymbol k,\eta)\delta_{\rm m}(\boldsymbol k',\eta)\right\rangle = \sum_{n,l=1,2,\cdots}^{n+l\ \text{even}}\left\langle\delta^{(n)}(\boldsymbol k,\eta)\delta^{(l)}(\boldsymbol k',\eta)\right\rangle.`}</Eq>
+      <FormulaMap n="12.41" say={R`非线性功率谱是各阶场两两关联之和；$n+l$ 为奇数的项含奇数个 Gauss 场，期望值为零。`} tree={FM_12_41} start="parity" />
       <Tx>{R`这个结果不太实用，因为要对无穷多项求和。事实上，只有当求和可以在有限项后截断、并且丢掉的项比保留的项小时，微扰论才有意义。所以看求和的前三项：`}</Tx>
       <Eq n="12.42" say={R`第一行是线性功率谱；第二行的 (2,2) 与 (1,3) 两项构成领头的非线性修正（NLO）。`}>{R`\begin{aligned}\left\langle\delta_{\rm m}(\boldsymbol k,\eta)\delta_{\rm m}(\boldsymbol k',\eta)\right\rangle &= D_+^2(\eta)\left\langle\delta_0(\boldsymbol k)\delta_0(\boldsymbol k')\right\rangle\\ &\quad+ \left\langle\delta^{(2)}(\boldsymbol k,\eta)\delta^{(2)}(\boldsymbol k',\eta)\right\rangle + 2\left\langle\delta^{(1)}(\boldsymbol k,\eta)\delta^{(3)}(\boldsymbol k',\eta)\right\rangle + \cdots.\end{aligned}`}</Eq>
       <Tx>{R`第一行是 $\eta$ 时刻的线性功率谱。第二行构成物质功率谱的领头非线性修正，即**次领头阶**（next-to-leading order, NLO）物质功率谱。展开它们要用到 $\delta_0$ 是 **Gauss 场**这一事实（见下框）；事实上，在 \eqref{12.41}–\eqref{12.42} 中我们已经丢掉了含三个 $\delta_0$ 的项，因为它们为零。`}</Tx>

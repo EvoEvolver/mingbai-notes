@@ -1,5 +1,6 @@
 // §12.10 指标定理的超对称证明 —— 式 (12.161)–(12.194)，定理 12.4–12.6，习题 12.10–12.11
-import { Sec, Sub, Tx, Eq, Box, Stmt, Proof, Exercise, Derivation, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Stmt, Proof, Exercise, Derivation, C, FormulaMap } from "@kit";
+import { FM_12_191 } from "./_ch12_fmaps.jsx";
 
 const R = String.raw;
 const CD = R`\mathcal{D}`;
@@ -275,7 +276,7 @@ $$\psi^\mu_0=\frac{${CHI}^\mu_0}{\sqrt{2\pi\beta}},\qquad\dd\psi^\mu_0=\sqrt{2\p
 $$\beta${RT}_{\mu\nu}=\frac1{2\pi}\frac12\mathcal{R}_{\mu\nu\rho\sigma}${CHI}^\rho_0${CHI}^\sigma_0$$
 
 代入被积函数（测度：$\prod\frac{\dd x_0}{\sqrt{2\pi}}\sqrt{2\pi\beta}\,\dd${CHI}_0=\beta^{n}\prod\dd x_0\dd${CHI}_0$，恰好抵消 $\beta^{-d/2}$），得到`}</Tx>
-        <Eq n="12.191" title="Dirac 算子的 AS 指标定理（Grassmann 形式）" say={R`$\beta$ 完全消失：指标是 $M$ 上（玻色零模）与 Grassmann 变量 $\chi$（费米零模）的积分，被积函数只依赖于曲率。`}>{R`\ind Q=\mathrm{i}^n\int\prod_{\mu=1}^{2n}\dd x^\mu_0\dd${CHI}^\mu_0\det\left(\frac{\frac12\frac1{2\pi}\frac12\mathcal{R}_{\mu\nu\rho\sigma}(x_0)${CHI}^\rho_0${CHI}^\sigma_0}{\sin\frac12\frac1{2\pi}\frac12\mathcal{R}_{\mu\nu\rho\sigma}(x_0)${CHI}^\rho_0${CHI}^\sigma_0}\right)^{1/2}.`}</Eq>
+        <FormulaMap n="12.191" title="Dirac 算子的 AS 指标定理（Grassmann 形式）" say={R`$\beta$ 完全消失：指标是 $M$ 上（玻色零模）与 Grassmann 变量 $\chi$（费米零模）的积分，被积函数只依赖于曲率。`} tree={FM_12_191} start="sinz" />
         <Tx>{R`这就是 Dirac 算子的 Atiyah–Singer 指标定理。
 
 **改写成熟悉的形式。**注意被积函数中只有 $${CHI}$ 的 $2n$ 次项在对 $\prod\dd${CHI}^\mu_0$ 积分后不为零。还注意 $\prod\dd x^\mu_0$ 就是通常的体积元。于是定义曲率二形式`}</Tx>

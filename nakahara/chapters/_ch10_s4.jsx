@@ -1,5 +1,6 @@
 // §10.4 相伴矢量丛上的协变导数 —— 式 (10.48)–(10.80)，定理 10.6，定义 10.6，例 10.4–10.6，习题 10.8–10.11
-import { Sec, Sub, Tx, Eq, Box, Stmt, Proof, Exercise, Derivation, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Stmt, Proof, Exercise, Derivation, C, FormulaMap } from "@kit";
+import { FM_10_58, FM_10_68b } from "./_ch10_fmaps.jsx";
 
 const R = String.raw;
 const LG = R`\sym{lie}{\mathfrak{g}}`;
@@ -106,7 +107,7 @@ $$\nabla_Xs=\nabla_X(\xi_i{}^\alpha e_\alpha)=X[\xi_i{}^\alpha]e_\alpha+\xi_i{}^
 
 这里第二项中把哑指标重新命名（$\nabla_Xe_\beta=\frac{\dd x^\mu}{\dd t}\mathcal{A}_{i\mu}{}^\alpha{}_\beta e_\alpha$）。写成 $(\sigma_i,\cdot)$ 的形式，就是 $[(\sigma_i(0),\frac{\dd\xi_i}{\dd t}+\mathcal{A}_i(X)\xi_i)]$。（习题 10.8 的解中由定义直接得到了同一公式 $(\ast)$。）`}>
         <Tx>{R`设 $s(p)=[(\sigma_i(p),\xi_i(p))]=\xi_i{}^\alpha(p)e_\alpha$ 是 $E$ 的一般截面，$\xi_i(p)=\xi_i{}^\alpha(p)e_\alpha{}^0$。用习题 10.8 的结果验证`}</Tx>
-        <Eq n="10.58" title="协变导数的分量形式" say={R`物质场的协变导数 = 普通导数 + 规范势作用于场：这正是物理中的"最小耦合" $\partial_\mu\to\partial_\mu+\mathcal{A}_\mu$。`}>{R`\nabla_Xs=\Big[\Big(\sigma_i(0),\frac{\dd\xi_i}{\dd t}+\mathcal{A}_i(X)\xi_i\Big|_{t=0}\Big)\Big]=\frac{\dd x^\mu}{\dd t}\Big\{\frac{\partial\xi_i{}^\alpha}{\partial x^\mu}+\mathcal{A}_{i\mu}{}^\alpha{}_\beta\xi_i{}^\beta\Big\}e_\alpha.`}</Eq>
+        <FormulaMap n="10.58" title="协变导数的分量形式" say={R`物质场的协变导数 = 普通导数 + 规范势作用于场：这正是物理中的"最小耦合" $\partial_\mu\to\partial_\mu+\mathcal{A}_\mu$。`} tree={FM_10_58} start="Amat" />
       </Exercise>
       <Tx>{R`**与局部平凡化无关。**按构造，协变导数与局部平凡化无关；这从 $\nabla_Xs$ 的局部形式也能看出。设 $\sigma_i(p)$、$\sigma_j(p)$ 是相交坐标卡 $U_i$、$U_j$ 上的局部截面，在 $U_i\cap U_j$ 上 $\sigma_j(p)=\sigma_i(p)t_{ij}(p)$。（同一截面在两种平凡化下的分量满足 $[(\sigma_i,\xi_i)]=[(\sigma_jt_{ij}^{-1},\xi_i)]=[(\sigma_j,t_{ij}^{-1}\xi_i)]$，即 $\xi_i=t_{ij}\xi_j$。）在 $i$ 平凡化下，协变导数为`}</Tx>
       <Eq n="10.59" say={R`同一个协变导数在两个规范下计算：规范势的变换律恰好抵消了场分量的变换，结果是同一个截面——协变导数是"协变"的。`}>{R`\begin{aligned}\nabla_Xs&=\Big[\Big(\sigma_i(0),\frac{\dd\xi_i}{\dd t}+\mathcal{A}_i(X)\xi_i\Big|_{t=0}\Big)\Big]=\Big[\Big(\sigma_j(0)\cdot t_{ij}^{-1},\frac{\dd}{\dd t}(t_{ij}\xi_j)+\mathcal{A}_i(X)t_{ij}\xi_j\Big|_{t=0}\Big)\Big]\\&=\Big[\Big(\sigma_j(0),\frac{\dd\xi_j}{\dd t}+\mathcal{A}_j(X)\xi_j\Big|_{t=0}\Big)\Big]\end{aligned}`}</Eq>
@@ -162,7 +163,7 @@ $$\frac{\dd}{\dd t}\{\mathrm{Ad}_{g^{-1}}V\}\Big|_0=\mathcal{A}_i(X)V+\dot V-V\m
         <Tx>{R`考虑相伴伴随丛 $E_{${LG}}=P\times_{\mathrm{Ad}}${LG}$，其中 $G$ 在 $${LG}$ 上的作用是伴随作用 $V\mapsto\mathrm{Ad}_gV=gVg^{-1}$（$V\in${LG}$，$g\in G$）。取局部截面 $\sigma_i\in\Gamma(U_i,P)$，使 $\tilde\gamma(t)=\sigma_i(t)g(t)$。取 $E_{${LG}}$ 上的截面 $s(p)=[(\sigma_i(p),V(p))]$，$V(p)=V^\alpha(p)T_\alpha$，$\{T_\alpha\}$ 是 $${LG}$ 的基。定义协变导数 $\mathcal{D}_Xs$：`}</Tx>
         <Eq n="10.68a" say={R`伴随丛上的协变导数：把李代数值的场用水平参照系的群元共轭回来，再对时间求导。`}>{R`\mathcal{D}_Xs\equiv\Big[\Big(\tilde\gamma(0),\frac{\dd}{\dd t}\{\mathrm{Ad}_{g(t)^{-1}}V(t)\}\Big|_{t=0}\Big)\Big].`}</Eq>
         <Tx>{R`证明`}</Tx>
-        <Eq n="10.68b" say={R`伴随表示场的协变导数：普通导数加上与规范势的对易子，分量上由结构常数给出。`}>{R`\mathcal{D}_Xs=\Big[\Big(\sigma_i(0),\frac{\dd V(t)}{\dd t}+[\mathcal{A}_i(X),V(t)]\Big|_{t=0}\Big)\Big]=X^\mu\Big(\frac{\partial V^\alpha}{\partial x^\mu}+f_{\beta\gamma}{}^\alpha\mathcal{A}_{i\mu}{}^\beta V^\gamma\Big)[(\sigma_i(0),T_\alpha)].`}</Eq>
+        <FormulaMap n="10.68b" say={R`伴随表示场的协变导数：普通导数加上与规范势的对易子，分量上由结构常数给出。`} tree={FM_10_68b} start="f" />
       </Exercise>
       <Box kind="warning" title={R`勘误：习题 10.10 中伴随作用的写法（p.416）`}>{R`原书写"$G$ 在 $${LG}$ 上的作用是伴随作用 $V\to\mathrm{Ad}_gV=g^{-1}Vg$"。按本章开头的定义 $\mathrm{Ad}_gA=gAg^{-1}$；而且只有 $\rho(g)=\mathrm{Ad}_g:V\mapsto gVg^{-1}$ 才满足 $\rho(gh)=\rho(g)\rho(h)$，使 $[(u,V)]=\{(ug,\rho(g)^{-1}V)\}$ 成为等价关系。若按原书的 $\mathrm{Ad}_g V=g^{-1}Vg$ 去理解 \eqref{10.68a} 中的 $\mathrm{Ad}_{g(t)^{-1}}V=gVg^{-1}$，求导会得到 $\dot V-[\mathcal{A}_i(X),V]$，与 \eqref{10.68b} 的符号相反。采用 $\mathrm{Ad}_gV=gVg^{-1}$ 时，\eqref{10.68a} 与 \eqref{10.68b} 完全一致（见习题解答）。正文已改正。`}</Box>
     </Sub>);

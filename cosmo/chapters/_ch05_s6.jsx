@@ -1,5 +1,6 @@
 // §5.6 The Boltzmann equation for neutrinos —— 式 (5.62)–(5.65)
-import { Sec, Tx, Eq, Box, Derivation, C } from "@kit";
+import { Sec, Tx, Eq, FormulaMap, Box, Derivation, C } from "@kit";
+import { FM_5_63 } from "./_ch05_fmaps.jsx";
 
 const R = String.raw;
 
@@ -13,7 +14,7 @@ export function Sec56() {
       <Tx>{R`**最后一种丰富的粒子。**最后来看中微子，分布函数为 $f_\nu(\boldsymbol x,\boldsymbol p,t)$。我们仿照光子来处理：中微子在零阶遵循温度为 $T_\nu(a)$ 的平衡分布（§2.4.4 与习题 3.9），而且在早期宇宙中是相对论性的。于是同样可以把其分布函数的扰动表述为温度扰动，记为 $\mathcal N(\boldsymbol x,\boldsymbol p,\eta)$，与 §5.1 对光子所做的一样：`}</Tx>
       <Eq n="5.62" title="中微子温度扰动" say={R`中微子分布 = 温度被扰动的费米–狄拉克形分布；线性展开后，修正项是 $-\mathcal N p\,df^{(0)}/dp$。与光子不同，$\mathcal N$ 允许依赖动量大小 $p$。`}>{R`\begin{aligned}f_\nu(\boldsymbol x,\boldsymbol p,t) &= \left[\exp\left\{\frac{p}{T_\nu(t)[1+\mathcal N(\boldsymbol x,\hat{\boldsymbol p},t)]}\right\}+1\right]^{-1}\\ &= \left[1-\mathcal N(\boldsymbol x,\boldsymbol p,t)\,p\frac{d}{dp}\right]f_\nu^{(0)}(p),\end{aligned}`}</Eq>
       <Tx>{R`其中 $f_\nu^{(0)}(p)=[e^{p/T_\nu(a)}+1]^{-1}$ 是零阶中微子分布，第二行展开到 $\mathcal N$ 的线性阶（与 \eqref{5.3} 完全同理）。在我们关心的时期——中微子脱耦以后——中微子的一切非引力相互作用都可忽略，所以合适的方程是有质量粒子的无碰撞 Boltzmann 方程 \eqref{3.76}：`}</Tx>
-      <Eq n="5.63" say={R`中微子分布的无碰撞演化：与暗物质的方程 (5.36) 形式完全相同——速度 $p/E_\nu$ 决定自由流，$E_\nu/p$ 决定引力势的作用。`}>{R`\frac{df_\nu}{dt} = \frac{\partial f_\nu}{\partial t} + \frac{p}{E_\nu(p)}\frac{\hat p^i}{a}\frac{\partial f_\nu}{\partial x^i} - \left[H+\dot\Phi+\frac{E_\nu(p)}{ap}\hat p^i\Psi_{,i}\right]p\frac{\partial f_\nu}{\partial p} = 0.`}</Eq>
+      <FormulaMap n="5.63" say={R`中微子分布的无碰撞演化：与暗物质的方程 (5.36) 形式完全相同——速度 $p/E_\nu$ 决定自由流，$E_\nu/p$ 决定引力势的作用。`} tree={FM_5_63} start="vel" />
       <Tx>{R`代入 \eqref{5.62}，零阶项相消（$f_\nu^{(0)}$ 按构造满足均匀的 Boltzmann 方程），一阶得到`}</Tx>
       <Eq n="5.64" say={R`中微子温度扰动的一阶方程（宇宙时、实空间）：自由流带速度因子；因 $\mathcal N$ 依赖 $p$，背景红移 $-Hp\,\partial/\partial p$ 作用在 $\mathcal N$ 上不再抵消；最后两项是引力源。`}>{R`\frac{\partial\mathcal N}{\partial t} + \frac{p}{E_\nu(p)}\frac{\hat p^i}{a}\frac{\partial\mathcal N}{\partial x^i} - Hp\frac{\partial\mathcal N}{\partial p} + \dot\Phi + \frac{E_\nu(p)}{ap}\hat p^i\Psi_{,i} = 0.`}</Eq>
       <Derivation title={R`为什么会出现 $-Hp\,\partial\mathcal N/\partial p$`} collapsed steps={[

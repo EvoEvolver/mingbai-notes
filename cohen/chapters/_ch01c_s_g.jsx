@@ -1,5 +1,6 @@
 // 补充材料 G_I：一维高斯波包与波包扩散（式 GI-1 … GI-22）
-import { Sec, Sub, Tx, Eq, Box, Derivation, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Derivation, C, FormulaMap } from "@kit";
+import { FM_GI_16a, FM_GI_17 } from "./_ch01c_fmaps.jsx";
 import { GaussSpreadPlot, GaussWidthPlot } from "./_ch01c_plots.jsx";
 
 const R = String.raw;
@@ -67,7 +68,7 @@ export function SecG() {
         <Tx>{R`**3-a 让它动起来。**自由演化的规则很简单（正文 \mainref{C-7}）：每个平面波分量各自乘上 $\mathrm e^{-i\omega(k)t}$。`}</Tx>
         <Eq n="GI-15" say={R`$t$ 时刻的波包：每个平面波分量乘上自己的时间相位 $\mathrm e^{-i\omega(k)t}$，其中 $\omega=\hbar k^2/2m$。`}>{R`\psi(x,t)=\frac{\sqrt{${A}}}{(2\pi)^{3/4}}\int_{-\infty}^{+\infty}\mathrm e^{-\frac{${A}^2}{4}(k-k_0)^2}\,\mathrm e^{i[kx-\omega(k)t]}\,\mathrm dk`}</Eq>
         <Tx>{R`关键观察：自由粒子的色散 $\omega=\hbar k^2/2m$ 本身是 $k$ 的二次式，加进指数后指数仍然是二次的——只是 $k^2$ 的系数变成了复数 $\frac{${A}^2}{4}+\frac{i\hbar t}{2m}$。所以同一招（配方 + \eqref{GI-7}）照样奏效，结果仍是高斯，只不过"宽度参数"成了复数：`}</Tx>
-        <Eq n="GI-16a" keyEq title="t 时刻的高斯波包" say={R`任意时刻波包仍是高斯形，但宽度参数变成复数 $a^2+2i\hbar t/m$：中心以 $\hbar k_0/m$ 移动，同时变宽并带上位置相关的相位。`}>{R`\psi(x,t)=\left(\frac{2${A}^2}{\pi}\right)^{1/4}\frac{\mathrm e^{i${PH}}}{\left(${A}^4+\dfrac{4\hbar^2t^2}{m^2}\right)^{1/4}}\,\mathrm e^{ik_0x}\exp\left\{-\frac{\left[x-\dfrac{\hbar k_0}{m}t\right]^2}{${A}^2+\dfrac{2i\hbar t}{m}}\right\}`}</Eq>
+        <FormulaMap n="GI-16a" keyEq title="t 时刻的高斯波包" say={R`任意时刻波包仍是高斯形，但宽度参数变成复数 $a^2+2i\hbar t/m$：中心以 $\hbar k_0/m$ 移动，同时变宽并带上位置相关的相位。`} tree={FM_GI_16a} start="im" />
         <Tx>{R`其中 $${PH}$ 为实数且与 $x$ 无关：`}</Tx>
         <Eq n="GI-16b" say={R`整体相位只依赖时间：一部分来自中心波数的动能相位，另一部分 $\theta$ 来自复宽度的辐角。`}>{R`${PH}=-${TH}-\frac{\hbar k_0^2}{2m}t\qquad\text{with}\qquad\tan2${TH}=\frac{2\hbar t}{m${A}^2}`}</Eq>
         <Derivation collapsed title="从 (GI-15) 到 (GI-16a) 的配方细节" steps={[
@@ -78,7 +79,7 @@ export function SecG() {
           { tex: R`\frac{\sqrt{${A}}}{(2\pi)^{3/4}}\cdot2\sqrt\pi=\Big(\frac{2${A}^2}{\pi}\Big)^{1/4}`, why: R`收拾常数因子，即得 \eqref{GI-16a}、\eqref{GI-16b}。（已用数值积分 \eqref{GI-15} 逐点核对，相对误差 $<10^{-4}$。）` },
         ]} />
         <Tx>{R`取模平方，得到 $t$ 时刻的概率密度：`}</Tx>
-        <Eq n="GI-17" title="t 时刻的概率密度" say={R`概率密度仍是高斯：中心在 $\hbar k_0t/m$，宽度随 $|t|$ 增大、峰高相应降低，曲线下面积保持为 1。`}>{R`|\psi(x,t)|^2=\sqrt{\frac{2}{\pi${A}^2}}\,\frac{1}{\sqrt{1+\dfrac{4\hbar^2t^2}{m^2${A}^4}}}\,\exp\left\{-\frac{2${A}^2\left(x-\dfrac{\hbar k_0}{m}t\right)^2}{${A}^4+\dfrac{4\hbar^2t^2}{m^2}}\right\}`}</Eq>
+        <FormulaMap n="GI-17" title="t 时刻的概率密度" say={R`概率密度仍是高斯：中心在 $\hbar k_0t/m$，宽度随 $|t|$ 增大、峰高相应降低，曲线下面积保持为 1。`} tree={FM_GI_17} start="grow" />
         <Tx>{R`**总概率会不会变？**把 \eqref{GI-17} 再积一次当然可以验证，但有一个不用计算的论证。从 \eqref{GI-15} 直接读出 $t$ 时刻的动量空间波函数：`}</Tx>
         <Eq n="GI-18" say={R`自由演化只给每个动量分量乘一个模为 1 的相位因子，动量分布的模完全不变。`}>{R`g(k,t)=\mathrm e^{-i\omega(k)t}\,g(k,0)`}</Eq>
         <Box kind="warning" title="勘误：式 (GI-18) 的指数">{R`原书此式印作 $\mathrm e^{-i\nosym{w}(k)t}$，其中的 "$\nosym{w}$" 应为角频率 $\omega$（与 \eqref{GI-15} 中的 $\omega(k)=\hbar k^2/2m$ 相同），属排印错误；已改正。`}</Box>

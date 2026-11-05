@@ -1,6 +1,7 @@
 import {TextureRedraw} from "./_redraw_textures.jsx";
 // §4.8 凝聚态系统中的序 —— 式 (4.57)–(4.67)，图 4.20–4.22，交互图 4（SkyrmionLab）
-import { Sec, Sub, Tx, Eq, Box, Figure, Erratum, Derivation, Table, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Figure, Erratum, Derivation, Table, C, FormulaMap } from "@kit";
+import { FM_4_60 } from "./_ch04_fmaps.jsx";
 import { SkyrmionLab } from "./_ch04_demos.jsx";
 
 const R = String.raw;
@@ -44,7 +45,7 @@ $$\frac{\partial \sym{Ffree}{F}}{\partial\boldsymbol{h}}=-\frac{1}{\sym{betaT}{\
 $$\phi(\boldsymbol{x})\sim(\text{产生算符})+(\text{湮灭算符}),$$
 
 由此可知若 $\Psi(\boldsymbol{x})\neq0$，粒子数不守恒。这与整体规范对称性的自发破缺有关。$^4$He 的哈密顿量是`}</Tx>
-        <Eq n="4.60" say={R`玻色子场的动能（减去化学势）加上两体相互作用：只出现 $\phi^\dagger\phi$ 的组合。`}>{R`\sym{Ham}{H}=\int\dd\boldsymbol{x}\,\phi^\dagger(\boldsymbol{x})\Big(-\frac{\nabla^2}{2\sym{mass}{m}}-\mu\Big)\phi(\boldsymbol{x})+\frac12\int\dd\boldsymbol{x}\,\dd\boldsymbol{y}\,\phi^\dagger(\boldsymbol{y})\phi(\boldsymbol{y})V(|\boldsymbol{x}-\boldsymbol{y}|)\phi^\dagger(\boldsymbol{x})\phi(\boldsymbol{x}).`}</Eq>
+        <FormulaMap n="4.60" say={R`玻色子场的动能（减去化学势）加上两体相互作用：只出现 $\phi^\dagger\phi$ 的组合。`} tree={FM_4_60} start="rhox" />
         <Tx>{R`显然 $\sym{Ham}{H}$ 在整体规范变换`}</Tx>
         <Eq n="4.61" say={R`把所有点的场乘上同一个相位：哈密顿量中 $\phi$ 与 $\phi^\dagger$ 成对出现，相位相消。`}>{R`\phi(\boldsymbol{x})\to e^{i\chi}\phi(\boldsymbol{x})`}</Eq>
         <Tx>{R`下不变。然而序参量的变换是`}</Tx>

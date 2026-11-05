@@ -1,6 +1,7 @@
 // 补充材料 E_I、F_I：二维波包的横向尺寸；一维与三维问题的关系（式 EI-1 … FI-22）
 // 讲法：E_I 从衍射之谜出发，再用三波模型解释；F_I 先回答"一维模型凭什么成立"，再推广波包理论到三维。
-import { Sec, Sub, Tx, Eq, Box, Derivation, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Derivation, C, FormulaMap } from "@kit";
+import { FM_FI_9 } from "./_ch01c_fmaps.jsx";
 import { ThreeWavePacket } from "./_ch01c_plots.jsx";
 import { WaveVectorFig, SlitDiffractionFig } from "./_ch01c_figs.jsx";
 
@@ -94,7 +95,7 @@ export function SecF() {
         <Tx>{R`每列分波在点 $\mathbf r$ 的总相位就是`}</Tx>
         <Eq n="FI-8" say={R`每列平面波在点 $\mathbf r$ 的相位 $=$ 振幅自带的相位 $\alpha$ + 传播相位 $\mathbf k\cdot\mathbf r$。`}>{R`\xi(\mathbf k,\mathbf r,t)=\alpha(\mathbf k,t)+k_x\cdot x+k_y\cdot y+k_z\cdot z`}</Eq>
         <Tx>{R`**稳相：哪里所有分波步调一致？**在 $D_k$ 内 $\xi$ 几乎不变的点，分波同相相加，$|\psi|$ 最大。$D_k$ 很小，把 $\xi$ 对 $\delta\mathbf k=\mathbf k-\mathbf k_0$ 展开到一阶：`}</Tx>
-        <Eq n="FI-9" say={R`相位在波矢域内的变化，到一阶由三个偏导数分别乘以 $\delta\mathbf k$ 的分量给出。`}>{R`\delta\xi(\mathbf k,\mathbf r,t)\simeq\delta k_x\left[\frac{\partial}{\partial k_x}\xi(\mathbf k,\mathbf r,t)\right]_{\mathbf k=\mathbf k_0}+\delta k_y\left[\frac{\partial}{\partial k_y}\xi(\mathbf k,\mathbf r,t)\right]_{\mathbf k=\mathbf k_0}+\delta k_z\left[\frac{\partial}{\partial k_z}\xi(\mathbf k,\mathbf r,t)\right]_{\mathbf k=\mathbf k_0}`}</Eq>
+        <FormulaMap n="FI-9" say={R`相位在波矢域内的变化，到一阶由三个偏导数分别乘以 $\delta\mathbf k$ 的分量给出。`} tree={FM_FI_9} start="gx" />
         <Tx>{R`用 $\mathbf k$ 空间的梯度 $\nabla_{\mathbf k}$ 写得紧凑些，并注意 $\nabla_{\mathbf k}(\mathbf k\cdot\mathbf r)=\mathbf r$：`}</Tx>
         <Eq n="FI-10" say={R`相位变化 = $\delta\mathbf k$ 点乘（位置 $\mathbf r$ 加上振幅相位对 $\mathbf k$ 的梯度）。`}>{R`\begin{aligned}\delta\xi(\mathbf k,\mathbf r,t)&\simeq\delta\mathbf k\cdot\left[\nabla_{\mathbf k}\,\xi(\mathbf k,\mathbf r,t)\right]_{\mathbf k=\mathbf k_0}\\&\simeq\delta\mathbf k\cdot\left[\mathbf r+\left[\nabla_{\mathbf k}\,\alpha(\mathbf k,t)\right]_{\mathbf k=\mathbf k_0}\right]\end{aligned}`}</Eq>
         <Tx>{R`对任意方向的 $\delta\mathbf k$ 都为零，方括号必须为零——这就定出了波包中心：`}</Tx>

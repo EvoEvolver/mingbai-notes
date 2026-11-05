@@ -1,6 +1,7 @@
 import { AnomalyWindingRedraw, HemisphereGlueRedraw, SmashProductRedraw } from "./_redraw_ch12_14.jsx";
 // §13.5 阿贝尔反常与非阿贝尔反常 —— 式 (13.84)–(13.105)，习题 13.2，图 13.2–13.4
-import { Sec, Sub, Tx, Eq, Box, Derivation, Figure, Exercise, Stmt, C } from "@kit";
+import { Sec, Sub, Tx, Eq, FormulaMap, Box, Derivation, Figure, Exercise, Stmt, C } from "@kit";
+import { FM_13_105 } from "./_ch13_fmaps.jsx";
 import { DN, TR, CH, IND, FG, CHI } from "./_ch13_tex.js";
 
 const R = String.raw;
@@ -109,7 +110,7 @@ $$\int_{S^1\times S^m}Q_{m+1}(\mathbb{A}_{\rm S},\mathbb{F}_{\rm S})=0$$
       <Tx>{R`$Q^1_m$ 的显式形式由 \eqref{13.82} 给出。对 $m=4$，求得`}</Tx>
       <Eq n="13.104" say={R`四维：$2\pi\mathrm{i}\cdot\frac16(\frac{\mathrm{i}}{2\pi})^3=\frac1{24\pi^2}$，正是 Bardeen 反常的系数。`}>{R`\begin{aligned}\int${TR}\,\omega\mathcal{D}_\mu\frac{\delta W[\mathcal{A}]}{\delta\mathcal{A}_\mu}&=2\pi\mathrm{i}\int_{S^4}Q^1_4(\omega,${Ag},${Fg})\\&=\frac1{24\pi^2}\int_{S^4}${TR}\,\omega\,\dd\Big[${Ag}\dd${Ag}+\frac12(${Ag})^3\Big].\end{aligned}`}</Eq>
       <Tx>{R`（系数：$2\pi\mathrm{i}\cdot\frac16\cdot\frac{\mathrm{i}^3}{(2\pi)^3}=\frac{2\pi}{6\cdot8\pi^3}=\frac1{24\pi^2}$。）令 $\theta=0$（$g=e$），我们重现了反常散度`}</Tx>
-      <Eq n="13.105" title="带归一化重现 Bardeen 反常" say={R`拓扑方法的终点：不做任何 Feynman 图，就得到了包括系数 $\frac1{24\pi^2}$ 在内的四维非阿贝尔反常，与 \eqref{13.57} 完全一致。`}>{R`\mathcal{D}_\mu\langle j^\mu\rangle_\alpha=\frac1{24\pi^2}${TR}\,T_\alpha\epsilon^{\kappa\lambda\mu\nu}\partial_\kappa\Big[\mathcal{A}_\lambda\partial_\mu\mathcal{A}_\nu+\frac12\mathcal{A}_\lambda\mathcal{A}_\mu\mathcal{A}_\nu\Big]`}</Eq>
+      <FormulaMap n="13.105" title="带归一化重现 Bardeen 反常" say={R`拓扑方法的终点：不做任何 Feynman 图，就得到了包括系数 $\frac1{24\pi^2}$ 在内的四维非阿贝尔反常，与 \eqref{13.57} 完全一致。`} tree={FM_13_105} start="coef" />
       <Tx>{R`它与 \eqref{13.56} 一致。这里的方法保证了 WZ 条件给出正确的结果；而且它重现了包括归一化在内的反常散度，而归一化单靠 WZ 条件是无法定出的。`}</Tx>
       <Stmt id="F:nonab13" />
       <Box kind="physics" title="小结：两个反常，一个陈特征">{R`同一个 $\mathrm{ch}_{l+1}$ 扮演两个角色：在 $2l+2$ 维中，它的积分是阿贝尔反常（手征零模数之差）；在 $2l$ 维中，它的陈–Simons 形式沿规范轨道的"一阶下降" $Q^1_{2l}$ 是非阿贝尔反常。系数的差别全部来自这一下降：$\frac1{(l+1)!}$ 与 $2\pi\mathrm{i}$、$\int(1-t)t^k\dd t$ 的组合。四维的 $\frac1{24\pi^2}$ 来自六维的 $\mathrm{ch}_3=\frac1{3!}\Tr(\frac{\mathrm{i}\mathcal{F}}{2\pi})^3$；四维的 $\frac1{4\pi^2}$（阿贝尔）则来自四维自己的 $\mathrm{ch}_2$。`}</Box>

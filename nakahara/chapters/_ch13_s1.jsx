@@ -1,5 +1,6 @@
 // 引言 + §13.1 引言 + §13.2 阿贝尔反常 —— 式 (13.1)–(13.35)；交互图 1（FujikawaLab）
-import { Sec, Sub, Tx, Eq, Box, Derivation, Stmt, C } from "@kit";
+import { Sec, Sub, Tx, Eq, FormulaMap, Box, Derivation, Stmt, C } from "@kit";
+import { FM_13_9 } from "./_ch13_fmaps.jsx";
 import { FujikawaLab } from "./_ch13_demos.jsx";
 import { DN, TR, CH, IND, AN, MR, SP } from "./_ch13_tex.js";
 
@@ -56,7 +57,7 @@ export function Sec131() {
       <Tx>{R`相应的非阿贝尔流是`}</Tx>
       <Eq n="13.8" say={R`手征费米子的规范流：带群指标 $\alpha$，只含正手征分量。`}>{R`j^{\mu\alpha}\equiv\psi^\dagger\gamma^\mu T^\alpha\mathcal{P}_+\psi.`}</Eq>
       <Tx>{R`Bardeen (1969) 以及 Gross 与 Jackiw (1972) 证明，到单圈为止，这个流不守恒：`}</Tx>
-      <Eq n="13.9" keyEq title="非阿贝尔反常（Bardeen）" say={R`手征费米子的规范流协变散度不为零。形状与 \eqref{13.5} 相似，但三次项系数是 $\frac12$ 而不是 $\frac23$，整体系数是 $\frac1{24\pi^2}$ 而不是 $\frac1{4\pi^2}$。`}>{R`(\mathcal{D}_\mu j^\mu)^\alpha=\frac{1}{24\pi^2}${TR}\Big[T^\alpha\partial_\kappa\epsilon^{\kappa\lambda\mu\nu}\Big(\mathcal{A}_\lambda\partial_\mu\mathcal{A}_\nu+\frac12\mathcal{A}_\lambda\mathcal{A}_\mu\mathcal{A}_\nu\Big)\Big].`}</Eq>
+      <FormulaMap n="13.9" keyEq title="非阿贝尔反常（Bardeen）" say={R`手征费米子的规范流协变散度不为零。形状与 \eqref{13.5} 相似，但三次项系数是 $\frac12$ 而不是 $\frac23$，整体系数是 $\frac1{24\pi^2}$ 而不是 $\frac1{4\pi^2}$。`} tree={FM_13_9} start="half" />
       <Box kind="warning" title={R`勘误：\eqref{13.9} 左边多余的下标（p.522）`}>{R`原书左边印作 $(\mathcal{D}_\mu j^\mu_\delta)^\alpha$。流 $j^{\mu\alpha}$（\eqref{13.8}）只有一个群指标 $\alpha$，已经写在括号外；下标 $\delta$ 不对应任何量，是排印残留。本站写作 $(\mathcal{D}_\mu j^\mu)^\alpha$，与 \eqref{13.57}、\eqref{13.105} 的 $\mathcal{D}_\mu\langle j^\mu\rangle_\alpha$ 一致。`}</Box>
       <Tx>{R`乍一看，\eqref{13.5} 与 \eqref{13.9} 的右边非常相似。但归一化的差别与数值因子 $\frac23$、$\frac12$ 的差别有深刻的拓扑来源。后面我们将看到，$2l+2$ 维的阿贝尔反常与 $2l$ 维的非阿贝尔反常密切相关，而且以一种意想不到的方式相关：$\frac23$ 来自陈–Simons 形式，$\frac12$ 来自"下降方程"对插值参数 $t$ 的积分 $\int_0^1(1-t)t^k\,\dd t$（§13.4.4，交互图 2）；$\frac1{24\pi^2}=2\pi\mathrm{i}\cdot\frac16(\frac{\mathrm{i}}{2\pi})^3$ 则由 6 维的指标定理定出（§13.5）。`}</Tx>
     </Sec>);

@@ -1,5 +1,6 @@
 // §14.5 The Fisher matrix —— 式 (14.63)–(14.71)，图 14.4；§14.6 Sampling —— 式 (14.72)–(14.76)，图 14.5；§14.7 Summary
-import { Sec, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
+import { Sec, Tx, Eq, FormulaMap, Box, Derivation, Figure, C } from "@kit";
+import { FM_14_66 } from "./_ch14_fmaps.jsx";
 import { FisherEllipse, MCMCDemo } from "./_ch14_plots.jsx";
 
 const R = String.raw;
@@ -30,7 +31,7 @@ export function Sec145() {
       <Tx>{R`这里的曲率 $\mathcal F$ 衡量 $\chi^2$ 离开极小值时变化得多快。曲率小，似然变化慢，数据约束力弱，参数不确定度大；反之，曲率大意味着不确定度小。由于假设 $\hat C(l)$ 的似然是高斯的，$\ln\mathcal L=-\chi^2/2$，所以 $\mathcal F$ 是 \eqref{14.12} 中我们对 $\hat w$ 误差估计的推广：$\ln\mathcal L\supset-\frac{\mathcal F}{2}(\lambda-\bar\lambda)^2$。因此 $\lambda$ 的 $1\sigma$ 误差就是 $1/\sqrt{\mathcal F}$。
 
 $\chi^2$ 的二阶导数包含两项：`}</Tx>
-      <Eq n="14.66" say={R`曲率 = 理论对参数的灵敏度平方（确定项）+ 残差 $\times$ 理论的二阶导（随实现涨落的项）。`}>{R`\mathcal F=\sum_l\frac{1}{${VarC}}\left[\left(\frac{\partial C^{\rm theory}(l,\lambda)}{\partial\lambda}\right)^2+(C^{\rm theory}(l,\lambda)-\hat C(l))\frac{\partial^2C^{\rm theory}(l,\lambda)}{\partial\lambda^2}\right],`}</Eq>
+      <FormulaMap n="14.66" say={R`曲率 = 理论对参数的灵敏度平方（确定项）+ 残差 $\times$ 理论的二阶导（随实现涨落的项）。`} tree={FM_14_66} start="sens" />
       <Tx>{R`这里与本章其余地方一样，假设 $\hat C(l)$ 的协方差与 $\lambda$ 无关。
 
 **取期望。**我们关心的是 $\lambda$ 的**预期**不确定度——给定实验重复多次会得到什么。所以应取 $\mathcal F$ 的**期望值**，这带来进一步的简化：在期望下，$\hat C(l)-C^{\rm theory}(l,\bar\lambda)$——它在任何单次实现中都因噪声与宇宙方差而非零——在真参数值 $\bar\lambda$ 处按定义为零（注意这里唯一的随机变量是 $\hat C(l)$）。于是期望下只剩第一项：`}</Tx>

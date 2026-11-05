@@ -1,6 +1,7 @@
 import { TangentProjectionRedraw, TorsionRedraw } from "./_redraw_ch06_08.jsx";
 // §7.4 Levi-Civita 联络 —— 式 (7.52)–(7.89)，定理 7.1–7.2，例 7.3–7.6，习题 7.8–7.13，图 7.6–7.8；交互图 2（测地线）、交互图 3（曲率计算器）
-import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Proof, Exercise, Derivation, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Proof, Exercise, Derivation, C, FormulaMap } from "@kit";
+import { FM_7_60 } from "./_ch07_fmaps.jsx";
 import { GeodesicLab, CurvatureLab } from "./_ch07_demos.jsx";
 
 const R = String.raw;
@@ -82,7 +83,7 @@ $$\phi(t)=at+b,\qquad z(t)=ct+d.$$
         <Tx>{R`其中 $x'^\mu=\dd x^\mu/\dd s$。我们不直接从 \eqref{7.58} 推 Euler–Lagrange 方程，而是解一个稍容易的问题。令 $F\equiv\frac12g_{\mu\nu}x'^\mu x'^\nu$，把 \eqref{7.58} 写成 $I(c)=\int_cL(F)\dd s$，$L=\sqrt{2F}$。原问题的 Euler–Lagrange 方程为`}</Tx>
         <Eq n="7.59" say={R`长度泛函取极值的条件：标准的 Euler–Lagrange 方程。`}>{R`\frac{\dd}{\dd s}\left(\frac{\partial L}{\partial x'^\lambda}\right)-\frac{\partial L}{\partial x^\lambda}=0.`}</Eq>
         <Tx>{R`于是 $F=L^2/2$ 满足`}</Tx>
-        <Eq n="7.60" say={R`把拉氏量换成它的平方：Euler–Lagrange 表达式只多出一项 $\frac{\partial L}{\partial x'}\frac{\dd L}{\dd s}$，而按弧长参数化时 $L\equiv1$，这一项为零。`}>{R`\frac{\dd}{\dd s}\left(\frac{\partial F}{\partial x'^\lambda}\right)-\frac{\partial F}{\partial x^\lambda}=L\left[\frac{\dd}{\dd s}\left(\frac{\partial L}{\partial x'^\lambda}\right)-\frac{\partial L}{\partial x^\lambda}\right]+\frac{\partial L}{\partial x'^\lambda}\frac{\dd L}{\dd s}=\frac{\partial L}{\partial x'^\lambda}\frac{\dd L}{\dd s}.`}</Eq>
+        <FormulaMap n="7.60" say={R`把拉氏量换成它的平方：Euler–Lagrange 表达式只多出一项 $\frac{\partial L}{\partial x'}\frac{\dd L}{\dd s}$，而按弧长参数化时 $L\equiv1$，这一项为零。`} tree={FM_7_60} start="dL" />
         <Tx>{R`沿曲线 $L\equiv1$，$\dd L/\dd s=0$，最后的表达式为零。这就证明了：只要 $L$ 满足 Euler–Lagrange 方程，$F$ 也满足。于是`}</Tx>
         <Eq n="7.61" title="测地线 = 长度的极值" say={R`"能量"$F=\frac12g_{\mu\nu}x'^\mu x'^\nu$ 的 Euler–Lagrange 方程恰好是 Levi-Civita 联络的测地线方程：最短（极值）与最直是同一件事。`}>{R`\begin{aligned}&\frac{\dd}{\dd s}(g_{\lambda\mu}x'^\mu)-\frac12\frac{\partial g_{\mu\nu}}{\partial x^\lambda}x'^\mu x'^\nu\\&\quad=\frac{\partial g_{\lambda\mu}}{\partial x^\nu}x'^\mu x'^\nu+g_{\lambda\mu}\frac{\dd^2x^\mu}{\dd s^2}-\frac12\frac{\partial g_{\mu\nu}}{\partial x^\lambda}x'^\mu x'^\nu\\&\quad=g_{\lambda\mu}\frac{\dd^2x^\mu}{\dd s^2}+\frac12\left(\frac{\partial g_{\lambda\mu}}{\partial x^\nu}+\frac{\partial g_{\lambda\nu}}{\partial x^\mu}-\frac{\partial g_{\mu\nu}}{\partial x^\lambda}\right)\frac{\dd x^\mu}{\dd s}\frac{\dd x^\nu}{\dd s}=0.\end{aligned}`}</Eq>
         <Tx>{R`（第二个等号把 $\partial_\nu g_{\lambda\mu}x'^\mu x'^\nu$ 写成对 $\mu\nu$ 对称化的一半加一半。）把 \eqref{7.61} 乘以 $g^{\kappa\lambda}$，就得到测地线方程 \eqref{7.19b}（$\Gamma$ 取 \eqref{7.53}）。

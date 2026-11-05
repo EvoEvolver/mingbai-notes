@@ -1,6 +1,7 @@
 import { PolarTransportRedraw } from "./_redraw_ch06_08.jsx";
 // §7.2 平行移动、联络与协变导数 —— 式 (7.8a)–(7.35)，定义 7.2，例 7.1，习题 7.3–7.6，图 7.1
-import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Exercise, Derivation, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Exercise, Derivation, C, FormulaMap } from "@kit";
+import { FM_7_10, FM_7_29 } from "./_ch07_fmaps.jsx";
 
 const R = String.raw;
 
@@ -26,7 +27,7 @@ $$\frac{\partial V^\mu}{\partial x^\nu}=\lim_{\Delta x\to0}\frac{V^\mu(\ldots,x^
         <Tx>{R`取下面的形式就满足这两个条件（对 $\Delta x$ 一阶、对 $V$ 线性的最一般形式）：`}</Tx>
         <Eq n="7.9" title="无穷小平行移动" say={R`把向量平行移动一小步 $\Delta x$，分量的改变量对 $V$ 和 $\Delta x$ 都是线性的，比例系数就是联络系数 $\Gamma$。`}>{R`\widetilde V^\mu(x+\Delta x)=V^\mu(x)-V^\lambda(x)\Gamma^\mu{}_{\nu\lambda}(x)\Delta x^\nu.`}</Eq>
         <Tx>{R`$V$ 对 $x^\nu$ 的**协变导数**（covariant derivative）定义为`}</Tx>
-        <Eq n="7.10" say={R`协变导数 = 同一点上"实际的场值"与"从邻点平行搬来的值"之差除以位移：普通偏导数加上一项 $\Gamma$ 修正。`}>{R`\lim_{\Delta x^\nu\to0}\frac{V^\mu(x+\Delta x)-\widetilde V^\mu(x+\Delta x)}{\Delta x^\nu}\frac{\partial}{\partial x^\mu}=\left(\frac{\partial V^\mu}{\partial x^\nu}+V^\lambda\Gamma^\mu{}_{\nu\lambda}\right)\frac{\partial}{\partial x^\mu}.`}</Eq>
+        <FormulaMap n="7.10" say={R`协变导数 = 同一点上"实际的场值"与"从邻点平行搬来的值"之差除以位移：普通偏导数加上一项 $\Gamma$ 修正。`} tree={FM_7_10} start="G" />
         <Tx>{R`这个量是 $x+\Delta x$ 处的向量：它是**同一点** $x+\Delta x$ 上两个向量 $V|_{x+\Delta x}$ 与 $\widetilde V|_{x+\Delta x}$ 之差。每选一个 $\Gamma$，就有一种平行移动规则，可能性很多。若流形带有度规，则存在一个优选的 $\Gamma$，称为 **Levi-Civita 联络**，见例 7.1 与 §7.4。`}</Tx>
         <Box kind="example" n="7.1" title={R`平面极坐标中的平行移动`}>
           <Tx>{R`看一个简单例子：二维欧氏空间 $(\R^2,\delta)$。按初等几何的通常意义定义平行移动。在 Cartesian 坐标系 $(x,y)$ 中，$\Gamma$ 的所有分量都为零，因为对任意 $\Delta x$、$\Delta y$ 都有 $\widetilde V^\mu(x+\Delta x,y+\Delta y)=V^\mu(x,y)$。下面改用极坐标 $(r,\phi)$。把 $(r,\phi)\mapsto(r\cos\phi,r\sin\phi)$ 看作嵌入，得到诱导度规`}</Tx>
@@ -152,7 +153,7 @@ $$(\nabla_\nu g)_{\lambda\mu}=\partial_\nu g_{\lambda\mu}-\Gamma^\kappa{}_{\nu\l
 $$\begin{aligned}\nabla_{f_\alpha}f_\beta&=\nabla_{f_\alpha}\left(\frac{\partial x^\mu}{\partial y^\beta}e_\mu\right)=\frac{\partial^2x^\mu}{\partial y^\alpha\partial y^\beta}e_\mu+\frac{\partial x^\lambda}{\partial y^\alpha}\frac{\partial x^\mu}{\partial y^\beta}\nabla_{e_\lambda}e_\mu\\&=\left(\frac{\partial^2x^\nu}{\partial y^\alpha\partial y^\beta}+\frac{\partial x^\lambda}{\partial y^\alpha}\frac{\partial x^\mu}{\partial y^\beta}\Gamma^\nu{}_{\lambda\mu}\right)e_\nu.\end{aligned}$$
 
 （第一步用 \eqref{7.13d}，$f_\alpha[\partial x^\mu/\partial y^\beta]=\partial^2x^\mu/\partial y^\alpha\partial y^\beta$；第二步用 \eqref{7.13c}。）由于 \eqref{7.28} 的右边等于 $\widetilde\Gamma^\gamma{}_{\alpha\beta}(\partial x^\nu/\partial y^\gamma)e_\nu$，两边乘 $\partial y^\gamma/\partial x^\nu$，联络系数必须按如下规则变换：`}</Tx>
-        <Eq n="7.29" title={R`$\Gamma$ 的变换律`} say={R`联络系数不是张量：第一项像 $(1,2)$ 型张量那样变换，第二项是只依赖坐标变换的二阶导数的"非齐次项"。正因如此，$\Gamma$ 可以在一点处被坐标变换消掉。`}>{R`\widetilde\Gamma^\gamma{}_{\alpha\beta}=\frac{\partial x^\lambda}{\partial y^\alpha}\frac{\partial x^\mu}{\partial y^\beta}\frac{\partial y^\gamma}{\partial x^\nu}\Gamma^\nu{}_{\lambda\mu}+\frac{\partial^2x^\nu}{\partial y^\alpha\partial y^\beta}\frac{\partial y^\gamma}{\partial x^\nu}.`}</Eq>
+        <FormulaMap n="7.29" title={R`$\Gamma$ 的变换律`} say={R`联络系数不是张量：第一项像 $(1,2)$ 型张量那样变换，第二项是只依赖坐标变换的二阶导数的"非齐次项"。正因如此，$\Gamma$ 可以在一点处被坐标变换消掉。`} tree={FM_7_29} start="d2" />
         <Tx>{R`读者应当验证这个变换规则确实使 $\nabla_XY$ 成为向量，即
 
 $$\widetilde X^\alpha(\widetilde\partial_\alpha\widetilde Y^\gamma+\widetilde\Gamma^\gamma{}_{\alpha\beta}\widetilde Y^\beta)f_\gamma=X^\lambda(\partial_\lambda Y^\nu+\Gamma^\nu{}_{\lambda\mu}Y^\mu)e_\nu.$$`}</Tx>

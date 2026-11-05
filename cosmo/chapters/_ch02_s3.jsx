@@ -1,6 +1,7 @@
 // §2.3 Evolution of energy —— 式 (2.44)–(2.70)，Box 2.2，图 2.4
 // 注：能动张量 T^μ_ν 与温度 T 同字母，公式中用 \sym{ch02-Tmn}{T} 指定前者。
-import { Sec, Tx, Eq, Box, Derivation, Figure, Table, C } from "@kit";
+import { Sec, Tx, Eq, FormulaMap, Box, Derivation, Figure, Table, C } from "@kit";
+import { FM_2_45, FM_2_52 } from "./_ch02_fmaps.jsx";
 
 import { PhaseCellsRedraw } from "./_redraw_cosmo_basics.jsx";
 
@@ -20,7 +21,7 @@ export function Sec23() {
       <Tx>{R`其中 $\mathcal P$ 是压强。这个形式**纯粹是 FLRW 对称性的结果**：各向同性要求 $\sym{ch02-Tmn}{T}^0{}_i=0$（没有偏好方向的动量流），空间部分必须正比于 $\delta^i{}_j$。它看起来恰好像静止理想流体的能动张量，但别被误导——宇宙中好几种成分（如自由流动的光子和中微子）其实**并不**像流体。能动张量正是爱因斯坦方程右边的量，所以以后推导它会是我们的例行功课。`}</Tx>
 
       <Tx>{R`**守恒律该怎么写？**先建立直觉：无引力、速度可忽略的流体服从**连续性方程** $\partial\rho/\partial t=0$ 和**欧拉方程** $\partial\mathcal P/\partial x^i=0$。能否把它们合并成 $\partial \sym{ch02-Tmn}{T}^\mu{}_\nu/\partial x^\mu=0$？差一点——在广义相对论中，张量的普通坐标导数没有意义，因为它依赖于坐标（原因见下方 Box 2.2）。必须换成**协变**导数：`}</Tx>
-      <Eq n="2.45" title="能动张量守恒" say="局域能量与动量守恒的广义相对论形式：普通散度之外，还要加上两个由 Christoffel 符号带来的修正项。">{R`\nabla_\mu \sym{ch02-Tmn}{T}^\mu{}_\nu \equiv \frac{\partial \sym{ch02-Tmn}{T}^\mu{}_\nu}{\partial x^\mu} + \Gamma^\mu{}_{\alpha\mu}\sym{ch02-Tmn}{T}^\alpha{}_\nu - \Gamma^\alpha{}_{\nu\mu}\sym{ch02-Tmn}{T}^\mu{}_\alpha = 0.`}</Eq>
+      <FormulaMap n="2.45" title="能动张量守恒" say="局域能量与动量守恒的广义相对论形式：普通散度之外，还要加上两个由 Christoffel 符号带来的修正项。" tree={FM_2_45} start="gama" />
       <Tx>{R`这就是连续性方程与欧拉方程的广义相对论版本，更一般地说，是**局域能量与动量守恒**。在应用它之前，先用一个方框把"为什么要协变导数"讲清楚（初读可跳过，直接看 \eqref{2.54}）。`}</Tx>
 
       <Box kind="aside" title="Box 2.2　张量与导数（Tensors and derivatives）">
@@ -41,7 +42,7 @@ export function Sec23() {
         <Tx>{R`满足正确的张量变换律 \eqref{2.49}（验证时用 \eqref{2.19} 方括号形式的 Christoffel 定义最方便，见下方折叠推导）。对逆变矢量则是（注意符号相反）`}</Tx>
         <Eq n="2.51" say="逆变矢量的协变导数：修正项取加号。">{R`\nabla_\mu A^\nu \equiv \partial_\mu A^\nu + \Gamma^\nu{}_{\mu\alpha}A^\alpha.`}</Eq>
         <Tx>{R`对于张量，规则是**每个指标配一个 Christoffel 项**（上指标取正、下指标取负）。例如`}</Tx>
-        <Eq n="2.52" say={R`混合张量的协变导数：下指标贡献一个负的 $\Gamma^\mu{}_{\alpha\beta}$ 项，上指标贡献一个正的 $\Gamma^\mu{}_{\alpha\beta}$ 项。`}>{R`\nabla_\mu \sym{ch02-Tmn}{T}_\nu{}^\kappa = \partial_\mu \sym{ch02-Tmn}{T}_\nu{}^\kappa - \Gamma^\lambda{}_{\mu\nu}\sym{ch02-Tmn}{T}_\lambda{}^\kappa + \Gamma^\kappa{}_{\mu\lambda}\sym{ch02-Tmn}{T}_\nu{}^\lambda.`}</Eq>
+        <FormulaMap n="2.52" say={R`混合张量的协变导数：下指标贡献一个负的 $\Gamma^\mu{}_{\alpha\beta}$ 项，上指标贡献一个正的 $\Gamma^\mu{}_{\alpha\beta}$ 项。`} tree={FM_2_52} start="gaml" />
         <Tx>{R`一个漂亮的应用：利用 \eqref{2.26}，测地线方程 \eqref{2.20} 可以写成紧凑、明显协变的形式`}</Tx>
         <Eq n="2.53" say="测地线方程的协变形式：四动量沿自身方向的协变导数为零——自由粒子的四动量被“平行移动”。">{R`P^\alpha\nabla_\alpha P^\mu = 0.`}</Eq>
         <Tx>{R`证明：$P^\alpha\nabla_\alpha P^\mu=P^\alpha\partial_\alpha P^\mu+\Gamma^\mu{}_{\alpha\beta}P^\alpha P^\beta$。而 $P^\alpha\partial_\alpha=\frac{dx^\alpha}{d\lambda}\frac{\partial}{\partial x^\alpha}=\frac{d}{d\lambda}$（沿路径的导数），所以第一项就是 $dP^\mu/d\lambda=d^2x^\mu/d\lambda^2$，整个式子正是 \eqref{2.20} 的左边。`}</Tx>

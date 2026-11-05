@@ -1,5 +1,6 @@
 // 补充材料 D_II：r- 与 p- 表象的进一步研究 —— 式 (DII-1)–(DII-32)
-import { Sec, Sub, Tx, Eq, Box, Derivation, C, Table } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Derivation, C, Table, FormulaMap } from "@kit";
+import { FM_DII_32 } from "./_ch02c_fmaps.jsx";
 import "./_ch02c_kit.jsx";
 
 const R = String.raw;
@@ -107,7 +108,7 @@ export function SecD() {
           <Tx>{R`其中 $\overline V$ 是势能的 Fourier 变换：`}</Tx>
           <Eq n="DII-31" say="势能函数 $V(\mathbf r)$ 的 Fourier 变换。">{R`\overline V(\mathbf p)=(2\pi\hbar)^{-3/2}\int\dd^3r\,\mathrm e^{-\frac i\hbar\mathbf p\cdot\mathbf r}\,V(\mathbf r)`}</Eq>
           <Tx>{R`合起来：`}</Tx>
-          <Eq n="DII-32" keyEq title="动量表象中的 Schrödinger 方程" say="动量表象中的 Schrödinger 方程是一个积分方程：动能项是乘法，势能项是与势能的 Fourier 变换的卷积。">{R`i\hbar\frac\partial{\partial t}\,\overline\psi(\mathbf p,t)=\frac{\mathbf p^2}{2m}\overline\psi(\mathbf p,t)+(2\pi\hbar)^{-3/2}\int\dd^3p'\,\overline V(\mathbf p-\mathbf p')\,\overline\psi(\mathbf p',t)`}</Eq>
+          <FormulaMap n="DII-32" keyEq title="动量表象中的 Schrödinger 方程" say="动量表象中的 Schrödinger 方程是一个积分方程：动能项是乘法，势能项是与势能的 Fourier 变换的卷积。" tree={FM_DII_32} start="V" />
           <Box kind="physics" title="势能的作用：交换动量">{R`积分核 $\overline V(\mathbf p-\mathbf p')$ 的读法：势能把动量为 $\mathbf p'$ 的分量"散射"到动量 $\mathbf p$，幅度由势能在波矢 $(\mathbf p-\mathbf p')/\hbar$ 处的 Fourier 分量决定。势能越"尖锐"（空间变化越快），$\overline V$ 越宽，能交换的动量越大。自由粒子 $V=0$ 时各个动量分量互不相干，\eqref{DII-32} 退化为 $\overline\psi(\mathbf p,t)=\overline\psi(\mathbf p,0)\mathrm e^{-ip^2t/2m\hbar}$。`}</Box>
           <Tx>{R`**另一条路。**$\overline\psi(\mathbf p,t)$ 是 $\psi(\mathbf r,t)$ 的 Fourier 变换（\IIeq{E-18}），所以对 \eqref{DII-19} 两边直接取 Fourier 变换也能得到 \eqref{DII-32}：Laplace 算符变为 $-\mathbf p^2/\hbar^2$，乘积 $V\psi$ 变为卷积（卷积定理）。两种推导殊途同归，也正说明"表象"只是同一个抽象方程的不同坐标写法。`}</Tx>
         </Sub>

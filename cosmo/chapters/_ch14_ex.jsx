@@ -1,7 +1,8 @@
 // 习题 14.1–14.12 —— 式 (14.77)–(14.83)。解答：14.4、14.10 依据原书附录 A（式 A.173–A.181）；其余为编者给出。
 // 14.9、14.11、14.12 的数值由 node 脚本计算（EH98 转移函数 + 增长因子，与第 8 章 _ch08_phys.jsx 相同的基准宇宙学；
 // 1-loop 用标准 SPT 的 P22、P13 积分）。
-import { Sec, Tx, Eq, Exercise, Table } from "@kit";
+import { Sec, Tx, Eq, FormulaMap, Exercise, Table } from "@kit";
+import { FM_14_80 } from "./_ch14_fmaps.jsx";
 
 const R = String.raw;
 
@@ -99,7 +100,7 @@ $$\left\langle\Delta(\boldsymbol k_i)\Delta(\boldsymbol k_j)\right\rangle=\frac{
         <Tx>{R`用平均密度 $\bar n_{\rm g}$ 与子体积的体积 $v$ 表示这个分布的期望值 $\langle m\rangle$ 与 $\langle m^2\rangle$。
 
 (b) 在 Poisson 模型 \eqref{14.79} 下计算星系的相关函数，即`}</Tx>
-        <Eq n="14.80" say={R`子体积星系数的两点乘积按平均数平方归一后减去 1：相关函数是超出无关联期望的那部分。`}>{R`\xi_{\rm g}(|\boldsymbol x_\alpha-\boldsymbol x_\beta|)=\frac{\left\langle \sym{ch14-mcount}{m}(\boldsymbol x_\alpha)\sym{ch14-mcount}{m}(\boldsymbol x_\beta)\right\rangle}{\langle \sym{ch14-mcount}{m}\rangle^2}-1,`}</Eq>
+        <FormulaMap n="14.80" say={R`子体积星系数的两点乘积按平均数平方归一后减去 1：相关函数是超出无关联期望的那部分。`} tree={FM_14_80} start="num" />
         <Tx>{R`其中 $\boldsymbol x_\alpha$ 表示子体积 $\alpha$ 的位置。假设没有内禀成团，所以每个子体积中的 $\langle m\rangle$ 相同。
 
 (c) 计算星系功率谱。可以对上一步的结果做 Fourier 变换，也可以按下面的方法直接计算。把 \eqref{14.49} 改写为`}</Tx>

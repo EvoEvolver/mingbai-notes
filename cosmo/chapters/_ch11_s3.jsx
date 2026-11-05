@@ -1,6 +1,7 @@
 import { SZScatteringRedraw } from "./_ch14_redraw.jsx";
 // §11.3 The Sunyaev–Zel'dovich effect 与 §11.4 Summary —— 式 (11.50)–(11.63)，图 11.10–11.11
-import { Sec, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
+import { Sec, Tx, Eq, Box, Derivation, Figure, C, FormulaMap } from "@kit";
+import { FM_11_63 } from "./_ch11_fmaps.jsx";
 import { SZPlot } from "./_ch11_plots.jsx";
 
 const R = String.raw;
@@ -94,7 +95,7 @@ export function Sec114() {
 **投影统计。**测光星系数据集仍能让我们测量投影成团：角关联函数 $w_{\rm g}(\theta)$ 及其 Fourier 对应物——多极矩 $C_{\rm g}(l)$。虽然 BAO 特征与 RSD 被抹平了，形状与振幅仍含有宇宙学信息，与弱引力透镜（第 13 章）结合时尤其如此。
 
 **关键假设。**本节的结果基于关于星系成团的一个非常重要的假设：我们假定（除去上述畸变）大尺度上星系功率谱就是物质功率谱乘以常数，再加一个噪声项。这使我们能继续使用线性微扰论，得到观测星系功率谱的最终表达式：`}</Tx>
-      <Eq n="11.63" keyEq title="观测星系功率谱（总结）" say={R`本章的总结式：线性物质功率谱乘以 Kaiser 因子，在 AP 缩放后的真实波矢处取值，再加白噪声。`}>{R`P_{\rm g,obs}(\boldsymbol k_{\rm obs},\bar z)=P_{\rm L}(k,\bar z)\left[b_1+f\mu_k^2\right]^2\Big|_{\boldsymbol k=\left([1+\alpha_\perp]k^1_{\rm obs},\ [1+\alpha_\perp]k^2_{\rm obs},\ [1+\alpha_\parallel]k^3_{\rm obs}\right)}+P_N.`}</Eq>
+      <FormulaMap n="11.63" keyEq title="观测星系功率谱（总结）" say={R`本章的总结式：线性物质功率谱乘以 Kaiser 因子，在 AP 缩放后的真实波矢处取值，再加白噪声。`} tree={FM_11_63} start="PL" />
       <Tx>{R`我们没有论证为什么线性理论中只需要 $b_1$ 与 $P_N$——考虑到真实星系形成的复杂性，这看起来过于简单；但下一章思考非线性结构形成的效应时，会看到它确实成立。
 
 **SZ。**最后，我们回到第 5 章的光子 Boltzmann 方程，研究了另一个重要的结构探针：热电离气体散射造成的 CMB 谱畸变，即 **Sunyaev–Zel'dovich（SZ）效应**。它改变了 CMB 谱的黑体形式，因而可以与原初 CMB 各向异性区分。我们看到观测到的畸变振幅正比于电离气体压强的积分，这使我们能画出积分压强图，并识别遥远的大质量星系团。用星系团能做的科学是下一章的主题之一。`}</Tx>

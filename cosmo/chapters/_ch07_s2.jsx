@@ -1,5 +1,6 @@
 // §7.2 Inflation —— 式 (7.6)–(7.18)，图 7.5
-import { Sec, Tx, Eq, Box, Derivation, Figure, C } from "@kit";
+import { Sec, Tx, Eq, Box, Derivation, Figure, C, FormulaMap } from "@kit";
+import { FM_7_6 } from "./_ch07_fmaps.jsx";
 import { SlowRollPlot } from "./_ch07_plots.jsx";
 
 const R = String.raw;
@@ -22,7 +23,7 @@ export function Sec72() {
       <Tx>{R`不过请记住：完全有可能**暴胀的想法是对的**，但驱动它的并不是标量场。`}</Tx>
       <Box kind="note" title="更激进的替代方案：火劫（ekpyrosis）">{R`有一种更激进的替代方案叫做**火劫**（ekpyrosis）宇宙：它假设宇宙经历的是一段**缓慢收缩**的时期，而不是暴胀所设想的快速加速膨胀。为了过渡到今天看到的膨胀宇宙，必须经历一次"反弹"（bounce），其间哈勃率改变符号；而这种反弹被证明很难控制。本书不讨论火劫方案，但要指出：计算火劫中扰动所用的技术，与暴胀计算中所用的相当相似。`}</Box>
       <Tx>{R`**标量场的能动张量。**我们想知道一个标量场——记作 $\phi(\boldsymbol x,t)$，**不要**与度规扰动 $\Phi(\boldsymbol x,t)$ 混淆——能否具有负的 $\rho+3\mathcal P$。所以第一步是写出 $\phi$ 的能动张量。它可以从带势能的正则标量场的拉氏量推出（见 \exref{7.4}），结果是`}</Tx>
-      <Eq n="7.6" title="标量场的能动张量" say={R`标量场的能动张量由两部分组成：场梯度的乘积（动能与梯度能的"流"），减去一个正比于度规的项（拉氏量：动能项加势能 $V$）。`}>{R`T^\alpha{}_\beta=g^{\alpha\nu}\frac{\partial\phi}{\partial x^\nu}\frac{\partial\phi}{\partial x^\beta}-\delta^\alpha{}_\beta\left[\frac12g^{\mu\nu}\frac{\partial\phi}{\partial x^\mu}\frac{\partial\phi}{\partial x^\nu}+V(\phi)\right].`}</Eq>
+      <FormulaMap n="7.6" title="标量场的能动张量" say={R`标量场的能动张量由两部分组成：场梯度的乘积（动能与梯度能的"流"），减去一个正比于度规的项（拉氏量：动能项加势能 $V$）。`} tree={FM_7_6} start="pot" />
       <Tx>{R`其中 $V(\phi)$ 是场的**势**（potential）。例如，质量为 $m$ 的自由场的势是 $V(\phi)=m^2\phi^2/2$。`}</Tx>
       <Box kind="warning" title="符号约定">{R`如果去翻文献，你**一定**会看到与 \eqref{7.6} 符号不同的写法。这些符号由度规的约定决定。本书的度规号差 $(-,+,+,+)$ 是宇宙学中最常用的约定，但在粒子物理中并不那么常见——那里更流行"大部分为负"（mostly negative）的约定 $(+,-,-,-)$。在后一种约定下，$g^{\mu\nu}$ 整体反号，于是 \eqref{7.6} 方括号中的动能项以及第一项的符号都会相应改变。核对公式时，先确认作者用的是哪种号差。`}</Box>
       <Box kind="physics" title={R`\eqref{7.6} 从哪里来（\exref{7.4} 的思路）`}>{R`正则标量场的拉氏量密度为 $\mathcal L=-\frac12g^{\mu\nu}\partial_\mu\phi\,\partial_\nu\phi-V(\phi)$（号差 $(-,+,+,+)$ 下，动能项 $\frac12\dot\phi^2$ 为正）。对度规变分得到的能动张量是 $T_{\mu\nu}=\partial_\mu\phi\,\partial_\nu\phi+g_{\mu\nu}\mathcal L$；用 $g^{\alpha\mu}$ 升一个指标，就是 \eqref{7.6}。对场 $\phi$ 本身变分则得到 Klein–Gordon 方程——下面我们换一条路，用能动量守恒得到同一个方程。`}</Box>

@@ -1,5 +1,6 @@
 // §1.4 谐振子 —— 式 (1.130)–(1.165)，习题 1.5
-import { Sec, Sub, Tx, Eq, Box, Derivation, Exercise, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Derivation, Exercise, C, FormulaMap } from "@kit";
+import { FM_1_146, FM_1_156 } from "./_ch01_fmaps.jsx";
 import { PropagatorLab } from "./_ch01_demos.jsx";
 
 const R = String.raw;
@@ -82,7 +83,7 @@ $$\left(\frac{m}{2\pi\mathrm{i}T}\right)^{1/2}=\lim_{N\to\infty}J_N\left(\frac{m
         <Tx>{R`$J_N$ 在 $N\to\infty$ 时显然发散。但这完全无关紧要：我们关心的不是 $J_N$ 本身，而是它与其他（同样发散的）因子的组合。
 
 **谐振子的振幅。**现在谐振子的跃迁振幅为`}</Tx>
-        <Eq n="1.146" say={R`谐振子振幅：同一个 Jacobi 行列式，Gauss 积分中每个模式的系数多了 $-\omega^2$。`}>{R`\langle x_f,T|x_i,0\rangle=\lim_{N\to\infty}J_N\left(\frac{m}{2\pi\mathrm{i}\varepsilon}\right)^{N/2}\mathrm{e}^{\mathrm{i}S[x_{\rm c}]}\times\int\dd a_1\ldots\dd a_{N-1}\exp\left[\mathrm{i}\frac{mT}{4}\sum_{n=1}^{N-1}a_n^2\left\{\left(\frac{n\pi}{T}\right)^2-\omega^2\right\}\right].`}</Eq>
+        <FormulaMap n="1.146" say={R`谐振子振幅：同一个 Jacobi 行列式，Gauss 积分中每个模式的系数多了 $-\omega^2$。`} tree={FM_1_146} start="om" />
         <Tx>{R`对 $a_n$ 的积分是简单的 Gauss 积分（$n\pi/T>\omega$ 时用 \sref{L1.2}）：
 
 $$\int\dd a_n\exp\left[\frac{\mathrm{i}mT}{4}a_n^2\left\{\left(\frac{n\pi}{T}\right)^2-\omega^2\right\}\right]=\left(\frac{4\mathrm{i}T}{m\pi n^2}\right)^{1/2}\left[1-\left(\frac{\omega T}{n\pi}\right)^2\right]^{-1/2}.$$
@@ -145,7 +146,7 @@ $$\prod_{k=1}^n\left(\int_{-\infty}^{\infty}\dd x_k\right)\mathrm{e}^{-\frac12\s
         <Tx>{R`下标 D 表示本征值按 Dirichlet 边界条件 $y(0)=y(\beta)=0$ 求得。满足边界条件的一般解写成`}</Tx>
         <Eq n="1.155" say={R`Dirichlet 边界条件下的完备正交展开：正弦模式，归一化因子 $1/\sqrt\beta$。`}>{R`y(\tau)=\frac{1}{\sqrt\beta}\sum_{n\in\mathbb{N}}y_n\sin\frac{n\pi\tau}{\beta}.`}</Eq>
         <Tx>{R`$y(\tau)$ 是实函数，故 $y_n\in\mathbb{R}$。本征函数 $\sin(n\pi\tau/\beta)$ 的本征值是 $\lambda_n=(n\pi/\beta)^2+\omega^2$，所以函数行列式形式上写作`}</Tx>
-        <Eq n="1.156" say={R`函数行列式 = 所有本征值之积；把它拆成自由部分 $\prod(n\pi/\beta)^2$（发散）与一个收敛的乘积。`}>{R`\operatorname{Det}_{\rm D}\left(-\frac{\dd^2}{\dd\tau^2}+\omega^2\right)=\prod_{n=1}^{\infty}\lambda_n=\prod_{n=1}^{\infty}\left[\left(\frac{n\pi}{\beta}\right)^2+\omega^2\right]=\prod_{n=1}^{\infty}\left(\frac{n\pi}{\beta}\right)^2\prod_{p=1}^{\infty}\left[1+\left(\frac{\beta\omega}{p\pi}\right)^2\right].`}</Eq>
+        <FormulaMap n="1.156" say={R`函数行列式 = 所有本征值之积；把它拆成自由部分 $\prod(n\pi/\beta)^2$（发散）与一个收敛的乘积。`} tree={FM_1_156} start="conv" />
         <Tx>{R`最后一行的第一个无穷乘积就是 $\operatorname{Det}_{\rm D}(-\dd^2/\dd\tau^2)$。我们用 $\zeta$ 函数正规化来计算它。设 $\mathcal{O}$ 是本征值 $\lambda_n$ 都为正的算符，则*形式上*有`}</Tx>
         <Eq n="1.157" say={R`行列式的对数 = 对数的迹 = 本征值对数之和（形式上，求和通常发散）。`}>{R`\log\operatorname{Det}\mathcal{O}=\Tr\log\mathcal{O}=\sum_n\log\lambda_n.`}</Eq>
         <Tx>{R`定义**谱 $\zeta$ 函数**（spectral $\zeta$-function）`}</Tx>

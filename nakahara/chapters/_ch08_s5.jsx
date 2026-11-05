@@ -1,6 +1,7 @@
 import { CurvatureLoopRedraw } from "./_redraw_ch06_08.jsx";
 // §8.5 Kähler 流形与 Kähler 微分几何 —— 式 (8.80)–(8.101)，定义 8.4，定理 8.5–8.7，例 8.6–8.8，习题 8.8，图 8.5
-import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Proof, Exercise, Derivation, C } from "@kit";
+import { Sec, Sub, Tx, Eq, Box, Figure, Stmt, Proof, Exercise, Derivation, C, FormulaMap } from "@kit";
+import { FM_8_84 } from "./_ch08_fmaps.jsx";
 
 const R = String.raw;
 
@@ -47,7 +48,7 @@ $$\begin{aligned}(\partial+\bar\partial)\,\mathrm{i}g_{\mu\bar\nu}\dd z^\mu\wedg
 $$\frac{\partial}{\partial z^\mu}\frac{\partial}{\partial\bar z^\nu}\mathcal{K}_i\,\dd z^\mu\otimes\dd\bar z^\nu=\frac{\partial}{\partial w^\alpha}\frac{\partial}{\partial\bar w^\beta}\mathcal{K}_j\,\dd w^\alpha\otimes\dd\bar w^\beta,$$
 
 其中 $z=\varphi_i(p)$，$w=\varphi_j(p)$。于是`}</Tx>
-        <Eq n="8.84" say={R`两张卡上的 Kähler 势给出同一个度规：Jacobi 矩阵乘上去之后，混合二阶导数相等。`}>{R`\frac{\partial w^\alpha}{\partial z^\mu}\frac{\partial\bar w^\beta}{\partial\bar z^\nu}\frac{\partial}{\partial w^\alpha}\frac{\partial}{\partial\bar w^\beta}\mathcal{K}_j=\frac{\partial}{\partial z^\mu}\frac{\partial}{\partial\bar z^\nu}\mathcal{K}_i.`}</Eq>
+        <FormulaMap n="8.84" say={R`两张卡上的 Kähler 势给出同一个度规：Jacobi 矩阵乘上去之后，混合二阶导数相等。`} tree={FM_8_84} start="ddz" />
         <Tx>{R`它（局部地）成立当且仅当 $\mathcal{K}_j(w,\bar w)=\mathcal{K}_i(z,\bar z)+\phi_{ij}(z)+\psi_{ij}(\bar z)$，其中 $\phi_{ij}$（$\psi_{ij}$）是 $z$ 的全纯（反全纯）函数。（"当"：全纯函数与反全纯函数被 $\partial\bar\partial$ 消灭；"仅当"：差 $f=\mathcal{K}_j-\mathcal{K}_i$ 满足 $\partial_\mu\partial_{\bar\nu}f=0$，即 $\partial_\mu f$ 是全纯函数，局部积分出来即得。由于 $\mathcal{K}$ 是实的，可取 $\psi_{ij}=\overline{\phi}_{ij}$。）所以 Kähler 势一般不是整体定义的函数——例 8.8 中 $\CP^m$ 就是如此。`}</Tx>
         <Exercise n="8.8" title={R`$\Omega^m$ 闭而不恰当`} level="★★"
           hint={R`闭：由 \eqref{8.34} 与 $\dd\Omega=0$。不恰当：由 \sref{L8.1}，$\Omega^m$ 是体积元的 $m!$ 倍；若 $\Omega^m=\dd\eta$，由 Stokes 定理 $\int_M\Omega^m=\int_{\partial M}\eta=0$。`}
