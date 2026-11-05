@@ -18,6 +18,7 @@ import { S as S14 } from "./chapters/_ch14_stmts.js";
 import { FEEDBACK_EMAIL } from "../feedback.js";
 
 export default {
+  lang: "zh",
   feedbackEmail: FEEDBACK_EMAIL,
   kind: "textbook",
   title: "几何、拓扑与物理", title_en: "Geometry, Topology and Physics (2nd ed.)", author: "Mikio Nakahara", subtitle: "Institute of Physics Publishing, 2003",

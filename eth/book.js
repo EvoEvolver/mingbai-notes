@@ -6,6 +6,7 @@ import { STMTS } from "./chapters/_stmts.js";
 import { FEEDBACK_EMAIL } from "../feedback.js";
 
 export default {
+  lang: "zh",
   feedbackEmail: FEEDBACK_EMAIL,
   kind: "textbook",
   // 定理/引理/命题登记表（框架 proof 组件的数据源：Stmt、SRef、\sref{}、DepGraph、StudyTable）

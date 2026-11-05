@@ -2,6 +2,7 @@
 import { FEEDBACK_EMAIL } from "../feedback.js";
 
 export default {
+  lang: "zh",
   feedbackEmail: FEEDBACK_EMAIL,
   title: "生产之镜", title_en: "The Mirror of Production", author: "让·鲍德里亚", subtitle: "对马克思主义「生产主义」的批判",
   intro: "马克思批判了资本主义，却把「生产」「劳动」「使用价值」当作人类永恒的本质——鲍德里亚说，这恰恰是政治经济学在马克思身上照出的镜像。本书逐层拆掉这面镜子：劳动概念、人类学、原始社会、古代与封建社会，直到今天的符号与代码统治，并以「象征交换」对抗生产主义。",

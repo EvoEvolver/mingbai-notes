@@ -2,6 +2,7 @@
 import { FEEDBACK_EMAIL } from "../feedback.js";
 
 export default {
+  lang: "zh",
   feedbackEmail: FEEDBACK_EMAIL,
   kind: "textbook",
   title: "集成电路制造：科学与技术", title_en: "Integrated Circuit Fabrication: Science and Technology", author: "James D. Plummer · Peter B. Griffin", subtitle: "Cambridge University Press, 2023（预印版）",

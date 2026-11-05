@@ -2,6 +2,7 @@
 import { FEEDBACK_EMAIL } from "../feedback.js";
 
 export default {
+  lang: "zh",
   feedbackEmail: FEEDBACK_EMAIL,
   title: "大分流", title_en: "The Great Divergence", author: "彭慕兰（Kenneth Pomeranz）", subtitle: "中国、欧洲与现代世界经济的形成",
   intro: "为什么工业革命发生在英格兰，而不是同样繁荣的江南？彭慕兰的答案颠覆了「欧洲早已领先」的老故事：直到 1800 年前后，西欧与中国最发达的核心区在人口、寿命、市场、消费与技术上惊人地相似，也都撞上了同样的生态天花板（土地、木材、燃料）。真正让欧洲「分流」出去的，是两件带有偶然性的事：脚下恰好可开采的煤，以及靠暴力与奴隶制获得的美洲新大陆——它们替欧洲解除了土地约束。",

@@ -2,6 +2,7 @@
 import { FEEDBACK_EMAIL } from "../feedback.js";
 
 export default {
+  lang: "zh",
   feedbackEmail: FEEDBACK_EMAIL,
   title: "力比多经济", title_en: "Libidinal Economy", author: "让-弗朗索瓦·利奥塔", subtitle: "欲望、符号与资本的能量学",
   intro: "1974 年，利奥塔写下他自称「邪恶之书」的作品：不再批判资本、不再寻找被异化的真实，而是把一切——符号、理论、马克思、货币、资本——都读成力比多强度在一条「巨大的短暂皮肤」上的流动与凝结。它同时向马克思主义、精神分析、符号学，以及鲍德里亚的「象征交换」开战。",

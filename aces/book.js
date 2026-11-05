@@ -3,6 +3,7 @@
 import { FEEDBACK_EMAIL } from "../feedback.js";
 
 export default {
+  lang: "zh",
   feedbackEmail: FEEDBACK_EMAIL,
   kind: "paper",
   title: "用 ACES 给纠错电路做「体检」",

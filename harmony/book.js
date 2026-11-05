@@ -3,6 +3,7 @@
 import { FEEDBACK_EMAIL } from "../feedback.js";
 
 export default {
+  lang: "zh",
   feedbackEmail: FEEDBACK_EMAIL,
   title: "图解和声", title_en: "Harmony Illustrated", author: "叶小胖", subtitle: "用网格图听懂和声",
   intro: "这本书不靠五线谱和键盘图，而是用一张「网格图」（Tonnetz）讲和声：十二个音怎样循环，三和弦为什么是三角形，调、功能与和声进行又在图上走出什么形状。本站把书里的每一张图都做成了能点、能听的乐器——看见和弦的同时，也听见它。",

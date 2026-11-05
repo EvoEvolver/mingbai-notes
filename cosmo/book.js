@@ -2,6 +2,7 @@
 import { FEEDBACK_EMAIL } from "../feedback.js";
 
 export default {
+  lang: "zh",
   feedbackEmail: FEEDBACK_EMAIL,
   kind: "textbook",
   title: "现代宇宙学", title_en: "Modern Cosmology (2nd ed.)", author: "Scott Dodelson · Fabian Schmidt", subtitle: "Academic Press, 2021",

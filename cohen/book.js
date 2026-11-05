@@ -4,6 +4,7 @@
 import { FEEDBACK_EMAIL } from "../feedback.js";
 
 export default {
+  lang: "zh",
   feedbackEmail: FEEDBACK_EMAIL,
   kind: "textbook",
   title: "量子力学（卷 I）", title_en: "Quantum Mechanics, Volume I (2nd ed.)", author: "C. Cohen-Tannoudji, B. Diu, F. Laloë", subtitle: "Wiley-VCH, 2020",
